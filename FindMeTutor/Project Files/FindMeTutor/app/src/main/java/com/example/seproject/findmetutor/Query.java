@@ -8,10 +8,10 @@ public class Query{
     // Replace server name, username, and password with your credentials
     public static void main(String[] args) {
         String connectionString =
-                "jdbc:sqlserver://yourserver.database.windows.net:1433;"
-                        + "database=AdventureWorks;"
-                        + "user=yourusername@yourserver;"
-                        + "password=yourpassword;"
+                "jdbc:sqlserver://findmetutorsql.database.windows.net:1433;"
+                        + "database=findmetutor;"
+                        + "user=Jared@findmetutorsql;"
+                        + "password=Tremayne852;"
                         + "encrypt=true;"
                         + "trustServerCertificate=false;"
                         + "hostNameInCertificate=*.database.windows.net;"
