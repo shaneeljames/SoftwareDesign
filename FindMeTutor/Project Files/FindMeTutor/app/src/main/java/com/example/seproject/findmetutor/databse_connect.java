@@ -13,12 +13,13 @@ public class databse_connect {
 
         public static void main(String[] args) {
 
-            //query();
-            insertrow();
+            query();
+            //insertrow();
 
         }
 
-        public static void query() {
+        public static String query() {
+            String Temp = "Failed";
             String connectionString =
                     "jdbc:sqlserver://findmetutorsql.database.windows.net:1433;"
                             + "database=findmetutor;"
@@ -45,8 +46,7 @@ public class databse_connect {
                 // Print results from select statement
                 while (resultSet.next())
                 {
-                    System.out.println(resultSet.getString(1) + " "
-                            + resultSet.getString(2));
+                    Temp = resultSet.getString(1) + " "+ resultSet.getString(2);
                 }
             }
             catch (Exception e) {
@@ -58,7 +58,7 @@ public class databse_connect {
                 if (statement != null) try { statement.close(); } catch(Exception e) {}
                 if (connection != null) try { connection.close(); } catch(Exception e) {}
             }
-
+            return Temp;
         }
 
         public static void insertrow() {
