@@ -15,13 +15,13 @@ import java.net.URL;
 /**
  * Created by jared on 2016/08/03.
 */
-public class query extends AsyncTask<String , Void ,String> {
+public class async_http extends AsyncTask<String , Void ,String> {
 
     String server_response = "Failed";
 
     public String ans(){
 
-        new query().execute("http://52.35.36.20/connect.php");
+        new async_http().execute("http://52.35.36.20/connect.php");
         double j = 0;
         while(j<1100000000){
             j=j+0.5;
