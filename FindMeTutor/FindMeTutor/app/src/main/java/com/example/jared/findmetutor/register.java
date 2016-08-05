@@ -15,11 +15,11 @@ import java.net.URL;
 /**
  * Created by jared on 2016/08/04.
  */
-public class send_php extends AsyncTask<String, String, String> {
+public class register extends AsyncTask<String, String, String> {
     Activity parent;
     String URL;
 
-    public send_php(Activity par, String url2){
+    public register(Activity par, String url2){
         parent = par;
         URL = url2;
 
