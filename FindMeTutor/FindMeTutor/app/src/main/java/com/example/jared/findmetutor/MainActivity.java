@@ -16,8 +16,6 @@ public class MainActivity extends AppCompatActivity {
     public void click(View view){
         //login j = new login(this, "jaredtremayne@gmail.com", "Tremayne852");
         //j.execute();
-        //connect_php j = new connect_php(this, "http://52.35.36.20/query2.php");
-        //j.execute();
         //register j = new register(this, "Jared","Naidoo", "0118229141", "Jared@gmail.com","19935050", "My dogs name?", "RUfus", "Student");
         //j.execute();
     }
