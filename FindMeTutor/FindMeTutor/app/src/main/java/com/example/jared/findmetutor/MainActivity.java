@@ -1,9 +1,7 @@
 package com.example.jared.findmetutor;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -13,17 +11,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
     }
 
     public void click(View view){
-        async_http j = new async_http();
-        String temp = j.ans();
-        //new query().execute("http://52.35.36.20/connect.php");
-
-        TextView jared = (TextView)findViewById(R.id.textView2);
-        jared.setText(temp);
-
+        //send_php j = new send_php(this,"http://52.35.36.20/connect.php","SELECT");
+        //j.execute();
     }
 
-}
+
+
+ }
