@@ -1,5 +1,4 @@
 package com.example.jared.findmetutor;
-
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.TextView;
@@ -15,6 +14,7 @@ import java.net.URL;
 /**
  * Created by jared on 2016/08/03.
 */
+
 public class async_http extends AsyncTask<String , Void ,String> {
 
     String server_response = "Failed";
@@ -22,10 +22,7 @@ public class async_http extends AsyncTask<String , Void ,String> {
     public String ans(){
 
         new async_http().execute("http://52.35.36.20/connect.php");
-        double j = 0;
-        while(j<1100000000){
-            j=j+0.5;
-        }
+
         return server_response;
     }
 
@@ -65,8 +62,8 @@ public class async_http extends AsyncTask<String , Void ,String> {
 
 
     }
-// Converting InputStream to String
 
+// Converting InputStream to String
     private String readStream(InputStream in) {
         BufferedReader reader = null;
         StringBuffer response = new StringBuffer();

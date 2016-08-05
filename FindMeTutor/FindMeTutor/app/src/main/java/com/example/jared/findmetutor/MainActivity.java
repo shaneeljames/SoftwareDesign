@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void click(View view){
-        query j = new query();
+        async_http j = new async_http();
         String temp = j.ans();
         //new query().execute("http://52.35.36.20/connect.php");
 
