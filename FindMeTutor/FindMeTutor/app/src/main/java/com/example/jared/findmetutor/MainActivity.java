@@ -14,10 +14,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void click(View view){
-        login j = new login(this, "jaredtremayne@gmail.com", "Tremayne852");
-        j.execute();
-        //register j = new register(this, "Jared","Naidoo", "0118229141", "Jared@gmail.com","19935050", "My dogs name?", "RUfus", "Student");
+        //login j = new login(this, "tremayne@gmail.com", "Tremayne852");
         //j.execute();
+        register j = new register(this, "","Peter", "0118229141", "Jared@gmail.com","19935050", "My dogs name?", "RUfus", "Student");
+        j.execute();
     }
 
 

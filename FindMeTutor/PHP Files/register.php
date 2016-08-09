@@ -11,6 +11,11 @@ $securityquestion = $_POST["Securityquestion"];
 $answer = $_POST["Answer"];
 $tutorstudent = $_POST["Tutorstudent"];
 
+if($conn==""){
+echo "Incorrect Insert";
+$conn->close();
+}else{
+
 //Connection to the database
 //$dbhandle = mysql_connect(localhost, root, asdf) or die("Unable to connect to MySQL");
 //echo "Connected to MySQL<br>";
@@ -29,6 +34,7 @@ echo "Insert Unsuccessful".$mysql_qry."<br>".$conn->error;
 
 //close the connection
 $conn->close();
+}
 ?>
 
 
