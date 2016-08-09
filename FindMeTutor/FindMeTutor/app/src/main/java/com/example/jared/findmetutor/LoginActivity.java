@@ -1,10 +1,10 @@
 package com.example.jared.findmetutor;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-
 public class LoginActivity extends AppCompatActivity {
 
     //Global Variables to be used
@@ -26,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private String name, email, password;
     private EditText inputName, inputEmail, inputPassword;
     private TextInputLayout inputLayoutName, inputLayoutEmail, inputLayoutPassword;
-    private Button btnSignUp;
+    private Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         inputPassword = (EditText) findViewById(R.id.input_password);
 
 
-        btnSignUp = (Button) findViewById(R.id.btn_signup);
+        btnLogin = (Button) findViewById(R.id.btn_signup);
         TextView btnRegister = (TextView) findViewById(R.id.tvRegister);
 
         //use EditText objects to moniter the  Text fields for valid input
@@ -62,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
         password = inputPassword.getText().toString();
 
         //Submit form when login is clicked
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 submitForm();
@@ -102,6 +101,12 @@ public class LoginActivity extends AppCompatActivity {
         if(validateName() && validateEmail() && validatePassword())
         {
             Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show();
+            Intent home = new Intent(LoginActivity.this, HomeActivity.class);
+            home.putExtra("name", inputName.getText().toString());
+
+            Log.v("hi",inputName.getText().toString().toString());
+
+            LoginActivity.this.startActivity(home);
 
         }
 
