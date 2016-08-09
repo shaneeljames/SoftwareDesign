@@ -34,16 +34,16 @@
         android:paddingTop="60dp">
 
         <TextView
-            android:text="Register"
+            android:text="@string/btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvRegister"
             android:gravity="center"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
-            android:textSize="25sp"
+            android:textSize="45sp"
             android:textColor="@color/colorAccent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:layout_marginBottom="10dp" />
 
         <android.support.design.widget.TextInputLayout
