@@ -3,6 +3,7 @@ package com.example.jared.findmetutor;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -128,10 +129,13 @@ public class register extends AsyncTask<String, String, String> {
 
     @Override
     protected void onPostExecute(String result) {
+        //Handle Result
+        if(result.equals("null")){
+            Toast.makeText(parent.getApplicationContext(), "Registration Unsuccessful", Toast.LENGTH_SHORT).show();
 
-       /* TextView txt = (TextView) parent.findViewById(R.id.textView2);
-        txt.setText(result);*/
-
+        }else{
+            Toast.makeText(parent.getApplicationContext(), "Registration Successful!", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }
