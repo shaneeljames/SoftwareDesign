@@ -1,5 +1,9 @@
 package com.example.jared.findmetutor;
 
+import android.widget.Toast;
+
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
 
     //Global Variables to be used
     private Toolbar toolbar;
-    private String name, email, password;
+    private String name, email, password, login_email, login_password;
     private EditText inputName, inputEmail, inputPassword;
     private TextInputLayout inputLayoutName, inputLayoutEmail, inputLayoutPassword;
     private Button btnLogin;
@@ -101,17 +105,20 @@ public class LoginActivity extends AppCompatActivity {
         if(validateName() && validateEmail() && validatePassword())
         {
             Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show();
+            login connect2server = new login(this, login_email, login_password);
+            connect2server.execute();
+
             Intent home = new Intent(LoginActivity.this, HomeActivity.class);
             home.putExtra("name", inputName.getText().toString());
 
             Log.v("hi",inputName.getText().toString().toString());
 
             LoginActivity.this.startActivity(home);
-
         }
 
 
     }
+    @TargetApi(9)
     //Checks if name is a valid name if not return false and keep focus otherwise return true
     private boolean validateName() {
         if (inputName.getText().toString().trim().isEmpty()) {
@@ -124,10 +131,10 @@ public class LoginActivity extends AppCompatActivity {
 
         return true;
     }
-
+    @TargetApi(9)
     private boolean validateEmail() {
         String email = inputEmail.getText().toString().trim();
-
+        login_email = email;
         if (email.isEmpty() || !isValidEmail(email)) {
             inputLayoutEmail.setError(getString(R.string.err_msg_email));
             requestFocus(inputEmail);
@@ -138,9 +145,11 @@ public class LoginActivity extends AppCompatActivity {
 
         return true;
     }
-
+    @TargetApi(9)
     private boolean validatePassword() {
-        if (inputPassword.getText().toString().trim().isEmpty()) {
+        String password2 = inputPassword.getText().toString().trim();
+        login_password = password2;
+        if (password2.isEmpty()) {
             inputLayoutPassword.setError(getString(R.string.err_msg_password));
             requestFocus(inputPassword);
             return false;
@@ -150,7 +159,7 @@ public class LoginActivity extends AppCompatActivity {
 
         return true;
     }
-
+    @TargetApi(8)
     private static boolean isValidEmail(String email) {
         return !TextUtils.isEmpty(email) && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
@@ -189,17 +198,4 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
-
-
-
-
-    public void click(View view){
-        login j = new login(this, "jaredtremayne@gmail.com", "Tremayne852");
-        j.execute();
-        //register j = new register(this, "Jared","Naidoo", "0118229141", "Jared@gmail.com","19935050", "My dogs name?", "RUfus", "Student");
-        //j.execute();
-    }
-
-
-
  }
