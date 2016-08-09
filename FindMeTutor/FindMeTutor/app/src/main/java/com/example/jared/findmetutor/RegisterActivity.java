@@ -21,6 +21,7 @@ import android.widget.Toast;
 public class  RegisterActivity extends AppCompatActivity {
 
     private String firstName,lastName, email, number, password, securityQ, answer;
+    private String firstName2,lastName2, email2, number2, password2, securityQ2, answer2;
     private EditText inputFirstName,inputLastName, inputEmail, inputNumber, inputPassword, inputSecurityQ, inputAnswer;
     private TextInputLayout inputLayoutFName, inputLayoutLName, inputLayoutEmail, inputLayoutNumber, inputLayoutPass, inputLayoutSecurityQ, inputLayoutAnswer;
     private Button btnRegister;
@@ -120,10 +121,13 @@ public class  RegisterActivity extends AppCompatActivity {
        //if everyhing checks out then go back to login page
         if(validateFName() && validateLName() && validateEmail() && validatePassword())
         {
-            Toast.makeText(getApplicationContext(), "Thank You for Signing up!", Toast.LENGTH_SHORT).show();
+
+            register connect2server = new register(this, firstName2,lastName2, number2, email2,password2, inputSecurityQ.getText().toString().trim(),inputAnswer.getText().toString().trim(), "Student");
+            connect2server.execute();
+
+            Toast.makeText(getApplicationContext(), "Thank You for registering!", Toast.LENGTH_SHORT).show();
             Intent logInAct = new Intent(RegisterActivity.this, LoginActivity.class);
             RegisterActivity.this.startActivity(logInAct);
-
         }
 
 
@@ -133,7 +137,8 @@ public class  RegisterActivity extends AppCompatActivity {
 
 
     private boolean validateFName() {
-        if (inputFirstName.getText().toString().trim().isEmpty()) {
+        firstName2 = inputFirstName.getText().toString().trim();
+        if (firstName2.isEmpty()) {
             inputLayoutFName.setError(getString(R.string.err_msg_Fname));
             requestFocus(inputFirstName);
             return false;
@@ -145,7 +150,8 @@ public class  RegisterActivity extends AppCompatActivity {
     }
 
     private boolean validateLName() {
-        if (inputLastName.getText().toString().trim().isEmpty()) {
+        lastName2 = inputLastName.getText().toString().trim();
+        if (lastName2.isEmpty()) {
             inputLayoutLName.setError(getString(R.string.err_msg_Lname));
             requestFocus(inputLastName);
             return false;
@@ -157,9 +163,8 @@ public class  RegisterActivity extends AppCompatActivity {
     }
 
     private boolean validateEmail() {
-        String email = inputEmail.getText().toString().trim();
-
-        if (email.isEmpty() || !isValidEmail(email)) {
+        email2 = inputEmail.getText().toString().trim();
+        if (email2.isEmpty() || !isValidEmail(email2)) {
             inputLayoutEmail.setError(getString(R.string.err_msg_email));
             requestFocus(inputEmail);
             return false;
@@ -171,7 +176,8 @@ public class  RegisterActivity extends AppCompatActivity {
     }
 
     private boolean validateNumber() {
-        if (inputNumber.getText().toString().trim().isEmpty()) {
+        number2 = inputNumber.getText().toString().trim();
+        if (number2.isEmpty()) {
             inputLayoutNumber.setError(getString(R.string.err_msg_number));
             requestFocus(inputNumber);
             return false;
@@ -184,7 +190,8 @@ public class  RegisterActivity extends AppCompatActivity {
 
 
     private boolean validatePassword() {
-        if (inputPassword.getText().toString().trim().isEmpty()) {
+        password2 = inputPassword.getText().toString().trim();
+        if (password2.isEmpty()) {
             inputLayoutPass.setError(getString(R.string.err_msg_password));
             requestFocus(inputPassword);
             return false;
