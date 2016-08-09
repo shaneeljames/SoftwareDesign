@@ -129,8 +129,8 @@ public class register extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
 
-        TextView txt = (TextView) parent.findViewById(R.id.textView2);
-        txt.setText(result);
+       /* TextView txt = (TextView) parent.findViewById(R.id.textView2);
+        txt.setText(result);*/
 
     }
 
