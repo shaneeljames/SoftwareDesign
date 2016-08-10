@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_request"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jared.findmetutor.RequestActivity">
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+    <TextView
+        android:text="Request A Tutor"
+        android:gravity="top"
+        android:textStyle="bold"
+        android:textSize="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="24dp"
+        tools:layout_editor_absoluteX="28dp"
+        android:id="@+id/textView" />
+
+    <TextView
+        android:text="Details for requesting a tutor go here"
+        android:textStyle="normal"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="85dp"
+        tools:layout_editor_absoluteX="29dp"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textView"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -2,7 +2,9 @@ package com.example.jared.findmetutor;
 
 import android.app.Activity;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -111,13 +113,12 @@ public class login extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         //Handle Result
-       if(result.equals("null")){
-        TextView txt = (TextView) parent.findViewById(R.id.textView2);
-        txt.setText("Login Unsuccesful");
-        }else{
-            TextView txt = (TextView) parent.findViewById(R.id.textView2);
-            txt.setText("Login Succesful");
-        }
+      if(result.equals("null")){
+      Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful", Toast.LENGTH_SHORT).show();
+
+      }else{
+      Toast.makeText(parent.getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
+      }
 
     }
 
