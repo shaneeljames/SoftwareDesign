@@ -39,10 +39,6 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
         }
 
         //set up nav and toolBar
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 

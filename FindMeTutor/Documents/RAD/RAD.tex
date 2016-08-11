@@ -155,6 +155,40 @@
 			\\ \hline		
 		\end{tabular}
 
+		\begin{tabular}{| l | p{10cm}| }
+			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-DS: Archive Student}} \\ \hline
+			Related Requirements: & RQ1.4, RQ3.3 \\ \hline
+			Initiating actor: & Student or Administrator \\ \hline
+			Actor goal: & To delete Student\\ \hline
+			Participating Actors: & External Database System\\ \hline
+			Preconditions: Student exists\\ \hline
+			Postconditions: & Student is Archived\\ \hline
+			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
+			\multicolumn{2}{|p{15cm}|}{1. Student/Administrator requests to delete Student}\\
+			\multicolumn{2}{|p{15cm}|}{2. System displays confirmation message}\\
+			\multicolumn{2}{|p{15cm}|}{3. Student/Administrator enters confirmation}	\\		
+			\multicolumn{2}{|p{15cm}|}{4. System sends archive Student signal to external database system}\\
+			\multicolumn{2}{|l|}{5. Student is archived}	
+			\\ \hline		
+		\end{tabular}
+		
+		\begin{tabular}{| l | p{10cm}| }
+			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-DT: Archive Tutor}} \\ \hline
+			Related Requirements: & RQ2.4, RQ3.6 \\ \hline
+			Initiating actor: & Tutor or Administrator \\ \hline
+			Actor goal: & To delete Tutor\\ \hline
+			Participating Actors: & External Database System\\ \hline
+			Preconditions: Tutor exists\\ \hline
+			Postconditions: & Tutor is Archived\\ \hline
+			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
+			\multicolumn{2}{|p{15cm}|}{1. Tutor/Administrator requests to delete Tutor}\\
+			\multicolumn{2}{|p{15cm}|}{2. System displays confirmation message}\\
+			\multicolumn{2}{|p{15cm}|}{3. Tutor/Administrator enters confirmation}	\\		
+			\multicolumn{2}{|p{15cm}|}{4. System sends archive Tutor signal to external database system}\\
+			\multicolumn{2}{|l|}{5. Tutor is archived}	
+			\\ \hline		
+		\end{tabular}		
+		
 		}
 		
 		\subsection{Use case Diagrams}
