@@ -1,6 +1,8 @@
 package com.example.jared.findmetutor;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.TextView;
@@ -18,6 +20,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import android.content.Intent;
 
 /**
  * Created by jared on 2016/08/04.
@@ -118,8 +121,14 @@ public class login extends AsyncTask<String, String, String> {
 
       }else{
       Toast.makeText(parent.getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
+
+          startActivity(parent);
       }
 
+    }
+
+    public static void startActivity(Context context) {
+        context.startActivity(new Intent(context, HomeActivity.class));
     }
 
 }
