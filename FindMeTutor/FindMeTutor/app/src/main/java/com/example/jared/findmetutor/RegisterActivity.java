@@ -20,12 +20,12 @@ import android.widget.Toast;
 
 public class  RegisterActivity extends AppCompatActivity {
 
-    private String firstName,lastName, email, number, password, securityQ, answer;
-    private String firstName2,lastName2, email2, number2, password2, securityQ2, answer2;
-    private EditText inputFirstName,inputLastName, inputEmail, inputNumber, inputPassword, inputSecurityQ, inputAnswer;
-    private TextInputLayout inputLayoutFName, inputLayoutLName, inputLayoutEmail, inputLayoutNumber, inputLayoutPass, inputLayoutSecurityQ, inputLayoutAnswer;
+    private String firstName,lastName, email, number, password,ConfirmPassword, securityQ, answer;
+    private String firstName2,lastName2, email2, number2, password2,ConfirmPassword2, securityQ2, answer2;
+    private EditText inputFirstName,inputLastName, inputEmail, inputNumber, inputPassword,inputConfirmPassword, inputSecurityQ, inputAnswer;
+    private TextInputLayout inputLayoutFName, inputLayoutLName, inputLayoutEmail, inputLayoutNumber, inputLayoutPass,inputLayoutCPass, inputLayoutSecurityQ, inputLayoutAnswer;
     private Button btnRegister;
-
+    private String test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,7 @@ public class  RegisterActivity extends AppCompatActivity {
          inputLayoutEmail = (TextInputLayout) findViewById(R.id.input_layout_email);
          inputLayoutNumber = (TextInputLayout) findViewById(R.id.input_layout_number) ;
          inputLayoutPass = (TextInputLayout) findViewById(R.id.input_layout_password);
+        inputLayoutCPass = (TextInputLayout) findViewById(R.id.input_layout_passwordConfirm);
          inputLayoutSecurityQ = (TextInputLayout) findViewById(R.id.input_layout_SecurityQ);
          inputLayoutAnswer = (TextInputLayout) findViewById(R.id.input_layout_answer);
 
@@ -51,6 +52,7 @@ public class  RegisterActivity extends AppCompatActivity {
          inputEmail = (EditText) findViewById(R.id.input_email);
          inputNumber = (EditText) findViewById(R.id.input_Number);
          inputPassword = (EditText) findViewById(R.id.input_password);
+        inputConfirmPassword =(EditText) findViewById(R.id.input_passwordConfirm);
          inputSecurityQ = (EditText) findViewById(R.id.input_securityQ);
          inputAnswer = (EditText) findViewById(R.id.input_Answer);
 
@@ -60,6 +62,7 @@ public class  RegisterActivity extends AppCompatActivity {
          email = inputEmail.getText().toString();
          number = inputNumber.getText().toString();
          password = inputPassword.getText().toString();
+         ConfirmPassword = inputConfirmPassword.getText().toString();
          securityQ = inputSecurityQ.getText().toString();
          answer = inputAnswer.getText().toString();
 
@@ -67,6 +70,7 @@ public class  RegisterActivity extends AppCompatActivity {
         inputLastName.addTextChangedListener(new RegisterActivity.MyTextWatcher(inputLastName));
         inputEmail.addTextChangedListener(new RegisterActivity.MyTextWatcher(inputEmail));
         inputPassword.addTextChangedListener(new RegisterActivity.MyTextWatcher(inputPassword));
+        inputConfirmPassword.addTextChangedListener(new RegisterActivity.MyTextWatcher(inputConfirmPassword));
 
         //get button object
          btnRegister = (Button) findViewById(R.id.btn_register);
@@ -118,8 +122,13 @@ public class  RegisterActivity extends AppCompatActivity {
             return;
         }
 
+       if(!validateConfirmPassword())
+       {
+           return ;
+       }
+
        //if everyhing checks out then go back to login page
-        if(validateFName() && validateLName() && validateEmail() && validatePassword())
+        if(validateFName() && validateLName() && validateEmail() && validatePassword() && validateConfirmPassword())
         {
 
             register connect2server = new register(this, firstName2,lastName2, number2, email2,password2, inputSecurityQ.getText().toString().trim(),inputAnswer.getText().toString().trim(), "Student");
@@ -177,7 +186,7 @@ public class  RegisterActivity extends AppCompatActivity {
 
     private boolean validateNumber() {
         number2 = inputNumber.getText().toString().trim();
-        if (number2.isEmpty()) {
+        if (number2.length()<10) {
             inputLayoutNumber.setError(getString(R.string.err_msg_number));
             requestFocus(inputNumber);
             return false;
@@ -201,6 +210,20 @@ public class  RegisterActivity extends AppCompatActivity {
 
         return true;
     }
+
+    private boolean validateConfirmPassword() {
+        ConfirmPassword2 = inputConfirmPassword.getText().toString().trim();
+        if (!(ConfirmPassword2.equals(password2))) {
+            inputLayoutCPass.setError("Confirm password mismatch");
+            requestFocus(inputConfirmPassword);
+            return false;
+        } else {
+            inputLayoutCPass.setErrorEnabled(false);
+        }
+
+        return true;
+    }
+
 
     private static boolean isValidEmail(String email) {
         return !TextUtils.isEmpty(email) && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
@@ -244,6 +267,9 @@ public class  RegisterActivity extends AppCompatActivity {
                     break;
                 case R.id.input_password:
                     validatePassword();
+                    break;
+                case R.id.input_layout_passwordConfirm:
+                    validateConfirmPassword();
                     break;
             }
         }
