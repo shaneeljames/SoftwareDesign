@@ -25,7 +25,7 @@ public class  RegisterActivity extends AppCompatActivity {
     private EditText inputFirstName,inputLastName, inputEmail, inputNumber, inputPassword,inputConfirmPassword, inputSecurityQ, inputAnswer;
     private TextInputLayout inputLayoutFName, inputLayoutLName, inputLayoutEmail, inputLayoutNumber, inputLayoutPass,inputLayoutCPass, inputLayoutSecurityQ, inputLayoutAnswer;
     private Button btnRegister;
-
+    private String test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
