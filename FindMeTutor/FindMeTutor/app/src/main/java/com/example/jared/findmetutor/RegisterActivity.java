@@ -42,7 +42,7 @@ public class  RegisterActivity extends AppCompatActivity {
          inputLayoutEmail = (TextInputLayout) findViewById(R.id.input_layout_email);
          inputLayoutNumber = (TextInputLayout) findViewById(R.id.input_layout_number) ;
          inputLayoutPass = (TextInputLayout) findViewById(R.id.input_layout_password);
-        inputLayoutCPass = (TextInputLayout) findViewById(R.id.input_layout_passwordConfirm);
+         inputLayoutCPass = (TextInputLayout) findViewById(R.id.input_layout_passwordConfirm);
          inputLayoutSecurityQ = (TextInputLayout) findViewById(R.id.input_layout_SecurityQ);
          inputLayoutAnswer = (TextInputLayout) findViewById(R.id.input_layout_answer);
 

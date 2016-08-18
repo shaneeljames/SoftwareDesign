@@ -108,8 +108,8 @@ public class LoginActivity extends AppCompatActivity {
             login connect2server = new login(this, login_email, login_password);
             connect2server.execute();
 
-
-            Log.v("hi",inputName.getText().toString().toString());
+            //get passsword from login Class
+            Toast.makeText(getApplicationContext(), connect2server.getStuff() , Toast.LENGTH_SHORT).show();
 
            // LoginActivity.this.startActivity(home);
         }

@@ -120,6 +120,7 @@ public class login extends AsyncTask<String, String, String> {
       Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful", Toast.LENGTH_SHORT).show();
 
       }else{
+          //If they're in the DB then login to the Home page
       Toast.makeText(parent.getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
 
           startActivity(parent);
@@ -129,6 +130,13 @@ public class login extends AsyncTask<String, String, String> {
 
     public static void startActivity(Context context) {
         context.startActivity(new Intent(context, HomeActivity.class));
+    }
+
+    //Use this method to get stuff from the Login request claass by just making an object when needed and calling getStuff();
+    public String getStuff()
+    {
+        String pass = Password;
+        return pass;
     }
 
 }
