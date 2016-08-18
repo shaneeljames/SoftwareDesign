@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if(validateName() && validateEmail() && validatePassword())
         {
-            Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show(); shows thank you
             login connect2server = new login(this, login_email, login_password);
             connect2server.execute();
 
