@@ -108,12 +108,10 @@ public class LoginActivity extends AppCompatActivity {
             login connect2server = new login(this, login_email, login_password);
             connect2server.execute();
 
-            Intent home = new Intent(LoginActivity.this, HomeActivity.class);
-            home.putExtra("name", inputName.getText().toString());
+            //get passsword from login Class
+            Toast.makeText(getApplicationContext(), connect2server.getStuff() , Toast.LENGTH_SHORT).show();
 
-            Log.v("hi",inputName.getText().toString().toString());
-
-            LoginActivity.this.startActivity(home);
+           // LoginActivity.this.startActivity(home);
         }
 
 
