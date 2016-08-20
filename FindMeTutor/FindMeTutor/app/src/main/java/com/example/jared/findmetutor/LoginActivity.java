@@ -41,12 +41,12 @@ public class LoginActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //get inputLayouts
-        inputLayoutName = (TextInputLayout) findViewById(R.id.input_layout_name);
+      //  inputLayoutName = (TextInputLayout) findViewById(R.id.input_layout_name);
         inputLayoutEmail = (TextInputLayout) findViewById(R.id.input_layout_email);
         inputLayoutPassword = (TextInputLayout) findViewById(R.id.input_layout_password);
 
         //get EditText objects
-        inputName = (EditText) findViewById(R.id.input_name);
+       // inputName = (EditText) findViewById(R.id.input_name);
         inputEmail = (EditText) findViewById(R.id.input_email);
         inputPassword = (EditText) findViewById(R.id.input_password);
 
@@ -55,12 +55,12 @@ public class LoginActivity extends AppCompatActivity {
         TextView btnRegister = (TextView) findViewById(R.id.tvRegister);
 
         //use EditText objects to moniter the  Text fields for valid input
-        inputName.addTextChangedListener(new MyTextWatcher(inputName));
+      //  inputName.addTextChangedListener(new MyTextWatcher(inputName));
         inputEmail.addTextChangedListener(new MyTextWatcher(inputEmail));
         inputPassword.addTextChangedListener(new MyTextWatcher(inputPassword));
 
         //get Strings from EditText objects
-        name = inputName.getText().toString();
+      //  name = inputName.getText().toString();
         email= inputEmail.getText().toString();
         password = inputPassword.getText().toString();
 
@@ -90,9 +90,9 @@ public class LoginActivity extends AppCompatActivity {
     //Validate entered information
     private void submitForm() {
 
-        if (!validateName()) {
-            return;
-        }
+       // if (!validateName()) {
+         //   return;
+        //}
 
         if (!validateEmail()) {
             return;
@@ -102,23 +102,24 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        if(validateName() && validateEmail() && validatePassword())
+        if( validateEmail() && validatePassword())
         {
+            int test ;
           //  Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show(); shows thank you
             login connect2server = new login(this, login_email, login_password);
             connect2server.execute();
 
             //get passsword from login Class
-            Toast.makeText(getApplicationContext(), connect2server.getStuff() , Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getApplicationContext(), connect2server.getStuff() , Toast.LENGTH_SHORT).show();
 
            // LoginActivity.this.startActivity(home);
         }
 
 
     }
-    @TargetApi(9)
+   // @TargetApi(9)
     //Checks if name is a valid name if not return false and keep focus otherwise return true
-    private boolean validateName() {
+   /* private boolean validateName() {
         if (inputName.getText().toString().trim().isEmpty()) {
             inputLayoutName.setError(getString(R.string.err_msg_name));
             requestFocus(inputName);
@@ -128,7 +129,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         return true;
-    }
+    }*/
     @TargetApi(9)
     private boolean validateEmail() {
         String email = inputEmail.getText().toString().trim();
@@ -184,9 +185,9 @@ public class LoginActivity extends AppCompatActivity {
 
         public void afterTextChanged(Editable editable) {
             switch (view.getId()) {
-                case R.id.input_name:
-                    validateName();
-                    break;
+                //case R.id.input_name:
+                  //  validateName();
+                   // break;
                 case R.id.input_email:
                     validateEmail();
                     break;
