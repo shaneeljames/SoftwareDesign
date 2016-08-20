@@ -29,6 +29,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //test
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
