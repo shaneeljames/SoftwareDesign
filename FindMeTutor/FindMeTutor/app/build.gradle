@@ -23,6 +23,13 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:24.1.1'
     compile 'com.android.support:design:24.1.1'
+<<<<<<< HEAD
     //compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha4'
     testCompile 'junit:junit:4.12'
+=======
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha4'
+    androidTestCompile 'junit:junit:4.12'
+    compile 'com.android.support:support-v13:24.1.1'
+    compile 'com.android.support:design:24.1.1'
+>>>>>>> 9dd58b60c7908b734329286160d4f4ea0dfa963c
 }

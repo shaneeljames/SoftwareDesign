@@ -1,5 +1,6 @@
 package com.example.jared.findmetutor;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -7,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -27,6 +29,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //test
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
@@ -88,6 +91,31 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
         displayView(position);
     }
 
+    //back button implementation
+    int count = 0 ;
+    double start ;
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK) && (count == 0)) {
+            start = System.currentTimeMillis() ;
+            Toast.makeText(getApplicationContext(), "Press back button again to log out", Toast.LENGTH_SHORT).show();
+            count++;
+        }
+        else if(System.currentTimeMillis()- start <2000) //timer to make sure double back button is quick
+        {
+            Intent home = new Intent(HomeActivity.this, LoginActivity.class);
+            HomeActivity.this.startActivity(home);
+            this.finish();
+            count =0 ;
+        }
+        else
+        {
+            count = 0;
+            Toast.makeText(getApplicationContext(), "Press back button again to log out", Toast.LENGTH_SHORT).show();
+        }
+
+        return true ;
+    }
+
 
     private void displayView(int position) {
         Fragment fragment = null;
@@ -104,6 +132,12 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
             case 2:
                 fragment = new MessagesFragment();
                 title = getString(R.string.title_messages);
+                break;
+            case 3:
+                //Press logout, takes you back to login page
+                Intent home = new Intent(HomeActivity.this, LoginActivity.class);
+                HomeActivity.this.startActivity(home);
+                this.finish() ;
                 break;
             default:
                 break;
