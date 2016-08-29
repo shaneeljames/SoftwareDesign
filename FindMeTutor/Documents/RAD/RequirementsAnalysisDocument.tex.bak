@@ -3,6 +3,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{comment}
+\usepackage{longtable}
 
 \begin{document}
 
@@ -104,7 +105,7 @@ Describes the high-level functionality of the system\\
 
 {
 \centering
-\begin{tabular}{| l | p{10cm}| l |}
+\begin{longtable}{| l | p{10cm}| l |}
 			\hline			
 			\textbf{Requirement} & \textbf{Functional Requirement} & \textbf{Use Case}
 			
@@ -112,19 +113,67 @@ Describes the high-level functionality of the system\\
 			RQ1.2 & The system shall allow a student to update their account & UC-US \\ \hline  
 			RQ1.3 & The system shall allow a student to view their account details  & UC-VS \\ \hline 
 			RQ1.4 & The system shall allow a student to mark their account as deleted & UC-DS  \\ \hline 
+%Sprint 2
+			RQ1.5 & The system shall allow a student who has forgotten their password to change their password & UC-US \\ \hline	
+			
+			
 			RQ2.1 & The system shall allow a tutor to register & UC-CT \\ \hline
 			RQ2.2 & The system shall allow a tutor to update their account  & UC-UT \\ \hline
 			RQ2.3 & The system shall allow a tutor to view their account details & UC-VT \\ \hline
 			RQ2.4 & The system shall allow a tutor to mark their account as deleted & UC-DT \\ \hline  
-			
+%Sprint 2
+			RQ2.5 & The system shall allow a tutor who has forgotten their password to change their password & UC-UT \\ \hline	
+						
 			RQ3.1 & The system shall allow a administrator to update a student account & UC-US \\ \hline  
 			RQ3.2 & The system shall allow a administrator to view a student account details  & UC-VS \\ \hline 
 			RQ3.3 & The system shall allow a administrator to mark a student as deleted & UC-DS  \\ \hline 
 			RQ3.4 & The system shall allow a administrator to update a tutor account  & UC-UT \\ \hline
 			RQ3.5 & The system shall allow a administrator to view a tutor account details & UC-VT \\ \hline
-			RQ3.6 & The system shall allow a administrator to mark a tutor account as deleted & UC-DT \\ \hline			
+			RQ3.6 & The system shall allow a administrator to mark a tutor account as deleted & UC-DT \\ \hline
+%Sprint 2: Requirements
+			RQ3.7 & The system shall allow an administrator  who has forgotten their password to change their password & UC-UA \\ \hline	
+% Ask if we have the password under update
 			
-\end{tabular}
+% Create Administrator
+			RQ4.1 & The system shall allow an administrator to register  & UC-CA \\ \hline 
+			RQ4.2 & The system shall allow an administrator to update their account & UC-UA \\ \hline  
+			RQ4.3 & The system shall allow an administrator to view their account details  & UC-VA \\ \hline 
+			RQ4.4 & The system shall allow an administrator to mark their account as deleted & UC-DA  \\ \hline 
+
+% Request tutor: student
+				RQ5.1 & The system shall allow a student to request a tutor & UC-RT \\ \hline
+				RQ5.2 & The system shall allow a student to choose a tutor from a list & UC-CT \\ \hline
+
+% Request Tutor: Tutor
+				RQ6.1 & The system shall allow a tutor to accept a request & UC-AR \\ \hline
+				RQ6.2 & The system shall allow a tutor to reject a request & UC-DR \\ \hline
+		
+
+% Add Event: Student 
+				RQ7.1 & The system shall allow a student to add events to their personal 'Upcoming events'  & UC-CE \\ \hline	
+				RQ7.2 & The system shall allow a student to view their upcoming events & UC-VE \\ \hline
+				RQ7.3 & The system shall allow a student to update their upcoming events & UC-UE \\ \hline
+				RQ7.4 & The system shall allow a student to delete their upcoming events & UC-DE\\ \hline
+				
+% Add Event: Tutor 
+				RQ8.1 & The system shall allow a tutor to add events to their personal 'Upcoming events'  & UC-CE \\ \hline	
+				RQ8.2 & The system shall allow a tutor to view their upcoming events & UC-VE \\ \hline
+				RQ8.3 & The system shall allow a tutor to update their upcoming events & UC-UE \\ \hline
+				RQ8.4 & The system shall allow a tutor to delete their upcoming events & UC-DE\\ \hline
+								
+% Rate a tutor: student
+				RQ9.1 & The system shall allow a student to rate a tutor & UC-R\\ \hline
+
+% Check-in/out : Sudent
+				RQ9.1 & The system shall allow a student to check-in  & UC-CI \\ \hline	
+				RQ9.2 & The system shall allow a student to check-out  & UC-CO \\ \hline
+% Check-in/out : Tutor
+				RQ10.1 & The system shall allow a tutor to check-in  & UC-CI \\ 
+\hline	
+				RQ10.2 & The system shall allow a tutor to check-out  & UC-CO \\ \hline
+				
+			
+\end{longtable}
 }
 
 \subsection{Non-functional requirements}{
@@ -159,17 +208,30 @@ For instance, there is a student - Joe Soap - who is currently doing his  3rd ye
 
 \subsubsection{Use cases models}
 \textbf{Use cases}	\\		
-			Create Student		UC-CS
-			\\Update Student 	UC-US
-			\\View Student      UC-VS
-			\\Archive Student	UC-DS
-			\\Create Tutor		UC-CT
-			\\Update Tutor		UC-UT
-			\\View Tutor			UC-VT
-			\\Archive Tutor		UC-DT
-			\\			
-		
-		
+			Create Student					UC-CS
+			\\Update Student 				UC-US
+			\\View Student      			UC-VS
+			\\Archive Student				UC-DS
+			\\Create Tutor					UC-CT
+			\\Update Tutor					UC-UT
+			\\View Tutor					UC-VT
+			\\Archive Tutor					UC-DT
+			\\Create System Administartor	UC-CA
+			\\Update Student 				UC-UA
+			\\View Student      			UC-VA
+			\\Archive Student				UC-DA		
+			\\Request Tutor					UC-RT
+			\\Choose Tutor					UC-CT
+			\\Create Event					UC-CE
+			\\Update Event					UC-UE
+			\\View Event					UC-VE
+			\\Archive Event					UC-DE
+			\\Rate Tutor					UC-R
+			\\Accept Request				UC-AR
+			\\Archive Request				UC-DR
+			\\Check-in						UC-CI
+			\\Check-out						UC-CO
+			
 		{
 		\centering
 		
@@ -326,6 +388,7 @@ Use cases
 \subsubsection{Analysis object model}
 (Attached P17)
 \subsubsection{Dynamic model}
+(Attached P18)
 %A dynamic model represents the behaviour of an object over time. It is used where the object's behaviour is best described as a set of states that occur in a defined sequence. The components of the dynamic model are:\\
  %	States. The purchase order (PO) is modelled as passing through a set of states. The operations that can be performed on the PO are dependent on the state it is in. For example, information cannot be entered after it has reached the approved state.\\
 	%State transitions. When purchase order data entry has been completed it transitions from the entering PO state to the pending approval state. State transitions are modelled as being instantaneous.\\
@@ -334,7 +397,7 @@ Use cases
 %	Activities. An activity is performed while an object is in a specific state. For example, while in the entering PO state data is entered into the PO. Activities are modelled as occurring over a period of time (contrast with actions).\\
 	
 \subsubsection{User interface navigational paths and screen mock-ups} 
-
+(Attached P19)
 \subsubsection{Operational requirements}
 Operational requirements describe the non-business characteristics of an application.\\
 3.5.1 Amazon Web Server - Web server to host the database\\ 
@@ -347,7 +410,6 @@ Operational requirements describe the non-business characteristics of an applica
 %\section{REFERENCES}
 
 \end{document}
-
 
 
 

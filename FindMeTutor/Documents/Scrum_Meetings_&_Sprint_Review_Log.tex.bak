@@ -24,49 +24,45 @@
 \subsubsection{Requirements and Prioroty weights}
 {
 \centering
-\begin{longtable}{| p{1.5cm} | p{8cm}| p{2cm}| p{3cm} |}
+\begin{longtable}{| p{2.5cm} | p{7cm}| p{2cm}| p{4cm} |}
 \hline			
-			\textbf{Item} & \textbf{Requirements to implement} & \textbf{Priority weight}	& \textbf{Est. duration}	
-			
-% Proposal 
-	\\ \hline 0 & Proposal & 5 & 4 days
+			\textbf{} & \textbf{Requirements to implement} & \textbf{Priority weight}	& \textbf{Est. duration}	
 % Student Registration			
-		\\ \hline 1 & Student registration and login & 5 & 1 week\\ \hline 
+		\\ \hline RQ1 & Student registration and login & 5 & 1 weeks\\ \hline 
 			
 %Tutor Registration
-			2 & Tutor registration and login & 5 & 1 week\\ \hline	
+			RQ2 & Tutor registration and login & 5 & 1 weeks\\ \hline	
  
 % System Administrator Registration						
-			3 & Administrator registration & 5 & 2 days \\ \hline  
+			RQ3 & Administrator registration & 5 & 2 days \\ \hline  
 
 			
 % Administrator capabilities
-			4 & Administrator capabilities & 5 & 2 days\\ \hline 
+			RQ4 & Administrator capabilities & 5 & 2 days\\ \hline 
 			
 % Request tutor: student
-			5 & Students able to request a tutor & 5 & 3 days\\ \hline
+			RQ5 & Students able to request a tutor & 5 & 3 days\\ \hline
 
 % Request Tutor: Tutor
-				6 & Tutor able to accept/reject tutor request & 5 & 3 days\\ \hline
+				RQ6 & Tutor able to accept/reject tutor request & 5 & 3 days\\ \hline
 
 % Add Event: Student 
-				7 & Student able to handle 'Upcoming events'  & 3 & 3 days \\ \hline	
+				RQ7 & Student able to handle 'Upcoming events'  & 3 & 3 days \\ \hline	
 				
 % Add Event: Tutor 
-				8 & Tutor able to handle 'Upcoming events'  & 3 & 3 days\\ \hline	
+				RQ8 & Tutor able to handle 'Upcoming events'  & 3 & 3 days\\ \hline	
 							
 % Rate a tutor: student
-				9 & Student able to rate a tutor & 2 & 1 day\\ \hline
+				RQ9 & Student able to rate a tutor & 2 & 1 day\\ \hline
 
 % Check-in/out : Sudent
-				10 & Student able to check-in/check-out of tutor sessions  & 5 & 1 week\\ \hline	
+				RQ10 & Student able to check-in/check-out of tutor sessions  & 5 & 1 week\\ \hline	
 
 % Safety checker
-				11 & Alert administrator if need for safety warning  & 4 & 1 week \\ \hline	
+				RQ13 & Alert administrator if need for safety warning  & 4 & 1 week \\ \hline	
 
 % Payment
-				12 & Payments  & 3 & 1 week \\ \hline	
-
+				RQ12 & Payments  & 3 & 1 week \\ \hline	
 
 
 	
