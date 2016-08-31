@@ -1,45 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_request"
+    android:id="@+id/android_date_picker"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jared.findmetutor.RequestActivity">
+    android:layout_marginTop="5dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".RequestActivity">
 
-    <LinearLayout
-        android:id="@+id/container_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
 
-    <TextView
-        android:text="Request A Tutor"
-        android:gravity="top"
-        android:textStyle="bold"
-        android:textSize="45dp"
+    <ScrollView
+        android:id="@+id/sview"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="24dp"
-        tools:layout_editor_absoluteX="28dp"
-        android:id="@+id/textView" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:text="Details for requesting a tutor go here"
-        android:textStyle="normal"
-        android:textSize="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="85dp"
-        tools:layout_editor_absoluteX="29dp"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/textView"
-        android:layout_alignRight="@+id/textView"
-        android:layout_alignEnd="@+id/textView" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
-    </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+                <TextView
+                    android:id="@+id/selectSubj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Subject"
+                    android:padding="10dp"
+                    android:textSize="30sp"/>
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_below="@+id/selectSubj"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    android:entries="@array/android_dropdown_arrays" />
+
+            <TextView
+                android:id="@+id/selectDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Date"
+                android:padding="10dp"
+                android:textSize="30sp"/>
+
+            <DatePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/datePicker"
+                android:calendarViewShown="false"/>
+
+            <TextView
+                android:id="@+id/selectTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Time"
+                android:textSize="30sp"
+                android:padding="10dp"
+                android:gravity="center"/>
+
+            <TimePicker
+                android:id="@+id/timePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+        <Button android:id="@+id/btn_request"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_request"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="40dp"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/sview"/>
+
+
+
+</LinearLayout>

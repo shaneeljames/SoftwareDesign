@@ -1,0 +1,171 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{multicol}
+\begin{document}
+
+\title{\textbf{SCRUM MEETING AND SPRINT REVIEWS }}
+\maketitle
+
+
+\newpage
+
+
+% Product back log: User stories all
+
+
+%TABLE OF CONTENTS
+\tableofcontents
+\newpage
+% Backlog
+\section{COMPLETE LIST OF WORKLOG }
+\subsubsection{Requirements and Prioroty weights}
+{
+\centering
+\begin{longtable}{| p{2.5cm} | p{7cm}| p{2cm}| p{4cm} |}
+\hline			
+			\textbf{} & \textbf{Requirements to implement} & \textbf{Priority weight}	& \textbf{Est. duration}	
+% Student Registration			
+		\\ \hline RQ1 & Student registration and login & 5 & 1 weeks\\ \hline 
+			
+%Tutor Registration
+			RQ2 & Tutor registration and login & 5 & 1 weeks\\ \hline	
+ 
+% System Administrator Registration						
+			RQ3 & Administrator registration & 5 & 2 days \\ \hline  
+
+			
+% Administrator capabilities
+			RQ4 & Administrator capabilities & 5 & 2 days\\ \hline 
+			
+% Request tutor: student
+			RQ5 & Students able to request a tutor & 5 & 3 days\\ \hline
+
+% Request Tutor: Tutor
+				RQ6 & Tutor able to accept/reject tutor request & 5 & 3 days\\ \hline
+
+% Add Event: Student 
+				RQ7 & Student able to handle 'Upcoming events'  & 3 & 3 days \\ \hline	
+				
+% Add Event: Tutor 
+				RQ8 & Tutor able to handle 'Upcoming events'  & 3 & 3 days\\ \hline	
+							
+% Rate a tutor: student
+				RQ9 & Student able to rate a tutor & 2 & 1 day\\ \hline
+
+% Check-in/out : Sudent
+				RQ10 & Student able to check-in/check-out of tutor sessions  & 5 & 1 week\\ \hline	
+
+% Safety checker
+				RQ13 & Alert administrator if need for safety warning  & 4 & 1 week \\ \hline	
+
+% Payment
+				RQ12 & Payments  & 3 & 1 week \\ \hline	
+
+
+	
+\end{longtable}
+}
+%SPRINT 1
+%Week1
+\section{SPRINT 1}
+\subsubsection{Scrum meeting 0}
+\textbf{Date: 2016-07-21}\\
+\textbf{Main topic of discussion:}Project Ideas\\
+\textbf{Points to be addressed and notes:}\\
+Group pitched ideas for the project. Brainstormed some practical implementation for the Software Design project. 
+\textbf{Follow up:}\\
+Idea decided upon: Create and Android Application to help students find appropriate titors, and allow tutors to find students to tutor within the University of Witwatersrand. 
+\subsubsection{Summary of the week's meetings and contributions}
+\textbf{Points addressed:}
+\begin{itemize}
+\item Topic decided
+\item Worked on proposal
+\item Elect scrum master
+\end{itemize}
+\textbf{Achievements by various contributors:}
+\begin{itemize}
+\item Draw up a propsal document (Krupa)
+\end{itemize}
+
+%Week2
+\subsubsection{Scrum meeting 1}
+\textbf{Date:2016-07-28}\\
+\textbf{Main topic of discussion:}\\
+Finalising an overview of the application\\
+\textbf{Points to be addressed and notes:}\\
+Discussed how application will be ustilised and work-flow of FndMeTutor and documentation for Sprint 1.\\
+\textbf{Sprint 1 targets:} \\
+\begin{itemize}
+\item Submit a proposal for our project.
+\item Sketch UI
+\item Sketch corresposding database
+\item Set-up Git Account
+\item Find suitable Web service for database
+\item Implement database
+\item Implement Login and Registration
+\item Design logo
+\item Documentation: Requirements Analysis Document
+\end{itemize}
+
+\subsubsection{Summary of the week's meetings and contributions}
+\textbf{Points addressed:} \\
+Details of App. Discuss documentation for Sprint 1.
+\textbf{Achievements by various contributors:}
+\begin{itemize}
+\item Submitted a proposal for our project.
+\item Sketch UI (Team)
+\item Sketch corresposding database (Team)
+\item Set-up Git Account (Shaneel)
+\item Find suitable Web service for database (Jared)
+\item Implement database (Jared)
+\item Implement Login and Registration (Jadon)
+\item Design logo (Jadon)
+\item Documentation: Requirements Analysis Document (Shaneel and Krupa)
+\end{itemize}
+%Week3
+\subsubsection{Scrum meeting 2}
+\textbf{Date:2016-08-04}\\
+\textbf{Main topic of discussion:}\\
+Implemenation for Sprint 1. Review what targets fo Sprint 1.\\
+\textbf{Points to be addressed and notes:}\\
+Discussed our progress and tragets/achievements for sprint 1.\\
+\textbf{Sprint 1 targets still to complete:} \\
+\begin{itemize}
+\item Changes to login and registration
+\item Documentation: Requirements Analysis Document
+\end{itemize}
+\subsubsection{Summary of the week's meetings and contributions}
+\textbf{Points addressed:} \\
+Get ready for Sprint 1 review meeting.
+\textbf{Achievements by various contributors:}
+\begin{itemize}
+\item Changes to login and registration (Jadon and Jared)
+\item Documentation: Requirements Analysis Document (Shaneel and Krupa)
+\item Minutes of meeting and agenda for review meeting 1 (Krupa)
+\end{itemize}
+
+%Week 4
+\subsubsection{Sprint Review 1}
+\textbf{Date:2016-08-12}\\
+\textbf{Points to be addressed and notes as suggested by Dr van Zyl during meeting:}\\
+\begin{itemize}
+\item 
+\item Documentation: Requirements Analysis Document - ammendments to be made for requirements
+\item Documentation: Software Architecture Document - to do
+\item Application: change login, such that username not required (simplify login)
+\end{itemize} 
+
+
+%SPRINT 2
+\section{SPRINT 2}
+\subsubsection{Scrum meeting 2}
+dummy text
+\subsubsection{Scrum meeting 3}
+dummy text
+\subsubsection{Sprint Review 2}
+dummy text
+
+\end{document}
