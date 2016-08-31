@@ -8,6 +8,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.EventLogTags;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +24,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class HomeFragment extends Fragment {
@@ -52,6 +59,27 @@ public class HomeFragment extends Fragment {
                 startActivity(requestTutor);
             }
         });
+
+
+        //Handle the card and recycle view
+
+        RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv);
+        rv.setHasFixedSize(true);
+        rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+
+
+        Event event = new Event("Complex Analysis","Flower Hall","1 October","8am", R.drawable.session);
+        event.initializeData();
+
+
+
+
+
+
+
+        CardViewAdapter adapter = new CardViewAdapter(event.events);
+        rv.setAdapter(adapter);
 
 
 

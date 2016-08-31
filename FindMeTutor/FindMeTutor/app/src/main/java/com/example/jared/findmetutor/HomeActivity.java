@@ -53,6 +53,9 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
         drawerFragment.setDrawerListener(this);
 
         // display the first navigation drawer view on app launch
+        Bundle bundle = new Bundle();
+        bundle.putString("str","String");
+
         displayView(0);
 
 
