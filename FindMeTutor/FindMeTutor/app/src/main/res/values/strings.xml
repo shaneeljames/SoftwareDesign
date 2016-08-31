@@ -14,6 +14,7 @@
 
     <string name="btn_log_in">Log In</string>
     <string name="btn_register">Register</string>
+    <string name="btn_request">Request</string>
 
     <string name="err_msg_name">Enter your Full name</string>
     <string name="err_msg_Fname">Enter your First name</string>
@@ -42,5 +43,16 @@
     <string name="title_friends">Friends</string>
     <string name="title_home">Home</string>
     <string name="title_Logout">Log Out</string>
+
+    <string-array name="android_dropdown_arrays">
+        <item>Choose subject</item>
+        <item>Basic Analysis</item>
+        <item>Multivariable Calculus</item>
+        <item>Applied Mathematics</item>
+        <item>Machine Learning</item>
+        <item>Parallel Computing</item>
+        <item>Software Design</item>
+        <item>Complex Analysis</item>
+    </string-array>
 
 </resources>
