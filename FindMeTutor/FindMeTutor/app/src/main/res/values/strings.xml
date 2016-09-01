@@ -28,7 +28,7 @@
 
     <string name="nav_item_home">Home</string>
     <string name="nav_item_friends">Friends</string>
-    <string name="nav_item_notifications">Messages</string>
+    <string name="nav_item_notifications">Settings</string>
     <string name="nav_item_logout">Log Out</string>
 
     <!-- navigation drawer item labels  -->
@@ -43,6 +43,7 @@
     <string name="title_friends">Friends</string>
     <string name="title_home">Home</string>
     <string name="title_Logout">Log Out</string>
+    <string name="title_Settings">Settings</string>
 
     <string-array name="android_dropdown_arrays">
         <item>Choose subject</item>
@@ -54,5 +55,6 @@
         <item>Software Design</item>
         <item>Complex Analysis</item>
     </string-array>
+    <string name="title_activity_tutor__home">tutor_Home</string>
 
 </resources>
