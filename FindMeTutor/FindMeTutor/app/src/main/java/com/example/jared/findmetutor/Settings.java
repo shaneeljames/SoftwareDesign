@@ -23,6 +23,8 @@ public class Settings {
     }
 
 
+
+
     // This method creates an ArrayList that has three Person objects
     public void initializeData(){
         set = new ArrayList<>();

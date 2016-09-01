@@ -14,6 +14,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
 
 public class SettingsFragment extends Fragment {
@@ -42,16 +43,24 @@ public class SettingsFragment extends Fragment {
             }
         });
 
-        RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv);
+        RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rvSettings);
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        Settings sets = new Settings("Test", R.drawable.help);
+        Settings sets = new Settings("h", 0);
         sets.initializeData();
+
 
 
         ListViewAdapter adapter = new ListViewAdapter(sets.set);
         rv.setAdapter(adapter);
+
+
+        //ListViewAdapter adapter = new ListViewAdapter(sets.set);
+
+        //rv.setListAdapter(new ArrayAdapter<String>(this, android.R.layout.sett, this.directoryEntries));
+
+        //rv.setAdapter(adapter);
 
         // Inflate the layout for this fragment
         return rootView;
