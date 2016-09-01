@@ -14,9 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class MessagesFragment extends Fragment {
+public class SettingsFragment extends Fragment {
 
-    public MessagesFragment() {
+    public SettingsFragment() {
         // Required empty public constructor
     }
 
@@ -29,7 +29,7 @@ public class MessagesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_messages, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
 
         FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener(){
