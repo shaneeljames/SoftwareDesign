@@ -25,14 +25,23 @@ import android.content.Intent;
 /**
  * Created by jared on 2016/09/02.\
  * Use following command to call, execute the next activity on post, the String Result contains the json string containing all subjects in the Subject Table.
+ * Input a student id and receive all subjects related to that student, by inputing a blank string you receive all subjects in the subject table.
+ * Example input a student id and you will get the subjects related to that student id from the Student_Subject table. Input "" and you will receive all subjects listed in the subjects table.
  * Command to use is below.
  * getsubject connect2server = new getsubject(this);
    connect2server.execute();
+ Returns null if the student number does not exist in the Student_Subject Table.
 
  */
 public class getsubject extends AsyncTask<String, String, String> {
     Activity parent;
     String result = "";
+    String StudentID;
+
+    public getsubject(Activity par, String student_id){
+        parent = par;
+        StudentID = student_id;
+    }
 
     public getsubject(Activity par){
         parent = par;
@@ -43,12 +52,13 @@ public class getsubject extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://52.35.36.20/getsubject.php");
+            url = new URL("http://52.35.36.20/get_subject.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         Map<String,Object> parameter = new LinkedHashMap<>();
+        parameter.put("StudentID", StudentID);
 
         StringBuilder postData = new StringBuilder();
         for (Map.Entry<String,Object> param : parameter.entrySet()) {
@@ -120,7 +130,6 @@ public class getsubject extends AsyncTask<String, String, String> {
         }else{
             //If they're in the DB then login to the Home page
             Toast.makeText(parent.getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-
             startActivity(parent);
         }
 
