@@ -24,7 +24,8 @@
             android:name=".tutoride.tutor_Home"
             android:label="@string/title_activity_tutor__home"
             android:theme="@style/MyMaterialTheme" />
-        <activity android:name=".SubjectSettings"></activity>
+        <activity android:name=".SubjectSettingsActivity" />
+        <activity android:name=".AddSubsActivity"></activity>
     </application>
 
 </manifest>

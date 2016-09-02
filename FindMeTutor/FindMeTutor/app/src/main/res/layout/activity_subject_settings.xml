@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    tools:context="com.example.jared.findmetutor.SubjectSettings">
+    tools:context="com.example.jared.findmetutor.SubjectSettingsActivity">
 
     <include
         android:id="@+id/toolbar"
@@ -31,6 +31,7 @@
 
 
         <LinearLayout
+            android:id="@+id/linlay"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -44,7 +45,23 @@
         </LinearLayout>
 
 
+
+
+
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/adSub"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Subjets"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:gravity="center"/>
+
+
 
 
 

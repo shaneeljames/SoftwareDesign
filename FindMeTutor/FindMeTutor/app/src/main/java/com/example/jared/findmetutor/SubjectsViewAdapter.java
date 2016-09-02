@@ -67,7 +67,7 @@ public class SubjectsViewAdapter extends RecyclerView.Adapter<SubjectsViewAdapte
 
              /*   if(i ==0) //Selected subjects card
                 {
-                    Intent goToSubjects = new Intent(context,SubjectSettings.class);
+                    Intent goToSubjects = new Intent(context,SubjectSettingsActivity.class);
                     context.startActivity(goToSubjects);
                 }*/
             }
