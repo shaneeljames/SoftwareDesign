@@ -60,7 +60,7 @@ public class addtotutor_student extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://52.35.36.20/addtutor_student.php");
+            url = new URL("http://52.35.36.20/add_tutor_student.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
