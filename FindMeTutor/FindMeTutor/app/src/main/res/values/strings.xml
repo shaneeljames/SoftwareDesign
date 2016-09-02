@@ -44,6 +44,7 @@
     <string name="title_home">Home</string>
     <string name="title_Logout">Log Out</string>
     <string name="title_Settings">Settings</string>
+    <string name="stdNum">Student Number</string>
 
     <string-array name="android_dropdown_arrays">
         <item>Choose subject</item>

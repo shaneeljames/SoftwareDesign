@@ -28,7 +28,7 @@ public class Settings {
     // This method creates an ArrayList that has three Person objects
     public void initializeData(){
         set = new ArrayList<>();
-        set.add(new Settings( "My Subjects", R.drawable.bookss));
+        set.add(new Settings( "My Subjects", R.drawable.booksss));
         set.add(new Settings( "Account", R.drawable.gear));
         set.add(new Settings( "Help", R.drawable.help));
 

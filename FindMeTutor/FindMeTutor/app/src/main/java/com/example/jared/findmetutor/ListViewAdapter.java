@@ -1,5 +1,6 @@
 package com.example.jared.findmetutor;
 
+import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -31,11 +33,13 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.EventV
     }
 
     List<Settings> set;
+    Context context;
 
 
 
-    ListViewAdapter(List<Settings> events){
+    ListViewAdapter(List<Settings> events, Context context){
         this.set = events;
+        this.context = context;
     }
 
     @Override
@@ -51,9 +55,16 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.EventV
     }
 
     @Override
-    public void onBindViewHolder(EventViewHolder eventViewHolder, int i) {
+    public void onBindViewHolder(final EventViewHolder eventViewHolder, final int i) {
         eventViewHolder.setting.setText( set.get(i).sName.toString());
         eventViewHolder.icon.setImageResource(set.get(i).photoId);
+
+        eventViewHolder.lv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Index position is: "+ i+" "+ eventViewHolder.setting.getText().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

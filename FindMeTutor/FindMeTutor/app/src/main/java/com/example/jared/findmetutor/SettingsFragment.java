@@ -52,7 +52,7 @@ public class SettingsFragment extends Fragment {
 
 
 
-        ListViewAdapter adapter = new ListViewAdapter(sets.set);
+        ListViewAdapter adapter = new ListViewAdapter(sets.set, this.getContext());
         rv.setAdapter(adapter);
 
 

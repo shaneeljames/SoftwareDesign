@@ -22,9 +22,9 @@ import android.widget.Toast;
 public class  RegisterActivity extends AppCompatActivity {
 
     private String firstName,lastName, email, number, password,ConfirmPassword;
-    private String firstName2,lastName2, email2, number2, password2,ConfirmPassword2;
-    private EditText inputFirstName,inputLastName, inputEmail, inputNumber, inputPassword,inputConfirmPassword;
-    private TextInputLayout inputLayoutFName, inputLayoutLName, inputLayoutEmail, inputLayoutNumber, inputLayoutPass,inputLayoutCPass;
+    private String firstName2,lastName2, email2, number2, password2,ConfirmPassword2, stdNum;
+    private EditText inputFirstName,inputLastName, inputEmail, inputNumber, inputPassword,inputConfirmPassword, studentNumber;
+    private TextInputLayout inputLayoutFName, inputLayoutLName, inputLayoutEmail, inputLayoutNumber, inputLayoutPass,inputLayoutCPass, inputStudentNumber ;
     private Button btnRegister;
     private String test;
 
@@ -44,6 +44,7 @@ public class  RegisterActivity extends AppCompatActivity {
          inputLayoutNumber = (TextInputLayout) findViewById(R.id.input_layout_number) ;
          inputLayoutPass = (TextInputLayout) findViewById(R.id.input_layout_password);
          inputLayoutCPass = (TextInputLayout) findViewById(R.id.input_layout_passwordConfirm);
+         inputStudentNumber =(TextInputLayout) findViewById(R.id.input_layout_stdNum);
 
         //Get EditText objects
          inputFirstName = (EditText) findViewById(R.id.input_Firstname);
@@ -51,7 +52,8 @@ public class  RegisterActivity extends AppCompatActivity {
          inputEmail = (EditText) findViewById(R.id.input_email);
          inputNumber = (EditText) findViewById(R.id.input_Number);
          inputPassword = (EditText) findViewById(R.id.input_password);
-        inputConfirmPassword =(EditText) findViewById(R.id.input_passwordConfirm);
+         inputConfirmPassword =(EditText) findViewById(R.id.input_passwordConfirm);
+         studentNumber = (EditText) findViewById(R.id.stdNum);
 
 
         //Get Strings from those objects
@@ -61,6 +63,7 @@ public class  RegisterActivity extends AppCompatActivity {
          number = inputNumber.getText().toString();
          password = inputPassword.getText().toString();
          ConfirmPassword = inputConfirmPassword.getText().toString();
+         stdNum = studentNumber.getText().toString();
 
 
         inputFirstName.addTextChangedListener(new RegisterActivity.MyTextWatcher(inputFirstName));
@@ -70,7 +73,7 @@ public class  RegisterActivity extends AppCompatActivity {
         inputConfirmPassword.addTextChangedListener(new RegisterActivity.MyTextWatcher(inputConfirmPassword));
 
         //get button object
-         btnRegister = (Button) findViewById(R.id.btn_register);
+        btnRegister = (Button) findViewById(R.id.btn_register);
 
 
         //Submit form when login is clicked
@@ -129,12 +132,12 @@ public class  RegisterActivity extends AppCompatActivity {
         {
 
 
-            String sNum = getStdNum(inputEmail.getText().toString());
-            register connect2server = new register(this, firstName2,lastName2, number2,sNum, email2,password2 );
+           // String sNum = getStdNum(inputEmail.getText().toString());
+            register connect2server = new register(this, firstName2,lastName2, number2,stdNum, email2,password2 );
             connect2server.execute();
 
             Toast.makeText(getApplicationContext(), "Thank You for registering!", Toast.LENGTH_SHORT).show();
-            Toast.makeText(getApplicationContext(), "StudentNum : " +sNum, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "StudentNum : " +stdNum, Toast.LENGTH_SHORT).show();
             Intent logInAct = new Intent(RegisterActivity.this, LoginActivity.class);
             RegisterActivity.this.startActivity(logInAct);
         }
