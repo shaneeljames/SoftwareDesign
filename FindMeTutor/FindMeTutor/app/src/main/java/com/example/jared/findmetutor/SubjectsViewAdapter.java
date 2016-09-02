@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,58 +17,59 @@ import java.util.List;
  * Created by Jadon on 30-Aug-16.
  */
 
-public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.EventViewHolder> {
+public class SubjectsViewAdapter extends RecyclerView.Adapter<SubjectsViewAdapter.EventViewHolder> {
 
     public static class EventViewHolder extends RecyclerView.ViewHolder {
         CardView lv;
-        TextView setting;
+        TextView subject;
         ImageView icon;
 
         EventViewHolder(View itemView) {
             super(itemView);
-            lv = (CardView) itemView.findViewById(R.id.cv2);
-            setting = (TextView)itemView.findViewById(R.id.settingTxt);
+            lv = (CardView) itemView.findViewById(R.id.cv_subjects);
+            subject = (TextView)itemView.findViewById(R.id.subjectTxt);
             icon = (ImageView)itemView.findViewById(R.id.icon);
         }
     }
 
-    List<Settings> set;
+    List<Subjects> list;
     Context context;
 
 
 
-    ListViewAdapter(List<Settings> events, Context context){
-        this.set = events;
+    SubjectsViewAdapter(List<Subjects> events, Context context){
+        this.list = events;
         this.context = context;
     }
 
     @Override
     public int getItemCount() {
-        return set.size();
+        return list.size();
     }
 
     @Override
     public EventViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.settings_listview, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.subjects_cardview, viewGroup, false);
         EventViewHolder pvh = new EventViewHolder(v);
         return pvh;
     }
 
     @Override
     public void onBindViewHolder(final EventViewHolder eventViewHolder, final int i) {
-        eventViewHolder.setting.setText( set.get(i).sName.toString());
-        eventViewHolder.icon.setImageResource(set.get(i).photoId);
+        eventViewHolder.subject.setText( list.get(i).subject.toString());
+        eventViewHolder.icon.setImageResource(list.get(i).icon);
 
+        //handle onclick here
         eventViewHolder.lv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Index position is: "+ i+" "+ eventViewHolder.setting.getText().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Index position is: "+ i+" "+ eventViewHolder.subject.getText().toString(), Toast.LENGTH_SHORT).show();
 
-                if(i ==0) //Selected subjects card
+             /*   if(i ==0) //Selected subjects card
                 {
                     Intent goToSubjects = new Intent(context,SubjectSettings.class);
                     context.startActivity(goToSubjects);
-                }
+                }*/
             }
         });
     }
