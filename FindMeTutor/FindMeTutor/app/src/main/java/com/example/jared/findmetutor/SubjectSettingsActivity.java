@@ -52,7 +52,7 @@ public class SubjectSettingsActivity extends AppCompatActivity implements AsyncR
         SharedPreferences myprefs =  getSharedPreferences("user", MODE_PRIVATE);
         String id= myprefs.getString("student_id", null);
 
-        Toast.makeText(getApplicationContext(), "11 "+id, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), "11 "+id, Toast.LENGTH_SHORT).show();
 
 
         connect2server = new getsubject(this, id, list);

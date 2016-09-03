@@ -39,7 +39,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/colorAccent"
-                    android:entries="@array/android_dropdown_arrays" />
+                    />
 
             <TextView
                 android:id="@+id/selectDate"

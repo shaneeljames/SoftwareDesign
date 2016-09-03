@@ -1,12 +1,14 @@
 package com.example.jared.findmetutor;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -14,8 +16,13 @@ import android.widget.Toast;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
 
+import java.util.ArrayList;
+import java.util.List;
 
-public class RequestActivity extends AppCompatActivity {
+import javax.security.auth.Subject;
+
+
+public class RequestActivity extends AppCompatActivity implements AsyncResponse {
 
     Toolbar toolbar;
     Spinner spinner1;
@@ -27,6 +34,10 @@ public class RequestActivity extends AppCompatActivity {
 
     int month;
 
+    List<Subjects> list = new ArrayList<Subjects>();
+    getsubject connect2server;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +46,16 @@ public class RequestActivity extends AppCompatActivity {
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         toolbar.setTitle("Request Tutor");
 
-        spinner1 = (Spinner) findViewById(R.id.spinner);
-        spinner1.setOnItemSelectedListener(new ItemSelectedListener());
+
+
+        SharedPreferences myprefs =  getSharedPreferences("user", MODE_PRIVATE);
+        String id= myprefs.getString("student_id", null);
+
+        connect2server = new getsubject(this, id, list);
+        connect2server.delegate = this;
+        connect2server.execute();
+
+
 
         datePicker = (DatePicker) findViewById(R.id.datePicker);
 
@@ -53,6 +72,33 @@ public class RequestActivity extends AppCompatActivity {
         });
 
 
+
+    }
+
+    @Override
+    public void processFinish(String output){
+        List<Subjects> curr = connect2server.getList();
+        String [] listA = new String[curr.size()];
+       // String [] listA = null;
+        //this.list = connect2server.in;
+        for(int i=0;i<curr.size();i++)
+        {
+            //Subjects cur =  connect2server.;
+           listA[i] =curr.get(i).subject+ " - "+ curr.get(i).code;
+        }
+
+
+       // Toast.makeText(getApplicationContext(), "Login Successful "+listA[1], Toast.LENGTH_SHORT).show();
+       spinner1 = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listA);
+        spinner1.setAdapter(adapter);
+        spinner1.setOnItemSelectedListener(new ItemSelectedListener());
+
+
+         /*SubjectsViewAdapter adapter = new SubjectsViewAdapter(connect2server.getList(), this.getApplicationContext());
+        rv.setAdapter(adapter);*/
+        //Here you will receive the result fired from async class
+        //of onPostExecute(result) method.
 
     }
 
