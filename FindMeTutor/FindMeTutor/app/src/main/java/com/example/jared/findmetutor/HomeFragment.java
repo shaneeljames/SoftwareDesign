@@ -78,7 +78,7 @@ public class HomeFragment extends Fragment {
 
 
 
-        CardViewAdapter adapter = new CardViewAdapter(event.events);
+        CardViewAdapter adapter = new CardViewAdapter(event.events, this.getContext());
         rv.setAdapter(adapter);
 
 

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,10 +21,10 @@ import android.widget.Toast;
 
 public class  RegisterActivity extends AppCompatActivity {
 
-    private String firstName,lastName, email, number, password,ConfirmPassword, securityQ, answer;
-    private String firstName2,lastName2, email2, number2, password2,ConfirmPassword2, securityQ2, answer2;
-    private EditText inputFirstName,inputLastName, inputEmail, inputNumber, inputPassword,inputConfirmPassword, inputSecurityQ, inputAnswer;
-    private TextInputLayout inputLayoutFName, inputLayoutLName, inputLayoutEmail, inputLayoutNumber, inputLayoutPass,inputLayoutCPass, inputLayoutSecurityQ, inputLayoutAnswer;
+    private String firstName,lastName, email, number, password,ConfirmPassword;
+    private String firstName2,lastName2, email2, number2, password2,ConfirmPassword2, stdNum;
+    private EditText inputFirstName,inputLastName, inputEmail, inputNumber, inputPassword,inputConfirmPassword, studentNumber;
+    private TextInputLayout inputLayoutFName, inputLayoutLName, inputLayoutEmail, inputLayoutNumber, inputLayoutPass,inputLayoutCPass, inputStudentNumber ;
     private Button btnRegister;
     private String test;
 
@@ -43,8 +44,7 @@ public class  RegisterActivity extends AppCompatActivity {
          inputLayoutNumber = (TextInputLayout) findViewById(R.id.input_layout_number) ;
          inputLayoutPass = (TextInputLayout) findViewById(R.id.input_layout_password);
          inputLayoutCPass = (TextInputLayout) findViewById(R.id.input_layout_passwordConfirm);
-         inputLayoutSecurityQ = (TextInputLayout) findViewById(R.id.input_layout_SecurityQ);
-         inputLayoutAnswer = (TextInputLayout) findViewById(R.id.input_layout_answer);
+         inputStudentNumber =(TextInputLayout) findViewById(R.id.input_layout_stdNum);
 
         //Get EditText objects
          inputFirstName = (EditText) findViewById(R.id.input_Firstname);
@@ -52,9 +52,9 @@ public class  RegisterActivity extends AppCompatActivity {
          inputEmail = (EditText) findViewById(R.id.input_email);
          inputNumber = (EditText) findViewById(R.id.input_Number);
          inputPassword = (EditText) findViewById(R.id.input_password);
-        inputConfirmPassword =(EditText) findViewById(R.id.input_passwordConfirm);
-         inputSecurityQ = (EditText) findViewById(R.id.input_securityQ);
-         inputAnswer = (EditText) findViewById(R.id.input_Answer);
+         inputConfirmPassword =(EditText) findViewById(R.id.input_passwordConfirm);
+         studentNumber = (EditText) findViewById(R.id.stdNum);
+
 
         //Get Strings from those objects
          firstName = inputFirstName.getText().toString();
@@ -63,8 +63,8 @@ public class  RegisterActivity extends AppCompatActivity {
          number = inputNumber.getText().toString();
          password = inputPassword.getText().toString();
          ConfirmPassword = inputConfirmPassword.getText().toString();
-         securityQ = inputSecurityQ.getText().toString();
-         answer = inputAnswer.getText().toString();
+         stdNum = studentNumber.getText().toString();
+
 
         inputFirstName.addTextChangedListener(new RegisterActivity.MyTextWatcher(inputFirstName));
         inputLastName.addTextChangedListener(new RegisterActivity.MyTextWatcher(inputLastName));
@@ -73,7 +73,7 @@ public class  RegisterActivity extends AppCompatActivity {
         inputConfirmPassword.addTextChangedListener(new RegisterActivity.MyTextWatcher(inputConfirmPassword));
 
         //get button object
-         btnRegister = (Button) findViewById(R.id.btn_register);
+        btnRegister = (Button) findViewById(R.id.btn_register);
 
 
         //Submit form when login is clicked
@@ -131,15 +131,25 @@ public class  RegisterActivity extends AppCompatActivity {
         if(validateFName() && validateLName() && validateEmail() && validatePassword() && validateConfirmPassword())
         {
 
-            register connect2server = new register(this, firstName2,lastName2, number2, email2,password2, inputSecurityQ.getText().toString().trim(),inputAnswer.getText().toString().trim(), "Student");
+
+           // String sNum = getStdNum(inputEmail.getText().toString());
+            register connect2server = new register(this, firstName2,lastName2, number2,stdNum, email2,password2 );
             connect2server.execute();
 
             Toast.makeText(getApplicationContext(), "Thank You for registering!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "StudentNum : " +stdNum, Toast.LENGTH_SHORT).show();
             Intent logInAct = new Intent(RegisterActivity.this, LoginActivity.class);
             RegisterActivity.this.startActivity(logInAct);
         }
 
 
+    }
+
+    public  String getStdNum(String emai)
+    {
+        int index = emai.indexOf("@");
+        String sub = emai.substring(0, index);
+        return sub;
     }
 
 

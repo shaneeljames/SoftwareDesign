@@ -117,11 +117,11 @@ public class login extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result) {
         //Handle Result
       if(result.equals("null")){
-      Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful", Toast.LENGTH_SHORT).show();
+      Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful "+result, Toast.LENGTH_SHORT).show();
 
       }else{
           //If they're in the DB then login to the Home page
-      Toast.makeText(parent.getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
+      Toast.makeText(parent.getApplicationContext(), "Login Successful "+result+" Sucess", Toast.LENGTH_SHORT).show();
 
           startActivity(parent);
       }
@@ -138,6 +138,7 @@ public class login extends AsyncTask<String, String, String> {
         String pass = Password;
         return pass;
     }
+
 
 }
 

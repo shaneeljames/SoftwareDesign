@@ -9,14 +9,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
 
-public class MessagesFragment extends Fragment {
+public class SettingsFragment extends Fragment {
 
-    public MessagesFragment() {
+    public SettingsFragment() {
         // Required empty public constructor
     }
 
@@ -29,7 +32,7 @@ public class MessagesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_messages, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
 
         FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener(){
@@ -39,6 +42,25 @@ public class MessagesFragment extends Fragment {
                 startActivity(requestTutor);
             }
         });
+
+        RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rvSettings);
+        rv.setHasFixedSize(true);
+        rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        Settings sets = new Settings("h", 0);
+        sets.initializeData();
+
+
+
+        ListViewAdapter adapter = new ListViewAdapter(sets.set, this.getContext());
+        rv.setAdapter(adapter);
+
+
+        //ListViewAdapter adapter = new ListViewAdapter(sets.set);
+
+        //rv.setListAdapter(new ArrayAdapter<String>(this, android.R.layout.sett, this.directoryEntries));
+
+        //rv.setAdapter(adapter);
 
         // Inflate the layout for this fragment
         return rootView;
