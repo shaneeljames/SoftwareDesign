@@ -34,14 +34,6 @@ public class SettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
 
-        FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent requestTutor = new Intent(getActivity(),RequestActivity.class);
-                startActivity(requestTutor);
-            }
-        });
 
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rvSettings);
         rv.setHasFixedSize(true);

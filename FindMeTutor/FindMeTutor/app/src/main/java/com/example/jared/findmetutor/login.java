@@ -3,6 +3,7 @@ package com.example.jared.findmetutor;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.TextView;
@@ -22,6 +23,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import android.content.Intent;
 
+import static android.os.ParcelFileDescriptor.MODE_WORLD_READABLE;
+
 /**
  * Created by jared on 2016/08/04.
  */
@@ -31,6 +34,8 @@ public class login extends AsyncTask<String, String, String> {
     String Password;
 
     String result = "";
+
+    static String out;
 
     public login(Activity par, String email, String password){
         parent = par;
@@ -117,19 +122,22 @@ public class login extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result) {
         //Handle Result
       if(result.equals("null")){
-      Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful "+result, Toast.LENGTH_SHORT).show();
+      Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful ", Toast.LENGTH_SHORT).show();
 
       }else{
           //If they're in the DB then login to the Home page
-      Toast.makeText(parent.getApplicationContext(), "Login Successful "+result+" Sucess", Toast.LENGTH_SHORT).show();
+            //this.result = result;
+          //Toast.makeText(parent.getApplicationContext(), "Login Successful "+result, Toast.LENGTH_SHORT).show();
 
-          startActivity(parent);
+          Intent goHome = new Intent(parent, HomeActivity.class);
+          goHome.putExtra("user", result);
+          parent.startActivity(goHome);
       }
 
     }
 
     public static void startActivity(Context context) {
-        context.startActivity(new Intent(context, HomeActivity.class));
+        context.startActivity(new Intent(context, HomeActivity.class).putExtra("user", out));
     }
 
     //Use this method to get stuff from the Login request claass by just making an object when needed and calling getStuff();

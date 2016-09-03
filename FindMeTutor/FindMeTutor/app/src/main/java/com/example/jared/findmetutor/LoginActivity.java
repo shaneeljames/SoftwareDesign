@@ -1,5 +1,6 @@
 package com.example.jared.findmetutor;
 
+import android.content.SharedPreferences;
 import android.widget.Toast;
 
 import android.annotation.SuppressLint;
@@ -31,10 +32,14 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputLayout inputLayoutName, inputLayoutEmail, inputLayoutPassword;
     private Button btnLogin;
 
+    SharedPreferences myprefs;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
 
         //get and assign toolbar entered information
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -64,6 +69,7 @@ public class LoginActivity extends AppCompatActivity {
         email= inputEmail.getText().toString();
         password = inputPassword.getText().toString();
 
+
         //Submit form when login is clicked
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +77,8 @@ public class LoginActivity extends AppCompatActivity {
                 submitForm();
             }
         });
+
+
 
         //go to Register page if Register TextView Object is clicked
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -106,17 +114,13 @@ public class LoginActivity extends AppCompatActivity {
         if( validateEmail() && validatePassword())
         {
             int test ;
-          //  Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show(); shows thank you
-            //login connect2server = new login(this, login_email, login_password);
-            //connect2server.execute();
-
-            getsubject connect2server = new getsubject(this, "12");
+            Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show();// shows thank you
+            login connect2server = new login(this, login_email, login_password);
             connect2server.execute();
 
             //get passsword from login Class
            // Toast.makeText(getApplicationContext(), connect2server.getStuff() , Toast.LENGTH_SHORT).show();
 
-           // LoginActivity.this.startActivity(home);
         }
 
 

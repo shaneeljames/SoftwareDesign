@@ -8,17 +8,38 @@
     <RelativeLayout
         android:id="@+id/nav_header_container"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_height="200dp"
         android:layout_alignParentTop="true"
         android:background="@color/colorPrimary">
 
         <ImageView
+            android:id="@+id/iv"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:src="@drawable/ic_profile"
             android:scaleType="fitCenter"
             android:layout_centerInParent="true" />
 
+        <TextView
+            android:id="@+id/nameTxt"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv"
+            android:paddingTop="5dp"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:text="Hello"/>
+        <TextView
+            android:id="@+id/creditsTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameTxt"
+            android:paddingTop="1dp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorAccent"
+            android:textSize="15dp"
+            android:text="3 Credits"/>
     </RelativeLayout>
 
 

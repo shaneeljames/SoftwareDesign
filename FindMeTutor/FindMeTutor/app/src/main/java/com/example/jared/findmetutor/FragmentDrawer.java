@@ -1,6 +1,7 @@
 package com.example.jared.findmetutor;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -28,6 +29,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.os.ParcelFileDescriptor.MODE_WORLD_READABLE;
+
 
 public class FragmentDrawer extends Fragment {
 
@@ -40,6 +43,9 @@ public class FragmentDrawer extends Fragment {
     private View containerView;
     private static String[] titles = null;
     private FragmentDrawerListener drawerListener;
+
+    String nme;
+    String cred;
 
     public FragmentDrawer() {
 
@@ -75,6 +81,25 @@ public class FragmentDrawer extends Fragment {
                              Bundle savedInstanceState) {
         // Inflating view layout
         View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+
+        //Set Name and amount Credits Left
+        TextView nameT = (TextView)layout.findViewById(R.id.nameTxt);
+        TextView credits = (TextView)layout.findViewById(R.id.creditsTxt);
+
+/*        SharedPreferences myprefs= getActivity().getSharedPreferences("user",Context.MODE_PRIVATE);
+        String student_fName= myprefs.getString("student_fname", null);
+        String student_lName= myprefs.getString("student_lname", null);
+
+        String fullName = student_fName + " "+ student_lName;
+
+        String balance = myprefs.getString("student_current_balance",null);
+
+        nameT.setText(fullName);
+        credits.setText(balance);*/
+
+
+
+
         recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
 
         adapter = new NavigationDrawerAdapter(getActivity(), getData());
