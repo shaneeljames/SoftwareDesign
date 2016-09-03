@@ -76,6 +76,7 @@ public class LoginActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent regAct = new Intent(LoginActivity.this, RegisterActivity.class);
                 //regAct.putExtra() send stuff to regActivity
                 LoginActivity.this.startActivity(regAct);
@@ -106,7 +107,10 @@ public class LoginActivity extends AppCompatActivity {
         {
             int test ;
           //  Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show(); shows thank you
-            login connect2server = new login(this, login_email, login_password);
+            //login connect2server = new login(this, login_email, login_password);
+            //connect2server.execute();
+
+            getsubject connect2server = new getsubject(this, "12");
             connect2server.execute();
 
             //get passsword from login Class

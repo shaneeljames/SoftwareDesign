@@ -23,19 +23,36 @@ import java.util.Map;
 import android.content.Intent;
 
 /**
- * Created by jared on 2016/08/04.
+ * All tested and working to add a tutor_subject entry, run the command below and it will execute, it adds a new entry based on what you feed into it. Run your next activity in the on post method.
+ * Created by jared on 2016/09/02.
+ *addtotutor_student connect2server = new addtotutor_student(this, "719238", "719238","5","jare50","10","02 September 2016","Complete","Description");
+  connect2server.execute();
+
  */
-public class login extends AsyncTask<String, String, String> {
+public class addtotutor_student extends AsyncTask<String, String, String> {
+
     Activity parent;
-    String Email;
-    String Password;
+    String TutorID;
+    String StudentID;
+    String SubjectID;
+    String Amount;
+    String Time;
+    String Date;
+    String Status;
+    String Description;
 
     String result = "";
 
-    public login(Activity par, String email, String password){
+    public addtotutor_student(Activity par, String tutorID, String studentID, String subjectID, String amount, String time, String date, String status,String description){
         parent = par;
-        Email = email;
-        Password = password;
+        TutorID =  tutorID;
+        StudentID = studentID;
+        SubjectID = subjectID;
+        Amount = amount;
+        Time = time;
+        Date = date;
+        Status = status;
+        Description = description;
     }
     @Override
     protected String doInBackground(String... params) {
@@ -43,14 +60,20 @@ public class login extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://52.35.36.20/login.php");
+            url = new URL("http://52.35.36.20/add_tutor_student.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         Map<String,Object> parameter = new LinkedHashMap<>();
-        parameter.put("Email", Email);
-        parameter.put("Password", Password);
+        parameter.put("TutorID", TutorID);
+        parameter.put("StudentID", StudentID);
+        parameter.put("SubjectID", SubjectID);
+        parameter.put("Amount", Amount);
+        parameter.put("Time", Time);
+        parameter.put("Date", Date);
+        parameter.put("Status", Status);
+        parameter.put("Description", Description);
 
         StringBuilder postData = new StringBuilder();
         for (Map.Entry<String,Object> param : parameter.entrySet()) {
@@ -116,29 +139,20 @@ public class login extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         //Handle Result
-      if(result.equals("null")){
-      Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful "+result, Toast.LENGTH_SHORT).show();
+        if(result.equals("null")){
+            Toast.makeText(parent.getApplicationContext(), "Add Data Unsuccessful", Toast.LENGTH_SHORT).show();
 
-      }else{
-          //If they're in the DB then login to the Home page
-      Toast.makeText(parent.getApplicationContext(), "Login Successful "+result+" Sucess", Toast.LENGTH_SHORT).show();
+        }else{
+            //If they're in the DB then login to the Home page
+            Toast.makeText(parent.getApplicationContext(), "Add Data Successful", Toast.LENGTH_SHORT).show();
 
-          startActivity(parent);
-      }
+        }
 
     }
 
     public static void startActivity(Context context) {
         context.startActivity(new Intent(context, HomeActivity.class));
     }
-
-    //Use this method to get stuff from the Login request claass by just making an object when needed and calling getStuff();
-    public String getStuff()
-    {
-        String pass = Password;
-        return pass;
-    }
-
 
 }
 

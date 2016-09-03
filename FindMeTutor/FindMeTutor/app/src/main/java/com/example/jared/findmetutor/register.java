@@ -26,7 +26,8 @@ public class register extends AsyncTask<String, String, String> {
     String Firstname;
     String Lastname;
     String Contact_Number;
-    String Email;
+    String email;
+    String StudentNumber;
     String Password;
     String Security_question;
     String Answer;
@@ -34,16 +35,15 @@ public class register extends AsyncTask<String, String, String> {
 
     String result = "";
 
-    public register(Activity par, String first_name, String last_name, String contact_number, String email, String password, String security_question, String answer, String tutor_student){
+    public register(Activity par, String first_name, String last_name, String contact_number, String studentNumber, String student_email, String password){
         parent = par;
         Firstname = first_name;
         Lastname = last_name;
         Contact_Number = contact_number;
-        Email = email;
+        StudentNumber = studentNumber;
+        email = student_email;
         Password = password;
-        Security_question = security_question;
-        Answer = answer;
-        Tutor_student = tutor_student;
+
     }
     @Override
     protected String doInBackground(String... params) {
@@ -60,11 +60,9 @@ public class register extends AsyncTask<String, String, String> {
         parameter.put("Name", Firstname);
         parameter.put("Surname", Lastname);
         parameter.put("Contactnumber", Contact_Number);
-        parameter.put("Email", Email);
+        parameter.put("StudentNumber", StudentNumber);
+        parameter.put("Email", email);
         parameter.put("Password", Password);
-        parameter.put("Securityquestion", Security_question);
-        parameter.put("Answer", Answer);
-        parameter.put("Tutorstudent", Tutor_student);
 
         StringBuilder postData = new StringBuilder();
         for (Map.Entry<String,Object> param : parameter.entrySet()) {
