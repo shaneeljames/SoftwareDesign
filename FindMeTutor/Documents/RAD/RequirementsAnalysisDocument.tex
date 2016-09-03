@@ -28,10 +28,19 @@ Shaneel James-718840
 \\Nivek Ranjith - 802119
 \end{center}
 
-\newpage
 
+\newpage
 %TABLE OF CONTENTS
 \tableofcontents
+\newpage
+
+
+\section{\textbf{Executive Summary}}
+\begin{flushleft}
+The problem that we face is that students are in need of extra lessons and tutorials outside of standard lessons provided by the university. We propose a system that can connect students in search of tutors.
+
+The results of the requirements analysis are documented below. This document completely describes the system in terms of the requirements. This document serves as a contextual basis between the client and the developer.
+\end{flushleft}
 \newpage
 %INTRODUCTION
 \section{INTRODUCTION}
@@ -41,7 +50,7 @@ The purpose of the FindMeTutor application is to provide a convenient means for 
 \end{flushleft}
 \subsubsection{Scope of the system}
 \begin{flushleft}
-Our team, working on the FindMeTutor application, envisions a successful product to be an Android Application which will be at a students's disposal in order to improve their grades and achieve their academic dreams. With limited resources, a stringent budget and capped time, we aim to execute this task in an economical fashion.\\
+Our team, working on the FindMeTutor application, envisions a successful product to be an Android Application which will be at a students disposal in order to improve their grades and achieve their academic dreams. With limited resources, a stringent budget and capped time, we aim to execute this task in an economical fashion.\\
 This goal will be achieved by making use of agile methodology. We will be able to set short term targets to achieve deliverables within sprints, with a long term goal being to present the FindMeTutor Android Application. 
 \end{flushleft}
 \subsubsection{Objective and success criteria of the project}
@@ -110,28 +119,26 @@ Describes the high-level functionality of the system\\
 			\textbf{Requirement} & \textbf{Functional Requirement} & \textbf{Use Case}
 			
 			\\ \hline RQ1.1 & The system shall allow a student to register  & UC-CS \\ \hline 
-			RQ1.2 & The system shall allow a student to update their account & UC-US \\ \hline  
+			RQ1.2 & The system shall allow a student to update their account eg update password& UC-US \\ \hline  
 			RQ1.3 & The system shall allow a student to view their account details  & UC-VS \\ \hline 
 			RQ1.4 & The system shall allow a student to mark their account as deleted & UC-DS  \\ \hline 
 %Sprint 2
-			RQ1.5 & The system shall allow a student who has forgotten their password to change their password & UC-US \\ \hline	
 			
 			
 			RQ2.1 & The system shall allow a tutor to register & UC-CT \\ \hline
-			RQ2.2 & The system shall allow a tutor to update their account  & UC-UT \\ \hline
+			RQ2.2 & The system shall allow a tutor to update their account eg password update & UC-UT \\ \hline
 			RQ2.3 & The system shall allow a tutor to view their account details & UC-VT \\ \hline
 			RQ2.4 & The system shall allow a tutor to mark their account as deleted & UC-DT \\ \hline  
 %Sprint 2
-			RQ2.5 & The system shall allow a tutor who has forgotten their password to change their password & UC-UT \\ \hline	
 						
 			RQ3.1 & The system shall allow a administrator to update a student account & UC-US \\ \hline  
 			RQ3.2 & The system shall allow a administrator to view a student account details  & UC-VS \\ \hline 
 			RQ3.3 & The system shall allow a administrator to mark a student as deleted & UC-DS  \\ \hline 
-			RQ3.4 & The system shall allow a administrator to update a tutor account  & UC-UT \\ \hline
+			RQ3.4 & The system shall allow a administrator to update a tutor account eg update password & UC-UT \\ \hline
 			RQ3.5 & The system shall allow a administrator to view a tutor account details & UC-VT \\ \hline
 			RQ3.6 & The system shall allow a administrator to mark a tutor account as deleted & UC-DT \\ \hline
 %Sprint 2: Requirements
-			RQ3.7 & The system shall allow an administrator  who has forgotten their password to change their password & UC-UA \\ \hline	
+			 \hline	
 % Ask if we have the password under update
 			
 % Create Administrator
@@ -171,7 +178,8 @@ Describes the high-level functionality of the system\\
 				RQ10.1 & The system shall allow a tutor to check-in  & UC-CI \\ 
 \hline	
 				RQ10.2 & The system shall allow a tutor to check-out  & UC-CO \\ \hline
-				
+				RQ11 & The system shall allow a student to add funds\\ \hline
+			
 			
 \end{longtable}
 }
@@ -194,7 +202,7 @@ Our team has implemented the agile methodology in order to obtain our final goal
 The UI will be made in Android studio. The set up will be simple and neat. The app will be used by students who will be using the app in order to search for a tutor which is suitable to tutor, hence, with this intention, to prevent furthering the overwhelmed feeling, the app will not be clutered and simple to use. The 'user-friendly' experience provided by the UI, will allow the user to interact with the app in a natural and intuitive way. \\
 Each user's home page will be customized to the particular topics in which they are enrolled in or signed up to tutor, with respect to whether they are students or tutors. \\
 \textbf{3.3.7 Packaging}\\
-Andoid studio for development\\
+Android studio for development\\
 Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 %\textbf{3.3.8 Legal}\\
 }
@@ -210,64 +218,79 @@ For instance, there is a student - Joe Soap - who is currently doing his  3rd ye
 \textbf{Use cases}	\\		
 			Create Student					UC-CS
 			\\Update Student 				UC-US
-			\\View Student      			UC-VS
+			\\Read Student      			UC-VS
 			\\Archive Student				UC-DS
 			\\Create Tutor					UC-CT
 			\\Update Tutor					UC-UT
-			\\View Tutor					UC-VT
+			\\Read Tutor					UC-VT
 			\\Archive Tutor					UC-DT
-			\\Create System Administartor	UC-CA
-			\\Update Student 				UC-UA
-			\\View Student      			UC-VA
-			\\Archive Student				UC-DA		
+			\\Create Administrator	UC-CA %sprint 3
+			\\Update Administrator 				UC-UA %sprint 3
+			\\Read Administrator      			UC-VA %sprint 3
+			\\Archive Administrator				UC-DA %sprint 3
 			\\Request Tutor					UC-RT
 			\\Choose Tutor					UC-CT
-			\\Create Event					UC-CE
-			\\Update Event					UC-UE
-			\\View Event					UC-VE
-			\\Archive Event					UC-DE
+			\\Create Event					UC-CE %sprint 3
+			\\Update Event					UC-UE %sprint 3
+			\\Read Event					UC-VE %sprint 3
+			\\Archive Event					UC-DE %sprint 3
 			\\Rate Tutor					UC-R
 			\\Accept Request				UC-AR
 			\\Archive Request				UC-DR
 			\\Check-in						UC-CI
 			\\Check-out						UC-CO
+			\\Add Subject					UC-CSb %add requirements 
+			\\Archive Subject				UC-DSb
+			
 			
 		{
 		\centering
 		
+		Note: We have classed the database as a component of our system//
+		%student selects student
 		\begin{tabular}{| l | l| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CS: Create Student}} \\ \hline
 			Related Requirements: & RQ1.1 \\ \hline
 			Initiating actor: & Student \\ \hline
 			Actor goal: & To register on FindMeTutor\\ \hline
-			Participating Actors: & External Database System\\ \hline
+			Participating Actors: N/A\\ \hline
 			Preconditions: & N/A\\ \hline
 			Postconditions: & Student is created\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
 			\multicolumn{2}{|p{15cm}|}{1. Student indicates sign up}\\
 			\multicolumn{2}{|p{15cm}|}{2. System displays student sign up form}\\
-			\multicolumn{2}{|p{15cm}|}{3. Student enters demographic data, faculty registration details, security answer and password}	\\		
-			\multicolumn{2}{|p{15cm}|}{4. System sends demographic data, faculty registration details, security answer and password to external database system}\\
-			\multicolumn{2}{|l|}{5. Student is created}	
+			\multicolumn{2}{|p{15cm}|}{3. Student enters demographic data,student number, email address, contact number and password}\\		
+			\multicolumn{2}{|p{15cm}|}{4. System stores demographic data,student number, email address, contact number and password}\\
+			\multicolumn{2}{|l|}{5. System sends confirmation email to student}\\
+			\multicolumn{2}{|l|}{6. Student indicates confirmation}	\\
+			\multicolumn{2}{|l|}{7. Student is created}
 			\\ \hline		
-		\end{tabular}
+			\end{tabular}
+		
+		
+		%Sprint 3
 		
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-US: Update Student}} \\ \hline
 			Related Requirements: & RQ1.2, RQ3.1 \\ \hline
 			Initiating actor: & Student or Administrator \\ \hline
-			Actor goal: & To update student demographic data, faculty registration details, security answer or password\\ \hline
-			Participating Actors: & External Database System\\ \hline
-			Preconditions: & Student exists\\ \hline
+			Actor goal: & Update student demographic data,student number,student email address, student contact number or student password\\ \hline
+			Participating Actors: & N/A\\ \hline
+			Preconditions: & Student exists and is not marked as deleted\\ \hline
 			Postconditions: & Student is updated\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
 			\multicolumn{2}{|p{15cm}|}{1. Student/Administrator requests to update Student}\\
-			\multicolumn{2}{|p{15cm}|}{2. System displays form to update Student}\\
-			\multicolumn{2}{|p{15cm}|}{3. Student/Administrator enters demographic data, faculty registration details or security answer}	\\		
-			\multicolumn{2}{|p{15cm}|}{4. System sends demographic data, faculty registration details, security answer or password to external database system}\\
-			\multicolumn{2}{|l|}{5. Student is updated}	
+			\multicolumn{2}{|p{15cm}|}{2. System reads Student}\\
+			\multicolumn{2}{|p{15cm}|}{3. System displays form to update Student}\\
+			\multicolumn{2}{|p{15cm}|}{4. Student/Administrator enters student demographic data,student number,student email address, student contact number or student password}	\\		
+			\multicolumn{2}{|p{15cm}|}{5. System stores student demographic data,student number,student email address, student contact number or student password}\\
+			\multicolumn{2}{|l|}{6. Student is updated}	
 			\\ \hline		
 		\end{tabular}
+		
+		
+		
+		% indicate tutor, student number
 		
 		\begin{tabular}{| l | l| }
 		
@@ -275,86 +298,107 @@ For instance, there is a student - Joe Soap - who is currently doing his  3rd ye
 			Related Requirements: & RQ2.1 \\ \hline
 			Initiating actor: & Tutor \\ \hline
 			Actor goal: & To register on FindMeTutor\\ \hline
-			Participating Actors: & External Database System\\ \hline
+			Participating Actors: & N/A\\ \hline
 			Preconditions: & N/A\\ \hline
 			Postconditions: & Tutor is created\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
 			\multicolumn{2}{|p{15cm}|}{1. Tutor indicates sign up}\\
 			\multicolumn{2}{|p{15cm}|}{2. System displays tutor sign up form}\\
-			\multicolumn{2}{|p{15cm}|}{3. Tutor enters demographic data, courses tutored, security answer and password}	\\		
-			\multicolumn{2}{|p{15cm}|}{4. System sends demographic data, courses tutored details, security answer and to external database system}\\
-			\multicolumn{2}{|l|}{5. Tutor is created}	
+			\multicolumn{2}{|p{15cm}|}{3. Tutor enters demographic data, tutor email address, tutor contact number and tutor password}	\\		
+			\multicolumn{2}{|p{15cm}|}{4. System stores demographic data, tutor email address, tutor contact number and tutor password}\\
+			\multicolumn{2}{|l|}{5. System sends confirmation email to Tutor}\\
+			\multicolumn{2}{|l|}{6. Tutor indicates confirmation}	\\
+			\multicolumn{2}{|l|}{7. Tutor is created}	
 			\\ \hline		
 		\end{tabular}
-		
+
+
+
+		%sprint 3
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-UT: Update Tutor}} \\ \hline
 			Related Requirements: & RQ2.2, RQ3.4 \\ \hline
 			Initiating actor: & Tutor or Administrator \\ \hline
-			Actor goal: & To update Tutor demographic data, courses tutored, security answer or password\\ \hline
-			Participating Actors: & External Database System\\ \hline
+			Actor goal: & To update Tutor demographic data, tutor email address, tutor contact number and tutor password\\ \hline
+			Participating Actors: & N/A\\ \hline
 			Preconditions:& Tutor exists\\ \hline
 			Postconditions: & Tutor is updated\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
 			\multicolumn{2}{|p{15cm}|}{1. Tutor/Administrator requests to update Tutor}\\
-			\multicolumn{2}{|p{15cm}|}{2. System displays form to update Tutor}\\
-			\multicolumn{2}{|p{15cm}|}{3. Tutor/Administrator enters demographic data, faculty registration details or security answer}	\\		
-			\multicolumn{2}{|p{15cm}|}{4. System sends demographic data, faculty registration details, security answer or password to external database system}\\
-			\multicolumn{2}{|l|}{5. Tutor is updated}	
+			\multicolumn{2}{|p{15cm}|}{2. System reads Tutor}\\
+			\multicolumn{2}{|p{15cm}|}{3. System displays form to update Tutor}\\
+			\multicolumn{2}{|p{15cm}|}{4. Tutor/Administrator enters Tutor demographic data, tutor email address, tutor contact number or tutor password}	\\		
+			\multicolumn{2}{|p{15cm}|}{5. System stores tutor demographic data, tutor email address, tutor contact number or tutor password}\\
+			\multicolumn{2}{|l|}{6. Tutor is updated}	
 			\\ \hline		
 		\end{tabular}
 
+
+
+		%sprint 3
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-DS: Archive Student}} \\ \hline
 			Related Requirements: & RQ1.4, RQ3.3 \\ \hline
 			Initiating actor: & Student or Administrator \\ \hline
 			Actor goal: & To delete Student\\ \hline
-			Participating Actors: & External Database System\\ \hline
+			Participating Actors: & N/A\\ \hline
 			Preconditions: &Student exists\\ \hline
 			Postconditions: & Student is Archived\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
 			\multicolumn{2}{|p{15cm}|}{1. Student/Administrator requests to delete Student}\\
-			\multicolumn{2}{|p{15cm}|}{2. System displays confirmation message}\\
-			\multicolumn{2}{|p{15cm}|}{3. Student/Administrator enters confirmation}	\\		
-			\multicolumn{2}{|p{15cm}|}{4. System sends archive Student signal to external database system}\\
-			\multicolumn{2}{|l|}{5. Student is archived}	
+			\multicolumn{2}{|p{15cm}|}{2. System reads Student}\\			
+			\multicolumn{2}{|p{15cm}|}{3. System displays confirmation message}\\
+			\multicolumn{2}{|p{15cm}|}{4. Student/Administrator enters confirmation}	\\		
+			\multicolumn{2}{|p{15cm}|}{5. System marks student as archived}\\
+			\multicolumn{2}{|l|}{6. Student is archived}	
 			\\ \hline		
 		\end{tabular}
-		
+
+
+
+		%sprint 3
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-DT: Archive Tutor}} \\ \hline
 			Related Requirements: & RQ2.4, RQ3.6 \\ \hline
 			Initiating actor: & Tutor or Administrator \\ \hline
 			Actor goal: & To delete Tutor\\ \hline
-			Participating Actors: & External Database System\\ \hline
+			Participating Actors: & N/A\\ \hline
 			Preconditions:& Tutor exists\\ \hline
 			Postconditions: & Tutor is Archived\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
 			\multicolumn{2}{|p{15cm}|}{1. Tutor/Administrator requests to delete Tutor}\\
 			\multicolumn{2}{|p{15cm}|}{2. System displays confirmation message}\\
-			\multicolumn{2}{|p{15cm}|}{3. Tutor/Administrator enters confirmation}	\\		
-			\multicolumn{2}{|p{15cm}|}{4. System sends archive Tutor signal to external database system}\\
-			\multicolumn{2}{|l|}{5. Tutor is archived}	
+			\multicolumn{2}{|p{15cm}|}{3. System reads Tutor}\\
+			\multicolumn{2}{|p{15cm}|}{4. Tutor/Administrator enters confirmation}	\\		
+			\multicolumn{2}{|p{15cm}|}{5. System marks Tutor as archived }\\
+			\multicolumn{2}{|l|}{6. Tutor is archived}	
 			\\ \hline		
 		\end{tabular}
+
+
+
 		
 		\begin{tabular}{| l | p{10cm}| }
-			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-VT: View Tutor}} \\ \hline
+			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-VT: Read Tutor}} \\ \hline
 			Related Requirements: & RQ2.3, RQ3.5 \\ \hline
 			Initiating actor: & Tutor or Administrator \\ \hline
 			Actor goal: & To view Tutor\\ \hline
-			Participating Actors: & External Database System\\ \hline
+			Participating Actors: & N/A\\ \hline
 			Preconditions:& Tutor exists\\ \hline
 			Postconditions: & Tutor is viewed\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
 			\multicolumn{2}{|p{15cm}|}{1. Tutor/Administrator requests to view Tutor}\\
-			\multicolumn{2}{|p{15cm}|}{2. System displays Tutor}\\
-			\multicolumn{2}{|l|}{3. Tutor is viewed}	
+			\multicolumn{2}{|p{15cm}|}{2. System reads tutor}\\
+			\multicolumn{2}{|p{15cm}|}{3. System displays Tutor}\\
+			\multicolumn{2}{|l|}{4. Tutor is viewed}	
 			\\ \hline		
 		\end{tabular}	
+
+
+
 		
 		\begin{tabular}{| l | p{10cm}| }
-			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-VS: View Student}} \\ \hline
+			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-VS: Read Student}} \\ \hline
 			Related Requirements: & RQ1.3, RQ3.2 \\ \hline
 			Initiating actor: & Student or Administrator \\ \hline
 			Actor goal: & To view Student\\ \hline
@@ -363,12 +407,40 @@ For instance, there is a student - Joe Soap - who is currently doing his  3rd ye
 			Postconditions: & Student is viewed\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
 			\multicolumn{2}{|p{15cm}|}{1. Student/Administrator requests to view Student}\\
-			\multicolumn{2}{|p{15cm}|}{2. System displays Student}\\
-			\multicolumn{2}{|l|}{3. Student is viewed}	
+			\multicolumn{2}{|p{15cm}|}{2. System reads Student}\\ 
+			\multicolumn{2}{|p{15cm}|}{3. System displays Student}\\
+			\multicolumn{2}{|l|}{4. Student is viewed}	
 			\\ \hline		
 		\end{tabular}	
-		
-		}
+
+%sprint two use cases
+
+\begin{tabular}{| l | p{10cm}| }
+			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-RT: Request Tutor}} \\ \hline
+			Related Requirements: & RQ5.1\\ \hline
+			Initiating actor: & Student\\ \hline
+			Actor goal: & To request a Tutor\\ \hline
+			Participating Actors: & Tutor\\ \hline
+			Preconditions: & Student exists, Student must be registered for one or more subjects, Tutor exists, Student has available funds\\ \hline
+			Postconditions: & Student requests Tutor\\ \hline
+			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
+			\multicolumn{2}{|p{15cm}|}{1. Student indicates that he/she wishes to request a tutor}\\
+			\multicolumn{2}{|p{15cm}|}{2. System reads Student}\\
+			\multicolumn{2}{|p{15cm}|}{If Student has no available funds or is not registered to a subject}\\
+			\multicolumn{2}{|p{15cm}|}{3. System displays message indicating that Student can not request a Tutor}\\			
+			\multicolumn{2}{|p{15cm}|}{Else if Student has available funds }	\\		
+			%\multicolumn{2}{|p{15cm}|}{3. System displays Student's registered subjects}\\
+			%\multicolumn{2}{|l|}{4. Student selects subject which he wishes to request a Tutor for}\\
+			\multicolumn{2}{|l|}{5. System prompts for date, time, description and subject of the tutorial}\\
+			\multicolumn{2}{|l|}{6. Student enters date, time and description and subject of the tutorial}\\
+			\multicolumn{2}{|p{15cm}|}{7. System prompts Tutors who tutor the subject the Student has indicated he wishes to request a tutor for}\\
+			\multicolumn{2}{|l|}{8. Tutors accept or reject System prompt}\\
+			\multicolumn{2}{|l|}{9. System displays Tutors who have accepted}\\
+			\multicolumn{2}{|l|}{10. Student selects a Tutor from the displayed Tutors}\\
+			\multicolumn{2}{|l|}{11. Tutor has been requested} 
+			\\ \hline		
+		\end{tabular}
+
 	\newpage	
 \subsubsection{Use case diagrams}
 \newpage
