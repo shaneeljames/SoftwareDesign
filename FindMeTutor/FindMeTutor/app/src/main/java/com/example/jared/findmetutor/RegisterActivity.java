@@ -133,7 +133,7 @@ public class  RegisterActivity extends AppCompatActivity {
 
 
            // String sNum = getStdNum(inputEmail.getText().toString());
-            register connect2server = new register(this, firstName2,lastName2, number2,stdNum, email2,password2 );
+            register connect2server = new register(this, firstName2,lastName2, number2,studentNumber.getText().toString(), email2,password2 );
             connect2server.execute();
 
             Toast.makeText(getApplicationContext(), "Thank You for registering!", Toast.LENGTH_SHORT).show();
