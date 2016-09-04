@@ -5,11 +5,14 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -89,7 +92,9 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
 
 
        // Toast.makeText(getApplicationContext(), "Login Successful "+listA[1], Toast.LENGTH_SHORT).show();
-       spinner1 = (Spinner) findViewById(R.id.spinner);
+
+
+        spinner1 = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listA);
         spinner1.setAdapter(adapter);
         spinner1.setOnItemSelectedListener(new ItemSelectedListener());
@@ -107,7 +112,14 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         String date = currentDate();
         String subj = getSubject();
 
-        Event ev = new Event(subj,"Temp Venue", date,time,R.drawable.session);
+        EditText desc = (EditText)findViewById(R.id.descriptionTxt);
+        String dsp = desc.getText().toString();
+
+        Toast.makeText(getApplicationContext(), date+" "+time +" "+subj+" "+dsp, Toast.LENGTH_SHORT).show();
+
+
+
+/*        Event ev = new Event(subj,"Temp Venue", date,time,R.drawable.session);
         //ev.addNewEvent();
 
         //Go to the homeActivity
@@ -129,7 +141,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         fragInfo.setArguments(bundle);
 
         Intent goHome = new Intent(this, HomeFragment.class);
-        startActivity(goHome);
+        startActivity(goHome);*/
 
 
 
