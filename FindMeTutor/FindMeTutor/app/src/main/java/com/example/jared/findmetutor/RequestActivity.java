@@ -138,10 +138,10 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         bundle.putString("time",time);
 
         HomeFragment fragInfo = new HomeFragment();
-        fragInfo.setArguments(bundle);
+        fragInfo.setArguments(bundle);*/
 
         Intent goHome = new Intent(this, HomeFragment.class);
-        startActivity(goHome);*/
+        startActivity(goHome);
 
 
 
