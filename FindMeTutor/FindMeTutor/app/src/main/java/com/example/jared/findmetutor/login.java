@@ -48,7 +48,7 @@ public class login extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://52.35.36.20/login.php");
+            url = new URL("http://neural.net16.net/student_login.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -127,7 +127,7 @@ public class login extends AsyncTask<String, String, String> {
       }else{
           //If they're in the DB then login to the Home page
             //this.result = result;
-          //Toast.makeText(parent.getApplicationContext(), "Login Successful "+result, Toast.LENGTH_SHORT).show();
+          //Toast.makeText(parent.getApplicationContext(), "Login Successful "+result, Toast.LENGTH_LONG).show();
 
           Intent goHome = new Intent(parent, HomeActivity.class);
           goHome.putExtra("user", result);

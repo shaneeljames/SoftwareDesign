@@ -63,7 +63,7 @@ public class getsubject extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://52.35.36.20/get_subject.php");
+            url = new URL("http://neural.net16.net/student_getsubjects.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
