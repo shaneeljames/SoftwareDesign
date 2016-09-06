@@ -191,18 +191,26 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         //get strings of first item
         String firstItem = String.valueOf(spinner1.getSelectedItem());
 
+
+
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+            curSelection = firstItem;
             if (firstItem.equals(String.valueOf(spinner1.getSelectedItem()))) {
                 // ToDo when first item is selected
+                Subjects getId = list.get(pos);
+                subjId = getId.subjID;
             } else {
                 Subjects getId = list.get(pos);
                 subjId = getId.subjID;
 
                 curSelection = parent.getItemAtPosition(pos).toString();
-                Toast.makeText(parent.getContext(), "You have selected : " + curSelection + "ID :"+subjId, Toast.LENGTH_LONG).show();
+
 
                 // Todo when item is selected by the user
+                Toast.makeText(parent.getContext(), "You have selected : " + curSelection + "ID :"+subjId, Toast.LENGTH_LONG).show();
             }
+
+
         }
 
         @Override
