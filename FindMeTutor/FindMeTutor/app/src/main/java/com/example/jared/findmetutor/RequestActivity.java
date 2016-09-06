@@ -36,6 +36,8 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     String curSelection;
 
     int month;
+    String id;
+    String subjId;
 
     List<Subjects> list = new ArrayList<Subjects>();
     getsubject connect2server;
@@ -52,7 +54,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
 
 
         SharedPreferences myprefs =  getSharedPreferences("user", MODE_PRIVATE);
-        String id= myprefs.getString("student_id", null);
+        id= myprefs.getString("student_id", null);
 
         connect2server = new getsubject(this, id, list);
         connect2server.delegate = this;
@@ -106,8 +108,18 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         //of onPostExecute(result) method.
 
     }
+    @Override
+    public  void processFinish2(String out){
+        Intent goHome = new Intent(this, HomeFragment.class);
+        startActivity(goHome);
+    }
 
     public void request(){
+        String tutor_id = "unconfirmed";
+        String student_id = id;
+        String subject_id = subjId;
+        String amount = "R100";
+
         String time = currentTime();
         String date = currentDate();
         String subj = getSubject();
@@ -116,6 +128,10 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         String dsp = desc.getText().toString();
 
         Toast.makeText(getApplicationContext(), date+" "+time +" "+subj+" "+dsp, Toast.LENGTH_SHORT).show();
+
+        requestSession session = new requestSession(this, tutor_id, student_id, subject_id, amount, date,time,dsp);
+        session.delegate=this;
+        session.execute();
 
 
 
@@ -140,8 +156,8 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         HomeFragment fragInfo = new HomeFragment();
         fragInfo.setArguments(bundle);*/
 
-        Intent goHome = new Intent(this, HomeFragment.class);
-        startActivity(goHome);
+       // Intent goHome = new Intent(this, HomeFragment.class);
+        //startActivity(goHome);
 
 
 
@@ -179,8 +195,11 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
             if (firstItem.equals(String.valueOf(spinner1.getSelectedItem()))) {
                 // ToDo when first item is selected
             } else {
+                Subjects getId = list.get(pos);
+                subjId = getId.subjID;
+
                 curSelection = parent.getItemAtPosition(pos).toString();
-                Toast.makeText(parent.getContext(), "You have selected : " + curSelection, Toast.LENGTH_LONG).show();
+                Toast.makeText(parent.getContext(), "You have selected : " + curSelection + "ID :"+subjId, Toast.LENGTH_LONG).show();
 
                 // Todo when item is selected by the user
             }

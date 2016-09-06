@@ -44,7 +44,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
 
         Intent intent = getIntent();
         String jsonString = intent.getStringExtra("user");
-        Toast.makeText(getApplicationContext(), "Login Successful "+jsonString, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getApplicationContext(), "Login Successful "+jsonString, Toast.LENGTH_SHORT).show();
 
         //conv json to strings
 
@@ -71,7 +71,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
             e.printStackTrace();
         }
 
-        Toast.makeText(getApplicationContext(), student_id+" fname: "+student_fname+student_password+student_email+student_contact_number, Toast.LENGTH_LONG).show();
+       // Toast.makeText(getApplicationContext(), student_id+" fname: "+student_fname+student_password+student_email+student_contact_number, Toast.LENGTH_LONG).show();
 
         //Set Shared prefrences so we can access usr data throughout activities
 

@@ -19,6 +19,7 @@ import static android.R.attr.data;
 
 public class Subjects {
 
+    String subjID;
     String subject;
     String code;
     int icon;
@@ -26,8 +27,9 @@ public class Subjects {
 
 
 
-    Subjects(String subj, String cd,int ic, Context context)// Subjects obj)
+    Subjects(String id, String subj, String cd,int ic, Context context)// Subjects obj)
     {
+        this.subjID = id;
         this.subject = subj;
         this.code = cd;
         this.icon = ic;

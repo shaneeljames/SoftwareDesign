@@ -45,6 +45,7 @@ public class getsubject extends AsyncTask<String, String, String> {
     Activity parent;
     String result = "";
     String StudentID;
+    String SubjectID;
     List<Subjects> in;
     public AsyncResponse delegate = null; //Notify when async is done
 
@@ -160,10 +161,11 @@ public class getsubject extends AsyncTask<String, String, String> {
 
                for (int i = 0; i < jsonArr.length(); i++) {
                    JSONObject jsObj = jsonArr.getJSONObject(i);
+                   SubjectID = jsObj.getString("subject_id");
                    name = jsObj.getString("subject_name");
                    code = jsObj.getString("subject_course_code");
                   // Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
-                   in.add(new Subjects(name, code, R.drawable.subj, parent));
+                   in.add(new Subjects(SubjectID, name, code, R.drawable.subj, parent));
                }
 
            } catch (JSONException e) {
