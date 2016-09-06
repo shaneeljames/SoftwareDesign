@@ -32,6 +32,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="30dp" />
 
+    <!-- Overlay that dims the screen -->
+
 
 
 

@@ -5,6 +5,7 @@ package com.example.jared.findmetutor;
  */
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -24,12 +25,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 public class HomeFragment extends Fragment {
+
+    SharedPreferences myprefs;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -55,8 +61,19 @@ public class HomeFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent requestTutor = new Intent(getActivity(),RequestActivity.class); //this is how to start an activity from a fragment
-                startActivity(requestTutor);
+                //get user info from sharedSettings
+                myprefs= getContext().getSharedPreferences("user", MODE_PRIVATE);
+                String balance= myprefs.getString("student_current_balance", null);
+
+                if(Integer.parseInt(balance)<=5)
+                {
+                    Toast.makeText(getContext(), "Insufficient Funds", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Intent requestTutor = new Intent(getActivity(),RequestActivity.class); //this is how to start an activity from a fragment
+                    startActivity(requestTutor);
+                }
+
             }
         });
 
@@ -71,10 +88,6 @@ public class HomeFragment extends Fragment {
 
         Event event = new Event("Complex Analysis","Flower Hall","1 October","8am", R.drawable.session);
         event.initializeData();
-
-
-
-
 
 
 

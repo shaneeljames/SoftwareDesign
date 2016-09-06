@@ -51,7 +51,7 @@ public class register extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://52.35.36.20/register.php");
+            url = new URL("http://neural.net16.net/student_register.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();

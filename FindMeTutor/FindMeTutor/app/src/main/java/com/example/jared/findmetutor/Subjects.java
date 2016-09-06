@@ -1,7 +1,17 @@
 package com.example.jared.findmetutor;
 
+import android.app.Activity;
+import android.content.Context;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.security.auth.Subject;
+
+import static android.R.attr.data;
 
 /**
  * Created by Jadon on 02-Sep-16.
@@ -10,20 +20,32 @@ import java.util.List;
 public class Subjects {
 
     String subject;
+    String code;
     int icon;
-    public List<Subjects> list;
+    Context context;
 
-    Subjects(String subj, int ic)
+
+
+    Subjects(String subj, String cd,int ic, Context context)// Subjects obj)
     {
         this.subject = subj;
+        this.code = cd;
         this.icon = ic;
+        this.context = context;
+       // this.subjectObj = obj;
+
     }
 
     public void initializeData(){
-        list = new ArrayList<>();
-        list.add(new Subjects( "Basic Analysis", R.drawable.subj));
-        list.add(new Subjects( "Software Design", R.drawable.subj));
-        list.add(new Subjects( "Hello Games", R.drawable.subj));
+
+//        list = new ArrayList<>();
+//        String name = null;
+
+
+
+
+
+
 
     }
 
