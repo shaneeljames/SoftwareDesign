@@ -137,7 +137,7 @@ public class  RegisterActivity extends AppCompatActivity {
             connect2server.execute();
 
             Toast.makeText(getApplicationContext(), "Thank You for registering!", Toast.LENGTH_SHORT).show();
-            Toast.makeText(getApplicationContext(), "StudentNum : " +stdNum, Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getApplicationContext(), "StudentNum : " +studentNumber., Toast.LENGTH_SHORT).show();
             Intent logInAct = new Intent(RegisterActivity.this, LoginActivity.class);
             RegisterActivity.this.startActivity(logInAct);
         }
