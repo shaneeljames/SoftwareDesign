@@ -1,5 +1,6 @@
 package com.example.tutor;
 
+import android.app.Activity;
 import android.content.Context;
 
 /**
@@ -20,7 +21,7 @@ public class Notifications {
     Context context;
 
 
-    Notifications(String subj, String cd, String d ,String t, String sn , String ss , String desc,int i, Context context)// Subjects obj)
+    Notifications(String subj, String cd, String d , String t, String sn , String ss , String desc, int i, Activity context)// Subjects obj)
     {
         this.subject = subj;
         this.code = cd;
