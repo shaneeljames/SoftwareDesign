@@ -115,16 +115,20 @@ public class login extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         //Handle Result
-      if(result.equals("null")){
-        Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful "+result, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(parent.getApplicationContext(), "Login test "+result.substring(1,2), Toast.LENGTH_SHORT).show();
+        String result1 = result.substring(1,2) ;
 
-      }else{
-          Toast.makeText(parent.getApplicationContext(), "Login Successful "+result, Toast.LENGTH_SHORT).show();
+        if(result1.equals("]")){
+             Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful ", Toast.LENGTH_SHORT).show();
 
-          Intent goHome = new Intent(parent, HomeActivity.class);
-          goHome.putExtra("user", result);
-          parent.startActivity(goHome);
-      }
+        }else{
+            Toast.makeText(parent.getApplicationContext(), "Login Successful "+result, Toast.LENGTH_SHORT).show();
+
+            Intent goHome = new Intent(parent, HomeActivity.class);
+            goHome.putExtra("user", result);
+            parent.startActivity(goHome);
+        }
+
 
     }
 
