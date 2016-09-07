@@ -2,7 +2,6 @@ package com.example.tutor;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
@@ -171,9 +170,15 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
                     studentName = jsObj.getString("student_fname");
                     studentSurname = jsObj.getString("student_lname");
                     description = jsObj.getString("description");
+<<<<<<< HEAD
                     Toast.makeText(parent.getApplicationContext(), studentName, Toast.LENGTH_SHORT).show();
+=======
+
+>>>>>>> refs/remotes/shaneeljames/master
                     in.add(new Notifications(subjectName,subjectCode,date,time,studentName,studentSurname,description,R.drawable.notify,parent));
                 }
+
+               // Toast.makeText(parent.getApplicationContext(), in.get(0).studentSurname, Toast.LENGTH_SHORT).show();
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -188,8 +193,9 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
     public List getList(){return in;}
 
    public static void startActivity(Context context) {
-        context.startActivity(new Intent(context, NotificationsFragment.class).putExtra("subject", out));
+        //context.startActivity(new Intent(context, NotificationsFragment.class).putExtra("subject", out));
     }
+
 
 }
 

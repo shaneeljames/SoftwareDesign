@@ -1,5 +1,6 @@
 package com.example.tutor;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -164,6 +165,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
 
     private void displayView(int position) {
         Fragment fragment = null;
+        Activity act = null;
         String title = getString(R.string.app_name);
         switch (position) {
             case 0:
@@ -179,7 +181,8 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
                 title = getString(R.string.title_Settings);
                 break;
             case 3:
-                fragment = new NotificationsFragment();
+                Intent noti = new Intent(HomeActivity.this, NotificationsActivity.class);
+                HomeActivity.this.startActivity(noti);
                 title = "Notifications";
 
 
