@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,14 +23,6 @@ import java.net.URLEncoder;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import android.content.Intent;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import static android.R.attr.name;
-import static android.R.id.list;
 
 /**
  * Created by jared on 2016/09/02.\
@@ -41,21 +35,31 @@ import static android.R.id.list;
  Returns null if the student number does not exist in the Student_Subject Table.
 
  */
-public class getsubject extends AsyncTask<String, String, String> {
+public class getSessions extends AsyncTask<String, String, String> {
     Activity parent;
     String result = "";
-    String StudentID;
-    String SubjectID;
-    List<Subjects> in;
+
+    String sessionID;
+    String tutorID;
+    String studentID;
+    String subjectID;
+    String subjectName;
+    String amount;
+    String date;
+    String time;
+    String desc;
+    String status;
+
+    List<Session> in;
     public AsyncResponse delegate = null; //Notify when async is done
 
-    public getsubject(Activity par, String student_id, List<Subjects> obj){
-        parent = par;
-        StudentID = student_id;
-        in = obj;
+    public getSessions(Activity par, String student_id, List<Session> obj){
+        this.parent = par;
+        this.studentID = student_id;
+        this.in = obj;
     }
 
-    public getsubject(Activity par){
+    public getSessions(Activity par){
         parent = par;
     }
     @Override
@@ -64,13 +68,13 @@ public class getsubject extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://neural.net16.net/student_getsubjects.php");
+            url = new URL("http://neural.net16.net/student_getsessions.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         Map<String,Object> parameter = new LinkedHashMap<>();
-        parameter.put("StudentID", StudentID);
+        parameter.put("StudentID", studentID);
 
         StringBuilder postData = new StringBuilder();
         for (Map.Entry<String,Object> param : parameter.entrySet()) {
@@ -136,7 +140,10 @@ public class getsubject extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         //Handle Result
-       if(result.equals("null")){
+        String temp = result.substring(1,2);
+        Toast.makeText(parent.getApplicationContext(), "Res " + result, Toast.LENGTH_SHORT).show();
+
+       if(temp.equals("]")){ // NULL result
             Toast.makeText(parent.getApplicationContext(), "No current subjects", Toast.LENGTH_SHORT).show();
 
         }else {
@@ -161,11 +168,18 @@ public class getsubject extends AsyncTask<String, String, String> {
 
                for (int i = 0; i < jsonArr.length(); i++) {
                    JSONObject jsObj = jsonArr.getJSONObject(i);
-                   SubjectID = jsObj.getString("subject_id");
-                   name = jsObj.getString("subject_name");
-                   code = jsObj.getString("subject_course_code");
+
+                   sessionID= jsObj.getString("tutor_student_id");
+                   tutorID = jsObj.getString("tutor_id");
+                   subjectName = jsObj.getString("subject_name");
+                   subjectID = jsObj.getString("subject_id");
+                   amount = jsObj.getString("amount");
+                   date = jsObj.getString("date");
+                   time = jsObj.getString("time");
+                   desc = jsObj.getString("description");
+                   status = jsObj.getString("status");
                   // Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
-                   in.add(new Subjects(SubjectID, name, code, R.drawable.subj, parent));
+                   in.add(new Session( sessionID, tutorID, subjectName,subjectID,amount,date,time, desc,status, R.drawable.session, parent ));
                }
 
            } catch (JSONException e) {

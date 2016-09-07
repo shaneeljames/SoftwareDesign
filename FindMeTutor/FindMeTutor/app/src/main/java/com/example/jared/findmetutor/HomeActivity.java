@@ -44,6 +44,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
 
         Intent intent = getIntent();
         String jsonString = intent.getStringExtra("user");
+       // Toast.makeText(getApplicationContext(), "Login Successful "+jsonString, Toast.LENGTH_SHORT).show();
 
         //conv json to strings
 
@@ -54,15 +55,14 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
             //Subjects pass = null;
             //Subjects subjects = new Subjects("h", 0, parent, pass);
 
-            JSONObject jsObj = jsonArr.getJSONObject(0);//get rood json obj
+                JSONObject jsObj = jsonArr.getJSONObject(0);//get rood json obj
                 student_id = jsObj.getString("student_id");
-                // Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
-                student_password = jsObj.getString("student_password");
-                student_lname = jsObj.getString("student_lname");
+                student_student_num = jsObj.getString("student_student_number");
                 student_fname = jsObj.getString("student_fname");
-                student_student_num = jsObj.getString("student_student_num");
+                student_lname = jsObj.getString("student_lname");
+                student_contact_number = jsObj.getString("student_contact_num");
                 student_email = jsObj.getString("student_email");
-                student_contact_number = jsObj.getString("student_contact_number");
+                student_password = jsObj.getString("student_password");
                 student_current_balance = jsObj.getString("student_current_balance");
 
 
@@ -71,7 +71,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
             e.printStackTrace();
         }
 
-        //Toast.makeText(getApplicationContext(), student_id+" fname: "+student_fname+student_password+student_email+student_contact_number, Toast.LENGTH_LONG).show();
+       // Toast.makeText(getApplicationContext(), student_id+" fname: "+student_fname+student_password+student_email+student_contact_number, Toast.LENGTH_LONG).show();
 
         //Set Shared prefrences so we can access usr data throughout activities
 

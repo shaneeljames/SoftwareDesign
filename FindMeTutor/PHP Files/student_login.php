@@ -2,7 +2,7 @@
 //Required for login
 require "conn.php";
 //Variable Names...
-$studentnumber = $_POST["StudentNumber"];
+$email = $_POST["Email"];
 $password = $_POST["Password"];
 
 
@@ -14,7 +14,7 @@ $password = $_POST["Password"];
 //$selected = mysql_select_db("findmetutor",$dbhandle) or die("Could not select findmetutor database");
 
 //execute the SQL query and return records
-$mysql_qry = "SELECT * FROM STUDENT_TBL WHERE student_student_number = '$studentnumber' and student_password = '$password'";
+$mysql_qry = "SELECT * FROM STUDENT_TBL WHERE student_email= '$email' AND student_password = '$password'";
 
 $rows = array();
 

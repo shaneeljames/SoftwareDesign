@@ -1,9 +1,14 @@
 <?php
 //Required for login
-require "conn.php";
+$db_name = "a6782245_FindMeT";
+$mysql_username = "a6782245_jadon";
+$mysql_password = "admin1234";
+$server_name = "mysql11.000webhost.com";
+$conn = mysqli_connect($server_name, $mysql_username, $mysql_password, $db_name);
+
 //Variable Names...
-$studentnumber = $_POST["StudentNumber"];
-$password = $_POST["Password"];
+
+$id = $_POST["StudentID"];
 
 
 //Connection to the database
@@ -14,7 +19,7 @@ $password = $_POST["Password"];
 //$selected = mysql_select_db("findmetutor",$dbhandle) or die("Could not select findmetutor database");
 
 //execute the SQL query and return records
-$mysql_qry = "SELECT * FROM STUDENT_TBL WHERE student_student_number = '$studentnumber' and student_password = '$password'";
+$mysql_qry = mysqli_query( $conn, "SELECT * FROM TUTOR_STUDENT_TBL WHERE student_id= '$id' ");
 
 $rows = array();
 

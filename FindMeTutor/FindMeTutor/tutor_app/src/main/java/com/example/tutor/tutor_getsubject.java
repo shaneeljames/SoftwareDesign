@@ -51,7 +51,7 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
     public tutor_getsubject(Activity par, String student_id , List<Notifications> obj){
         parent = par;
         TutorID = student_id;
-       in = obj ;
+        in = obj ;
     }
 
 
@@ -170,7 +170,11 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
                     studentName = jsObj.getString("student_fname");
                     studentSurname = jsObj.getString("student_lname");
                     description = jsObj.getString("description");
+<<<<<<< HEAD
+                    Toast.makeText(parent.getApplicationContext(), studentName, Toast.LENGTH_SHORT).show();
+=======
 
+>>>>>>> refs/remotes/shaneeljames/master
                     in.add(new Notifications(subjectName,subjectCode,date,time,studentName,studentSurname,description,R.drawable.notify,parent));
                 }
 

@@ -1,12 +1,7 @@
 package com.example.jared.findmetutor;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -21,26 +16,34 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import android.content.Intent;
-
-import static android.os.ParcelFileDescriptor.MODE_WORLD_READABLE;
 
 /**
  * Created by jared on 2016/08/04.
  */
-public class login extends AsyncTask<String, String, String> {
+public class requestSession extends AsyncTask<String, String, String> {
     Activity parent;
-    String Email;
-    String Password;
+    String tutor_id;
+    String student_id;
+    String subject_id;
+    String amount;
+    String date;
+    String time;
+    String description;
 
     String result = "";
 
-    static String out;
+    public AsyncResponse delegate = null;
 
-    public login(Activity par, String email, String password){
+    public requestSession(Activity par, String tid, String sid, String subjid, String amt, String dte, String tme, String desc){
         parent = par;
-        Email = email;
-        Password = password;
+        tutor_id = tid;
+        student_id = sid;
+        subject_id = subjid;
+        amount = amt;
+        date = dte;
+        time = tme;
+        description = desc;
+
     }
     @Override
     protected String doInBackground(String... params) {
@@ -48,14 +51,20 @@ public class login extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://neural.net16.net/student_login.php");
+            url = new URL("http://neural.net16.net/student_requestsession.php");
+
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         Map<String,Object> parameter = new LinkedHashMap<>();
-        parameter.put("Email", Email);
-        parameter.put("Password", Password);
+        parameter.put("TutorID", tutor_id);
+        parameter.put("StudentID", student_id);
+        parameter.put("SubjectID", subject_id);
+        parameter.put("Amount", amount);
+        parameter.put("Date", date);
+        parameter.put("Time", time);
+        parameter.put("Description",description);
 
         StringBuilder postData = new StringBuilder();
         for (Map.Entry<String,Object> param : parameter.entrySet()) {
@@ -121,32 +130,15 @@ public class login extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         //Handle Result
-      if(result.equals("null")){
-     // Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful ", Toast.LENGTH_SHORT).show();
+        if(result.equals("null")){
+            Toast.makeText(parent.getApplicationContext(), "Registration Unsuccessful "+result, Toast.LENGTH_SHORT).show();
 
-      }else{
-          //If they're in the DB then login to the Home page
-            //this.result = result;
-          //Toast.makeText(parent.getApplicationContext(), "Login Successful "+result, Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(parent.getApplicationContext(), "Session Request Successful! " +result, Toast.LENGTH_SHORT).show();
+        }
 
-          Intent goHome = new Intent(parent, HomeActivity.class);
-          goHome.putExtra("user", result);
-          parent.startActivity(goHome);
-      }
-
+        delegate.processFinish2(result);
     }
-
-    public static void startActivity(Context context) {
-        context.startActivity(new Intent(context, HomeActivity.class).putExtra("user", out));
-    }
-
-    //Use this method to get stuff from the Login request claass by just making an object when needed and calling getStuff();
-    public String getStuff()
-    {
-        String pass = Password;
-        return pass;
-    }
-
 
 }
 

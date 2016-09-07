@@ -35,7 +35,9 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     Button req;
     String curSelection;
 
-    int month;
+
+    String id;
+    String subjId;
 
     List<Subjects> list = new ArrayList<Subjects>();
     getsubject connect2server;
@@ -52,7 +54,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
 
 
         SharedPreferences myprefs =  getSharedPreferences("user", MODE_PRIVATE);
-        String id= myprefs.getString("student_id", null);
+        id= myprefs.getString("student_id", null);
 
         connect2server = new getsubject(this, id, list);
         connect2server.delegate = this;
@@ -106,8 +108,18 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         //of onPostExecute(result) method.
 
     }
+    @Override
+    public  void processFinish2(String out){
+        Intent goHome = new Intent(this, HomeFragment.class);
+        startActivity(goHome);
+    }
 
     public void request(){
+        String tutor_id = "unconfirmed";
+        String student_id = id;
+        String subject_id = subjId;
+        String amount = "R100";
+
         String time = currentTime();
         String date = currentDate();
         String subj = getSubject();
@@ -117,9 +129,13 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
 
         Toast.makeText(getApplicationContext(), date+" "+time +" "+subj+" "+dsp, Toast.LENGTH_SHORT).show();
 
+        requestSession session = new requestSession(this, tutor_id, student_id, subject_id, amount, date,time,dsp);
+        session.delegate=this;
+        session.execute();
 
 
-/*        Event ev = new Event(subj,"Temp Venue", date,time,R.drawable.session);
+
+/*        Session ev = new Session(subj,"Temp Venue", date,time,R.drawable.session);
         //ev.addNewEvent();
 
         //Go to the homeActivity
@@ -140,8 +156,8 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         HomeFragment fragInfo = new HomeFragment();
         fragInfo.setArguments(bundle);*/
 
-        Intent goHome = new Intent(this, HomeFragment.class);
-        startActivity(goHome);
+       // Intent goHome = new Intent(this, HomeFragment.class);
+        //startActivity(goHome);
 
 
 
@@ -159,15 +175,64 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     }
 
     public String currentTime() {
-        String mcurrentTime = "Time: " + timePicker.getCurrentHour() + ":" + timePicker.getCurrentMinute();
+        String mcurrentTime =  timePicker.getCurrentHour() + ":" + timePicker.getCurrentMinute();
         return mcurrentTime;
     }
 
     public String currentDate() {
         StringBuilder mcurrentDate = new StringBuilder();
-        month = datePicker.getMonth() + 1;
-        mcurrentDate.append("Date: " + month + "/" + datePicker.getDayOfMonth() + "/" + datePicker.getYear());
-        return mcurrentDate.toString();
+        int month = datePicker.getMonth() + 1;
+        String ret = datePicker.getDayOfMonth()+" "+getMonth(month) + " "+datePicker.getYear();
+        return ret;
+    }
+
+    public String getMonth(int month){
+        String calMonth="";
+
+        switch (month){
+            case 1:calMonth="January";
+                break;
+
+            case 2:calMonth="Feburary";
+                break;
+
+            case 3:calMonth="March";
+                break;
+
+            case 4:calMonth="April";
+                break;
+
+            case 5:calMonth="May";
+                break;
+
+            case 6:calMonth="June";
+                break;
+
+            case 7:calMonth="July";
+                break;
+
+            case 8:calMonth="August";
+                break;
+
+            case 9:calMonth="September";
+                break;
+
+            case 10:calMonth="October";
+                break;
+
+            case 11:calMonth="November";
+                break;
+
+            case 12:calMonth="December";
+                break;
+            default:calMonth=calMonth;
+                break;
+
+        }
+
+        return  calMonth;
+
+
     }
 
     public class ItemSelectedListener implements AdapterView.OnItemSelectedListener {
@@ -175,15 +240,26 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         //get strings of first item
         String firstItem = String.valueOf(spinner1.getSelectedItem());
 
+
+
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+            curSelection = firstItem;
             if (firstItem.equals(String.valueOf(spinner1.getSelectedItem()))) {
                 // ToDo when first item is selected
+                Subjects getId = list.get(pos);
+                subjId = getId.subjID;
             } else {
+                Subjects getId = list.get(pos);
+                subjId = getId.subjID;
+
                 curSelection = parent.getItemAtPosition(pos).toString();
-                Toast.makeText(parent.getContext(), "You have selected : " + curSelection, Toast.LENGTH_LONG).show();
+
 
                 // Todo when item is selected by the user
+                Toast.makeText(parent.getContext(), "You have selected : " + curSelection + "ID :"+subjId, Toast.LENGTH_LONG).show();
             }
+
+
         }
 
         @Override

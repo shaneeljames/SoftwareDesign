@@ -20,27 +20,42 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
     public static class EventViewHolder extends RecyclerView.ViewHolder {
         CardView cv;
-        TextView subName;
-        TextView venue;
+
+        String sessionID;
+        String tutorID;
+        String studentID;
+        String subjectID;
+
+
+        TextView subjectName;
+        TextView amount;
         TextView date;
         TextView time;
+        TextView desc;
+        TextView status;
+
         ImageView session;
 
         EventViewHolder(View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.cv);
-            subName = (TextView)itemView.findViewById(R.id.subject);
-            venue = (TextView)itemView.findViewById(R.id.venue);
+
+            subjectName = (TextView)itemView.findViewById(R.id.subject);
+            amount = (TextView)itemView.findViewById(R.id.amount);
             date = (TextView)itemView.findViewById(R.id.date);
             time = (TextView)itemView.findViewById(R.id.time);
+            desc = (TextView)itemView.findViewById(R.id.descTxt);
+            status = (TextView)itemView.findViewById(R.id.status);
+
+
             session = (ImageView)itemView.findViewById(R.id.session);
         }
     }
 
-    List<Event> events;
+    List<Session> events;
     Context context;
 
-    CardViewAdapter(List<Event> events, Context context){
+    CardViewAdapter(List<Session> events, Context context){
         this.events = events;
         this.context = context;
     }
@@ -59,10 +74,12 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
     @Override
     public void onBindViewHolder(EventViewHolder eventViewHolder, final int i) {
-        eventViewHolder.subName.setText(events.get(i).subname);
-        eventViewHolder.venue.setText(events.get(i).venue);
+        eventViewHolder.subjectName.setText(events.get(i).subjectName);
+        eventViewHolder.amount.setText(events.get(i).amount);
         eventViewHolder.date.setText(events.get(i).date);
         eventViewHolder.time.setText(events.get(i).time);
+        eventViewHolder.desc.setText(events.get(i).desc);
+        eventViewHolder.status.setText(events.get(i).status);
         eventViewHolder.session.setImageResource(events.get(i).photoId);
 
 
