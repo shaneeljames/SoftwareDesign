@@ -2,6 +2,7 @@ package com.example.tutor;
 
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,12 +11,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class NotificationsFragment extends Fragment {
+import java.util.ArrayList;
+import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
+
+public class NotificationsFragment extends Fragment implements tutor_AsyncResponse{
 
     public NotificationsFragment() {
         // Required empty public constructor
     }
 
+    List<Notifications> list = new ArrayList<Notifications>() ;
+    RecyclerView rv ;
+    tutor_getsubject connect2server ;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,25 +40,20 @@ public class NotificationsFragment extends Fragment {
 
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv);
         rv.setHasFixedSize(true);
-        rv.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-        Events_notifications event = new Events_notifications("test","test2","test3","test4",3,"hello","hello");
-        event.initializeData();
+        rv.setLayoutManager(new LinearLayoutManager(this.getActivity()));
 
 
+        SharedPreferences myprefs = this.getActivity().getSharedPreferences("user", MODE_PRIVATE) ;
+        String id = myprefs.getString("tutor_id",null) ;
 
-       // Bundle extras = getActivity().getIntent().getExtras();
-
-       // Bundle intent = getActivity().getIntent().getExtras();
-      //  String jsonString = intent.getString("subject");
-
-      //  Toast.makeText(NotificationsFragment.this.getActivity().getApplicationContext(),jsonString , Toast.LENGTH_SHORT).show();
+        connect2server = new tutor_getsubject((HomeActivity) this.getActivity(),id , list) ;
+        connect2server.delegate = this ;
+        connect2server.execute();
 
 
 
-
-        CardViewNotificationsAdapter adapter = new CardViewNotificationsAdapter(event.events, this.getContext());
-        rv.setAdapter(adapter);
+       // CardViewNotificationsAdapter adapter = new CardViewNotificationsAdapter(event.events, this.getContext());
+      //  rv.setAdapter(adapter);
 
 
 
@@ -69,5 +73,12 @@ public class NotificationsFragment extends Fragment {
     }
 
 
+    @Override
+    public void processFinish(String output) {
+
+        CardViewNotificationsAdapter adapter = new CardViewNotificationsAdapter(connect2server.getList(),this.getActivity().getApplicationContext()) ;
+
+
+    }
 }
 

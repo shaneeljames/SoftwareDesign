@@ -14,7 +14,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -101,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
         if( validateEmail() && validatePassword())
         {
             int test ;
-            Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show();
             login connect2server = new login(this, login_email, login_password);
             connect2server.execute();
         }
