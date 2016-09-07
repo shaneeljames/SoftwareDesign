@@ -1,6 +1,7 @@
 package com.example.tutor;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -28,7 +29,10 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
     private FragmentDrawer drawerFragment;
 
     String tutor_id, tutor_password, tutor_lname, tutor_fname, tutor_student_num, tutor_email, tutor_contact_num, tutor_current_balance;
-    String subject_name, subject_course_code ;
+
+    SharedPreferences myprefs;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,32 +77,10 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
             e.printStackTrace();
         }
 
+        myprefs=this.getSharedPreferences("user", MODE_PRIVATE) ;
+        myprefs.edit().putString("tutor_id", tutor_id).apply();
 
 
-        Toast.makeText(getApplicationContext(), "Test" + tutor_id, Toast.LENGTH_SHORT).show();
-
-        tutor_getsubject connect2server = new tutor_getsubject(this,tutor_id );
-        connect2server.execute();
-
-       // List<JSONObject> list = null;
-       //  tutor_getsubject connect2server1 = new tutor_getsubject(this,tutor_id,list) ;
-      //  connect2server1.execute();
-
-       // Toast.makeText(getApplicationContext(), "test blah "+ connect2server1.getStuff(), Toast.LENGTH_SHORT).show();
-
-
-      //  tutor_getsubject connect2server = new tutor_getsubject(this,tutor_id) ;
-       // connect2server.execute();
-
-       /* List<JSONObject> subject = connect2server.getList() ;
-        JSONObject test1 = null;
-        try {
-             test1 = subject.get(0).getJSONObject("subject_name") ; 
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        Toast.makeText(getApplicationContext(), "Subjects: "+ test1, Toast.LENGTH_SHORT).show();*/
 
 
         //set up nav and toolBar
