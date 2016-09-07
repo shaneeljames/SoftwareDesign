@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -33,24 +35,28 @@ import java.util.Map;
  Returns null if the student number does not exist in the Student_Subject Table.
 
  */
+
+//////Actually to get Notifications of student requests
+
 public class tutor_getsubject extends AsyncTask<String, String, String> {
     Activity parent;
     String result = "";
     String TutorID;
-    List<JSONObject> in;
+    List<Notifications> in;
 
-    //List<JSONObject> in;
+    public tutor_AsyncResponse delegate = null; //Notify when async is done
+
 
     static String out ;
 
-    public tutor_getsubject(HomeActivity par, String student_id){
+    public tutor_getsubject(HomeActivity par, String student_id , List<Notifications> obj){
         parent = par;
         TutorID = student_id;
-     //   in = obj ;
+       in = obj ;
     }
 
 
-    public tutor_getsubject(HomeActivity par){
+    public tutor_getsubject(Activity par){
         parent = par;
     }
     @Override
@@ -138,13 +144,18 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
 
             Toast.makeText(parent.getApplicationContext(), "making object: " + result, Toast.LENGTH_LONG).show();
 
-           /* try {
+            try {
 
                 JSONArray jsonArr = new JSONArray(result);
                 //Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
 
-                String name = "";
-                String code = "";
+                String subjectName = "";
+                String subjectCode="";
+                String date = "" ;
+                String time = "";
+                String studentName ;
+                String studentSurname ;
+                String description ;
 
 
                 //Subjects pass = null;
@@ -153,35 +164,32 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
 
                 for (int i = 0; i < jsonArr.length(); i++) {
                     JSONObject jsObj = jsonArr.getJSONObject(i);
-                    name = jsObj.getString("subject_name");
-                    code = jsObj.getString("subject_course_code");
-                    // Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
-                    in.add(new JSONObject((Map) jsObj));
+                    subjectName = jsObj.getString("subject_name");
+                    subjectCode = jsObj.getString("subject_course_code");
+                    date = jsObj.getString("date");
+                    time = jsObj.getString("time");
+                    studentName = jsObj.getString("student_fname");
+                    studentSurname = jsObj.getString("student_lname");
+                    description = jsObj.getString("description");
+                     Toast.makeText(parent.getApplicationContext(), studentName, Toast.LENGTH_SHORT).show();
+                    in.add(new Notifications(subjectName,subjectCode,date,time,studentName,studentSurname,description,R.drawable.notify,parent));
                 }
-
-              Toast.makeText(parent.getApplicationContext(), "making object " + in.get(0).getString("subject_name"), Toast.LENGTH_SHORT).show();
-
-
-                //If they're in the DB then login to the
-                // Home page
-
 
             } catch (JSONException e) {
                 e.printStackTrace();
-            }*/
+            }
+
+            delegate.processFinish(result);
 
         }
     }
+
+    public String sendResults(){return result;}
+    public List getList(){return in;}
 
    public static void startActivity(Context context) {
         context.startActivity(new Intent(context, NotificationsFragment.class).putExtra("subject", out));
     }
 
-
-    public String getStuff()
-    {
-        String pass = result;
-        return pass;
-    }
 }
 

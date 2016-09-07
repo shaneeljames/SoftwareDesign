@@ -40,17 +40,17 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
         }
     }
 
-    List<Events_notifications> events;
+    List<Notifications> list;
     Context context;
 
-    CardViewNotificationsAdapter(List<Events_notifications> events, Context context){
-        this.events = events;
+    CardViewNotificationsAdapter(List<Notifications> events, Context context){
+        this.list = events;
         this.context = context;
     }
 
     @Override
     public int getItemCount() {
-        return events.size();
+        return list.size();
     }
 
     @Override
@@ -62,12 +62,12 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
 
     @Override
     public void onBindViewHolder(EventViewHolder eventViewHolder, final int i) {
-        eventViewHolder.subName.setText(events.get(i).subname);
-        eventViewHolder.date.setText(events.get(i).date);
-        eventViewHolder.time.setText(events.get(i).time);
-        eventViewHolder.session.setImageResource(events.get(i).photoId);
-        eventViewHolder.studentName.setText(events.get(i).studentName);
-        eventViewHolder.Description.setText(events.get(i).Description);
+        eventViewHolder.subName.setText(list.get(i).code + "-"+ list.get(i).subject);
+        eventViewHolder.date.setText(list.get(i).date);
+        eventViewHolder.time.setText(list.get(i).time);
+        eventViewHolder.session.setImageResource(list.get(i).icon);
+        eventViewHolder.studentName.setText(list.get(i).studentName + " "+ list.get(i).studentSurname);
+        eventViewHolder.Description.setText(list.get(i).description);
 
 
 
