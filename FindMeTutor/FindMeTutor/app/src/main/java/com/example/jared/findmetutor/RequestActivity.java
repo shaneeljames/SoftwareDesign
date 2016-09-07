@@ -35,7 +35,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     Button req;
     String curSelection;
 
-    int month;
+
     String id;
     String subjId;
 
@@ -135,7 +135,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
 
 
 
-/*        Event ev = new Event(subj,"Temp Venue", date,time,R.drawable.session);
+/*        Session ev = new Session(subj,"Temp Venue", date,time,R.drawable.session);
         //ev.addNewEvent();
 
         //Go to the homeActivity
@@ -175,15 +175,64 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     }
 
     public String currentTime() {
-        String mcurrentTime = "Time: " + timePicker.getCurrentHour() + ":" + timePicker.getCurrentMinute();
+        String mcurrentTime =  timePicker.getCurrentHour() + ":" + timePicker.getCurrentMinute();
         return mcurrentTime;
     }
 
     public String currentDate() {
         StringBuilder mcurrentDate = new StringBuilder();
-        month = datePicker.getMonth() + 1;
-        mcurrentDate.append("Date: " + month + "/" + datePicker.getDayOfMonth() + "/" + datePicker.getYear());
-        return mcurrentDate.toString();
+        int month = datePicker.getMonth() + 1;
+        String ret = datePicker.getDayOfMonth()+" "+getMonth(month) + " "+datePicker.getYear();
+        return ret;
+    }
+
+    public String getMonth(int month){
+        String calMonth="";
+
+        switch (month){
+            case 1:calMonth="January";
+                break;
+
+            case 2:calMonth="Feburary";
+                break;
+
+            case 3:calMonth="March";
+                break;
+
+            case 4:calMonth="April";
+                break;
+
+            case 5:calMonth="May";
+                break;
+
+            case 6:calMonth="June";
+                break;
+
+            case 7:calMonth="July";
+                break;
+
+            case 8:calMonth="August";
+                break;
+
+            case 9:calMonth="September";
+                break;
+
+            case 10:calMonth="October";
+                break;
+
+            case 11:calMonth="November";
+                break;
+
+            case 12:calMonth="December";
+                break;
+            default:calMonth=calMonth;
+                break;
+
+        }
+
+        return  calMonth;
+
+
     }
 
     public class ItemSelectedListener implements AdapterView.OnItemSelectedListener {

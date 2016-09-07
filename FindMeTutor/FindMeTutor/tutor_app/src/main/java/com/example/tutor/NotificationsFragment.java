@@ -76,7 +76,9 @@ public class NotificationsFragment extends Fragment implements tutor_AsyncRespon
     @Override
     public void processFinish(String output) {
 
+        //list = connect2server.getList();
         CardViewNotificationsAdapter adapter = new CardViewNotificationsAdapter(connect2server.getList(),this.getActivity().getApplicationContext()) ;
+        rv.setAdapter(adapter);
 
 
     }

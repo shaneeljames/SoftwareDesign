@@ -1,4 +1,4 @@
-package com.example.tutor;
+package com.example.jared.findmetutor;
 
 import android.app.Activity;
 import android.content.Context;
@@ -31,32 +31,35 @@ import java.util.Map;
  * Example input a student id and you will get the subjects related to that student id from the Student_Subject table. Input "" and you will receive all subjects listed in the subjects table.
  * Command to use is below.
  * getsubject connect2server = new getsubject(this);
- connect2server.execute();
+   connect2server.execute();
  Returns null if the student number does not exist in the Student_Subject Table.
 
  */
-
-//////Actually to get Notifications of student requests
-
-public class tutor_getsubject extends AsyncTask<String, String, String> {
+public class getSessions extends AsyncTask<String, String, String> {
     Activity parent;
     String result = "";
-    String TutorID;
-    List<Notifications> in;
 
-    public tutor_AsyncResponse delegate = null; //Notify when async is done
+    String sessionID;
+    String tutorID;
+    String studentID;
+    String subjectID;
+    String subjectName;
+    String amount;
+    String date;
+    String time;
+    String desc;
+    String status;
 
+    List<Session> in;
+    public AsyncResponse delegate = null; //Notify when async is done
 
-    static String out ;
-
-    public tutor_getsubject(Activity par, String student_id , List<Notifications> obj){
-        parent = par;
-        TutorID = student_id;
-        in = obj ;
+    public getSessions(Activity par, String student_id, List<Session> obj){
+        this.parent = par;
+        this.studentID = student_id;
+        this.in = obj;
     }
 
-
-    public tutor_getsubject(Activity par){
+    public getSessions(Activity par){
         parent = par;
     }
     @Override
@@ -65,13 +68,13 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://neural.net16.net/tutor_notifications.php");
+            url = new URL("http://neural.net16.net/student_getsessions.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         Map<String,Object> parameter = new LinkedHashMap<>();
-        parameter.put("tutor_id", TutorID);
+        parameter.put("StudentID", studentID);
 
         StringBuilder postData = new StringBuilder();
         for (Map.Entry<String,Object> param : parameter.entrySet()) {
@@ -137,59 +140,71 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         //Handle Result
-        if (result.equals("null")) {
+        String temp = result.substring(1,2);
+        Toast.makeText(parent.getApplicationContext(), "Res " + result, Toast.LENGTH_SHORT).show();
+
+       if(temp.equals("]")){ // NULL result
             Toast.makeText(parent.getApplicationContext(), "No current subjects", Toast.LENGTH_SHORT).show();
 
-        } else {
+        }else {
+           //If they're in the DB then login to the Home page
+           //Toast.makeText(parent.getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+           //startActivity(parent);
 
-            Toast.makeText(parent.getApplicationContext(), "making object: " + result, Toast.LENGTH_LONG).show();
+           //this.result = result;
 
-            try {
+           try {
 
-                JSONArray jsonArr = new JSONArray(result);
-                //Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
+               JSONArray jsonArr = new JSONArray(result);
+               //Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
 
-                String subjectName = "";
-                String subjectCode="";
-                String date = "" ;
-                String time = "";
-                String studentName ;
-                String studentSurname ;
-                String description ;
+               String name = "";
+               String code="";
 
 
-                //Subjects pass = null;
-                //Subjects subjects = new Subjects("h", 0, parent, pass);
+               //Subjects pass = null;
+               //Subjects subjects = new Subjects("h", 0, parent, pass);
 
 
-                for (int i = 0; i < jsonArr.length(); i++) {
-                    JSONObject jsObj = jsonArr.getJSONObject(i);
-                    subjectName = jsObj.getString("subject_name");
-                    subjectCode = jsObj.getString("subject_course_code");
-                    date = jsObj.getString("date");
-                    time = jsObj.getString("time");
-                    studentName = jsObj.getString("student_fname");
-                    studentSurname = jsObj.getString("student_lname");
-                    description = jsObj.getString("description");
-                    Toast.makeText(parent.getApplicationContext(), studentName, Toast.LENGTH_SHORT).show();
-                    in.add(new Notifications(subjectName,subjectCode,date,time,studentName,studentSurname,description,R.drawable.notify,parent));
-                }
+               for (int i = 0; i < jsonArr.length(); i++) {
+                   JSONObject jsObj = jsonArr.getJSONObject(i);
 
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+                   sessionID= jsObj.getString("tutor_student_id");
+                   tutorID = jsObj.getString("tutor_id");
+                   subjectName = jsObj.getString("subject_name");
+                   subjectID = jsObj.getString("subject_id");
+                   amount = jsObj.getString("amount");
+                   date = jsObj.getString("date");
+                   time = jsObj.getString("time");
+                   desc = jsObj.getString("description");
+                   status = jsObj.getString("status");
+                  // Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
+                   in.add(new Session( sessionID, tutorID, subjectName,subjectID,amount,date,time, desc,status, R.drawable.session, parent ));
+               }
 
-            delegate.processFinish(result);
+           } catch (JSONException e) {
+               e.printStackTrace();
+           }
 
-        }
+           //Now we have their subjects
+
+
+           delegate.processFinish(result); //let the other clsses know when onPost is finished
+       }
     }
 
-    public String sendResults(){return result;}
-    public List getList(){return in;}
-
-   public static void startActivity(Context context) {
-        context.startActivity(new Intent(context, NotificationsFragment.class).putExtra("subject", out));
+    public String sendResults()
+    {
+        return result;
     }
 
+    public List getList()
+    {
+        return in;
+    }
+
+    public static void startActivity(Context context) {
+        context.startActivity(new Intent(context, HomeActivity.class));
+    }
 }
 
