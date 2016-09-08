@@ -37,8 +37,9 @@ import java.util.Map;
 
 //////Actually to get Notifications of student requests
 
-public class tutor_getsubject extends AsyncTask<String, String, String> {
-    Activity parent;
+public class tutor_getsubject2 extends AsyncTask<String, String, String> {
+    Context parent;
+    Activity act ;
     String result = "";
     String TutorID;
     List<Notifications> in;
@@ -48,14 +49,14 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
 
     static String out ;
 
-    public tutor_getsubject(Activity par, String student_id , List<Notifications> obj){
+    public tutor_getsubject2(Context par, String student_id , List<Notifications> obj){
         parent = par;
         TutorID = student_id;
         in = obj ;
     }
 
 
-    public tutor_getsubject(Activity par){
+    public tutor_getsubject2(Context par){
         parent = par;
     }
     @Override
@@ -176,10 +177,10 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
                     studentSurname = jsObj.getString("student_lname");
                     description = jsObj.getString("description");
 
-                    in.add(new Notifications(tutor_student_id,subjectName,subjectCode,date,time,studentName,studentSurname,description,R.drawable.notify,parent));
+                    in.add(new Notifications(tutor_student_id,subjectName,subjectCode,date,time,studentName,studentSurname,description,R.drawable.notify,act));
                 }
 
-               // Toast.makeText(parent.getApplicationContext(), in.get(0).studentSurname, Toast.LENGTH_SHORT).show();
+                // Toast.makeText(parent.getApplicationContext(), in.get(0).studentSurname, Toast.LENGTH_SHORT).show();
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -193,7 +194,7 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
     public String sendResults(){return result;}
     public List getList(){return in;}
 
-   public static void startActivity(Context context) {
+    public static void startActivity(Context context) {
         //context.startActivity(new Intent(context, NotificationsFragment.class).putExtra("subject", out));
     }
 
