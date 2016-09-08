@@ -57,26 +57,4 @@ halign=left</panel_attributes>
     <panel_attributes>Student</panel_attributes>
     <additional_attributes/>
   </element>
-  <element>
-    <id>UMLActor</id>
-    <coordinates>
-      <x>410</x>
-      <y>220</y>
-      <w>140</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>External system</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>330</x>
-      <y>250</y>
-      <w>140</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
-  </element>
 </diagram>

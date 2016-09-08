@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \usepackage{comment}
 \usepackage{longtable}
+\usepackage{graphicx}
 
 \begin{document}
 
@@ -62,14 +63,13 @@ The FindMeTutor Android application will be seen as successful if it facilitates
 2. Application - is a piece of software \\
 3. Android - is a mobile operating system developed by Google. \\
 4. OS - abbreviation for operating system.\\
-5. Operating system - is a collection of software that communicates with hardware and allows other programs to run on it. It comprises  of system software, or the fundamental files your computer needs to boot up and function.\\
-6. Boot up - Processes started when computer is turned on\\
-7. Java - is a high-level programming language\\
-8. UI - abbreviation for User interface\\
-9. User interface - is the means in which a person controls a software application or hardware device.\\
-10. ID - abbreviation for identity\\
+5. Operating system - is a collection of software that communicates with hardware and allows other programs to run on it.\\
+6. Java - is a high-level programming language\\
+7. UI - abbreviation for User interface\\
+8. User interface/GUI - is the means in which a person controls a software application or hardware device.\\
+9. ID - abbreviation for identity\\
 11.User ID - the idenity that uniquely identifies someone on a computer system.\\
-12. Sign in - when asked to enter username and password information. A sign in/ login is a combination of information that authenticates a user's identity. \\
+12. Sign in - when asked to enter username and password information. A sign in/login is a combination of information that authenticates a user's identity. \\
 13. SDK - abbreviation for Software Development Kit\\
 14 Software Development Kit -  collection of software used for developing applications for a specific device or operating system.
  
@@ -96,7 +96,7 @@ FindMeTutor app will be a platform through which students and tutors can meet in
 FindMeTutor app will facilitate the following two registration categories: 
 
 \begin{flushleft}
-1.Student looking for tutors – they are able to  register on the app with merely some personal details (demographic data, faculty registration details, security answer and password).\\
+1.Student looking for tutors – they are able to register on the app with merely some personal details (demographic data, email and password).\\
 2. Tutor - those who would like to tutor can register on the app by simply filling in some details with respect to the fields of study they are particularly comfortable to tutor.\\
 \end{flushleft}
 \end{flushleft}
@@ -108,7 +108,7 @@ Describes the high-level functionality of the system\\
 3.2.1 The database has the ability to store data captured of the users of the application (student and tutors data).More specifically, the database will be able to accept numeric data entry and will store the courses under the University of the Witwatersrand's School of Computer science and Applied mathematics undergraduate topics which will be displayed in the drop-down menu when students and tutors will be required to select the courses respectively to which they are enrolled in or able to tutor. \\
 3.2.2 The app will provide an effective means through which tutors and students can communicate. The messenger facility will facilitate communication between students and tutors - when students request a tutor, the tutor and student will be able to use this facility to arrange a convenient time, place and tuition fee for the tutor service. \\
 3.2.3 Request appropriate tutors for students who send a request on the app for a tutor eligible to tutor a specific course (aid to pair up appropriate tutors and students).\\
-3.2.4 In the light of security, the database shall be able store a corresponding password for each user of the application, which will allow for each users account to be protected, as each user's user ID and entered password will be compared to that of which was entered into the database at sign-up, hence the system restricting access to authorized users. \\
+3.2.4 In the light of security, the database shall be able store a corresponding password for each user of the application, which will allow for each users account to be protected, as each user's users email address and entered password will be compared to that of which was entered into the database at sign-up, hence the system restricting access to authorized users. \\
 3.2.5 FindMeTutor Android application will be able to be utilised on any Android OS of (some version), which is able easily accessible,as many students can download this application for use on their smartphones and/or tablets which shall makes the application easily accessible. 
 \end{comment}
 
@@ -122,22 +122,18 @@ Describes the high-level functionality of the system\\
 			RQ1.2 & The system shall allow a student to update their account eg update password& UC-US \\ \hline  
 			RQ1.3 & The system shall allow a student to view their account details  & UC-VS \\ \hline 
 			RQ1.4 & The system shall allow a student to mark their account as deleted & UC-DS  \\ \hline 
-%Sprint 2
-			
-			
+
 			RQ2.1 & The system shall allow a tutor to register & UC-CT \\ \hline
 			RQ2.2 & The system shall allow a tutor to update their account eg password update & UC-UT \\ \hline
 			RQ2.3 & The system shall allow a tutor to view their account details & UC-VT \\ \hline
 			RQ2.4 & The system shall allow a tutor to mark their account as deleted & UC-DT \\ \hline  
-%Sprint 2
-						
+
 			RQ3.1 & The system shall allow an administrator to update a student account & UC-US \\ \hline  
 			RQ3.2 & The system shall allow an administrator to view a student account details  & UC-VS \\ \hline 
 			RQ3.3 & The system shall allow an administrator to mark a student as deleted & UC-DS  \\ \hline 
 			RQ3.4 & The system shall allow an administrator to update a tutor account eg update password & UC-UT \\ \hline
 			RQ3.5 & The system shall allow an administrator to view a tutor account details & UC-VT \\ \hline
 			RQ3.6 & The system shall allow an administrator to mark a tutor account as deleted & UC-DT \\ \hline
-%Sprint 2: Requirements
 			 
 % Ask if we have the password under update
 			
@@ -178,12 +174,24 @@ Describes the high-level functionality of the system\\
 				RQ11.1 & The system shall allow a tutor to check-in  & UC-CI \\ 
 \hline	
 				RQ11.2 & The system shall allow a tutor to check-out  & UC-CO \\ \hline
-				RQ12.2 & The system shall allow a student to add funds\\ \hline
-				RQ13.1 & The system shall allow a student to add subjects\\ \hline
-				RQ14.1 & The system shall allow a student to remove subjects\\ \hline
-				RQ15.1 & The system shall allow a student to login\\ \hline
-				RQ15.2 & The system shall allow a tutor to login\\ \hline
-				RQ15.3 & The system shall allow an administrator to login\\ \hline
+				RQ12.1 & The system shall allow a student to add funds &UC-AF\\ \hline
+				RQ12.2 & The system shall allow a student to view funds &UC-VF\\ \hline
+				RQ12.3 & The system shall allow a student to update funds &UC-UF\\ \hline
+				RQ13.1 & The system shall allow a tutor to add funds &UC-AF\\ \hline
+				RQ13.2 & The system shall allow a tutor to view funds &UC-VF\\ \hline
+				RQ13.3 & The system shall allow a tutor to update funds &UC-UF\\ \hline
+				RQ14.1 & The system shall allow a student to add subjects &UC-CSb\\ \hline
+				RQ14.2 & The system shall allow a tutor to add subjects &UC-CSb\\ \hline				
+				RQ15.1 & The system shall allow a student to remove subjects &UC-DSb\\ \hline
+				RQ15.2 & The system shall allow a tutor to remove subjects &UC-DSb\\ \hline				
+				RQ16.1 & The system shall allow a student to login &UC-L\\ \hline
+				RQ16.2 & The system shall allow a tutor to login &UC-L\\ \hline
+				RQ16.3 & The system shall allow an administrator to login &UC-L\\ \hline
+				RQ17.1 & The system shall allow a student to view their upcoming sessions  &UC-DSes\\ \hline
+				RQ17.2 & The system shall allow a tutor to view their upcoming sessions  &UC-VSes\\ \hline
+				RQ18.1 & The system shall allow a tutor to mark a session as done/removed &UC-DSes\\ \hline
+				RQ18.1 & The system shall allow a student to mark a session as done/removed &UC-DSes\\ \hline
+		
 \end{longtable}
 }
 
@@ -193,7 +201,7 @@ Describes the user-level requirements that are not directly related to the funct
 The application will be user friendly as it will be an Android application which is supported by multiple devices (android smartphones and android tablets). This will allow for the application to be easily accessible to students and tutors as majority of students have access to android devices. 
 \\\textbf{3.3.2 Reliability}\\
 The probability that the system will be able to process work correctly and completely without being aborted.\\
-In the case of system failure, the damage that could be caused could be such where the personalised accounts of the application user will lose their preference choices of subjects selected on sign-up. 
+In the case of system failure, the damage that could be caused could be such where a user will not be able to use the app during system failure.
 \\\textbf{3.3.3 Performance}\\
 %The expected volume of data (??).
 The response time between the UI and the server will be optimised. The expected volume of user activity will peak at the end of each academic term within the tertiary institute when examinations/tests will be approaching, while on a regular basis the application will be utilised when students who feel the need to get assistance when they encounter a topic they require assistance in. 
@@ -203,7 +211,7 @@ The App will be facilitated over a spectrum of Android platform versions. The SD
 Our team has implemented the agile methodology in order to obtain our final goal of building the FindMeTutor application. For each sprint we will set targets of what we would like to achieve, with the objective of using these milestones to be building blocks towards our final goal. 
 \\\textbf{3.3.6 Interface}\\
 The UI will be made in Android studio. The set up will be simple and neat. The app will be used by students who will be using the app in order to search for a tutor which is suitable to tutor, hence, with this intention, to prevent furthering the overwhelmed feeling, the app will not be clutered and simple to use. The 'user-friendly' experience provided by the UI, will allow the user to interact with the app in a natural and intuitive way. \\
-Each user's home page will be customized to the particular topics in which they are enrolled in or signed up to tutor, with respect to whether they are students or tutors. \\
+Each user's home page will be customized to display there upcoming tutorial sessions.\\
 \textbf{3.3.7 Packaging}\\
 Android studio for development\\
 Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
@@ -255,7 +263,11 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 			\\Login					&		UC-L
 			\\Add Funds				&		UC-AF
 			\\Delete Funds			&		UC-DF
-			\\View Funds				&		UC-VF \\ \hline
+			\\View Funds				&		UC-VF
+			\\Update Funds			& 		UC-UF
+			\\View Sessions			&		UC-VSes
+			\\Remove Sessions		&       UC-DSes
+			\\ \hline
 \end{tabular}
 		{
 		\\ \\ \\ \\ \\ \title{\textbf{Use Case Descriptions:}}\\ \\
@@ -437,7 +449,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 			Related Requirements: & RQ15.1, RQ15.2, RQ15.3  \\ \hline
 			Initiating actor: & Student, Administrator or Tutor \\ \hline
 			Actor goal: & To login\\ \hline
-			Participating Actors: N/A\\ \hline
+			Participating Actors: &N/A\\ \hline
 			Preconditions: &initiating actor exists\\ \hline
 			Postconditions: & initiating actor is logged in\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
@@ -467,24 +479,66 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 			\multicolumn{2}{|p{15cm}|}{Else if Student has available funds }	\\		
 			%\multicolumn{2}{|p{15cm}|}{3. System displays Student's registered subjects}\\
 			%\multicolumn{2}{|l|}{4. Student selects subject which he wishes to request a Tutor for}\\
-			\multicolumn{2}{|l|}{5. System prompts for date, time, description and subject of the tutorial}\\
-			\multicolumn{2}{|l|}{6. Student enters date, time and description and subject of the tutorial}\\
-			\multicolumn{2}{|p{15cm}|}{7. System prompts Tutors who tutor the subject the Student has indicated he wishes to request a tutor for}\\
-			\multicolumn{2}{|l|}{8. Tutors accept or reject System prompt}\\
-			\multicolumn{2}{|l|}{9. System displays Tutors who have accepted}\\
-			\multicolumn{2}{|l|}{10. Student selects a Tutor from the displayed Tutors}\\
-			\multicolumn{2}{|l|}{11. Tutor has been requested} 
+			\multicolumn{2}{|l|}{4. System prompts for date, time, description and subject of the tutorial}\\
+			\multicolumn{2}{|l|}{5. Student enters date, time and description and subject of the tutorial}\\
+			\multicolumn{2}{|p{15cm}|}{6. System reads and prompts Tutors who tutor the subject the Student has indicated he wishes to request a tutor for}\\
+			\multicolumn{2}{|l|}{7. Tutors accept or reject System prompt}\\
+			\multicolumn{2}{|l|}{8. System displays Tutors who have accepted}\\
+			\multicolumn{2}{|l|}{9. Student selects a Tutor from the displayed Tutors}\\
+			\multicolumn{2}{|l|}{10. Tutor has been requested} 
 			\\ \hline		
 		\end{tabular}
+		
+		\begin{tabular}{| l | p{10cm}| }
+			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CSb: Add Subject}} \\ \hline
+			Related Requirements: & RQ14.1, RQ14.2  \\ \hline
+			Initiating actor: & Student, Tutor \\ \hline
+			Actor goal: & To register for a subject\\ \hline
+			Participating Actors: &N/A\\ \hline
+			Preconditions: &Initiating actor exists\\ \hline
+			Postconditions: & Initiating actor is registered for a subject\\ \hline
+			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
+			\multicolumn{2}{|p{15cm}|}{1. Initiating actor indicates that he/she wants to register for a subject}\\
+			\multicolumn{2}{|p{15cm}|}{2. System reads subjects}\\ 
+			\multicolumn{2}{|p{15cm}|}{3. System displays Student Subject Table}\\
+			\multicolumn{2}{|l|}{4. Student selects subject}\\
+			\multicolumn{2}{|l|}{5. System stores subject in Student Subject Table}\\
+			\multicolumn{2}{|l|}{6. Student is registered for the subject}\\
+			 \hline		
+		\end{tabular}
+		
+		\begin{tabular}{| l | p{10cm}| }
+			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-DSb: Archive Subject} }\\ \hline
+			Related Requirements: & RQ15.1, RQ15.2  \\ \hline
+			Initiating actor: & Student, Tutor \\ \hline
+			Actor goal: & To un-register for a subject\\ \hline
+			Participating Actors: N/A\\ \hline
+			Preconditions: &initiating actor exists\\ \hline
+			Postconditions: & Initiating actor is un-registered from a subject\\ \hline
+			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
+			\multicolumn{2}{|p{15cm}|}{1. Initiating actor indicates that he/she wants to remove a subject}\\ 
+			\multicolumn{2}{|p{15cm}|}{2. System displays Student Subject Table}\\
+			\multicolumn{2}{|l|}{3. Student selects subject}\\
+			\multicolumn{2}{|l|}{4. System removes subject from Student Subject Table}\\
+			\multicolumn{2}{|l|}{5. Student is un-registered from subject}\\
+			 \hline		
+		\end{tabular}
+		
+		
 
 	\newpage	
 \subsubsection{Use case diagrams}
-\newpage
-Use case:
+%\newpage
+Use case Diagram Request Tutor:
+%\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=140mm]{./Use_Cases/Create_Student.jpg}
+		
+\
 %newpage
 
-\newpage
-Use case:
+%\newpage
+Use case Create Student:
 %newpage
 
 \newpage
