@@ -25,4 +25,4 @@
 \contentsline {subsubsection}{\numberline {4.6.6}Dynamic model}{27}
 \contentsline {subsubsection}{\numberline {4.6.7}User interface navigational paths and screen mock-ups}{27}
 \contentsline {subsubsection}{\numberline {4.6.8}Operational requirements}{27}
-\contentsline {section}{\numberline {5}Appendix}{28}
+\contentsline {section}{\numberline {5}APPENDIX}{28}
