@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.9)  8 SEP 2016 22:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.9)  8 SEP 2016 22:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -285,31 +285,31 @@ Overfull \hbox (60.74706pt too wide) in alignment at lines 245--260
  []
 
 [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 265--286
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 265--286
-
- []
-
-[9]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 291.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 270.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 291.
- [10]
-Overfull \hbox (4.53062pt too wide) in paragraph at lines 313--315
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 270.
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--303
+
+ []
+
+[9] [10]
+Overfull \hbox (4.53062pt too wide) in paragraph at lines 330--332
 []\OT1/cmr/m/n/12 ACT4.04 Chal-lenge reg-is-tered ad-min-is-tra-tor to view the
 ir ac-count (pass) 
  []
 
 
-Overfull \hbox (6.09181pt too wide) in paragraph at lines 315--316
+Overfull \hbox (6.09181pt too wide) in paragraph at lines 332--333
 []\OT1/cmr/m/n/12 ACT5.01 A stu-dent re-quest-ing a tu-tor can re-quest a tu-to
 r for a date/time
  []
@@ -319,107 +319,107 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
  [13]
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--420
+Underfull \hbox (badness 10000) in paragraph at lines 394--437
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--420
+Underfull \hbox (badness 10000) in paragraph at lines 394--437
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--420
+Underfull \hbox (badness 10000) in paragraph at lines 394--437
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--420
+Underfull \hbox (badness 10000) in paragraph at lines 394--437
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--420
+Underfull \hbox (badness 10000) in paragraph at lines 394--437
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--420
+Underfull \hbox (badness 10000) in paragraph at lines 394--437
 
  []
 
 [14] [15]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 425--443
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 442--460
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--451
+Underfull \hbox (badness 10000) in paragraph at lines 468--468
 []\OT1/cmr/m/n/12 Update stu-dent de-mo-graphic data,student num-
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 447--464
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 464--481
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 469--488
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 486--505
  [][] 
  []
 
 [16]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 492--509
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 509--526
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 513--530
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 530--547
  [][] 
  []
 
 [17]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 534--551
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 551--568
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 555--570
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 572--587
  [][] 
  []
 
 [18]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 574--589
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 591--606
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 591--607
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 608--624
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 610--635
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 627--652
  [][] 
  []
 
 [19]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 636--653
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 653--670
  [][] 
  []
 
 
-Overfull \hbox (55.17061pt too wide) in paragraph at lines 654--670
+Overfull \hbox (55.17061pt too wide) in paragraph at lines 671--687
  [][] 
  []
 
@@ -427,32 +427,32 @@ Overfull \hbox (55.17061pt too wide) in paragraph at lines 654--670
 File: ./Use_Cases/Create_Student.jpg Graphic file (type jpg)
 
 <use ./Use_Cases/Create_Student.jpg>
-Package pdftex.def Info: ./Use_Cases/Create_Student.jpg used on input line 679.
+Package pdftex.def Info: ./Use_Cases/Create_Student.jpg used on input line 696.
 
 (pdftex.def)             Requested size: 398.33858pt x 237.11037pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 676--680
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 693--697
  [] 
  []
 
 [22 <./Use_Cases/Create_Student.jpg>] [23]
-Overfull \hbox (58.99843pt too wide) in alignment at lines 696--732
+Overfull \hbox (58.99843pt too wide) in alignment at lines 713--749
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 732
+Underfull \vbox (badness 10000) detected at line 749
  []
 
 
-Overfull \hbox (58.99843pt too wide) in alignment at lines 732--741
+Overfull \hbox (58.99843pt too wide) in alignment at lines 749--758
  [] [] [] 
  []
 
 [24] [25] (./RequirementsAnalysisDocument.aux) )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 419 ({)
+### simple group (level 1) entered at line 436 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
  2542 strings out of 494910
@@ -465,7 +465,7 @@ Here is how much of TeX's memory you used:
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on RequirementsAnalysisDocument.pdf (25 pages, 89712 bytes).
+Output written on RequirementsAnalysisDocument.pdf (25 pages, 90141 bytes).
 PDF statistics:
  98 PDF objects out of 1000 (max. 8388607)
  66 compressed objects within 1 object stream
