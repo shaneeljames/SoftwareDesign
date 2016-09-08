@@ -259,7 +259,24 @@ Describes the high-level functionality of the system\\
 		
 \end{longtable}
 }
-
+\subsection{Functional requirements specification}
+%Although this section is entitled “Requirements Specification,” we will see that we
+%are still discovering the functional system requirements for the system-to-be, as
+%well as specifying the discovered requirements.
+\subsubsection{Stakeholders}
+%Identify anyone and everyone who has interest in this system (users, managers, sponsors, etc.).
+%Stakeholders should be humans or human organizations.
+\begin{itemize}
+\item Students
+\item Tutors
+\item University (School of Computer Science and Applied Mathematics)
+\end{itemize}
+\subsubsection{Actors and Goals}
+\begin{itemize}
+\item Students - a registered user looking for a tutor
+\item Tutors - a registered user, whom is approachable to tutor particular subjects
+\item Database - records details of students and tutors. Stores required information with regards to tutorials for student and tutor. 
+\end{itemize}
 
 \subsection{Non-functional requirements}{
 Describes the user-level requirements that are not directly related to the functionality. \\
@@ -741,15 +758,15 @@ Use case:
 \end{longtable}
 }
 		
-\begin{flushleft}
+
 \subsubsection{Analysis object model}
 Appendix 1
-\end{flushleft}
 
-\begin{flushleft}
+
+
 \subsubsection{Dynamic model}
 Appendix 2
-\end{flushleft}
+
 %(Attached P18)
 %A dynamic model represents the behaviour of an object over time. It is used where the object's behaviour is best described as a set of states that occur in a defined sequence. The components of the dynamic model are:\\
  %	States. The purchase order (PO) is modelled as passing through a set of states. The operations that can be performed on the PO are dependent on the state it is in. For example, information cannot be entered after it has reached the approved state.\\
@@ -758,20 +775,22 @@ Appendix 2
 %	Actions. Actions occur on state transitions. For example, on a goods received event the action of notify purchaser is performed. Actions are modelled as instantaneous occurrences (contrast with activities).\\
 %	Activities. An activity is performed while an object is in a specific state. For example, while in the entering PO state data is entered into the PO. Activities are modelled as occurring over a period of time (contrast with actions).\\
 	
-\begin{flushleft}
+
  \subsubsection{User interface navigational paths and screen mock-ups}
- \end{flushleft} 
+ Appendix 3
+ 
 %(Attached P19)
-\begin{flushleft}
+
 \subsubsection{Operational requirements}
-\end{flushleft}
+
 Operational requirements describe the non-business characteristics of an application.\\
 3.5.1 Amazon Web Server - Web server to host the database\\ 
 3.5.2 Android studio to design UI\\
 3.5.3 GitHub to facilitate the build of the project among team members\\
 3.5.4 MySql which is the database management system used to house and control the database.\\
 3.5.5 phpMyAdmin which is used to interact with the database in a graphical user interface.
-\\
+
+
 %GLOSSARY
 %\section{GLOSSARY}
 
