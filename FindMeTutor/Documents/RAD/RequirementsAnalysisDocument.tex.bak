@@ -78,6 +78,7 @@ The FindMeTutor Android application will be seen as successful if it facilitates
 1. http://techterms.com/definition (2016-08-08)
 %\subsubsection{Overview}
 %dummy text
+\newpage
 
 %CURRENT SYSTEM
 \section{CURRENT SYSTEM}
@@ -85,6 +86,8 @@ The FindMeTutor Android application will be seen as successful if it facilitates
 \begin{flushleft}
 Currently, there are many students in search of tutors to help them with particular courses with which they require some support, as well as fellow students or tutors who are available to tutor particular courses of study. However, the problem that is faced on hand is that either pool (students and tutors) are struggling to find each other. 
 \end{flushleft}
+
+\newpage
 
 %PROPOSED SYSTEM
 \section{PROPOSED SYSTEM}
@@ -790,6 +793,8 @@ Operational requirements describe the non-business characteristics of an applica
 3.5.4 MySql which is the database management system used to house and control the database.\\
 3.5.5 phpMyAdmin which is used to interact with the database in a graphical user interface.
 
+\newpage
+\section{APPENDIX}
 
 %GLOSSARY
 %\section{GLOSSARY}
