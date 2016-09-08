@@ -12,13 +12,22 @@
         layout="@layout/toolbar" />
 
     <TextView
+        android:id="@+id/available"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerInParent="true"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:text="Available Subjects"
+        android:padding="20dp"/>
 
 
     <LinearLayout
+        android:layout_below="@id/available"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="6dp">
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"

@@ -36,10 +36,10 @@ public class AddSubsActivity extends AppCompatActivity implements AsyncResponse{
         rv.setLayoutManager(new LinearLayoutManager(this));
 
         SharedPreferences myprefs =  getSharedPreferences("user", MODE_PRIVATE);
-        String id= myprefs.getString("student_id", null);
+        student_id = myprefs.getString("student_id", null);
 
 
-        connect2server = new getallsubjects(this, id, list);
+        connect2server = new getallsubjects(this, student_id, list);
         connect2server.delegate = this;
         connect2server.execute();
 
@@ -50,8 +50,8 @@ public class AddSubsActivity extends AppCompatActivity implements AsyncResponse{
     public void processFinish(String output) {
         list = connect2server.getList();
 
-        Toast.makeText(this, list.get(3).subject + " id :"+list.get(3).subjID, Toast.LENGTH_SHORT).show();
-        SubjectsAddViewAdapter adapter = new SubjectsAddViewAdapter(list, this.getApplicationContext());
+        //Toast.makeText(this, list.get(3).subject + " id :"+list.get(3).subjID, Toast.LENGTH_SHORT).show();
+        SubjectsAddViewAdapter adapter = new SubjectsAddViewAdapter(list, student_id, this,this.getApplicationContext());
         rv.setAdapter(adapter);
     }
 

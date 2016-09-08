@@ -1,6 +1,8 @@
 package com.example.jared.findmetutor;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,19 +15,38 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
+
 /**
  * Created by Jadon on 30-Aug-16.
  */
 
-public class SubjectsAddViewAdapter extends RecyclerView.Adapter<SubjectsAddViewAdapter.EventViewHolder> {
+public class SubjectsAddViewAdapter extends RecyclerView.Adapter<SubjectsAddViewAdapter.EventViewHolder> implements AsyncResponse {
 
-    public static class EventViewHolder extends RecyclerView.ViewHolder {
+    SharedPreferences myprefs;
+    addSubject connect;
+    SubjectsAddViewAdapter temp = this;
+
+    @Override
+    public void processFinish(String output) {
+
+    }
+
+    @Override
+    public void processFinish2(String out) {
+
+        Toast.makeText(context, out, Toast.LENGTH_SHORT).show();
+
+    }
+
+    public class EventViewHolder extends RecyclerView.ViewHolder {
         CardView lv;
         Button add;
         TextView subject;
         TextView code;
         ImageView icon;
         String subId;
+
 
         EventViewHolder(View itemView) {
             super(itemView);
@@ -39,12 +60,17 @@ public class SubjectsAddViewAdapter extends RecyclerView.Adapter<SubjectsAddView
 
     List<Subjects> list;
     Context context;
+    String studentID;
+    Activity activity;
 
 
 
-    SubjectsAddViewAdapter(List<Subjects> events, Context context){
+    SubjectsAddViewAdapter(List<Subjects> events, String stdId, Activity act, Context context){
         this.list = events;
+        this.studentID = stdId;
+        this.activity =act;
         this.context = context;
+
     }
 
     @Override
@@ -66,11 +92,22 @@ public class SubjectsAddViewAdapter extends RecyclerView.Adapter<SubjectsAddView
         eventViewHolder.code.setText(list.get(i).code.toString());
         eventViewHolder.icon.setImageResource(list.get(i).icon);
 
+
+        //String id= myprefs.getString("student_id", null);
+
+        //addSubject connect = new addSubject(context,)
+
         //handle onclick here
         eventViewHolder.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(context, "Index position is: "+ i+" "+ eventViewHolder.subject.getText()+ " ID: "+eventViewHolder.subId, Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(context,"Adding" +studentID + " "+eventViewHolder.subId, Toast.LENGTH_SHORT).show();
+
+                connect = new addSubject(activity, studentID,eventViewHolder.subId);
+                connect.delegate = temp;
+                connect.execute();
+
 
              /*   if(i ==0) //Selected subjects card
                 {
