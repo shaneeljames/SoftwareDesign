@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,14 +23,6 @@ import java.net.URLEncoder;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import android.content.Intent;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import static android.R.attr.name;
-import static android.R.id.list;
 
 /**
  * Created by jared on 2016/09/02.\
@@ -41,7 +35,7 @@ import static android.R.id.list;
  Returns null if the student number does not exist in the Student_Subject Table.
 
  */
-public class getsubject extends AsyncTask<String, String, String> {
+public class getallsubjects extends AsyncTask<String, String, String> {
     Activity parent;
     String result = "";
     String StudentID;
@@ -49,13 +43,13 @@ public class getsubject extends AsyncTask<String, String, String> {
     List<Subjects> in;
     public AsyncResponse delegate = null; //Notify when async is done
 
-    public getsubject(Activity par, String student_id, List<Subjects> obj){
+    public getallsubjects(Activity par, String student_id, List<Subjects> obj){
         parent = par;
         StudentID = student_id;
         in = obj;
     }
 
-    public getsubject(Activity par){
+    public getallsubjects(Activity par){
         parent = par;
     }
     @Override
@@ -64,7 +58,7 @@ public class getsubject extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://neural.net16.net/student_getsubjects.php");
+            url = new URL("http://neural.net16.net/student_getallsubjects.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -153,7 +147,7 @@ public class getsubject extends AsyncTask<String, String, String> {
 
                String name = "";
                String code="";
-               String subid ="";
+               String id ="";
 
 
                //Subjects pass = null;
@@ -162,11 +156,11 @@ public class getsubject extends AsyncTask<String, String, String> {
 
                for (int i = 0; i < jsonArr.length(); i++) {
                    JSONObject jsObj = jsonArr.getJSONObject(i);
-                   subid = jsObj.getString("subject_id");
+                   id = jsObj.getString("subject_id");
                    name = jsObj.getString("subject_name");
                    code = jsObj.getString("subject_course_code");
                   // Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
-                   in.add(new Subjects(subid, name, code, R.drawable.subj, parent));
+                   in.add(new Subjects(id, name, code, R.drawable.subj, parent));
                }
 
            } catch (JSONException e) {

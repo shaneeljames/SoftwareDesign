@@ -1,5 +1,6 @@
 package com.example.jared.findmetutor;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -60,8 +61,8 @@ public class SubjectSettingsActivity extends AppCompatActivity implements AsyncR
             @Override
             public  void onClick(View v)
             {
-                //Intent goAddSubs = new Intent(SubjectSettingsActivity.this,RequestActivity.class);
-                //startActivity(goAddSubs);
+                Intent goAddSubs = new Intent(SubjectSettingsActivity.this,AddSubsActivity.class);
+                startActivity(goAddSubs);
 
 
 
