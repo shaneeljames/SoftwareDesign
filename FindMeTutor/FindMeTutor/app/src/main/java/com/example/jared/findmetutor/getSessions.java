@@ -141,7 +141,7 @@ public class getSessions extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result) {
         //Handle Result
         String temp = result.substring(1,2);
-        Toast.makeText(parent.getApplicationContext(), "Res " + result, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(parent.getApplicationContext(), "Res " + result, Toast.LENGTH_SHORT).show();
 
        if(temp.equals("]")){ // NULL result
             Toast.makeText(parent.getApplicationContext(), "No current subjects", Toast.LENGTH_SHORT).show();
