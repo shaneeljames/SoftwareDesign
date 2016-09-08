@@ -2,14 +2,9 @@
 //Required for login
 require "conn.php";
 //Variable Names...
-$name = $_POST["Name"];
-$surname = $_POST["Surname"];
-$contactnumber = $_POST["Contactnumber"];
-$email = $_POST["Email"];
+$studentnumber = $_POST["StudentNumber"];
 $password = $_POST["Password"];
-$securityquestion = $_POST["Securityquestion"];
-$answer = $_POST["Answer"];
-$tutorstudent = $_POST["Tutorstudent"];
+
 
 //Connection to the database
 //$dbhandle = mysql_connect(localhost, root, asdf) or die("Unable to connect to MySQL");
@@ -19,13 +14,22 @@ $tutorstudent = $_POST["Tutorstudent"];
 //$selected = mysql_select_db("findmetutor",$dbhandle) or die("Could not select findmetutor database");
 
 //execute the SQL query and return records
-$mysql_qry = "Insert into PERSON (first_name,last_name,contact_number,email,password,security_question,answer,tutor_student) Values ('$name','$surname','$contactnumber','$email','$password','$securityquestion','$answer','$tutorstudent')";
+$mysql_qry = "SELECT * FROM STUDENT_TBL WHERE student_student_number = '$studentnumber' and student_password = '$password'";
+
+$rows = array();
 
 if($conn->query($mysql_qry) === TRUE){
-echo "Insert Successful";
-}else{
+
+	while($r = mysqli_fetch_assoc($mysql_qry)) {
+    	$rows[] = $r;
+    }
+
+}
+else{
 echo "Insert Unsuccessful".$mysql_qry."<br>".$conn->error;
 }
+
+print json_encode($rows);
 
 //close the connection
 $conn->close();

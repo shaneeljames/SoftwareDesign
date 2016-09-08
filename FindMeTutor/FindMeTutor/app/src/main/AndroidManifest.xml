@@ -20,12 +20,9 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RequestActivity" />
-        <activity
-            android:name=".tutoride.tutor_Home"
-            android:label="@string/title_activity_tutor__home"
-            android:theme="@style/MyMaterialTheme" />
+        <activity android:name=".AddSubsActivity"/>
         <activity android:name=".SubjectSettingsActivity" />
-        <activity android:name=".AddSubsActivity"></activity>
+
     </application>
 
 </manifest>

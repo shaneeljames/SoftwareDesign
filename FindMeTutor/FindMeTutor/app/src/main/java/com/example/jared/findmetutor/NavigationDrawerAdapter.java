@@ -18,6 +18,7 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
     List<NavDrawerItem> data = Collections.emptyList();
     private LayoutInflater inflater;
     private Context context;
+    //TextView
 
     public NavigationDrawerAdapter(Context context, List<NavDrawerItem> data) {
         this.context = context;

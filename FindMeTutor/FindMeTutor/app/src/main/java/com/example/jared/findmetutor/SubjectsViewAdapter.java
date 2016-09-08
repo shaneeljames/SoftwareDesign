@@ -22,12 +22,14 @@ public class SubjectsViewAdapter extends RecyclerView.Adapter<SubjectsViewAdapte
     public static class EventViewHolder extends RecyclerView.ViewHolder {
         CardView lv;
         TextView subject;
+        TextView code;
         ImageView icon;
 
         EventViewHolder(View itemView) {
             super(itemView);
             lv = (CardView) itemView.findViewById(R.id.cv_subjects);
             subject = (TextView)itemView.findViewById(R.id.subjectTxt);
+            code = (TextView)itemView.findViewById(R.id.codeTxt);
             icon = (ImageView)itemView.findViewById(R.id.icon);
         }
     }
@@ -57,6 +59,7 @@ public class SubjectsViewAdapter extends RecyclerView.Adapter<SubjectsViewAdapte
     @Override
     public void onBindViewHolder(final EventViewHolder eventViewHolder, final int i) {
         eventViewHolder.subject.setText( list.get(i).subject.toString());
+        eventViewHolder.code.setText(list.get(i).code.toString());
         eventViewHolder.icon.setImageResource(list.get(i).icon);
 
         //handle onclick here

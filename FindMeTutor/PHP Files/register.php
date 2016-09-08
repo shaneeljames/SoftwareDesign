@@ -5,11 +5,10 @@ require "conn.php";
 $name = $_POST["Name"];
 $surname = $_POST["Surname"];
 $contactnumber = $_POST["Contactnumber"];
+$studentnumber = $_POST["StudentNumber"];
 $email = $_POST["Email"];
 $password = $_POST["Password"];
-$securityquestion = $_POST["Securityquestion"];
-$answer = $_POST["Answer"];
-$tutorstudent = $_POST["Tutorstudent"];
+
 
 if($conn==""){
 echo "Incorrect Insert";
@@ -24,7 +23,7 @@ $conn->close();
 //$selected = mysql_select_db("findmetutor",$dbhandle) or die("Could not select findmetutor database");
 
 //execute the SQL query and return records
-$mysql_qry = "Insert into PERSON (first_name,last_name,contact_number,email,password,security_question,answer,tutor_student) Values ('$name','$surname','$contactnumber','$email','$password','$securityquestion','$answer','$tutorstudent')";
+$mysql_qry = "Insert into STUDENT_TBL (student_student_number,student_fname,student_lname,student_contact_num,student_email,student_password) Values ('$studentnumber','$name,'$surname','$contactnumber','$email','$password')";
 
 if($conn->query($mysql_qry) === TRUE){
 echo "Insert Successful";

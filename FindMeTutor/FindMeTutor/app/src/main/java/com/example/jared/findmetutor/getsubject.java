@@ -19,8 +19,16 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import android.content.Intent;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import static android.R.attr.name;
+import static android.R.id.list;
 
 /**
  * Created by jared on 2016/09/02.\
@@ -37,10 +45,14 @@ public class getsubject extends AsyncTask<String, String, String> {
     Activity parent;
     String result = "";
     String StudentID;
+    String SubjectID;
+    List<Subjects> in;
+    public AsyncResponse delegate = null; //Notify when async is done
 
-    public getsubject(Activity par, String student_id){
+    public getsubject(Activity par, String student_id, List<Subjects> obj){
         parent = par;
         StudentID = student_id;
+        in = obj;
     }
 
     public getsubject(Activity par){
@@ -52,7 +64,7 @@ public class getsubject extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://52.35.36.20/get_subject.php");
+            url = new URL("http://neural.net16.net/student_getsubjects.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -124,15 +136,57 @@ public class getsubject extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         //Handle Result
-        if(result.equals("null")){
+       if(result.equals("null")){
             Toast.makeText(parent.getApplicationContext(), "No current subjects", Toast.LENGTH_SHORT).show();
 
-        }else{
-            //If they're in the DB then login to the Home page
-            Toast.makeText(parent.getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-            startActivity(parent);
-        }
+        }else {
+           //If they're in the DB then login to the Home page
+           //Toast.makeText(parent.getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+           //startActivity(parent);
 
+           //this.result = result;
+
+           try {
+
+               JSONArray jsonArr = new JSONArray(result);
+               //Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
+
+               String name = "";
+               String code="";
+
+
+               //Subjects pass = null;
+               //Subjects subjects = new Subjects("h", 0, parent, pass);
+
+
+               for (int i = 0; i < jsonArr.length(); i++) {
+                   JSONObject jsObj = jsonArr.getJSONObject(i);
+                   SubjectID = jsObj.getString("subject_id");
+                   name = jsObj.getString("subject_name");
+                   code = jsObj.getString("subject_course_code");
+                  // Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
+                   in.add(new Subjects(SubjectID, name, code, R.drawable.subj, parent));
+               }
+
+           } catch (JSONException e) {
+               e.printStackTrace();
+           }
+
+           //Now we have their subjects
+
+
+           delegate.processFinish(result); //let the other clsses know when onPost is finished
+       }
+    }
+
+    public String sendResults()
+    {
+        return result;
+    }
+
+    public List getList()
+    {
+        return in;
     }
 
     public static void startActivity(Context context) {
