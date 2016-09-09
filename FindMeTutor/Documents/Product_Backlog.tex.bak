@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+\usepackage{longtable}
+\begin{document}
+\title{\textbf{Product Backlog }}
+\maketitle
+\begin{center}
+\title{\textbf{Software Design COMS3009}}
+\maketitle 
+%\end{center}
+
+\title{\textbf{FindMeTutor Android Application}}
+\maketitle 
+\end{center}
+
+
+\begin{center}
+Proposed idea by:\\
+Shaneel James-718840
+\\Jadon Manilal-815050
+\\Jared Naidoo - 719238
+\\Krupa Prag - 782681
+\\Nivek Ranjith - 802119
+\end{center}
+
+\newpage
+\begin{flushleft}
+
+Bellow is a table illustrating the requirements of the FindMeTutor android application with a number indicating which sprint we plan on completing the requirement in. All requirements which have a sprint number of 1 has been completed in the first sprint\\
+\end{flushleft}
+
+{
+\centering
+\begin{longtable}{| l | p{10cm}| l |}
+			\hline			
+			\textbf{Requirement} & \textbf{Functional Requirement} & \textbf{Sprint}
+			
+			\\ \hline RQ1.1 & The system shall allow a student to register  & 1\\ \hline 
+			RQ1.2 & The system shall allow a student to update their account eg update password & 3\\ \hline  
+			RQ1.3 & The system shall allow a student to view their account details  & 1\\ \hline 
+			RQ1.4 & The system shall allow a student to mark their account as deleted & 3\\ \hline 
+			
+			
+			RQ2.1 & The system shall allow a tutor to register & 1\\ \hline
+			RQ2.2 & The system shall allow a tutor to update their account eg password update & 3 \\ \hline
+			RQ2.3 & The system shall allow a tutor to view their account details & 3\\ \hline
+			RQ2.4 & The system shall allow a tutor to mark their account as deleted & 3\\ \hline  
+%Sprint 2
+						
+			RQ3.1 & The system shall allow a administrator to update a student account & 3\\ \hline  
+			RQ3.2 & The system shall allow a administrator to view a student account details   & 1\\ \hline 
+			RQ3.3 & The system shall allow a administrator to mark a student as deleted & 3\\ \hline 
+			RQ3.4 & The system shall allow a administrator to update a tutor account eg update password  & 3\\ \hline
+			RQ3.5 & The system shall allow a administrator to view a tutor account details & 1\\ \hline
+			RQ3.6 & The system shall allow a administrator to mark a tutor account as deleted &  3\\ \hline
+%Sprint 2: Requirements
+				
+% Ask if we have the password under update
+			
+% Create Administrator
+			RQ4.1 & The system shall allow an administrator to register  & 3\\ \hline 
+			RQ4.2 & The system shall allow an administrator to update their account & 3\\ \hline  
+			RQ4.3 & The system shall allow an administrator to view their account details  & 3\\ \hline 
+			RQ4.4 & The system shall allow an administrator to mark their account as deleted & 3\\ \hline 
+
+% Request tutor: student
+				RQ5.1 & The system shall allow a student to request a tutor & 2\\ \hline
+				RQ5.2 & The system shall allow a student to choose a tutor from a list  & 2\\ \hline
+
+% Request Tutor: Tutor
+				RQ6.1 & The system shall allow a tutor to accept a request & 2\\ \hline
+				RQ6.2 & The system shall allow a tutor to reject a request & 2\\ \hline
+		
+
+% Add Event: Student 
+				RQ7.1 & The system shall allow a student to add events to their personal 'Upcoming events' & 3\\ \hline	
+				RQ7.2 & The system shall allow a student to view their upcoming events & 3\\ \hline
+				RQ7.3 & The system shall allow a student to update their upcoming events & 3\\ \hline
+				RQ7.4 & The system shall allow a student to delete their upcoming events & 3\\ \hline
+				
+% Add Event: Tutor 
+				RQ8.1 & The system shall allow a tutor to add events to their personal 'Upcoming events'  & 3\\ \hline	
+				RQ8.2 & The system shall allow a tutor to view their upcoming events  & 3\\ \hline
+				RQ8.3 & The system shall allow a tutor to update their upcoming events & 3\\ \hline
+				RQ8.4 & The system shall allow a tutor to delete their upcoming events& 3\\ \hline
+								
+% Rate a tutor: student
+				RQ9.1 & The system shall allow a student to rate a tutor & 3\\ \hline
+
+% Check-in/out : Sudent
+				RQ10.1 & The system shall allow a student to check-in  & 3\\ \hline	
+				RQ10.2 & The system shall allow a student to check-out  & 3\\ \hline
+% Check-in/out : Tutor
+				RQ11.1 & The system shall allow a tutor to check-in  & 3\\ 
+\hline	
+				RQ11.2 & The system shall allow a tutor to check-out  & 3\\ \hline
+				RQ12.1 & The system shall allow a student to add funds & 3\\ \hline
+				RQ12.2 & The system shall allow a student to view funds & 3\\ \hline
+				RQ12.3 & The system shall allow a student to update funds & 3\\ \hline
+				RQ13.1 & The system shall allow a tutor to add funds & 3\\ \hline
+				RQ13.2 & The system shall allow a tutor to view funds & 3\\ \hline
+				RQ13.3 & The system shall allow a tutor to update funds & 3\\ \hline
+				RQ14.1 & The system shall allow a student to add subjects & 2\\ \hline
+				RQ15.1 & The system shall allow a student to remove subjects & 2\\ \hline
+				RQ16.1 & The system shall allow a student to login & 1\\ \hline
+				RQ16.2 & The system shall allow a tutor to login & 1\\ \hline
+				RQ16.3 & The system shall allow an administrator to login & 3\\ \hline
+				RQ17.1 & The system shall allow a student to view their upcoming sessions  & 2\\ \hline
+				RQ17.2 & The system shall allow a tutor to view their upcoming sessions  & 2\\ \hline
+			
+\end{longtable}
+
+\end{document}
