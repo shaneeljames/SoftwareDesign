@@ -37,6 +37,7 @@ public class SubjectsAddViewAdapter extends RecyclerView.Adapter<SubjectsAddView
 
         Toast.makeText(context, out, Toast.LENGTH_SHORT).show();
 
+
     }
 
     public class EventViewHolder extends RecyclerView.ViewHolder {
@@ -102,11 +103,13 @@ public class SubjectsAddViewAdapter extends RecyclerView.Adapter<SubjectsAddView
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(context,"Adding" +studentID + " "+eventViewHolder.subId, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context,"Adding" +studentID + " "+eventViewHolder.subId, Toast.LENGTH_SHORT).show();
 
                 connect = new addSubject(activity, studentID,eventViewHolder.subId);
                 connect.delegate = temp;
                 connect.execute();
+
+                eventViewHolder.add.setClickable(false);
 
 
              /*   if(i ==0) //Selected subjects card
