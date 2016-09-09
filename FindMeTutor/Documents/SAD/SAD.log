@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.29)  8 SEP 2016 16:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.29)  8 SEP 2016 22:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -241,22 +241,89 @@ LaTeX Warning: No \author given.
 \tf@toc=\write4
 \openout4 = `SAD.toc'.
 
- [2] [3]
-(./SAD.aux) ) 
+ [2]
+<./class_diagram_findme_tutor.jpg, id=11, 760.0395pt x 494.44725pt>
+File: ./class_diagram_findme_tutor.jpg Graphic file (type jpg)
+
+<use ./class_diagram_findme_tutor.jpg>
+Package pdftex.def Info: ./class_diagram_findme_tutor.jpg used on input line 48
+.
+(pdftex.def)             Requested size: 398.33858pt x 259.13602pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 48--51
+[] 
+ []
+
+<./Pakage.jpg, id=12, 311.1625pt x 260.975pt>
+File: ./Pakage.jpg Graphic file (type jpg)
+ <use ./Pakage.jpg>
+Package pdftex.def Info: ./Pakage.jpg used on input line 53.
+(pdftex.def)             Requested size: 398.33858pt x 334.09465pt.
+
+<./Pakage2.jpg, id=13, 1003.75pt x 481.8pt>
+File: ./Pakage2.jpg Graphic file (type jpg)
+ <use ./Pakage2.jpg>
+Package pdftex.def Info: ./Pakage2.jpg used on input line 54.
+(pdftex.def)             Requested size: 398.33858pt x 191.20213pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 52--55
+[]
+ []
+
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 52--55
+[] 
+ []
+
+[3 <./class_diagram_findme_tutor.jpg>] [4 <./Pakage.jpg>]
+<./activitydiagram.png, id=20, 576.65437pt x 219.06844pt>
+File: ./activitydiagram.png Graphic file (type png)
+
+<use ./activitydiagram.png>
+Package pdftex.def Info: ./activitydiagram.png used on input line 57.
+(pdftex.def)             Requested size: 398.33858pt x 151.33119pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 56--58
+[] 
+ []
+
+<./Deployment.jpg, id=21, 642.4pt x 441.65pt>
+File: ./Deployment.jpg Graphic file (type jpg)
+ <use ./Deployment.jpg>
+Package pdftex.def Info: ./Deployment.jpg used on input line 59.
+(pdftex.def)             Requested size: 398.33858pt x 273.86734pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 59--60
+[] 
+ []
+
+[5 <./Pakage2.jpg> <./activitydiagram.png (PNG copy)>]
+<./RequestTutor.jpg, id=25, 521.95pt x 351.3125pt>
+File: ./RequestTutor.jpg Graphic file (type jpg)
+ <use ./RequestTutor.jpg>
+Package pdftex.def Info: ./RequestTutor.jpg used on input line 61.
+(pdftex.def)             Requested size: 398.33858pt x 268.11526pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 61--62
+[] 
+ []
+
+[6 <./Deployment.jpg>] [7 <./RequestTutor.jpg>] (./SAD.aux) ) 
 Here is how much of TeX's memory you used:
- 2493 strings out of 493013
- 32207 string characters out of 6139317
+ 2550 strings out of 493013
+ 33150 string characters out of 6139317
  92149 words of memory out of 5000000
- 6009 multiletter control sequences out of 15000+600000
- 8056 words of font info for 31 fonts, out of 8000000 for 9000
+ 6051 multiletter control sequences out of 15000+600000
+ 12710 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,6n,26p,260b,195s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on SAD.pdf (3 pages, 32204 bytes).
+</usr/share/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr12.pfb>
+Output written on SAD.pdf (7 pages, 215133 bytes).
 PDF statistics:
- 22 PDF objects out of 1000 (max. 8388607)
- 14 compressed objects within 1 object stream
+ 42 PDF objects out of 1000 (max. 8388607)
+ 24 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

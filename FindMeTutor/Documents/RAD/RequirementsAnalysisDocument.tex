@@ -78,6 +78,7 @@ The FindMeTutor Android application will be seen as successful if it facilitates
 1. http://techterms.com/definition (2016-08-08)
 %\subsubsection{Overview}
 %dummy text
+\newpage
 
 %CURRENT SYSTEM
 \section{CURRENT SYSTEM}
@@ -85,6 +86,8 @@ The FindMeTutor Android application will be seen as successful if it facilitates
 \begin{flushleft}
 Currently, there are many students in search of tutors to help them with particular courses with which they require some support, as well as fellow students or tutors who are available to tutor particular courses of study. However, the problem that is faced on hand is that either pool (students and tutors) are struggling to find each other. 
 \end{flushleft}
+
+\newpage
 
 %PROPOSED SYSTEM
 \section{PROPOSED SYSTEM}
@@ -111,6 +114,71 @@ Describes the high-level functionality of the system\\
 3.2.4 In the light of security, the database shall be able store a corresponding password for each user of the application, which will allow for each users account to be protected, as each user's users email address and entered password will be compared to that of which was entered into the database at sign-up, hence the system restricting access to authorized users. \\
 3.2.5 FindMeTutor Android application will be able to be utilised on any Android OS of (some version), which is able easily accessible,as many students can download this application for use on their smartphones and/or tablets which shall makes the application easily accessible. 
 \end{comment}
+
+\begin{flushleft}
+\textbf{Overview of Requirements}
+\end{flushleft}
+{
+\centering
+\begin{longtable}{| p{1.5cm} | p{13.5cm}|  }
+\hline			
+\textbf{Item} & \textbf{Requirements to implement}	
+			
+% Proposal 
+	\\ \hline 0 & Proposal 
+% Student Registration			
+		\\ \hline 1 & Student registration and login \\ \hline 
+			
+%Tutor Registration
+			2 & Tutor registration and login \\ \hline	
+ 
+% System Administrator Registration						
+			3 & Administrator registration  \\ \hline  
+
+			
+% Administrator capabilities
+			4 & Administrator capabilities\\ \hline 
+			
+% Request tutor: student
+			5 & Students able to request a tutor\\ \hline
+
+% Request Tutor: Tutor
+				6 & Tutor able to accept/reject tutor requests\\ \hline
+
+% Add Event: Student 
+				7 & Student able to handle 'Upcoming events'   \\ \hline	
+				
+% Add Event: Tutor 
+				8 & Tutor able to handle 'Upcoming events'  \\ \hline	
+							
+% Rate a tutor: student
+				9 & Student able to rate a tutor \\ \hline
+
+% Check-in/out : Sudent
+				10 & Student able to check-in/check-out of tutor sessions  \\ \hline	
+
+% Safety checker
+				11 & Tutors able to check-in/check-out of tutor sessions   \\ \hline	
+
+% Payment
+				12 & Student funding and payment \\ \hline	
+% Payment
+				13 & Tutor funding and payment \\ \hline	
+% subjects
+				14 & Students able to add/ remove subjects enrolled in\\ \hline
+% subjects
+				15 & Tutors able to add/ remove subjects able to tutor\\ \hline
+% Login
+				16 & Login of student and tutors\\ \hline
+% Sessions
+				17 & Students and tutors can log their tutorial sessions\\ \hline	
+% Archive account
+				18 & Students and tutors can mark off completed sessions\\ \hline					
+
+
+\end{longtable}
+}
+
 
 {
 \centering
@@ -190,10 +258,28 @@ Describes the high-level functionality of the system\\
 				RQ17.1 & The system shall allow a student to view their upcoming sessions  &UC-DSes\\ \hline
 				RQ17.2 & The system shall allow a tutor to view their upcoming sessions  &UC-VSes\\ \hline
 				RQ18.1 & The system shall allow a tutor to mark a session as done/removed &UC-DSes\\ \hline
-				RQ18.1 & The system shall allow a student to mark a session as done/removed &UC-DSes\\ \hline
+				RQ18.2 & The system shall allow a student to mark a session as done/removed &UC-DSes\\ \hline
 		
 \end{longtable}
 }
+\subsection{Functional requirements specification}
+%Although this section is entitled “Requirements Specification,” we will see that we
+%are still discovering the functional system requirements for the system-to-be, as
+%well as specifying the discovered requirements.
+\subsubsection{Stakeholders}
+%Identify anyone and everyone who has interest in this system (users, managers, sponsors, etc.).
+%Stakeholders should be humans or human organizations.
+\begin{itemize}
+\item Students
+\item Tutors
+\item University (School of Computer Science and Applied Mathematics)
+\end{itemize}
+\subsubsection{Actors and Goals}
+\begin{itemize}
+\item Students - a registered user looking for a tutor
+\item Tutors - a registered user, whom is approachable to tutor particular subjects
+\item Database - records details of students and tutors. Stores required information with regards to tutorials for student and tutor. 
+\end{itemize}
 
 \subsection{Non-functional requirements}{
 Describes the user-level requirements that are not directly related to the functionality. \\
@@ -217,6 +303,84 @@ Android studio for development\\
 Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 %\textbf{3.3.8 Legal}\\
 }
+
+
+\subsection{Acceptance Testing}
+\subparagraph{Acceptance Test general}
+\begin{itemize}
+\item ACT0.01	Ensure working connection between the applcation and it's database (pass: database stores information and app displays required data from database)
+%Student registration
+\item ACT1.01	Challenge registered student to re-register with taken username (fail)
+\item ACT1.02	Challenge new student to register with new identifier (pass)
+\item ACT1.03	Challenge registered student to update their account (pass)
+\item ACT1.04	Challenge registered student to view their account (pass)
+%Tutor registration
+\item ACT2.01	Challenge registered tutor to re-register with taken username (fail)
+\item ACT2.02	Challenge new tutor to register (pass)
+\item ACT2.03	Challenge registered tutor to update their account (pass)
+\item ACT2.04	Challenge registered tutor to view their account (pass)
+% Administrator capabilities
+\item ACT3.01	Challenge registered administrator to view a registered student's account (pass)
+\item ACT3.02	Challenge registered administrator to update a registered student's account (pass)
+\item ACT3.03	Challenge registered administrator to mark a registered student's account as deleted (pass)
+\item ACT3.04	Challenge registered administrator to view a registered tutor's account (pass)
+\item ACT3.05	Challenge registered administrator to update a registered tutor's account (pass)
+\item ACT3.06	Challenge registered administrator to mark a registered tutor's account as deleted (pass)
+%Administrator registration
+\item ACT4.01	Challenge registered administrator to re-register with taken username(fail)
+\item ACT4.02	Challenge new administrator to register (pass)
+\item ACT4.03	Challenge registered administrator to update their account (pass)
+\item ACT4.04	Challenge registered administrator to view their account (pass)
+% Request tutor: student	
+\item ACT5.01	A student requesting a tutor can request a tutor for a date/time which has already passed  (fail)	
+\item ACT5.02	A student requesting a tutor can request a tutor for a subject that they have not added to their enrolled subjects  (fail)
+\item ACT5.03	A student requesting a tutor can request tutorials for various topics at a given time. ie. Student can request tutor for subject B while request tutor status for subject A is still pending (pass)	
+\item ACT5.04	A student requesting a tutor can delete a request for a  tutorial, if no longer require it. (fail)
+\item ACT5.05	A student receiving a tutor acceptance notification, can agree to a tutorial session from the list  of tutors who have agreed (pass)
+\item ACT5.06 A student receiving a tutor acceptance notification, can disagree to tutorial . ie . They can decide to no longer want to continue with the tutorial, or have selected another tutor who has accepted their request.(pass)		% Request tutor: tutor
+\item ACT 6.01 A tutor can accept/reject a tutor request(pass)
+% Add events: Students 
+\item ACT 7.01 A student can add an event to their upcoming events (pass)	
+\item ACT 7.02 A student can modify an event to their upcoming events (pass)
+\item ACT 7.03 A student can delete an event to their upcoming events (pass)
+\item ACT 7.04 A student can view an event to their upcoming events (pass)
+% Add events: tutor 
+\item ACT 8.01 A tutor can add an event to their upcoming events (pass)	
+\item ACT 8.02 A tutor can modify an event to their upcoming events (pass)
+\item ACT 8.03 A tutor can delete an event to their upcoming events (pass)
+\item ACT 8.04 A tutor can view an event to their upcoming events (pass)
+% Rate a tutor
+\item ACT 9.01 A student can rate a tutor that they have previously had a tutorial session with. (pass)
+\item ACT 9.02 A student can rate a tutor that they have not previously had a tutorial session with. (fail)
+% Check-in
+\item ACT 10.01 A student can check-in once at tutorial venue(pass)
+% Check-in
+\item ACT 11.01 A tutor can check-in once at tutorial venue(pass)
+% funding and payment: Student
+\item ACT 12.01 A student can pay in funds to their account balance (pass)
+\item ACT 12.02 A student can view balance of their account funds (pass)
+% funding and payment: Tutor
+\item ACT 13.01 A tutor can receive funds toward their account baance - from student tutorial session payments (pass)
+\item ACT 13.02 A tutor can view the balance of their account funds (pass)
+% Add enrolled subjects: Students / Tutor
+\item ACT 14.01 A student can add subjects in which they are enrolled(pass)
+\item ACT 14.02 A tutor can add subjects in which they are fit to tutor(pass)
+% remove subjects: students and  tutor
+\item ACT 15.01 A student can remove subjects in which they are no longer enrolled(pass)
+\item ACT 15.02 A tutor can remove subjects in which they no longer would want to tutor(pass)
+% login 
+\item ACT 16.01 A student who is registered can login (pass)
+\item ACT 16.02 A student who is not registered can login (fail)
+\item ACT 16.03 A tutor who is registered can login (pass)
+\item ACT 16.04 A tutor who is not registered can login (fail)
+% upcoming sessions
+\item ACT 17.01 A student can view their upcoming tutorial sessions(pass)
+\item ACT17.02	A tutor can view their upcoming tutorial sessions(pass)
+% remove completed sessions
+\item ACT 18.01 A student can mark off completed tutorial sessions(pass)
+\item ACT18.02	A tutor can mark off completed tutorial sessions(pass)
+\end{itemize}
+
 \subsection{System models}
 
 \subsubsection{Scenario}
@@ -545,11 +709,67 @@ Use case Create Student:
 Use case:
 %newpage
 
-		
 \newpage
+\subsubsection{User stories}
+{
+\centering
+\begin{longtable}{| l | p{10cm}| l |}
+			\hline			
+			\textbf{Identifier} & \textbf{User story} & \textbf{Size (points)}
+			
+			\\ \hline ST-1 & As a student, I can  register on the FindMeTutor application  & 5 
+			\\ \hline ST-2 & As a student, I can  login to my account on the FindMeTutor application  & 5 
+			\\ \hline ST-3 & As a tutor, I can  register on the FindMeTutor application  & 5 
+																\\ \hline ST-4 & As a tutor, I can  login to my account on the FindMeTutor application  & 5 
+																\\ \hline ST-6 & As an administrator, I can  register on the FindMeTutor application  & 5 
+													\\ \hline ST-7 & As an administrator, I can  login to my account on the FindMeTutor application  & 5 			
+
+			\\ \hline ST-8 & As a student, I can  request a tutor  & 5 													
+			\\ \hline ST-9 & As a student, I can  add an event to my 'Upcoming events'  & 5 
+			
+			\\ \hline ST-10 & As a student, I can  ammend an event on my 'Upcoming events'  & 5 
+			
+			\\ \hline ST-11 & As a student, I can  delete an event on my 'Upcoming events'  & 5 	
+			
+			\\ \hline ST-12 & As a student, I can  view an event on my 'Upcoming events'  & 5 
+			
+			\\ \hline ST-13 & As a tutor, I can  accept a tutor request  & 5 			
+						
+						\\ \hline ST-14 & As a tutor, I can  reject a tutor request  & 5 									
+			
+			\\ \hline ST-14 & As a tutor, I can  add an event to my 'Upcoming events'  & 5 
+			
+			\\ \hline ST-15 & As a tutor, I can  ammend an event on my 'Upcoming events'  & 5 
+			
+			\\ \hline ST-16 & As a tutor, I can  delete an event on my 'Upcoming events'  & 5 
+			
+			\\ \hline ST-17 & As a tutor, I can  view an event on my 'Upcoming events'  & 5 
+
+			\\ \hline ST-18 & As a student, I can  select a tutor  & 5 
+			
+			\\ \hline ST-19 & As a student, I can  make contact with a tutor to make tutorial arrangements  & 5 
+			
+			\\ \hline ST-20 & As a tutor, I can  make tutorial arrangments with a student who has contacted me  & 5
+
+			\\ \hline ST-21 & As a student, I can  check-in to a tutorial session  & 5 
+			
+			\\ \hline ST-22 & As a student, I can  check-out to a tutorial session  & 5 
+			
+			\\ \hline ST-23 & As a tutor, I can  check-in to a tutorial session  & 5 
+			
+			\\ \hline ST-24 & As a tutor, I can  check-out to a tutorial session  & 5 \\ \hline
+\end{longtable}
+}
+		
+
 \subsubsection{Analysis object model}
-%(Attached P17)
+Appendix 1
+
+
+
 \subsubsection{Dynamic model}
+Appendix 2
+
 %(Attached P18)
 %A dynamic model represents the behaviour of an object over time. It is used where the object's behaviour is best described as a set of states that occur in a defined sequence. The components of the dynamic model are:\\
  %	States. The purchase order (PO) is modelled as passing through a set of states. The operations that can be performed on the PO are dependent on the state it is in. For example, information cannot be entered after it has reached the approved state.\\
@@ -558,16 +778,24 @@ Use case:
 %	Actions. Actions occur on state transitions. For example, on a goods received event the action of notify purchaser is performed. Actions are modelled as instantaneous occurrences (contrast with activities).\\
 %	Activities. An activity is performed while an object is in a specific state. For example, while in the entering PO state data is entered into the PO. Activities are modelled as occurring over a period of time (contrast with actions).\\
 	
-\subsubsection{User interface navigational paths and screen mock-ups} 
+
+ \subsubsection{User interface navigational paths and screen mock-ups}
+ Appendix 3
+ 
 %(Attached P19)
+
 \subsubsection{Operational requirements}
+
 Operational requirements describe the non-business characteristics of an application.\\
 3.5.1 Amazon Web Server - Web server to host the database\\ 
 3.5.2 Android studio to design UI\\
 3.5.3 GitHub to facilitate the build of the project among team members\\
 3.5.4 MySql which is the database management system used to house and control the database.\\
 3.5.5 phpMyAdmin which is used to interact with the database in a graphical user interface.
-\\
+
+\newpage
+\section{APPENDIX}
+
 %GLOSSARY
 %\section{GLOSSARY}
 
