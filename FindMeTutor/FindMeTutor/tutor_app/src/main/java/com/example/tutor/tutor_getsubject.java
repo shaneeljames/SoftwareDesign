@@ -141,13 +141,16 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
 
         } else {
 
-            Toast.makeText(parent.getApplicationContext(), "making object: " + result, Toast.LENGTH_LONG).show();
+          //  Toast.makeText(parent.getApplicationContext(), "making object: " + result, Toast.LENGTH_LONG).show();
+
+            String result1 = result.substring(result.indexOf('['),result.length()) ;
+          //  Toast.makeText(parent.getApplicationContext(), " object: " + result1, Toast.LENGTH_LONG).show();
 
             try {
 
-                JSONArray jsonArr = new JSONArray(result);
+                JSONArray jsonArr = new JSONArray(result1);
                 //Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
-
+                String tutor_student_id= "" ;
                 String subjectName = "";
                 String subjectCode="";
                 String date = "" ;
@@ -163,6 +166,7 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
 
                 for (int i = 0; i < jsonArr.length(); i++) {
                     JSONObject jsObj = jsonArr.getJSONObject(i);
+                    tutor_student_id = jsObj.getString("tutor_student_id");
                     subjectName = jsObj.getString("subject_name");
                     subjectCode = jsObj.getString("subject_course_code");
                     date = jsObj.getString("date");
@@ -170,12 +174,10 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
                     studentName = jsObj.getString("student_fname");
                     studentSurname = jsObj.getString("student_lname");
                     description = jsObj.getString("description");
-<<<<<<< HEAD
-                    Toast.makeText(parent.getApplicationContext(), studentName, Toast.LENGTH_SHORT).show();
-=======
+                   // Toast.makeText(parent.getApplicationContext(), studentName, Toast.LENGTH_SHORT).show();
 
->>>>>>> refs/remotes/shaneeljames/master
-                    in.add(new Notifications(subjectName,subjectCode,date,time,studentName,studentSurname,description,R.drawable.notify,parent));
+
+                    in.add(new Notifications(tutor_student_id,subjectName,subjectCode,date,time,studentName,studentSurname,description,R.drawable.notify,parent));
                 }
 
                // Toast.makeText(parent.getApplicationContext(), in.get(0).studentSurname, Toast.LENGTH_SHORT).show();
