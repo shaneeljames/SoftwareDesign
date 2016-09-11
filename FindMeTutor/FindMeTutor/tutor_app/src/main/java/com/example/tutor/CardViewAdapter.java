@@ -12,6 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 /**
@@ -104,6 +106,11 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                     eventViewHolder.viewDetails.setText("View Session Details");
                     eventViewHolder.desc.setText("");
                     eventViewHolder.status.setText("");
+
+                   Picasso.with(context).load("http://neural.net16.net/Gow.jpg").into(eventViewHolder.session);
+                         //   Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);
+
+
               //      Count++ ;
                 }
                 else {
