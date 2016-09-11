@@ -33,6 +33,7 @@ public class Notifications {
         this.studentSurname = ss ;
         this.description = desc ;
         this.context = context;
+
         this.icon = i ;
         // this.subjectObj = obj;
 

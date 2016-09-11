@@ -35,19 +35,14 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //test
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        //get extras from previous screen
-      /*  Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-             name = extras.getString("name");
 
-            //The key argument here must match that used in the other activity
-        }*/
 
 
 
@@ -70,9 +65,9 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
             tutor_student_num = jsObj.getString("tutor_student_num");
             tutor_email = jsObj.getString("tutor_email");
             tutor_contact_num = jsObj.getString("tutor_contact_num");
-            tutor_current_balance = jsObj.getString("tutor_current_balance");
+            tutor_current_balance = jsObj.getString("tutor_balance");
 
-            Toast.makeText(getApplicationContext(), "Login blah "+tutor_email, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Login blah "+tutor_id, Toast.LENGTH_SHORT).show();
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -80,6 +75,11 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
 
         myprefs=this.getSharedPreferences("user", MODE_PRIVATE) ;
         myprefs.edit().putString("tutor_id", tutor_id).apply();
+
+
+
+        Toast.makeText(getApplicationContext(), "Login blah "+tutor_id, Toast.LENGTH_SHORT).show();
+
 
 
 
@@ -104,6 +104,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
 
 
     } //onCreate
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
