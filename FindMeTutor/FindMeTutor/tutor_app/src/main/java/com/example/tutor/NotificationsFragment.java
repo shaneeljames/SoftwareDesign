@@ -22,7 +22,7 @@ public class NotificationsFragment extends Fragment implements tutor_AsyncRespon
         // Required empty public constructor
     }
 
-    List<Notifications> list = new ArrayList<Notifications>() ;
+    List<Notifications> list = new ArrayList<>() ;
     RecyclerView rv ;
     tutor_getsubject connect2server ;
     @Override

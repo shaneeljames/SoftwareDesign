@@ -63,28 +63,6 @@
             android:layout_below="@+id/date"
             />
 
-
-
-
-    </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
-
-
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
         <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
@@ -92,6 +70,12 @@
             android:layout_alignParentTop="true"
             android:id="@+id/studentName"
             android:textSize="20sp"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Description" />
 
 
         <Button
@@ -102,16 +86,15 @@
             android:layout_centerHorizontal="true"
             android:id="@+id/btnConfirm" />
 
-      </LinearLayout>
 
-        <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/Description" />
+
 
 
     </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
 
 
 

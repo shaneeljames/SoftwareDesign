@@ -10,6 +10,7 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -19,6 +20,18 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    packagingOptions{
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/License.txt'
+    }
+    dexOptions {
+        preDexLibraries =false ;
     }
 }
 
@@ -38,4 +51,5 @@ dependencies {
     compile 'com.android.support:support-v4:24.2.0'
     testCompile 'junit:junit:4.12'
     androidTestCompile 'junit:junit:4.12'
+    compile files('src/main/libs/picasso-2.5.2.jar')
 }

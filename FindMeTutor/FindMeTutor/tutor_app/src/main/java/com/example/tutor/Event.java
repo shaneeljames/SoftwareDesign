@@ -1,6 +1,5 @@
 package com.example.tutor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,13 +26,7 @@ public class Event {
 
     // This method creates an ArrayList that has three Person objects
     public void initializeData(){
-        events = new ArrayList<>();
-        events.add(new Event("Linear ","WSS 3","20th September", "1pm", R.drawable.session));
-        events.add(new Event("Basic Analysis","CB 123","24th September", "8am", R.drawable.session));
-        events.add(new Event("CAM", "WSS 3","23th September", "1pm", R.drawable.session));
-        events.add(new Event("Operating Systems", "CB 123","27th September", "8am", R.drawable.session));
-        events.add(new Event("Multivariable Calculus", "Exams Hall 3","25th September", "1pm", R.drawable.session));
-        events.add(new Event("Physics", "CB 123","27th September", "8am", R.drawable.session));
+
     }
 
     public void addNewEvent(){
