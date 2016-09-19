@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.29)  8 SEP 2016 22:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.29)  19 SEP 2016 16:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -242,73 +242,88 @@ LaTeX Warning: No \author given.
 \openout4 = `SAD.toc'.
 
  [2]
+Overfull \hbox (3.42508pt too wide) in paragraph at lines 45--51
+\OT1/cmr/m/n/12 This sec-tion lists the var-i-ous or-gan-i-sa-tions who are con
+-cerned with the project. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--51
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--51
+
+ []
+
 <./class_diagram_findme_tutor.jpg, id=11, 760.0395pt x 494.44725pt>
 File: ./class_diagram_findme_tutor.jpg Graphic file (type jpg)
 
 <use ./class_diagram_findme_tutor.jpg>
-Package pdftex.def Info: ./class_diagram_findme_tutor.jpg used on input line 48
+Package pdftex.def Info: ./class_diagram_findme_tutor.jpg used on input line 55
 .
 (pdftex.def)             Requested size: 398.33858pt x 259.13602pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 48--51
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 55--58
 [] 
  []
 
-<./Pakage.jpg, id=12, 311.1625pt x 260.975pt>
+[3] <./Pakage.jpg, id=15, 311.1625pt x 260.975pt>
 File: ./Pakage.jpg Graphic file (type jpg)
  <use ./Pakage.jpg>
-Package pdftex.def Info: ./Pakage.jpg used on input line 53.
+Package pdftex.def Info: ./Pakage.jpg used on input line 60.
 (pdftex.def)             Requested size: 398.33858pt x 334.09465pt.
 
-<./Pakage2.jpg, id=13, 1003.75pt x 481.8pt>
+<./Pakage2.jpg, id=16, 1003.75pt x 481.8pt>
 File: ./Pakage2.jpg Graphic file (type jpg)
  <use ./Pakage2.jpg>
-Package pdftex.def Info: ./Pakage2.jpg used on input line 54.
+Package pdftex.def Info: ./Pakage2.jpg used on input line 61.
 (pdftex.def)             Requested size: 398.33858pt x 191.20213pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 52--55
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 59--62
 []
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 52--55
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 59--62
 [] 
  []
 
-[3 <./class_diagram_findme_tutor.jpg>] [4 <./Pakage.jpg>]
-<./activitydiagram.png, id=20, 576.65437pt x 219.06844pt>
+[4 <./class_diagram_findme_tutor.jpg>] [5 <./Pakage.jpg>]
+<./activitydiagram.png, id=23, 576.65437pt x 219.06844pt>
 File: ./activitydiagram.png Graphic file (type png)
 
 <use ./activitydiagram.png>
-Package pdftex.def Info: ./activitydiagram.png used on input line 57.
+Package pdftex.def Info: ./activitydiagram.png used on input line 64.
 (pdftex.def)             Requested size: 398.33858pt x 151.33119pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 56--58
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 63--65
 [] 
  []
 
-<./Deployment.jpg, id=21, 642.4pt x 441.65pt>
+<./Deployment.jpg, id=24, 642.4pt x 441.65pt>
 File: ./Deployment.jpg Graphic file (type jpg)
  <use ./Deployment.jpg>
-Package pdftex.def Info: ./Deployment.jpg used on input line 59.
+Package pdftex.def Info: ./Deployment.jpg used on input line 66.
 (pdftex.def)             Requested size: 398.33858pt x 273.86734pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 59--60
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 66--67
 [] 
  []
 
-[5 <./Pakage2.jpg> <./activitydiagram.png (PNG copy)>]
-<./RequestTutor.jpg, id=25, 521.95pt x 351.3125pt>
+[6 <./Pakage2.jpg> <./activitydiagram.png (PNG copy)>]
+<./RequestTutor.jpg, id=28, 521.95pt x 351.3125pt>
 File: ./RequestTutor.jpg Graphic file (type jpg)
  <use ./RequestTutor.jpg>
-Package pdftex.def Info: ./RequestTutor.jpg used on input line 61.
+Package pdftex.def Info: ./RequestTutor.jpg used on input line 68.
 (pdftex.def)             Requested size: 398.33858pt x 268.11526pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 61--62
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 68--69
 [] 
  []
 
-[6 <./Deployment.jpg>] [7 <./RequestTutor.jpg>] (./SAD.aux) ) 
+[7 <./Deployment.jpg>] [8 <./RequestTutor.jpg>] (./SAD.aux) ) 
 Here is how much of TeX's memory you used:
  2550 strings out of 493013
  33150 string characters out of 6139317
@@ -320,10 +335,10 @@ Here is how much of TeX's memory you used:
 </usr/share/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmr12.pfb>
-Output written on SAD.pdf (7 pages, 215133 bytes).
+Output written on SAD.pdf (8 pages, 215983 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 45 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
