@@ -1,6 +1,7 @@
 package com.example.tutor;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewNotificationsAdapter.EventViewHolder> {
@@ -75,14 +77,31 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
         eventViewHolder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Index position is: "+i, Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(context, "Index position is: "+i, Toast.LENGTH_SHORT).show();
             }
         });
 
         eventViewHolder.confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Confirmed: "+i, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(context, "Confirmed: "+i, Toast.LENGTH_SHORT).show();
+
+                SharedPreferences myprefs;
+                myprefs =  context.getSharedPreferences("user",MODE_PRIVATE ) ;
+                String id = myprefs.getString("tutor_id", null) ;
+
+               // Toast.makeText(context, "tut: "+list.get(i).tutor_student_id, Toast.LENGTH_SHORT).show();
+
+                tutor_confirm connect2server = new tutor_confirm(context,id,list.get(i).tutor_student_id) ;
+                connect2server.execute();
+
+                Toast.makeText(context, "Session is booked", Toast.LENGTH_SHORT).show();
+
+
+
+                //  tutor_getsubject2 connect2server2 = new tutor_getsubject2(context,id) ;
+
+
             }
         });
     }

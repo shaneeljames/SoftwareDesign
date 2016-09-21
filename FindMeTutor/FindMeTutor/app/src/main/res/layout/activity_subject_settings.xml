@@ -24,16 +24,13 @@
         android:text="Your Subjects"
         android:padding="20dp"/>
 
-    <RelativeLayout
-        android:layout_below="@+id/su"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
 
         <LinearLayout
             android:id="@+id/linlay"
+            android:layout_below="@+id/su"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
 
             <android.support.v7.widget.RecyclerView
@@ -43,12 +40,6 @@
                 />
 
         </LinearLayout>
-
-
-
-
-
-    </RelativeLayout>
 
     <Button
         android:id="@+id/adSub"
@@ -60,6 +51,9 @@
         android:background="@color/colorPrimary"
         android:textColor="@android:color/white"
         android:gravity="center"/>
+
+
+
 
 
 

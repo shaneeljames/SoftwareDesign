@@ -1,63 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:padding="5dp"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:padding="5dp"
+    >
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cv"
         >
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
+
+        <RelativeLayout
             android:layout_height="wrap_content"
-            android:id="@+id/cv"
-            >
+            android:padding="16dp"
+            android:id="@+id/llSession"
+            android:layout_width="wrap_content">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                >
+                android:id="@+id/session"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                android:paddingRight="@dimen/activity_horizontal_margin" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/session"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginRight="16dp"
-                    />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/subject"
+                android:layout_toRightOf="@+id/session"
+                android:layout_alignParentTop="true"
+                android:textSize="30sp"
+                />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/subject"
-                    android:layout_toRightOf="@+id/session"
-                    android:layout_alignParentTop="true"
-                    android:textSize="30sp"
-                    />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/amount"
+                android:layout_toRightOf="@+id/session"
+                android:layout_below="@+id/subject"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/date"
+                android:layout_toRightOf="@+id/session"
+                android:layout_below="@+id/amount"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/time"
+                android:layout_toRightOf="@+id/session"
+                android:layout_below="@+id/date"
+                />
+            <TextView
+                android:layout_height="wrap_content"
+                android:id="@+id/descTxt"
+                android:layout_toRightOf="@+id/session"
+                android:layout_below="@+id/time"
+                android:elevation="1dp"
+                android:layout_width="400dp"
+                android:allowUndo="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/status"
+                android:layout_toRightOf="@+id/session"
+                android:layout_below="@+id/descTxt"
+                />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/venue"
-                    android:layout_toRightOf="@+id/session"
-                    android:layout_below="@+id/subject"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/date"
-                    android:layout_toRightOf="@+id/session"
-                    android:layout_below="@+id/venue"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/time"
-                    android:layout_toRightOf="@+id/session"
-                    android:layout_below="@+id/date"
-                    />
+            <Button
+                android:text="Checkin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/subject"
+                android:layout_toEndOf="@+id/subject"
+                android:layout_marginLeft="26dp"
+                android:layout_marginStart="26dp"
+                android:id="@+id/btnCheckin" />
 
-            </RelativeLayout>
+            <TextView
+                android:text="View Students Details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/status"
+                android:layout_alignLeft="@+id/btnCheckin"
+                android:layout_alignStart="@+id/btnCheckin"
+                android:layout_marginLeft="11dp"
+                android:layout_marginStart="11dp"
+                android:id="@+id/txtStudentDetails"
+                android:textColor="@android:color/holo_blue_dark" />
 
-        </android.support.v7.widget.CardView>
+
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/descTxt"
+            android:layout_alignRight="@+id/txtStudentDetails"
+            android:layout_alignEnd="@+id/txtStudentDetails"
+            android:id="@+id/llStudent"
+            android:clickable="true"
+            android:visibility="gone">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/studentName"
+                android:layout_toRightOf="@+id/session"
+                android:layout_alignParentTop="true"
+                android:textSize="30sp"
+                />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

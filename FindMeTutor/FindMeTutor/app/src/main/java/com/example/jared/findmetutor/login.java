@@ -123,12 +123,12 @@ public class login extends AsyncTask<String, String, String> {
         //Handle Result4
         String temp = result.substring(1,2);
       if(temp.equals("]")){
-      Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful " + result, Toast.LENGTH_SHORT).show();
+      Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful " , Toast.LENGTH_SHORT).show();
 
       }else{
           //If they're in the DB then login to the Home page
             //this.result = result;
-          Toast.makeText(parent.getApplicationContext(), "Login Successful "+result, Toast.LENGTH_LONG).show();
+          Toast.makeText(parent.getApplicationContext(), "Login Successful ", Toast.LENGTH_LONG).show();
 
           Intent goHome = new Intent(parent, HomeActivity.class);
           goHome.putExtra("user", result);
