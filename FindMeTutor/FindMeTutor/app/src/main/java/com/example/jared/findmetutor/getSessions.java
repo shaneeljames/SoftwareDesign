@@ -49,7 +49,7 @@ public class getSessions extends AsyncTask<String, String, String> {
     String time;
     String desc;
     String status;
-    int available;
+    String available;
 
     List<Session> in;
     public AsyncResponse delegate = null; //Notify when async is done
@@ -157,7 +157,7 @@ public class getSessions extends AsyncTask<String, String, String> {
            try {
 
                JSONArray jsonArr = new JSONArray(result);
-               Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_LONG).show();
+              // Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_LONG).show();
 
                String name = "";
                String code="";
@@ -179,7 +179,7 @@ public class getSessions extends AsyncTask<String, String, String> {
                    time = jsObj.getString("time");
                    desc = jsObj.getString("description");
                    status = jsObj.getString("status");
-                   available = jsObj.getInt("available");
+                   available = jsObj.getString("available");
                   // Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
                    in.add(new Session( sessionID, tutorID, subjectName,subjectID,amount,date,time, desc,status,available, R.drawable.session, parent ));
                }

@@ -39,11 +39,16 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         TextView desc;
         TextView status;
 
+        TextView sess;
+        TextView avail;
+
         ImageView session;
 
         EventViewHolder(View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.cv);
+
+
 
             subjectName = (TextView)itemView.findViewById(R.id.subject);
             amount = (TextView)itemView.findViewById(R.id.amount);
@@ -54,6 +59,9 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
 
             session = (ImageView)itemView.findViewById(R.id.session);
+
+            sess = (TextView)itemView.findViewById(R.id.sessID);
+            avail = (TextView)itemView.findViewById(R.id.available);
         }
     }
     String sessID;
@@ -65,6 +73,18 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         this.events = events;
         this.context = context;
         this.base = home;
+
+        setHasStableIds(true);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
     @Override
@@ -80,35 +100,49 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
     }
 
     @Override
-    public void onBindViewHolder(EventViewHolder eventViewHolder, final int i) {
-        //sessID=events.get(i).sessionID;
-        eventViewHolder.subjectName.setText(events.get(i).subjectName);
-        eventViewHolder.amount.setText(events.get(i).amount);
-        eventViewHolder.date.setText(events.get(i).date);
-        eventViewHolder.time.setText(events.get(i).time);
-        eventViewHolder.desc.setText(events.get(i).desc);
-        eventViewHolder.status.setText(events.get(i).status);//condition this
-        eventViewHolder.session.setImageResource(events.get(i).photoId);
+    public void onBindViewHolder( EventViewHolder eventViewHolder, final int i) {
 
 
-        if(events.get(i).available>1)
-        {
-            eventViewHolder.cv.setCardBackgroundColor(Color.parseColor("#3CB371"));
-            eventViewHolder.cv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(context, "Session id: "+events.get(i).sessionID, Toast.LENGTH_SHORT).show();
+            eventViewHolder.sess.setText(events.get(i).sessionID);
+            sessID = eventViewHolder.sess.getText().toString();
+            eventViewHolder.subjectName.setText(events.get(i).subjectName);
+            eventViewHolder.amount.setText(events.get(i).amount);
+            eventViewHolder.date.setText(events.get(i).date);
+            eventViewHolder.time.setText(events.get(i).time);
+            eventViewHolder.desc.setText(events.get(i).desc);
+            eventViewHolder.status.setText(events.get(i).status);//condition this
+            eventViewHolder.avail.setText(events.get(i).available);
+            eventViewHolder.session.setImageResource(events.get(i).photoId);
+
+            if(Integer.parseInt(eventViewHolder.avail.getText().toString())>0)
+            {
+                eventViewHolder.cv.setCardBackgroundColor(Color.parseColor("#3CB371"));
+                eventViewHolder.cv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(context, "Session id: "+events.get(i).sessionID, Toast.LENGTH_SHORT).show();
 
 
 
-                    base.switchContent(events.get(i).sessionID);
+                        base.switchContent(sessID);
 
-                }
-            });
+                    }
+                });
+            }
+
+        eventViewHolder.itemView.setTag(events.get(i));
+
         }
 
 
-    }
+
+
+
+        //Toast.makeText(context, "Session id: "+eventViewHolder.sess.getText().toString()+ " Available : "+eventViewHolder.avail.getText().toString(), Toast.LENGTH_LONG).show();
+
+
+
+
 
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {

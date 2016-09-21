@@ -137,6 +137,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
 
 
             CardViewAdapter adapter = new CardViewAdapter(list, this.getContext(), this);
+            //adapter.notifyDataSetChanged();
             rv.setAdapter(adapter);
         }
 

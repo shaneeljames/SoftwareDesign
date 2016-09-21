@@ -69,6 +69,17 @@
                     android:layout_toRightOf="@+id/session"
                     android:layout_below="@+id/descTxt"
                     />
+
+                <TextView
+                    android:id="@+id/sessID"
+                    android:visibility="invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/available"
+                    android:visibility="invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </RelativeLayout>
 
         </android.support.v7.widget.CardView>
