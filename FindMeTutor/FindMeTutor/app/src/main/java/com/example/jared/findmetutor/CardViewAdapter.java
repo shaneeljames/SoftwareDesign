@@ -1,6 +1,9 @@
 package com.example.jared.findmetutor;
 
 import android.content.Context;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,13 +13,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import java.util.List;
 
 /**
  * Created by Jadon on 30-Aug-16.
  */
 
-public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventViewHolder> {
+public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventViewHolder>  {
 
     public static class EventViewHolder extends RecyclerView.ViewHolder {
         CardView cv;
@@ -54,10 +58,12 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
     List<Session> events;
     Context context;
+    HomeFragment base;
 
-    CardViewAdapter(List<Session> events, Context context){
+    CardViewAdapter(List<Session> events, Context context, HomeFragment home){
         this.events = events;
         this.context = context;
+        this.base = home;
     }
 
     @Override
@@ -79,7 +85,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         eventViewHolder.date.setText(events.get(i).date);
         eventViewHolder.time.setText(events.get(i).time);
         eventViewHolder.desc.setText(events.get(i).desc);
-        eventViewHolder.status.setText(events.get(i).status);
+        eventViewHolder.status.setText(events.get(i).status);//condition this
         eventViewHolder.session.setImageResource(events.get(i).photoId);
 
 
@@ -88,6 +94,9 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Index position is: "+i, Toast.LENGTH_SHORT).show();
+
+                base.switchContent();
+
             }
         });
     }

@@ -9,6 +9,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -26,6 +28,8 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class HomeFragment extends Fragment implements AsyncResponse{
 
+
+    Fragment mContent;
     SharedPreferences myprefs;
 
     getSessions connect2server;
@@ -131,7 +135,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
            // Toast.makeText(getContext(), "On post LIST : "+list.get(1).SubjectName, Toast.LENGTH_SHORT).show();
 
 
-            CardViewAdapter adapter = new CardViewAdapter(list, this.getContext());
+            CardViewAdapter adapter = new CardViewAdapter(list, this.getContext(), this);
             rv.setAdapter(adapter);
         }
 
@@ -143,4 +147,17 @@ public class HomeFragment extends Fragment implements AsyncResponse{
     public void processFinish2(String out) {
 
     }
+
+    public void switchContent() {
+        mContent = new TutorListFragment();
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
+        fragmentTransaction.replace(R.id.container_body, mContent);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }
+
+
 }
