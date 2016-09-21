@@ -35,32 +35,21 @@ import java.util.Map;
  Returns null if the student number does not exist in the Student_Subject Table.
 
  */
-public class getSessions extends AsyncTask<String, String, String> {
+public class getTutors extends AsyncTask<String, String, String> {
     Activity parent;
     String result = "";
+    String SessionID;
 
-    String sessionID;
-    String tutorID;
-    String studentID;
-    String subjectID;
-    String subjectName;
-    String amount;
-    String date;
-    String time;
-    String desc;
-    String status;
-    int available;
-
-    List<Session> in;
+    List<Tutors> in;
     public AsyncResponse delegate = null; //Notify when async is done
 
-    public getSessions(Activity par, String student_id, List<Session> obj){
-        this.parent = par;
-        this.studentID = student_id;
-        this.in = obj;
+    public getTutors(Activity par, String session_id, List<Tutors> obj){
+        parent = par;
+        SessionID = session_id;
+        in = obj;
     }
 
-    public getSessions(Activity par){
+    public getTutors(Activity par){
         parent = par;
     }
     @Override
@@ -69,13 +58,13 @@ public class getSessions extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://neural.net16.net/student_getsessions.php");
+            url = new URL("http://neural.net16.net/student_gettutors.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         Map<String,Object> parameter = new LinkedHashMap<>();
-        parameter.put("StudentID", studentID);
+        parameter.put("SessionID", SessionID);
 
         StringBuilder postData = new StringBuilder();
         for (Map.Entry<String,Object> param : parameter.entrySet()) {
@@ -141,11 +130,8 @@ public class getSessions extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         //Handle Result
-        String temp = result.substring(1,2);
-       // Toast.makeText(parent.getApplicationContext(), "Res " + result, Toast.LENGTH_SHORT).show();
-
-       if(temp.equals("]")){ // NULL result
-            Toast.makeText(parent.getApplicationContext(), "No current subjects", Toast.LENGTH_SHORT).show();
+       if(result.equals("null")){
+            Toast.makeText(parent.getApplicationContext(), "No current tutors", Toast.LENGTH_SHORT).show();
 
         }else {
            //If they're in the DB then login to the Home page
@@ -157,10 +143,13 @@ public class getSessions extends AsyncTask<String, String, String> {
            try {
 
                JSONArray jsonArr = new JSONArray(result);
-               Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_LONG).show();
+               //Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
 
-               String name = "";
+               String fname = "";
+               String lName ="";
+               String fullname="";
                String code="";
+               String subid ="";
 
 
                //Subjects pass = null;
@@ -169,19 +158,12 @@ public class getSessions extends AsyncTask<String, String, String> {
 
                for (int i = 0; i < jsonArr.length(); i++) {
                    JSONObject jsObj = jsonArr.getJSONObject(i);
-
-                   sessionID= jsObj.getString("tutor_student_id");
-                   tutorID = jsObj.getString("tutor_id");
-                   subjectName = jsObj.getString("subject_name");
-                   subjectID = jsObj.getString("subject_id");
-                   amount = jsObj.getString("amount");
-                   date = jsObj.getString("date");
-                   time = jsObj.getString("time");
-                   desc = jsObj.getString("description");
-                   status = jsObj.getString("status");
-                   available = jsObj.getInt("available");
-                  // Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
-                   in.add(new Session( sessionID, tutorID, subjectName,subjectID,amount,date,time, desc,status,available, R.drawable.session, parent ));
+                   fname = jsObj.getString("tutor_fname");
+                   lName = jsObj.getString("tutor_lname");
+                   fullname = fname + " " +lName;
+                   //code = jsObj.getString("subject_course_code");
+                  //Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
+                   in.add(new Tutors( fullname, "3", R.drawable.subj, parent));
                }
 
            } catch (JSONException e) {

@@ -56,6 +56,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        list = new ArrayList<>();
 
         FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
         myprefs= getContext().getSharedPreferences("user", MODE_PRIVATE);
@@ -87,7 +88,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         String id = myprefs.getString("student_id",null);
-        Toast.makeText(getContext(), "On post " + id , Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getContext(), "On post " + id , Toast.LENGTH_SHORT).show();
 
         connect2server = new getSessions(this.getActivity(), id, list);
 
@@ -148,10 +149,19 @@ public class HomeFragment extends Fragment implements AsyncResponse{
 
     }
 
-    public void switchContent() {
+    public void switchContent(String id) {
         mContent = new TutorListFragment();
+
+        Bundle bundle=new Bundle();
+        bundle.putString("session", id);
+
+        mContent.setArguments(bundle);
+
+        //Toast.makeText(getContext(),"Session id "+id,Toast.LENGTH_SHORT);
+
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
         fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
         fragmentTransaction.replace(R.id.container_body, mContent);
         fragmentTransaction.addToBackStack(null);

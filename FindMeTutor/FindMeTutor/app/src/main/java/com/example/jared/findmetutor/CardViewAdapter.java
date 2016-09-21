@@ -1,6 +1,7 @@
 package com.example.jared.findmetutor;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -55,7 +56,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
             session = (ImageView)itemView.findViewById(R.id.session);
         }
     }
-
+    String sessID;
     List<Session> events;
     Context context;
     HomeFragment base;
@@ -80,6 +81,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
     @Override
     public void onBindViewHolder(EventViewHolder eventViewHolder, final int i) {
+        //sessID=events.get(i).sessionID;
         eventViewHolder.subjectName.setText(events.get(i).subjectName);
         eventViewHolder.amount.setText(events.get(i).amount);
         eventViewHolder.date.setText(events.get(i).date);
@@ -89,16 +91,23 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         eventViewHolder.session.setImageResource(events.get(i).photoId);
 
 
+        if(events.get(i).available>1)
+        {
+            eventViewHolder.cv.setCardBackgroundColor(Color.parseColor("#3CB371"));
+            eventViewHolder.cv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "Session id: "+events.get(i).sessionID, Toast.LENGTH_SHORT).show();
 
-        eventViewHolder.cv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "Index position is: "+i, Toast.LENGTH_SHORT).show();
 
-                base.switchContent();
 
-            }
-        });
+                    base.switchContent(events.get(i).sessionID);
+
+                }
+            });
+        }
+
+
     }
 
     @Override
