@@ -173,7 +173,9 @@ Describes the high-level functionality of the system\\
 % Sessions
 				17 & Students and tutors can log their tutorial sessions\\ \hline	
 % Archive account
-				18 & Students and tutors can mark off completed sessions\\ \hline					
+				18 & Students and tutors can mark off completed sessions\\ \hline			
+% Student confirm session
+				19 & Students can confirm session that has been accepted by tutor\\ \hline							
 
 
 \end{longtable}
@@ -259,7 +261,11 @@ Describes the high-level functionality of the system\\
 				RQ17.2 & The system shall allow a tutor to view their upcoming sessions  &UC-VSes\\ \hline
 				RQ18.1 & The system shall allow a tutor to mark a session as done/removed &UC-DSes\\ \hline
 				RQ18.2 & The system shall allow a student to mark a session as done/removed &UC-DSes\\ \hline
-		
+%Sprint 3
+%confirm accepted tutors
+				RQ19.1 & The system shall a student to confirm a tutorial which has been accepted by a tutor &UC-CAT\\ \hline	
+				RQ19.2 & The system shall send the student tutor's contact details &UC-CAT\\ \hline	
+				
 \end{longtable}
 }
 \subsection{Functional requirements specification}
@@ -379,7 +385,12 @@ Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 % remove completed sessions
 \item ACT 18.01 A student can mark off completed tutorial sessions(pass)
 \item ACT18.02	A tutor can mark off completed tutorial sessions(pass)
+% Sprint 3
+%Confirm session
+\item ACT 19.01 A student can confirm a tutorial session accepted by a tutor(pass)
+\item ACT19.02	A student recieves tutor contact details(pass)
 \end{itemize}
+
 
 \subsection{System models}
 
@@ -431,6 +442,9 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 			\\Update Funds			& 		UC-UF
 			\\View Sessions			&		UC-VSes
 			\\Remove Sessions		&       UC-DSes
+%Sprint 3
+%confirm sessions
+			\\Confirm sessions		&       UC-CAT
 			\\ \hline
 \end{tabular}
 		{
@@ -757,7 +771,9 @@ Use case:
 			
 			\\ \hline ST-23 & As a tutor, I can  check-in to a tutorial session  & 5 
 			
-			\\ \hline ST-24 & As a tutor, I can  check-out to a tutorial session  & 5 \\ \hline
+			\\ \hline ST-24 & As a tutor, I can  check-out to a tutorial session  & 5 
+			\\ \hline ST-25 & As a student, I can  confirm an accepted tutorial session & 5 
+			\\ \hline ST-26 & As a student, I can recieve the confirmed tutor's contact details & 5 \\ \hline
 \end{longtable}
 }
 		
@@ -788,6 +804,8 @@ Appendix 2
 
 Operational requirements describe the non-business characteristics of an application.\\
 3.5.1 Amazon Web Server - Web server to host the database\\ 
+Asver- Web Server \\
+%do we have to record both
 3.5.2 Android studio to design UI\\
 3.5.3 GitHub to facilitate the build of the project among team members\\
 3.5.4 MySql which is the database management system used to house and control the database.\\
