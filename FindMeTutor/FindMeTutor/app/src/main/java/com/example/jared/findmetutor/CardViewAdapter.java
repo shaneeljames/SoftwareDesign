@@ -114,6 +114,10 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
             eventViewHolder.avail.setText(events.get(i).available);
             eventViewHolder.session.setImageResource(events.get(i).photoId);
 
+            if(eventViewHolder.status.equals("Confirmed")){
+
+            }
+
             if(Integer.parseInt(eventViewHolder.avail.getText().toString())>0)
             {
                 eventViewHolder.cv.setCardBackgroundColor(Color.parseColor("#3CB371"));
@@ -124,7 +128,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
 
 
-                        base.switchContent(sessID);
+                        base.switchContent(events.get(i).sessionID);
 
                     }
                 });

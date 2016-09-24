@@ -63,6 +63,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
 
 
         datePicker = (DatePicker) findViewById(R.id.datePicker);
+        datePicker.setMinDate(System.currentTimeMillis()-1000);
 
         timePicker = (TimePicker) findViewById(R.id.timePicker);
         timePicker.setIs24HourView(true);

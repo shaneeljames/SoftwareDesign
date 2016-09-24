@@ -131,7 +131,7 @@ public class getTutors extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result) {
         //Handle Result
        if(result.equals("null")){
-            Toast.makeText(parent.getApplicationContext(), "No current tutors", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(parent.getApplicationContext(), "No current tutors", Toast.LENGTH_SHORT).show();
 
         }else {
            //If they're in the DB then login to the Home page
@@ -143,13 +143,16 @@ public class getTutors extends AsyncTask<String, String, String> {
            try {
 
                JSONArray jsonArr = new JSONArray(result);
-               //Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
-
+               Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
+               String tutID="";
                String fname = "";
                String lName ="";
                String fullname="";
-               String code="";
-               String subid ="";
+               String contact="";
+               String email ="";
+               String qualis="";
+
+               String rating ="3";
 
 
                //Subjects pass = null;
@@ -158,12 +161,17 @@ public class getTutors extends AsyncTask<String, String, String> {
 
                for (int i = 0; i < jsonArr.length(); i++) {
                    JSONObject jsObj = jsonArr.getJSONObject(i);
+                   tutID = jsObj.getString("tutor_id");
                    fname = jsObj.getString("tutor_fname");
                    lName = jsObj.getString("tutor_lname");
                    fullname = fname + " " +lName;
+                   contact=jsObj.getString("tutor_contact_num");
+                   email=jsObj.getString("tutor_email");
+                   qualis=jsObj.getString("tutor_qualifications");
+
                    //code = jsObj.getString("subject_course_code");
                   //Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
-                   in.add(new Tutors( fullname, "3", R.drawable.subj, parent));
+                   in.add(new Tutors( tutID, fullname, rating,contact,email,qualis, R.drawable.subj, parent));
                }
 
            } catch (JSONException e) {

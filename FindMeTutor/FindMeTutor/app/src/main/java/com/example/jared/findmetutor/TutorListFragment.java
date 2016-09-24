@@ -35,6 +35,8 @@ public class TutorListFragment extends Fragment implements AsyncResponse {
 
     RecyclerView rv;
 
+    String id;
+
 
 
     @Override
@@ -50,10 +52,8 @@ public class TutorListFragment extends Fragment implements AsyncResponse {
        // rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        TutorsViewAdapter adapter = new TutorsViewAdapter(list, this.getContext(), this);
-        rv.setAdapter(adapter);
 
-        String id = this.getArguments().getString("session");
+         id = this.getArguments().getString("session");
         Toast.makeText(getContext(),"Session id "+id,Toast.LENGTH_SHORT);
 
         connect2server = new getTutors(this.getActivity(), id, list);
@@ -75,10 +75,10 @@ public class TutorListFragment extends Fragment implements AsyncResponse {
 
             list = connect2server.getList();
 
-             Toast.makeText(getContext(), "On post LIST : "+output, Toast.LENGTH_SHORT).show();
+             //Toast.makeText(getContext(), "On post LIST : "+output, Toast.LENGTH_SHORT).show();
 
 
-            TutorsViewAdapter adapter = new TutorsViewAdapter(list, this.getContext(), this);
+            TutorsViewAdapter adapter = new TutorsViewAdapter(list, this.getContext(), this, id);
             rv.setAdapter(adapter);
 
 
