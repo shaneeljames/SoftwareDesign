@@ -2,6 +2,7 @@ package com.example.tutor;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -14,9 +15,13 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,6 +67,8 @@ public class FragmentDrawer extends Fragment {
 
         // drawer labels
         titles = getActivity().getResources().getStringArray(R.array.nav_drawer_labels);
+
+
     }
 
     @Override
@@ -70,6 +77,30 @@ public class FragmentDrawer extends Fragment {
         // Inflating view layout
         View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
         recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
+
+        TextView txtName = (TextView) layout.findViewById(R.id.txtName);
+        final TextView txtBalance = (TextView) layout.findViewById(R.id.txtBalance);
+        ImageView pp = (ImageView) layout.findViewById(R.id.imgPP)  ;
+
+        SharedPreferences myprefs =  this.getContext().getSharedPreferences("user", MODE_PRIVATE);
+        String tutor_fname = myprefs.getString("tutor_fname", null);
+        String tutor_lname = myprefs.getString("tutor_lname", null);
+        final String tutor_balance = myprefs.getString("tutor_balance", null);
+
+       txtName.setText(tutor_lname + " " + tutor_fname);
+        txtBalance.setText(tutor_balance);
+
+
+
+        pp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 // Toast.makeText(, "Index position is: "+i, Toast.LENGTH_SHORT).show();
+              //  Intent noti = new Intent(getActivity(), AccountSettingsActivity.class);
+               // startActivity(noti);
+               // txtBalance.setText("Test");
+            }
+        });
 
         adapter = new NavigationDrawerAdapter(getActivity(), getData());
         recyclerView.setAdapter(adapter);

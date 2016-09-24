@@ -19,7 +19,7 @@ public class NotificationsActivity extends AppCompatActivity implements tutor_As
 
     List<Notifications> list = new ArrayList<Notifications>() ;
     RecyclerView rv ;
-    tutor_getsubject connect2server ;
+    tutor_getnotification connect2server ;
 
 
     @Override
@@ -38,7 +38,7 @@ public class NotificationsActivity extends AppCompatActivity implements tutor_As
 
         Toast.makeText(getApplicationContext(), "tutor: " + id , Toast.LENGTH_SHORT).show();
 
-        connect2server = new tutor_getsubject(this , id , list) ;
+        connect2server = new tutor_getnotification(this , id , list) ;
         connect2server.delegate = this;
         connect2server.execute();
 

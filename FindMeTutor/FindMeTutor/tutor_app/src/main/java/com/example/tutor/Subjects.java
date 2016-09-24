@@ -1,7 +1,6 @@
 package com.example.tutor;
 
-import java.util.ArrayList;
-import java.util.List;
+import android.content.Context;
 
 /**
  * Created by Jadon on 02-Sep-16.
@@ -9,21 +8,19 @@ import java.util.List;
 
 public class Subjects {
 
+    String subjID;
     String subject;
+    String code;
     int icon;
-    public List<Subjects> list;
+    Context Context;
 
-    Subjects(String subj, int ic)
+    Subjects(String sid ,String subj,String c, int ic, Context context)
     {
+        this.subjID = sid ;
         this.subject = subj;
+        this.code = c;
         this.icon = ic;
-    }
-
-    public void initializeData(){
-        list = new ArrayList<>();
-        list.add(new Subjects( "Basic Analysis", R.drawable.subj));
-        list.add(new Subjects( "Software Design", R.drawable.subj));
-        list.add(new Subjects( "Hello Games", R.drawable.subj));
+        this.Context = context ;
 
     }
 

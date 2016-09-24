@@ -25,15 +25,17 @@ public class tutor_confirm extends AsyncTask<String, String, String> {
     Context parent;
     String Tutor_id;
     String Tutor_student_id;
+    String Student_id ;
 
     String result = "";
 
     static String out;
 
-    public tutor_confirm(Context par, String tutor_id, String tutor_student_id){
+    public tutor_confirm(Context par, String tutor_student_id,  String tutor_id, String student_id){
         parent = par;
         Tutor_id = tutor_id;
         Tutor_student_id = tutor_student_id;
+        Student_id = student_id ;
     }
     @Override
     protected String doInBackground(String... params) {
@@ -47,8 +49,9 @@ public class tutor_confirm extends AsyncTask<String, String, String> {
             e.printStackTrace();
         }
         Map<String,Object> parameter = new LinkedHashMap<>();
-        parameter.put("tutor_id", Tutor_id);
         parameter.put("tutor_student_id", Tutor_student_id);
+        parameter.put("tutor_id", Tutor_id);
+        parameter.put("student_id", Student_id) ;
 
         StringBuilder postData = new StringBuilder();
         for (Map.Entry<String,Object> param : parameter.entrySet()) {

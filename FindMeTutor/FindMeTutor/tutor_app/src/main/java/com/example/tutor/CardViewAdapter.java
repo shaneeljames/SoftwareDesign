@@ -107,7 +107,12 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                     eventViewHolder.desc.setText("");
                     eventViewHolder.status.setText("");
 
-                   Picasso.with(context).load("http://neural.net16.net/Gow.jpg").into(eventViewHolder.session);
+                    try {
+                        Picasso.with(context).load("http://neural.net16.net/pictures/s" + Sessions.get(i).studentNumber + "JPG" ).into(eventViewHolder.session);
+                    }catch(Exception e)
+                    {
+
+                    }
                          //   Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);
 
 
