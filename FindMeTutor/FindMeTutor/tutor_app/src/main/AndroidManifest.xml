@@ -32,11 +32,10 @@
             android:name=".AddSubjectActivity"
             android:label="@string/title_activity_add_subject"
             android:theme="@style/MyMaterialTheme" />
-
-
-
-
-
+        <activity
+            android:name=".PendingSessionsActivity"
+            android:label="@string/title_activity_pending_sessions"
+            android:theme="@style/MyMaterialTheme"></activity>
     </application>
 
 </manifest>

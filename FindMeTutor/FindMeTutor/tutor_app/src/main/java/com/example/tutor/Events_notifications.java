@@ -1,6 +1,5 @@
 package com.example.tutor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -32,13 +31,7 @@ import java.util.List;
 
         // This method creates an ArrayList that has three Person objects
         public void initializeData(){
-            events = new ArrayList<>();
-            events.add(new Events_notifications("Linear ","WSS 3","20th September", "1pm", R.drawable.session, "Nivek" ,"Hello"));
-            events.add(new Events_notifications("Basic Analysis","CB 123","24th September", "8am", R.drawable.session, "Nivek" ,"Hello"));
-            events.add(new Events_notifications("CAM", "WSS 3","23th September", "1pm", R.drawable.session, "Nivek" ,"Hello"));
-            events.add(new Events_notifications("Operating Systems", "CB 123","27th September", "8am", R.drawable.session, "Nivek" ,"Hello"));
-            events.add(new Events_notifications("Multivariable Calculus", "Exams Hall 3","25th September", "1pm", R.drawable.session, "Nivek" ,"Hello"));
-            events.add(new Events_notifications("Physics", "CB 123","27th September", "8am", R.drawable.session, "Nivek" ,"Bye"));
+
         }
 
         public void addNewEvent(){

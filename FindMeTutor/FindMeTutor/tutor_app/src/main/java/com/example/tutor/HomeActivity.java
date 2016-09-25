@@ -190,19 +190,12 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
                 Intent noti = new Intent(HomeActivity.this, NotificationsActivity.class);
                 HomeActivity.this.startActivity(noti);
                 title = "Notifications";
-
-
-
-
-             //   tutorNotificationsAsync connect2server1 = new tutorNotificationsAsync(this, "1", "pending");
-             //   connect2server1.execute();
-
-
-
-
-
                 break;
             case 4:
+                Intent pending = new Intent(HomeActivity.this, PendingSessionsActivity.class);
+                HomeActivity.this.startActivity(pending);
+                break;
+            case 5:
                 //Press logout, takes you back to login page
                 Intent home = new Intent(HomeActivity.this, LoginActivity.class);
                 HomeActivity.this.startActivity(home);
