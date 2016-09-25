@@ -42,6 +42,8 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         TextView sess;
         TextView avail;
 
+        TextView tutorName;
+
         ImageView session;
 
         EventViewHolder(View itemView) {
@@ -59,7 +61,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
 
             session = (ImageView)itemView.findViewById(R.id.session);
-
+            tutorName = (TextView)itemView.findViewById(R.id.tutorName);
             sess = (TextView)itemView.findViewById(R.id.sessID);
             avail = (TextView)itemView.findViewById(R.id.available);
         }
@@ -106,6 +108,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
             eventViewHolder.sess.setText(events.get(i).sessionID);
             sessID = eventViewHolder.sess.getText().toString();
             eventViewHolder.subjectName.setText(events.get(i).subjectName);
+           // eventViewHolder.tutorName.setText(events.get(i).tutorName);
             eventViewHolder.amount.setText(events.get(i).amount);
             eventViewHolder.date.setText(events.get(i).date);
             eventViewHolder.time.setText(events.get(i).time);
@@ -114,13 +117,30 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
             eventViewHolder.avail.setText(events.get(i).available);
             eventViewHolder.session.setImageResource(events.get(i).photoId);
 
-            if(eventViewHolder.status.equals("Confirmed")){
+            if(eventViewHolder.status.getText().toString().equals("Confirmed") && eventViewHolder.avail.getText().toString().equals(("-1"))){
+                //Toast.makeText(context, "Confirmed "+events.get(i).tutorName, Toast.LENGTH_SHORT).show();
+                eventViewHolder.tutorName.setVisibility(View.VISIBLE);
+                eventViewHolder.tutorName.setText("With "+ events.get(i).tutorName);
+
+                eventViewHolder.cv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Toast.makeText(context, "Session id: "+events.get(i).sessionID, Toast.LENGTH_SHORT).show();
+
+
+
+                        base.switchContentSession(events.get(i).sessionID);
+
+                    }
+                });
+
 
             }
 
-            if(Integer.parseInt(eventViewHolder.avail.getText().toString())>0)
+            else if(Integer.parseInt(eventViewHolder.avail.getText().toString())>0)
             {
-                eventViewHolder.cv.setCardBackgroundColor(Color.parseColor("#3CB371"));
+                eventViewHolder.status.setText("Tutors Available");
+                eventViewHolder.cv.setCardBackgroundColor(Color.parseColor("#fff6ff"));
                 eventViewHolder.cv.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

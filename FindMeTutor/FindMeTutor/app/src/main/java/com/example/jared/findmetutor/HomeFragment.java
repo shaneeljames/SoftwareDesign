@@ -170,5 +170,25 @@ public class HomeFragment extends Fragment implements AsyncResponse{
 
     }
 
+    public void switchContentSession(String id) {
+        mContent = new TutorStudentFragment();
+
+        Bundle bundle=new Bundle();
+        bundle.putString("session", id);
+
+        mContent.setArguments(bundle);
+
+        //Toast.makeText(getContext(),"Session id "+id,Toast.LENGTH_SHORT);
+
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
+        fragmentTransaction.replace(R.id.container_body, mContent);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }
+
 
 }

@@ -1,6 +1,7 @@
 package com.example.jared.findmetutor;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -30,7 +31,8 @@ public class TutorsViewAdapter extends RecyclerView.Adapter<TutorsViewAdapter.Ev
 
     @Override
     public void processFinish2(String out) {
-        Toast.makeText(context,out, Toast.LENGTH_SHORT).show();
+
+
     }
 
     public static class EventViewHolder extends RecyclerView.ViewHolder {
@@ -96,8 +98,9 @@ public class TutorsViewAdapter extends RecyclerView.Adapter<TutorsViewAdapter.Ev
                 Toast.makeText(context, "Tutor  id: "+events.get(i).tutorID + " "+events.get(i).TutorName, Toast.LENGTH_SHORT).show();
 
                 select = new selectTutor(base, events.get(i).tutorID, sessionID);
-                select.delegate = temp;
                 select.execute();
+                //Toast.makeText(context,out, Toast.LENGTH_SHORT).show();
+                base.switchContent();
 
             }
         });

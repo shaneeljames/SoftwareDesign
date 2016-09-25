@@ -41,6 +41,7 @@ public class getSessions extends AsyncTask<String, String, String> {
 
     String sessionID;
     String tutorID;
+    String tutorName;
     String studentID;
     String subjectID;
     String subjectName;
@@ -157,10 +158,10 @@ public class getSessions extends AsyncTask<String, String, String> {
            try {
 
                JSONArray jsonArr = new JSONArray(result);
-              // Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_LONG).show();
 
-               String name = "";
-               String code="";
+
+               String fname = "";
+               String lname="";
 
 
                //Subjects pass = null;
@@ -172,6 +173,10 @@ public class getSessions extends AsyncTask<String, String, String> {
 
                    sessionID= jsObj.getString("tutor_student_id");
                    tutorID = jsObj.getString("tutor_id");
+                   fname = jsObj.getString("tutor_fname");
+                   lname = jsObj.getString("tutor_lname");
+                   tutorName = fname + " "+lname;
+                  // Toast.makeText(parent.getApplicationContext(), "making object " + tutorName, Toast.LENGTH_LONG).show();
                    subjectName = jsObj.getString("subject_name");
                    subjectID = jsObj.getString("subject_id");
                    amount = jsObj.getString("amount");
@@ -181,7 +186,7 @@ public class getSessions extends AsyncTask<String, String, String> {
                    status = jsObj.getString("status");
                    available = jsObj.getString("available");
                   // Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
-                   in.add(new Session( sessionID, tutorID, subjectName,subjectID,amount,date,time, desc,status,available, R.drawable.session, parent ));
+                   in.add(new Session( sessionID, tutorID, tutorName, subjectName,subjectID,amount,date,time, desc,status,available, R.drawable.session, parent ));
                }
 
            } catch (JSONException e) {
