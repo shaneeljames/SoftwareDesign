@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -26,6 +30,8 @@ public class login extends AsyncTask<String, String, String> {
     Activity parent;
     String Email;
     String Password;
+
+    String Password1 ;
 
     String result = "";
 
@@ -122,11 +128,44 @@ public class login extends AsyncTask<String, String, String> {
              Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful ", Toast.LENGTH_SHORT).show();
 
         }else{
-            Toast.makeText(parent.getApplicationContext(), "Login Successful ", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(parent.getApplicationContext(), "Login Successful ", Toast.LENGTH_SHORT).show();
+
+
+        try{
+            JSONArray jsonArr = new JSONArray(result);
+            //Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
+
+            String name = "";
+            String code="";
+            String id ="";
+
+
+            //Subjects pass = null;
+            //Subjects subjects = new Subjects("h", 0, parent, pass);
+
+
+            for (int i = 0; i < jsonArr.length(); i++) {
+                JSONObject jsObj = jsonArr.getJSONObject(i);
+                Password1 = jsObj.getString("tutor_password");
+
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        if(Password1.toString().equals(Password.toString())) {
+
+            Toast.makeText(parent.getApplicationContext(),"Login Successful", Toast.LENGTH_SHORT).show();
 
             Intent goHome = new Intent(parent, HomeActivity.class);
             goHome.putExtra("user", result);
             parent.startActivity(goHome);
+        }
+            else
+        {
+            Toast.makeText(parent.getApplicationContext(),"Login unsuccessful", Toast.LENGTH_SHORT).show();
+        }
         }
 
 

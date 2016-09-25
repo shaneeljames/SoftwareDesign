@@ -76,6 +76,7 @@ public class  RegisterActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+              //  Toast.makeText(getApplicationContext(),"student NUmber "+ studentNumber.getText().toString(), Toast.LENGTH_SHORT).show();
                 submitForm();
             }
         });
@@ -129,20 +130,23 @@ public class  RegisterActivity extends AppCompatActivity {
 
 
            // String sNum = getStdNum(inputEmail.getText().toString());
-            register connect2server = new register(this, firstName2,lastName2, number2,stdNum2, email2,password2 );
-            connect2server.execute();
 
-          //  Toast.makeText(getApplicationContext(),firstName2, Toast.LENGTH_SHORT).show();
-           // Toast.makeText(getApplicationContext(),lastName2, Toast.LENGTH_SHORT).show();
-            //Toast.makeText(getApplicationContext(),number2, Toast.LENGTH_SHORT).show();
-           // Toast.makeText(getApplicationContext(),stdNum2, Toast.LENGTH_SHORT).show();
-            //Toast.makeText(getApplicationContext(),email2, Toast.LENGTH_SHORT).show();
-            //Toast.makeText(getApplicationContext(),password2, Toast.LENGTH_SHORT).show();
+            String witsemail = email2.substring(email2.indexOf("@") , email2.length()) ;
+          //  Toast.makeText(getApplicationContext(),"Wits email  "+ witsemail toString(), Toast.LENGTH_SHORT).show();
 
-            //Toast.makeText(getApplicationContext(), "Thank You for registering!", Toast.LENGTH_SHORT).show();
-            //Toast.makeText(getApplicationContext(), "StudentNum : " +stdNum, Toast.LENGTH_SHORT).show();
-            Intent logInAct = new Intent(RegisterActivity.this, LoginActivity.class);
-            RegisterActivity.this.startActivity(logInAct);
+
+            if(witsemail.toString().equals("@wits.ac.za") || witsemail.toString().equals("@students.wits.ac.za")) {
+                register connect2server = new register(this, firstName2, lastName2, number2, studentNumber.getText().toString(), email2, password2);
+                connect2server.execute();
+
+                Intent logInAct = new Intent(RegisterActivity.this, LoginActivity.class);
+                RegisterActivity.this.startActivity(logInAct);
+            }
+            else
+            inputLayoutEmail.setError("Please enter a valid wits email");
+
+
+
         }
 
 
@@ -186,7 +190,7 @@ public class  RegisterActivity extends AppCompatActivity {
 
     private boolean validateEmail() {
         email2 = inputEmail.getText().toString().trim();
-        if (email2.isEmpty() || !isValidEmail(email2)) {
+        if (email2.isEmpty() || !isValidEmail(email2)  ) {
             inputLayoutEmail.setError(getString(R.string.err_msg_email));
             requestFocus(inputEmail);
             return false;
@@ -213,8 +217,8 @@ public class  RegisterActivity extends AppCompatActivity {
 
     private boolean validatePassword() {
         password2 = inputPassword.getText().toString().trim();
-        if (password2.isEmpty()) {
-            inputLayoutPass.setError(getString(R.string.err_msg_password));
+        if (password2.length()<7) {
+            inputLayoutPass.setError(getString(R.string.err_msg_password) + " (Min 7 characters)");
             requestFocus(inputPassword);
             return false;
         } else {

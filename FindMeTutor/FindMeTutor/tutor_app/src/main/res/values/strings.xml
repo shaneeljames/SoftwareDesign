@@ -65,5 +65,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_notifications">NotificationsActivity</string>
     <string name="title_activity_test1">test1</string>
+    <string name="title_activity_add_subject">AddSubjectActivity</string>
+    <string name="title_activity_account_settings">AccountSettingsActivity</string>
+
+     <string name="hello">Hello World, FileExplore!</string>
+
 
 </resources>

@@ -63,6 +63,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 submitForm();
+
+
+
             }
         });
 
@@ -103,6 +106,8 @@ public class LoginActivity extends AppCompatActivity {
             //Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show();
             login connect2server = new login(this, login_email, login_password);
             connect2server.execute();
+
+
         }
 
 

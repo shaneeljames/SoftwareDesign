@@ -24,7 +24,7 @@ public class NotificationsFragment extends Fragment implements tutor_AsyncRespon
 
     List<Notifications> list = new ArrayList<>() ;
     RecyclerView rv ;
-    tutor_getsubject connect2server ;
+    tutor_getnotification connect2server ;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +46,7 @@ public class NotificationsFragment extends Fragment implements tutor_AsyncRespon
         SharedPreferences myprefs = this.getActivity().getSharedPreferences("user", MODE_PRIVATE) ;
         String id = myprefs.getString("tutor_id",null) ;
 
-        connect2server = new tutor_getsubject((HomeActivity) this.getActivity(),id , list) ;
+        connect2server = new tutor_getnotification((HomeActivity) this.getActivity(),id , list) ;
         connect2server.delegate = this ;
         connect2server.execute();
 

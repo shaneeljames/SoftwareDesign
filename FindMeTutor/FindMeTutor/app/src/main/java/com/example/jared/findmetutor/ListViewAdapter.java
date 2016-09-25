@@ -69,6 +69,11 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.EventV
                     Intent goToSubjects = new Intent(context,SubjectSettingsActivity.class);
                     context.startActivity(goToSubjects);
                 }
+                 if(i==1)
+                 {
+                     Intent goToSubjects = new Intent(context,SubjectSettingsActivity.class);
+                     context.startActivity(goToSubjects);
+                 }
             }
         });
     }

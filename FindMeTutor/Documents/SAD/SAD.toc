@@ -1,7 +1,8 @@
 \contentsline {section}{\numberline {1}\textbf {Introduction}}{3}
-\contentsline {section}{\numberline {2}Views}{3}
-\contentsline {subsection}{\numberline {2.1}Logical View}{3}
-\contentsline {subsection}{\numberline {2.2}Development View}{4}
-\contentsline {subsection}{\numberline {2.3}Process View}{5}
-\contentsline {subsection}{\numberline {2.4}Physical View}{6}
-\contentsline {subsection}{\numberline {2.5}Scenarios}{7}
+\contentsline {section}{\numberline {2}Stakeholders}{3}
+\contentsline {section}{\numberline {3}Views}{4}
+\contentsline {subsection}{\numberline {3.1}Logical View}{4}
+\contentsline {subsection}{\numberline {3.2}Development View}{5}
+\contentsline {subsection}{\numberline {3.3}Process View}{6}
+\contentsline {subsection}{\numberline {3.4}Physical View}{7}
+\contentsline {subsection}{\numberline {3.5}Scenarios}{8}

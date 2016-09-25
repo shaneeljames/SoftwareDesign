@@ -29,7 +29,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
     private Toolbar mToolbar;
     private FragmentDrawer drawerFragment;
 
-    String tutor_id, tutor_password, tutor_lname, tutor_fname, tutor_student_num, tutor_email, tutor_contact_num, tutor_current_balance;
+    String tutor_id, tutor_password, tutor_lname, tutor_fname, tutor_student_num, tutor_email, tutor_contact_num, tutor_current_balance , tutor_qualifications;
 
     SharedPreferences myprefs;
 
@@ -41,10 +41,6 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
         //test
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-
-
-
 
         Intent intent = getIntent();
         String jsonString = intent.getStringExtra("user");
@@ -66,8 +62,9 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
             tutor_email = jsObj.getString("tutor_email");
             tutor_contact_num = jsObj.getString("tutor_contact_num");
             tutor_current_balance = jsObj.getString("tutor_balance");
+            tutor_qualifications = jsObj.getString("tutor_qualifications") ;
 
-            Toast.makeText(getApplicationContext(), "Login blah "+tutor_id, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Login Qu "+tutor_qualifications, Toast.LENGTH_SHORT).show();
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -75,10 +72,18 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
 
         myprefs=this.getSharedPreferences("user", MODE_PRIVATE) ;
         myprefs.edit().putString("tutor_id", tutor_id).apply();
+        myprefs.edit().putString("tutor_fname", tutor_fname).apply();
+        myprefs.edit().putString("tutor_lname", tutor_lname).apply();
+        myprefs.edit().putString("tutor_balance", tutor_current_balance).apply();
+        myprefs.edit().putString("tutor_student_num", tutor_student_num).apply();
+        myprefs.edit().putString("tutor_qualifications", tutor_qualifications).apply();
+        myprefs.edit().putString("tutor_email", tutor_email).apply();
+        myprefs.edit().putString("tutor_contact_num", tutor_contact_num).apply();
+        myprefs.edit().putString("tutor_password", tutor_password).apply();
 
 
 
-        Toast.makeText(getApplicationContext(), "Login blah "+tutor_id, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Login blah "+tutor_fname, Toast.LENGTH_SHORT).show();
 
 
 
