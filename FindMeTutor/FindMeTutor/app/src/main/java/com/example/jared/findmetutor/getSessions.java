@@ -41,6 +41,7 @@ public class getSessions extends AsyncTask<String, String, String> {
 
     String sessionID;
     String tutorID;
+    String tutorNum;
     String tutorName;
     String studentID;
     String subjectID;
@@ -173,6 +174,7 @@ public class getSessions extends AsyncTask<String, String, String> {
 
                    sessionID= jsObj.getString("tutor_student_id");
                    tutorID = jsObj.getString("tutor_id");
+                   tutorNum = jsObj.getString("tutor_student_num");
                    fname = jsObj.getString("tutor_fname");
                    lname = jsObj.getString("tutor_lname");
                    tutorName = fname + " "+lname;
@@ -186,7 +188,7 @@ public class getSessions extends AsyncTask<String, String, String> {
                    status = jsObj.getString("status");
                    available = jsObj.getString("available");
                   // Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
-                   in.add(new Session( sessionID, tutorID, tutorName, subjectName,subjectID,amount,date,time, desc,status,available, R.drawable.session, parent ));
+                   in.add(new Session( sessionID, tutorID, tutorNum, tutorName, subjectName,subjectID,amount,date,time, desc,status,available, R.drawable.session, parent ));
                }
 
            } catch (JSONException e) {

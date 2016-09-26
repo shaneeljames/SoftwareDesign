@@ -81,6 +81,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
         myprefs.edit().putString("student_lname", student_lname).apply();
         myprefs.edit().putString("student_fname", student_fname).apply();
         myprefs.edit().putString("student_student_num", student_student_num).apply();
+        myprefs.edit().putString("student_email",student_email).apply();
         myprefs.edit().putString("student_contact_number", student_contact_number).apply();
         myprefs.edit().putString("student_current_balance", student_current_balance).apply();
 

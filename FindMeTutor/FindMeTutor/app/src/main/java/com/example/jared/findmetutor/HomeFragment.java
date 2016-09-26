@@ -174,7 +174,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
         mContent = new TutorStudentFragment();
 
         Bundle bundle=new Bundle();
-        bundle.putString("session", id);
+        bundle.putString("tutor_student_num", id);
 
         mContent.setArguments(bundle);
 

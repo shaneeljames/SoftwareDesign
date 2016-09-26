@@ -1,12 +1,14 @@
 package com.example.jared.findmetutor;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -129,7 +131,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
 
 
-                        base.switchContentSession(events.get(i).sessionID);
+                        base.switchContentSession(events.get(i).tutorStdNum);
 
                     }
                 });
@@ -140,7 +142,9 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
             else if(Integer.parseInt(eventViewHolder.avail.getText().toString())>0)
             {
                 eventViewHolder.status.setText("Tutors Available");
-                eventViewHolder.cv.setCardBackgroundColor(Color.parseColor("#fff6ff"));
+                eventViewHolder.cv.setCardBackgroundColor(Color.parseColor("#B0E0E6"));
+                eventViewHolder.cv.setMaxCardElevation(getPixelsFromDPs(10));
+                eventViewHolder.cv.setCardElevation(getPixelsFromDPs(7));
                 eventViewHolder.cv.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -157,6 +161,17 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         eventViewHolder.itemView.setTag(events.get(i));
 
         }
+
+
+    // Custom method for converting DP/DIP value to pixels
+    protected int getPixelsFromDPs(int dps){
+        Resources r = context.getResources();
+        int  px = (int) (TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, dps, r.getDisplayMetrics()));
+        return px;
+    }
+
+
 
 
 

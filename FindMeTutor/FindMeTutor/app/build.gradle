@@ -33,4 +33,5 @@ dependencies {
     compile 'com.android.support:support-v4:24.2.0'
     testCompile 'junit:junit:4.12'
     androidTestCompile 'junit:junit:4.12'
+    compile files('src/main/libs/picasso-2.5.2.jar')
 }
