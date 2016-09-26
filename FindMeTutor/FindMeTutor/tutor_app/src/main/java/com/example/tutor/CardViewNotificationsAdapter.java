@@ -102,6 +102,7 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
 
 
 
+
                 //  tutor_getsubject2 connect2server2 = new tutor_getsubject2(context,id) ;
 
 

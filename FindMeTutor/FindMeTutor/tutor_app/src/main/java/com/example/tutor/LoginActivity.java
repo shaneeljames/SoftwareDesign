@@ -77,6 +77,10 @@ public class LoginActivity extends AppCompatActivity {
                 Intent regAct = new Intent(LoginActivity.this, RegisterActivity.class);
                 //regAct.putExtra() send stuff to regActivity
                 LoginActivity.this.startActivity(regAct);
+
+
+
+
             }
         });
 
