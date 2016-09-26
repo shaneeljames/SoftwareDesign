@@ -1,23 +1,18 @@
 package com.example.tutor;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
-import static android.content.Context.MODE_PRIVATE;
 
-
-public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewNotificationsAdapter.EventViewHolder> {
+public class PendingAdapter extends RecyclerView.Adapter<PendingAdapter.EventViewHolder> {
 
     public static class EventViewHolder extends RecyclerView.ViewHolder {
         CardView cv;
@@ -27,7 +22,6 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
         ImageView session;
         TextView studentName ;
         TextView Description;
-        Button confirm ;
 
         EventViewHolder(View itemView) {
             super(itemView);
@@ -38,14 +32,13 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
             session = (ImageView)itemView.findViewById(R.id.session);
             studentName = (TextView)itemView.findViewById(R.id.studentName) ;
             Description = (TextView)itemView.findViewById(R.id.Description) ;
-            confirm = (Button)itemView.findViewById(R.id.btnConfirm) ;
         }
     }
 
-    List<Notifications> list;
+    List<Pending> list;
     Context context;
 
-    CardViewNotificationsAdapter(List<Notifications> events, Context context){
+    PendingAdapter(List<Pending> events, Context context){
         this.list = events;
         this.context = context;
     }
@@ -57,7 +50,7 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
 
     @Override
     public EventViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_view_notifcations, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_view_pending, viewGroup, false);
         EventViewHolder pvh = new EventViewHolder(v);
         return pvh;
     }
@@ -77,37 +70,11 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
         eventViewHolder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  Toast.makeText(context, "Index position is: "+i, Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(context, "Index position is: "+i, Toast.LENGTH_SHORT).show();
             }
         });
 
-        eventViewHolder.confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               // Toast.makeText(context, "Confirmed: "+i, Toast.LENGTH_SHORT).show();
 
-                SharedPreferences myprefs;
-                myprefs =  context.getSharedPreferences("user",MODE_PRIVATE ) ;
-                String id = myprefs.getString("tutor_id", null) ;
-
-               // Toast.makeText(context, "tut: "+list.get(i).tutor_student_id, Toast.LENGTH_SHORT).show();
-
-                tutor_confirm connect2server = new tutor_confirm(context,list.get(i).tutor_student_id,id, list.get(i).student_id) ;
-                connect2server.execute();
-
-                Toast.makeText(context, "Your agreement has been sent to " + list.get(i).studentName +" " + list.get(i).studentSurname, Toast.LENGTH_SHORT).show();
-                eventViewHolder.confirm.setText("confirmed");
-                eventViewHolder.confirm.setClickable(false);
-
-
-
-
-
-                //  tutor_getsubject2 connect2server2 = new tutor_getsubject2(context,id) ;
-
-
-            }
-        });
     }
 
     @Override

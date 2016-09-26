@@ -1,16 +1,19 @@
 package com.example.tutor;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by Jadon on 30-Aug-16.
@@ -18,11 +21,15 @@ import java.util.List;
 
 public class SubjectsViewAdapter extends RecyclerView.Adapter<SubjectsViewAdapter.EventViewHolder> {
 
+    SharedPreferences myprefs ;
+    String id ;
+
     public static class EventViewHolder extends RecyclerView.ViewHolder {
         CardView lv;
         TextView subject;
         TextView code;
         ImageView icon;
+        Button btnRemove ;
 
         EventViewHolder(View itemView) {
             super(itemView);
@@ -30,6 +37,7 @@ public class SubjectsViewAdapter extends RecyclerView.Adapter<SubjectsViewAdapte
             subject = (TextView)itemView.findViewById(R.id.subjectTxt);
             code = (TextView)itemView.findViewById(R.id.codeTxt);
             icon = (ImageView)itemView.findViewById(R.id.icon);
+            btnRemove = (Button) itemView.findViewById(R.id.btnRemove) ;
         }
     }
 
@@ -61,11 +69,30 @@ public class SubjectsViewAdapter extends RecyclerView.Adapter<SubjectsViewAdapte
         eventViewHolder.code.setText(list.get(i).code.toString());
         eventViewHolder.icon.setImageResource(list.get(i).icon);
 
+         myprefs =  context.getSharedPreferences("user", MODE_PRIVATE);
+        id = myprefs.getString("tutor_id", null);
+
         //handle onclick here
         eventViewHolder.lv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Index position is: "+ i+" "+ eventViewHolder.subject.getText().toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Index position is: "+ i+" "+ eventViewHolder.subject.getText().toString(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        eventViewHolder.btnRemove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+              //  Toast.makeText(context, "remove: "+ i+ eventViewHolder.subject.getText().toString(), Toast.LENGTH_SHORT).show();
+                tutor_removeSubject connect2server = new tutor_removeSubject(context,id, list.get(i).subjID) ;
+                connect2server.execute() ;
+
+                eventViewHolder.btnRemove.setText("Removed");
+                eventViewHolder.btnRemove.setClickable(false);
+
 
             }
         });

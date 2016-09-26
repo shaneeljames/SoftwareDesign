@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -35,6 +36,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         TextView viewDetails ;
         LinearLayout llStudent ;
         RelativeLayout rlSession ;
+        Button Checkin ;
 
         ImageView session;
 
@@ -52,6 +54,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
             viewDetails = (TextView) itemView.findViewById(R.id.txtStudentDetails) ;
             llStudent = (LinearLayout) itemView.findViewById(R.id.llStudent) ;
             rlSession = (RelativeLayout) itemView.findViewById(R.id.llSession) ;
+            Checkin = (Button) itemView.findViewById(R.id.btnCheckin) ;
 
 
             session = (ImageView)itemView.findViewById(R.id.session);
@@ -90,7 +93,38 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         eventViewHolder.session.setImageResource(Sessions.get(i).icon);
 
 
-      eventViewHolder.viewDetails.setOnClickListener(new View.OnClickListener()
+
+        eventViewHolder.Checkin.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                String arr[] = new String[2] ;
+                arr[0] = "nivekranjith95@gmail.com" ;
+                arr[1] = "802119@students.wits.ac.za" ;
+
+                for(int i = 0 ; i<2 ; i++) {
+
+                    String fromEmail = "FindmetutorSD@gmail.com";
+                    String fromPassword = "findmetutors";
+                    String toEmails = arr[i];
+                    String adminEmail = "admin@gmail.com";
+                    String emailSubject = "Sent from FindMeTutor";
+                    String adminSubject = "App Registration Mail";
+                    String emailBody = "Test";
+                    String adminBody = "Your message";
+                    new SendMailTask(context).execute(fromEmail,
+                            fromPassword, toEmails, emailSubject, emailBody);
+                }
+
+                Toast.makeText(context, "EMail", Toast.LENGTH_SHORT).show();
+            }
+
+
+
+        });
+
+
+        eventViewHolder.viewDetails.setOnClickListener(new View.OnClickListener()
         {
 
             @Override

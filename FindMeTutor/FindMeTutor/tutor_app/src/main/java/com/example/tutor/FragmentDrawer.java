@@ -2,6 +2,7 @@ package com.example.tutor;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -96,8 +97,8 @@ public class FragmentDrawer extends Fragment {
             @Override
             public void onClick(View v) {
                  // Toast.makeText(, "Index position is: "+i, Toast.LENGTH_SHORT).show();
-              //  Intent noti = new Intent(getActivity(), AccountSettingsActivity.class);
-               // startActivity(noti);
+                Intent noti = new Intent(getActivity(), AccountSettingsActivity2.class);
+                startActivity(noti);
                // txtBalance.setText("Test");
             }
         });
