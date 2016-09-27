@@ -9,6 +9,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -26,6 +28,8 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class HomeFragment extends Fragment implements AsyncResponse{
 
+
+    Fragment mContent;
     SharedPreferences myprefs;
 
     getSessions connect2server;
@@ -52,6 +56,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        list = new ArrayList<>();
 
         FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
         myprefs= getContext().getSharedPreferences("user", MODE_PRIVATE);
@@ -83,7 +88,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         String id = myprefs.getString("student_id",null);
-        Toast.makeText(getContext(), "On post " + id , Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getContext(), "On post " + id , Toast.LENGTH_SHORT).show();
 
         connect2server = new getSessions(this.getActivity(), id, list);
 
@@ -131,7 +136,8 @@ public class HomeFragment extends Fragment implements AsyncResponse{
            // Toast.makeText(getContext(), "On post LIST : "+list.get(1).SubjectName, Toast.LENGTH_SHORT).show();
 
 
-            CardViewAdapter adapter = new CardViewAdapter(list, this.getContext());
+            CardViewAdapter adapter = new CardViewAdapter(list, this.getContext(), this);
+            //adapter.notifyDataSetChanged();
             rv.setAdapter(adapter);
         }
 
@@ -143,4 +149,46 @@ public class HomeFragment extends Fragment implements AsyncResponse{
     public void processFinish2(String out) {
 
     }
+
+    public void switchContent(String id) {
+        mContent = new TutorListFragment();
+
+        Bundle bundle=new Bundle();
+        bundle.putString("session", id);
+
+        mContent.setArguments(bundle);
+
+        //Toast.makeText(getContext(),"Session id "+id,Toast.LENGTH_SHORT);
+
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
+        fragmentTransaction.replace(R.id.container_body, mContent);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }
+
+    public void switchContentSession(String id) {
+        mContent = new TutorStudentFragment();
+
+        Bundle bundle=new Bundle();
+        bundle.putString("tutor_student_num", id);
+
+        mContent.setArguments(bundle);
+
+        //Toast.makeText(getContext(),"Session id "+id,Toast.LENGTH_SHORT);
+
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
+        fragmentTransaction.replace(R.id.container_body, mContent);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }
+
+
 }

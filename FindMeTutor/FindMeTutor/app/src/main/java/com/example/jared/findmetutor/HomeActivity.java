@@ -81,6 +81,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
         myprefs.edit().putString("student_lname", student_lname).apply();
         myprefs.edit().putString("student_fname", student_fname).apply();
         myprefs.edit().putString("student_student_num", student_student_num).apply();
+        myprefs.edit().putString("student_email",student_email).apply();
         myprefs.edit().putString("student_contact_number", student_contact_number).apply();
         myprefs.edit().putString("student_current_balance", student_current_balance).apply();
 
@@ -145,8 +146,8 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
         displayView(position);
     }
 
-    //back button implementation
-    int count = 0 ;
+   //back button implementation
+   /*  int count = 0 ;
     double start ;
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if ((keyCode == KeyEvent.KEYCODE_BACK) && (count == 0)) {
@@ -160,7 +161,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
             /*SharedPreferences.Editor editor = myprefs.edit();
             editor.clear();
             editor.commit();
-*/
+
             Intent home = new Intent(HomeActivity.this, LoginActivity.class);
             HomeActivity.this.startActivity(home);
             this.finish();
@@ -173,7 +174,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
         }
 
         return true ;
-    }
+    }*/
 
 
     private void displayView(int position) {

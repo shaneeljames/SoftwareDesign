@@ -63,6 +63,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
 
 
         datePicker = (DatePicker) findViewById(R.id.datePicker);
+        datePicker.setMinDate(System.currentTimeMillis()-1000);
 
         timePicker = (TimePicker) findViewById(R.id.timePicker);
         timePicker.setIs24HourView(true);
@@ -115,7 +116,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     }
 
     public void request(){
-        String tutor_id = "unconfirmed";
+        String tutor_id = "1";
         String student_id = id;
         String subject_id = subjId;
         String amount = "R100";
