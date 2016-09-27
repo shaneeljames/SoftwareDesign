@@ -51,6 +51,7 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
     String time;
     String desc;
     String status;
+    String tutor_checkin ;
 
     List<tutor_Sessions> in;
     public tutor_AsyncResponse delegate = null; //Notify when async is done
@@ -183,8 +184,9 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
                     time = jsObj.getString("time");
                     desc = jsObj.getString("description");
                     status = jsObj.getString("status");
-                    // Toast.makeText(parent.getApplicationContext(),"session" + subjectName, Toast.LENGTH_SHORT).show();
-                   in.add(new tutor_Sessions(sessionID,tutorID,studentID,subjectID,subjectName,subjectCode,amount,date,time,studentName,StudentSurname,desc,studentNumber,Student_contact_num,Student_email,status,R.drawable.session,parent)) ;
+                    tutor_checkin = jsObj.getString("tutor_checkin");
+                   //  Toast.makeText(parent.getApplicationContext(),"session " + tutor_checkin, Toast.LENGTH_SHORT).show();
+                   in.add(new tutor_Sessions(sessionID,tutorID,studentID,subjectID,subjectName,subjectCode,amount,date,time,studentName,StudentSurname,desc,studentNumber,Student_contact_num,Student_email,status,tutor_checkin,R.drawable.session,parent)) ;
                 }
 
             } catch (JSONException e) {
@@ -197,7 +199,7 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
 
 
            // Toast.makeText(parent.getApplicationContext(), "Sessions " + result, Toast.LENGTH_SHORT).show();
-            delegate.processFinish(result); //let the other clsses know when onPost is finished
+           delegate.processFinish(result); //let the other clsses know when onPost is finished
         }
     }
 

@@ -4,8 +4,20 @@
         "source": "C:\\Users\\admin\\Documents\\GitHub\\ShaneelSD\\SoftwareDesign\\FindMeTutor\\FindMeTutor\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_folder.png"
     },
     {
+        "merged": "C:\\Users\\Jadon\\WorkSpace3Y\\SoftwareDesign\\FindMeTutor\\FindMeTutor\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_provider.png",
+        "source": "C:\\Users\\Jadon\\WorkSpace3Y\\SoftwareDesign\\FindMeTutor\\FindMeTutor\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_provider.png"
+    },
+    {
         "merged": "C:\\Users\\admin\\Documents\\GitHub\\ShaneelSD\\SoftwareDesign\\FindMeTutor\\FindMeTutor\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_provider.png",
         "source": "C:\\Users\\admin\\Documents\\GitHub\\ShaneelSD\\SoftwareDesign\\FindMeTutor\\FindMeTutor\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_provider.png"
+    },
+    {
+        "merged": "C:\\Users\\Jadon\\WorkSpace3Y\\SoftwareDesign\\FindMeTutor\\FindMeTutor\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_file.png",
+        "source": "C:\\Users\\Jadon\\WorkSpace3Y\\SoftwareDesign\\FindMeTutor\\FindMeTutor\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_file.png"
+    },
+    {
+        "merged": "C:\\Users\\Jadon\\WorkSpace3Y\\SoftwareDesign\\FindMeTutor\\FindMeTutor\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_folder.png",
+        "source": "C:\\Users\\Jadon\\WorkSpace3Y\\SoftwareDesign\\FindMeTutor\\FindMeTutor\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_folder.png"
     },
     {
         "merged": "C:\\Users\\admin\\Documents\\GitHub\\ShaneelSD\\SoftwareDesign\\FindMeTutor\\FindMeTutor\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_file.png",
@@ -14,5 +26,9 @@
     {
         "merged": "C:\\Users\\admin\\Documents\\GitHub\\ShaneelSD\\SoftwareDesign\\FindMeTutor\\FindMeTutor\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_chooser.png",
         "source": "C:\\Users\\admin\\Documents\\GitHub\\ShaneelSD\\SoftwareDesign\\FindMeTutor\\FindMeTutor\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_chooser.png"
+    },
+    {
+        "merged": "C:\\Users\\Jadon\\WorkSpace3Y\\SoftwareDesign\\FindMeTutor\\FindMeTutor\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_chooser.png",
+        "source": "C:\\Users\\Jadon\\WorkSpace3Y\\SoftwareDesign\\FindMeTutor\\FindMeTutor\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_chooser.png"
     }
 ]

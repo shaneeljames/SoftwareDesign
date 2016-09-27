@@ -78,26 +78,21 @@
                 android:text="Checkin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/subject"
-                android:layout_toEndOf="@+id/subject"
-                android:layout_marginLeft="26dp"
-                android:layout_marginStart="26dp"
-                android:id="@+id/btnCheckin" />
+                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
+                android:id="@+id/btnCheckin"
+               android:layout_below="@id/status"></Button>
 
             <TextView
                 android:text="View Students Details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/status"
-                android:layout_alignLeft="@+id/btnCheckin"
-                android:layout_alignStart="@+id/btnCheckin"
-                android:layout_marginLeft="11dp"
-                android:layout_marginStart="11dp"
                 android:id="@+id/txtStudentDetails"
-                android:textColor="@android:color/holo_blue_dark" />
-
-
+                android:textColor="@android:color/holo_blue_dark"
+                android:layout_alignBaseline="@+id/btnCheckin"
+                android:layout_alignBottom="@+id/btnCheckin"
+                android:layout_toRightOf="@+id/btnCheckin"
+                android:layout_toEndOf="@+id/btnCheckin" />
 
 
         </RelativeLayout>

@@ -12,6 +12,8 @@ import java.util.List;
 public class Session {
     String sessionID;
     String tutorID;
+    String tutorStdNum;
+    String tutorName;
     String subjectName;
     String subjectID;
     String amount;
@@ -19,6 +21,7 @@ public class Session {
     String time;
     String desc;
     String status;
+    String available;
 
     //String venue;
 
@@ -29,9 +32,11 @@ public class Session {
 
     public List<Session> events;
 
-    Session(String sesId, String tId, String subName,  String subId, String amt, String dte, String tme, String dsc, String st, int p, Context context) {
+    Session(String sesId, String tId, String tSdtN, String tNme, String subName,  String subId, String amt, String dte, String tme, String dsc, String st, String av, int p, Context context) {
         this.sessionID = sesId;
         this.tutorID = tId;
+        this.tutorStdNum=tSdtN;
+        this.tutorName=tNme;
         this.subjectName=subName;
         this.subjectID=subId;
         this.amount = amt;
@@ -39,6 +44,7 @@ public class Session {
         this.time = tme;
         this.desc = dsc;
         this.status = st;
+        this.available = av;
         this.photoId = p;
         this.context= context;
     }
