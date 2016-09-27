@@ -1,6 +1,8 @@
 package com.example.tutor;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -37,6 +39,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         LinearLayout llStudent ;
         RelativeLayout rlSession ;
         Button Checkin ;
+        TextView Cancel ;
 
 
         int count = 0 ;
@@ -59,6 +62,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
           //  rlSession = (RelativeLayout) itemView.findViewById(R.id.llSession) ;
             Checkin = (Button) itemView.findViewById(R.id.btnCheckin) ;
             session = (ImageView)itemView.findViewById(R.id.session);
+            Cancel = (TextView)itemView.findViewById(R.id.txtCancel);
 
         }
     }
@@ -196,10 +200,12 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                       //  Picasso.with(context).load("http://neural.net16.net/pictures/s" + Sessions.get(i).studentNumber + "JPG" ).into(eventViewHolder.session);
 
                         Picasso.with(context).load("http://neural.net16.net/pictures/s" + Sessions.get(i).studentNumber + "JPG" ).into(eventViewHolder.session);
-                    }catch(Exception e)
+                    }finally
                     {
-
+                        eventViewHolder.session.setImageResource(Sessions.get(i).icon);
                     }
+
+
                          //   Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);
 
 
@@ -228,6 +234,33 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                 Toast.makeText(context, "Index position is: "+i, Toast.LENGTH_SHORT).show();
             }
         });
+
+
+        eventViewHolder.Cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar
+                        .make(eventViewHolder.cv, "Are you sure you want to cancel with " + Sessions.get(i).studentName, Snackbar.LENGTH_LONG)
+                        .setAction("Yes!", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+                                tutor_cancel connect2server = new tutor_cancel(context,Sessions.get(i).sessionID) ;
+                                connect2server.execute();
+                                eventViewHolder.Cancel.setText("Cancelled");
+
+
+                            }
+                        });
+                snackbar.setActionTextColor(Color.RED);
+                View sbView = snackbar.getView();
+                TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                textView.setTextColor(Color.YELLOW);
+                snackbar.show();
+            }
+        });
+
+
     }
 
     @Override

@@ -28,6 +28,7 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
         TextView studentName ;
         TextView Description;
         Button confirm ;
+        Button decline;
 
         EventViewHolder(View itemView) {
             super(itemView);
@@ -39,6 +40,7 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
             studentName = (TextView)itemView.findViewById(R.id.studentName) ;
             Description = (TextView)itemView.findViewById(R.id.Description) ;
             confirm = (Button)itemView.findViewById(R.id.btnConfirm) ;
+            decline = (Button)itemView.findViewById(R.id.btnDecline) ;
         }
     }
 
@@ -78,6 +80,21 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
             @Override
             public void onClick(View v) {
               //  Toast.makeText(context, "Index position is: "+i, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        eventViewHolder.decline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SharedPreferences myprefs;
+                myprefs =  context.getSharedPreferences("user",MODE_PRIVATE ) ;
+                String id = myprefs.getString("tutor_id", null) ;
+
+            tutor_decline connect2server = new tutor_decline(context,list.get(i).tutor_student_id,id, list.get(i).student_id) ;
+                connect2server.execute() ;
+                eventViewHolder.decline.setText("Declined");
+                //  Toast.makeText(context, "Index position is: "+i, Toast.LENGTH_SHORT).show();
             }
         });
 

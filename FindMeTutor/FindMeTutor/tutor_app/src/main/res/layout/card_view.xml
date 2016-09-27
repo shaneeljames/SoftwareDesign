@@ -78,10 +78,11 @@
                 android:text="Checkin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginStart="30dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="-20dp"
                 android:id="@+id/btnCheckin"
-               android:layout_below="@id/status"></Button>
+                android:layout_below="@+id/descTxt"></Button>
 
             <TextView
                 android:text="View Students Details"
@@ -89,10 +90,25 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txtStudentDetails"
                 android:textColor="@android:color/holo_blue_dark"
-                android:layout_alignBaseline="@+id/btnCheckin"
-                android:layout_alignBottom="@+id/btnCheckin"
                 android:layout_toRightOf="@+id/btnCheckin"
-                android:layout_toEndOf="@+id/btnCheckin" />
+                android:layout_toEndOf="@+id/btnCheckin"
+                android:layout_alignLeft="@id/status"
+                android:layout_marginLeft="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_below="@+id/status" />
+
+            <TextView
+                android:text="Cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_blue_dark"
+                android:layout_below="@+id/status"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="11dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="11dp"
+                android:id="@+id/txtCancel" />
 
 
         </RelativeLayout>
