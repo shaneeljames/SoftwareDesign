@@ -38,6 +38,9 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         RelativeLayout rlSession ;
         Button Checkin ;
 
+
+        int count = 0 ;
+
         ImageView session;
 
         EventViewHolder(View itemView) {
@@ -53,11 +56,10 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
             studentName = (TextView) itemView.findViewById(R.id.studentName)  ;
             viewDetails = (TextView) itemView.findViewById(R.id.txtStudentDetails) ;
             llStudent = (LinearLayout) itemView.findViewById(R.id.llStudent) ;
-            rlSession = (RelativeLayout) itemView.findViewById(R.id.llSession) ;
+          //  rlSession = (RelativeLayout) itemView.findViewById(R.id.llSession) ;
             Checkin = (Button) itemView.findViewById(R.id.btnCheckin) ;
-
-
             session = (ImageView)itemView.findViewById(R.id.session);
+
         }
     }
 
@@ -94,11 +96,57 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
 
 
+
+      // eventViewHolder.sCheckin= connect2server.sendResults() ;
+
+       // Toast.makeText(context, checkin  , Toast.LENGTH_SHORT).show();
+
+        if(Sessions.get(i).tutor_checkin.length() ==0 )
+        {
+            eventViewHolder.Checkin.setText("Check in");
+
+
+
+        }
+        else
+        {
+            eventViewHolder.Checkin.setText("Check out");
+        }
+
+
+
+
+
+
         eventViewHolder.Checkin.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                String arr[] = new String[2] ;
+
+                String sText = eventViewHolder.Checkin.getText().toString() ;
+
+                if(sText.toString().equals("Check in"))
+                {
+                    eventViewHolder.Checkin.setText("Check out");
+            }
+                else
+                {
+                    eventViewHolder.Checkin.setText("Checked out");
+                    eventViewHolder.Checkin.setClickable(false);
+                }
+              //  eventViewHolder.Checkin.getText().toString() ;
+
+              // Toast.makeText(context, sText , Toast.LENGTH_SHORT).show();
+
+
+
+
+
+
+
+
+
+              /*  String arr[] = new String[2] ;
                 arr[0] = "nivekranjith95@gmail.com" ;
                 arr[1] = "802119@students.wits.ac.za" ;
 
@@ -114,9 +162,10 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                     String adminBody = "Your message";
                     new SendMailTask(context).execute(fromEmail,
                             fromPassword, toEmails, emailSubject, emailBody);
-                }
+                }*/
 
-                Toast.makeText(context, "EMail", Toast.LENGTH_SHORT).show();
+
+
             }
 
 
@@ -141,7 +190,11 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                     eventViewHolder.desc.setText("");
                     eventViewHolder.status.setText("");
 
+
+
                     try {
+                      //  Picasso.with(context).load("http://neural.net16.net/pictures/s" + Sessions.get(i).studentNumber + "JPG" ).into(eventViewHolder.session);
+
                         Picasso.with(context).load("http://neural.net16.net/pictures/s" + Sessions.get(i).studentNumber + "JPG" ).into(eventViewHolder.session);
                     }catch(Exception e)
                     {
@@ -161,6 +214,8 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                     eventViewHolder.status.setText(Sessions.get(i).status);
                     eventViewHolder.session.setImageResource(Sessions.get(i).icon);
                     eventViewHolder.viewDetails.setText("View Students Details");
+
+                //    Picasso.with(context).load("http://neural.net16.net/pictures/s815050JPG" ).into(eventViewHolder.session);
 
                 }
 

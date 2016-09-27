@@ -99,7 +99,7 @@ public class HomeFragment extends Fragment implements tutor_AsyncResponse{
         else{
 
 
-            Toast.makeText(getContext(), "On post LIST : "+list.get(1).subjectName, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getContext(), "On post LIST : "+list.get(1).subjectName, Toast.LENGTH_SHORT).show();
 
             list = connect2server.getList();
 
