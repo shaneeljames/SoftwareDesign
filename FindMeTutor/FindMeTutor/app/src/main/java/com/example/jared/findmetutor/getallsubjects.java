@@ -58,7 +58,7 @@ public class getallsubjects extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://neural.net16.net/student_getallsubjects.php");
+            url = new URL("http://neural.net16.net/tutor_getallsubjects.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -135,7 +135,7 @@ public class getallsubjects extends AsyncTask<String, String, String> {
 
         }else {
            //If they're in the DB then login to the Home page
-           //Toast.makeText(parent.getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+           Toast.makeText(parent.getApplicationContext(), result, Toast.LENGTH_SHORT).show();
            //startActivity(parent);
 
            //this.result = result;
@@ -143,7 +143,7 @@ public class getallsubjects extends AsyncTask<String, String, String> {
            try {
 
                JSONArray jsonArr = new JSONArray(result);
-               //Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
+               Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
 
                String name = "";
                String code="";

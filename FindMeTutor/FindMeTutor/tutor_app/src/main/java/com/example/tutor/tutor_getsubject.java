@@ -1,7 +1,12 @@
 package com.example.tutor;
 
+/**
+ * Created by admin on 21-Sep-16.
+ */
+
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
@@ -23,6 +28,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+
 /**
  * Created by jared on 2016/09/02.\
  * Use following command to call, execute the next activity on post, the String Result contains the json string containing all subjects in the Subject Table.
@@ -34,26 +40,18 @@ import java.util.Map;
  Returns null if the student number does not exist in the Student_Subject Table.
 
  */
-
-//////Actually to get Notifications of student requests
-
 public class tutor_getsubject extends AsyncTask<String, String, String> {
     Activity parent;
     String result = "";
     String TutorID;
-    List<Notifications> in;
-
+    List<Subjects> in;
     public tutor_AsyncResponse delegate = null; //Notify when async is done
 
-
-    static String out ;
-
-    public tutor_getsubject(Activity par, String student_id , List<Notifications> obj){
+    public tutor_getsubject(Activity par, String tutor_id, List<Subjects> obj){
         parent = par;
-        TutorID = student_id;
-        in = obj ;
+        TutorID = tutor_id;
+        in = obj;
     }
-
 
     public tutor_getsubject(Activity par){
         parent = par;
@@ -64,7 +62,7 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://neural.net16.net/tutor_notifications.php");
+            url = new URL("http://neural.net16.net/tutor_getsubject.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -136,28 +134,24 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         //Handle Result
-        if (result.equals("null")) {
+        if(result.equals("null")){
             Toast.makeText(parent.getApplicationContext(), "No current subjects", Toast.LENGTH_SHORT).show();
 
-        } else {
+        }else {
+            //If they're in the DB then login to the Home page
+            Toast.makeText(parent.getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+            //startActivity(parent);
 
-          //  Toast.makeText(parent.getApplicationContext(), "making object: " + result, Toast.LENGTH_LONG).show();
-
-            String result1 = result.substring(result.indexOf('['),result.length()) ;
-          //  Toast.makeText(parent.getApplicationContext(), " object: " + result1, Toast.LENGTH_LONG).show();
+            //this.result = result;
 
             try {
 
-                JSONArray jsonArr = new JSONArray(result1);
+                JSONArray jsonArr = new JSONArray(result);
                 //Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
-                String tutor_student_id= "" ;
-                String subjectName = "";
-                String subjectCode="";
-                String date = "" ;
-                String time = "";
-                String studentName ;
-                String studentSurname ;
-                String description ;
+
+                String name = "";
+                String code="";
+                String subid ="";
 
 
                 //Subjects pass = null;
@@ -166,38 +160,36 @@ public class tutor_getsubject extends AsyncTask<String, String, String> {
 
                 for (int i = 0; i < jsonArr.length(); i++) {
                     JSONObject jsObj = jsonArr.getJSONObject(i);
-                    tutor_student_id = jsObj.getString("tutor_student_id");
-                    subjectName = jsObj.getString("subject_name");
-                    subjectCode = jsObj.getString("subject_course_code");
-                    date = jsObj.getString("date");
-                    time = jsObj.getString("time");
-                    studentName = jsObj.getString("student_fname");
-                    studentSurname = jsObj.getString("student_lname");
-                    description = jsObj.getString("description");
-                   // Toast.makeText(parent.getApplicationContext(), studentName, Toast.LENGTH_SHORT).show();
-
-
-                    in.add(new Notifications(tutor_student_id,subjectName,subjectCode,date,time,studentName,studentSurname,description,R.drawable.notify,parent));
+                    subid = jsObj.getString("subject_id");
+                    name = jsObj.getString("subject_name");
+                    code = jsObj.getString("subject_course_code");
+                    // Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
+                    in.add(new Subjects(subid, name, code, R.drawable.subj, parent));
                 }
-
-               // Toast.makeText(parent.getApplicationContext(), in.get(0).studentSurname, Toast.LENGTH_SHORT).show();
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
-            delegate.processFinish(result);
+            //Now we have their subjects
 
+
+            delegate.processFinish(result); //let the other clsses know when onPost is finished
         }
     }
 
-    public String sendResults(){return result;}
-    public List getList(){return in;}
-
-   public static void startActivity(Context context) {
-        //context.startActivity(new Intent(context, NotificationsFragment.class).putExtra("subject", out));
+    public String sendResults()
+    {
+        return result;
     }
 
+    public List getList()
+    {
+        return in;
+    }
 
+    public static void startActivity(Context context) {
+        context.startActivity(new Intent(context, HomeActivity.class));
+    }
 }
 

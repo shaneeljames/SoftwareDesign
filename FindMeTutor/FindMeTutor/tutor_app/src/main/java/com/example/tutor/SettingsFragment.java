@@ -5,7 +5,6 @@ package com.example.tutor;
  */
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -37,8 +36,8 @@ public class SettingsFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent requestTutor = new Intent(getActivity(),RequestActivity.class);
-                startActivity(requestTutor);
+               // Intent requestTutor = new Intent(getActivity(),RequestActivity.class);
+               // startActivity(requestTutor);
             }
         });
 

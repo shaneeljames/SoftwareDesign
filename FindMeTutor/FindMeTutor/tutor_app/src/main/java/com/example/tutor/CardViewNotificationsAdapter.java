@@ -63,7 +63,7 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
     }
 
     @Override
-    public void onBindViewHolder(EventViewHolder eventViewHolder, final int i) {
+    public void onBindViewHolder(final EventViewHolder eventViewHolder, final int i) {
         eventViewHolder.subName.setText(list.get(i).code + "-"+ list.get(i).subject);
         eventViewHolder.date.setText(list.get(i).date);
         eventViewHolder.time.setText(list.get(i).time);
@@ -92,10 +92,14 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
 
                // Toast.makeText(context, "tut: "+list.get(i).tutor_student_id, Toast.LENGTH_SHORT).show();
 
-                tutor_confirm connect2server = new tutor_confirm(context,id,list.get(i).tutor_student_id) ;
+                tutor_confirm connect2server = new tutor_confirm(context,list.get(i).tutor_student_id,id, list.get(i).student_id) ;
                 connect2server.execute();
 
-                Toast.makeText(context, "Session is booked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Your agreement has been sent to " + list.get(i).studentName +" " + list.get(i).studentSurname, Toast.LENGTH_SHORT).show();
+                eventViewHolder.confirm.setText("confirmed");
+                eventViewHolder.confirm.setClickable(false);
+
+
 
 
 

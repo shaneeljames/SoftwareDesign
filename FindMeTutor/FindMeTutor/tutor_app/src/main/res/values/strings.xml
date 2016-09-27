@@ -30,6 +30,7 @@
     <string name="nav_item_friends">Friends</string>
     <string name="nav_item_notifications">Settings</string>
     <string name="nav_item_notifications1">Notifications</string>
+    <string name="nav_item_pending">Pending Sessions</string>
     <string name="nav_item_logout">Log Out</string>
 
     <!-- navigation drawer item labels  -->
@@ -38,6 +39,7 @@
         <item>@string/nav_item_friends</item>
         <item>@string/nav_item_notifications</item>
         <item>@string/nav_item_notifications1</item>
+        <item>@string/nav_item_pending</item>
         <item>@string/nav_item_logout</item>
     </string-array>
 
@@ -47,6 +49,7 @@
     <string name="title_Notifications">Notifications</string>
     <string name="title_Logout">Log Out</string>
     <string name="title_Settings">Settings</string>
+    <string name="title_Pending">Pending Sessions</string>
     <string name="stdNum">Student Number</string>
 
     <string-array name="android_dropdown_arrays">
@@ -65,5 +68,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_notifications">NotificationsActivity</string>
     <string name="title_activity_test1">test1</string>
+    <string name="title_activity_add_subject">AddSubjectActivity</string>
+    <string name="title_activity_account_settings">AccountSettingsActivity</string>
+
+    <string name="hello">Hello World, FileExplore!</string>
+    <string name="title_activity_pending_sessions">PendingSessionsActivity</string>
+
 
 </resources>

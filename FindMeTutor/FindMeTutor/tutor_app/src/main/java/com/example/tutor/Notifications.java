@@ -10,6 +10,7 @@ import android.content.Context;
 public class Notifications {
 
     String tutor_student_id ;
+    String student_id ;
     String subject;
     String code;
     String date ;
@@ -22,9 +23,10 @@ public class Notifications {
     Context context;
 
 
-    Notifications(String tsi,String subj, String cd, String d , String t, String sn , String ss , String desc, int i, Activity context)// Subjects obj)
+    Notifications(String tsi,String sid,String subj, String cd, String d , String t, String sn , String ss , String desc, int i, Activity context)// Subjects obj)
     {
         this.tutor_student_id = tsi ;
+        this.student_id = sid ;
         this.subject = subj;
         this.code = cd;
         this.date = d ;

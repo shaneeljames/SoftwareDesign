@@ -3,6 +3,9 @@
     package="com.example.tutor">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -13,6 +16,7 @@
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -20,10 +24,19 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RequestActivity" />
         <activity android:name=".SubjectSettingsActivity" />
+        <activity android:name=".AccountSettingsActivity2" />
         <activity
             android:name=".NotificationsActivity"
             android:label="@string/title_activity_notifications"
             android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".AddSubjectActivity"
+            android:label="@string/title_activity_add_subject"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".PendingSessionsActivity"
+            android:label="@string/title_activity_pending_sessions"
+            android:theme="@style/MyMaterialTheme"></activity>
     </application>
 
 </manifest>
