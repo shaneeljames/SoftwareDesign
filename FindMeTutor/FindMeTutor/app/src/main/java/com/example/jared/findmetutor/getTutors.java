@@ -145,6 +145,7 @@ public class getTutors extends AsyncTask<String, String, String> {
                JSONArray jsonArr = new JSONArray(result);
                Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
                String tutID="";
+               String tutNum="";
                String fname = "";
                String lName ="";
                String fullname="";
@@ -162,6 +163,7 @@ public class getTutors extends AsyncTask<String, String, String> {
                for (int i = 0; i < jsonArr.length(); i++) {
                    JSONObject jsObj = jsonArr.getJSONObject(i);
                    tutID = jsObj.getString("tutor_id");
+                   tutNum = jsObj.getString("tutor_student_num");
                    fname = jsObj.getString("tutor_fname");
                    lName = jsObj.getString("tutor_lname");
                    fullname = fname + " " +lName;
@@ -171,7 +173,7 @@ public class getTutors extends AsyncTask<String, String, String> {
 
                    //code = jsObj.getString("subject_course_code");
                   //Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
-                   in.add(new Tutors( tutID, fullname, rating,contact,email,qualis, R.drawable.subj, parent));
+                   in.add(new Tutors( tutID, tutNum, fullname, rating,contact,email,qualis, R.drawable.subj, parent));
                }
 
            } catch (JSONException e) {

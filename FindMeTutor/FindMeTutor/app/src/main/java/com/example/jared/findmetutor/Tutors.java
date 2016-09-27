@@ -11,6 +11,7 @@ import java.util.List;
 public class Tutors {
 
     String tutorID;
+    String tutorStdNum;
     String TutorName;
     String Rating;
     String tutorContact;
@@ -26,8 +27,9 @@ public class Tutors {
 
     public List<Tutors> events;
 
-    Tutors(String id, String name, String rating, String num, String em, String quali, int p, Context context) {
+    Tutors(String id, String stdn, String name, String rating, String num, String em, String quali, int p, Context context) {
         this.tutorID=id;
+        this.tutorStdNum = stdn;
         this.TutorName = name;
         this.Rating = rating;
         this.tutorContact = num;

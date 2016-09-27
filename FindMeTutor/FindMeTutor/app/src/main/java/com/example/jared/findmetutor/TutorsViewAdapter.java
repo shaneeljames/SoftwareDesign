@@ -13,6 +13,10 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 /**
@@ -43,6 +47,7 @@ public class TutorsViewAdapter extends RecyclerView.Adapter<TutorsViewAdapter.Ev
         TextView tutorName;
         //RatingBar rating;
         Button selectTutor;
+        TextView tutorQuals;
 
 
         ImageView session;
@@ -54,6 +59,7 @@ public class TutorsViewAdapter extends RecyclerView.Adapter<TutorsViewAdapter.Ev
             tutorName = (TextView)itemView.findViewById(R.id.tutorNameTxt);
             selectTutor = (Button)itemView.findViewById(R.id.selectTutorBtn);
             //rating = (RatingBar) itemView.findViewById(R.id.ratingBar);
+            tutorQuals = (TextView)itemView.findViewById(R.id.quali);
 
 
             session = (ImageView)itemView.findViewById(R.id.tutorDp);
@@ -87,9 +93,18 @@ public class TutorsViewAdapter extends RecyclerView.Adapter<TutorsViewAdapter.Ev
     @Override
     public void onBindViewHolder(EventViewHolder eventViewHolder, final int i) {
         eventViewHolder.tutorName.setText(events.get(i).TutorName);
+        eventViewHolder.tutorQuals.setText(events.get(i).tutorQual);
        // eventViewHolder.rating.setNumStars(2);
 
-        eventViewHolder.session.setImageResource(events.get(i).photoId);
+        //eventViewHolder.session.setImageResource(events.get(i).photoId);
+
+
+        try{
+            Picasso.with(context).load("http://neural.net16.net/pictures/t"+events.get(i).tutorStdNum+"JPG").into(eventViewHolder.session);
+        }catch (Exception e){
+
+        }
+
 
         eventViewHolder.selectTutor.setOnClickListener(new View.OnClickListener(){
             @Override
