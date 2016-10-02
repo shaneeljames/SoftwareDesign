@@ -28,6 +28,7 @@ public class tutor_Sessions {
     String studentEmail ;
     String status;
     String tutor_checkin ;
+    float rating ;
 
 
 
@@ -38,7 +39,7 @@ public class tutor_Sessions {
     Context context;
 
     public List<tutor_Sessions> list ;
-    tutor_Sessions(String tsi,String tid,String studID,String subID,String subjN , String subjC,String a, String d , String t, String sn , String ss , String desc,String sNum,String scontact , String sEmail , String stat,String tchin, int i, Activity context)// Subjects obj)
+    tutor_Sessions(String tsi,String tid,String studID,String subID,String subjN , String subjC,String a, String d , String t, String sn , String ss , String desc,String sNum,String scontact , String sEmail , String stat,String tchin,float r, int i, Activity context)// Subjects obj)
     {
         this.sessionID = tsi ;
         this.tutorID = tid ;
@@ -58,6 +59,7 @@ public class tutor_Sessions {
         this.subjectID = subID ;
         this.context = context;
         this.tutor_checkin = tchin ;
+        this.rating = r ;
 
         this.icon = i ;
         // this.subjectObj = obj;

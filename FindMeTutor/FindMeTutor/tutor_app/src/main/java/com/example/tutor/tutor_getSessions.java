@@ -52,6 +52,7 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
     String desc;
     String status;
     String tutor_checkin ;
+    String student_rating ;
 
     List<tutor_Sessions> in;
     public tutor_AsyncResponse delegate = null; //Notify when async is done
@@ -185,8 +186,9 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
                     desc = jsObj.getString("description");
                     status = jsObj.getString("status");
                     tutor_checkin = jsObj.getString("tutor_checkin");
+                    student_rating = jsObj.getString("student_rating");
                    //  Toast.makeText(parent.getApplicationContext(),"session " + tutor_checkin, Toast.LENGTH_SHORT).show();
-                   in.add(new tutor_Sessions(sessionID,tutorID,studentID,subjectID,subjectName,subjectCode,amount,date,time,studentName,StudentSurname,desc,studentNumber,Student_contact_num,Student_email,status,tutor_checkin,R.drawable.session,parent)) ;
+                   in.add(new tutor_Sessions(sessionID,tutorID,studentID,subjectID,subjectName,subjectCode,amount,date,time,studentName,StudentSurname,desc,studentNumber,Student_contact_num,Student_email,status,tutor_checkin,Float.parseFloat(student_rating),R.drawable.session,parent)) ;
                 }
 
             } catch (JSONException e) {

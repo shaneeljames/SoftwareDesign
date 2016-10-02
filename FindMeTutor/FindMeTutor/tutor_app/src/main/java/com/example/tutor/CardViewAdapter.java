@@ -1,6 +1,7 @@
 package com.example.tutor;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +20,8 @@ import android.widget.Toast;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by Jadon on 30-Aug-16.
@@ -40,7 +44,9 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         RelativeLayout rlSession ;
         Button Checkin ;
         TextView Cancel ;
-
+        RatingBar rate ;
+        Button btnRate ;
+        SharedPreferences myprefs ;
 
         int count = 0 ;
 
@@ -63,6 +69,8 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
             Checkin = (Button) itemView.findViewById(R.id.btnCheckin) ;
             session = (ImageView)itemView.findViewById(R.id.session);
             Cancel = (TextView)itemView.findViewById(R.id.txtCancel);
+            rate = (RatingBar) itemView.findViewById(R.id.ratingBar) ;
+            btnRate = (Button) itemView.findViewById(R.id.btnRate);
 
         }
     }
@@ -96,14 +104,20 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         eventViewHolder.time.setText(Sessions.get(i).time);
         eventViewHolder.desc.setText(Sessions.get(i).description);
         eventViewHolder.status.setText(Sessions.get(i).status);
-        eventViewHolder.session.setImageResource(Sessions.get(i).icon);
+       // eventViewHolder.session.setImageResource(Sessions.get(i).icon);
+        eventViewHolder.rate.setRating(Sessions.get(i).rating);
 
 
+        try {
+            //  Picasso.with(context).load("http://neural.net16.net/pictures/s" + Sessions.get(i).studentNumber + "JPG" ).into(eventViewHolder.session);
 
+            Picasso.with(context).load("http://neural.net16.net/pictures/s" + Sessions.get(i).studentNumber + "JPG" ).into(eventViewHolder.session);
+            //   Picasso.with(context).load("http://neural.net16.net/pictures/s" + Sessions.get(i).studentNumber + "JPG" ).
 
-      // eventViewHolder.sCheckin= connect2server.sendResults() ;
+        } catch (Exception e)
+        {
 
-       // Toast.makeText(context, checkin  , Toast.LENGTH_SHORT).show();
+        }
 
         if(Sessions.get(i).tutor_checkin.length() ==0 )
         {
@@ -116,10 +130,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         {
             eventViewHolder.Checkin.setText("Check out");
         }
-
-
-
-
 
 
         eventViewHolder.Checkin.setOnClickListener(new View.OnClickListener() {
@@ -137,16 +147,22 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                 {
                     eventViewHolder.Checkin.setText("Checked out");
                     eventViewHolder.Checkin.setClickable(false);
+                    eventViewHolder.subjectName.setText("Rate " + Sessions.get(i).studentName + " " + Sessions.get(i).studentSurname);
+                    eventViewHolder.viewDetails.setVisibility(View.GONE);
+                    eventViewHolder.btnRate.setVisibility(View.VISIBLE);
+                    eventViewHolder.amount.setVisibility(View.GONE);
+                    eventViewHolder.date.setVisibility(View.GONE);
+                    eventViewHolder.time.setVisibility(View.GONE);
+                    eventViewHolder.desc.setVisibility(View.GONE);
+                    eventViewHolder.status.setVisibility(View.GONE);
+                    eventViewHolder.rate.setVisibility(View.VISIBLE);
+                    eventViewHolder.Cancel.setVisibility(View.INVISIBLE);
+                    eventViewHolder.rate.setRating(3);
+                    eventViewHolder.rate.setIsIndicator(false) ;
                 }
               //  eventViewHolder.Checkin.getText().toString() ;
 
               // Toast.makeText(context, sText , Toast.LENGTH_SHORT).show();
-
-
-
-
-
-
 
 
 
@@ -193,17 +209,10 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                     eventViewHolder.viewDetails.setText("View Session Details");
                     eventViewHolder.desc.setText("");
                     eventViewHolder.status.setText("");
+                    eventViewHolder.rate.setVisibility(View.VISIBLE);
 
 
 
-                    try {
-                      //  Picasso.with(context).load("http://neural.net16.net/pictures/s" + Sessions.get(i).studentNumber + "JPG" ).into(eventViewHolder.session);
-
-                        Picasso.with(context).load("http://neural.net16.net/pictures/s" + Sessions.get(i).studentNumber + "JPG" ).into(eventViewHolder.session);
-                    }finally
-                    {
-                        eventViewHolder.session.setImageResource(Sessions.get(i).icon);
-                    }
 
 
                          //   Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);
@@ -216,9 +225,11 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                     eventViewHolder.amount.setText(Sessions.get(i).amount);
                     eventViewHolder.date.setText(Sessions.get(i).date);
                     eventViewHolder.time.setText(Sessions.get(i).time);
+                    eventViewHolder.desc.setVisibility(View.VISIBLE);
+                    eventViewHolder.status.setVisibility(View.VISIBLE);
+                    eventViewHolder.rate.setVisibility(View.GONE);
                     eventViewHolder.desc.setText(Sessions.get(i).description);
                     eventViewHolder.status.setText(Sessions.get(i).status);
-                    eventViewHolder.session.setImageResource(Sessions.get(i).icon);
                     eventViewHolder.viewDetails.setText("View Students Details");
 
                 //    Picasso.with(context).load("http://neural.net16.net/pictures/s815050JPG" ).into(eventViewHolder.session);
@@ -261,9 +272,42 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         });
 
 
+        eventViewHolder.btnRate.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick (View v){
+
+
+                SharedPreferences myprefs;
+                myprefs =  context.getSharedPreferences("user",MODE_PRIVATE ) ;
+                String id = myprefs.getString("tutor_id", null) ;
+
+
+               tutor_rateStudent connect2server = new tutor_rateStudent(context,Sessions.get(i).studentID,Sessions.get(i).sessionID, Float.toString(eventViewHolder.rate.getRating())) ;
+                connect2server.execute() ;
+
+                tutor_updateStudentRating connect = new tutor_updateStudentRating(context,  Sessions.get(i).studentID);
+                connect.execute() ;
+
+                Toast.makeText(context, "STudent id " + Sessions.get(i).studentID, Toast.LENGTH_SHORT).show();
+
+                eventViewHolder.btnRate.setText("Rated");
+
+
+
+            }
+        });
+
+
+
     }
 
-    @Override
+
+
+
+
+            @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
