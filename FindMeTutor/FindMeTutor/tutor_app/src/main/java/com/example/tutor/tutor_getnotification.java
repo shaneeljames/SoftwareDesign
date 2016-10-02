@@ -159,6 +159,7 @@ public class tutor_getnotification extends AsyncTask<String, String, String> {
                 String studentName ;
                 String studentSurname ;
                 String description ;
+                String studentEmail ;
 
 
                 //Subjects pass = null;
@@ -176,10 +177,11 @@ public class tutor_getnotification extends AsyncTask<String, String, String> {
                     studentName = jsObj.getString("student_fname");
                     studentSurname = jsObj.getString("student_lname");
                     description = jsObj.getString("description");
+                    studentEmail = jsObj.getString("student_email");
                     Toast.makeText(parent.getApplicationContext(), student_id, Toast.LENGTH_SHORT).show();
 
 
-                    in.add(new Notifications(tutor_student_id,student_id,subjectName,subjectCode,date,time,studentName,studentSurname,description,R.drawable.notify,parent));
+                    in.add(new Notifications(tutor_student_id,student_id,subjectName,subjectCode,date,time,studentName,studentSurname,description,studentEmail,R.drawable.notify,parent));
                 }
 
                // Toast.makeText(parent.getApplicationContext(), in.get(0).studentSurname, Toast.LENGTH_SHORT).show();

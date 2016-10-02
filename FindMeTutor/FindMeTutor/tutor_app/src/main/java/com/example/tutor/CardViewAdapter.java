@@ -256,9 +256,34 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                             @Override
                             public void onClick(View view) {
 
+
+                                SharedPreferences myprefs;
+                                myprefs =  context.getSharedPreferences("user",MODE_PRIVATE ) ;
+                                String id = myprefs.getString("tutor_id", null) ;
+                                String tutor_name =  myprefs.getString("tutor_fname", null) ;
+                                String tutor_surname =  myprefs.getString("tutor_lname", null) ;
+
                                 tutor_cancel connect2server = new tutor_cancel(context,Sessions.get(i).sessionID) ;
                                 connect2server.execute();
                                 eventViewHolder.Cancel.setText("Cancelled");
+
+                                String fromEmail = "FindmetutorSD@gmail.com";
+                                String fromPassword = "findmetutors";
+                                String toEmails =  Sessions.get(i).studentEmail.toString() ;
+                                String adminEmail = "admin@gmail.com";
+                                String emailSubject = "Sent from FindMeTutor";
+                                String adminSubject = "App Registration Mail";
+                                String emailBody =
+                                        "Dear "+ Sessions.get(i).studentName + " " + Sessions.get(i).studentSurname
+                                                +"<br><br>"+ tutor_name.toString() +" " + tutor_surname.toString()
+                                                +" has cancelled your booking for:<br>Subject: "
+                                                + Sessions.get(i).subjectName + "<br>Date: "+ Sessions.get(i).date  +"<br>Time: "
+                                                + Sessions.get(i).time + "<br>Description: " + Sessions.get(i).description
+                                                +".<br><br>Your request has been reopened."
+                                                +"<br><br>We apologize for the inconvenience";
+                                String adminBody = "Your message";
+                                new SendMailTask(context).execute(fromEmail,
+                                        fromPassword, toEmails, emailSubject, emailBody);
 
 
                             }
@@ -284,7 +309,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                 String id = myprefs.getString("tutor_id", null) ;
 
 
-               tutor_rateStudent connect2server = new tutor_rateStudent(context,Sessions.get(i).studentID,Sessions.get(i).sessionID, Float.toString(eventViewHolder.rate.getRating())) ;
+                tutor_rateStudent connect2server = new tutor_rateStudent(context,Sessions.get(i).studentID,Sessions.get(i).sessionID, Float.toString(eventViewHolder.rate.getRating())) ;
                 connect2server.execute() ;
 
                 tutor_updateStudentRating connect = new tutor_updateStudentRating(context,  Sessions.get(i).studentID);
@@ -293,6 +318,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                 Toast.makeText(context, "STudent id " + Sessions.get(i).studentID, Toast.LENGTH_SHORT).show();
 
                 eventViewHolder.btnRate.setText("Rated");
+                eventViewHolder.btnRate.setClickable(false);
 
 
 
