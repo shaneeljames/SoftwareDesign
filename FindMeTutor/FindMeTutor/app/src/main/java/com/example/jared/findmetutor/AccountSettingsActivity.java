@@ -2,17 +2,24 @@ package com.example.jared.findmetutor;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,10 +33,13 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
     private String firstName2,lastName2, email2, number2, password2,ConfirmPassword2, stdNum2;
     private EditText inputFirstName,inputLastName, inputEmail, inputNumber, inputPassword,inputConfirmPassword, studentNumber, studentBalance;
     private TextInputLayout inputLayoutFName, inputLayoutLName, inputLayoutEmail, inputLayoutNumber, inputLayoutPass,inputLayoutCPass, inputStudentNumber ;
-    private Button btnRegister;
+    ImageButton imgpp;
     private String test;
 
     SharedPreferences myprefs;
+    Toolbar toolbar;
+
+    public static final int RESULT_LOAD_IMAGE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +47,9 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         setContentView(R.layout.activity_account_settings);
 
         //get and assign toolbar entered information
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         //Get layouts
          /*inputLayoutFName = (TextInputLayout) findViewById(R.id.input_layout_Firstname);
@@ -100,6 +111,7 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         inputConfirmPassword =(EditText) findViewById(R.id.input_passwordConfirm);
         studentNumber = (EditText) findViewById(R.id.stdNum);
         studentBalance = (EditText)findViewById(R.id.input_balance);
+        imgpp = (ImageButton)findViewById(R.id.studentDp);
 
         myprefs= this.getSharedPreferences("user", MODE_PRIVATE);
 
@@ -121,11 +133,107 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         inputPassword.setText(password);
         studentBalance.setText(balance);
 
+        setEditableFalse();
 
 
 
 
 
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if(id == R.id.action_search){
+            Toast.makeText(getApplicationContext(), "Search action is selected!", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void setEditableFalse(){
+        studentNumber.setKeyListener(null);
+        studentNumber.setCursorVisible(false);
+        studentNumber.setPressed(false);
+        studentNumber.setFocusable(false);
+
+        inputFirstName.setKeyListener(null);
+        inputFirstName.setCursorVisible(false);
+        inputFirstName.setPressed(false);
+        inputFirstName.setFocusable(false);
+
+        inputLastName.setKeyListener(null);
+        inputLastName.setCursorVisible(false);
+        inputLastName.setPressed(false);
+        inputLastName.setFocusable(false);
+
+        inputEmail.setKeyListener(null);
+        inputEmail.setCursorVisible(false);
+        inputEmail.setPressed(false);
+        inputEmail.setFocusable(false);
+
+        inputNumber.setKeyListener(null);
+        inputNumber.setCursorVisible(false);
+        inputNumber.setPressed(false);
+        inputNumber.setFocusable(false);
+
+        inputPassword.setKeyListener(null);
+        inputPassword.setCursorVisible(false);
+        inputPassword.setPressed(false);
+        inputPassword.setFocusable(false);
+
+        studentBalance.setKeyListener(null);
+        studentBalance.setCursorVisible(false);
+        studentBalance.setPressed(false);
+        studentBalance.setFocusable(false);
+
+
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Toast.makeText(getApplicationContext(), "req Code : "+requestCode+" Result code : "+resultCode+" data: "+data, Toast.LENGTH_SHORT).show();
+        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null) {
+            Uri selectedImage = data.getData();
+            imgpp.setImageURI(selectedImage);
+
+            Bitmap bitmap = ((BitmapDrawable)  imgpp.getDrawable()).getBitmap() ;
+            Bitmap scaledBit = Bitmap.createScaledBitmap(bitmap, 200, 180, false);
+            new UploadToServer(scaledBit, "s"+stdNum).execute() ;
+            Toast.makeText(getApplicationContext(), "Picture Updated", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public void DisplayPicture(View v)
+    {
+        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(i, RESULT_LOAD_IMAGE);
+
+       //
+
+        Toast.makeText(this, "Show some text on the screen.", Toast.LENGTH_LONG).show();
     }
 
 

@@ -2,6 +2,9 @@ package com.example.jared.findmetutor;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -111,7 +114,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     }
     @Override
     public  void processFinish2(String out){
-        Intent goHome = new Intent(this, HomeFragment.class);
+        Intent goHome = new Intent(RequestActivity.this, HomeActivity.class);
         startActivity(goHome);
     }
 

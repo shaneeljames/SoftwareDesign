@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
+    useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         applicationId "com.example.jared.findmetutor"
@@ -23,6 +24,8 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha4'
     //compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha4'
+
+
     compile 'com.android.support:design:24.1.1'
     compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'com.android.support:design:24.2.0'
