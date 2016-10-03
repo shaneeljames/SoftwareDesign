@@ -28,6 +28,7 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
         TextView studentName ;
         TextView Description;
         Button confirm ;
+        Button decline;
 
         EventViewHolder(View itemView) {
             super(itemView);
@@ -39,6 +40,7 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
             studentName = (TextView)itemView.findViewById(R.id.studentName) ;
             Description = (TextView)itemView.findViewById(R.id.Description) ;
             confirm = (Button)itemView.findViewById(R.id.btnConfirm) ;
+            decline = (Button)itemView.findViewById(R.id.btnDecline) ;
         }
     }
 
@@ -81,6 +83,21 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
             }
         });
 
+        eventViewHolder.decline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SharedPreferences myprefs;
+                myprefs =  context.getSharedPreferences("user",MODE_PRIVATE ) ;
+                String id = myprefs.getString("tutor_id", null) ;
+
+            tutor_decline connect2server = new tutor_decline(context,list.get(i).tutor_student_id,id, list.get(i).student_id) ;
+                connect2server.execute() ;
+                eventViewHolder.decline.setText("Declined");
+                //  Toast.makeText(context, "Index position is: "+i, Toast.LENGTH_SHORT).show();
+            }
+        });
+
         eventViewHolder.confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +106,8 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
                 SharedPreferences myprefs;
                 myprefs =  context.getSharedPreferences("user",MODE_PRIVATE ) ;
                 String id = myprefs.getString("tutor_id", null) ;
+                String tutor_name =  myprefs.getString("tutor_fname", null) ;
+                String tutor_surname =  myprefs.getString("tutor_lname", null) ;
 
                // Toast.makeText(context, "tut: "+list.get(i).tutor_student_id, Toast.LENGTH_SHORT).show();
 
@@ -98,6 +117,27 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
                 Toast.makeText(context, "Your agreement has been sent to " + list.get(i).studentName +" " + list.get(i).studentSurname, Toast.LENGTH_SHORT).show();
                 eventViewHolder.confirm.setText("confirmed");
                 eventViewHolder.confirm.setClickable(false);
+
+                Toast.makeText(context, "Student Email " + list.get(i).Email, Toast.LENGTH_SHORT).show();
+
+
+                String fromEmail = "FindmetutorSD@gmail.com";
+                String fromPassword = "findmetutors";
+                String toEmails = list.get(i).Email.toString();
+                String adminEmail = "admin@gmail.com";
+                String emailSubject = "Sent from FindMeTutor";
+                String adminSubject = "App Registration Mail";
+                String emailBody =
+                                "Dear "+ list.get(i).studentName + " " + list.get(i).studentSurname
+                                +"<br><br>"+ tutor_name.toString() +" " + tutor_surname.toString()
+                                +" has accepted your request for:<br>Subject: "
+                                + list.get(i).subject + "<br>Date: "+ list.get(i).date  +"<br>Time: "
+                                + list.get(i).time + "<br>Description: " + list.get(i).description
+                                +".<br><br>For more information about " + tutor_name.toString() +" " + tutor_surname.toString()
+                                +" please log on to your FindMeTutor app.";
+                String adminBody = "Your message";
+                new SendMailTask(context).execute(fromEmail,
+                        fromPassword, toEmails, emailSubject, emailBody);
 
 
 

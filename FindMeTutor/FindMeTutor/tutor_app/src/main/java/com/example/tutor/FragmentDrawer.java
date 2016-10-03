@@ -17,7 +17,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,6 +75,8 @@ public class FragmentDrawer extends Fragment {
 
     }
 
+    Context context ;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -82,14 +87,28 @@ public class FragmentDrawer extends Fragment {
         TextView txtName = (TextView) layout.findViewById(R.id.txtName);
         final TextView txtBalance = (TextView) layout.findViewById(R.id.txtBalance);
         ImageView pp = (ImageView) layout.findViewById(R.id.imgPP)  ;
+        RatingBar rating = (RatingBar) layout.findViewById(R.id.ratingBar2) ;
 
         SharedPreferences myprefs =  this.getContext().getSharedPreferences("user", MODE_PRIVATE);
         String tutor_fname = myprefs.getString("tutor_fname", null);
         String tutor_lname = myprefs.getString("tutor_lname", null);
+        final  String tutor_id = myprefs.getString("tutor_student_num", null);
         final String tutor_balance = myprefs.getString("tutor_balance", null);
+        final String tutor_rating = myprefs.getString("tutor_rating", null);
 
        txtName.setText(tutor_lname + " " + tutor_fname);
+      //  txtName.setText(tutor_id);
         txtBalance.setText(tutor_balance);
+
+        rating.setRating(Float.parseFloat(tutor_rating));
+
+
+        try {
+            Picasso.with(getContext()).load("http://neural.net16.net/pictures/t" + tutor_id.toString() + "JPG" ).into(pp);
+        }catch (Exception e)
+        {
+            pp.setImageResource(R.drawable.session);
+        }
 
 
 

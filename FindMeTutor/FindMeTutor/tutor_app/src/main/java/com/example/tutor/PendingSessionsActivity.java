@@ -43,9 +43,9 @@ public class PendingSessionsActivity extends AppCompatActivity implements tutor_
 
     @Override
     public void processFinish(String output) {
-        PendingAdapter adapter = new PendingAdapter(connect2server.getList(),this.getApplicationContext()) ;
-        rv.setAdapter(adapter);
-        Toast.makeText(getApplicationContext(), "Size: " + adapter.getItemCount() , Toast.LENGTH_SHORT).show();
+       PendingAdapter adapter = new PendingAdapter(connect2server.getList(),this.getApplicationContext()) ;
+       rv.setAdapter(adapter);
+       Toast.makeText(getApplicationContext(), "Size: " + adapter.getItemCount() , Toast.LENGTH_SHORT).show();
 
     }
 }

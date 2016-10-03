@@ -28,6 +28,7 @@ public class AddSubjectActivity extends AppCompatActivity implements tutor_Async
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Add Subjects");
 
+
         rv = (RecyclerView) findViewById(R.id.rvAddSubj);
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
@@ -41,7 +42,12 @@ public class AddSubjectActivity extends AppCompatActivity implements tutor_Async
         connect2server.execute();
 
 
+
+        //get Your Current Locationif ( ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_COARSE_LOCATION ) != PackageManager.PERMISSION_GRANTED ) {
+
+
     }
+
 
     @Override
     public void processFinish(String output) {

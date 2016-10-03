@@ -21,7 +21,7 @@ public class SendMailTask extends AsyncTask {
         statusDialog.setMessage("Getting ready...");
         statusDialog.setIndeterminate(false);
         statusDialog.setCancelable(false);
-        statusDialog.show();
+        //statusDialog.show();
     }
 
     @SuppressWarnings("unchecked")
@@ -29,11 +29,11 @@ public class SendMailTask extends AsyncTask {
     protected Object doInBackground(Object... args) {
         try {
             Log.i("SendMailTask", "About to instantiate GMail...");
-            publishProgress("Processing input....");
+           publishProgress("Processing input....");
             GmailSender androidEmail = new GmailSender(args[0].toString(),
                     args[1].toString(),  args[2].toString(), args[3].toString(),
                     args[4].toString());
-            publishProgress("Preparing mail message....");
+           publishProgress("Preparing mail message....");
             androidEmail.createEmailMessage();
             publishProgress("Sending email....");
             androidEmail.sendEmail();

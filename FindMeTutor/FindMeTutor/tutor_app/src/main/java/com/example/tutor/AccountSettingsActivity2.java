@@ -203,16 +203,6 @@ public class AccountSettingsActivity2 extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(), "Old Password incorrect", Toast.LENGTH_SHORT).show();
                 }
-
-
-
-
-
-
-
-
-
-
             }
         });
 
@@ -227,6 +217,7 @@ public class AccountSettingsActivity2 extends AppCompatActivity {
             imgpp.setImageURI(selectedImage);
 
             Bitmap bitmap = ((BitmapDrawable)  imgpp.getDrawable()).getBitmap() ;
+          //  Bitmap b2 = Bitmap.createScaledBitmap()
             new UploadToServer(bitmap, "t" +id.toString()).execute() ;
         }
 

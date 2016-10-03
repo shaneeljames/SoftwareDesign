@@ -407,30 +407,32 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 			\\Update Tutor			&		UC-UT
 			\\Read Tutor				&	UC-VT
 			\\Archive Tutor			&		UC-DT
-			\\Create Administrator	& UC-CA %sprint 3
-			\\Update Administrator 	&			UC-UA %sprint 3
-			\\Read Administrator      &			UC-VA %sprint 3
-			\\Archive Administrator	&			UC-DA %sprint 3
+			%\\Create Administrator	& UC-CA %sprint 3
+			%\\Update Administrator 	&			UC-UA %sprint 3
+			%\\Read Administrator      &			UC-VA %sprint 3
+			%\\Archive Administrator	&			UC-DA %sprint 3
 			\\Request Tutor			&		UC-RT
 			%\\Choose Tutor			&		UC-CT not a use case, will be in flow of activities
-			\\Create Event			&		UC-CE %sprint 3
-			\\Update Event			&		UC-UE %sprint 3
-			\\Read Event				&	UC-VE %sprint 3
-			\\Archive Event			&		UC-DE %sprint 3
+			\\Create Session			&		UC-CE %sprint 3
+			%\\Update Session		&		UC-UE %sprint 3
+			\\Read Session				&	UC-VE %sprint 3
+			\\Archive Session			&		UC-DE %sprint 3
 			\\Rate Tutor				&	UC-R
 			%\\Accept Request			&	UC-AR not a use case, will be in flow of activities
 			%\\Archive Request		&		UC-DR not a use case, will be in flow of activities
 			\\Check-in				&		UC-CI
 			\\Check-out				&		UC-CO
 			\\Add Subject			&		UC-CSb %add requirements 
+			\\Read Subject			&		UC-RSb			
 			\\Archive Subject		&		UC-DSb
 			\\Login					&		UC-L
-			\\Add Funds				&		UC-AF
-			\\Delete Funds			&		UC-DF
-			\\View Funds				&		UC-VF
-			\\Update Funds			& 		UC-UF
-			\\View Sessions			&		UC-VSes
-			\\Remove Sessions		&       UC-DSes
+			\\Update Funds				&		UC-AF
+			%\\Delete Funds			&		UC-DF
+			\\Read Funds				&		UC-VF
+			%\\Update Funds			& 		UC-UF
+			%\\View Sessions			&		UC-VSes
+			%\\Remove Sessions		&       UC-DSes
+			\\Confirm Funds			&       UC-CF
 			\\ \hline
 \end{tabular}
 		{
@@ -447,13 +449,13 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 			Related Requirements: & RQ1.1 \\ \hline
 			Initiating actor: & Student \\ \hline
 			Actor goal: & To register on FindMeTutor\\ \hline
-			Participating Actors: N/A\\ \hline
-			Preconditions: & N/A\\ \hline
+			Participating Actors: &N/A\\ \hline
+			Preconditions: & Student must be enrolled in the university\\ \hline
 			Postconditions: & Student is created\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
-			\multicolumn{2}{|p{15cm}|}{1. Student indicates sign up as a student}\\
+			\multicolumn{2}{|p{15cm}|}{1. Student indicates sign up}\\
 			\multicolumn{2}{|p{15cm}|}{2. System displays student sign up form}\\
-			\multicolumn{2}{|p{15cm}|}{3. Student enters demographic data,student number, email address, contact number and password}\\		
+			\multicolumn{2}{|p{15cm}|}{3. Student enters demographic data, student number, email address, contact number and password}\\		
 			\multicolumn{2}{|p{15cm}|}{4. System stores demographic data,student number, email address, contact number and password}\\
 			\multicolumn{2}{|l|}{5. System sends confirmation email to student}\\
 			\multicolumn{2}{|l|}{6. Student indicates confirmation}	\\
@@ -467,17 +469,17 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-US: Update Student}} \\ \hline
 			Related Requirements: & RQ1.2, RQ3.1 \\ \hline
-			Initiating actor: & Student or Administrator \\ \hline
-			Actor goal: & Update student demographic data,student number,student email address, student contact number or student password\\ \hline
+			Initiating actor: & Student \\ \hline
+			Actor goal: & Update student demographic data,student number,student email address, student contact number ,student password or current funds\\ \hline
 			Participating Actors: & N/A\\ \hline
 			Preconditions: & Student exists and is not marked as deleted\\ \hline
 			Postconditions: & Student is updated\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
-			\multicolumn{2}{|p{15cm}|}{1. Student/Administrator requests to update Student}\\
+			\multicolumn{2}{|p{15cm}|}{1. Student requests to update Student}\\
 			\multicolumn{2}{|p{15cm}|}{2. System reads Student}\\
 			\multicolumn{2}{|p{15cm}|}{3. System displays form to update Student}\\
-			\multicolumn{2}{|p{15cm}|}{4. Student/Administrator enters student demographic data,student number,student email address, student contact number or student password}	\\		
-			\multicolumn{2}{|p{15cm}|}{5. System stores student demographic data,student number,student email address, student contact number or student password}\\
+			\multicolumn{2}{|p{15cm}|}{4.Student enters student demographic data,student number,student email address, student contact number, student password or student changes profile picture}	\\	
+			\multicolumn{2}{|p{15cm}|}{5. System stores student demographic data,student number,student email address, student contact number, student password or new profile picture}\\
 			\multicolumn{2}{|l|}{6. Student is updated}	
 			\\ \hline		
 		\end{tabular}
@@ -493,10 +495,10 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 			Initiating actor: & Tutor \\ \hline
 			Actor goal: & To register on FindMeTutor\\ \hline
 			Participating Actors: & N/A\\ \hline
-			Preconditions: & N/A\\ \hline
+			Preconditions: &Tutor must be registered in the university\\ \hline
 			Postconditions: & Tutor is created\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
-			\multicolumn{2}{|p{15cm}|}{1. Tutor indicates sign up tutor}\\
+			\multicolumn{2}{|p{15cm}|}{1. Tutor indicates sign up}\\
 			\multicolumn{2}{|p{15cm}|}{2. System displays tutor sign up form}\\
 			\multicolumn{2}{|p{15cm}|}{3. Tutor enters demographic data, tutor email address, tutor contact number and tutor password}	\\		
 			\multicolumn{2}{|p{15cm}|}{4. System stores demographic data, tutor email address, tutor contact number and tutor password}\\
@@ -512,16 +514,16 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-UT: Update Tutor}} \\ \hline
 			Related Requirements: & RQ2.2, RQ3.4 \\ \hline
-			Initiating actor: & Tutor or Administrator \\ \hline
-			Actor goal: & To update Tutor demographic data, tutor email address, tutor contact number and tutor password\\ \hline
+			Initiating actor: & Tutor \\ \hline
+			Actor goal: & To update Tutor demographic data, tutor email address, tutor contact number, tutor password or profile picture\\ \hline
 			Participating Actors: & N/A\\ \hline
 			Preconditions:& Tutor exists\\ \hline
 			Postconditions: & Tutor is updated\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
-			\multicolumn{2}{|p{15cm}|}{1. Tutor/Administrator requests to update Tutor}\\
+			\multicolumn{2}{|p{15cm}|}{1. Tutor requests to update Tutor}\\
 			\multicolumn{2}{|p{15cm}|}{2. System reads Tutor}\\
 			\multicolumn{2}{|p{15cm}|}{3. System displays form to update Tutor}\\
-			\multicolumn{2}{|p{15cm}|}{4. Tutor/Administrator enters Tutor demographic data, tutor email address, tutor contact number or tutor password}	\\		
+			\multicolumn{2}{|p{15cm}|}{4. Tutor enters Tutor demographic data, tutor email address, tutor contact number, tutor password or changes profile picture}	\\		
 			\multicolumn{2}{|p{15cm}|}{5. System stores tutor demographic data, tutor email address, tutor contact number or tutor password}\\
 			\multicolumn{2}{|l|}{6. Tutor is updated}	
 			\\ \hline		
@@ -533,16 +535,16 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-DS: Archive Student}} \\ \hline
 			Related Requirements: & RQ1.4, RQ3.3 \\ \hline
-			Initiating actor: & Student or Administrator \\ \hline
+			Initiating actor: & Student \\ \hline
 			Actor goal: & To delete Student\\ \hline
 			Participating Actors: & N/A\\ \hline
 			Preconditions: &Student exists\\ \hline
 			Postconditions: & Student is Archived\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
-			\multicolumn{2}{|p{15cm}|}{1. Student/Administrator requests to delete Student}\\
+			\multicolumn{2}{|p{15cm}|}{1. Student requests to delete Student}\\
 			\multicolumn{2}{|p{15cm}|}{2. System reads Student}\\			
 			\multicolumn{2}{|p{15cm}|}{3. System displays confirmation message}\\
-			\multicolumn{2}{|p{15cm}|}{4. Student/Administrator enters confirmation}	\\		
+			\multicolumn{2}{|p{15cm}|}{4. Student enters confirmation}	\\		
 			\multicolumn{2}{|p{15cm}|}{5. System marks student as archived}\\
 			\multicolumn{2}{|l|}{6. Student is archived}	
 			\\ \hline		
@@ -554,16 +556,16 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-DT: Archive Tutor}} \\ \hline
 			Related Requirements: & RQ2.4, RQ3.6 \\ \hline
-			Initiating actor: & Tutor or Administrator \\ \hline
+			Initiating actor: & Tutor\\ \hline
 			Actor goal: & To delete Tutor\\ \hline
 			Participating Actors: & N/A\\ \hline
 			Preconditions:& Tutor exists\\ \hline
 			Postconditions: & Tutor is Archived\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
-			\multicolumn{2}{|p{15cm}|}{1. Tutor/Administrator requests to delete Tutor}\\
+			\multicolumn{2}{|p{15cm}|}{1. Tutor requests to delete Tutor}\\
 			\multicolumn{2}{|p{15cm}|}{2. System displays confirmation message}\\
 			\multicolumn{2}{|p{15cm}|}{3. System reads Tutor}\\
-			\multicolumn{2}{|p{15cm}|}{4. Tutor/Administrator enters confirmation}	\\		
+			\multicolumn{2}{|p{15cm}|}{4. Tutor enters confirmation}	\\		
 			\multicolumn{2}{|p{15cm}|}{5. System marks Tutor as archived }\\
 			\multicolumn{2}{|l|}{6. Tutor is archived}	
 			\\ \hline		
@@ -575,13 +577,13 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-VT: Read Tutor}} \\ \hline
 			Related Requirements: & RQ2.3, RQ3.5 \\ \hline
-			Initiating actor: & Tutor or Administrator \\ \hline
+			Initiating actor: & Tutor, Student \\ \hline
 			Actor goal: & To view Tutor\\ \hline
 			Participating Actors: & N/A\\ \hline
 			Preconditions:& Tutor exists\\ \hline
 			Postconditions: & Tutor is viewed\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
-			\multicolumn{2}{|p{15cm}|}{1. Tutor/Administrator requests to view Tutor}\\
+			\multicolumn{2}{|p{15cm}|}{1. Tutor/Student requests to view Tutor}\\
 			\multicolumn{2}{|p{15cm}|}{2. System reads tutor}\\
 			\multicolumn{2}{|p{15cm}|}{3. System displays Tutor}\\
 			\multicolumn{2}{|l|}{4. Tutor is viewed}	
@@ -594,13 +596,13 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-VS: Read Student}} \\ \hline
 			Related Requirements: & RQ1.3, RQ3.2 \\ \hline
-			Initiating actor: & Student or Administrator \\ \hline
+			Initiating actor: & Student, Tutor\\ \hline
 			Actor goal: & To view Student\\ \hline
-			Participating Actors: & External Database System\\ \hline
+			Participating Actors: & \\ \hline
 			Preconditions: &Student exists\\ \hline
 			Postconditions: & Student is viewed\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
-			\multicolumn{2}{|p{15cm}|}{1. Student/Administrator requests to view Student}\\
+			\multicolumn{2}{|p{15cm}|}{1. Student/Tutor requests to view Student}\\
 			\multicolumn{2}{|p{15cm}|}{2. System reads Student}\\ 
 			\multicolumn{2}{|p{15cm}|}{3. System displays Student}\\
 			\multicolumn{2}{|l|}{4. Student is viewed}	
@@ -611,17 +613,16 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-L: Login}} \\ \hline
 			Related Requirements: & RQ15.1, RQ15.2, RQ15.3  \\ \hline
-			Initiating actor: & Student, Administrator or Tutor \\ \hline
+			Initiating actor: & Student or Tutor \\ \hline
 			Actor goal: & To login\\ \hline
 			Participating Actors: &N/A\\ \hline
 			Preconditions: &initiating actor exists\\ \hline
 			Postconditions: & initiating actor is logged in\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
-			\multicolumn{2}{|p{15cm}|}{1. Initiating actor indicates that he/she is a Student, Administrator or tutor}\\
-			\multicolumn{2}{|p{15cm}|}{2. System prompts for student number and password}\\ 
-			\multicolumn{2}{|p{15cm}|}{3. initiating actor enters student number and password}\\
-			\multicolumn{2}{|l|}{4. System reads Student/Administrator/Tutor to check validity}\\
-			\multicolumn{2}{|l|}{5. If a valid user of the system, Student/Administrator/Tutor is logged on}	\\
+			\multicolumn{2}{|p{15cm}|}{1. System prompts for student email and password}\\ 
+			\multicolumn{2}{|p{15cm}|}{3. initiating actor enters student email and password}\\
+			\multicolumn{2}{|l|}{4. System reads Student or Tutor to check validity}\\
+			\multicolumn{2}{|l|}{5. If a valid user of the system, Student/Tutor is logged on}	\\
 			 \hline		
 		\end{tabular}
 		
@@ -637,7 +638,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 			Postconditions: & Student requests Tutor\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
 			\multicolumn{2}{|p{15cm}|}{1. Student indicates that he/she wishes to request a tutor}\\
-			\multicolumn{2}{|p{15cm}|}{2. System reads Student}\\
+			\multicolumn{2}{|p{15cm}|}{2. System reads Subject and Student}\\
 			\multicolumn{2}{|p{15cm}|}{If Student has no available funds or is not registered to a subject}\\
 			\multicolumn{2}{|p{15cm}|}{3. System displays message indicating that Student can not request a Tutor}\\			
 			\multicolumn{2}{|p{15cm}|}{Else if Student has available funds }	\\		
@@ -681,10 +682,10 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 			Postconditions: & Initiating actor is un-registered from a subject\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
 			\multicolumn{2}{|p{15cm}|}{1. Initiating actor indicates that he/she wants to remove a subject}\\ 
-			\multicolumn{2}{|p{15cm}|}{2. System displays Student Subject Table}\\
-			\multicolumn{2}{|l|}{3. Student selects subject}\\
-			\multicolumn{2}{|l|}{4. System removes subject from Student Subject Table}\\
-			\multicolumn{2}{|l|}{5. Student is un-registered from subject}\\
+			\multicolumn{2}{|p{15cm}|}{2. System displays initiating actor Subject Table}\\
+			\multicolumn{2}{|l|}{3. Initiating actor selects subject}\\
+			\multicolumn{2}{|l|}{4. System removes subject from initiating actor Subject Table}\\
+			\multicolumn{2}{|l|}{5. Initiating actor is un-registered from subject}\\
 			 \hline		
 		\end{tabular}
 		

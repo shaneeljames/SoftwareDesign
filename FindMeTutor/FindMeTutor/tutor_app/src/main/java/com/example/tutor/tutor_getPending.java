@@ -179,12 +179,13 @@ public class tutor_getPending extends AsyncTask<String, String, String> {
                     in.add(new Pending(tutor_student_id,student_id,subjectName,subjectCode,date,time,studentName,studentSurname,description,R.drawable.notify,parent));
                 }
 
-                Toast.makeText(parent.getApplicationContext(), "test pending " + in.get(0).studentName, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(parent.getApplicationContext(), "test pending " + in.get(0).studentName, Toast.LENGTH_SHORT).show();
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
+            Toast.makeText(parent.getApplicationContext(), "test pending " + result, Toast.LENGTH_SHORT).show();
             delegate.processFinish(result);
 
         }
