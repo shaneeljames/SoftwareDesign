@@ -132,6 +132,10 @@ public class register extends AsyncTask<String, String, String> {
 
         }else{
             Toast.makeText(parent.getApplicationContext(), "Registration Successful!" + result, Toast.LENGTH_SHORT).show();
+
+
+
+
         }
     }
 
