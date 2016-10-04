@@ -176,7 +176,7 @@ public class tutor_getPending extends AsyncTask<String, String, String> {
                     studentName = jsObj.getString("student_fname");
                     studentSurname = jsObj.getString("student_lname");
                     description = jsObj.getString("description");
-                    in.add(new Pending(tutor_student_id,student_id,subjectName,subjectCode,date,time,studentName,studentSurname,description,R.drawable.notify,parent));
+                    in.add(new Pending(tutor_student_id,student_id,subjectName,subjectCode,date,time,studentName,studentSurname,description,R.drawable.yello,parent));
                 }
 
                // Toast.makeText(parent.getApplicationContext(), "test pending " + in.get(0).studentName, Toast.LENGTH_SHORT).show();
@@ -185,7 +185,7 @@ public class tutor_getPending extends AsyncTask<String, String, String> {
                 e.printStackTrace();
             }
 
-            Toast.makeText(parent.getApplicationContext(), "test pending " + result, Toast.LENGTH_SHORT).show();
+        //    Toast.makeText(parent.getApplicationContext(), "test pending " + result, Toast.LENGTH_SHORT).show();
             delegate.processFinish(result);
 
         }

@@ -15,7 +15,7 @@
 #   Set larger code cache with -XX:ReservedCodeCacheSize=
 # This output file may be truncated or incomplete.
 #
-#  Out of Memory Error (memory/allocation.inline.hpp:62), pid=5844, tid=13200
+#  Out of Memory Error (memory/allocation.inline.hpp:62), pid=11088, tid=4980
 #
 # JRE version:  (8.0_20-b26) (build )
 # Java VM: Java HotSpot(TM) 64-Bit Server VM (25.20-b23 mixed mode windows-amd64 compressed oops)
@@ -24,11 +24,26 @@
 
 ---------------  T H R E A D  ---------------
 
-Current thread (0x00000000026cd800):  JavaThread "Unknown thread" [_thread_in_vm, id=13200, stack(0x00000000024e0000,0x00000000025e0000)]
+Current thread (0x000000000229d800):  JavaThread "Unknown thread" [_thread_in_vm, id=4980, stack(0x00000000023f0000,0x00000000024f0000)]
 
-Stack: [0x00000000024e0000,0x00000000025e0000]
+Stack: [0x00000000023f0000,0x00000000024f0000]
 Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
 V  [jvm.dll+0x3152fa]
+V  [jvm.dll+0x265d03]
+V  [jvm.dll+0x266943]
+V  [jvm.dll+0x25e265]
+V  [jvm.dll+0x25d2bf]
+V  [jvm.dll+0x3d4dec]
+V  [jvm.dll+0x3d0637]
+V  [jvm.dll+0xe4472]
+V  [jvm.dll+0x1f8a09]
+V  [jvm.dll+0x229fc4]
+V  [jvm.dll+0x14c6f1]
+C  [java.exe+0x20b6]
+C  [java.exe+0xc9bb]
+C  [java.exe+0xca4f]
+C  [KERNEL32.DLL+0x18102]
+C  [ntdll.dll+0x5c5b4]
 
 
 ---------------  P R O C E S S  ---------------
@@ -37,7 +52,7 @@ Java Threads: ( => current thread )
 
 Other Threads:
 
-=>0x00000000026cd800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=13200, stack(0x00000000024e0000,0x00000000025e0000)]
+=>0x000000000229d800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=4980, stack(0x00000000023f0000,0x00000000024f0000)]
 
 VM state:not at safepoint (normal execution)
 
@@ -53,16 +68,16 @@ Heap:
  Metaspace       used 674K, capacity 4480K, committed 4480K, reserved 1056768K
   class space    used 66K, capacity 384K, committed 384K, reserved 1048576K
 
-Card table byte_map: [0x0000000011b90000,0x0000000011da0000] byte_map_base: 0x0000000011590000
+Card table byte_map: [0x00000000119b0000,0x0000000011bc0000] byte_map_base: 0x00000000113b0000
 
 Marking Bits: (ParMarkBitMap*) 0x000000006219b460
- Begin Bits: [0x0000000012300000, 0x0000000013300000)
- End Bits:   [0x0000000013300000, 0x0000000014300000)
+ Begin Bits: [0x0000000012120000, 0x0000000013120000)
+ End Bits:   [0x0000000013120000, 0x0000000014120000)
 
-Polling page: 0x0000000000900000
+Polling page: 0x0000000000810000
 
 CodeCache: size=245760Kb used=327Kb max_used=327Kb free=245432Kb
- bounds [0x00000000027d0000, 0x0000000002a40000, 0x00000000117d0000]
+ bounds [0x00000000025f0000, 0x0000000002860000, 0x00000000115f0000]
  total_blobs=56 nmethods=0 adapters=37
  compilation: enabled
 
@@ -79,16 +94,16 @@ Internal exceptions (0 events):
 No events
 
 Events (10 events):
-Event: 0.024 loading class java/lang/Short
-Event: 0.024 loading class java/lang/Short done
-Event: 0.024 loading class java/lang/Integer
-Event: 0.024 loading class java/lang/Integer done
-Event: 0.024 loading class java/lang/Long
-Event: 0.024 loading class java/lang/Long done
-Event: 0.025 loading class java/lang/NullPointerException
-Event: 0.025 loading class java/lang/NullPointerException done
-Event: 0.025 loading class java/lang/ArithmeticException
-Event: 0.025 loading class java/lang/ArithmeticException done
+Event: 0.020 loading class java/lang/Short
+Event: 0.020 loading class java/lang/Short done
+Event: 0.020 loading class java/lang/Integer
+Event: 0.020 loading class java/lang/Integer done
+Event: 0.020 loading class java/lang/Long
+Event: 0.020 loading class java/lang/Long done
+Event: 0.020 loading class java/lang/NullPointerException
+Event: 0.020 loading class java/lang/NullPointerException done
+Event: 0.020 loading class java/lang/ArithmeticException
+Event: 0.020 loading class java/lang/ArithmeticException done
 
 
 Dynamic libraries:
@@ -117,10 +132,11 @@ Dynamic libraries:
 0x00000000619b0000 - 0x00000000619bf000 	C:\Program Files\Java\jdk1.8.0_20\jre\bin\verify.dll
 0x0000000061980000 - 0x00000000619a8000 	C:\Program Files\Java\jdk1.8.0_20\jre\bin\java.dll
 0x0000000061960000 - 0x0000000061976000 	C:\Program Files\Java\jdk1.8.0_20\jre\bin\zip.dll
+0x00007ffd00650000 - 0x00007ffd007dc000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
 
 VM Arguments:
 jvm_args: -Djava.awt.headless=true -Xmx1024M -Dfile.encoding=windows-1252 -Duser.country=US -Duser.language=en -Duser.variant 
-java_command: com.android.dx.command.Main --dex --force-jumbo --num-threads=4 --multi-dex --output C:\Users\admin\Documents\GitHub\ShaneelSD\SoftwareDesign\FindMeTutor\FindMeTutor\tutor_app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_e95f793e5481cc6a19622e9adaee5d596def0231 C:\Users\admin\Documents\GitHub\ShaneelSD\SoftwareDesign\FindMeTutor\FindMeTutor\tutor_app\build\intermediates\exploded-aar\com.android.support\support-v13\24.2.1\jars\libs\internal_impl-24.2.1.jar
+java_command: com.android.dx.command.Main --dex --force-jumbo --num-threads=4 --multi-dex --output C:\Users\admin\Documents\GitHub\ShaneelSD\SoftwareDesign\FindMeTutor\FindMeTutor\tutor_app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6 C:\Users\admin\Documents\GitHub\ShaneelSD\SoftwareDesign\FindMeTutor\FindMeTutor\tutor_app\build\intermediates\transforms\instantRunSlicer\debug\folders\1\5\slice_6
 java_class_path (initial): C:\Users\admin\AppData\Local\Android\sdk\build-tools\24.0.1\lib\dx.jar
 Launcher Type: SUN_STANDARD
 
@@ -138,7 +154,7 @@ OS: Windows 8.1 , 64 bit Build 9600
 
 CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, ht, tsc, tscinvbit, tscinv
 
-Memory: 4k page, physical 8258576k(1836552k free), swap 10306576k(4540k free)
+Memory: 4k page, physical 8258576k(1831808k free), swap 10306576k(3532k free)
 
 vm_info: Java HotSpot(TM) 64-Bit Server VM (25.20-b23) for windows-amd64 JRE (1.8.0_20-b26), built on Jul 30 2014 13:51:23 by "java_re" with MS VC++ 10.0 (VS2010)
 

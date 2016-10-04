@@ -72,7 +72,8 @@
                 android:isIndicator="true"
                 android:maxHeight="48dip"
                 android:minHeight="47dp"
-                android:longClickable="false" />
+                android:longClickable="false"
+                style="@android:style/Widget.Holo.Light.RatingBar.Indicator" />
 
             <Button
                 android:text="Rate"

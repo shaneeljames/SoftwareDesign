@@ -1,8 +1,11 @@
 package com.example.tutor;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -77,10 +80,14 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
     List<tutor_Sessions> Sessions;
     Context context;
+    Activity H ;
+    private LocationManager locationManager;
+    private LocationListener locationListener;
 
-    CardViewAdapter(List<tutor_Sessions> sessions, Context context){
+    CardViewAdapter(List<tutor_Sessions> sessions, Context context, Activity h){
         this.Sessions = sessions;
         this.context = context;
+        this.H = h ;
     }
 
     @Override
@@ -97,7 +104,8 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
     @Override
     public void onBindViewHolder(final EventViewHolder eventViewHolder, final int i) {
-       // eventViewHolder.studentName.setText(Sessions.get(i).studentName + " " +Sessions.get(i).studentSurname);
+
+        // eventViewHolder.studentName.setText(Sessions.get(i).studentName + " " +Sessions.get(i).studentSurname);
         eventViewHolder.subjectName.setText(Sessions.get(i).subjectName + "-" + Sessions.get(i).subjectCode);
         eventViewHolder.amount.setText(Sessions.get(i).amount);
         eventViewHolder.date.setText(Sessions.get(i).date);
@@ -132,19 +140,22 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         }
 
 
+
         eventViewHolder.Checkin.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
                 String sText = eventViewHolder.Checkin.getText().toString() ;
+                new GetLocation2(H, Sessions.get(i).sessionID,0);
 
                 if(sText.toString().equals("Check in"))
                 {
                     eventViewHolder.Checkin.setText("Check out");
-            }
+                }
                 else
                 {
+                    new GetLocation2(H, Sessions.get(i).sessionID,1);
                     eventViewHolder.Checkin.setText("Checked out");
                     eventViewHolder.Checkin.setClickable(false);
                     eventViewHolder.subjectName.setText("Rate " + Sessions.get(i).studentName + " " + Sessions.get(i).studentSurname);
@@ -212,13 +223,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                     eventViewHolder.rate.setVisibility(View.VISIBLE);
 
 
-
-
-
-                         //   Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);
-
-
-              //      Count++ ;
                 }
                 else {
                     eventViewHolder.subjectName.setText(Sessions.get(i).subjectName + "-" + Sessions.get(i).subjectCode);
@@ -327,15 +331,18 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
 
 
+
+
+
     }
 
-
-
-
-
-            @Override
+     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
+
+
+
+
 
 }

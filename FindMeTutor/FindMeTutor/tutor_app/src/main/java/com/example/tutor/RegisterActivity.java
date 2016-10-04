@@ -92,12 +92,7 @@ public class  RegisterActivity extends AppCompatActivity {
             }
         });
 
-
-
-
     }
-
-
 
    private void submitForm() {
 
@@ -136,62 +131,14 @@ public class  RegisterActivity extends AppCompatActivity {
 
 
             if(witsemail.toString().equals("@wits.ac.za") || witsemail.toString().equals("@students.wits.ac.za")) {
-               // register connect2server = new register(this, firstName2, lastName2, number2, studentNumber.getText().toString(), email2, password2);
-               // connect2server.execute();
 
                 tutor_checkRegister connect = new tutor_checkRegister(this,email2,firstName2,lastName2,number2,studentNumber.getText().toString(),password2) ;
                 connect.execute() ;
-
-
-
-             /*   if(id.equals("0"))
-                {
-                    Toast.makeText(getApplicationContext(),"Registration Successful!", Toast.LENGTH_SHORT).show();
-                    register connect2server = new register(this, firstName2, lastName2, number2, studentNumber.getText().toString(), email2, password2);
-                    connect2server.execute();
-
-                    String fromEmail = "FindmetutorSD@gmail.com";
-                    String fromPassword = "findmetutors";
-                    String toEmails = "nivekranjith95@gmail.com";
-                    String adminEmail = "admin@gmail.com";
-                    String emailSubject = "Sent from FindMeTutor";
-                    String adminSubject = "App Registration Mail";
-                    String emailBody =
-                            "Dear "+ firstName2 + " " +lastName2
-                                    +"<br><br> You have successfully registered on FindMeTutor as a tutor!<br> " +
-                                    "Simply use your email: " + email2.toString() + "and your Password: " + password2.toString()
-                                    +"to log in" ;
-
-                    String adminBody = "Your message";
-                    new SendMailTask(getApplicationContext()).execute(fromEmail,
-                            fromPassword, toEmails, emailSubject, emailBody);
-
-
-                    Intent logInAct = new Intent(RegisterActivity.this, LoginActivity.class);
-                    RegisterActivity.this.startActivity(logInAct);
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Registration Unsuccessful, Account already exist", Toast.LENGTH_SHORT).show();
-                    inputEmail.setText("");
-                    this.finish();
-                    Intent logInAct = new Intent(RegisterActivity.this, RegisterActivity.class);
-                    RegisterActivity.this.startActivity(logInAct);
-                }*/
-
-
-               // Toast.makeText(getApplicationContext(),"Check Register 3  "+ id , Toast.LENGTH_SHORT).show();
-
-               // Intent logInAct = new Intent(RegisterActivity.this, LoginActivity.class);
-              //  RegisterActivity.this.startActivity(logInAct);
             }
             else
             inputLayoutEmail.setError("Please enter a valid wits email");
 
-
-
         }
-
 
     }
 

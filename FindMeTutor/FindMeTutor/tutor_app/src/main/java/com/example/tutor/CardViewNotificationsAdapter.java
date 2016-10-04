@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
         TextView Description;
         Button confirm ;
         Button decline;
+        RatingBar rate ;
 
         EventViewHolder(View itemView) {
             super(itemView);
@@ -41,6 +43,7 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
             Description = (TextView)itemView.findViewById(R.id.Description) ;
             confirm = (Button)itemView.findViewById(R.id.btnConfirm) ;
             decline = (Button)itemView.findViewById(R.id.btnDecline) ;
+            rate = (RatingBar) itemView.findViewById(R.id.ratingBar3) ;
         }
     }
 
@@ -72,6 +75,7 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
         eventViewHolder.session.setImageResource(list.get(i).icon);
         eventViewHolder.studentName.setText(list.get(i).studentName + " "+ list.get(i).studentSurname);
         eventViewHolder.Description.setText(list.get(i).description);
+        eventViewHolder.rate.setRating( Float.parseFloat(list.get(i).Rating.toString()));
 
 
 

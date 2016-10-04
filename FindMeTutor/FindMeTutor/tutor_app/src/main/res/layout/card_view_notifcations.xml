@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="wrap_content"
     android:padding="5dp"
     >
@@ -12,25 +13,25 @@
         android:layout_height="wrap_content">
 
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="55dp"
-        android:layout_height="wrap_content">
 
 
-        <ImageView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_height="wrap_content"
-            android:id="@+id/session"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="16dp"
-            />
+            android:layout_width="50dp">
 
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/session"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="0dp"
+                android:layout_width="50dp"
+                android:scaleType="fitXY"
+                android:layout_height="match_parent" />
 
 
+        </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
@@ -78,6 +79,15 @@
             android:layout_height="wrap_content"
             android:id="@+id/Description" />
 
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingBar3"
+            android:numStars="5"
+            android:rating="2"
+            style="@android:style/Widget.Holo.Light.RatingBar.Indicator"
+            android:paddingTop="-500dp" />
 
         <Button
             android:text="Confirm"

@@ -14,6 +14,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class HomeFragment extends Fragment implements tutor_AsyncResponse{
     SharedPreferences myprefs;
     tutor_getSessions connect2server ;
     RecyclerView rv ;
+    TextView empty ;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -58,6 +60,9 @@ public class HomeFragment extends Fragment implements tutor_AsyncResponse{
             }
         });
 
+        empty = (TextView) rootView.findViewById(R.id.txtEmpty1)  ;
+
+
 
         //Handle the card and recycle view
 
@@ -71,6 +76,15 @@ public class HomeFragment extends Fragment implements tutor_AsyncResponse{
         connect2server = new tutor_getSessions(this.getActivity(),tutor_id,list);
         connect2server.delegate = this;
         connect2server.execute() ;
+
+        Toast.makeText(getContext(), "No " + list.size(), Toast.LENGTH_SHORT).show();
+
+        if(list.size() == 0)
+        {
+          //  empty.setVisibility(View.VISIBLE);
+        }
+
+
 
 
         // Inflate the layout for this fragment
@@ -91,10 +105,13 @@ public class HomeFragment extends Fragment implements tutor_AsyncResponse{
     public void processFinish(String output) {
         String temp = output.substring(0,2);
 
+        Toast.makeText(getContext(), "No " + temp, Toast.LENGTH_SHORT).show();
 
-        if(temp.equals("[]"))
+
+        if(temp.equals("0"))
         {
-            Toast.makeText(getContext(), "No subjects Ass some", Toast.LENGTH_SHORT).show();
+            empty.setVisibility(View.VISIBLE);
+            //Toast.makeText(getContext(), "No subjects Ass some", Toast.LENGTH_SHORT).show();
         }
         else{
 
@@ -103,8 +120,15 @@ public class HomeFragment extends Fragment implements tutor_AsyncResponse{
 
             list = connect2server.getList();
 
-            CardViewAdapter adapter = new CardViewAdapter(list, this.getContext());
+            CardViewAdapter adapter = new CardViewAdapter(list, this.getContext(), this.getActivity());
              rv.setAdapter(adapter);
+
+            if(list.size() == 0)
+            {
+                empty.setVisibility(View.VISIBLE);
+            }
+
+
         }
 
 
