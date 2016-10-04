@@ -19,12 +19,13 @@ public class Notifications {
     String studentSurname ;
     String description ;
     String Email ;
+    String Rating ;
 
     int icon;
     Context context;
 
 
-    Notifications(String tsi,String sid,String subj, String cd, String d , String t, String sn , String ss , String desc, String email,int i, Activity context)// Subjects obj)
+    Notifications(String tsi,String sid,String subj, String cd, String d , String t, String sn , String ss , String desc, String email,String rate ,int i, Activity context)// Subjects obj)
     {
         this.tutor_student_id = tsi ;
         this.student_id = sid ;
@@ -37,6 +38,7 @@ public class Notifications {
         this.description = desc ;
         this.context = context;
         this.Email = email ;
+        this.Rating = rate ;
 
         this.icon = i ;
         // this.subjectObj = obj;

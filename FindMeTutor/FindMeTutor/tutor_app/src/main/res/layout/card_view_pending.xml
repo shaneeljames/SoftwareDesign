@@ -18,12 +18,13 @@
 
 
             <ImageView
-                android:layout_height="wrap_content"
                 android:id="@+id/session"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginRight="16dp"
-                android:layout_width="wrap_content" />
+                android:layout_width="50dp"
+                android:scaleType="fitXY"
+                android:layout_height="match_parent" />
 
 
         </LinearLayout>
