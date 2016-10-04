@@ -29,15 +29,19 @@ import java.util.List;
 
 public class AccountSettingsActivity extends AppCompatActivity  implements AsyncResponse{
 
-    private String stdNum, firstName,lastName, email, number, password, balance;
+    private String stdid, stdNum, firstName,lastName, email, number, password, balance;
     private String firstName2,lastName2, email2, number2, password2,ConfirmPassword2, stdNum2;
     private EditText inputFirstName,inputLastName, inputEmail, inputNumber, inputPassword,inputConfirmPassword, studentNumber, studentBalance;
     private TextInputLayout inputLayoutFName, inputLayoutLName, inputLayoutEmail, inputLayoutNumber, inputLayoutPass,inputLayoutCPass, inputStudentNumber ;
     ImageButton imgpp;
     private String test;
 
+    Button addFunds, editProfile, update, cancel;
+
     SharedPreferences myprefs;
     Toolbar toolbar;
+
+    updateProfile updatePro;
 
     public static final int RESULT_LOAD_IMAGE = 1;
 
@@ -47,7 +51,7 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         setContentView(R.layout.activity_account_settings);
 
         //get and assign toolbar entered information
-         toolbar = (Toolbar) findViewById(R.id.toolbar);
+         toolbar = (Toolbar) findViewById(R.id.toolbarAccount);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -112,11 +116,15 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         studentNumber = (EditText) findViewById(R.id.stdNum);
         studentBalance = (EditText)findViewById(R.id.input_balance);
         imgpp = (ImageButton)findViewById(R.id.studentDp);
+        addFunds = (Button)findViewById(R.id.btn_addFunds);
+        editProfile = (Button)findViewById(R.id.editProfile);
+        update = (Button)findViewById(R.id.update);
+        cancel = (Button)findViewById(R.id.cancel);
 
         myprefs= this.getSharedPreferences("user", MODE_PRIVATE);
 
 
-
+        stdid=myprefs.getString("student_id",null);
         stdNum= myprefs.getString("student_student_num", null);
         firstName= myprefs.getString("student_fname", null);
         lastName= myprefs.getString("student_lname", null);
@@ -125,15 +133,45 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         password= myprefs.getString("student_password", null);
         balance= myprefs.getString("student_current_balance", null);
 
-        studentNumber.setText(stdNum);
-        inputFirstName.setText(firstName);
-        inputLastName.setText(lastName);
-        inputEmail.setText(email);
-        inputNumber.setText(number);
-        inputPassword.setText(password);
-        studentBalance.setText(balance);
-
+        toDefault();
         setEditableFalse();
+
+        editProfile.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                setEditableTrue();
+            }
+        });
+
+        update.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String fn = inputFirstName.getText().toString();
+                String ln = inputLastName.getText().toString();
+                String num = inputNumber.getText().toString();
+                String pw = inputPassword.getText().toString();
+
+                myprefs.edit().putString("student_password",pw).apply();
+                myprefs.edit().putString("student_lname", ln).apply();
+                myprefs.edit().putString("student_fname", fn).apply();
+                myprefs.edit().putString("student_contact_number", num).apply();
+
+               // Toast.makeText(getApplicationContext(), fn+ln+num+pw , Toast.LENGTH_SHORT).show();
+                updatePro = new updateProfile(getParent(), stdid, fn, ln, num, pw);
+                updatePro.execute();
+
+
+
+            }
+        });
+
+        cancel.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                setEditableFalse();
+                toDefault();
+            }
+        });
 
 
 
@@ -145,7 +183,7 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_account, menu);
         return true;
     }
 
@@ -156,6 +194,8 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        Toast.makeText(getApplicationContext(), "Selection :"+id, Toast.LENGTH_LONG);
+
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
@@ -171,43 +211,64 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
     }
 
     public void setEditableFalse(){
-        studentNumber.setKeyListener(null);
-        studentNumber.setCursorVisible(false);
-        studentNumber.setPressed(false);
-        studentNumber.setFocusable(false);
 
-        inputFirstName.setKeyListener(null);
-        inputFirstName.setCursorVisible(false);
-        inputFirstName.setPressed(false);
-        inputFirstName.setFocusable(false);
+        studentNumber.setEnabled(false);
 
-        inputLastName.setKeyListener(null);
-        inputLastName.setCursorVisible(false);
-        inputLastName.setPressed(false);
-        inputLastName.setFocusable(false);
 
-        inputEmail.setKeyListener(null);
-        inputEmail.setCursorVisible(false);
-        inputEmail.setPressed(false);
-        inputEmail.setFocusable(false);
+        inputFirstName.setEnabled(false);
 
-        inputNumber.setKeyListener(null);
-        inputNumber.setCursorVisible(false);
-        inputNumber.setPressed(false);
-        inputNumber.setFocusable(false);
+        inputLastName.setEnabled(false);
 
-        inputPassword.setKeyListener(null);
-        inputPassword.setCursorVisible(false);
-        inputPassword.setPressed(false);
-        inputPassword.setFocusable(false);
+        inputEmail.setEnabled(false);
 
-        studentBalance.setKeyListener(null);
-        studentBalance.setCursorVisible(false);
-        studentBalance.setPressed(false);
-        studentBalance.setFocusable(false);
+        inputNumber.setEnabled(false);
+
+        inputPassword.setEnabled(false);
+
+        studentBalance.setEnabled(false);
+
+        studentNumber.setEnabled(false);
+
 
 
     }
+
+    public void requestUpdate(){
+
+    }
+
+    public void toDefault(){
+        studentNumber.setText(stdNum);
+        inputFirstName.setText(firstName);
+        inputLastName.setText(lastName);
+        inputEmail.setText(email);
+        inputNumber.setText(number);
+        inputPassword.setText(password);
+        studentBalance.setText(balance);
+    }
+
+    public void setEditableTrue(){
+
+        inputFirstName.setEnabled(true);
+
+
+        inputLastName.setEnabled(true);
+
+
+        inputNumber.setEnabled(true);
+
+        inputPassword.setEnabled(true);
+
+        inputConfirmPassword.setVisibility(View.VISIBLE);
+        inputConfirmPassword.setEnabled(true);
+
+        editProfile.setVisibility(View.GONE);
+        update.setVisibility(View.VISIBLE);
+        cancel.setVisibility(View.VISIBLE);
+
+
+    }
+
 
 
     @Override
