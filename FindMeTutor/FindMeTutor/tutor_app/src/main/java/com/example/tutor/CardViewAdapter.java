@@ -127,16 +127,59 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
         }
 
+
+        Toast.makeText(context, "tutor checkin : "+ Sessions.get(i).tutor_checkin, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "tutor checkout : "+ Sessions.get(i).tutor_checkout, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "tutor rating : "+ Sessions.get(i).rating, Toast.LENGTH_SHORT).show();
+
         if(Sessions.get(i).tutor_checkin.length() ==0 )
         {
             eventViewHolder.Checkin.setText("Check in");
+            Toast.makeText(context, "tutor checkin length=0 : " ,Toast.LENGTH_SHORT).show();
 
-
-
+        }
+        else if(Sessions.get(i).tutor_checkout.length() == 0)
+        {
+            eventViewHolder.Checkin.setText("Check out");
+            Toast.makeText(context, "tutor checkout length=0 : ", Toast.LENGTH_SHORT).show();
+        }
+        else if(Sessions.get(i).rating == 0)
+        {
+            Toast.makeText(context, "tutor rating =0 : " ,Toast.LENGTH_SHORT).show();
+            new GetLocation2(H, Sessions.get(i).sessionID,1);
+            eventViewHolder.Checkin.setText("Checked out");
+            eventViewHolder.Checkin.setClickable(false);
+            eventViewHolder.subjectName.setText("Rate " + Sessions.get(i).studentName + " " + Sessions.get(i).studentSurname);
+            eventViewHolder.viewDetails.setVisibility(View.GONE);
+            eventViewHolder.btnRate.setVisibility(View.VISIBLE);
+            eventViewHolder.amount.setVisibility(View.GONE);
+            eventViewHolder.date.setVisibility(View.GONE);
+            eventViewHolder.time.setVisibility(View.GONE);
+            eventViewHolder.desc.setVisibility(View.GONE);
+            eventViewHolder.status.setVisibility(View.GONE);
+            eventViewHolder.rate.setVisibility(View.VISIBLE);
+            eventViewHolder.Cancel.setVisibility(View.INVISIBLE);
+            eventViewHolder.rate.setRating(3);
+            eventViewHolder.rate.setIsIndicator(false) ;
         }
         else
         {
-            eventViewHolder.Checkin.setText("Check out");
+            eventViewHolder.subjectName.setText("Waiting for student to check out");
+            eventViewHolder.subjectName.setPadding(0,10,0,0);
+           // Toast.makeText(context, "tutor rating =0 : " ,Toast.LENGTH_SHORT).show();
+          //  new GetLocation2(H, Sessions.get(i).sessionID,1);
+            eventViewHolder.Checkin.setText("Checked out!");
+            eventViewHolder.Checkin.setClickable(false);
+            eventViewHolder.viewDetails.setVisibility(View.GONE);
+            eventViewHolder.btnRate.setVisibility(View.GONE);
+            eventViewHolder.amount.setVisibility(View.GONE);
+            eventViewHolder.date.setVisibility(View.GONE);
+            eventViewHolder.time.setVisibility(View.GONE);
+            eventViewHolder.desc.setVisibility(View.GONE);
+            eventViewHolder.status.setVisibility(View.GONE);
+            eventViewHolder.rate.setVisibility(View.VISIBLE);
+            eventViewHolder.Cancel.setVisibility(View.INVISIBLE);
+           eventViewHolder.rate.setVisibility(View.GONE);
         }
 
 
@@ -153,7 +196,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                 {
                     eventViewHolder.Checkin.setText("Check out");
                 }
-                else
+                else if(sText.toString().equals("Check out"))
                 {
                     new GetLocation2(H, Sessions.get(i).sessionID,1);
                     eventViewHolder.Checkin.setText("Checked out");
@@ -171,33 +214,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                     eventViewHolder.rate.setRating(3);
                     eventViewHolder.rate.setIsIndicator(false) ;
                 }
-              //  eventViewHolder.Checkin.getText().toString() ;
-
-              // Toast.makeText(context, sText , Toast.LENGTH_SHORT).show();
-
-
-
-              /*  String arr[] = new String[2] ;
-                arr[0] = "nivekranjith95@gmail.com" ;
-                arr[1] = "802119@students.wits.ac.za" ;
-
-                for(int i = 0 ; i<2 ; i++) {
-
-                    String fromEmail = "FindmetutorSD@gmail.com";
-                    String fromPassword = "findmetutors";
-                    String toEmails = arr[i];
-                    String adminEmail = "admin@gmail.com";
-                    String emailSubject = "Sent from FindMeTutor";
-                    String adminSubject = "App Registration Mail";
-                    String emailBody = "Test";
-                    String adminBody = "Your message";
-                    new SendMailTask(context).execute(fromEmail,
-                            fromPassword, toEmails, emailSubject, emailBody);
-                }*/
-
-
-
-            }
+                         }
 
 
 
@@ -209,8 +226,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
             @Override
                     public void onClick(View v){
-
-
 
                 if (eventViewHolder.viewDetails.getText().toString().equals("View Students Details")) {
                     eventViewHolder.subjectName.setText(Sessions.get(i).studentName + " " + Sessions.get(i).studentSurname);
@@ -328,11 +343,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
             }
         });
-
-
-
-
-
 
     }
 
