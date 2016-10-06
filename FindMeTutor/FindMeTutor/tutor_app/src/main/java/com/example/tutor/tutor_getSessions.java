@@ -56,6 +56,7 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
     String tutor_checkout ;
     String student_checkin ;
     String student_checkout ;
+    String paid ;
 
     List<tutor_Sessions> in;
     public tutor_AsyncResponse delegate = null; //Notify when async is done
@@ -193,9 +194,11 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
                     student_checkin = jsObj.getString("student_checkin");
                     student_checkout = jsObj.getString("student_checkout");
                     student_rating = jsObj.getString("student_rating");
+                    paid =  jsObj.getString("paid");
 
                    //  Toast.makeText(parent.getApplicationContext(),"session " + tutor_checkin, Toast.LENGTH_SHORT).show();
-                   in.add(new tutor_Sessions(sessionID,tutorID,studentID,subjectID,subjectName,subjectCode,amount,date,time,studentName,StudentSurname,desc,studentNumber,Student_contact_num,Student_email,status,tutor_checkin,Float.parseFloat(student_rating),tutor_checkout,student_checkin,student_checkout,R.drawable.session,parent)) ;
+                   in.add(new tutor_Sessions(sessionID,tutorID,studentID,subjectID,subjectName,subjectCode,amount,date,time,studentName,StudentSurname,desc,studentNumber,Student_contact_num,Student_email,status,tutor_checkin,Float.parseFloat(student_rating),tutor_checkout,student_checkin,student_checkout,paid,R.drawable.session,parent)) ;
+                   // Toast.makeText(parent.getApplicationContext(),"paid " + paid, Toast.LENGTH_SHORT).show();
                 }
 
             } catch (JSONException e) {

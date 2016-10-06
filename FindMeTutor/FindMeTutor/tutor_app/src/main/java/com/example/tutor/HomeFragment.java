@@ -55,8 +55,18 @@ public class HomeFragment extends Fragment implements tutor_AsyncResponse{
         fab.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-              //  Intent requestTutor = new Intent(getActivity(),RequestActivity.class); //this is how to start an activity from a fragment
-               // startActivity(requestTutor);
+
+                SharedPreferences myprefs;
+                myprefs =  getContext().getSharedPreferences("user",MODE_PRIVATE ) ;
+                String id = myprefs.getString("tutor_email", null) ;
+                String password = myprefs.getString("tutor_password", null) ;
+
+                login connect = new login(getActivity(),id,password,1) ;
+                connect.execute() ;
+
+             //   Intent requestTutor = new Intent(getActivity(),HomeActivity.class); //this is how to start an activity from a fragment
+              //  startActivity(requestTutor);
+               // getActivity().finish();
             }
         });
 
