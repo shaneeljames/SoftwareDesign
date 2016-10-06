@@ -16,7 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements tutor_AsyncResponse {
 
     //Global Variables to be used
     private Toolbar toolbar;
@@ -109,6 +109,7 @@ public class LoginActivity extends AppCompatActivity {
             int test ;
             //Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show();
             login connect2server = new login(this, login_email, login_password,0);
+            connect2server.delegate = this;
             connect2server.execute();
 
 
@@ -166,6 +167,11 @@ public class LoginActivity extends AppCompatActivity {
         if (view.requestFocus()) {
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         }
+    }
+
+    @Override
+    public void processFinish(String output) {
+
     }
 
     private class MyTextWatcher implements TextWatcher {
