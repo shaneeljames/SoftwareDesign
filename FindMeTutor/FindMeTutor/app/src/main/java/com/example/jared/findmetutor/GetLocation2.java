@@ -1,4 +1,4 @@
-package com.example.tutor;
+package com.example.jared.findmetutor;
 
 import android.Manifest;
 import android.app.Activity;
@@ -11,8 +11,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Toast;
 
 import static android.content.Context.LOCATION_SERVICE;
@@ -47,12 +45,12 @@ public class GetLocation2 {
 
                     if (status == 0) {
                         Toast.makeText(parent.getApplicationContext(), "Lat: " + location.getLatitude() + " Long: " + location.getLongitude(), Toast.LENGTH_SHORT).show();
-                        tutor_checkin connect2server = new tutor_checkin(parent, TutorStudentID, "Lat: " + location.getLatitude() + " Long: " + location.getLongitude());
+                        student_checkin connect2server = new student_checkin(parent, TutorStudentID, "Lat: " + location.getLatitude() + " Long: " + location.getLongitude());
                         connect2server.execute();
                     }
                     if (status == 1) {
                         Toast.makeText(parent.getApplicationContext(), "Lat: " + location.getLatitude() + " Long: " + location.getLongitude(), Toast.LENGTH_SHORT).show();
-                        tutor_checkout connect2server1 = new tutor_checkout(parent, TutorStudentID, "Lat: " + location.getLatitude() + " Long: " + location.getLongitude());
+                        student_checkout connect2server1 = new student_checkout(parent, TutorStudentID, "Lat: " + location.getLatitude() + " Long: " + location.getLongitude());
                         connect2server1.execute();
                     }
 

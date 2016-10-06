@@ -52,6 +52,7 @@
                 android:scaleY="0.4"
                 android:numStars="5"
                 android:layout_toRightOf="@+id/tutorNameTxt"
+                android:stepSize="0.1"
                 android:id="@+id/ratingBar" />
 
             <Button

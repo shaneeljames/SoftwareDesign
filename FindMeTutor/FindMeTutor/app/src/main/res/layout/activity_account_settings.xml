@@ -6,23 +6,28 @@
     android:layout_height="match_parent">
 
 
-    <android.support.design.widget.AppBarLayout
+    <LinearLayout
+        android:id="@+id/container_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-    </android.support.design.widget.AppBarLayout>
+        <include
+            android:id="@+id/toolbarAccount"
+            layout="@layout/toolbar" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+
 
     <ScrollView
+        android:id="@+id/svV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -34,15 +39,20 @@
         android:paddingRight="20dp"
         android:paddingTop="60dp">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:background="@null"
+            android:layout_width="200dp"
+            android:layout_height="180dp"
             android:id="@+id/studentDp"
             android:gravity="center"
+            android:src="@drawable/ic_profile_greenp"
+            android:clickable="true"
+            android:onClick="DisplayPicture"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
             android:layout_marginTop="0dp"
-            android:layout_marginBottom="10dp" />
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
 
 
             <EditText
@@ -50,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_first_name"
-                android:editable="false"/>
+             />
 
 
             <EditText
@@ -58,7 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_last_name"
-                android:editable="false"/>
+               />
 
 
             <EditText
@@ -66,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/stdNum"
-                android:editable="false"/>
+                />
 
             <EditText
                 android:id="@+id/input_email"
@@ -74,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:hint="@string/hint_email"
-                android:editable="false"/>
+              />
 
             <EditText
                 android:id="@+id/input_Number"
@@ -89,7 +99,7 @@
                 android:singleLine="true"
                 android:inputType="phone"
                 android:maxLength="10"
-                android:editable="false"/>
+               />
 
             <EditText
                 android:id="@+id/input_balance"
@@ -97,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:hint="Current Balance"
-                android:editable="false"/>
+              />
 
             <EditText
                 android:id="@+id/input_password"
@@ -105,8 +115,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:hint="@string/hint_password"
-                android:editable="false"
-                android:visibility="gone"/>
+                />
 
             <EditText
                 android:id="@+id/input_passwordConfirm"
@@ -117,13 +126,7 @@
                 android:visibility="gone"
                  />
 
-        <Button android:id="@+id/btn_addFunds"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Add Funds"
-            android:background="@color/colorPrimary"
-            android:layout_marginTop="40dp"
-            android:textColor="@android:color/white"/>
+
 
 
 
@@ -131,6 +134,58 @@
     </LinearLayout>
 
     </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_below="@+id/svV">
+
+            <Button android:id="@+id/btn_addFunds"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Funds"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/editProfile"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit Profile"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/white"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/update"
+                    android:text="Update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"/>
+                <Button
+                    android:id="@+id/cancel"
+                    android:text="Cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>

@@ -2,19 +2,28 @@ package com.example.jared.findmetutor;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,14 +31,21 @@ import java.util.List;
 
 public class AccountSettingsActivity extends AppCompatActivity  implements AsyncResponse{
 
-    private String stdNum, firstName,lastName, email, number, password, balance;
+    private String stdid, stdNum, firstName,lastName, email, number, password, balance;
     private String firstName2,lastName2, email2, number2, password2,ConfirmPassword2, stdNum2;
     private EditText inputFirstName,inputLastName, inputEmail, inputNumber, inputPassword,inputConfirmPassword, studentNumber, studentBalance;
     private TextInputLayout inputLayoutFName, inputLayoutLName, inputLayoutEmail, inputLayoutNumber, inputLayoutPass,inputLayoutCPass, inputStudentNumber ;
-    private Button btnRegister;
+    ImageButton imgpp;
     private String test;
 
+    Button addFunds, editProfile, update, cancel;
+
     SharedPreferences myprefs;
+    Toolbar toolbar;
+
+    updateProfile updatePro;
+
+    public static final int RESULT_LOAD_IMAGE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +53,9 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         setContentView(R.layout.activity_account_settings);
 
         //get and assign toolbar entered information
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+         toolbar = (Toolbar) findViewById(R.id.toolbarAccount);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         //Get layouts
          /*inputLayoutFName = (TextInputLayout) findViewById(R.id.input_layout_Firstname);
@@ -100,11 +117,16 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         inputConfirmPassword =(EditText) findViewById(R.id.input_passwordConfirm);
         studentNumber = (EditText) findViewById(R.id.stdNum);
         studentBalance = (EditText)findViewById(R.id.input_balance);
+        imgpp = (ImageButton)findViewById(R.id.studentDp);
+        addFunds = (Button)findViewById(R.id.btn_addFunds);
+        editProfile = (Button)findViewById(R.id.editProfile);
+        update = (Button)findViewById(R.id.update);
+        cancel = (Button)findViewById(R.id.cancel);
 
         myprefs= this.getSharedPreferences("user", MODE_PRIVATE);
 
 
-
+        stdid=myprefs.getString("student_id",null);
         stdNum= myprefs.getString("student_student_num", null);
         firstName= myprefs.getString("student_fname", null);
         lastName= myprefs.getString("student_lname", null);
@@ -113,6 +135,121 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         password= myprefs.getString("student_password", null);
         balance= myprefs.getString("student_current_balance", null);
 
+        toDefault();
+        setEditableFalse();
+
+        editProfile.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                setEditableTrue();
+            }
+        });
+
+        update.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String fn = inputFirstName.getText().toString();
+                String ln = inputLastName.getText().toString();
+                String num = inputNumber.getText().toString();
+                String pw = inputPassword.getText().toString();
+
+                myprefs.edit().putString("student_password",pw).apply();
+                myprefs.edit().putString("student_lname", ln).apply();
+                myprefs.edit().putString("student_fname", fn).apply();
+                myprefs.edit().putString("student_contact_number", num).apply();
+
+               // Toast.makeText(getApplicationContext(), fn+ln+num+pw , Toast.LENGTH_SHORT).show();
+                updatePro = new updateProfile(getParent(), stdid, fn, ln, num, pw);
+                updatePro.execute();
+
+
+
+            }
+        });
+
+        cancel.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                setEditableFalse();
+                toDefault();
+            }
+        });
+
+        try {
+            Picasso.with(getApplicationContext()).load("http://neural.net16.net/pictures/s" + stdNum + "JPG" ).into(imgpp);
+        }catch (Exception e)
+        {
+
+            Toast.makeText(getApplicationContext(), "No profile picture", Toast.LENGTH_SHORT).show();
+            imgpp.setImageResource(R.drawable.ic_profile_greenp);
+
+        }
+
+
+
+
+
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_account, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        Toast.makeText(getApplicationContext(), "Selection :"+id, Toast.LENGTH_LONG);
+
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if(id == R.id.action_search){
+            Toast.makeText(getApplicationContext(), "Search action is selected!", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void setEditableFalse(){
+
+        studentNumber.setEnabled(false);
+
+
+        inputFirstName.setEnabled(false);
+
+        inputLastName.setEnabled(false);
+
+        inputEmail.setEnabled(false);
+
+        inputNumber.setEnabled(false);
+
+        inputPassword.setEnabled(false);
+
+        studentBalance.setEnabled(false);
+
+        studentNumber.setEnabled(false);
+
+
+
+    }
+
+    public void requestUpdate(){
+
+    }
+
+    public void toDefault(){
         studentNumber.setText(stdNum);
         inputFirstName.setText(firstName);
         inputLastName.setText(lastName);
@@ -120,12 +257,56 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         inputNumber.setText(number);
         inputPassword.setText(password);
         studentBalance.setText(balance);
+    }
+
+    public void setEditableTrue(){
+
+        inputFirstName.setEnabled(true);
+
+
+        inputLastName.setEnabled(true);
+
+
+        inputNumber.setEnabled(true);
+
+        inputPassword.setEnabled(true);
+
+        inputConfirmPassword.setVisibility(View.VISIBLE);
+        inputConfirmPassword.setEnabled(true);
+
+        editProfile.setVisibility(View.GONE);
+        update.setVisibility(View.VISIBLE);
+        cancel.setVisibility(View.VISIBLE);
+
+
+    }
 
 
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Toast.makeText(getApplicationContext(), "req Code : "+requestCode+" Result code : "+resultCode+" data: "+data, Toast.LENGTH_SHORT).show();
+        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null) {
+            Uri selectedImage = data.getData();
+            imgpp.setImageURI(selectedImage);
 
+            Bitmap bitmap = ((BitmapDrawable)  imgpp.getDrawable()).getBitmap() ;
+            //  Bitmap b2 = Bitmap.createScaledBitmap()
+            new UploadToServer(bitmap, "s" +stdNum).execute() ;
+            Toast.makeText(getApplicationContext(), "Picture Updated", Toast.LENGTH_SHORT).show();
+        }
 
+    }
 
+    public void DisplayPicture(View v)
+    {
+        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(i, RESULT_LOAD_IMAGE);
+
+       //
+
+       // Toast.makeText(this, "Show some text on the screen.", Toast.LENGTH_LONG).show();
     }
 
 

@@ -170,6 +170,7 @@ public class getTutors extends AsyncTask<String, String, String> {
                    contact=jsObj.getString("tutor_contact_num");
                    email=jsObj.getString("tutor_email");
                    qualis=jsObj.getString("tutor_qualifications");
+                   rating=jsObj.getString("tutor_rating");
 
                    //code = jsObj.getString("subject_course_code");
                   //Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();

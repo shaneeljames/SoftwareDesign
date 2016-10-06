@@ -45,7 +45,7 @@ public class TutorsViewAdapter extends RecyclerView.Adapter<TutorsViewAdapter.Ev
 
 
         TextView tutorName;
-        //RatingBar rating;
+        RatingBar rating;
         Button selectTutor;
         TextView tutorQuals;
 
@@ -58,7 +58,7 @@ public class TutorsViewAdapter extends RecyclerView.Adapter<TutorsViewAdapter.Ev
 
             tutorName = (TextView)itemView.findViewById(R.id.tutorNameTxt);
             selectTutor = (Button)itemView.findViewById(R.id.selectTutorBtn);
-            //rating = (RatingBar) itemView.findViewById(R.id.ratingBar);
+            rating = (RatingBar) itemView.findViewById(R.id.ratingBar);
             tutorQuals = (TextView)itemView.findViewById(R.id.quali);
 
 
@@ -94,9 +94,15 @@ public class TutorsViewAdapter extends RecyclerView.Adapter<TutorsViewAdapter.Ev
     public void onBindViewHolder(EventViewHolder eventViewHolder, final int i) {
         eventViewHolder.tutorName.setText(events.get(i).TutorName);
         eventViewHolder.tutorQuals.setText(events.get(i).tutorQual);
-       // eventViewHolder.rating.setNumStars(2);
+        String rat = events.get(i).Rating;
+        int dotIndex = rat.indexOf(".");
+        String st = rat.substring(0,dotIndex+2);
+        float r = Float.parseFloat(st);
+        eventViewHolder.rating.setStepSize(0.1f);
+        eventViewHolder.rating.setRating(r);
 
         //eventViewHolder.session.setImageResource(events.get(i).photoId);
+        Toast.makeText(context, "Rating "+ st, Toast.LENGTH_SHORT).show();
 
 
         try{
