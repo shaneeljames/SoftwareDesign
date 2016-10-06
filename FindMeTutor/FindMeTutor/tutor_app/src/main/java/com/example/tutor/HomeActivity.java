@@ -85,7 +85,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
 
 
 
-        Toast.makeText(getApplicationContext(), "Login blah "+tutor_rating, Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(getApplicationContext(), "Login blah "+tutor_rating, Toast.LENGTH_SHORT).show();
 
 
 

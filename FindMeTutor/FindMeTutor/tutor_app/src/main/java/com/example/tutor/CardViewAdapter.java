@@ -127,16 +127,69 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
         }
 
+
+      //  Toast.makeText(context, "tutor checkin : "+ Sessions.get(i).tutor_checkin, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(context, "tutor checkout : "+ Sessions.get(i).tutor_checkout, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context, "tutor rating : "+ Sessions.get(i).rating, Toast.LENGTH_SHORT).show();
+
         if(Sessions.get(i).tutor_checkin.length() ==0 )
         {
             eventViewHolder.Checkin.setText("Check in");
-
-
+          //  Toast.makeText(context, "tutor checkin length=0 : " ,Toast.LENGTH_SHORT).show();
 
         }
-        else
+        else if(Sessions.get(i).tutor_checkout.length() == 0)
         {
             eventViewHolder.Checkin.setText("Check out");
+            //Toast.makeText(context, "tutor checkout length=0 : ", Toast.LENGTH_SHORT).show();
+        }
+        else if(Sessions.get(i).rating == 0 && Sessions.get(i).tutor_checkout.length() != 0)
+        {
+          //  Toast.makeText(context, "tutor rating =0 : " ,Toast.LENGTH_SHORT).show();
+            new GetLocation2(H, Sessions.get(i).sessionID,1);
+            eventViewHolder.Checkin.setText("Checked out");
+            eventViewHolder.Checkin.setClickable(false);
+            eventViewHolder.subjectName.setText("Rate " + Sessions.get(i).studentName + " " + Sessions.get(i).studentSurname);
+            eventViewHolder.viewDetails.setVisibility(View.GONE);
+            eventViewHolder.btnRate.setVisibility(View.VISIBLE);
+            eventViewHolder.amount.setVisibility(View.GONE);
+            eventViewHolder.date.setVisibility(View.GONE);
+            eventViewHolder.time.setVisibility(View.GONE);
+            eventViewHolder.desc.setVisibility(View.GONE);
+            eventViewHolder.status.setVisibility(View.GONE);
+            eventViewHolder.rate.setVisibility(View.VISIBLE);
+            eventViewHolder.Cancel.setVisibility(View.INVISIBLE);
+            eventViewHolder.rate.setRating(3);
+            eventViewHolder.rate.setIsIndicator(false) ;
+        }
+        else if (Sessions.get(i).student_checkin.length() == 0 || Sessions.get(i).student_checkout.length() ==0 )
+        {
+            eventViewHolder.subjectName.setText("Waiting for student to check out");
+            eventViewHolder.subjectName.setPadding(0,10,0,0);
+           // Toast.makeText(context, "tutor rating =0 : " ,Toast.LENGTH_SHORT).show();
+          //  new GetLocation2(H, Sessions.get(i).sessionID,1);
+            eventViewHolder.Checkin.setText("Checked out!");
+            eventViewHolder.Checkin.setClickable(false);
+            eventViewHolder.viewDetails.setVisibility(View.GONE);
+            eventViewHolder.btnRate.setVisibility(View.GONE);
+            eventViewHolder.amount.setVisibility(View.GONE);
+            eventViewHolder.date.setVisibility(View.GONE);
+            eventViewHolder.time.setVisibility(View.GONE);
+            eventViewHolder.desc.setVisibility(View.GONE);
+            eventViewHolder.status.setVisibility(View.GONE);
+            eventViewHolder.rate.setVisibility(View.VISIBLE);
+            eventViewHolder.Cancel.setVisibility(View.INVISIBLE);
+           eventViewHolder.rate.setVisibility(View.GONE);
+        }
+        else if ( Sessions.get(i).Paid.equals("0"))
+        {
+
+            SharedPreferences myprefs;
+            myprefs =  context.getSharedPreferences("user",MODE_PRIVATE ) ;
+            String id = myprefs.getString("tutor_id", null) ;
+
+            tutor_paid connect2sever = new tutor_paid(H, Sessions.get(i).sessionID,id, Sessions.get(i).studentID) ;
+            connect2sever.execute() ;
         }
 
 
@@ -147,16 +200,21 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
             public void onClick(View v) {
 
                 String sText = eventViewHolder.Checkin.getText().toString() ;
-                new GetLocation2(H, Sessions.get(i).sessionID,0);
+
+
 
                 if(sText.toString().equals("Check in"))
                 {
                     eventViewHolder.Checkin.setText("Check out");
+                    new GetLocation2(H, Sessions.get(i).sessionID,0);
                 }
-                else
+                else if(sText.toString().equals("Check out"))
                 {
+
                     new GetLocation2(H, Sessions.get(i).sessionID,1);
                     eventViewHolder.Checkin.setText("Checked out");
+                    if(Sessions.get(i).student_checkin.length() != 0 || Sessions.get(i).student_checkout.length() != 0)
+                    {
                     eventViewHolder.Checkin.setClickable(false);
                     eventViewHolder.subjectName.setText("Rate " + Sessions.get(i).studentName + " " + Sessions.get(i).studentSurname);
                     eventViewHolder.viewDetails.setVisibility(View.GONE);
@@ -170,33 +228,38 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                     eventViewHolder.Cancel.setVisibility(View.INVISIBLE);
                     eventViewHolder.rate.setRating(3);
                     eventViewHolder.rate.setIsIndicator(false) ;
+
+
+                        SharedPreferences myprefs;
+                        myprefs =  context.getSharedPreferences("user",MODE_PRIVATE ) ;
+                        String id = myprefs.getString("tutor_id", null) ;
+
+                        tutor_paid connect2sever = new tutor_paid(H, Sessions.get(i).sessionID,id, Sessions.get(i).studentID) ;
+                        connect2sever.execute() ;
+                    }
+                    else
+                    {
+
+                        eventViewHolder.subjectName.setText("Waiting for student to check out");
+                        eventViewHolder.subjectName.setPadding(0,10,0,0);
+                        // Toast.makeText(context, "tutor rating =0 : " ,Toast.LENGTH_SHORT).show();
+                        //  new GetLocation2(H, Sessions.get(i).sessionID,1);
+                        eventViewHolder.Checkin.setText("Checked out!");
+                        eventViewHolder.Checkin.setClickable(false);
+                        eventViewHolder.viewDetails.setVisibility(View.GONE);
+                        eventViewHolder.btnRate.setVisibility(View.GONE);
+                        eventViewHolder.amount.setVisibility(View.GONE);
+                        eventViewHolder.date.setVisibility(View.GONE);
+                        eventViewHolder.time.setVisibility(View.GONE);
+                        eventViewHolder.desc.setVisibility(View.GONE);
+                        eventViewHolder.status.setVisibility(View.GONE);
+                        eventViewHolder.rate.setVisibility(View.VISIBLE);
+                        eventViewHolder.Cancel.setVisibility(View.INVISIBLE);
+                        eventViewHolder.rate.setVisibility(View.GONE);
+                    }
+
+
                 }
-              //  eventViewHolder.Checkin.getText().toString() ;
-
-              // Toast.makeText(context, sText , Toast.LENGTH_SHORT).show();
-
-
-
-              /*  String arr[] = new String[2] ;
-                arr[0] = "nivekranjith95@gmail.com" ;
-                arr[1] = "802119@students.wits.ac.za" ;
-
-                for(int i = 0 ; i<2 ; i++) {
-
-                    String fromEmail = "FindmetutorSD@gmail.com";
-                    String fromPassword = "findmetutors";
-                    String toEmails = arr[i];
-                    String adminEmail = "admin@gmail.com";
-                    String emailSubject = "Sent from FindMeTutor";
-                    String adminSubject = "App Registration Mail";
-                    String emailBody = "Test";
-                    String adminBody = "Your message";
-                    new SendMailTask(context).execute(fromEmail,
-                            fromPassword, toEmails, emailSubject, emailBody);
-                }*/
-
-
-
             }
 
 
@@ -209,8 +272,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
             @Override
                     public void onClick(View v){
-
-
 
                 if (eventViewHolder.viewDetails.getText().toString().equals("View Students Details")) {
                     eventViewHolder.subjectName.setText(Sessions.get(i).studentName + " " + Sessions.get(i).studentSurname);
@@ -328,11 +389,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
             }
         });
-
-
-
-
-
 
     }
 

@@ -6,10 +6,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,25 +20,32 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * Created by jared on 2016/08/04.
+ * Created by admin on 06-Oct-16.
  */
-public class login extends AsyncTask<String, String, String> {
+
+public class tutor_paid extends AsyncTask<String, String, String> {
+
+
+
     Activity parent;
-    String Email;
-    String Password;
-    int Check ;
-
-    String Password1 ;
-
     String result = "";
 
-    static String out;
+    String TutorStudentID ;
+    String TutorID ;
+    String StudentID ;
 
-    public login(Activity par, String email, String password, int c){
+    public tutor_AsyncResponse delegate = null; //Notify when async is done
+
+    public tutor_paid(Activity par, String tutorStudentID, String tid , String sid ){
+        this.parent = par;
+         TutorStudentID = tutorStudentID ;
+        TutorID = tid ;
+        StudentID = sid ;
+
+    }
+
+    public tutor_paid(Activity par){
         parent = par;
-        Email = email;
-        Password = password;
-        Check = c;
     }
     @Override
     protected String doInBackground(String... params) {
@@ -50,14 +53,15 @@ public class login extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://neural.net16.net/tutor_login.php");
+            url = new URL("http://neural.net16.net/tutor_paid.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         Map<String,Object> parameter = new LinkedHashMap<>();
-        parameter.put("Email", Email);
-        parameter.put("Password", Password);
+        parameter.put("tutor_student_id", TutorStudentID);
+        parameter.put("tutor_id", TutorID);
+        parameter.put("student_id", StudentID);
 
         StringBuilder postData = new StringBuilder();
         for (Map.Entry<String,Object> param : parameter.entrySet()) {
@@ -123,76 +127,15 @@ public class login extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         //Handle Result
-       // Toast.makeText(parent.getApplicationContext(), "Login test "+result.substring(1,2), Toast.LENGTH_SHORT).show();
-        String result1 = result.substring(1,2) ;
+       // String temp = result.substring(1,2);
+         Toast.makeText(parent.getApplicationContext(), "Res " + result, Toast.LENGTH_SHORT).show();
 
-        if(result1.equals("]")){
-             Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful ", Toast.LENGTH_SHORT).show();
-
-        }else{
-          //  Toast.makeText(parent.getApplicationContext(), "Login Successful ", Toast.LENGTH_SHORT).show();
-
-
-        try{
-            JSONArray jsonArr = new JSONArray(result);
-            //Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
-
-            String name = "";
-            String code="";
-            String id ="";
-
-
-            //Subjects pass = null;
-            //Subjects subjects = new Subjects("h", 0, parent, pass);
-
-
-            for (int i = 0; i < jsonArr.length(); i++) {
-                JSONObject jsObj = jsonArr.getJSONObject(i);
-                Password1 = jsObj.getString("tutor_password");
-
-            }
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        if(Password1.toString().equals(Password.toString())) {
-
-            if(Check == 0) {
-
-                Toast.makeText(parent.getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
-
-                Intent goHome = new Intent(parent, HomeActivity.class);
-                goHome.putExtra("user", result);
-                parent.startActivity(goHome);
-            }
-            if(Check ==1)
-            {
-                Intent goHome = new Intent(parent, HomeActivity.class);
-                goHome.putExtra("user", result);
-                parent.startActivity(goHome);
-            }
-        }
-            else
-        {
-            Toast.makeText(parent.getApplicationContext(),"Login unsuccessful", Toast.LENGTH_SHORT).show();
-        }
-        }
 
 
     }
 
-    public static void startActivity(Context context) {
-        context.startActivity(new Intent(context, HomeActivity.class).putExtra("user", out));
+       public static void startActivity(Context context) {
+        context.startActivity(new Intent(context, HomeActivity.class));
     }
-
-    //Use this method to get stuff from the Login request claass by just making an object when needed and calling getStuff();
-    public String getStuff()
-    {
-        String pass = Password;
-        return pass;
-    }
-
 
 }
-
