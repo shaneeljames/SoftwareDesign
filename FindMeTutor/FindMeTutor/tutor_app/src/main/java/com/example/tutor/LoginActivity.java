@@ -108,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
         {
             int test ;
             //Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show();
-            login connect2server = new login(this, login_email, login_password);
+            login connect2server = new login(this, login_email, login_password,0);
             connect2server.execute();
 
 
