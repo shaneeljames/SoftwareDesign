@@ -23,6 +23,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -173,6 +175,16 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
             }
         });
 
+        try {
+            Picasso.with(getApplicationContext()).load("http://neural.net16.net/pictures/s" + stdNum + "JPG" ).into(imgpp);
+        }catch (Exception e)
+        {
+
+            Toast.makeText(getApplicationContext(), "No profile picture", Toast.LENGTH_SHORT).show();
+            imgpp.setImageResource(R.drawable.ic_profile_greenp);
+
+        }
+
 
 
 
@@ -280,8 +292,8 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
             imgpp.setImageURI(selectedImage);
 
             Bitmap bitmap = ((BitmapDrawable)  imgpp.getDrawable()).getBitmap() ;
-            Bitmap scaledBit = Bitmap.createScaledBitmap(bitmap, 200, 180, false);
-            new UploadToServer(scaledBit, "s"+stdNum).execute() ;
+            //  Bitmap b2 = Bitmap.createScaledBitmap()
+            new UploadToServer(bitmap, "s" +stdNum).execute() ;
             Toast.makeText(getApplicationContext(), "Picture Updated", Toast.LENGTH_SHORT).show();
         }
 
@@ -294,7 +306,7 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
 
        //
 
-        Toast.makeText(this, "Show some text on the screen.", Toast.LENGTH_LONG).show();
+       // Toast.makeText(this, "Show some text on the screen.", Toast.LENGTH_LONG).show();
     }
 
 
