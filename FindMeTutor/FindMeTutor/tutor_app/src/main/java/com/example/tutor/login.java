@@ -38,6 +38,8 @@ public class login extends AsyncTask<String, String, String> {
 
     static String out;
 
+    public tutor_AsyncResponse delegate = null; //Notify when async is done
+
     public login(Activity par, String email, String password, int c){
         parent = par;
         Email = email;
@@ -178,6 +180,8 @@ public class login extends AsyncTask<String, String, String> {
             Toast.makeText(parent.getApplicationContext(),"Login unsuccessful", Toast.LENGTH_SHORT).show();
         }
         }
+
+        delegate.processFinish(result);
 
 
     }
