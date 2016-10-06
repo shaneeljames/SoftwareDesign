@@ -65,6 +65,9 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
 
     String tutStdNum;
 
+    String sessionId;
+    int status =0;
+
 
 
 
@@ -115,6 +118,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
             }
 */
         tutStdNum = this.getArguments().getString("tutor_student_num");
+        sessionId = this.getArguments().getString("sessionID");
 
         Toast.makeText(getContext(), tutStdNum,Toast.LENGTH_SHORT).show();
 
@@ -123,6 +127,13 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
         }catch (Exception e){
 
         }
+
+        requestGps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GetLocation2 getLocation = new GetLocation2(getActivity(), sessionId, status  );
+            }
+        });
 
 
 

@@ -10,12 +10,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,6 +33,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
     private FragmentDrawer drawerFragment;
 
     String student_id, student_password, student_lname, student_fname, student_student_num, student_email, student_contact_number, student_current_balance;
+    ImageView img;
 
     SharedPreferences myprefs;
 
@@ -97,9 +101,21 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
 
         TextView n = (TextView)drawerFragment.getView().findViewById(R.id.nameTxt);
         TextView c = (TextView)drawerFragment.getView().findViewById(R.id.creditsTxt);
+        img = (ImageView)drawerFragment.getView().findViewById(R.id.iv);
 
         n.setText(student_fname+ " "+student_lname);
         c.setText(student_current_balance);
+
+        try {
+            Picasso.with(getApplicationContext()).load("http://neural.net16.net/pictures/s" + student_student_num + "JPG" ).into(img);
+        }catch (Exception e)
+        {
+
+            Toast.makeText(getApplicationContext(), "No profile picture", Toast.LENGTH_SHORT).show();
+            img.setImageResource(R.drawable.ic_profile_greenp);
+
+        }
+
 
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
         drawerFragment.setDrawerListener(this);

@@ -131,7 +131,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
 
 
-                        base.switchContentSession(events.get(i).tutorStdNum);
+                        base.switchContentSession(events.get(i).tutorStdNum, sessID);
 
                     }
                 });

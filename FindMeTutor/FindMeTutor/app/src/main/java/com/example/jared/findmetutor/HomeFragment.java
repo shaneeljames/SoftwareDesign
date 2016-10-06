@@ -170,11 +170,12 @@ public class HomeFragment extends Fragment implements AsyncResponse{
 
     }
 
-    public void switchContentSession(String id) {
+    public void switchContentSession(String id, String sessID) {
         mContent = new TutorStudentFragment();
 
         Bundle bundle=new Bundle();
         bundle.putString("tutor_student_num", id);
+        bundle.putString("sessionID", sessID);
 
         mContent.setArguments(bundle);
 
