@@ -47,7 +47,7 @@
                         android:layout_below="@+id/imgProfile"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
-                        android:layout_height="50px" />
+                        android:layout_height="wrap_content" />
 
                 </RelativeLayout>
 

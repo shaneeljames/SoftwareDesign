@@ -104,7 +104,7 @@ public class AccountSettingsActivity2 extends AppCompatActivity {
                 Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(i, RESULT_LOAD_IMAGE);
 
-                Toast.makeText(getApplicationContext(), "Picture Updated", Toast.LENGTH_SHORT).show();
+
 
 
             }
@@ -219,6 +219,7 @@ public class AccountSettingsActivity2 extends AppCompatActivity {
             Bitmap bitmap = ((BitmapDrawable)  imgpp.getDrawable()).getBitmap() ;
           //  Bitmap b2 = Bitmap.createScaledBitmap()
             new UploadToServer(bitmap, "t" +id.toString()).execute() ;
+            Toast.makeText(getApplicationContext(), "Picture Updated", Toast.LENGTH_SHORT).show();
         }
 
     }
