@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.29)  27 SEP 2016 15:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.9)  9 OCT 2016 20:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -425,37 +425,62 @@ Overfull \hbox (48.79134pt too wide) in paragraph at lines 657--674
  []
 
 
-Overfull \hbox (55.17061pt too wide) in paragraph at lines 675--691
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 675--691
  [][] 
  []
 
-[21] [22] <./Use_Cases/Create_Student.jpg, id=75, 421.575pt x 250.9375pt>
+[21]
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 692--707
+ [][] 
+ []
+
+
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 708--723
+ [][] 
+ []
+
+
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 724--740
+ [][] 
+ []
+
+[22]
+Overfull \hbox (60.7275pt too wide) in paragraph at lines 743--759
+ [][] 
+ []
+
+
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 760--776
+ [][] 
+ []
+
+[23] [24] <./Use_Cases/Create_Student.jpg, id=81, 421.575pt x 250.9375pt>
 File: ./Use_Cases/Create_Student.jpg Graphic file (type jpg)
 
 <use ./Use_Cases/Create_Student.jpg>
-Package pdftex.def Info: ./Use_Cases/Create_Student.jpg used on input line 700.
+Package pdftex.def Info: ./Use_Cases/Create_Student.jpg used on input line 783.
 
 (pdftex.def)             Requested size: 398.33858pt x 237.11037pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 697--701
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 780--784
  [] 
  []
 
-[23 <./Use_Cases/Create_Student.jpg>] [24]
-Overfull \hbox (58.99843pt too wide) in alignment at lines 717--753
+[25 <./Use_Cases/Create_Student.jpg>] [26]
+Overfull \hbox (58.99843pt too wide) in alignment at lines 800--836
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 753
+Underfull \vbox (badness 10000) detected at line 836
  []
 
 
-Overfull \hbox (58.99843pt too wide) in alignment at lines 753--762
+Overfull \hbox (58.99843pt too wide) in alignment at lines 836--845
  [] [] [] 
  []
 
-[25] [26] [27] (./RequirementsAnalysisDocument.aux) )
+[27] [28] [29] (./RequirementsAnalysisDocument.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 441 ({)
@@ -471,10 +496,10 @@ Here is how much of TeX's memory you used:
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pf
 b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on RequirementsAnalysisDocument.pdf (27 pages, 90827 bytes).
+Output written on RequirementsAnalysisDocument.pdf (29 pages, 93861 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
+ 110 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
