@@ -72,7 +72,7 @@ The FindMeTutor Android application will be seen as successful if it facilitates
 12. Sign in - when asked to enter username and password information. A sign in/login is a combination of information that authenticates a user's identity. \\
 13. SDK - abbreviation for Software Development Kit\\
 14 Software Development Kit -  collection of software used for developing applications for a specific device or operating system.
-
+15 Sessions - A tutorial session created by a student.
 
 \subsubsection{References}
 1. http://techterms.com/definition (2016-08-08)
@@ -196,70 +196,63 @@ Describes the high-level functionality of the system\\
 			RQ2.3 & The system shall allow a tutor to view their account details & UC-VT \\ \hline
 			RQ2.4 & The system shall allow a tutor to mark their account as deleted & UC-DT \\ \hline
 
-			RQ3.1 & The system shall allow an administrator to update a student account & UC-US \\ \hline
-			RQ3.2 & The system shall allow an administrator to view a student account details  & UC-VS \\ \hline
-			RQ3.3 & The system shall allow an administrator to mark a student as deleted & UC-DS  \\ \hline
-			RQ3.4 & The system shall allow an administrator to update a tutor account eg update password & UC-UT \\ \hline
-			RQ3.5 & The system shall allow an administrator to view a tutor account details & UC-VT \\ \hline
-			RQ3.6 & The system shall allow an administrator to mark a tutor account as deleted & UC-DT \\ \hline
+		%	RQ3.1 & The system shall allow an administrator to update a student account & UC-US \\ \hline
+		%	RQ3.2 & The system shall allow an administrator to view a student account details  & UC-VS \\ \hline
+		%	RQ3.3 & The system shall allow an administrator to mark a student as deleted & UC-DS  \\ \hline
+		%	RQ3.4 & The system shall allow an administrator to update a tutor account eg update password & UC-UT \\ \hline
+		%	RQ3.1 & The system shall allow an administrator to view a tutor account details & UC-VT \\ \hline
+		%	RQ3.2 & The system shall allow an administrator to mark a tutor account as deleted & UC-DT \\ \hline
 
 % Ask if we have the password under update
 
 % Create Administrator
-			RQ4.1 & The system shall allow an administrator to register  & UC-CA \\ \hline
-			RQ4.2 & The system shall allow an administrator to update their account & UC-UA \\ \hline
-			RQ4.3 & The system shall allow an administrator to view their account details  & UC-VA \\ \hline
-			RQ4.4 & The system shall allow an administrator to mark their account as deleted & UC-DA  \\ \hline
+		%	RQ4.1 & The system shall allow an administrator to register  & UC-CA \\ \hline
+		%	RQ4.2 & The system shall allow an administrator to update their account & UC-UA \\ \hline
+		%	RQ4.3 & The system shall allow an administrator to view their account details  & UC-VA \\ \hline
+		%	RQ4.4 & The system shall allow an administrator to mark their account as deleted & UC-DA  \\ \hline
 
 % Request tutor: student
-				RQ5.1 & The system shall allow a student to request a tutor & UC-RT \\ \hline
-				RQ5.2 & The system shall allow a student to choose a tutor from a list & UC-CT \\ \hline
+				RQ3.1 & The system shall allow a student to request a tutor & UC-RT \\ \hline
+				RQ3.2 & The system shall allow a student to choose a tutor from a list & UC-RT \\ \hline
 
 % Request Tutor: Tutor
-				RQ6.1 & The system shall allow a tutor to accept a request & UC-AR \\ \hline
-				RQ6.2 & The system shall allow a tutor to reject a request & UC-DR \\ \hline
+				RQ4.1 & The system shall allow a tutor to accept a request & UC-RT \\ \hline
+				RQ4.2 & The system shall allow a tutor to reject a request & UC-RT \\ \hline
 
 
-% Add Event: Student
-				RQ7.1 & The system shall allow a student to add events to their personal 'Upcoming events'  & UC-CE \\ \hline
-				RQ7.2 & The system shall allow a student to view their upcoming events & UC-VE \\ \hline
-				RQ7.3 & The system shall allow a student to update their upcoming events & UC-UE \\ \hline
-				RQ7.4 & The system shall allow a student to delete their upcoming events & UC-DE\\ \hline
 
-% Add Event: Tutor
-				RQ8.1 & The system shall allow a tutor to add events to their personal 'Upcoming events'  & UC-CE \\ \hline
-				RQ8.2 & The system shall allow a tutor to view their upcoming events & UC-VE \\ \hline
-				RQ8.3 & The system shall allow a tutor to update their upcoming events & UC-UE \\ \hline
-				RQ8.4 & The system shall allow a tutor to delete their upcoming events & UC-DE\\ \hline
 
 % Rate a tutor: student
-				RQ9.1 & The system shall allow a student to rate a tutor & UC-R\\ \hline
+				RQ5.1 & The system shall allow a student to rate a tutor & UC-R\\ \hline
 
 % Check-in/out : Sudent
-				RQ10.1 & The system shall allow a student to check-in  & UC-CI \\ \hline
-				RQ10.2 & The system shall allow a student to check-out  & UC-CO \\ \hline
+				RQ6.1 & The system shall allow a student to check-in  & UC-CI \\ \hline
+				RQ6.2 & The system shall allow a student to check-out  & UC-CO \\ \hline
 % Check-in/out : Tutor
-				RQ11.1 & The system shall allow a tutor to check-in  & UC-CI \\
+				RQ7.1 & The system shall allow a tutor to check-in  & UC-CI \\
 \hline
-				RQ11.2 & The system shall allow a tutor to check-out  & UC-CO \\ \hline
-				RQ12.1 & The system shall allow a student to add funds &UC-AF\\ \hline
-				RQ12.2 & The system shall allow a student to view funds &UC-VF\\ \hline
-				RQ12.3 & The system shall allow a student to update funds &UC-UF\\ \hline
-				RQ13.1 & The system shall allow a tutor to add funds &UC-AF\\ \hline
-				RQ13.2 & The system shall allow a tutor to view funds &UC-VF\\ \hline
-				RQ13.3 & The system shall allow a tutor to update funds &UC-UF\\ \hline
-				RQ14.1 & The system shall allow a student to add subjects &UC-CSb\\ \hline
-				RQ14.2 & The system shall allow a tutor to add subjects &UC-CSb\\ \hline
-				RQ15.1 & The system shall allow a student to remove subjects &UC-DSb\\ \hline
-				RQ15.2 & The system shall allow a tutor to remove subjects &UC-DSb\\ \hline
-				RQ16.1 & The system shall allow a student to login &UC-L\\ \hline
-				RQ16.2 & The system shall allow a tutor to login &UC-L\\ \hline
-				RQ16.3 & The system shall allow an administrator to login &UC-L\\ \hline
-				RQ17.1 & The system shall allow a student to view their upcoming sessions  &UC-DSes\\ \hline
-				RQ17.2 & The system shall allow a tutor to view their upcoming sessions  &UC-VSes\\ \hline
-				RQ18.1 & The system shall allow a tutor to mark a session as done/removed &UC-DSes\\ \hline
-				RQ18.2 & The system shall allow a student to mark a session as done/removed &UC-DSes\\ \hline
-
+				RQ7.2 & The system shall allow a tutor to check-out  & UC-CO \\ \hline
+				RQ8.1 & The system shall allow a student to add funds &UC-CF\\ \hline
+				RQ8.2 & The system shall allow a student to view funds &UC-VF\\ \hline
+				RQ8.3 & The system shall allow a student to update funds &UC-UF\\ \hline
+				RQ9.1 & The system shall allow a tutor to add funds &UC-CF\\ \hline
+				RQ9.2 & The system shall allow a tutor to view funds &UC-VF\\ \hline
+				RQ9.3 & The system shall allow a tutor to update funds &UC-UF\\ \hline
+				RQ10.1 & The system shall allow a student to add subjects &UC-CSb\\ \hline
+				RQ11.1 & The system shall allow a tutor to add subjects &UC-CSb\\ \hline
+				RQ12.1 & The system shall allow a student to remove subjects &UC-DSb\\ \hline
+				RQ12.2 & The system shall allow a tutor to remove subjects &UC-DSb\\ \hline
+				RQ13.1 & The system shall allow a student to login &UC-L\\ \hline
+				RQ13.2 & The system shall allow a tutor to login &UC-L\\ \hline
+				%RQ16.3 & The system shall allow an administrator to login &UC-L\\ \hline
+				RQ14.1 & The system shall allow a student to view their upcoming sessions  &UC-VSes\\ \hline
+				RQ14.2 & The system shall allow a tutor to view their upcoming sessions  &UC-VSes\\ \hline
+				RQ15.1 & The system shall allow a tutor to mark a session as done &UC-DSes\\ \hline
+				RQ15.2 & The system shall allow a student to mark a session as done &UC-DSes\\ \hline
+				RQ16.1 & The system shall allow a tutor to mark a session as cancelled &UC-DSes\\ \hline
+				RQ16.2 & The system shall allow a student to mark a session as cancelled &UC-DSes\\ \hline
+				RQ17.1 & The system shall allow a student to view a subject &UC-RSb\\ \hline
+				RQ17.2 & The system shall allow a tutor to view a subject &UC-RSb\\ \hline
 \end{longtable}
 }
 \subsection{Functional requirements specification}
@@ -415,8 +408,8 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 			%\\Choose Tutor			&		UC-CT not a use case, will be in flow of activities
 		%	\\Create Session			&		UC-CE %sprint 3 same as request tutor
 			%\\Update Session		&		UC-UE %sprint 3
-			\\Read Session				&	UC-VE %sprint 3
-			\\Archive Session			&		UC-DE %sprint 3
+			\\Read Session				&	UC-VSes %sprint 3
+			\\Archive Session			&		UC-DSes %sprint 3
 			\\Rate Tutor				&	UC-R
 			%\\Accept Request			&	UC-AR not a use case, will be in flow of activities
 			%\\Archive Request		&		UC-DR not a use case, will be in flow of activities
@@ -468,7 +461,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-US: Update Student}} \\ \hline
-			Related Requirements: & RQ1.2, RQ3.1 \\ \hline
+			Related Requirements: & RQ1.2\\ \hline
 			Initiating actor: & Student \\ \hline
 			Actor goal: & Update student demographic data,student number,student email address, student contact number ,student password or current funds\\ \hline
 			Participating Actors: & N/A\\ \hline
@@ -513,7 +506,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 		%sprint 3
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-UT: Update Tutor}} \\ \hline
-			Related Requirements: & RQ2.2, RQ3.4 \\ \hline
+			Related Requirements: & RQ2.2\\ \hline
 			Initiating actor: & Tutor \\ \hline
 			Actor goal: & To update Tutor demographic data, tutor email address, tutor contact number, tutor password or profile picture\\ \hline
 			Participating Actors: & N/A\\ \hline
@@ -534,7 +527,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 		%sprint 3
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-DS: Archive Student}} \\ \hline
-			Related Requirements: & RQ1.4, RQ3.3 \\ \hline
+			Related Requirements: & RQ1.4 \\ \hline
 			Initiating actor: & Student \\ \hline
 			Actor goal: & To delete Student\\ \hline
 			Participating Actors: & N/A\\ \hline
@@ -555,7 +548,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 		%sprint 3
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-DT: Archive Tutor}} \\ \hline
-			Related Requirements: & RQ2.4, RQ3.6 \\ \hline
+			Related Requirements: & RQ2.4\\ \hline
 			Initiating actor: & Tutor\\ \hline
 			Actor goal: & To delete Tutor\\ \hline
 			Participating Actors: & N/A\\ \hline
@@ -576,7 +569,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-VT: Read Tutor}} \\ \hline
-			Related Requirements: & RQ2.3, RQ3.5 \\ \hline
+			Related Requirements: & RQ2.3\\ \hline
 			Initiating actor: & Tutor, Student \\ \hline
 			Actor goal: & To view Tutor\\ \hline
 			Participating Actors: & N/A\\ \hline
@@ -595,7 +588,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-VS: Read Student}} \\ \hline
-			Related Requirements: & RQ1.3, RQ3.2 \\ \hline
+			Related Requirements: & RQ1.3 \\ \hline
 			Initiating actor: & Student, Tutor\\ \hline
 			Actor goal: & To view Student\\ \hline
 			Participating Actors: & \\ \hline
@@ -612,7 +605,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-L: Login}} \\ \hline
-			Related Requirements: & RQ15.1, RQ15.2, RQ15.3  \\ \hline
+			Related Requirements: & RQ13.1, RQ13.2\\ \hline
 			Initiating actor: & Student or Tutor \\ \hline
 			Actor goal: & To login\\ \hline
 			Participating Actors: &N/A\\ \hline
@@ -630,7 +623,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
 \begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-RT: Request Tutor}} \\ \hline
-			Related Requirements: & RQ5.1\\ \hline
+			Related Requirements: & RQ3.1, RQ3.2, RQ4.1, RQ4.2\\ \hline
 			Initiating actor: & Student\\ \hline
 			Actor goal: & To request a Tutor\\ \hline
 			Participating Actors: & Tutor\\ \hline
@@ -656,7 +649,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CSb: Add Subject}} \\ \hline
-			Related Requirements: & RQ14.1, RQ14.2  \\ \hline
+			Related Requirements: & RQ10.1, RQ11.1  \\ \hline
 			Initiating actor: & Student, Tutor \\ \hline
 			Actor goal: & To register for a subject\\ \hline
 			Participating Actors: &N/A\\ \hline
@@ -674,11 +667,11 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-DSb: Archive Subject} }\\ \hline
-			Related Requirements: & RQ15.1, RQ15.2  \\ \hline
+			Related Requirements: & RQ12.1, RQ12.2  \\ \hline
 			Initiating actor: & Student, Tutor \\ \hline
 			Actor goal: & To un-register for a subject\\ \hline
 			Participating Actors: &N/A\\ \hline
-			Preconditions: &initiating actor exists\\ \hline
+			Preconditions: &Initiating actor exists\\ \hline
 			Postconditions: & Initiating actor is un-registered from a subject\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
 			\multicolumn{2}{|p{15cm}|}{1. Initiating actor indicates that he/she wants to remove a subject}\\
@@ -691,11 +684,11 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
     \begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-RSb: Read Subject} }\\ \hline
-			Related Requirements: &  \\ \hline
+			Related Requirements: &  RQ17.1, RQ17.2\\ \hline
 			Initiating actor: & Student or Tutor \\ \hline
 			Actor goal: & To view subject\\ \hline
 			Participating Actors: & N/A\\ \hline
-			Preconditions: &initiating actor exists, Subject exists\\ \hline
+			Preconditions: &Initiating actor exists, Subject exists\\ \hline
 			Postconditions: & Subject is viewed\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
 			\multicolumn{2}{|p{15cm}|}{1. Initiating actor indicates that he/she wants to view a subject}\\
@@ -707,7 +700,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
     \begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-VE: Read Session} }\\ \hline
-			Related Requirements: &  \\ \hline
+			Related Requirements: &  RQ14.1, RQ14.2\\ \hline
 			Initiating actor: & Student or Tutor\\ \hline
 			Actor goal: & To view a session\\ \hline
 			Participating Actors: &Tutor or Student\\ \hline
@@ -723,11 +716,11 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
     \begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-DE: Archive Session} }\\ \hline
-			Related Requirements: &  \\ \hline
+			Related Requirements: &  RQ15.1, RQ15.2, RQ16.1, RQ16.2\\ \hline
 			Initiating actor: & Student, Tutor \\ \hline
 			Actor goal: & To cancel a session\\ \hline
 			Participating Actors: & Tutor or Student\\ \hline
-			Preconditions: &initiating actor exists, A session exists and is not completed\\ \hline
+			Preconditions: &Initiating actor exists, A session exists and is not completed\\ \hline
 			Postconditions: & A session is cancelled\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
 			\multicolumn{2}{|p{15cm}|}{1. A student indicated that he/she wishes to cancel a session}\\
@@ -742,11 +735,11 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
     \begin{tabular}{| l | p{10cm}| }
       \hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-R: Rate Tutor} }\\ \hline
-      Related Requirements: &  \\ \hline
+      Related Requirements: &  RQ5.1\\ \hline
       Initiating actor: & Student \\ \hline
       Actor goal: & To rate a Tutor\\ \hline
-      Participating Actors: Tutor\\ \hline
-      Preconditions: &initiating actor exists, participating session actor exists, a session between  tutor and student is complete\\ \hline
+      Participating Actors: &Tutor\\ \hline
+      Preconditions: &Initiating actor exists, participating session actor exists, a session between  tutor and student is complete\\ \hline
       Postconditions: & A Tutor is rated, a tutors rating is changed\\ \hline
       \multicolumn{2}{|l|}{Flow of activities:}\\ \hline
       \multicolumn{2}{|p{15cm}|}{1. Student indicates that he/she wishes to rate a Tutor}\\
@@ -758,12 +751,12 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
     \end{tabular}
 
     \begin{tabular}{| l | p{10cm}| }
-      \hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-: } }\\ \hline
+      \hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CSb: Add Subject } }\\ \hline
       Related Requirements: &  \\ \hline
       Initiating actor: & Student, Tutor \\ \hline
       Actor goal: & To cancel a session\\ \hline
       Participating Actors: \\ \hline
-      Preconditions: &initiating actor exists\\ \hline
+      Preconditions: &Initiating actor exists\\ \hline
       Postconditions: & \\ \hline
       \multicolumn{2}{|l|}{Flow of activities:}\\ \hline
       \multicolumn{2}{|p{15cm}|}{1. }\\
@@ -774,6 +767,90 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
        \hline
     \end{tabular}
 
+		\begin{tabular}{| l | p{10cm}| }
+			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CSb: Read Subject } }\\ \hline
+			Related Requirements: &  \\ \hline
+			Initiating actor: & Student, Tutor \\ \hline
+			Actor goal: & To cancel a session\\ \hline
+			Participating Actors: \\ \hline
+			Preconditions: &Initiating actor exists\\ \hline
+			Postconditions: & \\ \hline
+			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
+			\multicolumn{2}{|p{15cm}|}{1. }\\
+			\multicolumn{2}{|p{15cm}|}{2. }\\
+			\multicolumn{2}{|l|}{3. }\\
+			\multicolumn{2}{|l|}{4. }\\
+			\multicolumn{2}{|l|}{5. }\\
+			 \hline
+		\end{tabular}
+
+		\begin{tabular}{| l | p{10cm}| }
+			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CSb: Archive Subject } }\\ \hline
+			Related Requirements: &  \\ \hline
+			Initiating actor: & Student, Tutor \\ \hline
+			Actor goal: & To cancel a session\\ \hline
+			Participating Actors: \\ \hline
+			Preconditions: &Initiating actor exists\\ \hline
+			Postconditions: & \\ \hline
+			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
+			\multicolumn{2}{|p{15cm}|}{1. }\\
+			\multicolumn{2}{|p{15cm}|}{2. }\\
+			\multicolumn{2}{|l|}{3. }\\
+			\multicolumn{2}{|l|}{4. }\\
+			\multicolumn{2}{|l|}{5. }\\
+			 \hline
+		\end{tabular}
+
+		\begin{tabular}{| l | p{10cm}| }
+			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CSb: Confirm Funds } }\\ \hline
+			Related Requirements: &  \\ \hline
+			Initiating actor: & Student, Tutor \\ \hline
+			Actor goal: & To cancel a session\\ \hline
+			Participating Actors: \\ \hline
+			Preconditions: &Initiating actor exists\\ \hline
+			Postconditions: & \\ \hline
+			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
+			\multicolumn{2}{|p{15cm}|}{1. }\\
+			\multicolumn{2}{|p{15cm}|}{2. }\\
+			\multicolumn{2}{|l|}{3. }\\
+			\multicolumn{2}{|l|}{4. }\\
+			\multicolumn{2}{|l|}{5. }\\
+			 \hline
+		\end{tabular}
+
+		\begin{tabular}{| l | p{10cm}| }
+			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CSb: Update Funds } }\\ \hline
+			Related Requirements: &  \\ \hline
+			Initiating actor: & Student, Tutor \\ \hline
+			Actor goal: & To cancel a session\\ \hline
+			Participating Actors: \\ \hline
+			Preconditions: &Initiating actor exists\\ \hline
+			Postconditions: & \\ \hline
+			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
+			\multicolumn{2}{|p{15cm}|}{1. }\\
+			\multicolumn{2}{|p{15cm}|}{2. }\\
+			\multicolumn{2}{|l|}{3. }\\
+			\multicolumn{2}{|l|}{4. }\\
+			\multicolumn{2}{|l|}{5. }\\
+			 \hline
+		\end{tabular}
+
+		\begin{tabular}{| l | p{10cm}| }
+			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CSb: Read Funds } }\\ \hline
+			Related Requirements: &  \\ \hline
+			Initiating actor: & Student, Tutor \\ \hline
+			Actor goal: & To cancel a session\\ \hline
+			Participating Actors: \\ \hline
+			Preconditions: &Initiating actor exists\\ \hline
+			Postconditions: & \\ \hline
+			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
+			\multicolumn{2}{|p{15cm}|}{1. }\\
+			\multicolumn{2}{|p{15cm}|}{2. }\\
+			\multicolumn{2}{|l|}{3. }\\
+			\multicolumn{2}{|l|}{4. }\\
+			\multicolumn{2}{|l|}{5. }\\
+			 \hline
+		\end{tabular}
 	\newpage
 \subsubsection{Use case diagrams}
 %\newpage
