@@ -17,7 +17,7 @@
     <coordinates>
       <x>217</x>
       <y>0</y>
-      <w>385</w>
+      <w>399</w>
       <h>826</h>
     </coordinates>
     <panel_attributes>FindMeTutor
@@ -160,17 +160,6 @@ halign=left</panel_attributes>
     <id>UMLUseCase</id>
     <coordinates>
       <x>280</x>
-      <y>210</y>
-      <w>84</w>
-      <h>28</h>
-    </coordinates>
-    <panel_attributes>Create Session</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>280</x>
       <y>245</y>
       <w>84</w>
       <h>28</h>
@@ -287,17 +276,6 @@ halign=left</panel_attributes>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;60.0;220.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>126</x>
-      <y>217</y>
-      <w>168</w>
-      <h>91</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;110.0;220.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
@@ -648,18 +626,6 @@ halign=left</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>357</x>
-      <y>217</y>
-      <w>161</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;
-&lt;&lt;includes&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;210.0;80.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>357</x>
       <y>252</y>
       <w>161</w>
       <h>35</h>
@@ -691,29 +657,6 @@ halign=left</panel_attributes>
     <panel_attributes>lt=.&gt;
 &lt;&lt;includes&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;50.0;220.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>504</x>
-      <y>294</y>
-      <w>84</w>
-      <h>28</h>
-    </coordinates>
-    <panel_attributes>Read Session</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>357</x>
-      <y>217</y>
-      <w>161</w>
-      <h>105</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;
-&lt;&lt;includes&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;210.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
