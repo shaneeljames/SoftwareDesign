@@ -54,7 +54,7 @@ SAD: Software Architecture Document
 This section contains a description pertaining to the architecture used in the FindMeTutor system.
 \begin{itemize}
 \item Type of Architecture\\
-The FindMeTutor system makes use of three tier architecture. Comprising of a logic layer, a user-interface layer and finally a database layer.
+The FindMeTutor system makes use of a 4+1 layered architecture. %Comprising of a logic layer, a user-interface layer and finally a database layer.
 \item Systems of interest\\
 The main systems of interest are the FindMeTutor which contain the following two subsystems:\\
 \begin{itemize}
@@ -120,19 +120,55 @@ The following table depicts the relationship between the concerns listed above a
 \section{Views}
 %Listed below are views which.
 \subsection{Logical View}
+
+The Logical View focuses on realising the functionality of the FindMeTutor system.
+This view address the concerns of the end-user by realising the functionality of the system.\\
+
+\subsubsection{Class Diagram}
 \includegraphics[width=140mm]{./class_diagram_findme_tutor.jpg}
 %\includegraphics[width=140mm]{./activitydiagram.png}
 %\includegraphics[width=140mm]{./.jpg}
+\subsubsection{Sequence Diagram}
+
+Sequence Diagrams show the sequence of messages passed between objects of the system over time.\\
+\includegraphics[width=140mm]{./sequence_diagram/create_student.png}
+\includegraphics[width=140mm]{./sequence_diagram/request_tutor.png}
+
+
 \subsection{Development View}
+The Development view outlines the components that are used to assemble the physical system.
+This view addresses the concerns of stakeholders concerned with the development of system such as developers.\\
+\subsubsection{Package Diagram}
+
+A package diagram depicts the dependencies the packages of the FindMeTutor system.
 Below is package diagrams of the FindMeTutor system:\\
 \includegraphics[width=140mm]{./Pakage.jpg}
 \includegraphics[width=140mm]{./Pakage2.jpg}
+
+\subsubsection{Component Diagram}
+A component diagram describes the components used to achieve the functionality of the system.\\
+\textbf{ADD COMPONENT DIAGRAM}
+
+
 \subsection{Process View}
+The process view considers the non-functional aspects of the system. It addresses the concerns of stakeholders concerned
+with the design of the system.\\
+
+\subsubsection{Activity Diagrams}
+An activity diagram depicts the the flows of the system and business logic with actions.\\
 Below is an activity diagram of the Request Tutor use case:\\
 \includegraphics[width=140mm]{./activitydiagram.png}
+
 \subsection{Physical View}
+The physical view describes the physical locations of software, the scalability of the system, the deployment and installation.
+\subsubsection{Deployment Diagram}
+
 \includegraphics[width=140mm]{./Deployment.jpg}
+
 \subsection{Scenarios}
+The Scenarios view address concerns of all stakeholders, this view helps show how the system is to be used.
+\subsubsection{Use Case Diagram}
+The use case diagram describes the behaviour of the system from the view of it's users.\\ 
 \includegraphics[width=140mm]{./Use_Case_Diagram.png}
 
 \end{document}

@@ -119,6 +119,12 @@ INPUT ./trace.png
 INPUT ./class_diagram_findme_tutor.jpg
 INPUT ./class_diagram_findme_tutor.jpg
 INPUT ./class_diagram_findme_tutor.jpg
+INPUT ./sequence_diagram/create_student.png
+INPUT ./sequence_diagram/create_student.png
+INPUT ./sequence_diagram/create_student.png
+INPUT ./sequence_diagram/request_tutor.png
+INPUT ./sequence_diagram/request_tutor.png
+INPUT ./sequence_diagram/request_tutor.png
 INPUT ./Pakage.jpg
 INPUT ./Pakage.jpg
 INPUT ./Pakage.jpg
