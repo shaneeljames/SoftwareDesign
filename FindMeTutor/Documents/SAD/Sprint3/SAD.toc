@@ -14,7 +14,7 @@
 \contentsline {subsubsection}{\numberline {6.2.2}Component Diagram}{11}
 \contentsline {subsection}{\numberline {6.3}Process View}{11}
 \contentsline {subsubsection}{\numberline {6.3.1}Activity Diagrams}{11}
-\contentsline {subsection}{\numberline {6.4}Physical View}{11}
-\contentsline {subsubsection}{\numberline {6.4.1}Deployment Diagram}{12}
-\contentsline {subsection}{\numberline {6.5}Scenarios}{12}
-\contentsline {subsubsection}{\numberline {6.5.1}Use Case Diagram}{12}
+\contentsline {subsection}{\numberline {6.4}Physical View}{12}
+\contentsline {subsubsection}{\numberline {6.4.1}Deployment Diagram}{13}
+\contentsline {subsection}{\numberline {6.5}Scenarios}{13}
+\contentsline {subsubsection}{\numberline {6.5.1}Use Case Diagram}{13}

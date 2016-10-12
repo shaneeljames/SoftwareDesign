@@ -1,4 +1,4 @@
-PWD /home/shaneel/SoftwareDesign/FindMeTutor/Documents/SAD/Sprint_4
+PWD /home/shaneel/SoftwareDesign/FindMeTutor/Documents/SAD/Sprint3
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
 INPUT SAD.tex
@@ -125,6 +125,9 @@ INPUT ./sequence_diagram/create_student.png
 INPUT ./sequence_diagram/request_tutor.png
 INPUT ./sequence_diagram/request_tutor.png
 INPUT ./sequence_diagram/request_tutor.png
+INPUT ./sequence_diagram/add_subject.png
+INPUT ./sequence_diagram/add_subject.png
+INPUT ./sequence_diagram/add_subject.png
 INPUT ./Pakage.jpg
 INPUT ./Pakage.jpg
 INPUT ./Pakage.jpg
@@ -134,6 +137,9 @@ INPUT ./Pakage2.jpg
 INPUT ./activitydiagram.png
 INPUT ./activitydiagram.png
 INPUT ./activitydiagram.png
+INPUT ./activity_diagram/checked_in.png
+INPUT ./activity_diagram/checked_in.png
+INPUT ./activity_diagram/checked_in.png
 INPUT ./Deployment.jpg
 INPUT ./Deployment.jpg
 INPUT ./Deployment.jpg
