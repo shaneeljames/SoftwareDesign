@@ -733,31 +733,36 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CI: Check In } }\\ \hline
-			Related Requirements: &  RQ8.1, RQ9.1\\ \hline
+			Related Requirements: &  RQ6.1, RQ7.1\\ \hline
 			Initiating actor: & Student, Tutor \\ \hline
-			Actor goal: & To cancel a session\\ \hline
-			Participating Actors: &\\ \hline
+			Actor goal: & To check in, indicating the beginning of a tutorial session\\ \hline
+			Participating Actors: & Student or Tutor( not the same as the initiating actor)\\ \hline
 			Preconditions: &Initiating actor exists\\ \hline
-			Postconditions: & \\ \hline
+			Postconditions: & The initiating actor is checked in\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
-			\multicolumn{2}{|p{15cm}|}{1. }\\
-			\multicolumn{2}{|p{15cm}|}{2. }\\
-			\multicolumn{2}{|l|}{3. }\\
-			\multicolumn{2}{|l|}{4. }\\
-			\multicolumn{2}{|l|}{5. }\\
-			 \hline
+			\multicolumn{2}{|p{15cm}|}{1. Initiating actor indicates that he/she has arrived at the venue where the tutorial session will take place.}\\
+			\multicolumn{2}{|p{15cm}|}{2. The system reads the initiating actors device location}\\
+			\multicolumn{2}{|p{15cm}|}{3. The system stores the initiating actors device location}\\
+			\multicolumn{2}{|p{15cm}|}{4. Participating actor indicates that he/she has arrived at the venue where the tutorial session will take place}\\
+			\multicolumn{2}{|l|}{5. The system reads the participating actors device location}\\
+			\multicolumn{2}{|l|}{6. The system stores the participating actors device location}\\
+			\multicolumn{2}{|l|}{7. The system marks the initiating actor and the participating actor as checked in}\\
+			\hline
+			\multicolumn{2}{|l|}{Extensions: }\\ \hline
+			\multicolumn{2}{|p{15cm}|}{6.1 If the initiating actors device location is not within a set radius of participating actors the system invokes step 1 of flow of activities }\\
+			\hline
 		\end{tabular}
 
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CO: Check Out } }\\ \hline
-			Related Requirements: &  RQ8.1, RQ9.1\\ \hline
+			Related Requirements: &  RQ6.2, RQ7.2\\ \hline
 			Initiating actor: & Student, Tutor \\ \hline
-			Actor goal: & To cancel a session\\ \hline
-			Participating Actors: &\\ \hline
-			Preconditions: &Initiating actor exists\\ \hline
-			Postconditions: & \\ \hline
+			Actor goal: & To check out from a tutorial session\\ \hline
+			Participating Actors: & Student or Tutor( not the same as the initiating actor)\\ \hline
+			Preconditions: &Initiating actor exists, participating actor exists, initiating actor is checked in, participating actor is checked in\\ \hline
+			Postconditions: &Initiating actor and secondary actor is checked out\\ \hline
 			\multicolumn{2}{|l|}{Flow of activities:}\\ \hline
-			\multicolumn{2}{|p{15cm}|}{1. }\\
+			\multicolumn{2}{|p{15cm}|}{1. Initiating actor indicates that the tutorial has ended}\\
 			\multicolumn{2}{|p{15cm}|}{2. }\\
 			\multicolumn{2}{|l|}{3. }\\
 			\multicolumn{2}{|l|}{4. }\\
