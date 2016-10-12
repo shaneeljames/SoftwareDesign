@@ -134,9 +134,9 @@ INPUT ./Pakage.jpg
 INPUT ./Pakage2.jpg
 INPUT ./Pakage2.jpg
 INPUT ./Pakage2.jpg
-INPUT ./activitydiagram.png
-INPUT ./activitydiagram.png
-INPUT ./activitydiagram.png
+INPUT ./activity_diagram/request_tutor.png
+INPUT ./activity_diagram/request_tutor.png
+INPUT ./activity_diagram/request_tutor.png
 INPUT ./activity_diagram/checked_in.png
 INPUT ./activity_diagram/checked_in.png
 INPUT ./activity_diagram/checked_in.png
