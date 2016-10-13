@@ -58,13 +58,11 @@ after_success:
   #- codecov
 
 after_failure:
-  - pandoc builder/build/reports/tests/index.html -t plain | sed -n 
-'/^Failed tests/,/default-package/p'
+  - pandoc builder/build/reports/tests/index.html -t plain | sed -n '/^Failed tests/,/default-package/p'
 
 after_script:
   # print lint results details
   - for f in app/build/outputs/lint-results.html; do pandoc $f -t plain; 
 done
-  - for f in data/build/outputs/lint-results.html; do pandoc $f -t 
-plain; done
+  - for f in data/build/outputs/lint-results.html; do pandoc $f -t plain; done
 
