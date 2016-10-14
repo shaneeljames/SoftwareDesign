@@ -54,7 +54,8 @@ SAD: Software Architecture Document
 This section contains a description pertaining to the architecture used in the FindMeTutor system.
 \begin{itemize}
 \item Type of Architecture\\
-The FindMeTutor system makes use of a 4+1 layered architecture. %Comprising of a logic layer, a user-interface layer and finally a database layer.
+The FindMeTutor system makes use of a 2 tier architecture. The application layer contains the user-interface and business logic. The second layer is the database ,which contains the user data for the system. Below is a diagram which depicts the architecture selected:\\
+\includegraphics[width=140mm]{./2_Tier_Diagram.png}\\
 \item Systems of interest\\
 The main systems of interest are the FindMeTutor which contain the following two subsystems:\\
 \begin{itemize}
@@ -121,13 +122,29 @@ The following table depicts the relationship between the concerns listed above a
 %Listed below are views which.
 \subsection{Logical View}
 
-The Logical View focuses on realising the functionality of the FindMeTutor system.
-This view address the concerns of the end-user by realising the functionality of the system.\\
+The Logical View focuses on realising the functionality of the FindMeTutor system.This view address the concerns of the end-user by realising the functionality of the system.\\\\
+The FindMeTutor application uses a 2-Tier architecture. 
+\begin{itemize}
+\item Advantages
+\begin{itemize}
+\item Allows the application to be easily devloped due to simplicity.
+\item Maximum user satisfaction can be ensured due to accurate and fast prototyping of applications
+\item Database logic and business logic is physically close, which offers higher performance.\\
+\end{itemize}
+\item Responsibilities of Layer 1:
+\begin{itemize}
+\item Contains the businnes logic and user interface all built into the application. The first layer is responsible for all actions with the client. Contains the administration layer used to add funds to a student/tutor account as well as general configuration.
+\end{itemize}
+\item Responsibilities of Layer 2:
+\begin{itemize}
+\item Contains the data for the system.Allows multiple users to access the same data simultaneously.
+\end{itemize}
+\end{itemize}
+\includegraphics[width=140mm]{./architecture_diagram.png}
+Put in diagram similar to above of sequence of how to request a tutor.\\
 
-\subsubsection{Class Diagram}
-\includegraphics[width=140mm]{./class_diagram_findme_tutor.jpg}
-%\includegraphics[width=140mm]{./activitydiagram.png}
-%\includegraphics[width=140mm]{./.jpg}
+
+
 \subsubsection{Sequence Diagram}
 
 Sequence Diagrams show the sequence of messages passed between objects of the system over time.\\
