@@ -19,12 +19,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -74,6 +74,7 @@ public class FragmentDrawer extends Fragment {
         titles = getActivity().getResources().getStringArray(R.array.nav_drawer_labels);
 
 
+
     }
 
     Context context ;
@@ -105,10 +106,15 @@ public class FragmentDrawer extends Fragment {
         rating.setRating(Float.parseFloat(tutor_rating));
 
 
+        Random r = new Random();
+        int i1 = r.nextInt(999999 - 111111) + 111111;
+
+        String ran =    Integer.toString(i1) ;
+
 
 
         try {
-            Picasso.with(getContext()).load("http://neural.net16.net/pictures/t" + tutor_id.toString() + "JPG" ).into(pp);
+            Picasso.with(getContext()).load("http://neural.net16.net/pictures/t" + tutor_id.toString() + "JPG?"+ ran).into(pp);
         }catch (Exception e)
         {
             pp.setImageResource(R.drawable.session);
@@ -127,6 +133,7 @@ public class FragmentDrawer extends Fragment {
         });
 
         adapter = new NavigationDrawerAdapter(getActivity(), getData());
+        adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), recyclerView, new ClickListener() {
@@ -233,4 +240,11 @@ public class FragmentDrawer extends Fragment {
     public interface FragmentDrawerListener {
         public void onDrawerItemSelected(View view, int position);
     }
+
+    public void updateDrawer() {
+        adapter.notifyDataSetChanged();
+        // OR
+       // mListView.setAdapter(new AdapterShowingTheRightTitles());
+    }
+
 }

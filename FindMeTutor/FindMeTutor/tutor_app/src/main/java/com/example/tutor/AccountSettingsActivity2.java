@@ -20,6 +20,8 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.Random;
+
 public class AccountSettingsActivity2 extends AppCompatActivity {
 
     ImageView imgpp;
@@ -86,13 +88,20 @@ public class AccountSettingsActivity2 extends AppCompatActivity {
 
 
 
+        Random r = new Random();
+        int i1 = r.nextInt(999999 - 111111) + 111111;
+
+        String ran =    Integer.toString(i1) ;
+
+
 
         try {
-            Picasso.with(getApplicationContext()).load("http://neural.net16.net/pictures/t" + id.toString() + "JPG" ).into(imgpp);
+            Picasso.with(context).load("http://neural.net16.net/pictures/t" + id.toString() + "JPG?"+ ran).into(imgpp);
         }catch (Exception e)
         {
 
         }
+
 
 
 
@@ -219,7 +228,22 @@ public class AccountSettingsActivity2 extends AppCompatActivity {
             Bitmap bitmap = ((BitmapDrawable)  imgpp.getDrawable()).getBitmap() ;
           //  Bitmap b2 = Bitmap.createScaledBitmap()
             new UploadToServer(bitmap, "t" +id.toString()).execute() ;
-            Toast.makeText(getApplicationContext(), "Picture Updated", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), id+ " Picture Updated", Toast.LENGTH_SHORT).show();
+
+            Random r = new Random();
+            int i1 = r.nextInt(999999 - 111111) + 111111;
+
+            String ran =    Integer.toString(i1) ;
+
+
+
+            try {
+                Picasso.with(context).load("http://neural.net16.net/pictures/t" + id.toString() + "JPG?"+ ran).into(imgpp);
+            }catch (Exception e)
+            {
+
+            }
+
         }
 
     }

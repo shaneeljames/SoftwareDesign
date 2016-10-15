@@ -181,7 +181,8 @@ public class login extends AsyncTask<String, String, String> {
         }
         }
 
-        delegate.processFinish(result);
+
+
 
 
     }
