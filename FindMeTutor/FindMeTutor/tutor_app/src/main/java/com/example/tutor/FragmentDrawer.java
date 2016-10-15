@@ -44,6 +44,8 @@ public class FragmentDrawer extends Fragment {
     private View containerView;
     private static String[] titles = null;
     private FragmentDrawerListener drawerListener;
+    String tutor_id = null;
+    ImageView pp ;
 
     public FragmentDrawer() {
 
@@ -88,13 +90,13 @@ public class FragmentDrawer extends Fragment {
 
         TextView txtName = (TextView) layout.findViewById(R.id.txtName);
         final TextView txtBalance = (TextView) layout.findViewById(R.id.txtBalance);
-        ImageView pp = (ImageView) layout.findViewById(R.id.imgPP)  ;
+         pp = (ImageView) layout.findViewById(R.id.imgPP)  ;
         RatingBar rating = (RatingBar) layout.findViewById(R.id.ratingBar2) ;
 
         SharedPreferences myprefs =  this.getContext().getSharedPreferences("user", MODE_PRIVATE);
         String tutor_fname = myprefs.getString("tutor_fname", null);
         String tutor_lname = myprefs.getString("tutor_lname", null);
-        final  String tutor_id = myprefs.getString("tutor_student_num", null);
+         tutor_id = myprefs.getString("tutor_student_num", null);
         final String tutor_balance = myprefs.getString("tutor_balance", null);
         final String tutor_rating = myprefs.getString("tutor_rating", null);
 
@@ -161,12 +163,46 @@ public class FragmentDrawer extends Fragment {
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
                 getActivity().invalidateOptionsMenu();
+               // adapter.notifyDataSetChanged();
+              //  recyclerView.setAdapter(adapter);
+
+
+                Random r = new Random();
+                int i1 = r.nextInt(999999 - 111111) + 111111;
+
+                String ran =    Integer.toString(i1) ;
+
+
+
+                try {
+                    Picasso.with(getContext()).load("http://neural.net16.net/pictures/t" + tutor_id.toString() + "JPG?"+ ran).into(pp);
+                }catch (Exception e)
+                {
+                    pp.setImageResource(R.drawable.session);
+                }
+
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
                 getActivity().invalidateOptionsMenu();
+               // adapter.notifyDataSetChanged();
+              //  recyclerView.setAdapter(adapter);
+
+                Random r = new Random();
+                int i1 = r.nextInt(999999 - 111111) + 111111;
+
+                String ran =    Integer.toString(i1) ;
+
+
+
+                try {
+                    Picasso.with(getContext()).load("http://neural.net16.net/pictures/t" + tutor_id.toString() + "JPG?"+ ran).into(pp);
+                }catch (Exception e)
+                {
+                    pp.setImageResource(R.drawable.session);
+                }
             }
 
             @Override
