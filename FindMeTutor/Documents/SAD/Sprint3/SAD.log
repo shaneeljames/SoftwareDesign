@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  14 OCT 2016 21:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  16 OCT 2016 11:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -241,231 +241,207 @@ LaTeX Warning: No \author given.
 \openout4 = `SAD.toc'.
 
  [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 42.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 43.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 43.
 
 <./2_Tier_Diagram.png, id=11, 813.0375pt x 722.7pt>
 File: ./2_Tier_Diagram.png Graphic file (type png)
  <use ./2_Tier_Diagram.png>
-Package pdftex.def Info: ./2_Tier_Diagram.png used on input line 58.
+Package pdftex.def Info: ./2_Tier_Diagram.png used on input line 62.
 (pdftex.def)             Requested size: 398.33858pt x 354.07095pt.
 
-Overfull \hbox (37.71327pt too wide) in paragraph at lines 56--59
+Overfull \hbox (37.71327pt too wide) in paragraph at lines 60--63
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--63
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 59--61
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
 [4 <./2_Tier_Diagram.png (PNG copy)>] [5]
-Overfull \hbox (3.42508pt too wide) in paragraph at lines 89--90
+Overfull \hbox (3.42508pt too wide) in paragraph at lines 117--118
 \OT1/cmr/m/n/12 This sec-tion lists the var-i-ous or-gan-i-sa-tions who are con
 -cerned with the project. 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 107--109
-
- []
-
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 109--111
+Underfull \hbox (badness 10000) in paragraph at lines 144--146
 
  []
 
-<./trace.png, id=25, 1114.1625pt x 189.70876pt>
+[7] <./trace.png, id=29, 1114.1625pt x 189.70876pt>
 File: ./trace.png Graphic file (type png)
  <use ./trace.png>
-Package pdftex.def Info: ./trace.png used on input line 119.
+Package pdftex.def Info: ./trace.png used on input line 156.
 (pdftex.def)             Requested size: 398.33858pt x 67.82326pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 118--120
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 155--157
 [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 125--127
-
- []
-
-[7 <./trace.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
-
  []
 
 <./architecture_diagram.png, id=30, 632.3625pt x 622.325pt>
 File: ./architecture_diagram.png Graphic file (type png)
 
 <use ./architecture_diagram.png>
-Package pdftex.def Info: ./architecture_diagram.png used on input line 143.
+Package pdftex.def Info: ./architecture_diagram.png used on input line 164.
 (pdftex.def)             Requested size: 398.33858pt x 392.01933pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 143--145
+Underfull \hbox (badness 10000) in paragraph at lines 162--166
+
+ []
+
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 162--166
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--145
+Underfull \hbox (badness 10000) in paragraph at lines 162--166
 
  []
 
-[8] <./sequence_diagram/create_student.png, id=34, 1094.0875pt x 712.6625pt>
-File: ./sequence_diagram/create_student.png Graphic file (type png)
-
-<use ./sequence_diagram/create_student.png>
-Package pdftex.def Info: ./sequence_diagram/create_student.png used on input li
-ne 152.
-(pdftex.def)             Requested size: 398.33858pt x 259.47263pt.
-
-<./sequence_diagram/request_tutor.png, id=35, 1094.0875pt x 712.6625pt>
-File: ./sequence_diagram/request_tutor.png Graphic file (type png)
-
-<use ./sequence_diagram/request_tutor.png>
-Package pdftex.def Info: ./sequence_diagram/request_tutor.png used on input lin
-e 154.
-(pdftex.def)             Requested size: 398.33858pt x 259.47263pt.
-
-<./sequence_diagram/add_subject.png, id=36, 993.7125pt x 542.025pt>
-File: ./sequence_diagram/add_subject.png Graphic file (type png)
-
-<use ./sequence_diagram/add_subject.png>
-Package pdftex.def Info: ./sequence_diagram/add_subject.png used on input line 
-156.
-(pdftex.def)             Requested size: 398.33858pt x 217.27757pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--157
-
- []
-
-
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 150--157
-[]
- []
-
-
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 150--157
-[]
- []
-
-
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 150--157
-[] 
- []
-
-[9 <./architecture_diagram.png (PNG copy)>] [10 <./sequence_diagram/create_stud
-ent.png (PNG copy)> <./sequence_diagram/request_tutor.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 159--161
-
- []
-
-<./Pakage.jpg, id=43, 311.1625pt x 260.975pt>
-File: ./Pakage.jpg Graphic file (type jpg)
- <use ./Pakage.jpg>
-Package pdftex.def Info: ./Pakage.jpg used on input line 165.
-(pdftex.def)             Requested size: 398.33858pt x 334.09465pt.
-
-<./Pakage2.jpg, id=44, 1003.75pt x 481.8pt>
-File: ./Pakage2.jpg Graphic file (type jpg)
- <use ./Pakage2.jpg>
-Package pdftex.def Info: ./Pakage2.jpg used on input line 166.
-(pdftex.def)             Requested size: 398.33858pt x 191.20213pt.
-
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 163--167
-[]
- []
-
-
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 163--167
-[] 
- []
-
-[11 <./sequence_diagram/add_subject.png (PNG copy)>] [12 <./Pakage.jpg> <./Paka
-ge2.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 174--176
-
- []
-
-<./activity_diagram/request_tutor.png, id=51, 853.1875pt x 612.2875pt>
+[8 <./trace.png (PNG copy)>]
+<./activity_diagram/request_tutor.png, id=34, 853.1875pt x 612.2875pt>
 File: ./activity_diagram/request_tutor.png Graphic file (type png)
 
 <use ./activity_diagram/request_tutor.png>
 Package pdftex.def Info: ./activity_diagram/request_tutor.png used on input lin
-e 180.
+e 170.
 (pdftex.def)             Requested size: 398.33858pt x 285.86925pt.
 
-<./activity_diagram/checked_in.png, id=52, 813.0375pt x 612.2875pt>
+<./activity_diagram/checked_in.png, id=35, 813.0375pt x 612.2875pt>
 File: ./activity_diagram/checked_in.png Graphic file (type png)
 
 <use ./activity_diagram/checked_in.png>
 Package pdftex.def Info: ./activity_diagram/checked_in.png used on input line 1
-83.
+73.
 (pdftex.def)             Requested size: 398.33858pt x 299.97679pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--184
+Underfull \hbox (badness 10000) in paragraph at lines 168--174
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 178--184
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 168--174
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--184
+Underfull \hbox (badness 10000) in paragraph at lines 168--174
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 178--184
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 168--174
 [] 
  []
 
-[13 <./activity_diagram/request_tutor.png (PNG copy)>]
-<./Deployment.jpg, id=57, 642.4pt x 441.65pt>
+[9 <./architecture_diagram.png (PNG copy)>] [10 <./activity_diagram/request_tut
+or.png (PNG copy)>]
+<./sequence_diagram/create_student.png, id=42, 1094.0875pt x 712.6625pt>
+File: ./sequence_diagram/create_student.png Graphic file (type png)
+
+<use ./sequence_diagram/create_student.png>
+Package pdftex.def Info: ./sequence_diagram/create_student.png used on input li
+ne 178.
+(pdftex.def)             Requested size: 398.33858pt x 259.47263pt.
+
+<./sequence_diagram/request_tutor.png, id=43, 1094.0875pt x 712.6625pt>
+File: ./sequence_diagram/request_tutor.png Graphic file (type png)
+
+<use ./sequence_diagram/request_tutor.png>
+Package pdftex.def Info: ./sequence_diagram/request_tutor.png used on input lin
+e 180.
+(pdftex.def)             Requested size: 398.33858pt x 259.47263pt.
+
+<./sequence_diagram/add_subject.png, id=44, 993.7125pt x 542.025pt>
+File: ./sequence_diagram/add_subject.png Graphic file (type png)
+
+<use ./sequence_diagram/add_subject.png>
+Package pdftex.def Info: ./sequence_diagram/add_subject.png used on input line 
+182.
+(pdftex.def)             Requested size: 398.33858pt x 217.27757pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--183
+
+ []
+
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 176--183
+[]
+ []
+
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 176--183
+[]
+ []
+
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 176--183
+[] 
+ []
+
+[11 <./activity_diagram/checked_in.png (PNG copy)>] [12 <./sequence_diagram/cre
+ate_student.png (PNG copy)> <./sequence_diagram/request_tutor.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
+
+ []
+
+<./Pakage.jpg, id=51, 311.1625pt x 260.975pt>
+File: ./Pakage.jpg Graphic file (type jpg)
+ <use ./Pakage.jpg>
+Package pdftex.def Info: ./Pakage.jpg used on input line 191.
+(pdftex.def)             Requested size: 398.33858pt x 334.09465pt.
+
+<./Pakage2.jpg, id=52, 1003.75pt x 481.8pt>
+File: ./Pakage2.jpg Graphic file (type jpg)
+ <use ./Pakage2.jpg>
+Package pdftex.def Info: ./Pakage2.jpg used on input line 192.
+(pdftex.def)             Requested size: 398.33858pt x 191.20213pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 189--193
+[]
+ []
+
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 189--193
+[] 
+ []
+
+[13 <./sequence_diagram/add_subject.png (PNG copy)>] [14 <./Pakage.jpg> <./Paka
+ge2.jpg>] <./Deployment.jpg, id=60, 642.4pt x 441.65pt>
 File: ./Deployment.jpg Graphic file (type jpg)
  <use ./Deployment.jpg>
-Package pdftex.def Info: ./Deployment.jpg used on input line 188.
+Package pdftex.def Info: ./Deployment.jpg used on input line 207.
 (pdftex.def)             Requested size: 398.33858pt x 273.86734pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 188--189
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 207--208
 [] 
  []
 
-[14 <./activity_diagram/checked_in.png (PNG copy)>]
-<./Use_Case_Diagram.png, id=61, 1445.4pt x 1224.575pt>
+[15 <./Deployment.jpg>] <./Use_Case_Diagram.png, id=64, 1445.4pt x 1224.575pt>
 File: ./Use_Case_Diagram.png Graphic file (type png)
 
 <use ./Use_Case_Diagram.png>
-Package pdftex.def Info: ./Use_Case_Diagram.png used on input line 194.
+Package pdftex.def Info: ./Use_Case_Diagram.png used on input line 213.
 (pdftex.def)             Requested size: 398.33858pt x 337.47856pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 193--195
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 212--214
 [] 
  []
 
-[15 <./Deployment.jpg>] [16 <./Use_Case_Diagram.png (PNG copy)>] (./SAD.aux) ) 
+[16 <./Use_Case_Diagram.png (PNG copy)>] (./SAD.aux) ) 
 Here is how much of TeX's memory you used:
  2594 strings out of 494910
  34863 string characters out of 6179836
@@ -473,12 +449,12 @@ Here is how much of TeX's memory you used:
  5834 multiletter control sequences out of 15000+600000
  12710 words of font info for 49 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 37i,6n,26p,518b,197s stack positions out of 5000i,500n,10000p,200000b,80000s
-<
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on SAD.pdf (16 pages, 482848 bytes).
+ 37i,6n,26p,518b,245s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb>
+Output written on SAD.pdf (16 pages, 483052 bytes).
 PDF statistics:
  80 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream
