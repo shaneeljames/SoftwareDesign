@@ -113,10 +113,12 @@ OUTPUT RequirementsAnalysisDocument.toc
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/share/texmf-dist/tex/latex/base/omscmr.fd
-INPUT ./Use_Cases/Create_Student.jpg
-INPUT ./Use_Cases/Create_Student.jpg
-INPUT ./Use_Cases/Create_Student.jpg
+INPUT ./Sprint3Models/Use_Case_Diagram.png
+INPUT ./Sprint3Models/Use_Case_Diagram.png
+INPUT ./Sprint3Models/Use_Case_Diagram.png
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT RequirementsAnalysisDocument.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb
