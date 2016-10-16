@@ -146,7 +146,7 @@ public class tutor_checkRegister extends AsyncTask<String, String, String> {
                 connect2server.execute();
 
 
-                String fromEmail = "FindmetutorSD@gmail.com";
+                String fromEmail = "FindmetutorSD2@gmail.com";
                 String fromPassword = "findmetutors";
                 String toEmails = tutorEmail.toString();
                 String adminEmail = "admin@gmail.com";

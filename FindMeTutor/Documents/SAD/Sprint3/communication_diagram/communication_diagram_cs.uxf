@@ -8,7 +8,7 @@
       <w>720</w>
       <h>460</h>
     </coordinates>
-    <panel_attributes>Add Subject</panel_attributes>
+    <panel_attributes>Add Student</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -52,7 +52,7 @@
       <w>130</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>Subject Added
+    <panel_attributes>Student Added
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -64,7 +64,7 @@ valign=center</panel_attributes>
       <w>130</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>Subjects
+    <panel_attributes>Student
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -76,7 +76,7 @@ valign=center</panel_attributes>
       <w>170</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>1 *: add_subject()</panel_attributes>
+    <panel_attributes>1 *: add_student()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -105,11 +105,11 @@ valign=center</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>410</x>
-      <y>310</y>
-      <w>170</w>
+      <y>270</y>
+      <w>340</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>3 : add_student()</panel_attributes>
+    <panel_attributes>3 : add_student(student_demographic_data)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -126,12 +126,12 @@ valign=center</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>250</x>
-      <y>190</y>
-      <w>170</w>
+      <x>200</x>
+      <y>200</y>
+      <w>210</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>2 : search_subject()</panel_attributes>
+    <panel_attributes>2 : search_student(email)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

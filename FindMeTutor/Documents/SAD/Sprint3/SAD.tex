@@ -175,7 +175,7 @@ Put in diagram similar to above of sequence of how to request a tutor.\\
 
 \subsubsection{Class Diagram}
 The class diagram below describes the structure of the FindMeTutor system ny showing the system classes, their attributes and relationships to one another.\\
-\includegraphics[width=140mm]{./class_diagram_findme_tutor.jpg}
+\includegraphics[width=140mm]{./class_diagram/class_diagram_findme_tutor.jpg}
 
 \newpage
 
@@ -223,12 +223,27 @@ The initiating actor is either a student or a tutor where a participating actor 
 \includegraphics[width=140mm]{./activity_diagram/rate_tutor.png}
 \newpage
 \subsubsection{Communication Diagrams}
-The communication diagrams to Reqeust a Tutor and to Create a Student Account on the system are below:\\
+The communication diagrams to Reqeust a Tutor,Create a Student Account and add a subject on the system are below:\\
 \textbf{Request Tutor}\\
-\includegraphics[width=140mm]{./sequence_diagram/communication_diagram_rt.png}
-\newpage
+\includegraphics[width=140mm]{./communication_diagram/communication_diagram_rt.png}
+%\newpage
+\textbf{Create Student}\\
+\includegraphics[width=140mm]{./communication_diagram/communication_diagram_cs.png}
+
 \textbf{Add Subject}\\
-\includegraphics[width=140mm]{./sequence_diagram/communication_diagram_as.png}
+\includegraphics[width=140mm]{./communication_diagram/communication_diagram_as.png}
+
+\subsubsection{Communication Diagrams}
+The state diagrams are listed below, they depict the states in which various attributes in the the database change.\\
+
+\textbf{State Diagram: "Status" in the Confrimed Session Table}\\\\
+\text The state is changed both when the tutor has accepted the tutoring session.
+\includegraphics[width=140mm]{./state_diagram/statediagram_status.png}
+
+\text{State Diagram: "Paid" in the Tutor Student Table}\\\\
+\text The state is changed when the student has paid for the tutoring session.
+\includegraphics[width=140mm]{./state_diagram/statediagram_paid.png}
+
 
 \newpage
 
