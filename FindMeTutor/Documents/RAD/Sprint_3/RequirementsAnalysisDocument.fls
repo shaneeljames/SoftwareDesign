@@ -116,6 +116,12 @@ INPUT /usr/share/texmf-dist/tex/latex/base/omscmr.fd
 INPUT ./Sprint3Models/Use_Case_Diagram.png
 INPUT ./Sprint3Models/Use_Case_Diagram.png
 INPUT ./Sprint3Models/Use_Case_Diagram.png
+INPUT ./Sprint3Models/Analysis_Object_model3.png
+INPUT ./Sprint3Models/Analysis_Object_model3.png
+INPUT ./Sprint3Models/Analysis_Object_model3.png
+INPUT ./Sprint3Models/Dynamic_model3.png
+INPUT ./Sprint3Models/Dynamic_model3.png
+INPUT ./Sprint3Models/Dynamic_model3.png
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT RequirementsAnalysisDocument.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.9)  16 OCT 2016 20:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.9)  16 OCT 2016 22:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -485,16 +485,51 @@ Overfull \hbox (58.99843pt too wide) in alignment at lines 850--873
  [] [] [] 
  []
 
-[26] [27] [28] [29] [30] [31] (./RequirementsAnalysisDocument.aux) )
+[26] [27]
+<./Sprint3Models/Analysis_Object_model3.png, id=92, 596.98032pt x 845.40843pt>
+File: ./Sprint3Models/Analysis_Object_model3.png Graphic file (type png)
+
+<use ./Sprint3Models/Analysis_Object_model3.png>
+Package pdftex.def Info: ./Sprint3Models/Analysis_Object_model3.png used on inp
+ut line 878.
+(pdftex.def)             Requested size: 398.33858pt x 564.11162pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 878--879
+ [] 
+ []
+
+[28]
+Overfull \vbox (38.69493pt too high) has occurred while \output is active []
+
+
+[29 <./Sprint3Models/Analysis_Object_model3.png>]
+<./Sprint3Models/Dynamic_model3.png, id=101, 596.98032pt x 845.40843pt>
+File: ./Sprint3Models/Dynamic_model3.png Graphic file (type png)
+
+<use ./Sprint3Models/Dynamic_model3.png>
+Package pdftex.def Info: ./Sprint3Models/Dynamic_model3.png used on input line 
+883.
+(pdftex.def)             Requested size: 398.33858pt x 564.11162pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 883--884
+ [] 
+ []
+
+
+Overfull \vbox (38.69493pt too high) has occurred while \output is active []
+
+
+[30 <./Sprint3Models/Dynamic_model3.png>] [31] [32] [33]
+(./RequirementsAnalysisDocument.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 442 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 2549 strings out of 493013
- 33298 string characters out of 6139317
+ 2559 strings out of 493013
+ 33684 string characters out of 6139317
  114285 words of memory out of 5000000
- 6051 multiletter control sequences out of 15000+600000
+ 6059 multiletter control sequences out of 15000+600000
  12879 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,8n,26p,1291b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -502,10 +537,10 @@ Here is how much of TeX's memory you used:
 b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on RequirementsAnalysisDocument.pdf (31 pages, 252832 bytes).
+Output written on RequirementsAnalysisDocument.pdf (33 pages, 374071 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
+ 132 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
