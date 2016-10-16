@@ -52,6 +52,7 @@ SAD: Software Architecture Document
 \end{itemize}
 
 %\end{flushleft}
+\pagebreak
 
 \section{Architecture}
 This section contains a description pertaining to the architecture used in the FindMeTutor system.
@@ -89,6 +90,8 @@ The main systems of interest are the FindMeTutor which contain the following two
 The FindMeTutor system comprises of two main components: The FindMeTutor student application and the FindMeTutor tutor application. The student application is used by the students to manage anything related to a student account and the tutor application is used by the tutors to manage anything related to the tutor account.Requests for a tutor are made using the student application and responses from tutors are made using the tutor application.
 \end{itemize}
 
+\pagebreak
+
 \section{Architectural Goals and Constraints}
 The following lists the goals and constraints of the FindMeTutor system.
 \begin{itemize}
@@ -113,6 +116,8 @@ The FindMeTutor system takes security very seriously. During a tutoring session 
 The FindMeTutor system makes use of a failover or backup server in the event that something should go wrong. Furthermore FindMeTutor has made significant network improvements so as to anticipate an uptake in system usage and as a result ensure a stable system.
 \end{itemize}
 
+\pagebreak
+
 \section{Stakeholders}
 This section lists the various organisations who are concerned with the project.
 \begin{itemize}
@@ -132,6 +137,8 @@ Students want a system which address their needs as well as a proper functioning
 \item Tutors (Stakeholder 5)\\
 Tutors want a system which address their needs as well as a proper functioning system which is favourable towards them.
 \end{itemize}
+
+\pagebreak
 
 \section{Concern and Stakeholder Traceability}
 \subsection{Concerns}
@@ -155,6 +162,8 @@ The system will change as time progress, the system is largely based on the user
 The following table depicts the relationship between the concerns listed above and the various stakeholders of the FindMeTutor system.\\
 \includegraphics[width=140mm]{./trace.png}
 
+\pagebreak
+
 \section{Views}
 %Listed below are views which.
 
@@ -164,15 +173,23 @@ The FindMeTutor application uses a 2-Tier architecture.\\
 \includegraphics[width=140mm]{./architecture_diagram.png}
 Put in diagram similar to above of sequence of how to request a tutor.\\
 
+\subsubsection{Class Diagram}
+The class diagram below describes the structure of the FindMeTutor system ny showing the system classes, their attributes and relationships to one another.\\
+\includegraphics[width=140mm]{./class_diagram_findme_tutor.jpg}
+
+\newpage
 
 \subsubsection{Sequence Diagram}
 Sequence Diagrams show the sequence of messages passed between objects of the system over time.\\
 \\\textbf{Create Student Sequence Diagram}:\\
 \includegraphics[width=140mm]{./sequence_diagram/create_student.png}
+\newpage
 \textbf{Request Tutor Sequence Diagram}:\\
 \includegraphics[width=140mm]{./sequence_diagram/request_tutor.png}
 \textbf{Add Subject Sequence Diagram}:\\
 \includegraphics[width=140mm]{./sequence_diagram/add_subject.png}
+
+\newpage
 
 \subsection{Development View}
 The Development view outlines the components that are used to assemble the physical system.
@@ -188,6 +205,7 @@ Below is package diagrams of the FindMeTutor system:\\
 A component diagram describes the components used to achieve the functionality of the system.\\
 \includegraphics[width=140mm]{./component_diagram/component_diagram.png}
 
+\newpage
 
 \subsection{Process View}
 The process view considers the non-functional aspects of the system. It addresses the concerns of stakeholders concerned
@@ -200,14 +218,27 @@ An activity diagram depicts the the flows of the system and business logic with 
 \\\\\textbf{Check In:}\\
 The initiating actor is either a student or a tutor where a participating actor refers to a tutor or student.\\
 \includegraphics[width=140mm]{./activity_diagram/checked_in.png}
+\pagebreak
 \\\\\textbf{Rate Tutor:}\\
 \includegraphics[width=140mm]{./activity_diagram/rate_tutor.png}
+\newpage
+\subsubsection{Communication Diagrams}
+The communication diagrams to Reqeust a Tutor and to Create a Student Account on the system are below:\\
+\textbf{Request Tutor}\\
+\includegraphics[width=140mm]{./sequence_diagram/communication_diagram_rt.png}
+\newpage
+\textbf{Add Subject}\\
+\includegraphics[width=140mm]{./sequence_diagram/communication_diagram_as.png}
+
+\newpage
 
 \subsection{Physical View}
 The physical view describes the physical locations of software, the scalability of the system, the deployment and installation.
 \subsubsection{Deployment Diagram}
 
 \includegraphics[width=140mm]{./Deployment.jpg}
+
+\newpage
 
 \subsection{Scenarios}
 The Scenarios view address concerns of all stakeholders, this view helps show how the system is to be used.
