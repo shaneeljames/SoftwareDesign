@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  16 OCT 2016 19:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  16 OCT 2016 20:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -450,51 +450,65 @@ Package pdftex.def Info: ./sequence_diagram/communication_diagram_rt.png used o
 n input line 228.
 (pdftex.def)             Requested size: 398.33858pt x 337.0592pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 226--229
+<./sequence_diagram/communication_diagram_cs.png, id=78, 762.85pt x 501.875pt>
+File: ./sequence_diagram/communication_diagram_cs.png Graphic file (type png)
+
+<use ./sequence_diagram/communication_diagram_cs.png>
+Package pdftex.def Info: ./sequence_diagram/communication_diagram_cs.png used o
+n input line 231.
+(pdftex.def)             Requested size: 398.33858pt x 262.06393pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 226--232
+[]
+ []
+
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 226--232
 [] 
  []
 
 [20 <./sequence_diagram/communication_diagram_rt.png (PNG copy)>]
-<./sequence_diagram/communication_diagram_as.png, id=81, 762.85pt x 501.875pt>
+<./sequence_diagram/communication_diagram_as.png, id=82, 762.85pt x 501.875pt>
 File: ./sequence_diagram/communication_diagram_as.png Graphic file (type png)
 
 <use ./sequence_diagram/communication_diagram_as.png>
 Package pdftex.def Info: ./sequence_diagram/communication_diagram_as.png used o
-n input line 231.
+n input line 234.
 (pdftex.def)             Requested size: 398.33858pt x 262.06393pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 230--232
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 233--235
 [] 
  []
 
-[21 <./sequence_diagram/communication_diagram_as.png (PNG copy)>]
-<./Deployment.jpg, id=85, 642.4pt x 441.65pt>
+[21 <./sequence_diagram/communication_diagram_cs.png (PNG copy)> <./sequence_di
+agram/communication_diagram_as.png (PNG copy)>]
+<./Deployment.jpg, id=86, 642.4pt x 441.65pt>
 File: ./Deployment.jpg Graphic file (type jpg)
  <use ./Deployment.jpg>
-Package pdftex.def Info: ./Deployment.jpg used on input line 239.
+Package pdftex.def Info: ./Deployment.jpg used on input line 242.
 (pdftex.def)             Requested size: 398.33858pt x 273.86734pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 239--240
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 242--243
 [] 
  []
 
-[22 <./Deployment.jpg>] <./Use_Case_Diagram.png, id=89, 1445.4pt x 1224.575pt>
+[22 <./Deployment.jpg>] <./Use_Case_Diagram.png, id=90, 1445.4pt x 1224.575pt>
 File: ./Use_Case_Diagram.png Graphic file (type png)
 
 <use ./Use_Case_Diagram.png>
-Package pdftex.def Info: ./Use_Case_Diagram.png used on input line 247.
+Package pdftex.def Info: ./Use_Case_Diagram.png used on input line 250.
 (pdftex.def)             Requested size: 483.69684pt x 409.7914pt.
 
-Overfull \hbox (93.69684pt too wide) in paragraph at lines 246--248
+Overfull \hbox (93.69684pt too wide) in paragraph at lines 249--251
 [] 
  []
 
 [23 <./Use_Case_Diagram.png (PNG copy)>] (./SAD.aux) ) 
 Here is how much of TeX's memory you used:
- 2610 strings out of 494910
- 35720 string characters out of 6179836
+ 2615 strings out of 494910
+ 35955 string characters out of 6179836
  90326 words of memory out of 5000000
- 5846 multiletter control sequences out of 15000+600000
+ 5850 multiletter control sequences out of 15000+600000
  12710 words of font info for 49 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  37i,6n,26p,518b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -502,10 +516,10 @@ Here is how much of TeX's memory you used:
 -dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb>
-Output written on SAD.pdf (23 pages, 678418 bytes).
+Output written on SAD.pdf (23 pages, 689690 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
+ 106 PDF objects out of 1000 (max. 8388607)
  61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
