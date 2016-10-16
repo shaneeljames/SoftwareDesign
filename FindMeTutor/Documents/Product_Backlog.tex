@@ -23,90 +23,154 @@ Shaneel James-718840
 \end{center}
 
 \newpage
+\tableofcontents
+\newpage
+
 \begin{flushleft}
 
-Bellow is a table illustrating the requirements of the FindMeTutor android application with a number indicating which sprint we plan on completing the requirement in. All requirements which have a sprint number of 1 has been completed in the first sprint\\
+\section{Worklog}
+Bellow is a table illustrating the user stories and tasks of the FindMeTutor Android application with a size indicating the weighting of that particular item. Note: 0 = lowest priority, and 5 = highest priority.
 \end{flushleft}
 
+\subsubsection{User stories and tasks}
 {
 \centering
-\begin{longtable}{| l | p{10cm}| l |}
+\begin{longtable}{| p{1cm} | p{7cm}| p{5cm} | p{1cm} |}
 			\hline			
-			\textbf{Requirement} & \textbf{Functional Requirement} & \textbf{Sprint}
+			\textbf{Id} & \textbf{User story} & \textbf{Tasks and Notes} & \textbf{Size (pts 0-5)}
 			
-			\\ \hline RQ1.1 & The system shall allow a student to register  & 1\\ \hline 
-			RQ1.2 & The system shall allow a student to update their account eg update password & 3\\ \hline  
-			RQ1.3 & The system shall allow a student to view their account details  & 1\\ \hline 
-			RQ1.4 & The system shall allow a student to mark their account as deleted & 3\\ \hline 
+			\\ \hline ST-1 & As a student, I want to be able to register on the FindMeTutor application so that I can log in to the application  & \begin{itemize}
+\item First set-up database - Amazon
+\item pHp script
+\item GitHub repository
+\end{itemize} & 5 
+			\\ \hline ST-2 & As a student, I want to  log in to my account on the FindMeTutor application so that I have access to the facilities on the application.  &  & 3 
+			\\ \hline ST-3 & As a tutor, I want to be able to register on the FindMeTutor application so that I can log in to the application  & & 3 
+																\\ \hline ST-4 & As a tutor, I want to  log in to my account on the FindMeTutor application so that I have access to the facilities on the application.  &  & 3 
+																\\ \hline ST-6 & As an administrator, I want to be able to register on the FindMeTutor application so that I can log in to the application  & & 3 
+													\\ \hline ST-7 & As an administrator, I want to  log in to my account on the FindMeTutor application so that I have access to the facilities on the application  & &3 			
+
+			\\ \hline ST-8 & As a student I want to be able to request a tutor so that I can request assistance. & \begin{itemize}
+\item push notification
+\item Automatically add to events
+\item send email
+\end{itemize} & 5 													
+			\\ \hline ST-9 & As a student I want to add an event to my 'Upcoming events' so I can note scheduled tutorial sessions.  &  &3 
 			
+			\\ \hline ST-10 & As a student I want to amend an event on my 'Upcoming events' so that my scheduled tutorial sessions are true reflections.  & & 2 
 			
-			RQ2.1 & The system shall allow a tutor to register & 1\\ \hline
-			RQ2.2 & The system shall allow a tutor to update their account eg password update & 3 \\ \hline
-			RQ2.3 & The system shall allow a tutor to view their account details & 3\\ \hline
-			RQ2.4 & The system shall allow a tutor to mark their account as deleted & 3\\ \hline  
-%Sprint 2
+			\\ \hline ST-11 & As a student, I want to delete an event on my 'Upcoming events' so that my scheduled tutorial sessions are true reflections. & & 2 	
+			
+			\\ \hline ST-12 & As a student, I want to  view an event on my 'Upcoming events' to stay informed of scheduled tutorials I have requested. & & 4 
+			
+			\\ \hline ST-13 & As a tutor I want to accept a tutor request so that I can inform the student that I am willing to conduct a tutorial session.  & \begin{itemize}
+\item push notification
+\item Automatically add to events
+\item send email
+\end{itemize} &5 			
 						
-			RQ3.1 & The system shall allow a administrator to update a student account & 3\\ \hline  
-			RQ3.2 & The system shall allow a administrator to view a student account details   & 1\\ \hline 
-			RQ3.3 & The system shall allow a administrator to mark a student as deleted & 3\\ \hline 
-			RQ3.4 & The system shall allow a administrator to update a tutor account eg update password  & 3\\ \hline
-			RQ3.5 & The system shall allow a administrator to view a tutor account details & 1\\ \hline
-			RQ3.6 & The system shall allow a administrator to mark a tutor account as deleted &  3\\ \hline
-%Sprint 2: Requirements
-				
-% Ask if we have the password under update
+						\\ \hline ST-14 & As a tutor I want to  reject a tutor request so that I can inform the student that I wont be able to assist.   & \begin{itemize}
+\item push notification
+\item send email
+\end{itemize} & 5 									
 			
-% Create Administrator
-			RQ4.1 & The system shall allow an administrator to register  & 3\\ \hline 
-			RQ4.2 & The system shall allow an administrator to update their account & 3\\ \hline  
-			RQ4.3 & The system shall allow an administrator to view their account details  & 3\\ \hline 
-			RQ4.4 & The system shall allow an administrator to mark their account as deleted & 3\\ \hline 
-
-% Request tutor: student
-				RQ5.1 & The system shall allow a student to request a tutor & 2\\ \hline
-				RQ5.2 & The system shall allow a student to choose a tutor from a list  & 2\\ \hline
-
-% Request Tutor: Tutor
-				RQ6.1 & The system shall allow a tutor to accept a request & 2\\ \hline
-				RQ6.2 & The system shall allow a tutor to reject a request & 2\\ \hline
-		
-
-% Add Event: Student 
-				RQ7.1 & The system shall allow a student to add events to their personal 'Upcoming events' & 3\\ \hline	
-				RQ7.2 & The system shall allow a student to view their upcoming events & 3\\ \hline
-				RQ7.3 & The system shall allow a student to update their upcoming events & 3\\ \hline
-				RQ7.4 & The system shall allow a student to delete their upcoming events & 3\\ \hline
-				
-% Add Event: Tutor 
-				RQ8.1 & The system shall allow a tutor to add events to their personal 'Upcoming events'  & 3\\ \hline	
-				RQ8.2 & The system shall allow a tutor to view their upcoming events  & 3\\ \hline
-				RQ8.3 & The system shall allow a tutor to update their upcoming events & 3\\ \hline
-				RQ8.4 & The system shall allow a tutor to delete their upcoming events& 3\\ \hline
-								
-% Rate a tutor: student
-				RQ9.1 & The system shall allow a student to rate a tutor & 3\\ \hline
-
-% Check-in/out : Sudent
-				RQ10.1 & The system shall allow a student to check-in  & 3\\ \hline	
-				RQ10.2 & The system shall allow a student to check-out  & 3\\ \hline
-% Check-in/out : Tutor
-				RQ11.1 & The system shall allow a tutor to check-in  & 3\\ 
-\hline	
-				RQ11.2 & The system shall allow a tutor to check-out  & 3\\ \hline
-				RQ12.1 & The system shall allow a student to add funds & 3\\ \hline
-				RQ12.2 & The system shall allow a student to view funds & 3\\ \hline
-				RQ12.3 & The system shall allow a student to update funds & 3\\ \hline
-				RQ13.1 & The system shall allow a tutor to add funds & 3\\ \hline
-				RQ13.2 & The system shall allow a tutor to view funds & 3\\ \hline
-				RQ13.3 & The system shall allow a tutor to update funds & 3\\ \hline
-				RQ14.1 & The system shall allow a student to add subjects & 2\\ \hline
-				RQ15.1 & The system shall allow a student to remove subjects & 2\\ \hline
-				RQ16.1 & The system shall allow a student to login & 1\\ \hline
-				RQ16.2 & The system shall allow a tutor to login & 1\\ \hline
-				RQ16.3 & The system shall allow an administrator to login & 3\\ \hline
-				RQ17.1 & The system shall allow a student to view their upcoming sessions  & 2\\ \hline
-				RQ17.2 & The system shall allow a tutor to view their upcoming sessions  & 2\\ \hline
+			\\ \hline ST-14 & As a tutor, I can  add an event to my 'Upcoming events' so I can note scheduled tutorial sessions.  & & 3 
 			
+			\\ \hline ST-15 & As a tutor, I can  amend an event on my 'Upcoming events' so I can note scheduled tutorial sessions. & & 2 
+			
+			\\ \hline ST-16 & As a tutor, I can  delete an event on my 'Upcoming events' so I can note scheduled tutorial sessions which are of true reflection. & & 2 
+			
+			\\ \hline ST-17 & As a tutor, I can  view an event on my 'Upcoming events'   so I can note scheduled tutorial sessions.& & 4
+
+			\\ \hline ST-18 & As a student I want to select a tutor from the pool of tutors who have accepted the tutorial request, so that I can choose a tutor which I feel is most suitable (according to the rating obtained and their qualifications)  & &5 
+			
+			\\ \hline ST-19 & As a student I want to make contact with a confirmed tutor so that I can make tutorial arrangements (venue confirmation) & &5 
+			
+			\\ \hline ST-20 &As a tutor I want to make contact with a confirmed student so that we can make tutorial arrangements (venue confirmation)  & &5
+
+			\\ \hline ST-21 & As a student I want to check-in to a tutorial session so that my location is known to the administrator as a measure of safety.  & &5 
+			
+			\\ \hline ST-22 & As a student I want to check-out to a tutorial session so that my leaving of the tutorial location is known to the administrator as a measure of safety.  & &5 
+			
+			\\ \hline ST-23 & As a tutor I want to check-in to a tutorial session so that my location is known to the administrator as a measure of safety  & &5 
+			
+			\\ \hline ST-24 & As a tutor I want to check-out to a tutorial session so that my leaving of the tutorial location is known to the administrator as a measure of safety  & &5 \\ \hline
 \end{longtable}
+}
 
+\newpage
+\section{Backlog and sprints}
+%SPRINT 0
+\subsection{Sprint 0}
+\begin{itemize}
+\item Decide on a software project idea
+\item Proposal
+\item Research
+\end{itemize}
+
+%SPRINT 1
+\subsection{Sprint 1}
+{
+\centering
+\begin{longtable}{| p{7cm} | p{7cm}|}
+			\hline			
+			\textbf{Task / User story ID} & \textbf{Completed / send to backlog (SB) / To fix }
+			\\ \hline  Setup GitHub repository & Completed \\ \hline
+             \hline  Setup database & Completed \\ \hline
+             \hline  php Script database & Completed \\ \hline
+			 \hline  ST-1 & Completed \\ \hline
+             \hline  ST-2 & Completed \\ \hline
+             \hline  ST-3 & Completed \\ \hline
+             \hline  ST-4 & Completed \\ \hline
+            
+\end{longtable}
+}
+
+%SPRINT 2
+\subsection{Sprint 2}
+{
+\centering
+\begin{longtable}{| p{7cm} | p{7cm}|}
+			\hline			
+			\textbf{Task / User story ID} & \textbf{Completed / send to backlog (SB) / To fix }
+			 \\ \hline  ST-8 & Completed \\ \hline
+             \hline  ST-9 & Completed \\ \hline
+             \hline  ST-10 & Completed \\ \hline
+             \hline  ST-11 & Completed \\ \hline
+             \hline  ST-12 & Completed \\ \hline
+             \hline  ST-13 & Completed \\ \hline
+             \hline  ST-14 & Completed \\ \hline
+             \hline  ST-15 & To fix \\ \hline
+             \hline  ST-16 & To fix \\ \hline 
+             \hline  ST-17 & To fix \\ \hline
+             \hline  ST-18 & To fix \\ \hline
+             \hline  ST-19 & SB \\ \hline
+             \hline  ST-20 & SB \\ \hline
+\end{longtable}
+}
+
+%SPRINT 3
+\subsection{Sprint 3}
+{
+\centering
+\begin{longtable}{| p{7cm} | p{7cm}|}
+			\hline			
+			\textbf{Task / User story ID} & \textbf{Completed / send to backlog (SB) / To fix }
+			 \\ \hline  ST-8 & Completed \\ \hline
+             \hline  ST-9 & Completed \\ \hline
+             \hline  ST-10 & Completed \\ \hline
+             \hline  ST-11 & Completed \\ \hline
+             \hline  ST-12 & Completed \\ \hline
+             \hline  ST-13 & Completed \\ \hline
+             \hline  ST-14 & Completed \\ \hline
+             \hline  ST-15 & To fix \\ \hline
+             \hline  ST-16 & To fix \\ \hline 
+             \hline  ST-17 & To fix \\ \hline
+             \hline  ST-18 & To fix \\ \hline
+             \hline  ST-19 & SB \\ \hline
+             \hline  ST-20 & SB \\ \hline
+\end{longtable}
+}
+%SPRINT 4
+\subsection{Sprint 4}
 \end{document}
