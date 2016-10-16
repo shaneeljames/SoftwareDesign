@@ -48,6 +48,8 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         return data.size();
     }
 
+
+
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView title;
 

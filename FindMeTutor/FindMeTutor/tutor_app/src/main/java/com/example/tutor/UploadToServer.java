@@ -37,6 +37,7 @@ public class UploadToServer extends AsyncTask<Void, Void, Void> {
         this.name = n ;
     }
 
+
     @Override
     protected Void doInBackground(Void... voids) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream() ;

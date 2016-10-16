@@ -332,9 +332,9 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                                 connect2server.execute();
                                 eventViewHolder.Cancel.setText("Cancelled");
 
-                                String fromEmail = "FindmetutorSD@gmail.com";
+                                String fromEmail = "FindmetutorSD2@gmail.com";
                                 String fromPassword = "findmetutors";
-                                String toEmails =  Sessions.get(i).studentEmail.toString() ;
+                                String toEmails = Sessions.get(i).studentEmail.toString() ;
                                 String adminEmail = "admin@gmail.com";
                                 String emailSubject = "Sent from FindMeTutor";
                                 String adminSubject = "App Registration Mail";
