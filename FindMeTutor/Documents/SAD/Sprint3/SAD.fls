@@ -122,6 +122,9 @@ INPUT ./trace.png
 INPUT ./architecture_diagram.png
 INPUT ./architecture_diagram.png
 INPUT ./architecture_diagram.png
+INPUT ./class_diagram_findme_tutor.jpg
+INPUT ./class_diagram_findme_tutor.jpg
+INPUT ./class_diagram_findme_tutor.jpg
 INPUT ./sequence_diagram/create_student.png
 INPUT ./sequence_diagram/create_student.png
 INPUT ./sequence_diagram/create_student.png
@@ -146,6 +149,12 @@ INPUT ./activity_diagram/checked_in.png
 INPUT ./activity_diagram/rate_tutor.png
 INPUT ./activity_diagram/rate_tutor.png
 INPUT ./activity_diagram/rate_tutor.png
+INPUT ./sequence_diagram/communication_diagram_rt.png
+INPUT ./sequence_diagram/communication_diagram_rt.png
+INPUT ./sequence_diagram/communication_diagram_rt.png
+INPUT ./sequence_diagram/communication_diagram_as.png
+INPUT ./sequence_diagram/communication_diagram_as.png
+INPUT ./sequence_diagram/communication_diagram_as.png
 INPUT ./Deployment.jpg
 INPUT ./Deployment.jpg
 INPUT ./Deployment.jpg
