@@ -375,6 +375,9 @@ Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 % remove completed sessions
 \item ACT 18.01 A student can mark off completed tutorial sessions(pass)
 \item ACT18.02	A tutor can mark off completed tutorial sessions(pass)
+% Payment of session
+\item ACT 19.01 A student's account can make payment to the tutor's account (pass)
+\item ACT19.02	A tutor can view funds recieved as payment for tutorial session(pass)
 \end{itemize}
 
 \subsection{System models}
@@ -867,52 +870,66 @@ Use case:
 \newpage
 \subsubsection{User stories}
 {
-\centering
+
 \begin{longtable}{| l | p{10cm}| l |}
 			\hline
 			\textbf{Identifier} & \textbf{User story} & \textbf{Size (points)}
 
-			\\ \hline ST-1 & As a student, I can  register on the FindMeTutor application  & 5
-			\\ \hline ST-2 & As a student, I can  login to my account on the FindMeTutor application  & 5
-			\\ \hline ST-3 & As a tutor, I can  register on the FindMeTutor application  & 5
-																\\ \hline ST-4 & As a tutor, I can  login to my account on the FindMeTutor application  & 5
-																\\ \hline ST-6 & As an administrator, I can  register on the FindMeTutor application  & 5
-													\\ \hline ST-7 & As an administrator, I can  login to my account on the FindMeTutor application  & 5
+						\\ \hline ST-1 & As a student, I want to be able to register on the FindMeTutor application so that I can log in to the application  & 5 
+			\\ \hline ST-2 & As a student, I want to  log in to my account on the FindMeTutor application so that I have access to the facilities on the application.  & 3 
+			\\ \hline ST-3 & As a tutor, I want to be able to register on the FindMeTutor application so that I can log in to the application  & 3 
+																\\ \hline ST-4 & As a tutor, I want to  log in to my account on the FindMeTutor application so that I have access to the facilities on the application.  & 3 
+																\\ \hline ST-6 & As an administrator, I want to be able to register on the FindMeTutor application so that I can log in to the application  & 3 
+													\\ \hline ST-7 & As an administrator, I want to  log in to my account on the FindMeTutor application so that I have access to the facilities on the application  &3 			
 
-			\\ \hline ST-8 & As a student, I can  request a tutor  & 5
-			\\ \hline ST-9 & As a student, I can  add an event to my 'Upcoming events'  & 5
+			\\ \hline ST-8 & As a student I want to be able to request a tutor so that I can request assistance.& 5 													
+			\\ \hline ST-9 & As a student I want to add an event to my 'Upcoming events' so I can note scheduled tutorial sessions. &3 
+			
+			\\ \hline ST-10 & As a student I want to amend an event on my 'Upcoming events' so that my scheduled tutorial sessions are true reflections. & 2 
+			
+			\\ \hline ST-11 & As a student, I want to delete an event on my 'Upcoming events' so that my scheduled tutorial sessions are true reflections. & 2 	
+			
+			\\ \hline ST-12 & As a student, I want to  view an event on my 'Upcoming events' to stay informed of scheduled tutorials I have requested. & 4 
+			
+			\\ \hline ST-13 & As a tutor I want to accept a tutor request so that I can inform the student that I am willing to conduct a tutorial session. &5 			
+						
+						\\ \hline ST-14 & As a tutor I want to  reject a tutor request so that I can inform the student that I wont be able to assist.   & 5 									
+			
+			\\ \hline ST-14 & As a tutor, I can  add an event to my 'Upcoming events' so I can note scheduled tutorial sessions.  & 3 
+			
+			\\ \hline ST-15 & As a tutor, I can  amend an event on my 'Upcoming events' so I can note scheduled tutorial sessions.  & 2 
+			
+			\\ \hline ST-16 & As a tutor, I can  delete an event on my 'Upcoming events' so I can note scheduled tutorial sessions which are of true reflection. & 2 
+			
+			\\ \hline ST-17 & As a tutor, I can  view an event on my 'Upcoming events'   so I can note scheduled tutorial sessions. & 4
 
-			\\ \hline ST-10 & As a student, I can  ammend an event on my 'Upcoming events'  & 5
+			\\ \hline ST-18 & As a student I want to select a tutor from the pool of tutors who have accepted the tutorial request, so that I can choose a tutor which I feel is most suitable (according to the rating obtained and their qualifications)  &5 
+			
+			\\ \hline ST-19 & As a student I want to make contact with a confirmed tutor so that I can make tutorial arrangements (venue confirmation) &5 
+			
+			\\ \hline ST-20 &As a tutor I want to make contact with a confirmed student so that we can make tutorial arrangements (venue confirmation)  &5
 
-			\\ \hline ST-11 & As a student, I can  delete an event on my 'Upcoming events'  & 5
+			\\ \hline ST-21 & As a student I want to check-in to a tutorial session so that my location is known to the administrator as a measure of safety.  &5 
+			
+			\\ \hline ST-22 & As a student I want to check-out to a tutorial session so that my leaving of the tutorial location is known to the administrator as a measure of safety.   &5 
+			
+			\\ \hline ST-23 & As a tutor I want to check-in to a tutorial session so that my location is known to the administrator as a measure of safety  &5 
+			
+			\\ \hline ST-24 & As a tutor I want to check-out to a tutorial session so that my leaving of the tutorial location is known to the administrator as a measure of safety  &5 
+			
+			
+			\\ \hline ST-25 & As a student I want edit my profile so that my details are constantly up-to-date.  	 &3
+			
+			
+			\\ \hline ST-26 & As a tutor I want edit my profile so that my details are constantly up-to-date.  &3 
 
-			\\ \hline ST-12 & As a student, I can  view an event on my 'Upcoming events'  & 5
-
-			\\ \hline ST-13 & As a tutor, I can  accept a tutor request  & 5
-
-						\\ \hline ST-14 & As a tutor, I can  reject a tutor request  & 5
-
-			\\ \hline ST-14 & As a tutor, I can  add an event to my 'Upcoming events'  & 5
-
-			\\ \hline ST-15 & As a tutor, I can  ammend an event on my 'Upcoming events'  & 5
-
-			\\ \hline ST-16 & As a tutor, I can  delete an event on my 'Upcoming events'  & 5
-
-			\\ \hline ST-17 & As a tutor, I can  view an event on my 'Upcoming events'  & 5
-
-			\\ \hline ST-18 & As a student, I can  select a tutor  & 5
-
-			\\ \hline ST-19 & As a student, I can  make contact with a tutor to make tutorial arrangements  & 5
-
-			\\ \hline ST-20 & As a tutor, I can  make tutorial arrangments with a student who has contacted me  & 5
-
-			\\ \hline ST-21 & As a student, I can  check-in to a tutorial session  & 5
-
-			\\ \hline ST-22 & As a student, I can  check-out to a tutorial session  & 5
-
-			\\ \hline ST-23 & As a tutor, I can  check-in to a tutorial session  & 5
-
-			\\ \hline ST-24 & As a tutor, I can  check-out to a tutorial session  & 5 \\ \hline
+			\\ \hline ST-27 & As a student I want to use the 'About' function to assist in my understanding of how the app works.  &2
+			
+			\\ \hline ST-28 & As a tutor I want to use the 'About' function to assist in my understanding of how the app works.   &2 
+						
+			\\ \hline ST-29 & As a student I want to rate a tutor that has tutored me, to give feedback to fellow students and to the tutor about my understanding after the tutorial session. &4 
+			
+			\\ \hline ST-30 & As a student I want a payment to be made, once I have checked out, as well as once the tutor has checked out so that the payment can only be made from my account once we have both checked out as a measure of safety.  &4 \\ \hline
 \end{longtable}
 }
 
