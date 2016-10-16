@@ -32,7 +32,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
     private Toolbar mToolbar;
     private FragmentDrawer drawerFragment;
 
-    String student_id, student_password, student_lname, student_fname, student_student_num, student_email, student_contact_number, student_current_balance;
+    String student_id, student_password, student_lname, student_fname, student_student_num, student_email, student_contact_number, student_current_balance, student_rating;
     ImageView img;
 
     SharedPreferences myprefs;
@@ -47,47 +47,57 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
         //get extras from login
 
         Intent intent = getIntent();
+        String key = intent.getStringExtra("key");
+        if (key.equals("0")) {
+
+
         String jsonString = intent.getStringExtra("user");
-       // Toast.makeText(getApplicationContext(), "Login Successful "+jsonString, Toast.LENGTH_SHORT).show();
+        // Toast.makeText(getApplicationContext(), "Login Successful "+jsonString, Toast.LENGTH_SHORT).show();
 
         //conv json to strings
 
         try {
 
             JSONArray jsonArr = new JSONArray(jsonString);
-           // Toast.makeText(getApplicationContext(), "Login Successful "+jsonString, Toast.LENGTH_SHORT).show();
+            // Toast.makeText(getApplicationContext(), "Login Successful "+jsonString, Toast.LENGTH_SHORT).show();
             //Subjects pass = null;
             //Subjects subjects = new Subjects("h", 0, parent, pass);
 
-                JSONObject jsObj = jsonArr.getJSONObject(0);//get rood json obj
-                student_id = jsObj.getString("student_id");
-                student_student_num = jsObj.getString("student_student_number");
-                student_fname = jsObj.getString("student_fname");
-                student_lname = jsObj.getString("student_lname");
-                student_contact_number = jsObj.getString("student_contact_num");
-                student_email = jsObj.getString("student_email");
-                student_password = jsObj.getString("student_password");
-                student_current_balance = jsObj.getString("student_current_balance");
-
+            JSONObject jsObj = jsonArr.getJSONObject(0);//get rood json obj
+            student_id = jsObj.getString("student_id");
+            student_student_num = jsObj.getString("student_student_number");
+            student_fname = jsObj.getString("student_fname");
+            student_lname = jsObj.getString("student_lname");
+            student_contact_number = jsObj.getString("student_contact_num");
+            student_email = jsObj.getString("student_email");
+            student_password = jsObj.getString("student_password");
+            student_current_balance = jsObj.getString("student_current_balance");
+            student_rating = jsObj.getString("student_rating");
 
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-       // Toast.makeText(getApplicationContext(), student_id+" fname: "+student_fname+student_password+student_email+student_contact_number, Toast.LENGTH_LONG).show();
+        // Toast.makeText(getApplicationContext(), student_id+" fname: "+student_fname+student_password+student_email+student_contact_number, Toast.LENGTH_LONG).show();
 
         //Set Shared prefrences so we can access usr data throughout activities
 
-        myprefs= this.getSharedPreferences("user", MODE_PRIVATE);
+        myprefs = this.getSharedPreferences("user", MODE_PRIVATE);
         myprefs.edit().putString("student_id", student_id).apply();
         myprefs.edit().putString("student_password", student_password).apply();
         myprefs.edit().putString("student_lname", student_lname).apply();
         myprefs.edit().putString("student_fname", student_fname).apply();
         myprefs.edit().putString("student_student_num", student_student_num).apply();
-        myprefs.edit().putString("student_email",student_email).apply();
+        myprefs.edit().putString("student_email", student_email).apply();
         myprefs.edit().putString("student_contact_number", student_contact_number).apply();
         myprefs.edit().putString("student_current_balance", student_current_balance).apply();
+        myprefs.edit().putString("student_rating",student_rating).apply();
+
+    }
+        else{
+            Toast.makeText(getApplicationContext(),"Coming from nothing",Toast.LENGTH_SHORT).show();
+        }
 
         //set up nav and toolBar
 

@@ -45,6 +45,7 @@ public class FragmentDrawer extends Fragment {
     private FragmentDrawerListener drawerListener;
 
     String nme;
+
     String cred;
 
     public FragmentDrawer() {

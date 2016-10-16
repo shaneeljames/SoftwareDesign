@@ -28,6 +28,9 @@ public class GetLocation2 {
     String TutorStudentID;
     int status;
 
+    double longa;
+    double lat;
+
 
     public GetLocation2(Activity par, String tsi, int i) {
 
@@ -44,7 +47,9 @@ public class GetLocation2 {
                 if (count[0] == 0) {
 
                     if (status == 0) {
-                        Toast.makeText(parent.getApplicationContext(), "Lat: " + location.getLatitude() + " Long: " + location.getLongitude(), Toast.LENGTH_SHORT).show();
+                        lat = location.getLatitude();
+                        longa= location.getLongitude();
+                        //Toast.makeText(parent.getApplicationContext(), "Lat: " + lat+ " Long: " + longa, Toast.LENGTH_SHORT).show();
                         student_checkin connect2server = new student_checkin(parent, TutorStudentID, "Lat: " + location.getLatitude() + " Long: " + location.getLongitude());
                         connect2server.execute();
                     }
@@ -130,6 +135,14 @@ public class GetLocation2 {
                 //  configureButton();
         }
 
+    }
+
+    public double getLong (){
+        return longa;
+    }
+
+    public  double getLat(){
+        return lat;
     }
 
 }

@@ -131,6 +131,7 @@ public class login extends AsyncTask<String, String, String> {
           Toast.makeText(parent.getApplicationContext(), "Login Successful ", Toast.LENGTH_LONG).show();
 
           Intent goHome = new Intent(parent, HomeActivity.class);
+          goHome.putExtra("key","0");
           goHome.putExtra("user", result);
           parent.startActivity(goHome);
       }

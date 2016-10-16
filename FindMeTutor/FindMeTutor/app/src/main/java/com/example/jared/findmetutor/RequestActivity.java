@@ -38,12 +38,17 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     Button req;
     String curSelection;
 
+    Button send;
+
 
     String id;
     String subjId;
+    String fname;
+    String lname;
 
     List<Subjects> list = new ArrayList<Subjects>();
     getsubject connect2server;
+
 
 
     @Override
@@ -58,6 +63,8 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
 
         SharedPreferences myprefs =  getSharedPreferences("user", MODE_PRIVATE);
         id= myprefs.getString("student_id", null);
+        fname = myprefs.getString("student_fname",null);
+        lname = myprefs.getString("student_lname",null);
 
         connect2server = new getsubject(this, id, list);
         connect2server.delegate = this;
@@ -72,11 +79,39 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         timePicker.setIs24HourView(true);
 
         req = (Button)findViewById(R.id.btn_request);
+        send = (Button)findViewById(R.id.Send);
 
         req.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
+
+
                 request();
+
+
+
+            }
+        });
+
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String fromEmail = "FindmetutorSD2@gmail.com";
+                String fromPassword = "findmetutors";
+                String toEmails =  "jadonjessem@gmail.com";//Sessions.get(i).studentEmail.toString() ;
+                String adminEmail = "admin@gmail.com";
+                String emailSubject = "Sent from FindMeTutor";
+                String adminSubject = "App Registration Mail";
+                String emailBody =
+                        "Dear "+ fname + " " + lname
+                                +"<br><br>We apologize for the inconvenience";
+                String adminBody = "Your message";
+                new SendMailTask(getApplicationContext()).execute(fromEmail,
+                        fromPassword, toEmails, emailSubject, emailBody);
+
             }
         });
 
@@ -115,6 +150,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     @Override
     public  void processFinish2(String out){
         Intent goHome = new Intent(RequestActivity.this, HomeActivity.class);
+        goHome.putExtra("key","1");
         startActivity(goHome);
     }
 

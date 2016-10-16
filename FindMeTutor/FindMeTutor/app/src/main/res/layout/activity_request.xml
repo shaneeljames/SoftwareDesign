@@ -16,7 +16,6 @@
         layout="@layout/toolbar" />
 
 
-
     <ScrollView
         android:id="@+id/sview"
         android:layout_width="match_parent"
@@ -105,15 +104,17 @@
                 android:textColor="@android:color/white"
               />
 
+            <Button
+                android:id="@+id/Send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send Emails"/>
+
 
 
 
         </LinearLayout>
     </ScrollView>
-
-
-
-
 
 
 </LinearLayout>

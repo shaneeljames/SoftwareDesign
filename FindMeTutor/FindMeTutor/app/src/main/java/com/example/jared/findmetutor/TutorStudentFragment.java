@@ -68,6 +68,9 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
     String sessionId;
     int status =0;
 
+    double myLat;
+    double myLong;
+
 
 
 
@@ -132,6 +135,11 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
             @Override
             public void onClick(View view) {
                 GetLocation2 getLocation = new GetLocation2(getActivity(), sessionId, status  );
+                myLat = getLocation.getLat();
+                myLong = getLocation.getLong();
+
+                Toast.makeText(getContext(), "Lat: " + myLat+ " Long: " + myLong, Toast.LENGTH_SHORT).show();
+
             }
         });
 
