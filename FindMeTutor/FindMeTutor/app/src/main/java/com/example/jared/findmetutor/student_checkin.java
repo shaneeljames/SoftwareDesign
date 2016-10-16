@@ -29,6 +29,7 @@ import java.util.Map;
         String TutorStudentID;
         String Checkin ;
 
+
         public student_checkin(Activity par, String tsi , String c){
             parent = par;
             TutorStudentID = tsi;
@@ -122,9 +123,11 @@ import java.util.Map;
 
             }else {
                 //If they're in the DB then login to the Home page
-                Toast.makeText(parent.getApplicationContext(), "Tutor Checkin " + result, Toast.LENGTH_SHORT).show();
+                Toast.makeText(parent.getApplicationContext(), "Student Checkin " + result, Toast.LENGTH_SHORT).show();
 
             }
+
+
         }
 
         public String sendResults()

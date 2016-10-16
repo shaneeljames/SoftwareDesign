@@ -36,6 +36,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
     List<Session> list = new ArrayList<>();
 
     RecyclerView rv;
+    CardViewAdapter adapter;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -136,7 +137,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
            // Toast.makeText(getContext(), "On post LIST : "+list.get(1).SubjectName, Toast.LENGTH_SHORT).show();
 
 
-            CardViewAdapter adapter = new CardViewAdapter(list, this.getContext(), this);
+            adapter = new CardViewAdapter(list, this.getContext(), this);
             //adapter.notifyDataSetChanged();
             rv.setAdapter(adapter);
         }
@@ -175,12 +176,13 @@ public class HomeFragment extends Fragment implements AsyncResponse{
 
     }
 
-    public void switchContentSession(String id, String sessID) {
+    public void switchContentSession(String id, String sessID, String tutID) {
         mContent = new TutorStudentFragment();
 
         Bundle bundle=new Bundle();
         bundle.putString("tutor_student_num", id);
         bundle.putString("sessionID", sessID);
+        bundle.putString("tutorID",tutID);
 
         mContent.setArguments(bundle);
 
@@ -193,6 +195,12 @@ public class HomeFragment extends Fragment implements AsyncResponse{
         fragmentTransaction.replace(R.id.container_body, mContent);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+
+    }
+
+    public void removeItem(View v){
+        int selectItemPos = rv.getChildPosition(v);
+        adapter.notifyItemRemoved(selectItemPos);
 
     }
 
