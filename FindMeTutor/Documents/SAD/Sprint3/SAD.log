@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.9)  16 OCT 2016 14:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.9)  16 OCT 2016 20:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -374,9 +374,21 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 182--185
 [] 
  []
 
-[11 <./sequence_diagram/add_subject.png (PNG copy)>] [12 <./package_diagram/pac
-kage_diagram.png (PNG copy)>]
-<./activity_diagram/request_tutor.png, id=50, 853.1875pt x 612.2875pt>
+[11 <./sequence_diagram/add_subject.png (PNG copy)>]
+<./component_diagram/component_diagram.png, id=47, 813.0375pt x 391.4625pt>
+File: ./component_diagram/component_diagram.png Graphic file (type png)
+
+<use ./component_diagram/component_diagram.png>
+Package pdftex.def Info: ./component_diagram/component_diagram.png used on inpu
+t line 189.
+(pdftex.def)             Requested size: 398.33858pt x 191.78842pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 188--190
+[] 
+ []
+
+[12 <./package_diagram/package_diagram.png (PNG copy)>]
+<./activity_diagram/request_tutor.png, id=51, 853.1875pt x 612.2875pt>
 File: ./activity_diagram/request_tutor.png Graphic file (type png)
 
 <use ./activity_diagram/request_tutor.png>
@@ -384,7 +396,7 @@ Package pdftex.def Info: ./activity_diagram/request_tutor.png used on input lin
 e 199.
 (pdftex.def)             Requested size: 398.33858pt x 285.86925pt.
 
-<./activity_diagram/checked_in.png, id=51, 813.0375pt x 612.2875pt>
+<./activity_diagram/checked_in.png, id=52, 813.0375pt x 612.2875pt>
 File: ./activity_diagram/checked_in.png Graphic file (type png)
 
 <use ./activity_diagram/checked_in.png>
@@ -392,7 +404,7 @@ Package pdftex.def Info: ./activity_diagram/checked_in.png used on input line 2
 02.
 (pdftex.def)             Requested size: 398.33858pt x 299.97679pt.
 
-<./activity_diagram/rate_tutor.png, id=52, 622.325pt x 531.9875pt>
+<./activity_diagram/rate_tutor.png, id=53, 622.325pt x 531.9875pt>
 File: ./activity_diagram/rate_tutor.png Graphic file (type png)
 
 <use ./activity_diagram/rate_tutor.png>
@@ -429,11 +441,11 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 197--205
 [] 
  []
 
-[13 <./activity_diagram/request_tutor.png (PNG copy)>] [14 <./activity_diagram/
-checked_in.png (PNG copy)>] <./Deployment.jpg, id=60, 642.4pt x 441.65pt>
+[13 <./component_diagram/component_diagram.png (PNG copy)>] [14 <./activity_dia
+gram/request_tutor.png (PNG copy)>] [15 <./activity_diagram/checked_in.png (PNG
+ copy)>] <./Deployment.jpg, id=64, 642.4pt x 441.65pt>
 File: ./Deployment.jpg Graphic file (type jpg)
-
-<use ./Deployment.jpg>
+ <use ./Deployment.jpg>
 Package pdftex.def Info: ./Deployment.jpg used on input line 210.
 (pdftex.def)             Requested size: 398.33858pt x 273.86734pt.
 
@@ -441,8 +453,8 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 210--211
 [] 
  []
 
-[15 <./activity_diagram/rate_tutor.png (PNG copy)>]
-<./Use_Case_Diagram.png, id=64, 1445.4pt x 1224.575pt>
+[16 <./activity_diagram/rate_tutor.png (PNG copy)>]
+<./Use_Case_Diagram.png, id=68, 1445.4pt x 1224.575pt>
 File: ./Use_Case_Diagram.png Graphic file (type png)
 
 <use ./Use_Case_Diagram.png>
@@ -453,12 +465,12 @@ Overfull \hbox (93.69684pt too wide) in paragraph at lines 215--217
 [] 
  []
 
-[16 <./Deployment.jpg>] [17 <./Use_Case_Diagram.png (PNG copy)>] (./SAD.aux) ) 
+[17 <./Deployment.jpg>] [18 <./Use_Case_Diagram.png (PNG copy)>] (./SAD.aux) ) 
 Here is how much of TeX's memory you used:
- 2599 strings out of 493013
- 34598 string characters out of 6139317
+ 2605 strings out of 493013
+ 34822 string characters out of 6139317
  95149 words of memory out of 5000000
- 6089 multiletter control sequences out of 15000+600000
+ 6093 multiletter control sequences out of 15000+600000
  12710 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,6n,26p,518b,245s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -466,10 +478,10 @@ Here is how much of TeX's memory you used:
 /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb>
-Output written on SAD.pdf (17 pages, 553484 bytes).
+Output written on SAD.pdf (18 pages, 566936 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 87 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
