@@ -39,6 +39,11 @@ public class TutorsViewAdapter extends RecyclerView.Adapter<TutorsViewAdapter.Ev
 
     }
 
+    @Override
+    public void processFinish3(String outp) {
+
+    }
+
     public static class EventViewHolder extends RecyclerView.ViewHolder {
         CardView cv;
 

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import android.support.v7.widget.Toolbar;
@@ -111,10 +112,19 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
 
         TextView n = (TextView)drawerFragment.getView().findViewById(R.id.nameTxt);
         TextView c = (TextView)drawerFragment.getView().findViewById(R.id.creditsTxt);
+        RatingBar rate = (RatingBar)drawerFragment.getView().findViewById(R.id.ratingBarMe);
         img = (ImageView)drawerFragment.getView().findViewById(R.id.iv);
 
         n.setText(student_fname+ " "+student_lname);
         c.setText(student_current_balance);
+
+        //Set the students rating
+        String rat = student_rating;
+        int dotIndex = rat.indexOf(".");
+        String st = rat.substring(0,dotIndex+2);
+        float r = Float.parseFloat(st);
+        rate.setStepSize(0.1f);
+        rate.setRating(r);
 
         try {
             Picasso.with(getApplicationContext()).load("http://neural.net16.net/pictures/s" + student_student_num + "JPG" ).into(img);

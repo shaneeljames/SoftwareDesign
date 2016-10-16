@@ -464,6 +464,11 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
 
     }
 
+    @Override
+    public void processFinish3(String outp) {
+
+    }
+
 
     private class MyTextWatcher implements TextWatcher {
 

@@ -128,7 +128,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
 
         if(temp.equals("[]"))
         {
-            Toast.makeText(getContext(), "No subjects Ass some", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "No subjects Add some", Toast.LENGTH_SHORT).show();
         }
         else{
             list = connect2server.getList();
@@ -147,6 +147,11 @@ public class HomeFragment extends Fragment implements AsyncResponse{
 
     @Override
     public void processFinish2(String out) {
+
+    }
+
+    @Override
+    public void processFinish3(String outp) {
 
     }
 
