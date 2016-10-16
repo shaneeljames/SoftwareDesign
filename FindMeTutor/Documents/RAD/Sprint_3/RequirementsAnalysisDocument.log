@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  16 OCT 2016 16:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  16 OCT 2016 16:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -505,20 +505,21 @@ Overfull \hbox (58.99843pt too wide) in alignment at lines 910--933
 ### simple group (level 1) entered at line 442 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 2535 strings out of 493085
- 33632 string characters out of 6136916
+ 2538 strings out of 493085
+ 33671 string characters out of 6136916
  113737 words of memory out of 5000000
- 5980 multiletter control sequences out of 15000+600000
- 12710 words of font info for 49 fonts, out of 8000000 for 9000
+ 5982 multiletter control sequences out of 15000+600000
+ 12879 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,8n,26p,1291b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on RequirementsAnalysisDocument.pdf (34 pages, 100190 bytes).
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on RequirementsAnalysisDocument.pdf (34 pages, 105004 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
+ 130 PDF objects out of 1000 (max. 8388607)
+ 88 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
