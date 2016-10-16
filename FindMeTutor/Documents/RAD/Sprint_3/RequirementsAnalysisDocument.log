@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  16 OCT 2016 16:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  16 OCT 2016 16:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -499,7 +499,7 @@ Overfull \hbox (58.99843pt too wide) in alignment at lines 910--933
  [] [] [] 
  []
 
-[29] [30] [31] [32] (./RequirementsAnalysisDocument.aux) )
+[29] [30] [31] [32] [33] (./RequirementsAnalysisDocument.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 442 ({)
@@ -515,10 +515,10 @@ Here is how much of TeX's memory you used:
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on RequirementsAnalysisDocument.pdf (32 pages, 99589 bytes).
+Output written on RequirementsAnalysisDocument.pdf (33 pages, 99921 bytes).
 PDF statistics:
- 120 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 123 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
