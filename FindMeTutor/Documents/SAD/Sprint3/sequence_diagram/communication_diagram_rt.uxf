@@ -76,7 +76,7 @@ valign=center</panel_attributes>
       <w>130</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>Funds?
+    <panel_attributes>Tutor
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -155,30 +155,30 @@ valign=center</panel_attributes>
       <w>130</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>Tutor
+    <panel_attributes>Funds
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>380</y>
-      <w>70</w>
-      <h>70</h>
+      <x>370</x>
+      <y>430</y>
+      <w>40</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;50.0;50.0</additional_attributes>
+    <additional_attributes>20.0;40.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>480</x>
-      <y>390</y>
+      <x>470</x>
+      <y>380</y>
       <w>170</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>1.1 : check_funds()</panel_attributes>
+    <panel_attributes>1.2 : check_funds()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -244,7 +244,7 @@ valign=center</panel_attributes>
       <w>170</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>3 : request_tutor()</panel_attributes>
+    <panel_attributes>4 : request_tutor()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -257,5 +257,27 @@ valign=center</panel_attributes>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>320</y>
+      <w>100</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>80.0;230.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>270</x>
+      <y>450</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>3 : find_tutor()</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
