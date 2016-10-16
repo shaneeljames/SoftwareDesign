@@ -52,6 +52,7 @@ SAD: Software Architecture Document
 \end{itemize}
 
 %\end{flushleft}
+\pagebreak
 
 \section{Architecture}
 This section contains a description pertaining to the architecture used in the FindMeTutor system.
@@ -89,6 +90,8 @@ The main systems of interest are the FindMeTutor which contain the following two
 The FindMeTutor system comprises of two main components: The FindMeTutor student application and the FindMeTutor tutor application. The student application is used by the students to manage anything related to a student account and the tutor application is used by the tutors to manage anything related to the tutor account.Requests for a tutor are made using the student application and responses from tutors are made using the tutor application.
 \end{itemize}
 
+\pagebreak
+
 \section{Architectural Goals and Constraints}
 The following lists the goals and constraints of the FindMeTutor system.
 \begin{itemize}
@@ -113,6 +116,8 @@ The FindMeTutor system takes security very seriously. During a tutoring session 
 The FindMeTutor system makes use of a failover or backup server in the event that something should go wrong. Furthermore FindMeTutor has made significant network improvements so as to anticipate an uptake in system usage and as a result ensure a stable system.
 \end{itemize}
 
+\pagebreak
+
 \section{Stakeholders}
 This section lists the various organisations who are concerned with the project.
 \begin{itemize}
@@ -132,6 +137,8 @@ Students want a system which address their needs as well as a proper functioning
 \item Tutors (Stakeholder 5)\\
 Tutors want a system which address their needs as well as a proper functioning system which is favourable towards them.
 \end{itemize}
+
+\pagebreak
 
 \section{Concern and Stakeholder Traceability}
 \subsection{Concerns}
@@ -155,6 +162,8 @@ The system will change as time progress, the system is largely based on the user
 The following table depicts the relationship between the concerns listed above and the various stakeholders of the FindMeTutor system.\\
 \includegraphics[width=140mm]{./trace.png}
 
+\pagebreak
+
 \section{Views}
 %Listed below are views which.
 
@@ -177,6 +186,8 @@ Sequence Diagrams show the sequence of messages passed between objects of the sy
 \textbf{Add Subject Sequence Diagram}:\\
 \includegraphics[width=140mm]{./sequence_diagram/add_subject.png}
 
+\newpage
+
 \subsection{Development View}
 The Development view outlines the components that are used to assemble the physical system.
 This view addresses the concerns of stakeholders concerned with the development of system such as developers.\\
@@ -191,6 +202,7 @@ Below is package diagrams of the FindMeTutor system:\\
 A component diagram describes the components used to achieve the functionality of the system.\\
 \textbf{ADD COMPONENT DIAGRAM}
 
+\newpage
 
 \subsection{Process View}
 The process view considers the non-functional aspects of the system. It addresses the concerns of stakeholders concerned
@@ -206,11 +218,15 @@ The initiating actor is either a student or a tutor where a participating actor 
 \\\\\textbf{Rate Tutor:}\\
 \includegraphics[width=140mm]{./activity_diagram/rate_tutor.png}
 
+\newpage
+
 \subsection{Physical View}
 The physical view describes the physical locations of software, the scalability of the system, the deployment and installation.
 \subsubsection{Deployment Diagram}
 
 \includegraphics[width=140mm]{./Deployment.jpg}
+
+\newpage
 
 \subsection{Scenarios}
 The Scenarios view address concerns of all stakeholders, this view helps show how the system is to be used.
