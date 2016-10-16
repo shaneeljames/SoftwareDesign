@@ -167,20 +167,6 @@ public class FragmentDrawer extends Fragment {
               //  recyclerView.setAdapter(adapter);
 
 
-                Random r = new Random();
-                int i1 = r.nextInt(999999 - 111111) + 111111;
-
-                String ran =    Integer.toString(i1) ;
-
-
-
-                try {
-                    Picasso.with(getContext()).load("http://neural.net16.net/pictures/t" + tutor_id.toString() + "JPG?"+ ran).into(pp);
-                }catch (Exception e)
-                {
-                    pp.setImageResource(R.drawable.session);
-                }
-
             }
 
             @Override
