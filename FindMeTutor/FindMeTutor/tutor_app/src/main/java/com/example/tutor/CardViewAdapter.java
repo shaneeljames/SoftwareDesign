@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+import java.util.Random;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -116,16 +117,22 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         eventViewHolder.rate.setRating(Sessions.get(i).rating);
 
 
+
+        Random r = new Random();
+        int i1 = r.nextInt(999999 - 111111) + 111111;
+
+        String ran =    Integer.toString(i1) ;
+
+
+
         try {
-            //  Picasso.with(context).load("http://neural.net16.net/pictures/s" + Sessions.get(i).studentNumber + "JPG" ).into(eventViewHolder.session);
-
-            Picasso.with(context).load("http://neural.net16.net/pictures/s" + Sessions.get(i).studentNumber + "JPG" ).into(eventViewHolder.session);
-            //   Picasso.with(context).load("http://neural.net16.net/pictures/s" + Sessions.get(i).studentNumber + "JPG" ).
-
-        } catch (Exception e)
+            Picasso.with(context).load("http://neural.net16.net/pictures/s"+ Sessions.get(i).studentNumber +"JPG?"+ ran).into(eventViewHolder.session);
+        }catch (Exception e)
         {
 
         }
+
+
 
 
       //  Toast.makeText(context, "tutor checkin : "+ Sessions.get(i).tutor_checkin, Toast.LENGTH_SHORT).show();

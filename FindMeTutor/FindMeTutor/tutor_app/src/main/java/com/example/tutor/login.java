@@ -46,6 +46,9 @@ public class login extends AsyncTask<String, String, String> {
         Password = password;
         Check = c;
     }
+
+
+
     @Override
     protected String doInBackground(String... params) {
 
@@ -129,7 +132,7 @@ public class login extends AsyncTask<String, String, String> {
         String result1 = result.substring(1,2) ;
 
         if(result1.equals("]")){
-             Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful ", Toast.LENGTH_SHORT).show();
+             Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful " + result, Toast.LENGTH_SHORT).show();
 
         }else{
           //  Toast.makeText(parent.getApplicationContext(), "Login Successful ", Toast.LENGTH_SHORT).show();
@@ -177,8 +180,9 @@ public class login extends AsyncTask<String, String, String> {
         }
             else
         {
-            Toast.makeText(parent.getApplicationContext(),"Login unsuccessful", Toast.LENGTH_SHORT).show();
+            Toast.makeText(parent.getApplicationContext(),"Login unsuccessful " + result, Toast.LENGTH_SHORT).show();
         }
+
         }
 
 
@@ -194,8 +198,8 @@ public class login extends AsyncTask<String, String, String> {
     //Use this method to get stuff from the Login request claass by just making an object when needed and calling getStuff();
     public String getStuff()
     {
-        String pass = Password;
-        return pass;
+        String pass = result;
+        return result;
     }
 
 
