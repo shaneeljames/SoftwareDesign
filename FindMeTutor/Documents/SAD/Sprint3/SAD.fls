@@ -131,12 +131,9 @@ INPUT ./sequence_diagram/request_tutor.png
 INPUT ./sequence_diagram/add_subject.png
 INPUT ./sequence_diagram/add_subject.png
 INPUT ./sequence_diagram/add_subject.png
-INPUT ./Pakage.jpg
-INPUT ./Pakage.jpg
-INPUT ./Pakage.jpg
-INPUT ./Pakage2.jpg
-INPUT ./Pakage2.jpg
-INPUT ./Pakage2.jpg
+INPUT ./package_diagram/package_diagram.png
+INPUT ./package_diagram/package_diagram.png
+INPUT ./package_diagram/package_diagram.png
 INPUT ./activity_diagram/request_tutor.png
 INPUT ./activity_diagram/request_tutor.png
 INPUT ./activity_diagram/request_tutor.png
