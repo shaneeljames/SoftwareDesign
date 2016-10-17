@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  17 OCT 2016 10:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  17 OCT 2016 10:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -314,7 +314,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--178
 
 
 Overfull \hbox (8.33858pt too wide) in paragraph at lines 174--178
-[]
+[] 
  []
 
 
@@ -585,7 +585,7 @@ Here is how much of TeX's memory you used:
 -dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb>
-Output written on SAD.pdf (25 pages, 730821 bytes).
+Output written on SAD.pdf (25 pages, 730738 bytes).
 PDF statistics:
  116 PDF objects out of 1000 (max. 8388607)
  66 compressed objects within 1 object stream
