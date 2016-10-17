@@ -11,6 +11,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static android.content.Context.LOCATION_SERVICE;
@@ -28,13 +30,22 @@ public class GetLocation2 {
     String TutorStudentID;
     int status;
 
+    double longa;
+    double lat;
 
-    public GetLocation2(Activity par, String tsi, int i) {
+    TextView txt;
+
+    TutorStudentFragment frag;
+
+
+
+    public GetLocation2(Activity par, String tsi, int i, TutorStudentFragment tsf) {
 
         parent = par;
         TutorStudentID = tsi;
         final int[] count = {0};
         status = i;
+        frag = tsf;
 
         locationManager = (LocationManager) parent.getSystemService(LOCATION_SERVICE);
         locationListener = new LocationListener() {
@@ -44,12 +55,15 @@ public class GetLocation2 {
                 if (count[0] == 0) {
 
                     if (status == 0) {
-                        Toast.makeText(parent.getApplicationContext(), "Lat: " + location.getLatitude() + " Long: " + location.getLongitude(), Toast.LENGTH_SHORT).show();
-                        student_checkin connect2server = new student_checkin(parent, TutorStudentID, "Lat: " + location.getLatitude() + " Long: " + location.getLongitude());
+                        lat = location.getLatitude();
+                        longa= location.getLongitude();
+                        //Toast.makeText(parent.getApplicationContext(), "Lat: " + lat+ " Long: " + longa, Toast.LENGTH_SHORT).show();
+                        student_checkin connect2server = new student_checkin(parent, TutorStudentID, "Lat: " + lat + " Long: " + longa);
                         connect2server.execute();
+                        frag.getLoco(lat, longa);
                     }
                     if (status == 1) {
-                        Toast.makeText(parent.getApplicationContext(), "Lat: " + location.getLatitude() + " Long: " + location.getLongitude(), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(parent.getApplicationContext(), "Lat: " + location.getLatitude() + " Long: " + location.getLongitude(), Toast.LENGTH_SHORT).show();
                         student_checkout connect2server1 = new student_checkout(parent, TutorStudentID, "Lat: " + location.getLatitude() + " Long: " + location.getLongitude());
                         connect2server1.execute();
                     }
@@ -100,7 +114,6 @@ public class GetLocation2 {
             //  locationManager.requestLocationUpdates("gps", 5000, 0, locationListener);
 
         }
-
     }
 
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -130,6 +143,14 @@ public class GetLocation2 {
                 //  configureButton();
         }
 
+    }
+
+    public double getLong (){
+        return longa;
+    }
+
+    public  double getLat(){
+        return lat;
     }
 
 }

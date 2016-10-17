@@ -16,7 +16,6 @@
         layout="@layout/toolbar" />
 
 
-
     <ScrollView
         android:id="@+id/sview"
         android:layout_width="match_parent"
@@ -106,14 +105,8 @@
               />
 
 
-
-
         </LinearLayout>
     </ScrollView>
-
-
-
-
 
 
 </LinearLayout>

@@ -1,12 +1,12 @@
 package com.example.jared.findmetutor;
 
-import android.app.Activity;
+/**
+ * Created by admin on 21-Sep-16.
+ */
+
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -21,26 +21,34 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import android.content.Intent;
 
-import static android.os.ParcelFileDescriptor.MODE_WORLD_READABLE;
 
 /**
- * Created by jared on 2016/08/04.
+ * Created by jared on 2016/09/02.\
+ * Use following command to call, execute the next activity on post, the String Result contains the json string containing all subjects in the Subject Table.
+ * Input a student id and receive all subjects related to that student, by inputing a blank string you receive all subjects in the subject table.
+ * Example input a student id and you will get the subjects related to that student id from the Student_Subject table. Input "" and you will receive all subjects listed in the subjects table.
+ * Command to use is below.
+ * getsubject connect2server = new getsubject(this);
+ connect2server.execute();
+ Returns null if the student number does not exist in the Student_Subject Table.
+
  */
-public class login extends AsyncTask<String, String, String> {
-    Activity parent;
-    String Email;
-    String Password;
-
+public class removeSubject extends AsyncTask<String, String, String> {
+    Context parent;
     String result = "";
+    String TutorID;
+    String StudentID;
+    public AsyncResponse delegate = null; //Notify when async is done
 
-    static String out;
-
-    public login(Activity par, String email, String password){
+    public removeSubject(Context par, String tutor_id, String student_id ){
         parent = par;
-        Email = email;
-        Password = password;
+        TutorID = tutor_id;
+       StudentID = student_id ;
+    }
+
+    public removeSubject(Context par){
+        parent = par;
     }
     @Override
     protected String doInBackground(String... params) {
@@ -48,14 +56,14 @@ public class login extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://neural.net16.net/student_login.php");
+            url = new URL("http://neural.net16.net/student_removesubject.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         Map<String,Object> parameter = new LinkedHashMap<>();
-        parameter.put("Email", Email);
-        parameter.put("Password", Password);
+        parameter.put("student_id", TutorID);
+        parameter.put("subject_id", StudentID);
 
         StringBuilder postData = new StringBuilder();
         for (Map.Entry<String,Object> param : parameter.entrySet()) {
@@ -120,35 +128,24 @@ public class login extends AsyncTask<String, String, String> {
 
     @Override
     protected void onPostExecute(String result) {
-        //Handle Result4
-        String temp = result.substring(1,2);
-      if(temp.equals("]")){
-      Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful " , Toast.LENGTH_SHORT).show();
+        //Handle Result
+        if(result.equals("null")){
+            Toast.makeText(parent.getApplicationContext(), "No current subjects", Toast.LENGTH_SHORT).show();
 
-      }else{
-          //If they're in the DB then login to the Home page
-            //this.result = result;
-          Toast.makeText(parent.getApplicationContext(), "Login Successful ", Toast.LENGTH_LONG).show();
+        }else {
 
-          Intent goHome = new Intent(parent, HomeActivity.class);
-          goHome.putExtra("key","0");
-          goHome.putExtra("user", result);
-          parent.startActivity(goHome);
-      }
+            Toast.makeText(parent.getApplicationContext(), result, Toast.LENGTH_SHORT).show();
 
+        }
+    }
+
+    public String sendResults()
+    {
+        return result;
     }
 
     public static void startActivity(Context context) {
-        context.startActivity(new Intent(context, HomeActivity.class).putExtra("user", out));
+        context.startActivity(new Intent(context, HomeActivity.class));
     }
-
-    //Use this method to get stuff from the Login request claass by just making an object when needed and calling getStuff();
-    public String getStuff()
-    {
-        String pass = Password;
-        return pass;
-    }
-
-
 }
 

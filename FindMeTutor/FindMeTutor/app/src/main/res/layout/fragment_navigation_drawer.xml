@@ -8,7 +8,8 @@
     <RelativeLayout
         android:id="@+id/nav_header_container"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:gravity="center_vertical"
+        android:layout_height="250dp"
         android:layout_alignParentTop="true"
         android:background="@color/colorPrimary">
 
@@ -41,6 +42,19 @@
             android:textColor="@color/colorAccent"
             android:textSize="15dp"
             android:text="3 Credits"/>
+
+        <RatingBar
+            android:id="@+id/ratingBarMe"
+            android:layout_below="@+id/creditsTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/ratingBarStyleSmall"
+            android:stepSize="0.1"
+            android:numStars="5"
+            android:rating="5"
+            android:paddingTop="1dp"
+            android:layout_centerInParent="true" />
+
     </RelativeLayout>
 
 

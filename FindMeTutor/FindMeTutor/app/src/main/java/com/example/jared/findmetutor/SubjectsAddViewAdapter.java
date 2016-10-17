@@ -40,6 +40,11 @@ public class SubjectsAddViewAdapter extends RecyclerView.Adapter<SubjectsAddView
 
     }
 
+    @Override
+    public void processFinish3(String outp) {
+
+    }
+
     public class EventViewHolder extends RecyclerView.ViewHolder {
         CardView lv;
         Button add;

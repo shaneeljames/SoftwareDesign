@@ -38,12 +38,26 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     Button req;
     String curSelection;
 
+    Button send;
+
 
     String id;
     String subjId;
+    String fname;
+    String lname;
+
+    String date;
+    String time;
+    String dsp;
+
 
     List<Subjects> list = new ArrayList<Subjects>();
+    List<TutorsEList> eList = new ArrayList<TutorsEList>();
     getsubject connect2server;
+    getTutorEmailList getList;
+
+    RequestActivity temp;
+
 
 
     @Override
@@ -53,11 +67,14 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
 
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         toolbar.setTitle("Request Tutor");
+        temp = this;
 
 
 
         SharedPreferences myprefs =  getSharedPreferences("user", MODE_PRIVATE);
         id= myprefs.getString("student_id", null);
+        fname = myprefs.getString("student_fname",null);
+        lname = myprefs.getString("student_lname",null);
 
         connect2server = new getsubject(this, id, list);
         connect2server.delegate = this;
@@ -76,12 +93,40 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         req.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 request();
+
             }
         });
 
 
 
+    }
+
+    public void sendEmails(List<TutorsEList> list){
+
+        for(int i=0; i<list.size();i++) {
+            String fromEmail = "FindmetutorSD3@gmail.com";
+            String fromPassword = "findmetutors";
+            String toEmails = list.get(i).tutorEmail.toString(); //Sessions.get(i).studentEmail.toString() ;
+            String adminEmail = "admin@gmail.com";
+            String emailSubject = "Find Me Tutor - Session Request";
+            String adminSubject = "App Registration Mail";
+            String emailBody =
+                    "Dear " + list.get(i).TutorName
+                            + "<br><br>"+fname+" "+lname+" is requesting a tutorial session"
+                            + "<br><br>"
+                            +"Subject : "+curSelection+ "<br>"
+                            +"Description : "+ dsp
+                            +"Date : " + date+ "<br>"
+                            +"Time :" +time+ "<br>"
+                            +"<br>"
+                            +"Please log into the FindMeTutor app Should you wish to accept/decline this request";
+
+            String adminBody = "Your message";
+            new SendMailTask(getApplicationContext()).execute(fromEmail,
+                    fromPassword, toEmails, emailSubject, emailBody);
+        }
     }
 
     @Override
@@ -114,61 +159,48 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     }
     @Override
     public  void processFinish2(String out){
+        //get the relevant tutor email list
+        getList = new getTutorEmailList(temp, subjId, eList );
+        getList.delegate=this;
+        getList.execute();
+
+
+
+    }
+
+    @Override
+    public void processFinish3(String outp) {
+        //On return from getList
+        Toast.makeText(temp, "Sending emails", Toast.LENGTH_SHORT).show();
+        List<TutorsEList> emailsList = getList.getList();
+        sendEmails(emailsList);
+
+
         Intent goHome = new Intent(RequestActivity.this, HomeActivity.class);
+        goHome.putExtra("key","1");
         startActivity(goHome);
+
     }
 
     public void request(){
-        String tutor_id = "1";
+        String tutor_id = "1"; //Default Tutor
         String student_id = id;
         String subject_id = subjId;
         String amount = "R100";
 
-        String time = currentTime();
-        String date = currentDate();
+        time = currentTime();
+        date = currentDate();
         String subj = getSubject();
 
         EditText desc = (EditText)findViewById(R.id.descriptionTxt);
-        String dsp = desc.getText().toString();
+        dsp = desc.getText().toString();
 
         Toast.makeText(getApplicationContext(), date+" "+time +" "+subj+" "+dsp, Toast.LENGTH_SHORT).show();
 
         requestSession session = new requestSession(this, tutor_id, student_id, subject_id, amount, date,time,dsp);
         session.delegate=this;
+        //sends to process2 when done
         session.execute();
-
-
-
-/*        Session ev = new Session(subj,"Temp Venue", date,time,R.drawable.session);
-        //ev.addNewEvent();
-
-        //Go to the homeActivity
-
-
-
-
-       // set Fragmentclass Arguments
-
-
-
-
-        Bundle bundle = new Bundle();
-        bundle.putString("subject",subj);
-        bundle.putString("date",date);
-        bundle.putString("time",time);
-
-        HomeFragment fragInfo = new HomeFragment();
-        fragInfo.setArguments(bundle);*/
-
-       // Intent goHome = new Intent(this, HomeFragment.class);
-        //startActivity(goHome);
-
-
-
-
-
-        //Maybe push notifications from here
-
 
 
 

@@ -59,4 +59,9 @@ public class AddSubsActivity extends AppCompatActivity implements AsyncResponse{
     public void processFinish2(String out) {
 
     }
+
+    @Override
+    public void processFinish3(String outp) {
+
+    }
 }

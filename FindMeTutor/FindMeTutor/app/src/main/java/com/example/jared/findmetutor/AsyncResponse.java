@@ -7,4 +7,5 @@ package com.example.jared.findmetutor;
 public interface AsyncResponse {
     void processFinish(String output);
     void  processFinish2(String out);
+    void processFinish3(String outp);
 }

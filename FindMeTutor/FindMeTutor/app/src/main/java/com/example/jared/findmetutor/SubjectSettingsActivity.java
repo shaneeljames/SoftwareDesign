@@ -89,6 +89,11 @@ public class SubjectSettingsActivity extends AppCompatActivity implements AsyncR
 
     }
 
+    @Override
+    public void processFinish3(String outp) {
+
+    }
+
     public  void adapt(SubjectsViewAdapter ad)
     {
 

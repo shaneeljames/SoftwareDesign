@@ -91,6 +91,11 @@ public class TutorListFragment extends Fragment implements AsyncResponse {
 
     }
 
+    @Override
+    public void processFinish3(String outp) {
+
+    }
+
     public void switchContent() {
         mContent = new HomeFragment();
 
