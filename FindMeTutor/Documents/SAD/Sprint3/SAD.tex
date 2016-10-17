@@ -41,10 +41,10 @@ Shaneel James-718840
 \begin{itemize}
 
 \item Purpose\\
-The Software Architecture Document (SAD) provides a comprehensive architectural overview of the FindMeTutor system. It presents a number of different architectural views to depict different aspects of the system. It is intended to capture and depict the different architectural decisions which have been made on the system.
+The Software Architecture Document (SAD) provides a comprehensive architectural overview of the FindMeTutor system. It presents a number of different architectural views to depict different aspects of the system. It is intended to capture and depict the different architectural decisions that have been made.
 
 \item Scope\\
-The scope of the SAD is to depict the architecture of the FindMeTutor. This includes the FindMeTutor tutor application, FindMeTutor student application and the database (backend systems) which allow FindMeTutor to operate.
+The scope of the SAD is to depict the architecture of the FindMeTutor system. This includes the FindMeTutor tutor application, FindMeTutor student application and the backend system that allows FindMeTutor to operate.
 
 \item Definitions, Acronyms and Abbreviations\\
 UML: Unified Modeling Language\\
@@ -59,35 +59,35 @@ This section contains a description pertaining to the architecture used in the F
 
 \begin{itemize}
 \item Type of Architecture\\
-The FindMeTutor system makes use of a 2 tier architecture. The application layer contains the user-interface and business logic. The second layer is the database ,which contains the user data for the system. Below is a diagram which depicts the architecture selected:\\
+The FindMeTutor system makes use of 2-Tier architecture. The application layer contains the user-interface and the business logic. The second layer contains the database ,which stores the user data for the system. Below is a diagram which depicts the selected architecture:\\
 \includegraphics[width=140mm]{./2_Tier_Diagram.png}\\
 
-\item Advantages
+\item Advantages of 2-Tier Architecture
 \begin{itemize}
-\item Allows the application to be easily devloped due to simplicity.
-\item Maximum user satisfaction can be ensured due to accurate and fast prototyping of applications
-\item Database logic and business logic is physically close, which offers higher performance.\\
+\item Allows the application to be easily devloped due to the architectures simplicity.
+\item Maximum user satisfaction can be ensured due to accurate and fast prototyping of applications.
+\item Database logic and business logic are physically close, which offers higher performance.\\
 \end{itemize}
 
-\item Responsibilities of Layer 1:
+\item Responsibilities of Layer 1 (Application Level):
 \begin{itemize}
-\item Contains the businnes logic and user interface all built into the application. The first layer is responsible for all actions with the client. Contains the administration layer used to add funds to a student/tutor account as well as general configuration.
+\item The application layer contains the businnes logic and user interface. The first layer is responsible for conveying FindMeTutor services to the client. Layer 1 contains the administration layer used to add funds to a student/tutor account as well as general configuration by an approved administrator.
 \end{itemize}
 
 \item Responsibilities of Layer 2:
 \begin{itemize}
-\item Contains the data for the system.Allows multiple users to access the same data simultaneously.
+\item Contains the data for the system. Allows multiple users to access the same data simultaneously.
 \end{itemize}
 
 \item Systems of interest\\
-The main systems of interest are the FindMeTutor which contain the following two subsystems:
+The main systems of interest is FindMeTutor which contain the following two subsystems:
 \begin{itemize}
 \item FindMeTutor Student Application
 \item FindMeTutor Tutor Application
 \end{itemize}
 
 \item Supplementary Information\\
-The FindMeTutor system comprises of two main components: The FindMeTutor student application and the FindMeTutor tutor application. The student application is used by the students to manage anything related to a student account and the tutor application is used by the tutors to manage anything related to the tutor account.Requests for a tutor are made using the student application and responses from tutors are made using the tutor application.
+The FindMeTutor system comprises of two main components: The FindMeTutor student application and the FindMeTutor tutor application. The student application is used by the students to manage anything related to a student account and the tutor application is used by the tutors to manage anything related to the tutor account.Requests for a tutor are made using the student application and responses from tutors as to whether to accept or reject the requests are made using the tutor application.
 \end{itemize}
 
 \pagebreak
@@ -97,23 +97,23 @@ The following lists the goals and constraints of the FindMeTutor system.
 \begin{itemize}
 
 \item Technical Platform\\
-The FindMeTutor application will deployed on the Android mobile platform. The application is made up of two parts the user interface and then the businness logic. The application then communicates with a server of which the entire system data is stored. The database system consists of an Ubuntu server running a MySql databse.
+The FindMeTutor application will be deployed on the Android mobile platform. The application is made up of two parts the user interface and the businness logic. The application then communicates with a server of which the entire systems data is stored. The database system consists of an Ubuntu server running a MySql databse.
 
 \item Transcations
 \begin{itemize}
 
 \item Student Transcation\\
-The student would pay funds into the FindMeTutor bank account. The students email address would be used as a reference. As soon as the funds have cleared the student is provided with a credit on the FindMeTutor system. The student can then use this credit to book and pay for tutoring sessions.
+The student would pay funds into the FindMeTutor bank account. The students email address would be used as a reference. As soon as the funds have cleared the student is provided with a credit on the FindMeTutor system. The student can then use the credit to book and pay for tutoring sessions.
 
 \item Tutor Transaction\\
 Upon a successful tutoring session. The FindMeTutor system credits the tutor with the amount agreed upon. All of the tutors credits are added up at the end of the month and then paid out to the tutor by means of a bank transfer.
 \end{itemize}
 
 \item Security\\
-The FindMeTutor system takes security very seriously. During a tutoring session the systems logs the exact GPS location of both the tutor and student at all times. Should a location not be logged by both the student and tutor. The the tutor will not receive payment until they communicate directly with FindMeTutor.
+The FindMeTutor system takes security very seriously. During a tutoring session the systems logs the exact GPS location of both the tutor and student at all times. Should a location not be logged by both the student and tutor. The the tutor will not receive payment and the student will receive a poor rating.Further communication with FindMeTutor will be required by the tutor to receive payment.
 
 \item Reliability/Availability (failover)\\
-The FindMeTutor system makes use of a failover or backup server in the event that something should go wrong. Furthermore FindMeTutor has made significant network improvements so as to anticipate an uptake in system usage and as a result ensure a stable system.
+The FindMeTutor system makes use of a failover or backup server in the event that something should go wrong. Furthermore FindMeTutor has made aquired additional capacity so as to anticipate an uptake in system usage and as a result ensure the system is reliable at all times.
 \end{itemize}
 
 \pagebreak
@@ -122,20 +122,20 @@ The FindMeTutor system makes use of a failover or backup server in the event tha
 This section lists the various organisations who are concerned with the project.
 \begin{itemize}
 
-\item Development team (Stakeholder 1)\\
-The Development team are concerned with the implementation of the system, they want to develop the designed system.
+\item Development Team (Stakeholder 1)\\
+The Development team is concerned with the implementation of the system, they want to develop the designed system in the best possible way.
 
 \item Analysts (Stakeholder 2)\\
-The analysts are concerned with the design of the system, and the proper functionality of the system.
+The analysts are concerned with the design of the system, and the functionality of the system.
 
 \item Lecturer (Stakeholder 3)\\
 The Software Design lecturer is concerned with the progress of the designing and implementation of the system.
 
 \item Students (Stakeholder 4)\\
-Students want a system which address their needs as well as a proper functioning system which dis favourable towards them.
+Students want a system which will address their needs as well as a proper functioning system which is favourable towards them finding tutors.
 
 \item Tutors (Stakeholder 5)\\
-Tutors want a system which address their needs as well as a proper functioning system which is favourable towards them.
+Tutors want a system which addresses their needs as well as a proper functioning system which is favourable towards them as they wish to earn an income from FindMeTutor.
 \end{itemize}
 
 \pagebreak
@@ -146,10 +146,10 @@ This section identifies concers relating to the architecture of the FindMeTutor 
 \begin{itemize}
 
 \item Purpose of the system (Concern 1)\\
-The main purpose of the system is to provide a connection between a student looking for a tutor and a tutor looking to earn money by tutoring a student.A potential concern here would be a slow uptake or worse students not interested in using the system
+The main purpose of the system is to provide a connection between a student and a tutor.A potential concern here would be a slow uptake or worse students are not interested in using the application.
 
 \item Suitability of the architecture (Concern 2).\\
-The three tier architecture selected allows the developers to modify different aspects of the system without affecting other important aspects of the system. For example: if the businness logic should change, we can simply modify the logic layer of the system while not affecting the user interface or database layers of the system.\\\\A potential concern here would be that the architecture above does not full support certain aspects of expansion should the system experience growth and need to be expanded
+The two tier architecture selected allows the developers to modify different aspects of the system without affecting other important aspects of the system. For example: if the businness logic should change, we can simply modify the logic layer of the application while not affecting the user interface or database layers of the application/system.\\\\A potential concern here would be that the architecture above does not fully support certain aspects of expansion should the system experience growth and need to be expanded
 
 \item Feasibility (Concern 3)\\
 Should the system not be feasible. i.e. High costs of keeping the system running. Developers and server costs for the system would be high and FindMeTutor would need some sort of revenue to keep the system running. Scability is another issue, we need to scale in order to create revenue. A concern would be that the system does not create revenue for the upkeep of the system and hence the system is no longer feasible.
@@ -159,41 +159,48 @@ The system will change as time progress, the system is largely based on the user
 \end{itemize}
 
 \subsection{Traceability Matrix}
-The following table depicts the relationship between the concerns listed above and the various stakeholders of the FindMeTutor system.\\
+The following table depicts the relationship between the concerns listed above and the various stakeholders of the FindMeTutor system listed in the previous section.\\\\
+Stakeholder 1 - Development Team\\
+Stakeholder 2 - Analysts\\
+Stakeholder 3 - Lecturer\\
+Stakeholder 4 - Students\\
+Stakeholder 5 - Tutors\\\\
 \includegraphics[width=140mm]{./trace.png}
-
 \pagebreak
-
 \section{Views}
 %Listed below are views which.
 
 \subsection{Logical View}
-The Logical View focuses on realising the functionality of the FindMeTutor system.This view address the concerns of the end-user by realising the functionality of the system.\\\\
+The Logical View focuses on realising the functionality of the FindMeTutor system.This view addresses the concerns of the end-user by realising the functionality of the system.\\\\
 The FindMeTutor application uses a 2-Tier architecture.\\
 \includegraphics[width=140mm]{./architecture_diagram.png}
-Put in diagram similar to above of sequence of how to request a tutor.\\
+\textbf{Put in diagram similar to above of sequence of how to request a tutor.}
 
 \subsubsection{Class Diagram}
-The class diagram below describes the structure of the FindMeTutor system ny showing the system classes, their attributes and relationships to one another.\\
+The class diagram below describes the structure of the FindMeTutor system. Showing the system classes, their attributes and relationships to one another.\\\\
 \includegraphics[width=140mm]{./class_diagram/class_diagram_findme_tutor.jpg}
 
 \newpage
 
 \subsubsection{Sequence Diagram}
-Sequence Diagrams show the sequence of messages passed between objects of the system over time.\\
+Sequence Diagrams show the sequence of messages passed between objects of the FindMeTutor system over time.\\
 \\\textbf{Create Student Sequence Diagram}:\\
+The process of registering/creating a new student account on FindMeTutor using the student application.\\
 \includegraphics[width=140mm]{./sequence_diagram/create_student.png}
 \newpage
 \textbf{Request Tutor Sequence Diagram}:\\
+The process of requesting a tutor on FindMeTutor using the student application.\\
 \includegraphics[width=140mm]{./sequence_diagram/request_tutor.png}
+\newpage
 \textbf{Add Subject Sequence Diagram}:\\
+The process of adding a new subject on FindMeTutor using the student application.\\
 \includegraphics[width=140mm]{./sequence_diagram/add_subject.png}
 
-\newpage
+%\newpage
 
 \subsection{Development View}
 The Development view outlines the components that are used to assemble the physical system.
-This view addresses the concerns of stakeholders concerned with the development of system such as developers.\\
+The view addresses the concerns of stakeholders concerned with the development of system such as developers.\\
 \subsubsection{Package Diagram}
 
 A package diagram depicts the dependencies the packages of the FindMeTutor system.
@@ -202,19 +209,19 @@ Below is package diagrams of the FindMeTutor system:\\
 
 
 \subsubsection{Component Diagram}
-A component diagram describes the components used to achieve the functionality of the system.\\
+A component diagram describes the components used to achieve the functionality of the FindMeTutor system.\\
 \includegraphics[width=140mm]{./component_diagram/component_diagram.png}
 
 \newpage
 
 \subsection{Process View}
-The process view considers the non-functional aspects of the system. It addresses the concerns of stakeholders concerned
-with the design of the system.
+The process view considers the non-functional aspects of the FindMeTutor system. It addresses the concerns of the stakeholders concerned with the design of the system.
 
 \subsubsection{Activity Diagrams}
 An activity diagram depicts the the flows of the system and business logic with actions.\\
 \\\textbf{Request Tutor:}\\
 \includegraphics[width=140mm]{./activity_diagram/request_tutor.png}
+\pagebreak
 \\\\\textbf{Check In:}\\
 The initiating actor is either a student or a tutor where a participating actor refers to a tutor or student.\\
 \includegraphics[width=140mm]{./activity_diagram/checked_in.png}
@@ -223,24 +230,25 @@ The initiating actor is either a student or a tutor where a participating actor 
 \includegraphics[width=140mm]{./activity_diagram/rate_tutor.png}
 \newpage
 \subsubsection{Communication Diagrams}
-The communication diagrams to Reqeust a Tutor,Create a Student Account and add a subject on the system are below:\\
+The communication diagrams for Reqeust a Tutor, Create a Student Account and to add a Subject on the system are below:\\
 \textbf{Request Tutor}\\
 \includegraphics[width=140mm]{./communication_diagram/communication_diagram_rt.png}
 %\newpage
+\newpage
 \textbf{Create Student}\\
 \includegraphics[width=140mm]{./communication_diagram/communication_diagram_cs.png}
-
+\newpage
 \textbf{Add Subject}\\
 \includegraphics[width=140mm]{./communication_diagram/communication_diagram_as.png}
-
-\subsubsection{Communication Diagrams}
-The state diagrams are listed below, they depict the states in which various attributes in the the database change.\\
+\newpage
+\subsubsection{State Diagrams}
+The most important state diagrams for the FindMeTutor system are listed below, they depict the states in which various attributes of the database change.\\
 
 \textbf{State Diagram: "Status" in the Confrimed Session Table}\\\\
-\text The state is changed both when the tutor has accepted the tutoring session.
+\text The state is changed when the tutor has accepted the tutoring session.
 \includegraphics[width=140mm]{./state_diagram/statediagram_status.png}
-
-\text{State Diagram: "Paid" in the Tutor Student Table}\\\\
+\\
+\textbf{State Diagram: "Paid" in the Tutor Student Table}\\\\
 \text The state is changed when the student has paid for the tutoring session.
 \includegraphics[width=140mm]{./state_diagram/statediagram_paid.png}
 
