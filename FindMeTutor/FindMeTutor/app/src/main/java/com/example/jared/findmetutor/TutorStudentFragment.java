@@ -63,6 +63,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
     String id;
 
     Button requestGps;
+    Button checkOut;
     TextView cords;
     ImageView tutorDp;
     RatingBar rating;
@@ -131,6 +132,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
             @Override
             public void onClick(View view) {
                 getLocation = new GetLocation2(getActivity(), sessionId, status, tutorStudentFragment  );
+
 
                 //getLoco();
 
@@ -210,6 +212,8 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
         num.setText(tutorr.get(0).tutorContact);
         email.setText(tutorr.get(0).tutorEmail);
         name.setText(tutorr.get(0).TutorName);
+
+
 
 
 

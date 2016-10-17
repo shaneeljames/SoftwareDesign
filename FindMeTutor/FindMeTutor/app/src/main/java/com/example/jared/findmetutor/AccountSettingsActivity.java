@@ -257,6 +257,7 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         inputNumber.setText(number);
         inputPassword.setText(password);
         studentBalance.setText(balance);
+        inputConfirmPassword.setVisibility(View.GONE);
     }
 
     public void setEditableTrue(){
