@@ -275,4 +275,26 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         super.onAttachedToRecyclerView(recyclerView);
     }
 
+    // Clean all elements of the recycler
+
+    public void clear() {
+
+        events.clear();
+
+        notifyDataSetChanged();
+
+    }
+
+
+
+// Add a list of items
+
+    public void addAll(List<Session> list) {
+
+        events.addAll(list);
+
+        notifyDataSetChanged();
+
+    }
+
 }

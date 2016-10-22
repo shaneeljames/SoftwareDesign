@@ -1,0 +1,27 @@
+//////////////////////////
+//						//
+// 		 Dev Log		//	
+//						//
+//////////////////////////
+
+
+// Jadon's Log //
+
+1. Added Pull to refresh
+
+-Surround recycler view with swipeRefrestLayout
+-Initilize in the main onCreate()
+-Make temp Refresher copy of the allready exsisting Async Class
+-in the refreshItems()
+ -clear the current list object
+ -delagte(to same proxess)and execute temp Async
+ -call onItemsLoadComplete();
+
+
+
+
+
+
+// Nivek's Log //
+
+1.

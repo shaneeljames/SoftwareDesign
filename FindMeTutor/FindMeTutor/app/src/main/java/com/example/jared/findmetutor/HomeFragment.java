@@ -11,6 +11,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -33,10 +34,16 @@ public class HomeFragment extends Fragment implements AsyncResponse{
     SharedPreferences myprefs;
 
     getSessions connect2server;
+    getSessionsRefresh refresh;
     List<Session> list = new ArrayList<>();
+    List<Session> tmp = new ArrayList<>();
 
     RecyclerView rv;
     CardViewAdapter adapter;
+
+    SwipeRefreshLayout swipeRefreshLayout;
+
+    String id;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -60,6 +67,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
         list = new ArrayList<>();
 
         FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
+        swipeRefreshLayout = (SwipeRefreshLayout)rootView.findViewById(R.id.swipeRefreshLayout);
         myprefs= getContext().getSharedPreferences("user", MODE_PRIVATE);
 
         fab.setOnClickListener(new View.OnClickListener(){
@@ -88,7 +96,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        String id = myprefs.getString("student_id",null);
+        id = myprefs.getString("student_id",null);
        // Toast.makeText(getContext(), "On post " + id , Toast.LENGTH_SHORT).show();
 
         connect2server = new getSessions(this.getActivity(), id, list);
@@ -102,12 +110,53 @@ public class HomeFragment extends Fragment implements AsyncResponse{
         //Session event = new Session("Complex Analysis","Flower Hall","1 October","8am", R.drawable.session);
         //event.initializeData();
 
+        swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
+
+                android.R.color.holo_green_light,
+
+                android.R.color.holo_orange_light,
+
+                android.R.color.holo_red_light);
+
+
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+           @Override
+           public void onRefresh() {
+               // Refresh items
+               refreshItems();
+           }
+       });
+
 
 
 
 
         // Inflate the layout for this fragment
         return rootView;
+    }
+
+    public void refreshItems() {
+        // Load items
+        // ...
+
+        list.clear();
+        Toast.makeText(getContext(), "refresh items" + list.size() , Toast.LENGTH_SHORT).show();
+        refresh = new getSessionsRefresh(this.getActivity(), id, list);
+
+        refresh.delegate = this;
+        refresh.execute();
+
+
+        // Load complete
+       // onItemsLoadComplete();
+    }
+
+    public void onItemsLoadComplete() {
+
+
+        // Stop refresh animation
+        swipeRefreshLayout.setRefreshing(false);
     }
 
 
@@ -138,16 +187,37 @@ public class HomeFragment extends Fragment implements AsyncResponse{
 
 
             adapter = new CardViewAdapter(list, this.getContext(), this);
-            //adapter.notifyDataSetChanged();
+            adapter.notifyDataSetChanged();
             rv.setAdapter(adapter);
+            onItemsLoadComplete();
         }
 
 
 
     }
 
+    //not being called
     @Override
     public void processFinish2(String out) {
+
+        adapter.clear();
+        adapter.notifyDataSetChanged();
+
+        list=refresh.getList();
+        //list = refresh.getList();
+        Toast.makeText(getContext(), "Complete", Toast.LENGTH_SHORT).show();
+
+        adapter = new CardViewAdapter(list, getContext(), this);
+
+        rv.setAdapter(adapter);
+
+
+
+        // Stop refresh animation
+
+
+       // swipeRefreshLayout.setRefreshing(false);
+        onItemsLoadComplete();
 
     }
 
