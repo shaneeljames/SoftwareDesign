@@ -19,7 +19,7 @@
     <string name="err_msg_name">Enter your Full name</string>
     <string name="err_msg_Fname">Enter your First name</string>
     <string name="err_msg_Lname">Enter your Last name</string>
-    <string name="err_msg_email">Enter valid email address</string>
+    <string name="err_msg_email">Enter valid Wits student email address</string>
     <string name="err_msg_number">Enter valid contact number</string>
     <string name="err_msg_password">Enter valid password</string>
 

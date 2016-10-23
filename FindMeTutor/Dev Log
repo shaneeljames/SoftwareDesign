@@ -7,7 +7,7 @@
 
 // Jadon's Log //
 
-1. Added Pull to refresh
+1. Added Pull to refresh(21/10)
 
 -Surround recycler view with swipeRefrestLayout
 -Initilize in the main onCreate()
@@ -17,6 +17,39 @@
  -delagte(to same proxess)and execute temp Async
  -call onItemsLoadComplete();
 
+ 2. Get Valid Sessions (23/10)
+
+ -The home page now only return's valid sessions from the DB
+ -For a session to be valid, it's status must be one of the following('pending', 'Confirmed', 'Complete')
+ -Any other session with any other staus is ignored by the sql quary eg("expired",'cancelled', etc)
+
+3. Set Expired Session(23/10)
+
+-Once a session's date is passed the (current date+ a day) That session is no longer valid its status should be set to "expired"
+	-Still to do:
+		-Clairfy nitty gritty details with niv
+		-Uncomment code
+		-Send the relevant netWork request
+
+4. Added Num tutor's Indicator - As per Terrence's request (23/10)
+
+-Displays the number of tutors in brackets if any available
+
+
+5. Wits student emails only! (23/10)
+
+-Now a student is only able to register with a wits student email address. Ie. ending in "students.wits.ac.za"
+-Yeah, i know... This was supposed to be done a while ago...
+
+6. Password case sensitivity (23/10)
+
+-Fixed the case sensitivity of the login password
+
+7. Added geoCoder support (23/10)
+
+-We can get a students street address based on their long and lat
+-Not sure if bluestacks supports it though
+-need to test it properly!
 
 
 

@@ -20,6 +20,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -140,7 +144,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                     @Override
                     public void onClick(View v) {
                         //Toast.makeText(context, "Session id: "+events.get(i).sessionID, Toast.LENGTH_SHORT).show();
-
+                        //isExpired("10");
 
 
                         base.switchContentSession(events.get(i).tutorStdNum, sessID, events.get(i).tutorID);
@@ -153,10 +157,8 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
             else if(Integer.parseInt(eventViewHolder.avail.getText().toString())>0)
             {
-                eventViewHolder.status.setText("Tutors Available");
+                eventViewHolder.status.setText("Tutors Available"+" ("+eventViewHolder.avail.getText().toString()+")");
                 eventViewHolder.cv.setCardBackgroundColor(Color.parseColor("#B0E0E6"));
-                eventViewHolder.cv.setMaxCardElevation(getPixelsFromDPs(10));
-                eventViewHolder.cv.setCardElevation(getPixelsFromDPs(7));
                 eventViewHolder.cv.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -225,9 +227,105 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                 });
             }
 
+        //Check if the session is expired
+        //ie. passed the current date+1
+
+        /*try {
+            if(isExpired(eventViewHolder.date.getText().toString())){
+
+                //Toast.makeText(context,eventViewHolder.date.getText().toString() + " Expired",Toast.LENGTH_LONG).show();
+                eventViewHolder.status.setText("Expired");
+
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+*/
+
         eventViewHolder.itemView.setTag(events.get(i));
 
         }
+
+    public boolean isExpired(String cdate) throws ParseException {
+
+        boolean re = false;
+
+
+        String[] currDate = cdate.split(" ");
+        String cDate = currDate[0];
+        String cMoth = currDate[1];
+        String cYear = currDate[2];
+
+
+
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+
+        String current = df.format(c.getTime());
+
+
+
+
+        String[] split = current.split(" ");
+
+        int iDash=split[0].indexOf('-');
+        int lDash=split[0].lastIndexOf('-');
+
+        String year = split[0].substring(0, iDash);
+        String month = split[0].substring(iDash+1, lDash);
+        String date = split[0].substring(lDash+1);
+
+        if(Integer.parseInt(year)>=Integer.parseInt(cYear)){
+            if(Integer.parseInt(month)>=getMonth(cMoth)){
+                if(Integer.parseInt(date)>Integer.parseInt(cDate)){
+                    re=true;
+                }
+            }
+        }
+
+
+
+        // formattedDate have current date/time
+       // Toast.makeText(context, "Year :"+year+" Month:"+month+ " Date: "+date +">>>" + cYear+" "+getMonth((cMoth))+" "+cDate, Toast.LENGTH_LONG).show();
+
+
+        return  re;
+
+    }
+
+    public int getMonth(String month){
+        int calMonth=0;
+
+
+        if(month.equals("January"))
+            calMonth =1;
+        if(month.equals("Feburary"))
+            calMonth =2;
+        if(month.equals("March"))
+            calMonth =3;
+        if(month.equals("April"))
+            calMonth =4;
+        if(month.equals("May"))
+            calMonth =5;
+        if(month.equals("June"))
+            calMonth =6;
+        if(month.equals("July"))
+            calMonth =7;
+        if(month.equals("August"))
+            calMonth =8;
+        if(month.equals("September"))
+            calMonth =9;
+        if(month.equals("October"))
+            calMonth =10;
+        if(month.equals("November"))
+            calMonth =11;
+        if(month.equals("December"))
+            calMonth =12;
+
+        return  calMonth;
+
+
+    }
 
 
     // Custom method for converting DP/DIP value to pixels

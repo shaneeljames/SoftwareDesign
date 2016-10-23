@@ -23,7 +23,12 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import android.content.Intent;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import static android.os.ParcelFileDescriptor.MODE_WORLD_READABLE;
+import static android.os.ParcelFileDescriptor.createPipe;
 
 /**
  * Created by jared on 2016/08/04.
@@ -128,12 +133,37 @@ public class login extends AsyncTask<String, String, String> {
       }else{
           //If they're in the DB then login to the Home page
             //this.result = result;
-          Toast.makeText(parent.getApplicationContext(), "Login Successful ", Toast.LENGTH_LONG).show();
+          try {
 
-          Intent goHome = new Intent(parent, HomeActivity.class);
-          goHome.putExtra("key","0");
-          goHome.putExtra("user", result);
-          parent.startActivity(goHome);
+              String copy = result;
+
+              JSONArray jsonArr = new JSONArray(copy);
+              // Toast.makeText(getApplicationContext(), "Login Successful "+jsonString, Toast.LENGTH_SHORT).show();
+              //Subjects pass = null;
+              //Subjects subjects = new Subjects("h", 0, parent, pass);
+
+              JSONObject jsObj = jsonArr.getJSONObject(0);//get rood json obj
+
+              String passwordCheck = jsObj.getString("student_password");
+
+              //Check Password Case sensisitivity
+              if(passwordCheck.equals(Password)){
+                  Toast.makeText(parent.getApplicationContext(), "Login Successful ", Toast.LENGTH_LONG).show();
+
+                  Intent goHome = new Intent(parent, HomeActivity.class);
+                  goHome.putExtra("key","0"); //to set shared preferences
+                  goHome.putExtra("user", result);
+                  parent.startActivity(goHome);
+              }
+              else {
+                  Toast.makeText(parent.getApplicationContext(), "Incorrect Password", Toast.LENGTH_LONG).show();
+              }
+
+          } catch (JSONException e) {
+              e.printStackTrace();
+          }
+
+
       }
 
     }
