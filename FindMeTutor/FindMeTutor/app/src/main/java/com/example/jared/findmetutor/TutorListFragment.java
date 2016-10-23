@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -33,11 +34,13 @@ public class TutorListFragment extends Fragment implements AsyncResponse {
     SharedPreferences myprefs;
 
     getTutors connect2server;
+    getTutors refresh;
     List<Tutors> list = new ArrayList<>();
 
     RecyclerView rv;
 
     String id;
+    SwipeRefreshLayout swipeRefreshLayout;
 
 
 
@@ -53,6 +56,7 @@ public class TutorListFragment extends Fragment implements AsyncResponse {
         rv = (RecyclerView) rootView.findViewById(R.id.rvTutors);
        // rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+        swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipeRefreshLayout);
 
 
          id = this.getArguments().getString("session");
@@ -64,9 +68,51 @@ public class TutorListFragment extends Fragment implements AsyncResponse {
         connect2server.execute();
 
 
+        swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
+
+                android.R.color.holo_green_light,
+
+                android.R.color.holo_orange_light,
+
+                android.R.color.holo_red_light);
+
+
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Refresh items
+                refreshItems();
+            }
+        });
+
+
 
 
         return rootView;
+    }
+
+    public void refreshItems() {
+        // Load items
+        // ...
+
+        list.clear();
+        Toast.makeText(getContext(), "refresh items" + list.size() , Toast.LENGTH_SHORT).show();
+        refresh = new getTutors(this.getActivity(), id, list);
+
+        refresh.delegate = this;
+        refresh.execute();
+
+
+        // Load complete
+        // onItemsLoadComplete();
+    }
+
+    public void onItemsLoadComplete() {
+
+
+        // Stop refresh animation
+        swipeRefreshLayout.setRefreshing(false);
     }
 
     @Override
@@ -81,7 +127,9 @@ public class TutorListFragment extends Fragment implements AsyncResponse {
 
 
             TutorsViewAdapter adapter = new TutorsViewAdapter(list, this.getContext(), this, id);
+            adapter.notifyDataSetChanged();
             rv.setAdapter(adapter);
+            onItemsLoadComplete();
 
 
     }

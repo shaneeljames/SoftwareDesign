@@ -2,6 +2,7 @@ package com.example.jared.findmetutor;
 
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -10,6 +11,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.*;
 import android.support.annotation.NonNull;
@@ -31,9 +33,12 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.os.Handler;
+import android.os.Message;
 
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -70,6 +75,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
     TextView num;
     TextView email;
     TextView name;
+    TextView info;
 
 
     LocationManager locationManager;
@@ -92,6 +98,8 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
 
     List<Tutors> tutorr = new ArrayList<Tutors>();
 
+    Double latt,longg;
+
 
 
 
@@ -111,6 +119,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
         num = (TextView)rootView.findViewById(R.id.tutorNumber);
         email=(TextView)rootView.findViewById(R.id.tutorEmail);
         name = (TextView)rootView.findViewById(R.id.tutorName);
+        info=(TextView)rootView.findViewById(R.id.infoText);
 
         tutStdNum = this.getArguments().getString("tutor_student_num");
         sessionId = this.getArguments().getString("sessionID");
@@ -158,11 +167,64 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
         //Toast.makeText(getContext(), add, Toast.LENGTH_SHORT).show();
         cords.setText(lat + " "+lon);
 
+       // String dress = getCompleteAddressString(lat,lon);
+
+       // latt = lat;
+       // longg = lon;
+
+        //Toast.makeText(getContext(), add, Toast.LENGTH_SHORT).show();
+
+            //LocationAddress locationAddress = new LocationAddress();
+            //locationAddress.getAddressFromLocation(38.898748, -77.037684
+             //       , getContext(), new GeocoderHandler());
+
+        String add = getAddressString(lat,lon);
+        Toast.makeText(getContext(), add, Toast.LENGTH_LONG);
+        info.setText(add);
 
 
 
 
 
+
+
+    }
+
+    private String getAddressString(double latitude, double longitude) {
+        String strAddress = "";
+
+        if(Geocoder.isPresent()) {
+            Toast.makeText(getContext(),"Coder is present!",Toast.LENGTH_LONG);
+            Geocoder geocoder = new Geocoder(getContext(), Locale.ENGLISH);
+            try {
+                List<Address> addresses = geocoder.getFromLocation(latitude,
+                        longitude, 1);
+                if (addresses != null) {
+                    Address returnAddress = addresses.get(0);
+                    StringBuilder strReturnAddress = new StringBuilder("");
+
+                    for (int i = 0; i < returnAddress.getMaxAddressLineIndex(); i++) {
+                        strReturnAddress
+                                .append(returnAddress.getAddressLine(i)).append(
+                                "\n");
+                    }
+                    strAddress = strReturnAddress.toString();
+                    Log.w("address",
+                            "" + strReturnAddress.toString());
+                } else {
+                    Log.w("address", "No Address found!");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                Log.w("address", "Can't get Address!");
+            }
+        }
+
+        else {
+            Toast.makeText(getContext(),"Coder is NOT present!",Toast.LENGTH_LONG);
+            Log.w("address", "not here");
+        }
+        return strAddress;
     }
 
     @Override
@@ -198,7 +260,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
     public void processFinish2(String out) {
 
 
-        Toast.makeText(getContext(), out,Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getContext(), out,Toast.LENGTH_SHORT).show();
 
         tutorr = getTutorinfo.getList();
 
@@ -247,4 +309,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
         }
         return strAdd;
     }
+
+
+
 }

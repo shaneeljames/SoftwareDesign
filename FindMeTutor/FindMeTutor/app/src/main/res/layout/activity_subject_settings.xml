@@ -29,8 +29,16 @@
         <LinearLayout
             android:id="@+id/linlay"
             android:layout_below="@+id/su"
+            android:layout_above="@+id/adSub"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/swipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
 
             <android.support.v7.widget.RecyclerView
@@ -38,6 +46,8 @@
                 android:layout_height="match_parent"
                 android:id="@+id/rvSubjects"
                 />
+
+            </android.support.v4.widget.SwipeRefreshLayout>
 
         </LinearLayout>
 

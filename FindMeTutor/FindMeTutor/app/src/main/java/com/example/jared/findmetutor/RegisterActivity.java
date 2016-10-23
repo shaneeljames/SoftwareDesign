@@ -183,7 +183,8 @@ public class  RegisterActivity extends AppCompatActivity {
 
     private boolean validateEmail() {
         email2 = inputEmail.getText().toString().trim();
-        if (email2.isEmpty() || !isValidEmail(email2)) {
+        if (email2.isEmpty() || !isValidEmail(email2) || !isWitsEmail(email2))
+        {
             inputLayoutEmail.setError(getString(R.string.err_msg_email));
             requestFocus(inputEmail);
             return false;
@@ -237,6 +238,21 @@ public class  RegisterActivity extends AppCompatActivity {
 
     private static boolean isValidEmail(String email) {
         return !TextUtils.isEmpty(email) && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
+    public boolean isWitsEmail(String email){
+        boolean ret = false;
+
+        int iAt = email.indexOf('@');
+
+        String students = email.substring(iAt+1);
+
+        if(students.equalsIgnoreCase("students.wits.ac.za")){
+            ret = true;
+        }
+
+
+        return ret;
     }
 
     private void requestFocus(View view) {

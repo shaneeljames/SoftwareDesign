@@ -121,6 +121,7 @@
 
             <Button
                 android:id="@+id/gpsRequest"
+                android:layout_alignParentTop="true"
                 android:background="@color/colorPrimary"
                 android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
@@ -136,6 +137,17 @@
                 android:layout_below="@+id/gpsRequest"
                 android:gravity="center"
                 />
+
+            <TextView
+                android:id="@+id/infoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="info"
+                android:layout_below="@+id/cordsTxt"
+                android:gravity="center"
+                />
+
+
 
 
 
