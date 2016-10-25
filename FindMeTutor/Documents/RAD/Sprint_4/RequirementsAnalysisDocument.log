@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.9)  25 OCT 2016 14:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.9)  25 OCT 2016 21:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -303,14 +303,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 281--302
 
  []
 
-[10] [11]
-Overfull \hbox (4.53062pt too wide) in paragraph at lines 338--340
+[10]
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 307--318
+[] 
+ []
+
+[11]
+Overfull \hbox (4.53062pt too wide) in paragraph at lines 344--346
 []\OT1/cmr/m/n/12 ACT4.04 Chal-lenge reg-is-tered ad-min-is-tra-tor to view the
 ir ac-count (pass) 
  []
 
 
-Overfull \hbox (6.09181pt too wide) in paragraph at lines 340--341
+Overfull \hbox (6.09181pt too wide) in paragraph at lines 346--347
 []\OT1/cmr/m/n/12 ACT5.01 A stu-dent re-quest-ing a tu-tor can re-quest a tu-to
 r for a date/time
  []
@@ -320,142 +325,142 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
  [14]
-Underfull \hbox (badness 10000) in paragraph at lines 403--404
+Underfull \hbox (badness 10000) in paragraph at lines 409--410
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 403--404
+Underfull \hbox (badness 10000) in paragraph at lines 409--410
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--452
+Underfull \hbox (badness 10000) in paragraph at lines 411--458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--452
+Underfull \hbox (badness 10000) in paragraph at lines 411--458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--452
+Underfull \hbox (badness 10000) in paragraph at lines 411--458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--452
+Underfull \hbox (badness 10000) in paragraph at lines 411--458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--452
+Underfull \hbox (badness 10000) in paragraph at lines 411--458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--452
+Underfull \hbox (badness 10000) in paragraph at lines 411--458
 
  []
 
 [15]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 457--475
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 463--481
  [][] 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 483--483
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
 []\OT1/cmr/m/n/12 Update stu-dent de-mo-graphic data,student num-
  []
 
 
-Underfull \hbox (badness 1189) in paragraph at lines 483--483
+Underfull \hbox (badness 1189) in paragraph at lines 489--489
 \OT1/cmr/m/n/12 ber,student email ad-dress, stu-dent con-tact num-ber
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 479--496
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 485--502
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 501--520
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 507--526
  [][] 
  []
 
 [17]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 524--541
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 530--547
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 545--562
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 551--568
  [][] 
  []
 
 [18]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 566--583
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 572--589
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 587--602
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 593--608
  [][] 
  []
 
 [19]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 606--621
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 612--627
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 623--638
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 629--644
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 641--666
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 647--672
  [][] 
  []
 
 [20]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 667--684
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 673--690
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 685--701
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 691--707
  [][] 
  []
 
 [21]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 702--717
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 708--723
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 718--733
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 724--739
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 734--750
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 740--756
  [][] 
  []
 
 [22]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 751--772
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 757--778
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 773--790
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 779--796
  [][] 
  []
 
 [23]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 792--808
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 798--814
  [][] 
  []
 
@@ -464,24 +469,24 @@ File: ./Sprint3Models/Use_Case_Diagram.png Graphic file (type png)
 
 <use ./Sprint3Models/Use_Case_Diagram.png>
 Package pdftex.def Info: ./Sprint3Models/Use_Case_Diagram.png used on input lin
-e 816.
+e 822.
 (pdftex.def)             Requested size: 398.33858pt x 337.47856pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 813--817
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 819--823
  [] 
  []
 
 [25 <./Sprint3Models/Use_Case_Diagram.png (PNG copy)>]
-Overfull \hbox (58.99843pt too wide) in alignment at lines 823--859
+Overfull \hbox (58.99843pt too wide) in alignment at lines 829--865
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 859
+Underfull \vbox (badness 10000) detected at line 865
  []
 
 
-Overfull \hbox (58.99843pt too wide) in alignment at lines 859--882
+Overfull \hbox (58.99843pt too wide) in alignment at lines 865--888
  [] [] [] 
  []
 
@@ -491,10 +496,10 @@ File: ./Sprint3Models/Analysis_Object_model3.png Graphic file (type png)
 
 <use ./Sprint3Models/Analysis_Object_model3.png>
 Package pdftex.def Info: ./Sprint3Models/Analysis_Object_model3.png used on inp
-ut line 887.
+ut line 893.
 (pdftex.def)             Requested size: 398.33858pt x 564.11162pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 887--888
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 893--894
  [] 
  []
 
@@ -508,10 +513,10 @@ File: ./Sprint3Models/Dynamic_model3.png Graphic file (type png)
 
 <use ./Sprint3Models/Dynamic_model3.png>
 Package pdftex.def Info: ./Sprint3Models/Dynamic_model3.png used on input line 
-892.
+898.
 (pdftex.def)             Requested size: 398.33858pt x 564.11162pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 892--893
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 898--899
  [] 
  []
 
@@ -523,7 +528,7 @@ Overfull \vbox (38.69493pt too high) has occurred while \output is active []
 (./RequirementsAnalysisDocument.aux) )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 451 ({)
+### simple group (level 1) entered at line 457 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
  2561 strings out of 493013
@@ -537,7 +542,7 @@ Here is how much of TeX's memory you used:
 b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on RequirementsAnalysisDocument.pdf (33 pages, 373899 bytes).
+Output written on RequirementsAnalysisDocument.pdf (33 pages, 374306 bytes).
 PDF statistics:
  132 PDF objects out of 1000 (max. 8388607)
  87 compressed objects within 1 object stream
