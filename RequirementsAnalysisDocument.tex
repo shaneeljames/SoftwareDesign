@@ -336,7 +336,7 @@ Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 
 \begin{tabular}{| p{8cm} | p{8cm} |} \hline
 	\textbf{Test-case Identifier:}& TC-3\\
-	\textbf{Use Case Tested:}& UC-VS\\
+	\textbf{Use Case Tested:}& UC-L\\
 	\textbf{Pass/Fail Criteria:}& The test passes if the user enters correct login details and corresponding password.\\
 	\textbf{Input Data:}& Username and password\\\hline
 	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
@@ -386,7 +386,7 @@ Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 
 \begin{tabular}{| p{8cm} | p{8cm} |} \hline
 	\textbf{Test-case Identifier:}& TC-7\\
-	\textbf{Use Case Tested:}& UC-VT\\
+	\textbf{Use Case Tested:}& UC-L\\
 	\textbf{Pass/Fail Criteria:}& The test passes if the user enters correct login details and corresponding password.\\
 	\textbf{Input Data:}& Username and password\\\hline
 	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
@@ -609,6 +609,95 @@ Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
 	Step 1.Go to the login page, and enter a username and password & The system indicates failure when the tutor is denied access into their account as the username is not a registered one, and or the password does not match the corresponding username according to the database (created at sign up). \\
 	Step 2.Go to the login page, and enter a username and password & The system indicates success when the tutor is granted access into their account as the username is  a registered one, and  the password does  match the corresponding username according to the database (created at sign up).\\
+		\hline
+\end{tabular}
+\\
+
+
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-26\\
+	\textbf{Use Case Tested:}& UC-VSes\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student is able to view upcoming tutorial sessions.\\
+	\textbf{Input Data:}& Confirmed tutuorial sessions which have been accepted by a tutor\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'view upcoming session' & The system indicates failure when the student has not confirmed with the tutor who has accepted the request, and they intend to have a tutorial with the particular tutor, hence the session is not reflected as an upcoming session. \\
+	Step 2.Go to 'view upcoming session' & The system indicates success when the student has confirmed with the tutor who has accepted the request, the session is reflected as an upcoming session which has the details of the session: date, subject and designated tutor. \\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-27\\
+	\textbf{Use Case Tested:}& UC-VSes\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor is able to view upcoming tutorial sessions.\\
+	\textbf{Input Data:}& Confirmed tutuorial sessions which have been confirmed by a student\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'view upcoming session' & The system indicates failure when the students has confirmed with the tutor who has accepted the request,however the session is not reflected as an upcoming session. \\
+	Step 2.Go to 'view upcoming session' & The system indicates success when the student has confirmed with the tutor who has accepted the request, the session is reflected as an upcoming session which has the details of the session: date, subject and student to be tutored. \\
+		\hline
+\end{tabular}
+\\
+
+CHECK THE NEXT TWO!! URGENT!!!
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-28\\
+	\textbf{Use Case Tested:}& UC-DSes\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student is able to mark a completed tutorial session as done, removing it from the list of upcoming sessions or once a session is past the current date it is automatically removed from upcoming sesions or manually removing to indicate cancellation.\\
+	\textbf{Input Data:}& Completed tutuorial sessions which have been accepted by a tutor or upcoming session that we need to delete\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'view upcoming session' & The system indicates failure when past dated sessions are still reflected. \\
+	Step 2.Go to 'view upcoming session' & The system indicates success when the past dated sessions are no longer reflected. \\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-29\\
+	\textbf{Use Case Tested:}& UC-DSes\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor is able to mark a completed tutorial session as done, removing it from the list of upcoming sessions or once a session is past the current date it is automatically removed from upcoming sesions.\\
+	\textbf{Input Data:}& Completed tutuorial sessions which have been accepted by a tutor\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'view upcoming session' & The system indicates failure when past dated sessions are still reflected. \\
+	Step 2.Go to 'view upcoming session' & The system indicates success when the past dated sessions are no longer reflected. \\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-30\\
+	\textbf{Use Case Tested:}& UC-RSb\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student can view the  subjects in which they are enrolled .\\
+	\textbf{Input Data:}& View subjects\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'view enrolled subjects' & The system indicates failure when all subjects in which the student has enrolled for are not reflected . \\
+	Step 2.Go to 'view enrolled subjects' & The system indicates success when all subjects in which the student has enrolled for are  reflected . \\
+		\hline
+\end{tabular}
+\\
+
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-31\\
+	\textbf{Use Case Tested:}& UC-RSb\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor can view the  subjects in which they are tutoring .\\
+	\textbf{Input Data:}& View subjects\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'view tutoring subjects' & The system indicates failure when all subjects which the tutor has signed up to tutor  are not reflected . \\
+	Step 2.Go to 'view tutoring subjects' & The system indicates success when all subjects which the tutor has signed up to tutor are reflected . \\
+		\hline
+\end{tabular}
+\\
+
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-32\\
+	\textbf{Use Case Tested:}& UC-FP\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student's account is deducted by the funds due for a tutorial session and is reflected in the tuto's account when safty measures of check-in and check-out have been adhered to by both parties.\\
+	\textbf{Input Data:}& View funds\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'funds' & The system indicates failure when incorrect trafficing and amount of funds are reflected in the tutor's and/or the student's account. \\
+	Step 2.Go to 'funds' & The system indicates success when correct trafficing and amount of funds are reflected in the tutor's and/or the student's account. \\
 		\hline
 \end{tabular}
 \\
