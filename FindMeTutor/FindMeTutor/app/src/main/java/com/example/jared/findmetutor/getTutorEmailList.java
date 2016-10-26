@@ -143,7 +143,7 @@ public class getTutorEmailList extends AsyncTask<String, String, String> {
            try {
 
                JSONArray jsonArr = new JSONArray(result);
-               Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
+              // Toast.makeText(parent.getApplicationContext(), "making object " + result, Toast.LENGTH_SHORT).show();
                String tutID="";
                String tutNum="";
                String fname = "";

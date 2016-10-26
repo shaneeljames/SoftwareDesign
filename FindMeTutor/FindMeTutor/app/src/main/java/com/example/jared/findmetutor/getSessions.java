@@ -188,7 +188,8 @@ public class getSessions extends AsyncTask<String, String, String> {
                    status = jsObj.getString("status");
                    available = jsObj.getString("available");
                   // Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
-                   in.add(new Session( sessionID, tutorID, tutorNum, tutorName, subjectName,subjectID,amount,date,time, desc,status,available, R.drawable.session, parent ));
+                   String dte = formateDate(date);
+                   in.add(new Session( sessionID, tutorID, tutorNum, tutorName, subjectName,subjectID,amount,dte,time, desc,status,available, R.drawable.session, parent ));
                }
 
            } catch (JSONException e) {
@@ -200,6 +201,70 @@ public class getSessions extends AsyncTask<String, String, String> {
 
            delegate.processFinish(result); //let the other clsses know when onPost is finished
        }
+    }
+
+    public String formateDate(String datefull){
+        String[] split = datefull.split("-");
+        String year = split[0];
+        String monthNum = split[1];
+        int mn = Integer.parseInt(monthNum);
+        String month = getMonth(mn);
+        String datee = split[2];
+
+        String full = datee+" "+month+" "+year;
+
+        return  full;
+
+
+    }
+
+    public String getMonth(int month){
+        String calMonth="";
+
+        switch (month){
+            case 1:calMonth="January";
+                break;
+
+            case 2:calMonth="Feburary";
+                break;
+
+            case 3:calMonth="March";
+                break;
+
+            case 4:calMonth="April";
+                break;
+
+            case 5:calMonth="May";
+                break;
+
+            case 6:calMonth="June";
+                break;
+
+            case 7:calMonth="July";
+                break;
+
+            case 8:calMonth="August";
+                break;
+
+            case 9:calMonth="September";
+                break;
+
+            case 10:calMonth="October";
+                break;
+
+            case 11:calMonth="November";
+                break;
+
+            case 12:calMonth="December";
+                break;
+            default:calMonth=calMonth;
+                break;
+
+        }
+
+        return  calMonth;
+
+
     }
 
     public String sendResults()

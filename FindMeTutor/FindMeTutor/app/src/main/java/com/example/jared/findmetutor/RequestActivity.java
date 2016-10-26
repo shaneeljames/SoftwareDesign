@@ -171,13 +171,9 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         //On return from getList
         Toast.makeText(temp, "Sending emails", Toast.LENGTH_SHORT).show();
         List<TutorsEList> emailsList = getList.getList();
-        //sendEmails(emailsList);
+        sendEmails(emailsList);
 
-
-        //Intent goHome = new Intent(RequestActivity.this, HomeActivity.class);
-        //goHome.putExtra("key","1");
-        //startActivity(goHome);
-
+        //Go through the login to go to the home screen
         SharedPreferences myprefs= getSharedPreferences("user", MODE_PRIVATE);
         String email=myprefs.getString("student_email",null);
         String pass= myprefs.getString("student_password", null);
@@ -222,7 +218,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     public String currentDate() {
         StringBuilder mcurrentDate = new StringBuilder();
         int month = datePicker.getMonth() + 1;
-        String ret = datePicker.getDayOfMonth()+"/"+datePicker.getMonth() + "/"+datePicker.getYear();
+        String ret = datePicker.getYear()+"-"+month+"-"+datePicker.getDayOfMonth();
         return ret;
     }
 

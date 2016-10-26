@@ -239,8 +239,8 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
             }
         } catch (ParseException e) {
             e.printStackTrace();
-        }
-*/
+        }*/
+
 
         eventViewHolder.itemView.setTag(events.get(i));
 

@@ -3,6 +3,7 @@ package com.example.jared.findmetutor;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -19,6 +20,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.view.menu.MenuAdapter;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -30,6 +32,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.GeolocationPermissions;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -102,6 +105,8 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
 
     Double latt,longg;
 
+    Button cancel;
+
 
 
 
@@ -125,6 +130,8 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
         check = (CardView)rootView.findViewById(R.id.cv3);
         checkOut = (Button)rootView.findViewById(R.id.checkOut);
 
+        cancel = (Button)rootView.findViewById(R.id.cancel_session);
+
         tutStdNum = this.getArguments().getString("tutor_student_num");
         sessionId = this.getArguments().getString("sessionID");
         tutorID = this.getArguments().getString("tutorID");
@@ -133,7 +140,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
         getTutorinfo.delegate = this;
         getTutorinfo.execute();
 
-        //Toast.makeText(getContext(), tutStdNum,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), tutStdNum+ " Session id :"+sessionId,Toast.LENGTH_SHORT).show();
 
         try{
             Picasso.with(getContext()).load("http://neural.net16.net/pictures/t"+tutStdNum+"JPG").into(tutorDp);
@@ -144,11 +151,32 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
         requestGps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                status = 0;
                 getLocation = new GetLocation2(getActivity(), sessionId, status, tutorStudentFragment  );
 
 
                 //getLoco();
 
+            }
+        });
+
+        checkOut.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                status =1; //to check out
+                getLocation = new GetLocation2(getActivity(), sessionId,status,tutorStudentFragment);
+
+                requestGps.setEnabled(false);
+
+
+            }
+        });
+
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showInputDialog();
             }
         });
 
@@ -159,6 +187,38 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
 
 
         return rootView;
+    }
+
+
+    public void showInputDialog() {
+
+        // get prompts.xml view
+        LayoutInflater layoutInflater = LayoutInflater.from(getContext());
+        View promptView = layoutInflater.inflate(R.layout.input_dialog, null);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
+        alertDialogBuilder.setView(promptView);
+
+        final EditText editText = (EditText) promptView.findViewById(R.id.edittext);
+        // setup a dialog window
+        alertDialogBuilder.setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Toast.makeText(getContext(), "Hello, " + editText.getText(), Toast.LENGTH_LONG).show();
+                        student_cancel can = new student_cancel(getContext(),sessionId) ;
+                        can.execute();
+                        //sendEmails();
+                    }
+                })
+                .setNegativeButton("Back",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+        // create an alert dialog
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
     }
 
     public void getLoco(double lat, double lon){
@@ -194,6 +254,23 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
 
 
 
+    }
+
+    public void sendEmails(List<TutorsEList> list){
+/*
+            String fromEmail = "FindmetutorSD3@gmail.com";
+            String fromPassword = "findmetutors";
+            String toEmails = list.get(i).tutorEmail.toString(); //Sessions.get(i).studentEmail.toString() ;
+            String adminEmail = "admin@gmail.com";
+            String emailSubject = "Find Me Tutor - Session Request";
+            String adminSubject = "App Registration Mail";
+            String emailBody =
+                    "Dear " + list.get(i).TutorName
+                            + "<br><br>";
+
+            String adminBody = "Your message";
+            new SendMailTask(getContext()).execute(fromEmail,
+                    fromPassword, toEmails, emailSubject, emailBody);*/
     }
 
     private String getAddressString(double latitude, double longitude) {

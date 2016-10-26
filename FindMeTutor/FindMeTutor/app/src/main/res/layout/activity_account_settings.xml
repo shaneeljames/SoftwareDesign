@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cdlayout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -27,7 +28,7 @@
     <ScrollView
         android:id="@+id/svV"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -36,8 +37,7 @@
         android:gravity="center"
         android:orientation="vertical"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="60dp">
+        android:paddingRight="20dp">
 
         <ImageButton
             android:background="@null"
@@ -131,17 +131,6 @@
 
 
 
-    </LinearLayout>
-
-    </ScrollView>
-
-        <LinearLayout
-            android:id="@+id/buttons"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_below="@+id/svV">
 
             <Button android:id="@+id/btn_addFunds"
                 android:layout_width="fill_parent"
@@ -157,33 +146,36 @@
                 android:layout_height="wrap_content"
                 android:text="Edit Profile"
                 android:background="@color/colorPrimary"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="3dp"
                 android:textColor="@android:color/white"/>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/deleteAcc"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:text="Delete Account"
+                android:background="@color/softRed"
+                android:layout_marginTop="3dp"
+                android:textColor="@android:color/white"/>
+
 
                 <Button
                     android:id="@+id/update"
                     android:text="Update"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"/>
+                   />
                 <Button
                     android:id="@+id/cancel"
                     android:text="Cancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"/>
-
-            </LinearLayout>
-
-
+                    />
 
         </LinearLayout>
+
+
+    </ScrollView>
 
     </RelativeLayout>
 

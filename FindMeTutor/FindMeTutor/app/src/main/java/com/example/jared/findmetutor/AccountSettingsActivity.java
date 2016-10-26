@@ -3,10 +3,13 @@ package com.example.jared.findmetutor;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -39,7 +42,9 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
     ImageButton imgpp;
     private String test;
 
-    Button addFunds, editProfile, update, cancel;
+    CoordinatorLayout coordinatorLayout;
+
+    Button addFunds, editProfile, update, cancel, delete;
 
     SharedPreferences myprefs;
     Toolbar toolbar;
@@ -49,6 +54,8 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
     public static final int RESULT_LOAD_IMAGE = 1;
 
     AccountSettingsActivity accountSettingsActivity;
+
+    student_deleteAccount deleteAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +121,7 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         });*/
 
         //Get EditText objects
+        coordinatorLayout = (CoordinatorLayout)findViewById(R.id.cdlayout);
         inputFirstName = (EditText) findViewById(R.id.input_Firstname);
         inputLastName = (EditText) findViewById(R.id.input_Lastname);
         inputEmail = (EditText) findViewById(R.id.input_email);
@@ -127,6 +135,7 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         editProfile = (Button)findViewById(R.id.editProfile);
         update = (Button)findViewById(R.id.update);
         cancel = (Button)findViewById(R.id.cancel);
+        delete = (Button)findViewById(R.id.deleteAcc);
 
         myprefs= this.getSharedPreferences("user", MODE_PRIVATE);
 
@@ -196,6 +205,32 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
             imgpp.setImageResource(R.drawable.ic_profile_greenp);
 
         }
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar snackbar = Snackbar
+                        .make(coordinatorLayout, "Are you sure you want to delete your account ", Snackbar.LENGTH_LONG)
+                        .setAction("Yes!", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+                                Toast.makeText(getApplicationContext(),"Deleting",Toast.LENGTH_LONG).show();
+                                deleteAccount = new student_deleteAccount(getApplicationContext(), stdid );
+                                deleteAccount.delegate = accountSettingsActivity;
+                                deleteAccount.execute();
+
+
+
+                            }
+                        });
+                snackbar.setActionTextColor(Color.RED);
+                View sbView = snackbar.getView();
+                TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                textView.setTextColor(Color.WHITE);
+                snackbar.show();
+            }
+        });
 
 
 
@@ -281,6 +316,7 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         editProfile.setVisibility(View.VISIBLE);
         update.setVisibility(View.GONE);
         cancel.setVisibility(View.GONE);
+        delete.setVisibility(View.GONE);
     }
 
     public void setEditableTrue(){
@@ -301,6 +337,7 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         editProfile.setVisibility(View.GONE);
         update.setVisibility(View.VISIBLE);
         cancel.setVisibility(View.VISIBLE);
+        delete.setVisibility(View.VISIBLE);
 
 
     }
@@ -494,6 +531,9 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
 
     @Override
     public void processFinish3(String outp) {
+
+        Intent goLog = new Intent(AccountSettingsActivity.this, LoginActivity.class);
+        startActivity(goLog);
 
     }
 

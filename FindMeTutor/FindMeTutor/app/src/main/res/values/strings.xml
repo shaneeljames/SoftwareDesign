@@ -21,7 +21,7 @@
     <string name="err_msg_Lname">Enter your Last name</string>
     <string name="err_msg_email">Enter valid Wits student email address</string>
     <string name="err_msg_number">Enter valid contact number</string>
-    <string name="err_msg_password">Enter valid password</string>
+    <string name="err_msg_password">Enter valid password (Min 7 Characters)</string>
 
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>

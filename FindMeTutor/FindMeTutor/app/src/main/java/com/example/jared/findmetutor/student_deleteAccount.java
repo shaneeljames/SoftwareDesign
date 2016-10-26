@@ -1,10 +1,8 @@
 package com.example.jared.findmetutor;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,26 +18,21 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * Created by admin on 04-Oct-16.
+ * Created by admin on 27-Sep-16.
  */
 
-public class student_checkout extends AsyncTask<String, String, String> {
-    Activity parent;
+public class student_deleteAccount extends AsyncTask<String, String, String> {
+
+    Context parent;
+    String Tutor_student_id;
     String result = "";
-    String TutorStudentID;
-    String Checkin ;
 
-
+    static String out;
     public AsyncResponse delegate = null;
 
-    public student_checkout(Activity par, String tsi , String c){
+    public student_deleteAccount(Context par, String tutor_student_id){
         parent = par;
-        TutorStudentID = tsi;
-        Checkin = c;
-    }
-
-    public student_checkout(Activity par){
-        parent = par;
+        Tutor_student_id = tutor_student_id;
     }
     @Override
     protected String doInBackground(String... params) {
@@ -47,14 +40,13 @@ public class student_checkout extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://neural.net16.net/student_checkout.php");
+            url = new URL("http://neural.net16.net/student_deleteaccount.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         Map<String,Object> parameter = new LinkedHashMap<>();
-        parameter.put("tutor_student_id", TutorStudentID);
-        parameter.put("student_checkin", Checkin);
+        parameter.put("student_id", Tutor_student_id);
 
         StringBuilder postData = new StringBuilder();
         for (Map.Entry<String,Object> param : parameter.entrySet()) {
@@ -120,27 +112,22 @@ public class student_checkout extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         //Handle Result
-        if(result.equals("null")){
-            //Toast.makeText(parent.getApplicationContext(), "No current subjects", Toast.LENGTH_SHORT).show();
-
-        }else {
-            //If they're in the DB then login to the Home page
-            Toast.makeText(parent.getApplicationContext(), "Student Checkout " + result, Toast.LENGTH_SHORT).show();
-
-        }
-
-        delegate.processFinish(result);
+        // Toast.makeText(parent.getApplicationContext(), "Login test "+result, Toast.LENGTH_SHORT).show();
+        delegate.processFinish3(result);
 
 
-    }
-
-    public String sendResults()
-    {
-        return result;
     }
 
     public static void startActivity(Context context) {
-        context.startActivity(new Intent(context, HomeActivity.class));
+        // context.startActivity(new Intent(context, HomeActivity.class).putExtra("user", out));
     }
-}
 
+    //Use this method to get stuff from the Login request claass by just making an object when needed and calling getStuff();
+   /* public String getStuff()
+    {
+       // String pass = Password;
+       // return pass;
+    }*/
+
+
+}

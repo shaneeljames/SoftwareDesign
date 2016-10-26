@@ -53,6 +53,15 @@
             android:textSize="30sp"
             android:textColor="@color/colorPrimary" />
 
+        <Button
+            android:id="@+id/cancel_session"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/cancel"
+            android:layout_alignParentRight="true"
+            />
+
+
 
 
         <View

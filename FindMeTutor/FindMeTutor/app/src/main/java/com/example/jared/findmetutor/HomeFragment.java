@@ -77,7 +77,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
 
                 String balance= myprefs.getString("student_current_balance", null);
 
-                if(Integer.parseInt(balance)<=5)
+                if(Integer.parseInt(balance)<=1)
                 {
                     Toast.makeText(getContext(), "Insufficient Funds", Toast.LENGTH_SHORT).show();
                 }

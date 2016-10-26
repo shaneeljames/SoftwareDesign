@@ -53,6 +53,17 @@
 -Not sure if bluestacks supports it though
 -need to test it properly!
 
+7. Implmented Delete account (26/10)
+
+-Student can now delete his/her account
+-Account is marked as deleted on the database
+-Student isnt allowed to relogin/re register
+
+8. Order Cards by date (26/10)
+
+-Cards are orderd by thir dates in decending order
+-format YYYY-MM-DD
+
 
 
 
