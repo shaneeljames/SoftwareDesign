@@ -3,6 +3,7 @@ package com.example.tutor;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -168,7 +169,7 @@ public class tutor_checkRegister extends AsyncTask<String, String, String> {
                 parent.startActivity(goHome);
             }
             else {
-               // Toast.makeText(parent.getApplicationContext(), "Registration Unsuccessful! Account already exists", Toast.LENGTH_SHORT).show();
+                Toast.makeText(parent.getApplicationContext(), "Registration Unsuccessful! Account already exists", Toast.LENGTH_SHORT).show();
 
                 parent.finish(); ;
                 Intent goHome = new Intent(parent, RegisterActivity.class);

@@ -1,11 +1,9 @@
 package com.example.tutor.tests;
 
 import android.app.Activity;
-import android.test.suitebuilder.annotation.SmallTest;
 
 import com.example.tutor.LoginActivity;
 import com.example.tutor.login;
-import com.example.tutor.tutor_AsyncResponse;
 
 import junit.framework.TestCase;
 
@@ -18,27 +16,35 @@ public class LoginUnitTest extends TestCase {
     Activity a ;
     LoginActivity lA ;
     login l ;
+    String Email ;
+    String Password ;
+    String result ;
+    int Test ;
 
     @Override
     protected void setUp() throws Exception {
 
         super.setUp();
-         lA = new LoginActivity() ;
-         l = (login) new login(lA,"b@b.b","ranjith",0);
+        Email = "b@b.b";
+        Password = "ranjith" ;
+
         //
     }
 
-    @SmallTest
-    public void testLogin()
+    public void testLogin() throws Throwable
     {
-
-       // l.delegate = (tutor_AsyncResponse) this;
-       // String c =  l.execute().toString() ;
+        lA = new LoginActivity() ;
+        l =  new login(lA,"b@b.b","rajith",0);
+        l.delegate = this.lA ;
+        l.signal.await(10, java.util.concurrent.TimeUnit.SECONDS);
         l.execute() ;
-        l.delegate = (tutor_AsyncResponse) this;
-        String check =l.getStuff() ;
-        assertNull(check);
+
+        //l.onPostExecute(l.doInBackground()); ;
+
+
+        assertEquals(0,l.Test);
     }
+
 
 
 
@@ -46,4 +52,6 @@ public class LoginUnitTest extends TestCase {
     protected void tearDown() throws Exception {
         super.tearDown();
     }
+
+
 }

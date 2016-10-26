@@ -45,6 +45,19 @@ public class FragmentDrawer extends Fragment {
     private static String[] titles = null;
     private FragmentDrawerListener drawerListener;
     String tutor_id = null;
+
+
+    TextView txtName ;
+     TextView txtBalance;
+
+    RatingBar rating ;
+
+    SharedPreferences myprefs ;
+    String tutor_fname ;
+    String tutor_lname ;
+    String tutor_balance ;
+    String tutor_rating ;
+
     ImageView pp ;
 
     public FragmentDrawer() {
@@ -88,24 +101,24 @@ public class FragmentDrawer extends Fragment {
         View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
         recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
 
-        TextView txtName = (TextView) layout.findViewById(R.id.txtName);
-        final TextView txtBalance = (TextView) layout.findViewById(R.id.txtBalance);
+         txtName = (TextView) layout.findViewById(R.id.txtName);
+        txtBalance = (TextView) layout.findViewById(R.id.txtBalance);
          pp = (ImageView) layout.findViewById(R.id.imgPP)  ;
-        RatingBar rating = (RatingBar) layout.findViewById(R.id.ratingBar2) ;
+         rating = (RatingBar) layout.findViewById(R.id.ratingBar2) ;
 
-        SharedPreferences myprefs =  this.getContext().getSharedPreferences("user", MODE_PRIVATE);
-        String tutor_fname = myprefs.getString("tutor_fname", null);
-        String tutor_lname = myprefs.getString("tutor_lname", null);
+         myprefs =  this.getContext().getSharedPreferences("user", MODE_PRIVATE);
+         tutor_fname = myprefs.getString("tutor_fname", null);
+         tutor_lname = myprefs.getString("tutor_lname", null);
          tutor_id = myprefs.getString("tutor_student_num", null);
-        final String tutor_balance = myprefs.getString("tutor_balance", null);
-        final String tutor_rating = myprefs.getString("tutor_rating", null);
+         tutor_balance = myprefs.getString("tutor_balance", null);
+        tutor_rating = myprefs.getString("tutor_rating", null);
 
        txtName.setText(tutor_lname + " " + tutor_fname);
       //  txtName.setText(tutor_id);
         txtBalance.setText(tutor_balance);
 
-      //  if(!(tutor_rating.equals("null")))
-        rating.setRating(Float.parseFloat(tutor_rating));
+     //  if(!(tutor_rating.equals("null")))
+       // rating.setRating(Float.parseFloat(tutor_rating));
 
 
         Random r = new Random();
@@ -163,8 +176,12 @@ public class FragmentDrawer extends Fragment {
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
                 getActivity().invalidateOptionsMenu();
-               // adapter.notifyDataSetChanged();
-              //  recyclerView.setAdapter(adapter);
+
+                txtName.setText(tutor_lname + " " + tutor_fname);
+                //  txtName.setText(tutor_id);
+                txtBalance.setText(tutor_balance);
+
+
 
 
             }

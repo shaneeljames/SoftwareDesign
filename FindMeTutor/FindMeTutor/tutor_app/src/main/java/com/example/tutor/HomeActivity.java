@@ -1,6 +1,7 @@
 package com.example.tutor;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -201,6 +202,14 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
                 //Press logout, takes you back to login page
                 Intent home = new Intent(HomeActivity.this, LoginActivity.class);
                 HomeActivity.this.startActivity(home);
+
+                SharedPreferences preferences =getSharedPreferences("user", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.clear();
+                editor.commit();
+               // finish();
+
+
                 this.finish() ;
                 break;
             default:

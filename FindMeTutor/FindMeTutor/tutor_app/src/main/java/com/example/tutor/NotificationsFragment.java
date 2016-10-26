@@ -5,11 +5,13 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,10 @@ public class NotificationsFragment extends Fragment implements tutor_AsyncRespon
     List<Notifications> list = new ArrayList<>() ;
     RecyclerView rv ;
     tutor_getnotification connect2server ;
+    tutor_getnotification refresh2server ;
+    SwipeRefreshLayout swipeRefreshLayout ;
+    String id;
+    SharedPreferences myprefs ;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,17 +48,39 @@ public class NotificationsFragment extends Fragment implements tutor_AsyncRespon
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this.getActivity()));
 
+        swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swiperefreshlayout3) ;
 
-        SharedPreferences myprefs = this.getActivity().getSharedPreferences("user", MODE_PRIVATE) ;
-        String id = myprefs.getString("tutor_id",null) ;
+         myprefs = this.getActivity().getSharedPreferences("user", MODE_PRIVATE) ;
+         id = myprefs.getString("tutor_id",null) ;
 
         connect2server = new tutor_getnotification((HomeActivity) this.getActivity(),id , list) ;
         connect2server.delegate = this ;
         connect2server.execute();
 
+        swipeRefreshLayout.setColorSchemeColors(
+                getResources().getColor(android.R.color.holo_blue_bright)
+                ,getResources().getColor(android.R.color.holo_green_light)
+                , getResources().getColor(android.R.color.holo_orange_light)
+                , getResources().getColor(android.R.color.holo_red_light));
 
 
-       // CardViewNotificationsAdapter adapter = new CardViewNotificationsAdapter(event.events, this.getContext());
+
+
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshItems() ;
+                Toast.makeText(getContext(), "Refreshed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
+
+
+        // CardViewNotificationsAdapter adapter = new CardViewNotificationsAdapter(event.events, this.getContext());
       //  rv.setAdapter(adapter);
 
 
@@ -78,8 +106,22 @@ public class NotificationsFragment extends Fragment implements tutor_AsyncRespon
 
         //list = connect2server.getList();
         CardViewNotificationsAdapter adapter = new CardViewNotificationsAdapter(connect2server.getList(),this.getActivity().getApplicationContext()) ;
+        adapter.notifyDataSetChanged();
         rv.setAdapter(adapter);
+        onItemsLoadComplete();
 
+    }
+
+    public void refreshItems() {
+        list.clear();
+        refresh2server = new tutor_getnotification((HomeActivity) this.getActivity() , id , list) ;
+        refresh2server.delegate = this ;
+        refresh2server.execute()  ;
+    }
+
+    public void onItemsLoadComplete()
+    {
+        swipeRefreshLayout.setRefreshing(false);
 
     }
 }
