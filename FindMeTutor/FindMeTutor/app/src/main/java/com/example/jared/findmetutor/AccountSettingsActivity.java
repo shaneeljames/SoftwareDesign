@@ -27,6 +27,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 public class AccountSettingsActivity extends AppCompatActivity  implements AsyncResponse{
@@ -47,6 +48,8 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
 
     public static final int RESULT_LOAD_IMAGE = 1;
 
+    AccountSettingsActivity accountSettingsActivity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +59,8 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
          toolbar = (Toolbar) findViewById(R.id.toolbarAccount);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        accountSettingsActivity = this;
 
         //Get layouts
          /*inputLayoutFName = (TextInputLayout) findViewById(R.id.input_layout_Firstname);
@@ -126,14 +131,7 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         myprefs= this.getSharedPreferences("user", MODE_PRIVATE);
 
 
-        stdid=myprefs.getString("student_id",null);
-        stdNum= myprefs.getString("student_student_num", null);
-        firstName= myprefs.getString("student_fname", null);
-        lastName= myprefs.getString("student_lname", null);
-        number= myprefs.getString("student_contact_number", null);
-        email= myprefs.getString("student_email", null);
-        password= myprefs.getString("student_password", null);
-        balance= myprefs.getString("student_current_balance", null);
+        setPrefs();
 
         toDefault();
         setEditableFalse();
@@ -145,6 +143,7 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
             }
         });
 
+
         update.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -152,6 +151,9 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
                 String ln = inputLastName.getText().toString();
                 String num = inputNumber.getText().toString();
                 String pw = inputPassword.getText().toString();
+                String cpw = inputConfirmPassword.getText().toString();
+
+                if(pw.equals(cpw)){
 
                 myprefs.edit().putString("student_password",pw).apply();
                 myprefs.edit().putString("student_lname", ln).apply();
@@ -160,7 +162,13 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
 
                // Toast.makeText(getApplicationContext(), fn+ln+num+pw , Toast.LENGTH_SHORT).show();
                 updatePro = new updateProfile(getParent(), stdid, fn, ln, num, pw);
+                updatePro.delegate = accountSettingsActivity;
                 updatePro.execute();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Please enter your password correctly", Toast.LENGTH_LONG).show();
+                }
+
 
 
 
@@ -175,8 +183,12 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
             }
         });
 
+        Random r = new Random();
+        int i1 = r.nextInt(999999-111111)+111111;
+        String ran = Integer.toString(i1);
+
         try {
-            Picasso.with(getApplicationContext()).load("http://neural.net16.net/pictures/s" + stdNum + "JPG" ).into(imgpp);
+            Picasso.with(getApplicationContext()).load("http://neural.net16.net/pictures/s" + stdNum + "JPG?"+ran ).into(imgpp);
         }catch (Exception e)
         {
 
@@ -184,6 +196,7 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
             imgpp.setImageResource(R.drawable.ic_profile_greenp);
 
         }
+
 
 
 
@@ -245,8 +258,15 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
 
     }
 
-    public void requestUpdate(){
-
+    public void setPrefs(){
+        stdid=myprefs.getString("student_id",null);
+        stdNum= myprefs.getString("student_student_num", null);
+        firstName= myprefs.getString("student_fname", null);
+        lastName= myprefs.getString("student_lname", null);
+        number= myprefs.getString("student_contact_number", null);
+        email= myprefs.getString("student_email", null);
+        password= myprefs.getString("student_password", null);
+        balance= myprefs.getString("student_current_balance", null);
     }
 
     public void toDefault(){
@@ -258,6 +278,9 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         inputPassword.setText(password);
         studentBalance.setText(balance);
         inputConfirmPassword.setVisibility(View.GONE);
+        editProfile.setVisibility(View.VISIBLE);
+        update.setVisibility(View.GONE);
+        cancel.setVisibility(View.GONE);
     }
 
     public void setEditableTrue(){
@@ -457,6 +480,10 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
 
     @Override
     public void processFinish(String output) {
+
+        setPrefs();
+        toDefault();
+        setEditableFalse();
 
     }
 

@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -25,10 +26,15 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
+import static android.content.Context.MODE_PRIVATE;
 import static android.os.ParcelFileDescriptor.MODE_WORLD_READABLE;
 
 
@@ -43,6 +49,10 @@ public class FragmentDrawer extends Fragment {
     private View containerView;
     private static String[] titles = null;
     private FragmentDrawerListener drawerListener;
+
+    ImageView dp;
+    SharedPreferences myprefs;
+    String stdid, stdnum, fname, lname;
 
     String nme;
 
@@ -86,6 +96,7 @@ public class FragmentDrawer extends Fragment {
         //Set Name and amount Credits Left
         TextView nameT = (TextView)layout.findViewById(R.id.nameTxt);
         TextView credits = (TextView)layout.findViewById(R.id.creditsTxt);
+        dp = (ImageView)layout.findViewById(R.id.iv);
 
 /*        SharedPreferences myprefs= getActivity().getSharedPreferences("user",Context.MODE_PRIVATE);
         String student_fName= myprefs.getString("student_fname", null);
@@ -97,6 +108,12 @@ public class FragmentDrawer extends Fragment {
 
         nameT.setText(fullName);
         credits.setText(balance);*/
+
+        myprefs= this.getContext().getSharedPreferences("user", MODE_PRIVATE);
+        stdid=myprefs.getString("student_id",null);
+        stdnum= myprefs.getString("student_student_num", null);
+        fname= myprefs.getString("student_fname", null);
+        lname= myprefs.getString("student_lname", null);
 
 
 
@@ -143,6 +160,20 @@ public class FragmentDrawer extends Fragment {
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 super.onDrawerSlide(drawerView, slideOffset);
                 toolbar.setAlpha(1 - slideOffset / 2);
+
+                Random r = new Random();
+                int i1 = r.nextInt(999999-111111)+111111;
+                String ran = Integer.toString(i1);
+
+                try {
+                    Picasso.with(getContext()).load("http://neural.net16.net/pictures/s" + stdnum + "JPG?"+ran ).into(dp);
+                }catch (Exception e)
+                {
+
+                    Toast.makeText(getContext(), "No profile picture", Toast.LENGTH_SHORT).show();
+                    dp.setImageResource(R.drawable.ic_profile_greenp);
+
+                }
             }
         };
 

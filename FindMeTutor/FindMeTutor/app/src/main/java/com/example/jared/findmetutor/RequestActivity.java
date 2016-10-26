@@ -106,7 +106,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     public void sendEmails(List<TutorsEList> list){
 
         for(int i=0; i<list.size();i++) {
-            String fromEmail = "FindmetutorSD3@gmail.com";
+            String fromEmail = "FindmetutorSD@gmail.com";
             String fromPassword = "findmetutors";
             String toEmails = list.get(i).tutorEmail.toString(); //Sessions.get(i).studentEmail.toString() ;
             String adminEmail = "admin@gmail.com";
@@ -117,7 +117,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
                             + "<br><br>"+fname+" "+lname+" is requesting a tutorial session"
                             + "<br><br>"
                             +"Subject : "+curSelection+ "<br>"
-                            +"Description : "+ dsp
+                            +"Description : "+ dsp +"<br>"
                             +"Date : " + date+ "<br>"
                             +"Time :" +time+ "<br>"
                             +"<br>"
@@ -164,8 +164,6 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         getList.delegate=this;
         getList.execute();
 
-
-
     }
 
     @Override
@@ -173,12 +171,18 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         //On return from getList
         Toast.makeText(temp, "Sending emails", Toast.LENGTH_SHORT).show();
         List<TutorsEList> emailsList = getList.getList();
-        sendEmails(emailsList);
+        //sendEmails(emailsList);
 
 
-        Intent goHome = new Intent(RequestActivity.this, HomeActivity.class);
-        goHome.putExtra("key","1");
-        startActivity(goHome);
+        //Intent goHome = new Intent(RequestActivity.this, HomeActivity.class);
+        //goHome.putExtra("key","1");
+        //startActivity(goHome);
+
+        SharedPreferences myprefs= getSharedPreferences("user", MODE_PRIVATE);
+        String email=myprefs.getString("student_email",null);
+        String pass= myprefs.getString("student_password", null);
+        login in = new login(this, email, pass);
+        in.execute();
 
     }
 
@@ -218,7 +222,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     public String currentDate() {
         StringBuilder mcurrentDate = new StringBuilder();
         int month = datePicker.getMonth() + 1;
-        String ret = datePicker.getDayOfMonth()+" "+getMonth(month) + " "+datePicker.getYear();
+        String ret = datePicker.getDayOfMonth()+"/"+datePicker.getMonth() + "/"+datePicker.getYear();
         return ret;
     }
 

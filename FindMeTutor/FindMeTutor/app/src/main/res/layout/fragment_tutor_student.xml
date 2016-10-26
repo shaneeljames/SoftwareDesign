@@ -155,6 +155,40 @@
 
     </android.support.v7.widget.CardView>
 
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv3"
+        android:layout_below="@+id/cv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android.support.v7.cardview="http://schemas.android.com/apk/res-auto"
+        android.support.v7.cardview:cardElevation="5dp"
+        android:clipChildren="false"
+        android:visibility="invisible"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+
+            <Button
+                android:id="@+id/checkOut"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Check Out"
+                android:layout_centerInParent="true"/>
+
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
 
 
 </RelativeLayout>

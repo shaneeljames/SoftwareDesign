@@ -7,6 +7,8 @@
 
 // Jadon's Log //
 
+0. Nav Drawer stuff is in the HomeActivity Class
+
 1. Added Pull to refresh(21/10)
 
 -Surround recycler view with swipeRefrestLayout
@@ -50,6 +52,8 @@
 -We can get a students street address based on their long and lat
 -Not sure if bluestacks supports it though
 -need to test it properly!
+
+
 
 
 

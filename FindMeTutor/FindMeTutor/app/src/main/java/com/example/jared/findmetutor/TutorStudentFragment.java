@@ -20,6 +20,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.view.menu.MenuAdapter;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -68,6 +69,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
     String id;
 
     Button requestGps;
+    CardView check;
     Button checkOut;
     TextView cords;
     ImageView tutorDp;
@@ -120,6 +122,8 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
         email=(TextView)rootView.findViewById(R.id.tutorEmail);
         name = (TextView)rootView.findViewById(R.id.tutorName);
         info=(TextView)rootView.findViewById(R.id.infoText);
+        check = (CardView)rootView.findViewById(R.id.cv3);
+        checkOut = (Button)rootView.findViewById(R.id.checkOut);
 
         tutStdNum = this.getArguments().getString("tutor_student_num");
         sessionId = this.getArguments().getString("sessionID");
@@ -178,9 +182,11 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
             //locationAddress.getAddressFromLocation(38.898748, -77.037684
              //       , getContext(), new GeocoderHandler());
 
-        String add = getAddressString(lat,lon);
-        Toast.makeText(getContext(), add, Toast.LENGTH_LONG);
-        info.setText(add);
+        //String add = getAddressString(lat,lon);
+        //Toast.makeText(getContext(), add, Toast.LENGTH_LONG);
+        //info.setText(add);
+
+        check.setVisibility(View.VISIBLE);
 
 
 
