@@ -234,10 +234,10 @@ Describes the high-level functionality of the system\\
 				RQ7.2 & The system shall allow a tutor to check-out  & UC-CO \\ \hline
 				RQ8.1 & The system shall allow a student to add funds &UC-CF\\ \hline
 				RQ8.2 & The system shall allow a student to view funds &UC-VF\\ \hline
-				RQ8.3 & The system shall allow a student to update funds &UC-UF\\ \hline
-				RQ9.1 & The system shall allow a tutor to add funds &UC-CF\\ \hline
-				RQ9.2 & The system shall allow a tutor to view funds &UC-VF\\ \hline
-				RQ9.3 & The system shall allow a tutor to update funds &UC-UF\\ \hline
+				%RQ8.3 & The system shall allow a student to update funds &UC-UF\\ \hline
+				%RQ9.1 & The system shall allow a tutor to add funds &UC-CF\\ \hline
+				RQ9.1 & The system shall allow a tutor to view funds &UC-VF\\ \hline
+				%RQ9.3 & The system shall allow a tutor to update funds &UC-UF\\ \hline
 				RQ10.1 & The system shall allow a student to add subjects &UC-CSb\\ \hline
 				RQ11.1 & The system shall allow a tutor to add subjects &UC-CSb\\ \hline
 				RQ12.1 & The system shall allow a student to remove subjects &UC-DSb\\ \hline
@@ -527,6 +527,68 @@ Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 		\hline
 \end{tabular}
 \\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-20\\
+	\textbf{Use Case Tested:}& UC-VF\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor is able to view the traffic of funds in their account.\\
+	\textbf{Input Data:}& Request to view my funds\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'view funds' & The system indicates failure when the incorrect  amount of funds are refleted in the tutor's account or if trafficing is incorrectly depicted. \\
+	Step 2.Go to 'view funds' & The system indicates success when the correct  amount of funds are refleted in the tutor's account and if trafficing is correctly depicted.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-21\\
+	\textbf{Use Case Tested:}& UC-CSb\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student is able to add subjects that they are enrolled in to their account, hence are now able to request tutorials on this particular subject.\\
+	\textbf{Input Data:}& New subject\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'add subject' and select a subject to add& The system indicates failure when the student's account does not reflect the newly added subject as a subject in which they are enrolled. \\
+	Step 2.Go to 'add subject' and select a subject to add & The system indicates success when the student's account does reflect the newly added subject as a subject in which they are enrolled.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-22\\
+	\textbf{Use Case Tested:}& UC-CSb\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor is able to add subjects that they are eligible to tutor in to their account profile, and when student's request tutor's for this particular subject, tutor's recieve notifications of these tutuorial requests.\\
+	\textbf{Input Data:}& New subject\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'add subject' and select a subject to add& The system indicates failure when the tutor's account does not reflect the newly added subject as a subject in which they are enrolled. \\
+	Step 2.Go to 'add subject' and select a subject to add & The system indicates success when the tutor's account does reflect the newly added subject as a subject in which they are enrolled.\\
+		\hline
+\end{tabular}
+\\
+
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-23\\
+	\textbf{Use Case Tested:}& UC-DSb\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student is able to delete subjects that they are enrolled from to their account.\\
+	\textbf{Input Data:}& Subject to be deleted\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'delete subject' and select a subject to delete from the list of subjects in which you are enrolled & The system indicates failure when the student's account does not reflect deletion of the newly deleted subject, but as a subject in which they are still enrolled. \\
+	Step 2.Go to 'delete subject' and select a subject to delete from the list of subjects in which you are enrolled & The system indicates success when the student's account does  reflect deletion of the newly deleted subject, hence it is not reflected  as a subject in which they are still enrolled.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-24\\
+	\textbf{Use Case Tested:}& UC-DSb\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor is able to delete subjects that they no longer willing to tutor from  their account.\\
+	\textbf{Input Data:}& Subject to be deleted\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'delete subject' and select a subject to delete from the list of subjects in which you are able to tutor & The system indicates failure when the tutor's account does not reflect deletion of the newly deleted subject, but as a subject in which they are still tutoring. \\
+	Step 2.Go to 'delete subject' and select a subject to delete from the list of subjects in which you are tutoring & The system indicates success when the tutor's account does  reflect deletion of the newly deleted subject, hence it is not reflected  as a subject in which they are still tutoring.\\
+		\hline
+\end{tabular}
+\\
+
 \subsubsection{Acceptance Tests (general)}
 
 \begin{itemize}
