@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  26 OCT 2016 20:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  26 OCT 2016 20:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -423,103 +423,123 @@ Underfull \hbox (badness 10000) in paragraph at lines 447--458
  []
 
 [15]
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 459--469
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 459--470
 [][] 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 459--470
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 471--482
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 471--482
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 483--494
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--494
+
+ []
+
 [16]
-Overfull \hbox (4.53062pt too wide) in paragraph at lines 494--496
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 495--505
+[][] 
+ []
+
+[17]
+Overfull \hbox (4.53062pt too wide) in paragraph at lines 530--532
 []\OT1/cmr/m/n/12 ACT4.04 Chal-lenge reg-is-tered ad-min-is-tra-tor to view the
 ir ac-count (pass) 
  []
 
 
-Overfull \hbox (6.09181pt too wide) in paragraph at lines 496--497
+Overfull \hbox (6.09181pt too wide) in paragraph at lines 532--533
 []\OT1/cmr/m/n/12 ACT5.01 A stu-dent re-quest-ing a tu-tor can re-quest a tu-to
 r for a date/time
  []
 
-[17] [18]
+[18] [19]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
- [19]
-Underfull \hbox (badness 10000) in paragraph at lines 559--560
+ [20]
+Underfull \hbox (badness 10000) in paragraph at lines 595--596
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 559--560
+Underfull \hbox (badness 10000) in paragraph at lines 595--596
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--608
+Underfull \hbox (badness 10000) in paragraph at lines 597--644
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--608
+Underfull \hbox (badness 10000) in paragraph at lines 597--644
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--608
+Underfull \hbox (badness 10000) in paragraph at lines 597--644
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--608
+Underfull \hbox (badness 10000) in paragraph at lines 597--644
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--608
+Underfull \hbox (badness 10000) in paragraph at lines 597--644
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--608
+Underfull \hbox (badness 10000) in paragraph at lines 597--644
 
- []
-
-[20]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 613--631
- [][] 
  []
 
 [21]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 635--652
- [][] 
- []
-
-
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 657--676
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 649--667
  [][] 
  []
 
 [22]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 680--697
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 671--688
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 701--718
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 693--712
  [][] 
  []
 
 [23]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 722--739
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 716--733
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 743--758
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 737--754
  [][] 
  []
 
 [24]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 762--777
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 758--775
  [][] 
  []
 
@@ -528,103 +548,113 @@ Overfull \hbox (48.79134pt too wide) in paragraph at lines 779--794
  [][] 
  []
 
-
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 797--822
- [][] 
- []
-
 [25]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 823--840
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 798--813
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 841--857
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 815--830
+ [][] 
+ []
+
+
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 833--858
  [][] 
  []
 
 [26]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 858--873
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 859--876
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 874--889
- [][] 
- []
-
-
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 890--906
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 877--893
  [][] 
  []
 
 [27]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 907--928
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 894--909
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 929--946
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 910--925
+ [][] 
+ []
+
+
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 926--942
  [][] 
  []
 
 [28]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 948--964
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 943--964
  [][] 
  []
 
-[29] <./Sprint3Models/Use_Case_Diagram.png, id=97, 1445.4pt x 1224.575pt>
+
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 965--982
+ [][] 
+ []
+
+[29]
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 984--1000
+ [][] 
+ []
+
+[30] <./Sprint3Models/Use_Case_Diagram.png, id=100, 1445.4pt x 1224.575pt>
 File: ./Sprint3Models/Use_Case_Diagram.png Graphic file (type png)
 
 <use ./Sprint3Models/Use_Case_Diagram.png>
 Package pdftex.def Info: ./Sprint3Models/Use_Case_Diagram.png used on input lin
-e 972.
+e 1008.
 (pdftex.def)             Requested size: 398.33858pt x 337.47856pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 969--973
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 1005--1009
  [] 
  []
 
-[30 <./Sprint3Models/Use_Case_Diagram.png (PNG copy)>]
-Overfull \hbox (58.99843pt too wide) in alignment at lines 979--1015
+[31 <./Sprint3Models/Use_Case_Diagram.png (PNG copy)>]
+Overfull \hbox (58.99843pt too wide) in alignment at lines 1015--1051
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1015
+Underfull \vbox (badness 10000) detected at line 1051
  []
 
 
-Overfull \hbox (58.99843pt too wide) in alignment at lines 1015--1038
+Overfull \hbox (58.99843pt too wide) in alignment at lines 1051--1074
  [] [] [] 
  []
 
-[31] [32]
-<./Sprint3Models/Analysis_Object_model3.png, id=108, 596.98032pt x 845.40843pt>
+[32] [33]
+<./Sprint3Models/Analysis_Object_model3.png, id=111, 596.98032pt x 845.40843pt>
 File: ./Sprint3Models/Analysis_Object_model3.png Graphic file (type png)
 <use ./Sprint3Models/Analysis_Object_model3.png>
 Package pdftex.def Info: ./Sprint3Models/Analysis_Object_model3.png used on inp
-ut line 1043.
+ut line 1079.
 (pdftex.def)             Requested size: 398.33858pt x 564.11162pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 1043--1044
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 1079--1080
  [] 
  []
 
-[33]
+[34]
 Overfull \vbox (38.69493pt too high) has occurred while \output is active []
 
 
-[34 <./Sprint3Models/Analysis_Object_model3.png>]
-<./Sprint3Models/Dynamic_model3.png, id=117, 596.98032pt x 845.40843pt>
+[35 <./Sprint3Models/Analysis_Object_model3.png>]
+<./Sprint3Models/Dynamic_model3.png, id=120, 596.98032pt x 845.40843pt>
 File: ./Sprint3Models/Dynamic_model3.png Graphic file (type png)
 
 <use ./Sprint3Models/Dynamic_model3.png>
 Package pdftex.def Info: ./Sprint3Models/Dynamic_model3.png used on input line 
-1048.
+1084.
 (pdftex.def)             Requested size: 398.33858pt x 564.11162pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 1048--1049
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 1084--1085
  [] 
  []
 
@@ -632,11 +662,11 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 1048--1049
 Overfull \vbox (38.69493pt too high) has occurred while \output is active []
 
 
-[35 <./Sprint3Models/Dynamic_model3.png>] [36] [37] [38]
+[36 <./Sprint3Models/Dynamic_model3.png>] [37] [38] [39]
 (./RequirementsAnalysisDocument.aux) )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 607 ({)
+### simple group (level 1) entered at line 643 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
  2548 strings out of 493085
@@ -650,10 +680,10 @@ Here is how much of TeX's memory you used:
 mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on RequirementsAnalysisDocument.pdf (38 pages, 382922 bytes).
+Output written on RequirementsAnalysisDocument.pdf (39 pages, 384669 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 100 compressed objects within 1 object stream
+ 154 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
