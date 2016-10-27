@@ -65,6 +65,7 @@ public class GetLocation2 {
                     if (status == 1) {
                         //Toast.makeText(parent.getApplicationContext(), "Lat: " + location.getLatitude() + " Long: " + location.getLongitude(), Toast.LENGTH_SHORT).show();
                         student_checkout connect2server1 = new student_checkout(parent, TutorStudentID, "Lat: " + location.getLatitude() + " Long: " + location.getLongitude());
+                        connect2server1.delegate = frag;
                         connect2server1.execute();
                     }
 
@@ -105,7 +106,7 @@ public class GetLocation2 {
         } else {
 
             //  if(count ==0) {
-            locationManager.requestLocationUpdates("gps", -1, 0, locationListener);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
             // count++ ;
             // }
 
@@ -133,7 +134,7 @@ public class GetLocation2 {
                         // for ActivityCompat#requestPermissions for more details.
                         return;
                     }
-                    locationManager.requestLocationUpdates("gps", -1, 0, locationListener);
+                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
                       //  count++;
 
                     }

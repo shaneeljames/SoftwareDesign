@@ -85,6 +85,8 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
     Context context;
     HomeFragment base;
 
+
+
     CardViewAdapter(List<Session> events, Context context, HomeFragment home){
         this.events = events;
         this.context = context;
@@ -117,6 +119,12 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
     @Override
     public void onBindViewHolder(final EventViewHolder eventViewHolder, final int i) {
+
+        SharedPreferences myprefs =  context.getSharedPreferences("user", MODE_PRIVATE);
+        final String stdid = myprefs.getString("student_id", null);
+        String fname = myprefs.getString("student_fname",null);
+        String lname = myprefs.getString("student_lname",null);
+        String email = myprefs.getString("student_email", null);
 
 
             eventViewHolder.sess.setText(events.get(i).sessionID);
@@ -181,7 +189,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                                     public void onClick(View view) {
 
 
-                                        student_cancel connect2server = new student_cancel(context,events.get(i).sessionID) ;
+                                        student_cancel connect2server = new student_cancel(context,events.get(i).sessionID, stdid) ;
                                         connect2server.execute();
                                         eventViewHolder.status.setText("Cancelled");
 
@@ -200,6 +208,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
             else if(eventViewHolder.status.getText().toString().equals("pending"))
             {
+                eventViewHolder.status.setText("Pending - With "+events.get(i).total+ " tutors in pool");
                 eventViewHolder.cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -210,7 +219,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                                     public void onClick(View view) {
 
 
-                                        student_cancel connect2server = new student_cancel(context,events.get(i).sessionID) ;
+                                        student_cancel connect2server = new student_cancel(context,events.get(i).sessionID, stdid) ;
                                         connect2server.execute();
                                         eventViewHolder.status.setText("Cancelled");
 
@@ -225,7 +234,38 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                         snackbar.show();
                     }
                 });
+
+               if(events.get(i).total.equals(events.get(i).unavailable)){
+
+                    student_cancel connect2server = new student_cancel(context,events.get(i).sessionID, stdid) ;
+                    connect2server.execute();
+                    eventViewHolder.status.setText("Expired");
+
+
+
+
+                    String fromEmail = "FindmetutorSD@gmail.com";
+                    String fromPassword = "findmetutors";
+                    String toEmails = email; //Sessions.get(i).studentEmail.toString() ;
+                    String adminEmail = "admin@gmail.com";
+                    String emailSubject = "Find Me Tutor - Session Unavailable";
+                    String adminSubject = "App Registration Mail";
+                    String emailBody =
+                            "Dear " + fname +" "+lname +"<br>"
+                                    +"We regret to inform you that all the respective tutors have declined your request."+"<br>"
+                                    +"Your account has been refunded."+"<br>"
+                                    +"Please feel free to make another request ... "
+                                    + "<br><br>"
+                                    +"From FindMeTutor";
+
+                    String adminBody = "Your message";
+                    new SendMailTask(context).execute(fromEmail,
+                            fromPassword, toEmails, emailSubject, emailBody);
+
+                }
             }
+
+
 
         //Check if the session is expired
         //ie. passed the current date+1
@@ -249,41 +289,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
     public boolean isExpired(String cdate) throws ParseException {
 
         boolean re = false;
-
-
-        String[] currDate = cdate.split(" ");
-        String cDate = currDate[0];
-        String cMoth = currDate[1];
-        String cYear = currDate[2];
-
-
-
-        Calendar c = Calendar.getInstance();
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-
-        String current = df.format(c.getTime());
-
-
-
-
-        String[] split = current.split(" ");
-
-        int iDash=split[0].indexOf('-');
-        int lDash=split[0].lastIndexOf('-');
-
-        String year = split[0].substring(0, iDash);
-        String month = split[0].substring(iDash+1, lDash);
-        String date = split[0].substring(lDash+1);
-
-        if(Integer.parseInt(year)>=Integer.parseInt(cYear)){
-            if(Integer.parseInt(month)>=getMonth(cMoth)){
-                if(Integer.parseInt(date)>Integer.parseInt(cDate)){
-                    re=true;
-                }
-            }
-        }
-
-
 
         // formattedDate have current date/time
        // Toast.makeText(context, "Year :"+year+" Month:"+month+ " Date: "+date +">>>" + cYear+" "+getMonth((cMoth))+" "+cDate, Toast.LENGTH_LONG).show();

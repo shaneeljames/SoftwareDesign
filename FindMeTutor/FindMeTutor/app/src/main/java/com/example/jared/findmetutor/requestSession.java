@@ -29,12 +29,14 @@ public class requestSession extends AsyncTask<String, String, String> {
     String date;
     String time;
     String description;
+    String total;
+
 
     String result = "";
 
     public AsyncResponse delegate = null;
 
-    public requestSession(Activity par, String tid, String sid, String subjid, String amt, String dte, String tme, String desc){
+    public requestSession(Activity par, String tid, String sid, String subjid, String amt, String dte, String tme, String desc, String tot){
         parent = par;
         tutor_id = tid;
         student_id = sid;
@@ -43,6 +45,7 @@ public class requestSession extends AsyncTask<String, String, String> {
         date = dte;
         time = tme;
         description = desc;
+        total = tot;
 
     }
     @Override
@@ -65,6 +68,7 @@ public class requestSession extends AsyncTask<String, String, String> {
         parameter.put("Date", date);
         parameter.put("Time", time);
         parameter.put("Description",description);
+        parameter.put("Total", total);
 
         StringBuilder postData = new StringBuilder();
         for (Map.Entry<String,Object> param : parameter.entrySet()) {
@@ -137,7 +141,7 @@ public class requestSession extends AsyncTask<String, String, String> {
             Toast.makeText(parent.getApplicationContext(), "Session Request Successful! " +result, Toast.LENGTH_SHORT).show();
         }
 
-        delegate.processFinish2(result);
+        delegate.processFinish3(result);
     }
 
 }

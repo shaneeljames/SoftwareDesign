@@ -18,6 +18,11 @@
             layout="@layout/toolbar" />
     </LinearLayout>
 
+    <ScrollView
+        android:id="@+id/svV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
@@ -25,13 +30,10 @@
 
 
 
-    <ScrollView
-        android:id="@+id/svV"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
         android:gravity="center"
@@ -50,7 +52,6 @@
             android:onClick="DisplayPicture"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
-            android:layout_marginTop="0dp"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"/>
 
@@ -175,9 +176,11 @@
         </LinearLayout>
 
 
-    </ScrollView>
+
 
     </RelativeLayout>
+
+</ScrollView>
 
 
 </android.support.design.widget.CoordinatorLayout>

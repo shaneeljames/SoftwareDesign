@@ -22,6 +22,8 @@ public class Session {
     String desc;
     String status;
     String available;
+    String unavailable;
+    String total;
 
     //String venue;
 
@@ -32,7 +34,7 @@ public class Session {
 
     public List<Session> events;
 
-    Session(String sesId, String tId, String tSdtN, String tNme, String subName,  String subId, String amt, String dte, String tme, String dsc, String st, String av, int p, Context context) {
+    Session(String sesId, String tId, String tSdtN, String tNme, String subName,  String subId, String amt, String dte, String tme, String dsc, String st, String av, String unav, String totl, int p, Context context) {
         this.sessionID = sesId;
         this.tutorID = tId;
         this.tutorStdNum=tSdtN;
@@ -45,6 +47,8 @@ public class Session {
         this.desc = dsc;
         this.status = st;
         this.available = av;
+        this.unavailable= unav;
+        this.total = totl;
         this.photoId = p;
         this.context= context;
     }

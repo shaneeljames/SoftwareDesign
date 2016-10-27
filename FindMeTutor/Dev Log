@@ -64,6 +64,18 @@
 -Cards are orderd by thir dates in decending order
 -format YYYY-MM-DD
 
+9. Number of Tutors in pool(27/10)
+
+-Student app now displays number of tutors a request was send out to
+
+10. Notify if all tutors delcine....
+
+-student recieves an email if all the tutors decline his/her request
+-and the session gets expired
+
+11.Student Rate tutor
+
+-Student rates tutor after session is over
 
 
 

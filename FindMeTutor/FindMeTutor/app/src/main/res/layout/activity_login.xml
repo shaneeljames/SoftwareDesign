@@ -55,6 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
+                android:text="815050@students.wits.ac.za"
                 android:hint="Email " />
         </android.support.design.widget.TextInputLayout>
 
@@ -68,6 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
+                android:text="password"
                 android:hint="@string/hint_password" />
         </android.support.design.widget.TextInputLayout>
 
@@ -91,6 +93,16 @@
             android:textSize="25sp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="65dp" />
+
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:id="@+id/pgbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            />
 
 
 

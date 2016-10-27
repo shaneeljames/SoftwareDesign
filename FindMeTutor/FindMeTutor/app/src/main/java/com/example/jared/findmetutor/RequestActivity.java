@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,6 +58,8 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     getTutorEmailList getList;
 
     RequestActivity temp;
+    int sizeOfList;
+    String sz;
 
 
 
@@ -94,7 +97,11 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
             @Override
             public void onClick(View view) {
 
-                request();
+                getList = new getTutorEmailList(temp, subjId, eList );
+                getList.delegate=temp;
+                getList.execute();
+
+                req.setEnabled(false);
 
             }
         });
@@ -160,9 +167,10 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     @Override
     public  void processFinish2(String out){
         //get the relevant tutor email list
-        getList = new getTutorEmailList(temp, subjId, eList );
-        getList.delegate=this;
-        getList.execute();
+        sizeOfList = eList.size();
+        sz = sizeOfList+"";
+        request();
+
 
     }
 
@@ -177,7 +185,8 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         SharedPreferences myprefs= getSharedPreferences("user", MODE_PRIVATE);
         String email=myprefs.getString("student_email",null);
         String pass= myprefs.getString("student_password", null);
-        login in = new login(this, email, pass);
+        ProgressBar tmp = null;
+        login in = new login(this, email, pass, tmp);
         in.execute();
 
     }
@@ -195,9 +204,9 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         EditText desc = (EditText)findViewById(R.id.descriptionTxt);
         dsp = desc.getText().toString();
 
-        Toast.makeText(getApplicationContext(), date+" "+time +" "+subj+" "+dsp, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), student_id+" ID", Toast.LENGTH_SHORT).show();
 
-        requestSession session = new requestSession(this, tutor_id, student_id, subject_id, amount, date,time,dsp);
+        requestSession session = new requestSession(this, tutor_id, student_id, subject_id, amount, date,time,dsp, sz );
         session.delegate=this;
         //sends to process2 when done
         session.execute();

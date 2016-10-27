@@ -34,6 +34,7 @@ import android.webkit.GeolocationPermissions;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,6 +49,7 @@ import java.util.List;
 import java.util.Locale;
 
 import static android.content.Context.LOCATION_SERVICE;
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -63,7 +65,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
 
     Fragment mContent;
     SharedPreferences myprefs;
-
+    String studentid;
     getTutors connect2server;
     List<Tutors> list = new ArrayList<>();
 
@@ -139,7 +141,12 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
         getTutorinfo = new studentTutor(this.getActivity(), tutorID, tutorr);
         getTutorinfo.delegate = this;
         getTutorinfo.execute();
+       // SharedPreferences myprefs ;
 
+        myprefs = getContext().getSharedPreferences("user", MODE_PRIVATE);
+
+
+        studentid = myprefs.getString("student_id", null);
         Toast.makeText(getContext(), tutStdNum+ " Session id :"+sessionId,Toast.LENGTH_SHORT).show();
 
         try{
@@ -197,6 +204,8 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
         View promptView = layoutInflater.inflate(R.layout.input_dialog, null);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
         alertDialogBuilder.setView(promptView);
+       // myprefs =  getContext().getSharedPreferences("user", MODE_PRIVATE);
+
 
         final EditText editText = (EditText) promptView.findViewById(R.id.edittext);
         // setup a dialog window
@@ -204,9 +213,46 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Toast.makeText(getContext(), "Hello, " + editText.getText(), Toast.LENGTH_LONG).show();
-                        student_cancel can = new student_cancel(getContext(),sessionId) ;
+                        student_cancel can = new student_cancel(getContext(),sessionId,studentid) ;
                         can.execute();
                         //sendEmails();
+                    }
+                });
+
+        // create an alert dialog
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
+    }
+
+    public void showRatingDialog() {
+
+        // get prompts.xml view
+        LayoutInflater layoutInflater = LayoutInflater.from(getContext());
+        View promptView = layoutInflater.inflate(R.layout.rating_dialog, null);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
+        alertDialogBuilder.setView(promptView);
+        // myprefs =  getContext().getSharedPreferences("user", MODE_PRIVATE);
+
+
+        final RatingBar ratingBar =(RatingBar)promptView.findViewById(R.id.ratingBarDiag) ;
+        // setup a dialog window
+        alertDialogBuilder.setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        String rati = ratingBar.getRating()+"";
+
+                        //sendEmails();
+                        student_rateTutor rateTutor = new student_rateTutor(getContext(), sessionId, rati);
+                        rateTutor.execute();
+
+                        student_updatetutorrating updatetutorrating = new student_updatetutorrating(getContext(),tutorID );
+                        updatetutorrating.execute();
+                        //Go through the login to go to the home screen
+                        String email=myprefs.getString("student_email",null);
+                        String pass= myprefs.getString("student_password", null);
+                        ProgressBar tmp = null;
+                        login in = new login(getActivity(), email, pass, tmp);
+                        in.execute();
                     }
                 })
                 .setNegativeButton("Back",
@@ -220,6 +266,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
         AlertDialog alert = alertDialogBuilder.create();
         alert.show();
     }
+
 
     public void getLoco(double lat, double lon){
 
@@ -334,6 +381,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
     public void processFinish(String output) {
 
 
+        showRatingDialog();
 
 
 
