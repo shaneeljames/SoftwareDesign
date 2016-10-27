@@ -221,6 +221,7 @@ public class CardViewNotificationsAdapter extends RecyclerView.Adapter<CardViewN
                         connect2server.execute() ;
 
                         e.decline.setText("Declined");
+                        e.decline.setClickable(false);
 
                         Toast.makeText(context,editText.getText(),Toast.LENGTH_SHORT).show() ;
                     }

@@ -15,6 +15,13 @@ public class GetLocation implements LocationListener {
 
     Context context ;
 
+    public void GetLocation()
+    {
+
+
+    }
+
+
     public void onLocationChanged(Location location) {
         location.getLatitude();
         location.getLongitude();

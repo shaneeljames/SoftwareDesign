@@ -20,6 +20,8 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -57,6 +59,7 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
     String student_checkin ;
     String student_checkout ;
     String paid ;
+    int[] currentDate = new int[3];
 
     List<tutor_Sessions> in;
     public tutor_AsyncResponse delegate = null; //Notify when async is done
@@ -70,6 +73,25 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
     public tutor_getSessions(Activity par){
         parent = par;
     }
+
+    @Override
+    protected void onPreExecute() {
+        Calendar c = Calendar.getInstance() ;
+        SimpleDateFormat d = new SimpleDateFormat("yyyy-MM-dd") ;
+        String date1 = d.format(c.getTime());
+
+        String[] split = date1.split("-") ;
+
+        for(int i = 0; i<split.length;i++)
+        {
+            // Toast.makeText(context,date[i], Toast.LENGTH_SHORT).show();
+            currentDate[i] =  Integer.parseInt( split[i]) ;
+        }
+
+
+
+    }
+
     @Override
     protected String doInBackground(String... params) {
 
@@ -196,9 +218,17 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
                     student_rating = jsObj.getString("student_rating");
                     paid =  jsObj.getString("paid");
 
-                   //  Toast.makeText(parent.getApplicationContext(),"session " + tutor_checkin, Toast.LENGTH_SHORT).show();
-                   in.add(new tutor_Sessions(sessionID,tutorID,studentID,subjectID,subjectName,subjectCode,amount,date,time,studentName,StudentSurname,desc,studentNumber,Student_contact_num,Student_email,status,tutor_checkin,Float.parseFloat(student_rating),tutor_checkout,student_checkin,student_checkout,paid,R.drawable.session,parent)) ;
-                   // Toast.makeText(parent.getApplicationContext(),"paid " + paid, Toast.LENGTH_SHORT).show();
+                   if( isExpired(date) == false)
+                   {
+                      // tutor_checkExpired connect2server = new tutor_checkExpired(parent,sessionID) ;
+                       //connect2server.execute() ;
+                   }
+                    else {
+                       //  Toast.makeText(parent.getApplicationContext(),"session " + tutor_checkin, Toast.LENGTH_SHORT).show();
+
+                       // Toast.makeText(parent.getApplicationContext(),"paid " + paid, Toast.LENGTH_SHORT).show();
+                   }
+                    in.add(new tutor_Sessions(sessionID, tutorID, studentID, subjectID, subjectName, subjectCode, amount, date, time, studentName, StudentSurname, desc, studentNumber, Student_contact_num, Student_email, status, tutor_checkin, Float.parseFloat(student_rating), tutor_checkout, student_checkin, student_checkout, paid, R.drawable.session, parent));
                 }
 
             } catch (JSONException e) {
@@ -228,6 +258,64 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
     public static void startActivity(Context context) {
         context.startActivity(new Intent(context, HomeActivity.class));
     }
+
+    public boolean isExpired(String sessionDate)
+    {
+
+        boolean b = false;
+
+
+        int[] dateSesh = new int[3] ;
+        String[] splitSesh = sessionDate.split("-");
+
+        for(int i = 0; i<splitSesh.length;i++)
+        {
+            dateSesh[i] =  Integer.parseInt( splitSesh[i]) ;
+        }
+
+
+
+        if(dateSesh[0]<currentDate[0])
+        {
+           b=false ;
+        }
+        else
+        if(dateSesh[0]== currentDate[0])
+        {
+            if (dateSesh[1] < currentDate[1])
+            //if(dateSesh[2] < date[2])
+            {
+                b = false;
+                // Toast.makeText(parent.getApplicationContext(),dateSesh[1] + " Expired", Toast.LENGTH_SHORT).show();
+            }
+            else
+             if(dateSesh[1] == currentDate[1])
+             {
+                 if(dateSesh[2] < currentDate[2])
+                 {
+                     b=false ;
+                 }
+                 else
+                     b=true ;
+             }
+        }
+        else
+        if(dateSesh[0] > currentDate[0])
+        {
+            b=true ;
+        }
+
+
+
+        return b ;
+
+
+
+
+
+
+    }
+
 
 }
 

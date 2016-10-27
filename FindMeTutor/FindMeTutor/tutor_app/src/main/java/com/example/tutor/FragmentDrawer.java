@@ -101,7 +101,7 @@ public class FragmentDrawer extends Fragment {
         View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
         recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
 
-         txtName = (TextView) layout.findViewById(R.id.txtName);
+       //  txtName = (TextView) layout.findViewById(R.id.txtName);
          txtBalance = (TextView) layout.findViewById(R.id.txtBalance);
          pp = (ImageView) layout.findViewById(R.id.imgPP)  ;
          rating = (RatingBar) layout.findViewById(R.id.ratingBar2) ;
@@ -117,7 +117,7 @@ public class FragmentDrawer extends Fragment {
          tutor_balance = myprefs.getString("tutor_balance", null);
         tutor_rating = myprefs.getString("tutor_rating", null);
 
-       txtName.setText(tutor_lname + " " + tutor_fname);
+      // txtName.setText(tutor_lname + " " + tutor_fname);
       //  txtName.setText(tutor_id);
         txtBalance.setText(tutor_balance);
 

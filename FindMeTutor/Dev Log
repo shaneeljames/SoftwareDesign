@@ -57,5 +57,6 @@
 
 // Nivek's Log //
 
-1. Added Loading Bar in login scrreem
-2. If tutor declines a request , he/she has to give a reason , which will be emailed to the student .
+1. Added Loading Bar in login scrreen(26/10)
+2. If tutor declines a request , he/she has to give a reason , which will be emailed to the student.(28/10)
+3. If tutor cancels a session , he.she has to give a reason , which will be emailed to the student.(28/10)

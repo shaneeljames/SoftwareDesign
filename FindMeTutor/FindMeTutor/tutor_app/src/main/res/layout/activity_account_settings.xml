@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.tutor.AccountSettingsActivity2">
+    tools:context="com.example.tutor.AccountSettingsActivity2"
+    android:id="@+id/coordinatelay">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -319,6 +320,15 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/btnUpdate"
                 android:layout_weight="1" />
+
+            <TextView
+                android:text="Delete my account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtDeleteAccount"
+                android:textAlignment="center"
+                android:textStyle="normal|bold"
+                android:textColor="@android:color/holo_red_dark" />
         </LinearLayout>
     </ScrollView>
 

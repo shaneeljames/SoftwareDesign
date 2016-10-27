@@ -15,8 +15,12 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -114,21 +118,16 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
 
         drawerFragment = (FragmentDrawer) getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
 
-       // TextView n = (TextView)drawerFragment.getView().findViewById(R.id.txtName);
-       // TextView c = (TextView)drawerFragment.getView().findViewById(R.id.txtBalance);
-       // RatingBar rate = (RatingBar)drawerFragment.getView().findViewById(R.id.ratingBar2);
-       // ImageView img = (ImageView)drawerFragment.getView().findViewById(R.id.imgPP);
+        TextView n = (TextView)drawerFragment.getView().findViewById(R.id.txtName);
+        TextView c = (TextView)drawerFragment.getView().findViewById(R.id.txtBalance);
+        RatingBar rate = (RatingBar)drawerFragment.getView().findViewById(R.id.ratingBar2);
+        ImageView img = (ImageView)drawerFragment.getView().findViewById(R.id.imgPP);
 
-        //n.setText(tutor_fname+ " "+tutor_lname);
-        //c.setText(tutor_current_balance);
+        n.setText(tutor_fname+ " "+tutor_lname);
+        c.setText(tutor_current_balance);
+        rate.setRating(Float.parseFloat(tutor_rating));
 
         //Set the students rating
-      /*  String rat = tutor_rating;
-        int dotIndex = rat.indexOf(".");
-        String st = rat.substring(0,dotIndex+2);
-        float r = Float.parseFloat(st);
-        rate.setStepSize(0.1f);
-        rate.setRating(r);*/
 
         Random r1 = new Random();
         int i1 = r1.nextInt(999999 - 111111) + 111111;
@@ -138,10 +137,10 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
 
 
         try {
-            //Picasso.with(getApplicationContext()).load("http://neural.net16.net/pictures/t" + tutor_id.toString() + "JPG?"+ ran).into(img);
+            Picasso.with(getApplicationContext()).load("http://neural.net16.net/pictures/t" + tutor_id.toString() + "JPG?"+ ran).into(img);
         }catch (Exception e)
         {
-           // img.setImageResource(R.drawable.session);
+            img.setImageResource(R.drawable.session);
         }
 
 
