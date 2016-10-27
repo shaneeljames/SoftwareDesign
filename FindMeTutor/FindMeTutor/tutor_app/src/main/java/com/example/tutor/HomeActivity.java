@@ -22,6 +22,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Random;
+
 public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.FragmentDrawerListener{
 
     private String name, email;
@@ -42,6 +44,14 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
         //test
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        SharedPreferences preferences =this.getSharedPreferences("user", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.commit();
+        // finish();
+
+
 
         Intent intent = getIntent();
         String jsonString = intent.getStringExtra("user");
@@ -72,6 +82,9 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
             e.printStackTrace();
         }
 
+
+
+
         myprefs=this.getSharedPreferences("user", MODE_PRIVATE) ;
         myprefs.edit().putString("tutor_id", tutor_id).apply();
         myprefs.edit().putString("tutor_fname", tutor_fname).apply();
@@ -100,6 +113,40 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         drawerFragment = (FragmentDrawer) getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
+
+       // TextView n = (TextView)drawerFragment.getView().findViewById(R.id.txtName);
+       // TextView c = (TextView)drawerFragment.getView().findViewById(R.id.txtBalance);
+       // RatingBar rate = (RatingBar)drawerFragment.getView().findViewById(R.id.ratingBar2);
+       // ImageView img = (ImageView)drawerFragment.getView().findViewById(R.id.imgPP);
+
+        //n.setText(tutor_fname+ " "+tutor_lname);
+        //c.setText(tutor_current_balance);
+
+        //Set the students rating
+      /*  String rat = tutor_rating;
+        int dotIndex = rat.indexOf(".");
+        String st = rat.substring(0,dotIndex+2);
+        float r = Float.parseFloat(st);
+        rate.setStepSize(0.1f);
+        rate.setRating(r);*/
+
+        Random r1 = new Random();
+        int i1 = r1.nextInt(999999 - 111111) + 111111;
+
+        String ran =    Integer.toString(i1) ;
+
+
+
+        try {
+            //Picasso.with(getApplicationContext()).load("http://neural.net16.net/pictures/t" + tutor_id.toString() + "JPG?"+ ran).into(img);
+        }catch (Exception e)
+        {
+           // img.setImageResource(R.drawable.session);
+        }
+
+
+
+
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
         drawerFragment.setDrawerListener(this);
 
@@ -202,12 +249,6 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
                 //Press logout, takes you back to login page
                 Intent home = new Intent(HomeActivity.this, LoginActivity.class);
                 HomeActivity.this.startActivity(home);
-
-                SharedPreferences preferences =getSharedPreferences("user", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.clear();
-                editor.commit();
-               // finish();
 
 
                 this.finish() ;

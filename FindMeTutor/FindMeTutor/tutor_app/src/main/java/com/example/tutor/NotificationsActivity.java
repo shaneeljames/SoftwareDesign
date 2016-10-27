@@ -83,7 +83,7 @@ public class NotificationsActivity extends AppCompatActivity implements tutor_As
     @Override
     public void processFinish(String output) {
 
-        CardViewNotificationsAdapter adapter = new CardViewNotificationsAdapter(connect2server.getList(),this.getApplicationContext()) ;
+        CardViewNotificationsAdapter adapter = new CardViewNotificationsAdapter(connect2server.getList(),this.getApplicationContext(),this) ;
         adapter.notifyDataSetChanged();
         rv.setAdapter(adapter);
         onItemsLoadComplete();

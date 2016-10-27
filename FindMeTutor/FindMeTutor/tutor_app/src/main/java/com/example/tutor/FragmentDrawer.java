@@ -52,7 +52,7 @@ public class FragmentDrawer extends Fragment {
 
     RatingBar rating ;
 
-    SharedPreferences myprefs ;
+    //SharedPreferences myprefs ;
     String tutor_fname ;
     String tutor_lname ;
     String tutor_balance ;
@@ -102,11 +102,15 @@ public class FragmentDrawer extends Fragment {
         recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
 
          txtName = (TextView) layout.findViewById(R.id.txtName);
-        txtBalance = (TextView) layout.findViewById(R.id.txtBalance);
+         txtBalance = (TextView) layout.findViewById(R.id.txtBalance);
          pp = (ImageView) layout.findViewById(R.id.imgPP)  ;
          rating = (RatingBar) layout.findViewById(R.id.ratingBar2) ;
 
-         myprefs =  this.getContext().getSharedPreferences("user", MODE_PRIVATE);
+
+
+
+
+         SharedPreferences myprefs =  this.getContext().getSharedPreferences("user", MODE_PRIVATE);
          tutor_fname = myprefs.getString("tutor_fname", null);
          tutor_lname = myprefs.getString("tutor_lname", null);
          tutor_id = myprefs.getString("tutor_student_num", null);
@@ -177,13 +181,6 @@ public class FragmentDrawer extends Fragment {
                 super.onDrawerOpened(drawerView);
                 getActivity().invalidateOptionsMenu();
 
-                txtName.setText(tutor_lname + " " + tutor_fname);
-                //  txtName.setText(tutor_id);
-                txtBalance.setText(tutor_balance);
-
-
-
-
             }
 
             @Override
@@ -192,6 +189,8 @@ public class FragmentDrawer extends Fragment {
                 getActivity().invalidateOptionsMenu();
                // adapter.notifyDataSetChanged();
               //  recyclerView.setAdapter(adapter);
+
+
 
                 Random r = new Random();
                 int i1 = r.nextInt(999999 - 111111) + 111111;

@@ -23,7 +23,7 @@ import java.util.Map;
 public class tutor_decline  extends AsyncTask<String, String, String> {
 
     Context parent;
-    String Tutor_id;
+        String Tutor_id;
         String Tutor_student_id;
         String Student_id ;
 

@@ -105,7 +105,7 @@ public class NotificationsFragment extends Fragment implements tutor_AsyncRespon
     public void processFinish(String output) {
 
         //list = connect2server.getList();
-        CardViewNotificationsAdapter adapter = new CardViewNotificationsAdapter(connect2server.getList(),this.getActivity().getApplicationContext()) ;
+        CardViewNotificationsAdapter adapter = new CardViewNotificationsAdapter(connect2server.getList(),this.getActivity().getApplicationContext(),this.getActivity()) ;
         adapter.notifyDataSetChanged();
         rv.setAdapter(adapter);
         onItemsLoadComplete();

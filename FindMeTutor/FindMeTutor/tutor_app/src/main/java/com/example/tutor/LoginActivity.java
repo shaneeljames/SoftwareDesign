@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
@@ -24,11 +25,13 @@ public class LoginActivity extends AppCompatActivity implements tutor_AsyncRespo
     private EditText inputName, inputEmail, inputPassword;
     private TextInputLayout inputLayoutName, inputLayoutEmail, inputLayoutPassword;
     private Button btnLogin;
+    public  ProgressBar bar ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
 
         //get and assign toolbar entered information
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -43,6 +46,8 @@ public class LoginActivity extends AppCompatActivity implements tutor_AsyncRespo
        // inputName = (EditText) findViewById(R.id.input_name);
         inputEmail = (EditText) findViewById(R.id.input_email);
         inputPassword = (EditText) findViewById(R.id.input_password);
+
+        bar = (ProgressBar) findViewById(R.id.progressBar);
 
 
         btnLogin = (Button) findViewById(R.id.btn_signup);
@@ -62,6 +67,7 @@ public class LoginActivity extends AppCompatActivity implements tutor_AsyncRespo
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                bar.setVisibility(View.VISIBLE);
                 submitForm();
 
 
@@ -108,9 +114,10 @@ public class LoginActivity extends AppCompatActivity implements tutor_AsyncRespo
         {
             int test ;
             //Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show();
-            login connect2server = new login(this, login_email, login_password,0);
+            login connect2server = new login(this, login_email, login_password,0,bar,inputPassword);
             connect2server.delegate = this;
             connect2server.execute();
+           // bar.setVisibility(View.GONE);
 
 
         }

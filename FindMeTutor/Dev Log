@@ -57,4 +57,5 @@
 
 // Nivek's Log //
 
-1.
+1. Added Loading Bar in login scrreem
+2. If tutor declines a request , he/she has to give a reason , which will be emailed to the student .

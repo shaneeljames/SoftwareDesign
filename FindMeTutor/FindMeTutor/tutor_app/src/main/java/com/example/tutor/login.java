@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -32,6 +35,8 @@ public class login extends AsyncTask<String, String, String> {
     String Email;
     String Password;
     int Check ;
+    ProgressBar bar ;
+    EditText txtPass ;
     public int  Test= 1 ;
     final public CountDownLatch signal = new CountDownLatch(1);
 
@@ -43,14 +48,21 @@ public class login extends AsyncTask<String, String, String> {
 
     public LoginActivity delegate = null; //Notify when async is done
 
-    public login(Activity par, String email, String password, int c){
+    public login(Activity par, String email, String password, int c, ProgressBar b, EditText e){
         parent = par;
         Email = email;
         Password = password;
         Check = c;
+        bar = b;
+        txtPass = e ;
+
     }
 
 
+    @Override
+    protected void onPreExecute(){
+       //LoginActivity.bar.setVisibility(View.VISIBLE);
+    }
 
     @Override
     public String doInBackground(String... params) {
@@ -135,8 +147,10 @@ public class login extends AsyncTask<String, String, String> {
         String result1 = result.substring(1,2) ;
 
         if(result1.equals("]")){
-             Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful " + result, Toast.LENGTH_SHORT).show();
+             Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful ", Toast.LENGTH_SHORT).show();
             Test = 0 ;
+            bar.setVisibility(View.GONE);
+            txtPass.setText("");
 
         }else{
           //  Toast.makeText(parent.getApplicationContext(), "Login Successful ", Toast.LENGTH_SHORT).show();
@@ -185,8 +199,10 @@ public class login extends AsyncTask<String, String, String> {
         }
             else
         {
-            Toast.makeText(parent.getApplicationContext(),"Login unsuccessful " + result, Toast.LENGTH_SHORT).show();
+            Toast.makeText(parent.getApplicationContext(),"Login unsuccessful ", Toast.LENGTH_SHORT).show();
             Test = 0;
+            bar.setVisibility(View.GONE);
+            txtPass.setText("");
         }
 
         }
