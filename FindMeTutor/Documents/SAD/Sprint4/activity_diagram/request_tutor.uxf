@@ -187,19 +187,19 @@ valign=top</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>80</x>
-      <y>310</y>
+      <y>120</y>
       <w>300</w>
-      <h>40</h>
+      <h>230</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 [confirm]</panel_attributes>
-    <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>280.0;10.0;210.0;10.0;210.0;210.0;10.0;210.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
       <x>360</x>
-      <y>310</y>
+      <y>110</y>
       <w>110</w>
       <h>40</h>
     </coordinates>
@@ -210,7 +210,7 @@ valign=top</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>360</x>
-      <y>380</y>
+      <y>230</y>
       <w>110</w>
       <h>40</h>
     </coordinates>
@@ -221,23 +221,23 @@ valign=top</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>410</x>
-      <y>340</y>
+      <y>140</y>
       <w>30</w>
-      <h>60</h>
+      <h>110</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>460</x>
-      <y>140</y>
-      <w>200</w>
-      <h>280</h>
+      <x>410</x>
+      <y>260</y>
+      <w>30</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>180.0;10.0;70.0;10.0;70.0;260.0;10.0;260.0</additional_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLSpecialState</id>
@@ -317,5 +317,54 @@ valign=top</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSyncBarHorizontal</id>
+    <coordinates>
+      <x>370</x>
+      <y>300</y>
+      <w>100</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>{joinSpec=
+date is on or 
+after July 1st
+and the exam 
+is passed}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>140</y>
+      <w>230</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;140.0;10.0;140.0;210.0;10.0;210.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>300</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>320</x>
+      <y>370</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Deduct Funds from
+Student</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
