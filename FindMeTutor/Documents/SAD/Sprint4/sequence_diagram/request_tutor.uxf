@@ -120,11 +120,10 @@ Read Student</panel_attributes>
       <x>208</x>
       <y>120</y>
       <w>176</w>
-      <h>40</h>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;&gt;
-search_stud
-ent(email)</panel_attributes>
+requestTutor()</panel_attributes>
     <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
   </element>
   <element>
@@ -280,24 +279,24 @@ search_record(funds)</panel_attributes>
     <coordinates>
       <x>768</x>
       <y>248</y>
-      <w>152</w>
+      <w>160</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 retrieve records</panel_attributes>
-    <additional_attributes>170.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>180.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>768</x>
       <y>280</y>
-      <w>152</w>
+      <w>160</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 records</panel_attributes>
-    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
@@ -316,21 +315,10 @@ records</panel_attributes>
       <x>904</x>
       <y>64</y>
       <w>24</w>
-      <h>192</h>
+      <h>640</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>904</x>
-      <y>240</y>
-      <w>16</w>
-      <h>432</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes/>
+    <additional_attributes>10.0;10.0;10.0;780.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -453,12 +441,12 @@ store(date,time,details,subject)</panel_attributes>
     <coordinates>
       <x>768</x>
       <y>640</y>
-      <w>152</w>
+      <w>160</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 write records</panel_attributes>
-    <additional_attributes>170.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>180.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
