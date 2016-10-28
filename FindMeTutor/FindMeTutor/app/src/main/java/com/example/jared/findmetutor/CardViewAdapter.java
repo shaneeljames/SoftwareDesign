@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.text.format.DateUtils;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -155,7 +156,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                         //isExpired("10");
 
 
-                        base.switchContentSession(events.get(i).tutorStdNum, sessID, events.get(i).tutorID);
+                        base.switchContentSession(events.get(i).tutorStdNum, events.get(i).sessionID, events.get(i).tutorID);
 
                     }
                 });
@@ -270,16 +271,17 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         //Check if the session is expired
         //ie. passed the current date+1
 
-        /*try {
+        try {
             if(isExpired(eventViewHolder.date.getText().toString())){
 
                 //Toast.makeText(context,eventViewHolder.date.getText().toString() + " Expired",Toast.LENGTH_LONG).show();
-                eventViewHolder.status.setText("Expired");
+                eventViewHolder.status.setText("Session Expired (Past date)");
+
 
             }
         } catch (ParseException e) {
             e.printStackTrace();
-        }*/
+        }
 
 
         eventViewHolder.itemView.setTag(events.get(i));
@@ -290,6 +292,34 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
         boolean re = false;
 
+
+       // Toast.makeText(context, cdate+" after (out) ", Toast.LENGTH_LONG).show();
+        String[] split = cdate.split(" ");
+        String valid = split[2] +"-"+getMonth(split[1]) +"-"+split[0];
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date strDate = sdf.parse(valid);
+
+        Date today = new Date();
+
+        Date todayWithZeroTime = removeTime(today);
+
+       // Toast.makeText(context, todayWithZeroTime + " after  "+strDate, Toast.LENGTH_LONG).show();
+
+
+        if (todayWithZeroTime.after(strDate)) {
+
+            if (todayWithZeroTime.equals(strDate)) {
+                //Toast.makeText(context, new Date()+" after  "+strDate, Toast.LENGTH_LONG).show();
+                re = false;
+            }
+            else{
+
+                re = true;
+            }
+
+        }
+
         // formattedDate have current date/time
        // Toast.makeText(context, "Year :"+year+" Month:"+month+ " Date: "+date +">>>" + cYear+" "+getMonth((cMoth))+" "+cDate, Toast.LENGTH_LONG).show();
 
@@ -297,6 +327,17 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         return  re;
 
     }
+
+    public static Date removeTime(Date date) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        return cal.getTime();
+    }
+
 
     public int getMonth(String month){
         int calMonth=0;

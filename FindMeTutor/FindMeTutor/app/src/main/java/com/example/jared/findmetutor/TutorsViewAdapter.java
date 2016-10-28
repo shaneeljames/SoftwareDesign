@@ -2,6 +2,7 @@ package com.example.jared.findmetutor;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,6 +19,8 @@ import com.squareup.picasso.Picasso;
 import org.w3c.dom.Text;
 
 import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by Jadon on 30-Aug-16.
@@ -122,6 +125,29 @@ public class TutorsViewAdapter extends RecyclerView.Adapter<TutorsViewAdapter.Ev
             public void onClick(View v){
 
                 Toast.makeText(context, "Tutor  id: "+events.get(i).tutorID + " "+events.get(i).TutorName, Toast.LENGTH_SHORT).show();
+
+                SharedPreferences myprefs = context.getSharedPreferences("user", MODE_PRIVATE);
+                String fname = myprefs.getString("student_fname",null);
+                String lname = myprefs.getString("student_lname",null);
+                String email = myprefs.getString("student_email", null);
+
+                String fromEmail = "FindmetutorSD@gmail.com";
+                String fromPassword = "findmetutors";
+                String toEmails = events.get(i).tutorEmail; //Sessions.get(i).studentEmail.toString() ;
+                String adminEmail = "admin@gmail.com";
+                String emailSubject = "Find Me Tutor - Session Confirmed";
+                String adminSubject = "Find Me Tutor - Session Confirmed";
+                String emailBody =
+                        "Dear " + events.get(i).TutorName +"<br>"
+                                +"Your session with "+fname+" "+lname+"<br>"
+                                +"Has been confirmed"+"<br>"
+                                +"Please log on to the FindMeTutor app for more details "
+                                + "<br><br>"
+                                +"From FindMeTutor";
+
+                String adminBody = "Your message";
+                new SendMailTask(context).execute(fromEmail,
+                        fromPassword, toEmails, emailSubject, emailBody);
 
                 select = new selectTutor(base, events.get(i).tutorID, sessionID);
                 select.execute();

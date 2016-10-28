@@ -20,8 +20,10 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -325,7 +327,7 @@ public class getSessions extends AsyncTask<String, String, String> {
     public boolean isExpired(String cd){
         boolean b = false;
 
-        int[] dateSesh = new int[3];
+       /* int[] dateSesh = new int[3];
 
         String[] sp = cd.split("-");
 
@@ -358,6 +360,8 @@ public class getSessions extends AsyncTask<String, String, String> {
         }
         else
         b=true ;
+*/
+
 
 
         return b;

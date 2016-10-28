@@ -148,7 +148,7 @@
                 />
 
             <TextView
-                android:id="@+id/infoText"
+                android:id="@+id/lblLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="info"
@@ -191,6 +191,15 @@
                 android:layout_height="wrap_content"
                 android:text="Check Out"
                 android:layout_centerInParent="true"/>
+
+            <TextView
+                android:id="@+id/infoOutText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="info"
+                android:layout_below="@+id/checkOut"
+                android:gravity="center"
+                />
 
 
 

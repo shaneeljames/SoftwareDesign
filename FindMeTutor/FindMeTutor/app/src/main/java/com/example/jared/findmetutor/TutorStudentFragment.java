@@ -41,6 +41,11 @@ import android.widget.Toast;
 import android.os.Handler;
 import android.os.Message;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -55,7 +60,7 @@ import static android.content.Context.MODE_PRIVATE;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TutorStudentFragment extends Fragment implements AsyncResponse {
+public class TutorStudentFragment extends Fragment implements AsyncResponse,GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     Toolbar toolbar;
 
@@ -109,6 +114,35 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
 
     Button cancel;
 
+    String fname;
+    String lname;
+
+    //Stuff for GPS
+
+    private static final String TAG = TutorStudentFragment.class.getSimpleName();
+
+    private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 1000;
+
+    private Location mLastLocation;
+
+    // Google client to interact with Google API
+    private GoogleApiClient mGoogleApiClient;
+
+    // boolean flag to toggle periodic location updates
+    private boolean mRequestingLocationUpdates = false;
+
+    private LocationRequest mLocationRequest;
+
+    // Location updates intervals in sec
+    private static int UPDATE_INTERVAL = 10000; // 10 sec
+    private static int FATEST_INTERVAL = 5000; // 5 sec
+    private static int DISPLACEMENT = 10; // 10 meters
+
+    // UI elements
+    private TextView lblLocation;
+    private Button btnShowLocation, btnStartLocationUpdates;
+
+
 
 
 
@@ -128,7 +162,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
         num = (TextView)rootView.findViewById(R.id.tutorNumber);
         email=(TextView)rootView.findViewById(R.id.tutorEmail);
         name = (TextView)rootView.findViewById(R.id.tutorName);
-        info=(TextView)rootView.findViewById(R.id.infoText);
+        lblLocation =(TextView)rootView.findViewById(R.id.lblLocation);
         check = (CardView)rootView.findViewById(R.id.cv3);
         checkOut = (Button)rootView.findViewById(R.id.checkOut);
 
@@ -147,6 +181,8 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
 
 
         studentid = myprefs.getString("student_id", null);
+        fname = myprefs.getString("student_fname",null);
+        lname = myprefs.getString("student_lname",null);
         Toast.makeText(getContext(), tutStdNum+ " Session id :"+sessionId,Toast.LENGTH_SHORT).show();
 
         try{
@@ -155,11 +191,27 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
 
         }
 
+       // we need to check availability of play services
+        if (checkPlayServices()) {
+
+// Building the GoogleApi client
+            buildGoogleApiClient();
+        }
+
+
         requestGps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                status = 0;
-                getLocation = new GetLocation2(getActivity(), sessionId, status, tutorStudentFragment  );
+                //status = 0;
+                //getLocation = new GetLocation2(getActivity(), sessionId, status, tutorStudentFragment  );
+
+                //Intent i = new Intent(getActivity(), LoadLocationActivity.class);
+                //getActivity().startActivity(i);
+
+
+
+                //Toast.makeText(getContext(),  deviceLocation.getLatatude()+" : "+deviceLocation.getLongatude(),Toast.LENGTH_SHORT).show();
+                displayLocation();
 
 
                 //getLoco();
@@ -174,6 +226,8 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
                 getLocation = new GetLocation2(getActivity(), sessionId,status,tutorStudentFragment);
 
                 requestGps.setEnabled(false);
+
+                Toast.makeText(getContext(),  " check out :"+sessionId,Toast.LENGTH_SHORT).show();
 
 
             }
@@ -213,9 +267,38 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Toast.makeText(getContext(), "Hello, " + editText.getText(), Toast.LENGTH_LONG).show();
+
+                        String fromEmail = "FindmetutorSD@gmail.com";
+                        String fromPassword = "findmetutors";
+                        String toEmails = tutorr.get(0).tutorEmail ; //Sessions.get(i).studentEmail.toString() ;
+                        String adminEmail = "admin@gmail.com";
+                        String emailSubject = "Find Me Tutor - Session Request";
+                        String adminSubject = "App Registration Mail";
+                        String emailBody =
+                                "Dear " + tutorr.get(0).TutorName +"<br>"
+                                        +"We're sorry but, "+fname+ " "+ lname +" has cancelled the session for the following reason , "+"<br>"
+                                        +editText.getText()
+                                        + "<br><br>"
+                                        +"From FindMeTutor";
+
+                        String adminBody = "Your message";
+                        new SendMailTask(getContext()).execute(fromEmail,
+                                fromPassword, toEmails, emailSubject, emailBody);
+
                         student_cancel can = new student_cancel(getContext(),sessionId,studentid) ;
                         can.execute();
+
+                        String email=myprefs.getString("student_email",null);
+                        String pass= myprefs.getString("student_password", null);
+                        ProgressBar tmp = null;
+                        login in = new login(getActivity(), email, pass, tmp);
+                        in.execute();
                         //sendEmails();
+                    }
+                }).setNegativeButton("Back",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
                     }
                 });
 
@@ -254,13 +337,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
                         login in = new login(getActivity(), email, pass, tmp);
                         in.execute();
                     }
-                })
-                .setNegativeButton("Back",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
+                });
 
         // create an alert dialog
         AlertDialog alert = alertDialogBuilder.create();
@@ -275,7 +352,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
 
 
         // String add = getCompleteAddressString(lat, lon);
-        //Toast.makeText(getContext(), add, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), lat+" LOCO", Toast.LENGTH_SHORT).show();
         cords.setText(lat + " "+lon);
 
        // String dress = getCompleteAddressString(lat,lon);
@@ -380,6 +457,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
     @Override
     public void processFinish(String output) {
 
+        Toast.makeText(getContext(),"Done writing",Toast.LENGTH_LONG);
 
         showRatingDialog();
 
@@ -439,6 +517,110 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse {
             Log.w("My Current loction", "Canont get Address!");
         }
         return strAdd;
+    }
+
+
+
+    /**
+     * Method to display the location on UI
+     * */
+    private void displayLocation() {
+
+        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+
+        if (mLastLocation != null) {
+            double latitude = mLastLocation.getLatitude();
+            double longitude = mLastLocation.getLongitude();
+
+            lblLocation.setText(latitude + ", " + longitude);
+
+            String add = getAddressString(latitude, longitude);
+            cords.setText(add);
+
+        } else {
+
+            lblLocation
+                    .setText("(Couldn't get the location. Make sure location is enabled on the device)");
+        }
+    }
+
+    /**
+     * Creating google api client object
+     * */
+    protected synchronized void buildGoogleApiClient() {
+        mGoogleApiClient = new GoogleApiClient.Builder(getContext())
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(LocationServices.API).build();
+    }
+
+    /**
+     * Method to verify google play services on the device
+     * */
+    private boolean checkPlayServices() {
+        int resultCode = GooglePlayServicesUtil
+                .isGooglePlayServicesAvailable(getContext());
+        if (resultCode != ConnectionResult.SUCCESS) {
+            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
+                GooglePlayServicesUtil.getErrorDialog(resultCode, getActivity(),
+                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
+            } else {
+                Toast.makeText(getContext(),
+                        "This device is not supported.", Toast.LENGTH_LONG)
+                        .show();
+                getActivity().finish();
+            }
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if (mGoogleApiClient != null) {
+            mGoogleApiClient.connect();
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        checkPlayServices();
+    }
+
+    /**
+     * Google api callback methods
+     */
+    @Override
+    public void onConnectionFailed(ConnectionResult result) {
+        Log.i(TAG, "Connection failed: ConnectionResult.getErrorCode() = "
+                + result.getErrorCode());
+    }
+
+    @Override
+    public void onConnected(Bundle arg0) {
+
+// Once connected with google api, get the location
+        //displayLocation();
+
+        Toast.makeText(getContext(),"Connected",Toast.LENGTH_LONG);
+    }
+
+    @Override
+    public void onConnectionSuspended(int arg0) {
+        mGoogleApiClient.connect();
     }
 
 
