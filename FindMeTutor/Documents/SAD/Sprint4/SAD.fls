@@ -134,6 +134,12 @@ INPUT ./sequence_diagram/request_tutor.png
 INPUT ./sequence_diagram/add_subject.png
 INPUT ./sequence_diagram/add_subject.png
 INPUT ./sequence_diagram/add_subject.png
+INPUT ./sequence_diagram/check_in.png
+INPUT ./sequence_diagram/check_in.png
+INPUT ./sequence_diagram/check_in.png
+INPUT ./sequence_diagram/check_out.png
+INPUT ./sequence_diagram/check_out.png
+INPUT ./sequence_diagram/check_out.png
 INPUT ./package_diagram/package_diagram.png
 INPUT ./package_diagram/package_diagram.png
 INPUT ./package_diagram/package_diagram.png
@@ -149,6 +155,9 @@ INPUT ./activity_diagram/checked_in.png
 INPUT ./activity_diagram/rate_tutor.png
 INPUT ./activity_diagram/rate_tutor.png
 INPUT ./activity_diagram/rate_tutor.png
+INPUT ./activity_diagram/check_out.png
+INPUT ./activity_diagram/check_out.png
+INPUT ./activity_diagram/check_out.png
 INPUT ./communication_diagram/communication_diagram_rt.png
 INPUT ./communication_diagram/communication_diagram_rt.png
 INPUT ./communication_diagram/communication_diagram_rt.png

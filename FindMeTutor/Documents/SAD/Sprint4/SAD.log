@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.9)  28 OCT 2016 19:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.9)  28 OCT 2016 23:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -356,13 +356,13 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 186--190
  []
 
 [12 <./sequence_diagram/create_student.png (PNG copy)>]
-<./sequence_diagram/request_tutor.png, id=48, 1425.325pt x 933.4875pt>
+<./sequence_diagram/request_tutor.png, id=48, 240.9pt x 80.3pt>
 File: ./sequence_diagram/request_tutor.png Graphic file (type png)
 
 <use ./sequence_diagram/request_tutor.png>
 Package pdftex.def Info: ./sequence_diagram/request_tutor.png used on input lin
 e 193.
-(pdftex.def)             Requested size: 398.33858pt x 260.87617pt.
+(pdftex.def)             Requested size: 398.33858pt x 132.7919pt.
 
 Overfull \hbox (8.33858pt too wide) in paragraph at lines 191--194
 [] 
@@ -381,209 +381,253 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 195--198
 [] 
  []
 
+[14 <./sequence_diagram/add_subject.png (PNG copy)>]
+<./sequence_diagram/check_in.png, id=57, 1013.7875pt x 441.65pt>
+File: ./sequence_diagram/check_in.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--204
+<use ./sequence_diagram/check_in.png>
+Package pdftex.def Info: ./sequence_diagram/check_in.png used on input line 201
+.
+(pdftex.def)             Requested size: 398.33858pt x 173.52995pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 199--202
+[] 
+ []
+
+[15 <./sequence_diagram/check_in.png (PNG copy)>]
+<./sequence_diagram/check_out.png, id=61, 1204.5pt x 582.175pt>
+File: ./sequence_diagram/check_out.png Graphic file (type png)
+
+<use ./sequence_diagram/check_out.png>
+Package pdftex.def Info: ./sequence_diagram/check_out.png used on input line 20
+5.
+(pdftex.def)             Requested size: 398.33858pt x 192.52698pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 203--206
+[] 
+ []
+
+[16 <./sequence_diagram/check_out.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
 
  []
 
-<./package_diagram/package_diagram.png, id=54, 883.3pt x 1164.35pt>
+<./package_diagram/package_diagram.png, id=65, 883.3pt x 1164.35pt>
 File: ./package_diagram/package_diagram.png Graphic file (type png)
 
 <use ./package_diagram/package_diagram.png>
 Package pdftex.def Info: ./package_diagram/package_diagram.png used on input li
-ne 208.
+ne 215.
 (pdftex.def)             Requested size: 398.33858pt x 525.08972pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 206--209
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 213--216
 [] 
  []
 
-[14 <./sequence_diagram/add_subject.png (PNG copy)>]
-<./component_diagram/component_diagram.png, id=58, 732.7375pt x 491.8375pt>
+[17]
+<./component_diagram/component_diagram.png, id=69, 732.7375pt x 491.8375pt>
 File: ./component_diagram/component_diagram.png Graphic file (type png)
 
 <use ./component_diagram/component_diagram.png>
 Package pdftex.def Info: ./component_diagram/component_diagram.png used on inpu
-t line 213.
+t line 220.
 (pdftex.def)             Requested size: 398.33858pt x 267.38194pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 212--214
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 219--221
 [] 
  []
 
-[15 <./package_diagram/package_diagram.png (PNG copy)>] [16 <./component_diagra
+[18 <./package_diagram/package_diagram.png (PNG copy)>] [19 <./component_diagra
 m/component_diagram.png (PNG copy)>]
-<./activity_diagram/request_tutor.png, id=65, 853.1875pt x 612.2875pt>
+<./activity_diagram/request_tutor.png, id=77, 853.1875pt x 612.2875pt>
 File: ./activity_diagram/request_tutor.png Graphic file (type png)
 
 <use ./activity_diagram/request_tutor.png>
 Package pdftex.def Info: ./activity_diagram/request_tutor.png used on input lin
-e 223.
+e 230.
 (pdftex.def)             Requested size: 398.33858pt x 285.86925pt.
 
-<./activity_diagram/checked_in.png, id=66, 813.0375pt x 612.2875pt>
+<./activity_diagram/checked_in.png, id=78, 813.0375pt x 612.2875pt>
 File: ./activity_diagram/checked_in.png Graphic file (type png)
 
 <use ./activity_diagram/checked_in.png>
 Package pdftex.def Info: ./activity_diagram/checked_in.png used on input line 2
-27.
+34.
 (pdftex.def)             Requested size: 398.33858pt x 299.97679pt.
 
-<./activity_diagram/rate_tutor.png, id=67, 622.325pt x 531.9875pt>
+<./activity_diagram/rate_tutor.png, id=79, 622.325pt x 531.9875pt>
 File: ./activity_diagram/rate_tutor.png Graphic file (type png)
 
 <use ./activity_diagram/rate_tutor.png>
 Package pdftex.def Info: ./activity_diagram/rate_tutor.png used on input line 2
-30.
+37.
 (pdftex.def)             Requested size: 398.33858pt x 340.51955pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--231
+<./activity_diagram/check_out.png, id=80, 973.6375pt x 612.2875pt>
+File: ./activity_diagram/check_out.png Graphic file (type png)
+
+<use ./activity_diagram/check_out.png>
+Package pdftex.def Info: ./activity_diagram/check_out.png used on input line 23
+9.
+(pdftex.def)             Requested size: 398.33858pt x 250.49762pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--240
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 221--231
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 228--240
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--231
+Underfull \hbox (badness 10000) in paragraph at lines 228--240
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 221--231
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 228--240
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--231
+Underfull \hbox (badness 10000) in paragraph at lines 228--240
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 221--231
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 228--240
 [] 
  []
 
-[17 <./activity_diagram/request_tutor.png (PNG copy)>] [18 <./activity_diagram/
-checked_in.png (PNG copy)>] [19 <./activity_diagram/rate_tutor.png (PNG copy)>]
 
-<./communication_diagram/communication_diagram_rt.png, id=78, 782.925pt x 662.4
+Underfull \hbox (badness 10000) in paragraph at lines 228--240
+
+ []
+
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 228--240
+[] 
+ []
+
+[20 <./activity_diagram/request_tutor.png (PNG copy)>] [21 <./activity_diagram/
+checked_in.png (PNG copy)>] [22 <./activity_diagram/rate_tutor.png (PNG copy)>]
+[23 <./activity_diagram/check_out.png (PNG copy)>]
+<./communication_diagram/communication_diagram_rt.png, id=93, 782.925pt x 662.4
 75pt>
 File: ./communication_diagram/communication_diagram_rt.png Graphic file (type p
 ng)
  <use ./communication_diagram/communication_diagram_rt.png>
 Package pdftex.def Info: ./communication_diagram/communication_diagram_rt.png u
-sed on input line 235.
+sed on input line 245.
 (pdftex.def)             Requested size: 398.33858pt x 337.0592pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 233--237
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 243--247
 [] 
  []
 
-[20 <./communication_diagram/communication_diagram_rt.png (PNG copy)>]
-<./communication_diagram/communication_diagram_cs.png, id=82, 762.85pt x 501.87
+[24 <./communication_diagram/communication_diagram_rt.png (PNG copy)>]
+<./communication_diagram/communication_diagram_cs.png, id=97, 762.85pt x 501.87
 5pt>
 File: ./communication_diagram/communication_diagram_cs.png Graphic file (type p
 ng)
  <use ./communication_diagram/communication_diagram_cs.png>
 Package pdftex.def Info: ./communication_diagram/communication_diagram_cs.png u
-sed on input line 239.
+sed on input line 249.
 (pdftex.def)             Requested size: 398.33858pt x 262.06393pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 238--240
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 248--250
 [] 
  []
 
-[21 <./communication_diagram/communication_diagram_cs.png (PNG copy)>]
-<./communication_diagram/communication_diagram_as.png, id=86, 762.85pt x 501.87
-5pt>
+[25 <./communication_diagram/communication_diagram_cs.png (PNG copy)>]
+<./communication_diagram/communication_diagram_as.png, id=102, 762.85pt x 501.8
+75pt>
 File: ./communication_diagram/communication_diagram_as.png Graphic file (type p
 ng)
  <use ./communication_diagram/communication_diagram_as.png>
 Package pdftex.def Info: ./communication_diagram/communication_diagram_as.png u
-sed on input line 242.
+sed on input line 252.
 (pdftex.def)             Requested size: 398.33858pt x 262.06393pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 241--243
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 251--253
 [] 
  []
 
-[22 <./communication_diagram/communication_diagram_as.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 245--246
+[26 <./communication_diagram/communication_diagram_as.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
 
  []
 
-<./state_diagram/statediagram_status.png, id=90, 903.375pt x 371.3875pt>
+<./state_diagram/statediagram_status.png, id=106, 903.375pt x 371.3875pt>
 File: ./state_diagram/statediagram_status.png Graphic file (type png)
 
 <use ./state_diagram/statediagram_status.png>
 Package pdftex.def Info: ./state_diagram/statediagram_status.png used on input 
-line 249.
+line 259.
 (pdftex.def)             Requested size: 398.33858pt x 163.76234pt.
 
-<./state_diagram/statediagram_paid.png, id=91, 903.375pt x 371.3875pt>
+<./state_diagram/statediagram_paid.png, id=107, 903.375pt x 371.3875pt>
 File: ./state_diagram/statediagram_paid.png Graphic file (type png)
 
 <use ./state_diagram/statediagram_paid.png>
 Package pdftex.def Info: ./state_diagram/statediagram_paid.png used on input li
-ne 253.
+ne 263.
 (pdftex.def)             Requested size: 398.33858pt x 163.76234pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--254
+Underfull \hbox (badness 10000) in paragraph at lines 257--264
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 247--254
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 257--264
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--254
+Underfull \hbox (badness 10000) in paragraph at lines 257--264
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 247--254
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 257--264
 [] 
  []
 
-[23 <./state_diagram/statediagram_status.png (PNG copy)> <./state_diagram/state
-diagram_paid.png (PNG copy)>] <./Deployment.jpg, id=95, 642.4pt x 441.65pt>
+[27 <./state_diagram/statediagram_status.png (PNG copy)> <./state_diagram/state
+diagram_paid.png (PNG copy)>] <./Deployment.jpg, id=111, 642.4pt x 441.65pt>
 File: ./Deployment.jpg Graphic file (type jpg)
 
 <use ./Deployment.jpg>
-Package pdftex.def Info: ./Deployment.jpg used on input line 262.
+Package pdftex.def Info: ./Deployment.jpg used on input line 272.
 (pdftex.def)             Requested size: 398.33858pt x 273.86734pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 262--263
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 272--273
 [] 
  []
 
-[24 <./Deployment.jpg>]
-<./Use_Case_Diagram.png, id=99, 1214.5375pt x 1545.775pt>
+[28 <./Deployment.jpg>]
+<./Use_Case_Diagram.png, id=115, 1214.5375pt x 1545.775pt>
 File: ./Use_Case_Diagram.png Graphic file (type png)
 
 <use ./Use_Case_Diagram.png>
-Package pdftex.def Info: ./Use_Case_Diagram.png used on input line 270.
+Package pdftex.def Info: ./Use_Case_Diagram.png used on input line 280.
 (pdftex.def)             Requested size: 483.69684pt x 615.61018pt.
 
-Overfull \hbox (93.69684pt too wide) in paragraph at lines 269--271
+Overfull \hbox (93.69684pt too wide) in paragraph at lines 279--281
 [] 
  []
 
-[25]
+[29]
 Overfull \vbox (67.11018pt too high) has occurred while \output is active []
 
 
-[26 <./Use_Case_Diagram.png (PNG copy)>] (./SAD.aux) ) 
+[30 <./Use_Case_Diagram.png (PNG copy)>] (./SAD.aux) ) 
 Here is how much of TeX's memory you used:
- 2640 strings out of 493013
- 36291 string characters out of 6139317
+ 2654 strings out of 493013
+ 36757 string characters out of 6139317
  95158 words of memory out of 5000000
- 6119 multiletter control sequences out of 15000+600000
+ 6131 multiletter control sequences out of 15000+600000
  12710 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,6n,26p,534b,241s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -591,10 +635,10 @@ Here is how much of TeX's memory you used:
 nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb>
-Output written on SAD.pdf (26 pages, 740930 bytes).
+Output written on SAD.pdf (30 pages, 761384 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 134 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -82,26 +82,15 @@ valign=top</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLTimer</id>
-    <coordinates>
-      <x>640</x>
-      <y>170</y>
-      <w>100</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>Tutor Arrival</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
       <x>440</x>
       <y>180</y>
       <w>140</w>
-      <h>90</h>
+      <h>100</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>120.0;70.0;120.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>120.0;80.0;120.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
@@ -129,7 +118,7 @@ valign=top</panel_attributes>
     <id>UMLSyncBarHorizontal</id>
     <coordinates>
       <x>550</x>
-      <y>240</y>
+      <y>250</y>
       <w>100</w>
       <h>20</h>
     </coordinates>
@@ -139,24 +128,24 @@ valign=top</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>590</x>
-      <y>180</y>
-      <w>120</w>
-      <h>90</h>
+      <x>410</x>
+      <y>230</y>
+      <w>210</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;70.0;10.0;10.0;100.0;10.0</additional_attributes>
+    <additional_attributes>190.0;30.0;190.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>610</x>
-      <y>240</y>
+      <y>250</y>
       <w>30</w>
-      <h>80</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -362,6 +351,17 @@ initiating actor]</panel_attributes>
       <h>20</h>
     </coordinates>
     <panel_attributes>type=final</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLTimer</id>
+    <coordinates>
+      <x>310</x>
+      <y>220</y>
+      <w>200</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Participating Actor Arrival</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
