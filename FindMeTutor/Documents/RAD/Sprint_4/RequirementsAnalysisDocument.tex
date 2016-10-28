@@ -2,9 +2,12 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
+<<<<<<< HEAD
+=======
 \usepackage{comment}
 \usepackage{longtable}
 \usepackage{graphicx}
+>>>>>>> 92dba06be4b52dd49f42911cd66fc7e141d9ab5e
 
 \begin{document}
 
@@ -13,11 +16,19 @@
 
 \begin{center}
 \title{\textbf{Software Design COMS3009}}
+<<<<<<< HEAD
+\maketitle 
+\end{center}
+\begin{center}
+\title{\textbf{FindMeTutor Android Application}}
+\maketitle 
+=======
 \maketitle
 \end{center}
 \begin{center}
 \title{\textbf{FindMeTutor Android Application}}
 \maketitle
+>>>>>>> 92dba06be4b52dd49f42911cd66fc7e141d9ab5e
 \end{center}
 
 \begin{center}
@@ -29,6 +40,13 @@ Shaneel James-718840
 \\Nivek Ranjith - 802119
 \end{center}
 
+<<<<<<< HEAD
+\newpage
+
+%TABLE OF CONTENTS
+\tableofcontents
+\newpage
+=======
 
 \newpage
 %TABLE OF CONTENTS
@@ -43,6 +61,7 @@ The problem that we face is that students are in need of extra lessons and tutor
 The results of the requirements analysis are documented below. This document completely describes the system in terms of the requirements. This document serves as a contextual basis between the client and the developer.
 \end{flushleft}
 \newpage
+>>>>>>> 92dba06be4b52dd49f42911cd66fc7e141d9ab5e
 %INTRODUCTION
 \section{INTRODUCTION}
 \subsubsection{Purpose of the system}
@@ -51,6 +70,29 @@ The purpose of the FindMeTutor application is to provide a convenient means for 
 \end{flushleft}
 \subsubsection{Scope of the system}
 \begin{flushleft}
+<<<<<<< HEAD
+Our team, working on the FindMeTutor application, envisions a successful product to be an Android Application which will be at students's disposal in order to improve their grades and achieve their academic dreams. With limited resources a  stringent budget and capped time, we aim to execute this task in an economical fashion.\\
+This goal will be achieveable by implementing an agile methodology strategy within our team. We will be able to set short term targets to show case our deliverables at particular sprints, with a long term goal being to present the FindMeTutor Android Application. 
+\end{flushleft}
+\subsubsection{Objective and success criteria of the project}
+\begin{flushleft}
+The FindMeTutor Android application will be seen as successful if it facilitates a platform for tutors and students can meet. We have great hope that the result of this would mean better results obtained by the students, and a manner in which tutors can generate some income and gain some job experience. 
+\end{flushleft}
+\subsubsection{Definitions, acronyms, and abbreviations}
+1. App - abbreviation for application. \\
+2. Application - is a software program that runs on your computer. \\
+3. Android - is a mobile operating sysytem developed by Google. \\
+4. OS - abbreviation for operating system.\\
+5. Operating system - is a software that communicates with the hardware and allows other programs to run. It compromises of system software, or the fundemental files your computer needs to boot up and function.\\
+6. Boot up - turning on the computer.\\
+7. Java - is a high-level programming language\\
+8. UI - abbreviation for User interface\\
+9. User interface - is the means in which a person controls a software application or hardware device.
+10. ID - appreviation for identity\\
+11.User ID - the idenity that uniquely identifies someone on a computer system.\\
+12. Sign in - when asked to enter username and password information. A sign in/ login is a combination of information that authenticates a user's identity. \\
+ 
+=======
 Our team, working on the FindMeTutor application, envisions a successful product to be an Android Application which will be at a students disposal in order to improve their grades and achieve their academic dreams. With limited resources, a stringent budget and capped time, we aim to execute this task in an economical fashion.\\
 This goal will be achieved by making use of agile methodology. We will be able to set short term targets to achieve deliverables within sprints, with a long term goal being to present the FindMeTutor Android Application.
 \end{flushleft}
@@ -73,17 +115,97 @@ The FindMeTutor Android application will be seen as successful if it facilitates
 13. SDK - abbreviation for Software Development Kit\\
 14 Software Development Kit -  collection of software used for developing applications for a specific device or operating system.
 15 Sessions - A tutorial session created by a student.
+>>>>>>> 92dba06be4b52dd49f42911cd66fc7e141d9ab5e
 
 \subsubsection{References}
 1. http://techterms.com/definition (2016-08-08)
 %\subsubsection{Overview}
 %dummy text
+<<<<<<< HEAD
+=======
 \newpage
+>>>>>>> 92dba06be4b52dd49f42911cd66fc7e141d9ab5e
 
 %CURRENT SYSTEM
 \section{CURRENT SYSTEM}
 \subsubsection{Overview}
 \begin{flushleft}
+<<<<<<< HEAD
+Currently, there are many students in search of tutors to help them with particular courses with which they require some support, as well as fellow students or tutors who are available to tutor particular courses of study. However, the problem that is faced on hand is that either pool (students and tutors) are struggling to find each other. 
+\end{flushleft}
+
+%PROPOSED SYSTEM
+\section{PROPOSED SYSTEM}
+\subsubsection{Overview}
+\begin{flushleft}
+FindMeTutor app will be a platform through which students and tutors can meet in order to resolve the current situation. 
+\end{flushleft}
+\begin{flushleft}
+FindMeTutor app will facilitate the folowing two registration categories: 
+
+\begin{flushleft}
+1.Student looking for tutors – they are able to  register to the app with merely some personal details (Name, email address, Skype name (if applicaple) and courses enrolled in).\\
+2. Tutor - those who would like to tutor can register on the app by simply filling in some details with respect to the fields of study they are partcularly comfortable to tutor.\\
+\end{flushleft}
+\end{flushleft}
+\subsubsection{Functional requirements - "Shall lists"}
+Describes the high-level functionality of the system\\
+3.2.1 The database has the ability to store data captured of the users of the application (student and tutors data).More specifically, the database will be able to accept numeric data entry and will store the courses under the University of Wthe Witwatersrand's School of Compute science and Applied mathematics undergraduate topics which will be displayed in the drop-down menu when students and tutors will be required to select the courses respectively to which they are enrolled in or able to tutor. \\
+3.2.2 The app will provide an effective means through which tutors and students can communicate. The messenger facility will facilitate communication between students and tutors - when students request a tutor, the tutor and student will be able to use this facility to arrange a convenient time, place and tutition fee for the tutor service. \\
+3.2.3 Request appropriate tutors for students who send a request on the app for a tutor eligible to tutuor a specific course (aid to pair up appropriate tutors and students).\\
+3.2.4 In the light of security, the database shall be able store a corresponding password for each user of the application, which will allow for each users account to be protected, as each user's user ID and entered password will be compared to that of which was entered into the database at sign-up, hence the system resticting access to authorized users. \\
+3.2.5 FindMeTutor Android application will be able to be utilised on any Android OS of (some version), which is able easily accessable,as many students can download this application for use on their smartphones and/or tablets which shall makes the application easily accessible. 
+
+
+\subsubsection{Non-functional requirements}
+Describes the user-level requirements that are not directly realted to the functionality. \\
+3.3.1 Usability\\
+The application will be user friendly as will be pitched as an Android application which is suported by multiple devices (smartphones and tablets) with an Android OS. This will allow for the application to be easily accessible to students and tutors as majority of the students have access to these devices. 
+3.3.2 Reliability\\
+The probablity that the system will be able to process work corectly and completely without being aboted.\\
+In the case of system failure, the damage that could be caused could be such where the personalised accounts of the application user will lose their preference choices of sujects selcted on sign-up. 
+3.3.3 Performance\\
+The response time between the UI and the server will be(??). The expected volume of data (??). The expected volume of user activity will peak at the end of each academic term within the tertiary institute when examinations / tests will be approaching, while on a regurlar basis the application will be utilised when students who feel the need to get assistence immediately when they encounter a topic they require assistance. 
+3.3.4 Supportability\\
+3.3.5 Implementation\\
+Our team has implemeted the agile methodology in order to obtain our final goal of building a find me tutor application. For each sprint we will set targets of what we would like to achieve, with the objective of using these milestones to be building blocks towards our final goal. 
+3.3.6 Interface\\
+The UI will be made in Adroid studio. The set up will be simple and neat. The app will be used by students who will be using the app in order to serach for a tutor which is suitable to tutor, hence, with this intention, to prevent furthering the overwhlmed feeling, the app will not be clutered and simple to use. The 'user-friendly' experience provided by the UI, will allow the user to interact with the app in a natural and intutive way. \\
+Each user's hope page will be customized to the particular topics in which they are enrolled in or signed up to tutor, with respct to whether they are students or tutuors. \\
+3.3.7 Packaging\\
+3.3.8 Legal\\
+\subsubsection{System models}
+3.4.1 Scenario
+\begin{flushleft}
+For instance, there is a student - Joe Soap - who is currently doing his  3rd year of study in computer science.  Joe would like to generate some income from tutoring first and second year mathematics modules. However, Joe is also looking for a 3rd year Mathematics tutor to help him with some of his mathematics courses. We also know that the student, Mary Smith, is a first year astronomy student who is looking for a mathematics tutor. The FindMeTutor app will be ideal to resolve the problems faced in this particular scenario. Joe will register on the application as a student and as a tutor, on registering, he will select what he is capable and willing to tutor - first and second year mathematics. On the other hand, we will have Mary register as a student. Mary will then be able to search for the course she needs assistance in, for example – Calculus I; any tutors who have uploaded material on this particular topic (Calculus I) will come up. Mary may find these resources useful, but if Mary does not get the assistance she requires from the material available, and would like to seek a personal tutor, Mary will click the 'Request tutor' button and this will send a request to all those who have registered to tutor Calculus I. Joe Soap will be part of the list of tutors approached. Joe accepts the request. Mary is notified of this and is now able to communicate with Joe to make further arrangements of time of meeting, venue and also to flag him of what sections she needs assistance in. On the other hand, Joe requires an 'Emergency lesson' – this is a last minute lesson before his test which is scheduled to take place in a day's time. Tutors eligible to tutor Joe's course will be sent an 'Urgent request'. A tutor that accepts this request will communicate with Joe through the messaging facility which is made available. If the only possible means of having a lesson before the test is to Skype each other, then the tutor and Joe will be redirected to a skype page which will facilitate this conference.
+\end{flushleft}
+3.4.2 Use case model\\
+3.4.3 Analysis object model\\
+3.4.4 Dynamic model\\
+A dynamic model represents the behaviour of an object over time. It is used where the object's behaviour is best described as a set of states that occur in a defined sequence. The components of the dynamic model are:\\
+ 	States. The purchase order (PO) is modeled as passing through a set of states. The operations that can be performed on the PO are dependent on the state it is in. For example, information cannot be entered after it has reached the approved state.\\
+	State transitions. When purchase order data entry has been completed it transitions from the entering PO state to the pending approval state. State transitions are modeled as being instantaneous.\\
+	Events. Events trigger state transitions. For example, the order mailed event triggers a state transition from the approved to the placed state.\\
+	Actions. Actions occur on state transitions. For example, on a goods received event the action of notify purchaser is performed. Actions are modeled as instantaneous occurrences (contrast with activities).\\
+	Activities. An activity is performed while an object is in a specific state. For example, while in the entering PO state data is entered into the PO. Activities are modeled as occurring over a period of time (contrast with actions).\\
+	(Will add diagram)
+3.4.5 User interface—navigational paths and screen mock-ups 
+\subsubsection{Operational requirements}
+Operational requirements describe the non-business characteristics of an application.\\
+3.5.1 Asure.com - Web server to host the database\\ 
+3.5.2 Android studio to design UI\\
+3.5.3 GitHub to facilitate the build of the project among team members\\
+3.5.4 
+%GLOSSARY
+%\section{GLOSSARY}
+
+%\section{REFERENCES}
+
+\end{document}
+
+
+
+=======
 Currently, there are many students in search of tutors to help them with particular courses with which they require some support, as well as fellow students or tutors who are available to tutor particular courses of study. However, the problem that is faced on hand is that either pool (students and tutors) are struggling to find each other.
 \end{flushleft}
 
@@ -234,10 +356,10 @@ Describes the high-level functionality of the system\\
 				RQ7.2 & The system shall allow a tutor to check-out  & UC-CO \\ \hline
 				RQ8.1 & The system shall allow a student to add funds &UC-CF\\ \hline
 				RQ8.2 & The system shall allow a student to view funds &UC-VF\\ \hline
-				RQ8.3 & The system shall allow a student to update funds &UC-UF\\ \hline
-				RQ9.1 & The system shall allow a tutor to add funds &UC-CF\\ \hline
-				RQ9.2 & The system shall allow a tutor to view funds &UC-VF\\ \hline
-				RQ9.3 & The system shall allow a tutor to update funds &UC-UF\\ \hline
+				%RQ8.3 & The system shall allow a student to update funds &UC-UF\\ \hline
+				%RQ9.1 & The system shall allow a tutor to add funds &UC-CF\\ \hline
+				RQ9.1 & The system shall allow a tutor to view funds &UC-VF\\ \hline
+				%RQ9.3 & The system shall allow a tutor to update funds &UC-UF\\ \hline
 				RQ10.1 & The system shall allow a student to add subjects &UC-CSb\\ \hline
 				RQ11.1 & The system shall allow a tutor to add subjects &UC-CSb\\ \hline
 				RQ12.1 & The system shall allow a student to remove subjects &UC-DSb\\ \hline
@@ -258,6 +380,7 @@ Describes the high-level functionality of the system\\
 				RQ18.2 & The system shall allow a tutor receive funds from a student once they both check-out of a tutorial session &UC-FP\\ \hline
 \end{longtable}
 }
+\newpage
 \subsection{Functional requirements specification}
 %Although this section is entitled “Requirements Specification,” we will see that we
 %are still discovering the functional system requirements for the system-to-be, as
@@ -318,20 +441,388 @@ Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 	& System indicates invalid email address or email adress already exists in database.\\
 	Step 2. Type in valid email address  & System indicates success and user is created.\\\hline
 \end{tabular}
+\\
+
 
 \begin{tabular}{| p{8cm} | p{8cm} |} \hline
 	\textbf{Test-case Identifier:}& TC-2\\
 	\textbf{Use Case Tested:}& UC-US\\
-	\textbf{Pass/Fail Criteria:}& The test passes if the user changes his/her profile picture with a valid image file\\
-	\textbf{Input Data:}& File\\\hline
+	\textbf{Pass/Fail Criteria:}& The test passes if the user changes his/her profile picture with a valid image file or to the subjects in which they are enrolled.\\
+	\textbf{Input Data:}& File, Subjects\\\hline
 	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
-	Step 1. Upload an invalid image file & The system does not change profile picture and indicates failure\\
-	Step 2. Upload a valid image file & The system indicates success and changes the profile picture\\\hline
+	Step 1a. Upload an invalid image file & The system does not change profile picture and indicates failure\\
+	Step 2a. Upload a valid image file & The system indicates success and changes the profile picture\\
+		Step 1b. Add or remove subjects from the list of 'enrolled-in' subjects & Th system changes the list of subjects 'enrolled-in'.  \\\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-3\\
+	\textbf{Use Case Tested:}& UC-L\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the user enters correct login details and corresponding password.\\
+	\textbf{Input Data:}& Username and password\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1. Enter a username that is not valid or enters an invalid password for a registered username & The system indicates failure into logging into the account, and denies access. \\
+	Step 2. Enter a registered username and corresponsing valid password  & The system indicates success allows user to view their account\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-4\\
+	\textbf{Use Case Tested:}& UC-DS\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the user deletes their account and is no longer able to login to their account.\\
+	\textbf{Input Data:}& Username and password\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1. Login and select deletion of account under settings & The system indicates failure of deletion of the account as confirmation not selected. \\
+	Step 2. Login and select deletion of account under settings and confirms deletion of account& The system indicates success of deletion of the account and the user is no longer allowed access to their account.\\
+		\hline
 \end{tabular}
 
+%tutor
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-5\\
+	\textbf{Use Case Tested:}& UC-CT\\
+	\textbf{Pass/Fail Criteria:}& The test passes if a user enters a username which is a valid email address
+	and is not contained in the database\\
+	\textbf{Input Data:}& Email address and password\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1. Type in a invalid email address or email address contained in database.
+	& System indicates invalid email address or email adress already exists in database.\\
+	Step 2. Type in valid email address  & System indicates success and user is created.\\\hline
+\end{tabular}
+\\
+
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-6\\
+	\textbf{Use Case Tested:}& UC-UT\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the user changes his/her profile picture with a valid image file or to the subjects in which they are eligible to tutor.\\
+	\textbf{Input Data:}& File, Subjects\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1a. Upload an invalid image file & The system does not change profile picture and indicates failure\\
+	Step 2a. Upload a valid image file & The system indicates success and changes the profile picture\\
+		Step 1b. Add or remove subjects from the list of able to tutor subjects & Th system changes the list of subjects that tutor is tutoring.  \\\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-7\\
+	\textbf{Use Case Tested:}& UC-L\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the user enters correct login details and corresponding password.\\
+	\textbf{Input Data:}& Username and password\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1. Enter a username that is not valid or enters an invalid password for a registered username & The system indicates failure into logging into the account, and denies access. \\
+	Step 2. Enter a registered username and corresponsing valid password  & The system indicates success allows user to view their account\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-8\\
+	\textbf{Use Case Tested:}& UC-DT\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the user deletes their account and is no longer able to login to their account.\\
+	\textbf{Input Data:}& Username and password\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1. Login and select deletion of account under settings & The system indicates failure of deletion of the account as confirmation not selected. \\
+	Step 2. Login and select deletion of account under settings and confirms deletion of account& The system indicates success of deletion of the account and the user is no longer allowed access to their account.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-9\\
+	\textbf{Use Case Tested:}& UC-RT\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student send a request for a particular subject, and if eligible  tutors recieve the request.\\
+	\textbf{Input Data:}& Res\\\hline Request a tuutor for a tutorial at a specific tie and date
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1. Enter date and time for a tutorial subject & The system indicates failure of request if there are no tutors eligble to tutor the particular subject. \\
+	Step 2. Enter date and time for a tutorial subject & The system indicates success of request , by sending a notification that requests have been sent.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-11\\
+	\textbf{Use Case Tested:}& UC-RT\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the user deletes their account and is no longer able to login to their account.\\
+	\textbf{Input Data:}& Username and password\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1. Login and select deletion of account under settings & The system indicates failure of deletion of the account as confirmation not selected. \\
+	Step 2. Login and select deletion of account under settings and confirms deletion of account& The system indicates success of deletion of the account and the user is no longer allowed access to their account.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-12\\
+	\textbf{Use Case Tested:}& UC-RT\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor recieves the request, and is able to accept or reject the request.\\
+	\textbf{Input Data:}& Accept or reject request\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1. View tutor requests & The system indicates failure of displaying tutor requests or does not notify the student if theis particular tutor accepted or rejected the request. \\
+	Step 2. View tutor request, and accept or reject them & The system indicates success notifying the student if the tutor has accepted or rejected the request.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-13\\
+	\textbf{Use Case Tested:}& UC-R\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the students rating of the tutor is used to obtain the average rating of the tutor.\\
+	\textbf{Input Data:}& Tutor rating\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1. 1-5 star rating & The system indicates failure of displaying the student's rating as part of the tutors average rating. \\
+	Step 2. 1-5 star rating & The system indicates success of displaying the student's rating as part of the tutors average rating.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-14\\
+	\textbf{Use Case Tested:}& UC-CI\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student's check-in location is recorded and checked againts the tutor's check-in location.\\
+	\textbf{Input Data:}& GPS Location\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1. Check-in when at venue & The system indicates failure when the GPS location is not stored in the database. \\
+	Step 2.Check-in when at venue & The system indicates success when the GPS location is  stored in the database.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-15\\
+	\textbf{Use Case Tested:}& UC-CO\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student's check-out location is recorded and checked againts the tutor's check-in location.\\
+	\textbf{Input Data:}& GPS Location\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1. Check-out when leaving venue & The system indicates failure when the GPS location is not stored in the database. \\
+	Step 2.Check-out when at venue & The system indicates success when the GPS location is stored in the database.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-16\\
+	\textbf{Use Case Tested:}& UC-CI\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor's check-in location is recorded and checked againts the student's check-in location.\\
+	\textbf{Input Data:}& GPS Location\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1. Check-in when at venue & The system indicates failure when the GPS location is not stored in the database. \\
+	Step 2.Check-in when at venue & The system indicates success when the GPS location is  stored in the database.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-17\\
+	\textbf{Use Case Tested:}& UC-CO\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor's check-out location is recorded and checked againts the student's check-in location.\\
+	\textbf{Input Data:}& GPS Location\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1. Check-out when leaving venue & The system indicates failure when the GPS location is not stored in the database. \\
+	Step 2.Check-out when at venue & The system indicates success when the GPS location is stored in the database.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-18\\
+	\textbf{Use Case Tested:}& UC-CF\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student's account reflects the funds added.\\
+	\textbf{Input Data:}& Amount added againt my funds\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Add the referance and amount added toward account & The system indicates failure when the administrator fails to add this to the database against the student's account. \\
+	Step 2.Add the referance and amount added toward account & The system indicates success when the administrator reflects the addition of the funds  to the database against the student's account..\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-19\\
+	\textbf{Use Case Tested:}& UC-VF\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student is able to view the traffic of funds.\\
+	\textbf{Input Data:}& Request to view my funds\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'view funds' & The system indicates failure when the incorrect  amount of funds are refleted in the student's account or if trafficing is incorrectly depicted. \\
+	Step 2.Go to 'view funds' & The system indicates success when the correct  amount of funds are refleted in the student's account and if trafficing is correctly depicted.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-20\\
+	\textbf{Use Case Tested:}& UC-VF\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor is able to view the traffic of funds in their account.\\
+	\textbf{Input Data:}& Request to view my funds\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'view funds' & The system indicates failure when the incorrect  amount of funds are refleted in the tutor's account or if trafficing is incorrectly depicted. \\
+	Step 2.Go to 'view funds' & The system indicates success when the correct  amount of funds are refleted in the tutor's account and if trafficing is correctly depicted.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-21\\
+	\textbf{Use Case Tested:}& UC-CSb\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student is able to add subjects that they are enrolled in to their account, hence are now able to request tutorials on this particular subject.\\
+	\textbf{Input Data:}& New subject\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'add subject' and select a subject to add& The system indicates failure when the student's account does not reflect the newly added subject as a subject in which they are enrolled. \\
+	Step 2.Go to 'add subject' and select a subject to add & The system indicates success when the student's account does reflect the newly added subject as a subject in which they are enrolled.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-22\\
+	\textbf{Use Case Tested:}& UC-CSb\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor is able to add subjects that they are eligible to tutor in to their account profile, and when student's request tutor's for this particular subject, tutor's recieve notifications of these tutuorial requests.\\
+	\textbf{Input Data:}& New subject\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'add subject' and select a subject to add& The system indicates failure when the tutor's account does not reflect the newly added subject as a subject in which they are enrolled. \\
+	Step 2.Go to 'add subject' and select a subject to add & The system indicates success when the tutor's account does reflect the newly added subject as a subject in which they are enrolled.\\
+		\hline
+\end{tabular}
+\\
+
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-23\\
+	\textbf{Use Case Tested:}& UC-DSb\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student is able to delete subjects that they are enrolled from to their account.\\
+	\textbf{Input Data:}& Subject to be deleted\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'delete subject' and select a subject to delete from the list of subjects in which you are enrolled & The system indicates failure when the student's account does not reflect deletion of the newly deleted subject, but as a subject in which they are still enrolled. \\
+	Step 2.Go to 'delete subject' and select a subject to delete from the list of subjects in which you are enrolled & The system indicates success when the student's account does  reflect deletion of the newly deleted subject, hence it is not reflected  as a subject in which they are still enrolled.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-24\\
+	\textbf{Use Case Tested:}& UC-DSb\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor is able to delete subjects that they no longer willing to tutor from  their account.\\
+	\textbf{Input Data:}& Subject to be deleted\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'delete subject' and select a subject to delete from the list of subjects in which you are able to tutor & The system indicates failure when the tutor's account does not reflect deletion of the newly deleted subject, but as a subject in which they are still tutoring. \\
+	Step 2.Go to 'delete subject' and select a subject to delete from the list of subjects in which you are tutoring & The system indicates success when the tutor's account does  reflect deletion of the newly deleted subject, hence it is not reflected  as a subject in which they are still tutoring.\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-25\\
+	\textbf{Use Case Tested:}& UC-L\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student is able to login into their registered account.\\
+	\textbf{Input Data:}& Registered username and corresponding valid password\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to the login page, and enter a username and password & The system indicates failure when the student is denied access into their account as the username is not a registered one, and or the password does not match the corresponding username according to the database (created at sign up). \\
+	Step 2.Go to the login page, and enter a username and password & The system indicates success when the student is granted access into their account as the username is  a registered one, and  the password does  match the corresponding username according to the database (created at sign up).\\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-26\\
+	\textbf{Use Case Tested:}& UC-L\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor is able to login into their registered account.\\
+	\textbf{Input Data:}& Registered username and corresponding valid password\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to the login page, and enter a username and password & The system indicates failure when the tutor is denied access into their account as the username is not a registered one, and or the password does not match the corresponding username according to the database (created at sign up). \\
+	Step 2.Go to the login page, and enter a username and password & The system indicates success when the tutor is granted access into their account as the username is  a registered one, and  the password does  match the corresponding username according to the database (created at sign up).\\
+		\hline
+\end{tabular}
+\\
 
 
 
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-26\\
+	\textbf{Use Case Tested:}& UC-VSes\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student is able to view upcoming tutorial sessions.\\
+	\textbf{Input Data:}& Confirmed tutuorial sessions which have been accepted by a tutor\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'view upcoming session' & The system indicates failure when the student has not confirmed with the tutor who has accepted the request, and they intend to have a tutorial with the particular tutor, hence the session is not reflected as an upcoming session. \\
+	Step 2.Go to 'view upcoming session' & The system indicates success when the student has confirmed with the tutor who has accepted the request, the session is reflected as an upcoming session which has the details of the session: date, subject and designated tutor. \\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-27\\
+	\textbf{Use Case Tested:}& UC-VSes\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor is able to view upcoming tutorial sessions.\\
+	\textbf{Input Data:}& Confirmed tutuorial sessions which have been confirmed by a student\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'view upcoming session' & The system indicates failure when the students has confirmed with the tutor who has accepted the request,however the session is not reflected as an upcoming session. \\
+	Step 2.Go to 'view upcoming session' & The system indicates success when the student has confirmed with the tutor who has accepted the request, the session is reflected as an upcoming session which has the details of the session: date, subject and student to be tutored. \\
+		\hline
+\end{tabular}
+\\
+
+CHECK THE NEXT TWO!! URGENT!!!
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-28\\
+	\textbf{Use Case Tested:}& UC-DSes\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student is able to mark a completed tutorial session as done, removing it from the list of upcoming sessions or once a session is past the current date it is automatically removed from upcoming sesions or manually removing to indicate cancellation.\\
+	\textbf{Input Data:}& Completed tutuorial sessions which have been accepted by a tutor or upcoming session that we need to delete\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'view upcoming session' & The system indicates failure when past dated sessions are still reflected. \\
+	Step 2.Go to 'view upcoming session' & The system indicates success when the past dated sessions are no longer reflected. \\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-29\\
+	\textbf{Use Case Tested:}& UC-DSes\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor is able to mark a completed tutorial session as done, removing it from the list of upcoming sessions or once a session is past the current date it is automatically removed from upcoming sesions.\\
+	\textbf{Input Data:}& Completed tutuorial sessions which have been accepted by a tutor\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'view upcoming session' & The system indicates failure when past dated sessions are still reflected. \\
+	Step 2.Go to 'view upcoming session' & The system indicates success when the past dated sessions are no longer reflected. \\
+		\hline
+\end{tabular}
+\\
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-30\\
+	\textbf{Use Case Tested:}& UC-RSb\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student can view the  subjects in which they are enrolled .\\
+	\textbf{Input Data:}& View subjects\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'view enrolled subjects' & The system indicates failure when all subjects in which the student has enrolled for are not reflected . \\
+	Step 2.Go to 'view enrolled subjects' & The system indicates success when all subjects in which the student has enrolled for are  reflected . \\
+		\hline
+\end{tabular}
+\\
+
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-31\\
+	\textbf{Use Case Tested:}& UC-RSb\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor can view the  subjects in which they are tutoring .\\
+	\textbf{Input Data:}& View subjects\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'view tutoring subjects' & The system indicates failure when all subjects which the tutor has signed up to tutor  are not reflected . \\
+	Step 2.Go to 'view tutoring subjects' & The system indicates success when all subjects which the tutor has signed up to tutor are reflected . \\
+		\hline
+\end{tabular}
+\\
+
+
+\begin{tabular}{| p{8cm} | p{8cm} |} \hline
+	\textbf{Test-case Identifier:}& TC-32\\
+	\textbf{Use Case Tested:}& UC-FP\\
+	\textbf{Pass/Fail Criteria:}& The test passes if the student's account is deducted by the funds due for a tutorial session and is reflected in the tuto's account when safty measures of check-in and check-out have been adhered to by both parties.\\
+	\textbf{Input Data:}& View funds\\\hline
+	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
+	Step 1.Go to 'funds' & The system indicates failure when incorrect trafficing and amount of funds are reflected in the tutor's and/or the student's account. \\
+	Step 2.Go to 'funds' & The system indicates success when correct trafficing and amount of funds are reflected in the tutor's and/or the student's account. \\
+		\hline
+\end{tabular}
+\\
 
 \subsubsection{Acceptance Tests (general)}
 
@@ -972,3 +1463,4 @@ Operational requirements describe the non-business characteristics of an applica
 
 \grid
 \grid
+>>>>>>> 92dba06be4b52dd49f42911cd66fc7e141d9ab5e

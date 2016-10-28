@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.9)  26 OCT 2016 11:02
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  26 OCT 2016 00:52
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  27 OCT 2016 00:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -279,402 +275,566 @@ Underfull \vbox (badness 10000) detected at line 236
  []
 
 
-Overfull \hbox (60.74706pt too wide) in alignment at lines 236--258
+Overfull \hbox (60.74706pt too wide) in alignment at lines 236--259
  [] [] [] 
  []
 
-
-Overfull \hbox (60.74706pt too wide) in alignment at lines 258--259
- [] [] [] 
- []
-
-[8]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 269.
+[8] [9]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 270.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 269.
- [9]
-Underfull \hbox (badness 10000) in paragraph at lines 281--302
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 270.
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--303
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--302
+Underfull \hbox (badness 10000) in paragraph at lines 282--303
 
  []
 
 [10]
-Overfull \hbox (89.24408pt too wide) in paragraph at lines 310--321
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 311--323
 [] 
  []
 
-<<<<<<< HEAD
 
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 319--328
+Underfull \hbox (badness 10000) in paragraph at lines 311--323
+
+ []
+
+[11]
+Underfull \hbox (badness 1902) in paragraph at lines 333--333
+[]\OT1/cmr/m/n/12 Th sys-tem changes the list of sub-jects
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 325--336
 [][] 
  []
 
-[11] [12]
-Overfull \hbox (4.53062pt too wide) in paragraph at lines 356--358
-=======
-[11]
-Overfull \hbox (4.53062pt too wide) in paragraph at lines 349--351
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--336
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 337--348
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--348
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 349--359
+[][] 
+ []
+
+[12]
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 361--373
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--373
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 375--386
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--386
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 387--398
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--398
+
+ []
+
+[13]
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 399--410
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--410
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 411--422
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 411--422
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 423--434
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--434
+
+ []
+
+[14]
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 435--446
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--446
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 447--458
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 447--458
+
+ []
+
+[15]
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 459--470
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 459--470
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 471--482
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 471--482
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 483--494
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--494
+
+ []
+
+[16]
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 495--506
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 495--506
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 507--518
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--518
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 519--530
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 519--530
+
+ []
+
+[17]
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 531--542
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 531--542
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 543--554
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--554
+
+ []
+
+[18]
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 555--566
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 555--566
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 568--579
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 568--579
+
+ []
+
+[19]
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 580--591
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 580--591
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 592--603
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 592--603
+
+ []
+
+[20]
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 604--615
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 604--615
+
+ []
+
+[21]
+Underfull \hbox (badness 1946) in paragraph at lines 622--622
+[]\OT1/cmr/m/n/12 Confirmed tu-tuo-rial ses-sions which have
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 618--629
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 618--629
+
+ []
+
+[22]
+Underfull \hbox (badness 1946) in paragraph at lines 634--634
+[]\OT1/cmr/m/n/12 Confirmed tu-tuo-rial ses-sions which have
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 630--641
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 630--641
+
+ []
+
+
+Underfull \hbox (badness 1454) in paragraph at lines 647--647
+[]\OT1/cmr/m/n/12 Completed tu-tuo-rial ses-sions which have
+ []
+
+
+Overfull \hbox (323.89383pt too wide) in paragraph at lines 642--654
+[]\OT1/cmr/m/n/12 CHECK THE NEXT TWO!! UR-GENT!!! [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 642--654
+
+ []
+
+[23]
+Underfull \hbox (badness 1454) in paragraph at lines 659--659
+[]\OT1/cmr/m/n/12 Completed tu-tuo-rial ses-sions which have
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 655--666
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--666
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 667--678
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 667--678
+
+ []
+
+[24]
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 680--691
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--691
+
+ []
+
+
+Overfull \hbox (106.8689pt too wide) in paragraph at lines 693--704
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 693--704
+
+ []
+
+[25] [26]
+Overfull \hbox (4.53062pt too wide) in paragraph at lines 730--732
 []\OT1/cmr/m/n/12 ACT4.04 Chal-lenge reg-is-tered ad-min-is-tra-tor to view the
 ir ac-count (pass) 
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (6.09181pt too wide) in paragraph at lines 358--359
-=======
-Overfull \hbox (6.09181pt too wide) in paragraph at lines 351--352
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Overfull \hbox (6.09181pt too wide) in paragraph at lines 732--733
 []\OT1/cmr/m/n/12 ACT5.01 A stu-dent re-quest-ing a tu-tor can re-quest a tu-to
 r for a date/time
  []
 
-<<<<<<< HEAD
-[13] [14]
-=======
-[12] [13] [14]
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+[27] [28]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
-
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 421--422
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+ [29]
+Underfull \hbox (badness 10000) in paragraph at lines 795--796
 
  []
 
 
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 421--422
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Underfull \hbox (badness 10000) in paragraph at lines 795--796
 
  []
 
 
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 423--470
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 416--463
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Underfull \hbox (badness 10000) in paragraph at lines 797--844
 
  []
 
 
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 423--470
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 416--463
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Underfull \hbox (badness 10000) in paragraph at lines 797--844
 
  []
 
 
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 423--470
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 416--463
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Underfull \hbox (badness 10000) in paragraph at lines 797--844
 
  []
 
 
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 423--470
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 416--463
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Underfull \hbox (badness 10000) in paragraph at lines 797--844
 
  []
 
 
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 423--470
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 416--463
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Underfull \hbox (badness 10000) in paragraph at lines 797--844
 
  []
 
 
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 423--470
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 416--463
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Underfull \hbox (badness 10000) in paragraph at lines 797--844
 
  []
 
-[15]
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 475--493
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 468--486
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
- [][] 
- []
-
-[16]
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 497--514
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 494--494
-[]\OT1/cmr/m/n/12 Update stu-dent de-mo-graphic data,student num-
- []
-
-
-Underfull \hbox (badness 1189) in paragraph at lines 494--494
-\OT1/cmr/m/n/12 ber,student email ad-dress, stu-dent con-tact num-ber
- []
-
-
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 490--507
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+[30]
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 849--867
  [][] 
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 519--538
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 512--531
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 871--888
  [][] 
  []
 
-[17]
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 542--559
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 535--552
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+[31]
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 893--912
  [][] 
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 563--580
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 556--573
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 916--933
  [][] 
  []
 
-[18]
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 584--601
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 577--594
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+[32]
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 937--954
  [][] 
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 605--620
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 598--613
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 958--975
  [][] 
  []
 
-[19]
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 624--639
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 617--632
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+[33]
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 979--994
  [][] 
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 641--656
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 634--649
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 998--1013
+ [][] 
+ []
+
+[34]
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1015--1030
  [][] 
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 659--684
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 652--677
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1033--1058
  [][] 
  []
 
-[20]
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 685--702
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 678--695
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+[35]
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1059--1076
  [][] 
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 703--719
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 696--712
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1077--1093
  [][] 
  []
 
-[21]
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 720--735
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 713--728
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+[36]
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1094--1109
  [][] 
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 736--751
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 729--744
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1110--1125
  [][] 
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 752--768
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 745--761
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1126--1142
  [][] 
  []
 
-[22]
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 769--790
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 762--783
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+[37]
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1143--1164
  [][] 
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 791--808
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 784--801
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1165--1182
  [][] 
  []
 
-[23]
-<<<<<<< HEAD
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 810--826
-=======
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 803--819
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+[38]
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1184--1200
  [][] 
  []
 
-[24] <./Sprint3Models/Use_Case_Diagram.png, id=81, 1445.4pt x 1224.575pt>
+[39] <./Sprint3Models/Use_Case_Diagram.png, id=129, 1445.4pt x 1224.575pt>
 File: ./Sprint3Models/Use_Case_Diagram.png Graphic file (type png)
 
 <use ./Sprint3Models/Use_Case_Diagram.png>
 Package pdftex.def Info: ./Sprint3Models/Use_Case_Diagram.png used on input lin
-<<<<<<< HEAD
-e 834.
+e 1208.
 (pdftex.def)             Requested size: 398.33858pt x 337.47856pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 831--835
-=======
-e 827.
-(pdftex.def)             Requested size: 398.33858pt x 337.47856pt.
-
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 824--828
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 1205--1209
  [] 
  []
 
-[25 <./Sprint3Models/Use_Case_Diagram.png (PNG copy)>]
-<<<<<<< HEAD
-Overfull \hbox (58.99843pt too wide) in alignment at lines 841--877
-=======
-Overfull \hbox (58.99843pt too wide) in alignment at lines 834--870
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+[40 <./Sprint3Models/Use_Case_Diagram.png (PNG copy)>]
+Overfull \hbox (58.99843pt too wide) in alignment at lines 1215--1251
  [] [] [] 
  []
 
 
-<<<<<<< HEAD
-Underfull \vbox (badness 10000) detected at line 877
+Underfull \vbox (badness 10000) detected at line 1251
  []
 
 
-Overfull \hbox (58.99843pt too wide) in alignment at lines 877--900
-=======
-Underfull \vbox (badness 10000) detected at line 870
- []
-
-
-Overfull \hbox (58.99843pt too wide) in alignment at lines 870--893
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Overfull \hbox (58.99843pt too wide) in alignment at lines 1251--1274
  [] [] [] 
  []
 
-[26] [27]
-<./Sprint3Models/Analysis_Object_model3.png, id=92, 596.98032pt x 845.40843pt>
+[41] [42]
+<./Sprint3Models/Analysis_Object_model3.png, id=139, 596.98032pt x 845.40843pt>
 File: ./Sprint3Models/Analysis_Object_model3.png Graphic file (type png)
-
 <use ./Sprint3Models/Analysis_Object_model3.png>
 Package pdftex.def Info: ./Sprint3Models/Analysis_Object_model3.png used on inp
-<<<<<<< HEAD
-ut line 905.
+ut line 1279.
 (pdftex.def)             Requested size: 398.33858pt x 564.11162pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 905--906
-=======
-ut line 898.
-(pdftex.def)             Requested size: 398.33858pt x 564.11162pt.
-
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 898--899
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 1279--1280
  [] 
  []
 
-[28]
+[43]
 Overfull \vbox (38.69493pt too high) has occurred while \output is active []
 
 
-[29 <./Sprint3Models/Analysis_Object_model3.png>]
-<./Sprint3Models/Dynamic_model3.png, id=101, 596.98032pt x 845.40843pt>
+[44 <./Sprint3Models/Analysis_Object_model3.png>]
+<./Sprint3Models/Dynamic_model3.png, id=149, 596.98032pt x 845.40843pt>
 File: ./Sprint3Models/Dynamic_model3.png Graphic file (type png)
 
 <use ./Sprint3Models/Dynamic_model3.png>
 Package pdftex.def Info: ./Sprint3Models/Dynamic_model3.png used on input line 
-<<<<<<< HEAD
-910.
+1284.
 (pdftex.def)             Requested size: 398.33858pt x 564.11162pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 910--911
-=======
-903.
-(pdftex.def)             Requested size: 398.33858pt x 564.11162pt.
-
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 903--904
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 1284--1285
  [] 
  []
 
@@ -682,41 +842,28 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 903--904
 Overfull \vbox (38.69493pt too high) has occurred while \output is active []
 
 
-[30 <./Sprint3Models/Dynamic_model3.png>] [31] [32] [33]
+[45 <./Sprint3Models/Dynamic_model3.png>] [46] [47] [48]
 (./RequirementsAnalysisDocument.aux) )
 (\end occurred inside a group at level 1)
 
-<<<<<<< HEAD
-### simple group (level 1) entered at line 469 ({)
-=======
-### simple group (level 1) entered at line 462 ({)
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+### simple group (level 1) entered at line 843 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
  2548 strings out of 493085
  34087 string characters out of 6136916
- 113737 words of memory out of 5000000
+ 112737 words of memory out of 5000000
  5990 multiletter control sequences out of 15000+600000
  12879 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
-<<<<<<< HEAD
- 40i,8n,26p,1291b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pf
-b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on RequirementsAnalysisDocument.pdf (33 pages, 374851 bytes).
-=======
  37i,8n,26p,1291b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on RequirementsAnalysisDocument.pdf (33 pages, 374458 bytes).
->>>>>>> 910e8c1bc5f343b56561905163d07406521889d2
+Output written on RequirementsAnalysisDocument.pdf (48 pages, 398838 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 182 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
