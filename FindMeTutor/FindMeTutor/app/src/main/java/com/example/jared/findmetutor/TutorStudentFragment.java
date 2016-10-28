@@ -87,7 +87,8 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
     TextView num;
     TextView email;
     TextView name;
-    TextView info;
+    TextView infoOut;
+    TextView cordsOut;
 
 
     LocationManager locationManager;
@@ -166,6 +167,9 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
         check = (CardView)rootView.findViewById(R.id.cv3);
         checkOut = (Button)rootView.findViewById(R.id.checkOut);
 
+        infoOut =(TextView)rootView.findViewById(R.id.infoOutText);
+        cordsOut =(TextView)rootView.findViewById(R.id.cordsOutTxt);
+
         cancel = (Button)rootView.findViewById(R.id.cancel_session);
 
         tutStdNum = this.getArguments().getString("tutor_student_num");
@@ -212,6 +216,8 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
 
                 //Toast.makeText(getContext(),  deviceLocation.getLatatude()+" : "+deviceLocation.getLongatude(),Toast.LENGTH_SHORT).show();
                 displayLocation();
+                check.setVisibility(View.VISIBLE);
+
 
 
                 //getLoco();
@@ -222,12 +228,10 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
         checkOut.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                status =1; //to check out
-                getLocation = new GetLocation2(getActivity(), sessionId,status,tutorStudentFragment);
+                displayLocationOut();
+                showLoadDialog();
 
-                requestGps.setEnabled(false);
-
-                Toast.makeText(getContext(),  " check out :"+sessionId,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(),  " check out :"+sessionId,Toast.LENGTH_SHORT).show();
 
 
             }
@@ -248,6 +252,30 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
 
 
         return rootView;
+    }
+
+    public void showLoadDialog() {
+
+        // get prompts.xml view
+        LayoutInflater layoutInflater = LayoutInflater.from(getContext());
+        View promptView = layoutInflater.inflate(R.layout.load_dialog, null);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
+        alertDialogBuilder.setView(promptView);
+        // myprefs =  getContext().getSharedPreferences("user", MODE_PRIVATE);
+
+        final ProgressBar pgBar;
+
+
+        pgBar =(ProgressBar) promptView.findViewById(R.id.pgbar);
+
+        final TextView textView = (TextView)promptView.findViewById(R.id.textView);
+        textView.setText("Checking Out");
+        // setup a dialog window
+        alertDialogBuilder.setCancelable(false);
+
+        // create an alert dialog
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
     }
 
 
@@ -401,7 +429,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
         String strAddress = "";
 
         if(Geocoder.isPresent()) {
-            Toast.makeText(getContext(),"Coder is present!",Toast.LENGTH_LONG);
+            //Toast.makeText(getContext(),"Coder is present!",Toast.LENGTH_LONG);
             Geocoder geocoder = new Geocoder(getContext(), Locale.ENGLISH);
             try {
                 List<Address> addresses = geocoder.getFromLocation(latitude,
@@ -495,30 +523,6 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
 
     }
 
-    private String getCompleteAddressString(double LATITUDE, double LONGITUDE) {
-        String strAdd = "";
-        Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
-        try {
-            List<Address> addresses = geocoder.getFromLocation(LATITUDE, LONGITUDE, 1);
-            if (addresses != null) {
-                Address returnedAddress = addresses.get(0);
-                StringBuilder strReturnedAddress = new StringBuilder("");
-
-                for (int i = 0; i < returnedAddress.getMaxAddressLineIndex(); i++) {
-                    strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("\n");
-                }
-                strAdd = strReturnedAddress.toString();
-                Log.w("My Current loction", "" + strReturnedAddress.toString());
-            } else {
-                Log.w("My Current loction", "No Address returned!");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.w("My Current loction", "Canont get Address!");
-        }
-        return strAdd;
-    }
-
 
 
     /**
@@ -542,14 +546,59 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
             double latitude = mLastLocation.getLatitude();
             double longitude = mLastLocation.getLongitude();
 
-            lblLocation.setText(latitude + ", " + longitude);
 
             String add = getAddressString(latitude, longitude);
-            cords.setText(add);
+
+            //Check in
+                student_checkin chkIn = new student_checkin(getActivity(), sessionId, "Lat: " + latitude + " Long: " + longitude);
+                chkIn.execute();
+                lblLocation.setText(latitude + ", " + longitude);
+                cords.setText(add);
+
+
 
         } else {
 
             lblLocation
+                    .setText("(Couldn't get the location. Make sure location is enabled on the device)");
+        }
+    }
+
+    private void displayLocationOut() {
+
+        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+
+        if (mLastLocation != null) {
+            double latitude = mLastLocation.getLatitude();
+            double longitude = mLastLocation.getLongitude();
+
+
+            String add = getAddressString(latitude, longitude);
+
+
+            infoOut.setText(add);
+            cordsOut.setText(latitude + ", " + longitude);
+
+
+            student_checkout chkOut = new student_checkout(getActivity(), sessionId, "Lat: " + latitude + " Long: " + longitude);
+            chkOut.delegate = this;
+            chkOut.execute();
+
+
+
+        } else {
+
+            infoOut
                     .setText("(Couldn't get the location. Make sure location is enabled on the device)");
         }
     }

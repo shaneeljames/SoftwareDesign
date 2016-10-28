@@ -172,7 +172,6 @@
         xmlns:android.support.v7.cardview="http://schemas.android.com/apk/res-auto"
         android.support.v7.cardview:cardElevation="5dp"
         android:clipChildren="false"
-        android:visibility="invisible"
 
         >
 
@@ -184,7 +183,7 @@
 
             <Button
                 android:id="@+id/checkOut"
-                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
                 android:background="@color/colorPrimary"
                 android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
@@ -198,6 +197,15 @@
                 android:layout_height="wrap_content"
                 android:text="info"
                 android:layout_below="@+id/checkOut"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/cordsOutTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cordinates"
+                android:layout_below="@+id/infoOutText"
                 android:gravity="center"
                 />
 
