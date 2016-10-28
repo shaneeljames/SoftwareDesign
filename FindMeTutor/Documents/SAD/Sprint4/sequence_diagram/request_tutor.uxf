@@ -225,10 +225,10 @@ ck:=check(funds)</panel_attributes>
       <x>608</x>
       <y>504</y>
       <w>24</w>
-      <h>144</h>
+      <h>208</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;240.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -427,7 +427,7 @@ date,time,details,subject</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>208</x>
-      <y>544</y>
+      <y>560</y>
       <w>176</w>
       <h>40</h>
     </coordinates>
@@ -452,7 +452,7 @@ store(date,time,details,subject)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>768</x>
-      <y>608</y>
+      <y>640</y>
       <w>152</w>
       <h>32</h>
     </coordinates>
@@ -475,12 +475,80 @@ write records</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>208</x>
-      <y>616</y>
+      <y>632</y>
       <w>176</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 confirmation</panel_attributes>
     <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>992</x>
+      <y>48</y>
+      <w>112</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>_:funds_controller_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1048</x>
+      <y>64</y>
+      <w>24</w>
+      <h>488</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;590.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1048</x>
+      <y>536</y>
+      <w>16</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>592</y>
+      <w>688</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+removeFunds(email)</panel_attributes>
+    <additional_attributes>10.0;20.0;840.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1048</x>
+      <y>664</y>
+      <w>24</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>616</y>
+      <w>296</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+remove_Funds(email)</panel_attributes>
+    <additional_attributes>350.0;20.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>
