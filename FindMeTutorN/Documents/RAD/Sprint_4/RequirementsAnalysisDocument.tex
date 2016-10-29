@@ -245,26 +245,26 @@ Describes the high-level functionality of the system\\
 				RQ8.2 & The system shall allow a student to view funds &UC-VF\\ \hline
 				%RQ8.3 & The system shall allow a student to update funds &UC-UF\\ \hline
 				%RQ9.1 & The system shall allow a tutor to add funds &UC-CF\\ \hline
-				RQ9.1 & The system shall allow a tutor to view funds &UC-VF\\ \hline
+				%RQ9.1 & The system shall allow a tutor to view funds &UC-VF\\ \hline
 				%RQ9.3 & The system shall allow a tutor to update funds &UC-UF\\ \hline
-				RQ10.1 & The system shall allow a student to add subjects &UC-CSb\\ \hline
-				RQ11.1 & The system shall allow a tutor to add subjects &UC-CSb\\ \hline
-				RQ12.1 & The system shall allow a student to remove subjects &UC-DSb\\ \hline
-				RQ12.2 & The system shall allow a tutor to remove subjects &UC-DSb\\ \hline
-				RQ13.1 & The system shall allow a student to login &UC-L\\ \hline
-				RQ13.2 & The system shall allow a tutor to login &UC-L\\ \hline
+				RQ9.1 & The system shall allow a student to add subjects &UC-CSb\\ \hline
+				RQ10.1 & The system shall allow a tutor to add subjects &UC-CSb\\ \hline
+				RQ11.1 & The system shall allow a student to remove subjects &UC-DSb\\ \hline
+				RQ11.2 & The system shall allow a tutor to remove subjects &UC-DSb\\ \hline
+				RQ12.1 & The system shall allow a student to login &UC-L\\ \hline
+				RQ12.2 & The system shall allow a tutor to login &UC-L\\ \hline
 				%RQ16.3 & The system shall allow an administrator to login &UC-L\\ \hline
-				RQ14.1 & The system shall allow a student to view their upcoming sessions  &UC-VSes\\ \hline
-				RQ14.2 & The system shall allow a tutor to view their upcoming sessions  &UC-VSes\\ \hline
-				RQ15.1 & The system shall allow a tutor to mark a session as done &UC-DSes\\ \hline
-				RQ15.2 & The system shall allow a student to mark a session as done &UC-DSes\\ \hline
-				RQ16.1 & The system shall allow a tutor to mark a session as cancelled &UC-DSes\\ \hline
-				RQ16.2 & The system shall allow a student to mark a session as cancelled &UC-DSes\\ \hline
-				RQ17.1 & The system shall allow a student to view a subject &UC-RSb\\ \hline
-				RQ17.2 & The system shall allow a tutor to view a subject &UC-RSb\\ \hline
+				RQ13.1 & The system shall allow a student to view their upcoming sessions  &UC-VSes\\ \hline
+				RQ13.2 & The system shall allow a tutor to view their upcoming sessions  &UC-VSes\\ \hline
+				RQ14.1 & The system shall allow a tutor to mark a session as done &UC-DSes\\ \hline
+				RQ14.2 & The system shall allow a student to mark a session as done &UC-DSes\\ \hline
+				RQ15.1 & The system shall allow a tutor to mark a session as cancelled &UC-DSes\\ \hline
+				RQ15.2 & The system shall allow a student to mark a session as cancelled &UC-DSes\\ \hline
+				RQ16.1 & The system shall allow a student to view a subject &UC-RSb\\ \hline
+				RQ16.2 & The system shall allow a tutor to view a subject &UC-RSb\\ \hline
 				%Sprint3
-				RQ18.1 & The system shall allow a students account to automatically be deducted from their account to make a payment to the tutor, once they both have checked out  &UC-FP\\ \hline
-				RQ18.2 & The system shall allow a tutor receive funds from a student once they both check-out of a tutorial session &UC-FP\\ \hline
+				RQ17.1 & The system shall allow a students account to automatically be deducted from their account once they request for a tutor  &UC-RT\\ \hline
+				RQ17.2 & The system shall allow a tutor to receive funds from a student once they both check-out of a tutorial session &UC-CO\\ \hline
 \end{longtable}
 }
 \newpage
@@ -316,6 +316,9 @@ Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 %Acceptance Testing Table detailed
 %Sprint 4
 %Template: to Delete
+{
+centering
+
 \subsubsection{Test Case for Use Case}
 \begin{tabular}{| p{8cm} | p{8cm} |} \hline
 	\textbf{Test-case Identifier:}& TC-1\\
@@ -710,6 +713,7 @@ Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 		\hline
 \end{tabular}
 \\
+}
 
 \subsubsection{Acceptance Tests (general)}
 
@@ -1041,7 +1045,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
 \begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-RT: Request Tutor}} \\ \hline
-			Related Requirements: & RQ3.1, RQ3.2, RQ4.1, RQ4.2\\ \hline
+			Related Requirements: & RQ3.1, RQ3.2, RQ4.1, RQ4.2, RQ18.1\\ \hline
 			Initiating actor: & Student\\ \hline
 			Actor goal: & To request a Tutor\\ \hline
 			Participating Actors: & Tutor\\ \hline
@@ -1174,7 +1178,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CO: Check Out } }\\ \hline
-			Related Requirements: &  RQ6.2, RQ7.2\\ \hline
+			Related Requirements: &  RQ6.2, RQ7.2, RQ18.2\\ \hline
 			Initiating actor: & Student, Tutor \\ \hline
 			Actor goal: & To check out from a tutorial session\\ \hline
 			Participating Actors: & Student or Tutor( not the same as the initiating actor)\\ \hline
@@ -1210,7 +1214,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
 		\begin{tabular}{| l | p{10cm}| }
       \hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CF: Confirm Funds} }\\ \hline
-      Related Requirements: &\\ \hline
+      Related Requirements: &RQ8.1\\ \hline
       Initiating actor: & Administrator\\ \hline
       Actor goal: &To confirm the addition of funds to a student\\ \hline
       Participating Actors: &Student\\ \hline
@@ -1227,7 +1231,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
 		\begin{tabular}{| l | p{10cm}| }
       \hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-VF: Read Funds} }\\ \hline
-      Related Requirements: &\\ \hline
+      Related Requirements: &RQ8.2\\ \hline
       Initiating actor: & Student\\ \hline
       Actor goal: &To view the students balance of funds\\ \hline
       Participating Actors: &N/A\\ \hline
