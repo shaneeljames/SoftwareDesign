@@ -49,6 +49,11 @@ The scope of the SAD is to depict the architecture of the FindMeTutor system. Th
 \item Definitions, Acronyms and Abbreviations\\
 UML: Unified Modeling Language\\
 SAD: Software Architecture Document
+
+\item Overview\\
+This document provides the reader with a deeper understanding of the FindMeTutor system. It is organised into several views of the system. These views include the Logical View, Deployment View, Implementation view and the Data View.
+
+
 \end{itemize}
 
 %\end{flushleft}
@@ -166,10 +171,22 @@ Stakeholder 3 - Lecturer\\
 Stakeholder 4 - Students\\
 Stakeholder 5 - Tutors\\\\
 \includegraphics[width=140mm]{./trace.png}
-\pagebreak
-\section{Views}
-%Listed below are views which.
 
+\section{Views}
+Description of the different views:
+%Listed below are views which.
+\begin{itemize}
+\item Logical View
+The logical view is concerned with the functionality that the system provides to end users. The view includes diagrams such as the class diagram and sequence diagram.
+\item Development View
+The development view illustrates a system from a programmers perspective and is concerned with the software management. Diagrams include a package diagram and component diagram.
+\item Process View
+The process view deals with the dynamic aspects of the system, explains the systems processes and how they communicate, and focusses on the runtime behaviour of the system. This view addresses concurrency, distribution, integrators, performence, and scalability.
+\item Physical View
+The physical view depicts the system from a system engineer's point of view. It is concerned with the topology of software components on the physical layer, as well as the physical connections between theses componenets.
+\end{itemize}
+
+\pagebreak
 \subsection{Logical View}
 The Logical View focuses on realising the functionality of the FindMeTutor system.This view addresses the concerns of the end-user by realising the functionality of the system.\\\\
 The FindMeTutor application uses a 2-Tier architecture.\\
@@ -178,8 +195,9 @@ The FindMeTutor application uses a 2-Tier architecture.\\
 
 \subsubsection{Class Diagram}
 The class diagram below describes the structure of the FindMeTutor system. Showing the system classes, their attributes and relationships to one another.\\\\
+The SQL database is stored on a linux based server hosted by Amazon Web Services apart from Amazon, FindMeTutor has ensured that we have a backup server hosted on the Microsoft Azure platform. 
+\\\\
 \includegraphics[width=140mm]{./class_diagram/class_diagram_findme_tutor.jpg}
-
 \newpage
 
 \subsubsection{Sequence Diagram}
@@ -208,6 +226,9 @@ The process of checking out of a tutorial session.\\
 \subsection{Development View}
 The Development view outlines the components that are used to assemble the physical system.
 The view addresses the concerns of stakeholders concerned with the development of system such as developers.\\
+\\
+Find Me Tutor is a mobile application built to run on Google's Android mobile operating system. Android is the currenty the biggest mobile operating system and we believe that it is the perfect platform for FindMeTutor.\\\\
+There are two mobile applications that make up FindMeTutor. The first being the student application and the second being the tutor application. Students make use of the student application while Tutors make use of the tutor application.\\
 \subsubsection{Package Diagram}
 
 A package diagram depicts the dependencies the packages of the FindMeTutor system.
@@ -267,6 +288,9 @@ The most important state diagrams for the FindMeTutor system are listed below, t
 
 \subsection{Physical View}
 The physical view describes the physical locations of software, the scalability of the system, the deployment and installation.
+\\\\
+The server side of FindMetutor makes use of an SQL server, we have selected Amazon Web Services as our primary provider. We also have a backup server on the Microsoft Azure platform. \\\\
+On the user side we have the mobile device running the latest version of Google's Android operating system. The application(s) are then installed on Android.\\
 \subsubsection{Deployment Diagram}
 
 \includegraphics[width=140mm]{./Deployment.jpg}

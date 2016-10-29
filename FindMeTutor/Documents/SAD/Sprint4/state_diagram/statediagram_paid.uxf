@@ -3,8 +3,8 @@
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>100</x>
-      <y>250</y>
+      <x>240</x>
+      <y>310</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -14,19 +14,19 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>110</x>
-      <y>250</y>
-      <w>200</w>
-      <h>30</h>
+      <x>240</x>
+      <y>320</y>
+      <w>30</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>320</x>
-      <y>140</y>
+      <x>340</x>
+      <y>200</y>
       <w>380</w>
       <h>30</h>
     </coordinates>
@@ -36,8 +36,8 @@
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>290</x>
-      <y>240</y>
+      <x>210</x>
+      <y>410</y>
       <w>90</w>
       <h>40</h>
     </coordinates>
@@ -47,10 +47,10 @@
   <element>
     <id>Text</id>
     <coordinates>
-      <x>40</x>
-      <y>250</y>
+      <x>230</x>
+      <y>280</y>
       <w>50</w>
-      <h>50</h>
+      <h>30</h>
     </coordinates>
     <panel_attributes>Start</panel_attributes>
     <additional_attributes/>
@@ -58,19 +58,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>320</x>
-      <y>270</y>
-      <w>30</w>
-      <h>180</h>
-    </coordinates>
-    <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>370</x>
-      <y>250</y>
+      <x>290</x>
+      <y>420</y>
       <w>230</w>
       <h>30</h>
     </coordinates>
@@ -80,8 +69,8 @@
   <element>
     <id>Text</id>
     <coordinates>
-      <x>130</x>
-      <y>260</y>
+      <x>250</x>
+      <y>340</y>
       <w>180</w>
       <h>70</h>
     </coordinates>
@@ -91,8 +80,8 @@
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>580</x>
-      <y>240</y>
+      <x>500</x>
+      <y>410</y>
       <w>90</w>
       <h>40</h>
     </coordinates>
@@ -102,8 +91,8 @@
   <element>
     <id>Text</id>
     <coordinates>
-      <x>410</x>
-      <y>230</y>
+      <x>340</x>
+      <y>410</y>
       <w>180</w>
       <h>70</h>
     </coordinates>
@@ -113,8 +102,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>660</x>
-      <y>250</y>
+      <x>580</x>
+      <y>420</y>
       <w>190</w>
       <h>30</h>
     </coordinates>
@@ -124,8 +113,8 @@
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>830</x>
-      <y>250</y>
+      <x>750</x>
+      <y>420</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -135,34 +124,24 @@
   <element>
     <id>Text</id>
     <coordinates>
-      <x>850</x>
-      <y>240</y>
+      <x>780</x>
+      <y>420</y>
       <w>50</w>
-      <h>50</h>
+      <h>20</h>
     </coordinates>
     <panel_attributes>End</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLState</id>
+    <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>430</y>
-      <w>90</w>
-      <h>40</h>
+      <x>110</x>
+      <y>420</y>
+      <w>160</w>
+      <h>80</h>
     </coordinates>
-    <panel_attributes>false</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Text</id>
-    <coordinates>
-      <x>330</x>
-      <y>320</y>
-      <w>180</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>Unpaid Session</panel_attributes>
-    <additional_attributes/>
+    <panel_attributes>lt=-&gt;
+Unpaid Session</panel_attributes>
+    <additional_attributes>140.0;30.0;140.0;60.0;10.0;60.0;10.0;10.0;90.0;10.0</additional_attributes>
   </element>
 </diagram>

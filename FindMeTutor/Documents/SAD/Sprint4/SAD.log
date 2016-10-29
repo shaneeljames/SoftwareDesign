@@ -1,14 +1,14 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.9)  28 OCT 2016 23:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  29 OCT 2016 16:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **SAD.tex
 (./SAD.tex
-LaTeX2e <2016/03/31> patch level 3
-Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
-(/usr/share/texmf-dist/tex/latex/base/article.cls
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 5 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/share/texmf-dist/tex/latex/base/size12.clo
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -23,25 +23,25 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/06/28 v2.15d AMS math features
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/03 v2.15a AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks14
 \ex@=\dimen103
 ))
-(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen104
 )
-(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 2016/03/08 v2.02 operator names
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count87
 LaTeX Info: Redefining \frac on input line 199.
@@ -56,8 +56,8 @@ LaTeX Info: Redefining \cdots on input line 518.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
 \big@size=\dimen105
-LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
 \macc@depth=\count92
 \c@MaxMatrixCols=\count93
 \dotsspace@=\muskip10
@@ -78,56 +78,56 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks18
-LaTeX Info: Redefining \[ on input line 2739.
-LaTeX Info: Redefining \] on input line 2740.
+LaTeX Info: Redefining \[ on input line 2735.
+LaTeX Info: Redefining \] on input line 2736.
 )
-(/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks19
 )
-(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 95.
 
-(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count99
 ))
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-(/usr/share/texmf-dist/tex/latex/comment/comment.sty
+(/usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write3
 
 Excluding comment 'comment')
-(/usr/share/texmf-dist/tex/latex/tools/longtable.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip46
 \LTright=\skip47
@@ -160,7 +160,7 @@ LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 
-(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count105
 \scratchdimen=\dimen115
@@ -173,63 +173,62 @@ LaTeX Font Info:    ... okay on input line 9.
 \MPnumerator=\count109
 \makeMPintoPDFobject=\count110
 \everyMPtoPDFconversion=\toks22
-) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
+(grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Try loading font information for U+msa on input line 12.
 
-(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 12.
 
-(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
@@ -244,7 +243,7 @@ LaTeX Warning: No \author given.
  [2]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 43.
 
-(/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
@@ -253,52 +252,52 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 <./2_Tier_Diagram.png, id=15, 813.0375pt x 722.7pt>
 File: ./2_Tier_Diagram.png Graphic file (type png)
  <use ./2_Tier_Diagram.png>
-Package pdftex.def Info: ./2_Tier_Diagram.png used on input line 63.
+Package pdftex.def Info: ./2_Tier_Diagram.png used on input line 68.
 (pdftex.def)             Requested size: 398.33858pt x 354.07095pt.
 
-Overfull \hbox (37.71327pt too wide) in paragraph at lines 61--64
+Overfull \hbox (37.71327pt too wide) in paragraph at lines 66--69
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--64
+Underfull \hbox (badness 10000) in paragraph at lines 66--69
 
  []
 
 [4 <./2_Tier_Diagram.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
 [5] [6]
-Overfull \hbox (3.42508pt too wide) in paragraph at lines 122--123
+Overfull \hbox (3.42508pt too wide) in paragraph at lines 127--128
 \OT1/cmr/m/n/12 This sec-tion lists the var-i-ous or-gan-i-sa-tions who are con
 -cerned with the project. 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 151--153
+Underfull \hbox (badness 10000) in paragraph at lines 156--158
 
  []
 
 <./trace.png, id=29, 1114.1625pt x 189.70876pt>
 File: ./trace.png Graphic file (type png)
  <use ./trace.png>
-Package pdftex.def Info: ./trace.png used on input line 168.
+Package pdftex.def Info: ./trace.png used on input line 173.
 (pdftex.def)             Requested size: 398.33858pt x 67.82326pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--170
+Underfull \hbox (badness 10000) in paragraph at lines 167--174
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--170
+Underfull \hbox (badness 10000) in paragraph at lines 167--174
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 162--170
-[]
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 167--174
+[] 
  []
 
 [8] [9 <./trace.png (PNG copy)>]
@@ -306,15 +305,15 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 162--170
 File: ./architecture_diagram.png Graphic file (type png)
 
 <use ./architecture_diagram.png>
-Package pdftex.def Info: ./architecture_diagram.png used on input line 176.
+Package pdftex.def Info: ./architecture_diagram.png used on input line 193.
 (pdftex.def)             Requested size: 398.33858pt x 392.01933pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--178
+Underfull \hbox (badness 10000) in paragraph at lines 191--195
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 174--178
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 191--195
 [] 
  []
 
@@ -324,15 +323,20 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 174--178
 File: ./class_diagram/class_diagram_findme_tutor.jpg Graphic file (type jpg)
  <use ./class_diagram/class_diagram_findme_tutor.jpg>
 Package pdftex.def Info: ./class_diagram/class_diagram_findme_tutor.jpg used on
- input line 181.
+ input line 200.
 (pdftex.def)             Requested size: 398.33858pt x 385.32086pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--182
+Underfull \hbox (badness 10000) in paragraph at lines 197--201
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 180--182
+Underfull \hbox (badness 10000) in paragraph at lines 197--201
+
+ []
+
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 197--201
 [] 
  []
 
@@ -343,15 +347,15 @@ File: ./sequence_diagram/create_student.png Graphic file (type png)
 
 <use ./sequence_diagram/create_student.png>
 Package pdftex.def Info: ./sequence_diagram/create_student.png used on input li
-ne 189.
+ne 207.
 (pdftex.def)             Requested size: 398.33858pt x 259.47263pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--190
+Underfull \hbox (badness 10000) in paragraph at lines 204--208
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 186--190
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 204--208
 [] 
  []
 
@@ -361,10 +365,10 @@ File: ./sequence_diagram/request_tutor.png Graphic file (type png)
 
 <use ./sequence_diagram/request_tutor.png>
 Package pdftex.def Info: ./sequence_diagram/request_tutor.png used on input lin
-e 193.
+e 211.
 (pdftex.def)             Requested size: 398.33858pt x 132.7919pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 191--194
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 209--212
 [] 
  []
 
@@ -374,10 +378,10 @@ File: ./sequence_diagram/add_subject.png Graphic file (type png)
 
 <use ./sequence_diagram/add_subject.png>
 Package pdftex.def Info: ./sequence_diagram/add_subject.png used on input line 
-197.
+215.
 (pdftex.def)             Requested size: 398.33858pt x 217.27757pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 195--198
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 213--216
 [] 
  []
 
@@ -386,11 +390,11 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 195--198
 File: ./sequence_diagram/check_in.png Graphic file (type png)
 
 <use ./sequence_diagram/check_in.png>
-Package pdftex.def Info: ./sequence_diagram/check_in.png used on input line 201
+Package pdftex.def Info: ./sequence_diagram/check_in.png used on input line 219
 .
 (pdftex.def)             Requested size: 398.33858pt x 173.52995pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 199--202
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 217--220
 [] 
  []
 
@@ -399,16 +403,26 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 199--202
 File: ./sequence_diagram/check_out.png Graphic file (type png)
 
 <use ./sequence_diagram/check_out.png>
-Package pdftex.def Info: ./sequence_diagram/check_out.png used on input line 20
-5.
+Package pdftex.def Info: ./sequence_diagram/check_out.png used on input line 22
+3.
 (pdftex.def)             Requested size: 398.33858pt x 192.52698pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 203--206
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 221--224
 [] 
  []
 
 [16 <./sequence_diagram/check_out.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 209--211
+Underfull \hbox (badness 10000) in paragraph at lines 227--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--232
 
  []
 
@@ -417,10 +431,10 @@ File: ./package_diagram/package_diagram.png Graphic file (type png)
 
 <use ./package_diagram/package_diagram.png>
 Package pdftex.def Info: ./package_diagram/package_diagram.png used on input li
-ne 215.
+ne 236.
 (pdftex.def)             Requested size: 398.33858pt x 525.08972pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 213--216
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 234--237
 [] 
  []
 
@@ -430,10 +444,10 @@ File: ./component_diagram/component_diagram.png Graphic file (type png)
 
 <use ./component_diagram/component_diagram.png>
 Package pdftex.def Info: ./component_diagram/component_diagram.png used on inpu
-t line 220.
+t line 241.
 (pdftex.def)             Requested size: 398.33858pt x 267.38194pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 219--221
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 240--242
 [] 
  []
 
@@ -444,7 +458,7 @@ File: ./activity_diagram/request_tutor.png Graphic file (type png)
 
 <use ./activity_diagram/request_tutor.png>
 Package pdftex.def Info: ./activity_diagram/request_tutor.png used on input lin
-e 230.
+e 251.
 (pdftex.def)             Requested size: 398.33858pt x 285.86925pt.
 
 <./activity_diagram/checked_in.png, id=78, 813.0375pt x 612.2875pt>
@@ -452,7 +466,7 @@ File: ./activity_diagram/checked_in.png Graphic file (type png)
 
 <use ./activity_diagram/checked_in.png>
 Package pdftex.def Info: ./activity_diagram/checked_in.png used on input line 2
-34.
+55.
 (pdftex.def)             Requested size: 398.33858pt x 299.97679pt.
 
 <./activity_diagram/rate_tutor.png, id=79, 622.325pt x 531.9875pt>
@@ -460,53 +474,53 @@ File: ./activity_diagram/rate_tutor.png Graphic file (type png)
 
 <use ./activity_diagram/rate_tutor.png>
 Package pdftex.def Info: ./activity_diagram/rate_tutor.png used on input line 2
-37.
+58.
 (pdftex.def)             Requested size: 398.33858pt x 340.51955pt.
 
 <./activity_diagram/check_out.png, id=80, 973.6375pt x 612.2875pt>
 File: ./activity_diagram/check_out.png Graphic file (type png)
 
 <use ./activity_diagram/check_out.png>
-Package pdftex.def Info: ./activity_diagram/check_out.png used on input line 23
-9.
+Package pdftex.def Info: ./activity_diagram/check_out.png used on input line 26
+0.
 (pdftex.def)             Requested size: 398.33858pt x 250.49762pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--240
+Underfull \hbox (badness 10000) in paragraph at lines 249--261
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 228--240
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 249--261
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--240
+Underfull \hbox (badness 10000) in paragraph at lines 249--261
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 228--240
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 249--261
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--240
+Underfull \hbox (badness 10000) in paragraph at lines 249--261
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 228--240
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 249--261
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--240
+Underfull \hbox (badness 10000) in paragraph at lines 249--261
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 228--240
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 249--261
 [] 
  []
 
@@ -519,10 +533,10 @@ File: ./communication_diagram/communication_diagram_rt.png Graphic file (type p
 ng)
  <use ./communication_diagram/communication_diagram_rt.png>
 Package pdftex.def Info: ./communication_diagram/communication_diagram_rt.png u
-sed on input line 245.
+sed on input line 266.
 (pdftex.def)             Requested size: 398.33858pt x 337.0592pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 243--247
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 264--268
 [] 
  []
 
@@ -533,10 +547,10 @@ File: ./communication_diagram/communication_diagram_cs.png Graphic file (type p
 ng)
  <use ./communication_diagram/communication_diagram_cs.png>
 Package pdftex.def Info: ./communication_diagram/communication_diagram_cs.png u
-sed on input line 249.
+sed on input line 270.
 (pdftex.def)             Requested size: 398.33858pt x 262.06393pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 248--250
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 269--271
 [] 
  []
 
@@ -547,98 +561,112 @@ File: ./communication_diagram/communication_diagram_as.png Graphic file (type p
 ng)
  <use ./communication_diagram/communication_diagram_as.png>
 Package pdftex.def Info: ./communication_diagram/communication_diagram_as.png u
-sed on input line 252.
+sed on input line 273.
 (pdftex.def)             Requested size: 398.33858pt x 262.06393pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 251--253
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 272--274
 [] 
  []
 
 [26 <./communication_diagram/communication_diagram_as.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
 
  []
 
-<./state_diagram/statediagram_status.png, id=106, 903.375pt x 371.3875pt>
+<./state_diagram/statediagram_status.png, id=106, 853.1875pt x 501.875pt>
 File: ./state_diagram/statediagram_status.png Graphic file (type png)
 
 <use ./state_diagram/statediagram_status.png>
 Package pdftex.def Info: ./state_diagram/statediagram_status.png used on input 
-line 259.
-(pdftex.def)             Requested size: 398.33858pt x 163.76234pt.
+line 280.
+(pdftex.def)             Requested size: 398.33858pt x 234.31905pt.
 
-<./state_diagram/statediagram_paid.png, id=107, 903.375pt x 371.3875pt>
+<./state_diagram/statediagram_paid.png, id=107, 762.85pt x 341.275pt>
 File: ./state_diagram/statediagram_paid.png Graphic file (type png)
 
 <use ./state_diagram/statediagram_paid.png>
 Package pdftex.def Info: ./state_diagram/statediagram_paid.png used on input li
-ne 263.
-(pdftex.def)             Requested size: 398.33858pt x 163.76234pt.
+ne 284.
+(pdftex.def)             Requested size: 398.33858pt x 178.20346pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--264
+Underfull \hbox (badness 10000) in paragraph at lines 278--285
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 257--264
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 278--285
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--264
+Underfull \hbox (badness 10000) in paragraph at lines 278--285
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 257--264
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 278--285
 [] 
  []
 
-[27 <./state_diagram/statediagram_status.png (PNG copy)> <./state_diagram/state
-diagram_paid.png (PNG copy)>] <./Deployment.jpg, id=111, 642.4pt x 441.65pt>
+[27 <./state_diagram/statediagram_status.png (PNG copy)>] [28 <./state_diagram/
+statediagram_paid.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 290--294
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--294
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--294
+
+ []
+
+<./Deployment.jpg, id=114, 642.4pt x 441.65pt>
 File: ./Deployment.jpg Graphic file (type jpg)
-
-<use ./Deployment.jpg>
-Package pdftex.def Info: ./Deployment.jpg used on input line 272.
+ <use ./Deployment.jpg>
+Package pdftex.def Info: ./Deployment.jpg used on input line 296.
 (pdftex.def)             Requested size: 398.33858pt x 273.86734pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 272--273
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 296--297
 [] 
  []
 
-[28 <./Deployment.jpg>]
-<./Use_Case_Diagram.png, id=115, 1214.5375pt x 1545.775pt>
+[29 <./Deployment.jpg>]
+<./Use_Case_Diagram.png, id=118, 1214.5375pt x 1545.775pt>
 File: ./Use_Case_Diagram.png Graphic file (type png)
 
 <use ./Use_Case_Diagram.png>
-Package pdftex.def Info: ./Use_Case_Diagram.png used on input line 280.
+Package pdftex.def Info: ./Use_Case_Diagram.png used on input line 304.
 (pdftex.def)             Requested size: 483.69684pt x 615.61018pt.
 
-Overfull \hbox (93.69684pt too wide) in paragraph at lines 279--281
+Overfull \hbox (93.69684pt too wide) in paragraph at lines 303--305
 [] 
  []
 
-[29]
+[30]
 Overfull \vbox (67.11018pt too high) has occurred while \output is active []
 
 
-[30 <./Use_Case_Diagram.png (PNG copy)>] (./SAD.aux) ) 
+[31 <./Use_Case_Diagram.png (PNG copy)>] (./SAD.aux) ) 
 Here is how much of TeX's memory you used:
- 2654 strings out of 493013
- 36757 string characters out of 6139317
- 95158 words of memory out of 5000000
- 6131 multiletter control sequences out of 15000+600000
+ 2648 strings out of 494910
+ 37203 string characters out of 6179836
+ 90326 words of memory out of 5000000
+ 5874 multiletter control sequences out of 15000+600000
  12710 words of font info for 49 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 40i,6n,26p,534b,241s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb>
-Output written on SAD.pdf (30 pages, 761384 bytes).
+ 36 hyphenation exceptions out of 8191
+ 37i,6n,26p,534b,241s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb>
+Output written on SAD.pdf (31 pages, 764314 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
+ 138 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

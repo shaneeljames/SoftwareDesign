@@ -5,7 +5,7 @@
 \contentsline {section}{\numberline {5}Concern and Stakeholder Traceability}{8}
 \contentsline {subsection}{\numberline {5.1}Concerns}{8}
 \contentsline {subsection}{\numberline {5.2}Traceability Matrix}{9}
-\contentsline {section}{\numberline {6}Views}{10}
+\contentsline {section}{\numberline {6}Views}{9}
 \contentsline {subsection}{\numberline {6.1}Logical View}{10}
 \contentsline {subsubsection}{\numberline {6.1.1}Class Diagram}{11}
 \contentsline {subsubsection}{\numberline {6.1.2}Sequence Diagram}{12}
@@ -16,7 +16,7 @@
 \contentsline {subsubsection}{\numberline {6.3.1}Activity Diagrams}{20}
 \contentsline {subsubsection}{\numberline {6.3.2}Communication Diagrams}{24}
 \contentsline {subsubsection}{\numberline {6.3.3}State Diagrams}{27}
-\contentsline {subsection}{\numberline {6.4}Physical View}{28}
-\contentsline {subsubsection}{\numberline {6.4.1}Deployment Diagram}{28}
-\contentsline {subsection}{\numberline {6.5}Scenarios}{29}
-\contentsline {subsubsection}{\numberline {6.5.1}Use Case Diagram}{29}
+\contentsline {subsection}{\numberline {6.4}Physical View}{29}
+\contentsline {subsubsection}{\numberline {6.4.1}Deployment Diagram}{29}
+\contentsline {subsection}{\numberline {6.5}Scenarios}{30}
+\contentsline {subsubsection}{\numberline {6.5.1}Use Case Diagram}{30}
