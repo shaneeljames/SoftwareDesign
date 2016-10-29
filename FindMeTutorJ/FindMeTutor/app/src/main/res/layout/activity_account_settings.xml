@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cdlayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbarAccount"
+            layout="@layout/toolbar" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/svV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <ImageButton
+            android:background="@null"
+            android:layout_width="200dp"
+            android:layout_height="180dp"
+            android:id="@+id/studentDp"
+            android:gravity="center"
+            android:src="@drawable/ic_profile_greenp"
+            android:clickable="true"
+            android:onClick="DisplayPicture"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+
+            <EditText
+                android:id="@+id/input_Firstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_first_name"
+             />
+
+
+            <EditText
+                android:id="@+id/input_Lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_last_name"
+               />
+
+
+            <EditText
+                android:id="@+id/stdNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/stdNum"
+                />
+
+            <EditText
+                android:id="@+id/input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="@string/hint_email"
+              />
+
+            <EditText
+                android:id="@+id/input_Number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_number"
+                android:nestedScrollingEnabled="true"
+                android:numeric="integer"
+                android:maxLines="1"
+                android:digits="0123456789"
+                android:phoneNumber="true"
+                android:singleLine="true"
+                android:inputType="phone"
+                android:maxLength="10"
+               />
+
+            <EditText
+                android:id="@+id/input_balance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Current Balance"
+              />
+
+            <EditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/hint_password"
+                />
+
+            <EditText
+                android:id="@+id/input_passwordConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="Confirm Password"
+                android:visibility="gone"
+                 />
+
+
+
+
+
+
+
+            <Button android:id="@+id/btn_addFunds"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Funds"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/editProfile"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit Profile"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="3dp"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/deleteAcc"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Delete Account"
+                android:background="@color/softRed"
+                android:layout_marginTop="3dp"
+                android:textColor="@android:color/white"/>
+
+
+                <Button
+                    android:id="@+id/update"
+                    android:text="Update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   />
+                <Button
+                    android:id="@+id/cancel"
+                    android:text="Cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+</ScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>
