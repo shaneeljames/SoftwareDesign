@@ -53,6 +53,8 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         Button btnRate ;
         SharedPreferences myprefs ;
 
+
+
         int count = 0 ;
 
         ImageView session;
@@ -85,17 +87,23 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
     Activity H ;
     private LocationManager locationManager;
     private LocationListener locationListener;
+    HomeFragment F ;
 
     SharedPreferences myprefs;
     String tutorid;
     String tutor_name ;
     String tutor_surname ;
+    GetLocation2 getLoc2;
 
-    CardViewAdapter(List<tutor_Sessions> sessions, Context context, Activity h){
+    CardViewAdapter(List<tutor_Sessions> sessions, Context context, Activity h, HomeFragment f){
         this.Sessions = sessions;
         this.context = context;
         this.H = h ;
+        this.getLoc2 = getLoc2 ;
+        this.F = f ;
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -223,8 +231,11 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
                 if(sText.toString().equals("Check in"))
                 {
+
                     eventViewHolder.Checkin.setText("Check out");
-                    new GetLocation2(H, Sessions.get(i).sessionID,0);
+                    HomeActivity hill = new HomeActivity() ;
+                         hill.getLocationHome(H, Sessions.get(i).sessionID,0);
+
 
 
 
@@ -232,7 +243,11 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                 else if(sText.toString().equals("Check out"))
                 {
 
-                    new GetLocation2(H, Sessions.get(i).sessionID,1);
+                    HomeActivity hill = new HomeActivity() ;
+                    hill.getLocationHome(H, Sessions.get(i).sessionID,1);
+                 //   new GetLocation2(H, Sessions.get(i).sessionID,1);
+
+
                     eventViewHolder.Checkin.setText("Checked out");
                     if(Sessions.get(i).student_checkin.length() != 0 || Sessions.get(i).student_checkout.length() != 0)
                     {
@@ -258,7 +273,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                         tutor_paid connect2sever = new tutor_paid(H, Sessions.get(i).sessionID,id, Sessions.get(i).studentID) ;
                         connect2sever.execute() ;
                     }
-                    else
+                    else if(Sessions.get(i).student_checkout.length() ==0)
                     {
 
                         eventViewHolder.subjectName.setText("Waiting for student to check out");
@@ -277,6 +292,24 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                         eventViewHolder.rate.setVisibility(View.VISIBLE);
                         eventViewHolder.Cancel.setVisibility(View.INVISIBLE);
                         eventViewHolder.rate.setVisibility(View.GONE);
+                    }
+                    else if(Sessions.get(i).rating == 0)
+                    {
+                        new GetLocation2(H, Sessions.get(i).sessionID,1);
+                        eventViewHolder.Checkin.setText("Checked out");
+                        eventViewHolder.Checkin.setClickable(false);
+                        eventViewHolder.subjectName.setText("Rate " + Sessions.get(i).studentName + " " + Sessions.get(i).studentSurname);
+                        eventViewHolder.viewDetails.setVisibility(View.GONE);
+                        eventViewHolder.btnRate.setVisibility(View.VISIBLE);
+                        eventViewHolder.amount.setVisibility(View.GONE);
+                        eventViewHolder.date.setVisibility(View.GONE);
+                        eventViewHolder.time.setVisibility(View.GONE);
+                        eventViewHolder.desc.setVisibility(View.GONE);
+                        eventViewHolder.status.setVisibility(View.GONE);
+                        eventViewHolder.rate.setVisibility(View.VISIBLE);
+                        eventViewHolder.Cancel.setVisibility(View.INVISIBLE);
+                        eventViewHolder.rate.setRating(3);
+                        eventViewHolder.rate.setIsIndicator(false) ;
                     }
 
 
@@ -384,6 +417,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
 
 
+
     public void showInputDialog(final List<tutor_Sessions> l, final int i, final CardViewAdapter.EventViewHolder e) {
 
 
@@ -446,6 +480,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         alert.show();
 
     }
+
 
 
 

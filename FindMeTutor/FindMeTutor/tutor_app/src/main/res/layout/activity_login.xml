@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:hint="Email "
-                android:text="713764@students.wits.ac.za" />
+                android:text="802119@students.wits.ac.za" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:hint="@string/hint_password"
-                android:text="heybabe" />
+                android:text="ranjith" />
         </android.support.design.widget.TextInputLayout>
 
         <Button android:id="@+id/btn_signup"

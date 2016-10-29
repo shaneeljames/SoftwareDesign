@@ -22,6 +22,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -262,53 +263,40 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
     public boolean isExpired(String sessionDate)
     {
 
-        boolean b = false;
+        boolean re = false;
 
 
         int[] dateSesh = new int[3] ;
         String[] splitSesh = sessionDate.split("-");
 
-        for(int i = 0; i<splitSesh.length;i++)
-        {
-            dateSesh[i] =  Integer.parseInt( splitSesh[i]) ;
-        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date strDate = sdf.parse(sessionDate);
+
+        Date today = new Date();
+
+        Date todayWithZeroTime = removeTime(today);
+
+        // Toast.makeText(context, todayWithZeroTime + " after  "+strDate, Toast.LENGTH_LONG).show();
 
 
+        if (todayWithZeroTime.after(strDate)) {
 
-        if(dateSesh[0]<currentDate[0])
-        {
-           b=false ;
-        }
-        else
-        if(dateSesh[0]== currentDate[0])
-        {
-            if (dateSesh[1] < currentDate[1])
-            //if(dateSesh[2] < date[2])
-            {
-                b = false;
-                // Toast.makeText(parent.getApplicationContext(),dateSesh[1] + " Expired", Toast.LENGTH_SHORT).show();
+            if (todayWithZeroTime.equals(strDate)) {
+                //Toast.makeText(context, new Date()+" after  "+strDate, Toast.LENGTH_LONG).show();
+                re = false;//not expired
             }
-            else
-             if(dateSesh[1] == currentDate[1])
-             {
-                 if(dateSesh[2] < currentDate[2])
-                 {
-                     b=false ;
-                 }
-                 else
-                     b=true ;
-             }
-        }
-        else
-        if(dateSesh[0] > currentDate[0])
-        {
-            b=true ;
+            else{
+
+                re = true;
+            }
+
         }
 
+        // formattedDate have current date/time
+        // Toast.makeText(context, "Year :"+year+" Month:"+month+ " Date: "+date +">>>" + cYear+" "+getMonth((cMoth))+" "+cDate, Toast.LENGTH_LONG).show();
 
 
-        return b ;
-
+        return  re;
 
 
 

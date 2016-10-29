@@ -1,10 +1,14 @@
 package com.example.tutor;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -39,6 +43,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
     String tutor_id, tutor_password, tutor_lname, tutor_fname, tutor_student_num, tutor_email, tutor_contact_num, tutor_current_balance , tutor_qualifications;
     String tutor_rating ;
     SharedPreferences myprefs;
+   public  GetLocation2 getloc ;
 
 
 
@@ -53,6 +58,9 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
         SharedPreferences.Editor editor = preferences.edit();
         editor.clear();
         editor.commit();
+
+        //Settings.System.putInt(getContentResolver(),Settings.System.AIRPLANE_MODE_ON,0);
+
         // finish();
 
 
@@ -266,4 +274,47 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
             getSupportActionBar().setTitle(title);
         }
     }
+
+    public void getLocationHome(Activity a, String s , int i)
+    {
+        getloc = new GetLocation2(a,s,i);
+    }
+
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+              // int count = 0 ;
+        switch (requestCode) {
+            case 10:
+                // if(count == 0 ) {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    if (ActivityCompat.checkSelfPermission(this.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this.getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        // TODO: Consider calling
+                        //    ActivityCompat#requestPermissions
+                        // here to request the missing permissions, and then overriding
+                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                        //                                          int[] grantResults)
+                        // to handle the case where the user grants the permission. See the documentation
+                        // for ActivityCompat#requestPermissions for more details.
+                        return;
+                    }
+                    //locationManager.requestLocationUpdates("gps", 5000, 0, locationListener);
+                    if (getloc!= null) {
+                        getloc.requestLocations();
+                    }
+                    //  count++;
+
+                }
+                //}
+
+
+                //  configureButton();
+        }
+
+    }
+
+
+
+
 }

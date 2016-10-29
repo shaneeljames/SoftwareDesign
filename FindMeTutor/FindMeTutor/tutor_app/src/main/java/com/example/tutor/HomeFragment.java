@@ -6,6 +6,7 @@ package com.example.tutor;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -14,6 +15,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +25,7 @@ import java.util.List;
 import static android.content.Context.MODE_PRIVATE;
 
 
-public class HomeFragment extends Fragment implements tutor_AsyncResponse{
+public class HomeFragment extends Fragment implements tutor_AsyncResponse,GoogleApiClientConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     List<tutor_Sessions> list = new ArrayList<tutor_Sessions>();
     SharedPreferences myprefs;
@@ -34,6 +36,32 @@ public class HomeFragment extends Fragment implements tutor_AsyncResponse{
     String password ;
     TextView empty ;
     SwipeRefreshLayout swipeRefreshLayout ;
+    HomeFragment home ;
+
+    private static final String TAG = HomeFragment.class.getSimpleName();
+
+    private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 1000;
+
+    private Location mLastLocation;
+
+    // Google client to interact with Google API
+    private GoogleApiClient mGoogleApiClient;
+
+    // boolean flag to toggle periodic location updates
+    private boolean mRequestingLocationUpdates = false;
+
+    private LocationRequest mLocationRequest;
+
+    // Location updates intervals in sec
+    private static int UPDATE_INTERVAL = 10000; // 10 sec
+    private static int FATEST_INTERVAL = 5000; // 5 sec
+    private static int DISPLACEMENT = 10; // 10 meters
+
+    // UI elements
+    private TextView lblLocation;
+    private Button btnShowLocation, btnStartLocationUpdates;
+
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -58,7 +86,6 @@ public class HomeFragment extends Fragment implements tutor_AsyncResponse{
 
 
         empty = (TextView) rootView.findViewById(R.id.txtEmpty1)  ;
-
 
 
         //Handle the card and recycle view
@@ -117,7 +144,7 @@ public class HomeFragment extends Fragment implements tutor_AsyncResponse{
 
             list = connect2server.getList();
 
-            CardViewAdapter adapter = new CardViewAdapter(list, this.getContext(), this.getActivity());
+            CardViewAdapter adapter = new CardViewAdapter(list, this.getContext(), this.getActivity(),this);
             adapter.notifyDataSetChanged();
             rv.setAdapter(adapter);
            onItemsLoadComplete();
@@ -140,6 +167,8 @@ public class HomeFragment extends Fragment implements tutor_AsyncResponse{
         swipeRefreshLayout.setRefreshing(false);
 
     }
+
+
 
     }
 
