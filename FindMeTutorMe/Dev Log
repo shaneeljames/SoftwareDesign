@@ -1,0 +1,91 @@
+//////////////////////////
+//						//
+// 		 Dev Log		//	
+//						//
+//////////////////////////
+
+
+// Jadon's Log //
+
+0. Nav Drawer stuff is in the HomeActivity Class
+
+1. Added Pull to refresh(21/10)
+
+-Surround recycler view with swipeRefrestLayout
+-Initilize in the main onCreate()
+-Make temp Refresher copy of the allready exsisting Async Class
+-in the refreshItems()
+ -clear the current list object
+ -delagte(to same proxess)and execute temp Async
+ -call onItemsLoadComplete();
+
+ 2. Get Valid Sessions (23/10)
+
+ -The home page now only return's valid sessions from the DB
+ -For a session to be valid, it's status must be one of the following('pending', 'Complete')
+ -Any other session with any other staus is ignored by the sql quary eg("expired",'cancelled', etc)
+
+3. Set Expired Session(23/10)
+
+-Once a session's date is passed the (current date+ a day) That session is no longer valid its status should be set to "expired"
+	-Still to do:
+		-Clairfy nitty gritty details with niv
+		-Uncomment code
+		-Send the relevant netWork request
+
+4. Added Num tutor's Indicator - As per Terrence's request (23/10)
+
+-Displays the number of tutors in brackets if any available
+
+
+5. Wits student emails only! (23/10)
+
+-Now a student is only able to register with a wits student email address. Ie. ending in "students.wits.ac.za"
+-Yeah, i know... This was supposed to be done a while ago...
+
+6. Password case sensitivity (23/10)
+
+-Fixed the case sensitivity of the login password
+
+7. Added geoCoder support (23/10)
+
+-We can get a students street address based on their long and lat
+-Not sure if bluestacks supports it though
+-need to test it properly!
+
+7. Implmented Delete account (26/10)
+
+-Student can now delete his/her account
+-Account is marked as deleted on the database
+-Student isnt allowed to relogin/re register
+
+8. Order Cards by date (26/10)
+
+-Cards are orderd by thir dates in decending order
+-format YYYY-MM-DD
+
+9. Number of Tutors in pool(27/10)
+
+-Student app now displays number of tutors a request was send out to
+
+10. Notify if all tutors delcine....
+
+-student recieves an email if all the tutors decline his/her request
+-and the session gets expired
+
+11.Student Rate tutor
+
+-Student rates tutor after session is over
+
+12. Google Play Location Services
+
+-App now uses google play servoces for the gps location
+-App is able to display Address of student
+
+
+
+
+
+// Nivek's Log //
+
+1.

@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,13 +41,11 @@ public class login extends AsyncTask<String, String, String> {
     String result = "";
 
     static String out;
-    ProgressBar pgbar;
 
-    public login(Activity par, String email, String password, ProgressBar pg){
+    public login(Activity par, String email, String password){
         parent = par;
         Email = email;
         Password = password;
-        pgbar = pg;
     }
     @Override
     protected String doInBackground(String... params) {
@@ -133,7 +129,6 @@ public class login extends AsyncTask<String, String, String> {
         String temp = result.substring(1,2);
       if(temp.equals("]")){
       Toast.makeText(parent.getApplicationContext(), "Login Unsuccessful " , Toast.LENGTH_SHORT).show();
-          pgbar.setVisibility(View.GONE);
 
       }else{
           //If they're in the DB then login to the Home page
@@ -162,7 +157,6 @@ public class login extends AsyncTask<String, String, String> {
               }
               else {
                   Toast.makeText(parent.getApplicationContext(), "Incorrect Password", Toast.LENGTH_LONG).show();
-                  pgbar.setVisibility(View.GONE);
               }
 
           } catch (JSONException e) {

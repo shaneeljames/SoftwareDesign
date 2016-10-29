@@ -18,8 +18,6 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.List;
-
 
 public class  RegisterActivity extends AppCompatActivity {
 
@@ -93,7 +91,7 @@ public class  RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Intent loginAct = new Intent(RegisterActivity.this, LoginActivity.class);
-                startActivity(loginAct);
+                RegisterActivity.this.startActivity(loginAct);
             }
         });
 
@@ -135,7 +133,7 @@ public class  RegisterActivity extends AppCompatActivity {
 
 
            // String sNum = getStdNum(inputEmail.getText().toString());
-            studentCheckReg connect2server = new studentCheckReg(this, firstName2,lastName2, number2,studentNumber.getText().toString(), email2,password2 );
+            register connect2server = new register(this, firstName2,lastName2, number2,studentNumber.getText().toString(), email2,password2 );
             connect2server.execute();
 
             Toast.makeText(getApplicationContext(), "Thank You for registering!", Toast.LENGTH_SHORT).show();
@@ -213,7 +211,7 @@ public class  RegisterActivity extends AppCompatActivity {
 
     private boolean validatePassword() {
         password2 = inputPassword.getText().toString().trim();
-        if (password2.isEmpty() || password2.length() <7 ) {
+        if (password2.isEmpty()) {
             inputLayoutPass.setError(getString(R.string.err_msg_password));
             requestFocus(inputPassword);
             return false;
@@ -302,8 +300,6 @@ public class  RegisterActivity extends AppCompatActivity {
             }
         }
     }
-
-
 
 
 

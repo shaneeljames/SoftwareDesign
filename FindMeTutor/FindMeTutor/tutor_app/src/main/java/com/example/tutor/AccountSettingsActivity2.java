@@ -9,6 +9,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -26,11 +28,16 @@ public class AccountSettingsActivity2 extends AppCompatActivity {
 
     ImageView imgpp;
     Button btnUpload;
+    TextView txtDelete ;
+
+
     TextView txtGetfile;
     Bitmap bitmapImage ;
+    CoordinatorLayout cl ;
     Context context ;
     SharedPreferences myprefs ;
     String id ;
+    String sTutorid ;
 
     private static final int RESULT_LOAD_IMAGE = 1;
 
@@ -45,6 +52,11 @@ public class AccountSettingsActivity2 extends AppCompatActivity {
 
         imgpp = (ImageView) findViewById((R.id.imgProfile));
         btnUpload = (Button) findViewById(R.id.btnupload);
+        txtDelete = (TextView) findViewById(R.id.txtDeleteAccount);
+        cl = (CoordinatorLayout) findViewById(R.id.coordinatelay);
+
+
+
         //txtGetfile = (TextView) findViewById(R.id.txtGetFile);
         myprefs = getSharedPreferences("user",MODE_PRIVATE ) ;
         id = myprefs.getString("tutor_student_num", null) ;
@@ -54,7 +66,7 @@ public class AccountSettingsActivity2 extends AppCompatActivity {
         String sEmail =  myprefs.getString("tutor_email", null) ;
         String sQual =  myprefs.getString("tutor_qualifications", null) ;
         final String sPassword =  myprefs.getString("tutor_password", null) ;
-        final String sTutorid =  myprefs.getString("tutor_id", null) ;
+         sTutorid =  myprefs.getString("tutor_id", null) ;
 
 
 
@@ -119,6 +131,37 @@ public class AccountSettingsActivity2 extends AppCompatActivity {
             }
         });
 
+        txtDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                Snackbar snackbar = Snackbar
+                        .make(cl, "Are you sure you want to delete your tutor account? ", Snackbar.LENGTH_LONG)
+                        .setAction("Yes!", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+                                tutor_deleteAccount connect2server = new tutor_deleteAccount(AccountSettingsActivity2.this,sTutorid) ;
+                                connect2server.execute() ;
+
+                              Toast.makeText(getApplicationContext(), "Your account has been deleted" , Toast.LENGTH_SHORT).show() ;
+                              Intent i = new Intent(AccountSettingsActivity2.this,LoginActivity.class) ;
+                                startActivity(i);
+
+                            }
+                        });
+                snackbar.setActionTextColor(Color.RED);
+                View sbView = snackbar.getView();
+                TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                textView.setTextColor(Color.YELLOW);
+                snackbar.show();
+
+
+
+            }
+        });
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override

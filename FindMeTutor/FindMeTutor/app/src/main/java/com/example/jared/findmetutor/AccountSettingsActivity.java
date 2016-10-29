@@ -3,13 +3,10 @@ package com.example.jared.findmetutor;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -30,7 +27,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 
 public class AccountSettingsActivity extends AppCompatActivity  implements AsyncResponse{
@@ -42,9 +38,7 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
     ImageButton imgpp;
     private String test;
 
-    CoordinatorLayout coordinatorLayout;
-
-    Button addFunds, editProfile, update, cancel, delete;
+    Button addFunds, editProfile, update, cancel;
 
     SharedPreferences myprefs;
     Toolbar toolbar;
@@ -52,10 +46,6 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
     updateProfile updatePro;
 
     public static final int RESULT_LOAD_IMAGE = 1;
-
-    AccountSettingsActivity accountSettingsActivity;
-
-    student_deleteAccount deleteAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +56,6 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
          toolbar = (Toolbar) findViewById(R.id.toolbarAccount);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-        accountSettingsActivity = this;
 
         //Get layouts
          /*inputLayoutFName = (TextInputLayout) findViewById(R.id.input_layout_Firstname);
@@ -121,7 +109,6 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         });*/
 
         //Get EditText objects
-        coordinatorLayout = (CoordinatorLayout)findViewById(R.id.cdlayout);
         inputFirstName = (EditText) findViewById(R.id.input_Firstname);
         inputLastName = (EditText) findViewById(R.id.input_Lastname);
         inputEmail = (EditText) findViewById(R.id.input_email);
@@ -135,12 +122,18 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         editProfile = (Button)findViewById(R.id.editProfile);
         update = (Button)findViewById(R.id.update);
         cancel = (Button)findViewById(R.id.cancel);
-        delete = (Button)findViewById(R.id.deleteAcc);
 
         myprefs= this.getSharedPreferences("user", MODE_PRIVATE);
 
 
-        setPrefs();
+        stdid=myprefs.getString("student_id",null);
+        stdNum= myprefs.getString("student_student_num", null);
+        firstName= myprefs.getString("student_fname", null);
+        lastName= myprefs.getString("student_lname", null);
+        number= myprefs.getString("student_contact_number", null);
+        email= myprefs.getString("student_email", null);
+        password= myprefs.getString("student_password", null);
+        balance= myprefs.getString("student_current_balance", null);
 
         toDefault();
         setEditableFalse();
@@ -152,7 +145,6 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
             }
         });
 
-
         update.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -160,9 +152,6 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
                 String ln = inputLastName.getText().toString();
                 String num = inputNumber.getText().toString();
                 String pw = inputPassword.getText().toString();
-                String cpw = inputConfirmPassword.getText().toString();
-
-                if(pw.equals(cpw)){
 
                 myprefs.edit().putString("student_password",pw).apply();
                 myprefs.edit().putString("student_lname", ln).apply();
@@ -171,13 +160,7 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
 
                // Toast.makeText(getApplicationContext(), fn+ln+num+pw , Toast.LENGTH_SHORT).show();
                 updatePro = new updateProfile(getParent(), stdid, fn, ln, num, pw);
-                updatePro.delegate = accountSettingsActivity;
                 updatePro.execute();
-                }
-                else{
-                    Toast.makeText(getApplicationContext(), "Please enter your password correctly", Toast.LENGTH_LONG).show();
-                }
-
 
 
 
@@ -192,12 +175,8 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
             }
         });
 
-        Random r = new Random();
-        int i1 = r.nextInt(999999-111111)+111111;
-        String ran = Integer.toString(i1);
-
         try {
-            Picasso.with(getApplicationContext()).load("http://neural.net16.net/pictures/s" + stdNum + "JPG?"+ran ).into(imgpp);
+            Picasso.with(getApplicationContext()).load("http://neural.net16.net/pictures/s" + stdNum + "JPG" ).into(imgpp);
         }catch (Exception e)
         {
 
@@ -205,33 +184,6 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
             imgpp.setImageResource(R.drawable.ic_profile_greenp);
 
         }
-
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar snackbar = Snackbar
-                        .make(coordinatorLayout, "Are you sure you want to delete your account ", Snackbar.LENGTH_LONG)
-                        .setAction("Yes!", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-
-                                Toast.makeText(getApplicationContext(),"Deleting",Toast.LENGTH_LONG).show();
-                                deleteAccount = new student_deleteAccount(getApplicationContext(), stdid );
-                                deleteAccount.delegate = accountSettingsActivity;
-                                deleteAccount.execute();
-
-
-
-                            }
-                        });
-                snackbar.setActionTextColor(Color.RED);
-                View sbView = snackbar.getView();
-                TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-                textView.setTextColor(Color.WHITE);
-                snackbar.show();
-            }
-        });
-
 
 
 
@@ -293,15 +245,8 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
 
     }
 
-    public void setPrefs(){
-        stdid=myprefs.getString("student_id",null);
-        stdNum= myprefs.getString("student_student_num", null);
-        firstName= myprefs.getString("student_fname", null);
-        lastName= myprefs.getString("student_lname", null);
-        number= myprefs.getString("student_contact_number", null);
-        email= myprefs.getString("student_email", null);
-        password= myprefs.getString("student_password", null);
-        balance= myprefs.getString("student_current_balance", null);
+    public void requestUpdate(){
+
     }
 
     public void toDefault(){
@@ -313,10 +258,6 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         inputPassword.setText(password);
         studentBalance.setText(balance);
         inputConfirmPassword.setVisibility(View.GONE);
-        editProfile.setVisibility(View.VISIBLE);
-        update.setVisibility(View.GONE);
-        cancel.setVisibility(View.GONE);
-        delete.setVisibility(View.GONE);
     }
 
     public void setEditableTrue(){
@@ -337,7 +278,6 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         editProfile.setVisibility(View.GONE);
         update.setVisibility(View.VISIBLE);
         cancel.setVisibility(View.VISIBLE);
-        delete.setVisibility(View.VISIBLE);
 
 
     }
@@ -518,10 +458,6 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
     @Override
     public void processFinish(String output) {
 
-        setPrefs();
-        toDefault();
-        setEditableFalse();
-
     }
 
     @Override
@@ -531,9 +467,6 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
 
     @Override
     public void processFinish3(String outp) {
-
-        Intent goLog = new Intent(AccountSettingsActivity.this, LoginActivity.class);
-        startActivity(goLog);
 
     }
 

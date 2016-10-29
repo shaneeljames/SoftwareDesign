@@ -1,7 +1,6 @@
 package com.example.jared.findmetutor;
 
 import android.content.SharedPreferences;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import android.annotation.SuppressLint;
@@ -33,8 +32,6 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputLayout inputLayoutName, inputLayoutEmail, inputLayoutPassword;
     private Button btnLogin;
 
-    ProgressBar progressBar;
-
     SharedPreferences myprefs;
 
     @Override
@@ -61,7 +58,6 @@ public class LoginActivity extends AppCompatActivity {
 
         btnLogin = (Button) findViewById(R.id.btn_signup);
         TextView btnRegister = (TextView) findViewById(R.id.tvRegister);
-        progressBar = (ProgressBar)findViewById(R.id.pgbar);
 
         //use EditText objects to moniter the  Text fields for valid input
       //  inputName.addTextChangedListener(new MyTextWatcher(inputName));
@@ -78,7 +74,6 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressBar.setVisibility(View.VISIBLE);
                 submitForm();
             }
         });
@@ -120,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
         {
             int test ;
             Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show();// shows thank you
-            login connect2server = new login(this, login_email, login_password, progressBar);
+            login connect2server = new login(this, login_email, login_password);
             connect2server.execute();
 
             //get passsword from login Class

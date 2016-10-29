@@ -1,27 +1,21 @@
 package com.example.jared.findmetutor;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -63,10 +57,6 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     getTutorEmailList getList;
 
     RequestActivity temp;
-    int sizeOfList;
-    String sz;
-
-
 
 
 
@@ -104,15 +94,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
             @Override
             public void onClick(View view) {
 
-                showLoadDialog();
-
-                getList = new getTutorEmailList(temp, subjId, eList );
-                getList.delegate=temp;
-                getList.execute();
-
-                req.setBackgroundColor(Color.GRAY);
-                req.setEnabled(false);
-
+                request();
 
             }
         });
@@ -124,7 +106,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     public void sendEmails(List<TutorsEList> list){
 
         for(int i=0; i<list.size();i++) {
-            String fromEmail = "FindmetutorSD@gmail.com";
+            String fromEmail = "FindmetutorSD3@gmail.com";
             String fromPassword = "findmetutors";
             String toEmails = list.get(i).tutorEmail.toString(); //Sessions.get(i).studentEmail.toString() ;
             String adminEmail = "admin@gmail.com";
@@ -135,7 +117,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
                             + "<br><br>"+fname+" "+lname+" is requesting a tutorial session"
                             + "<br><br>"
                             +"Subject : "+curSelection+ "<br>"
-                            +"Description : "+ dsp +"<br>"
+                            +"Description : "+ dsp
                             +"Date : " + date+ "<br>"
                             +"Time :" +time+ "<br>"
                             +"<br>"
@@ -145,27 +127,6 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
             new SendMailTask(getApplicationContext()).execute(fromEmail,
                     fromPassword, toEmails, emailSubject, emailBody);
         }
-    }
-
-    public void showLoadDialog() {
-
-        // get prompts.xml view
-        LayoutInflater layoutInflater = LayoutInflater.from(this);
-        View promptView = layoutInflater.inflate(R.layout.load_dialog, null);
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setView(promptView);
-        // myprefs =  getContext().getSharedPreferences("user", MODE_PRIVATE);
-
-        final ProgressBar pgBar;
-
-
-        pgBar =(ProgressBar) promptView.findViewById(R.id.pgbar);
-        // setup a dialog window
-        alertDialogBuilder.setCancelable(false);
-
-        // create an alert dialog
-        AlertDialog alert = alertDialogBuilder.create();
-        alert.show();
     }
 
     @Override
@@ -199,9 +160,10 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     @Override
     public  void processFinish2(String out){
         //get the relevant tutor email list
-        sizeOfList = eList.size();
-        sz = sizeOfList+"";
-        request();
+        getList = new getTutorEmailList(temp, subjId, eList );
+        getList.delegate=this;
+        getList.execute();
+
 
 
     }
@@ -213,13 +175,11 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         List<TutorsEList> emailsList = getList.getList();
         sendEmails(emailsList);
 
-        //Go through the login to go to the home screen
-        SharedPreferences myprefs= getSharedPreferences("user", MODE_PRIVATE);
-        String email=myprefs.getString("student_email",null);
-        String pass= myprefs.getString("student_password", null);
-        ProgressBar tmp = null;
-        login in = new login(this, email, pass, tmp);
-        in.execute();
+
+        Intent goHome = new Intent(RequestActivity.this, HomeActivity.class);
+        goHome.putExtra("key","1");
+        startActivity(goHome);
+
     }
 
     public void request(){
@@ -235,9 +195,9 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         EditText desc = (EditText)findViewById(R.id.descriptionTxt);
         dsp = desc.getText().toString();
 
-        Toast.makeText(getApplicationContext(), student_id+" ID", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), date+" "+time +" "+subj+" "+dsp, Toast.LENGTH_SHORT).show();
 
-        requestSession session = new requestSession(this, tutor_id, student_id, subject_id, amount, date,time,dsp, sz );
+        requestSession session = new requestSession(this, tutor_id, student_id, subject_id, amount, date,time,dsp);
         session.delegate=this;
         //sends to process2 when done
         session.execute();
@@ -258,7 +218,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
     public String currentDate() {
         StringBuilder mcurrentDate = new StringBuilder();
         int month = datePicker.getMonth() + 1;
-        String ret = datePicker.getYear()+"-"+month+"-"+datePicker.getDayOfMonth();
+        String ret = datePicker.getDayOfMonth()+" "+getMonth(month) + " "+datePicker.getYear();
         return ret;
     }
 

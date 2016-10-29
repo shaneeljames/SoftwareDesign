@@ -7,8 +7,6 @@
 
 // Jadon's Log //
 
-0. Nav Drawer stuff is in the HomeActivity Class
-
 1. Added Pull to refresh(21/10)
 
 -Surround recycler view with swipeRefrestLayout
@@ -22,7 +20,7 @@
  2. Get Valid Sessions (23/10)
 
  -The home page now only return's valid sessions from the DB
- -For a session to be valid, it's status must be one of the following('pending', 'Complete')
+ -For a session to be valid, it's status must be one of the following('pending', 'Confirmed', 'Complete')
  -Any other session with any other staus is ignored by the sql quary eg("expired",'cancelled', etc)
 
 3. Set Expired Session(23/10)
@@ -53,39 +51,12 @@
 -Not sure if bluestacks supports it though
 -need to test it properly!
 
-7. Implmented Delete account (26/10)
-
--Student can now delete his/her account
--Account is marked as deleted on the database
--Student isnt allowed to relogin/re register
-
-8. Order Cards by date (26/10)
-
--Cards are orderd by thir dates in decending order
--format YYYY-MM-DD
-
-9. Number of Tutors in pool(27/10)
-
--Student app now displays number of tutors a request was send out to
-
-10. Notify if all tutors delcine....
-
--student recieves an email if all the tutors decline his/her request
--and the session gets expired
-
-11.Student Rate tutor
-
--Student rates tutor after session is over
-
-12. Google Play Location Services
-
--App now uses google play servoces for the gps location
--App is able to display Address of student
-
 
 
 
 
 // Nivek's Log //
 
-1.
+1. Added Loading Bar in login scrreen(26/10)
+2. If tutor declines a request , he/she has to give a reason , which will be emailed to the student.(28/10)
+3. If tutor cancels a session , he.she has to give a reason , which will be emailed to the student.(28/10)

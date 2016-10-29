@@ -10,7 +10,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.text.format.DateUtils;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -86,8 +85,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
     Context context;
     HomeFragment base;
 
-
-
     CardViewAdapter(List<Session> events, Context context, HomeFragment home){
         this.events = events;
         this.context = context;
@@ -121,12 +118,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
     @Override
     public void onBindViewHolder(final EventViewHolder eventViewHolder, final int i) {
 
-        SharedPreferences myprefs =  context.getSharedPreferences("user", MODE_PRIVATE);
-        final String stdid = myprefs.getString("student_id", null);
-        String fname = myprefs.getString("student_fname",null);
-        String lname = myprefs.getString("student_lname",null);
-        String email = myprefs.getString("student_email", null);
-
 
             eventViewHolder.sess.setText(events.get(i).sessionID);
             sessID = eventViewHolder.sess.getText().toString();
@@ -156,7 +147,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                         //isExpired("10");
 
 
-                        base.switchContentSession(events.get(i).tutorStdNum, events.get(i).sessionID, events.get(i).tutorID);
+                        base.switchContentSession(events.get(i).tutorStdNum, sessID, events.get(i).tutorID);
 
                     }
                 });
@@ -190,7 +181,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                                     public void onClick(View view) {
 
 
-                                        student_cancel connect2server = new student_cancel(context,events.get(i).sessionID, stdid) ;
+                                        student_cancel connect2server = new student_cancel(context,events.get(i).sessionID) ;
                                         connect2server.execute();
                                         eventViewHolder.status.setText("Cancelled");
 
@@ -209,7 +200,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
             else if(eventViewHolder.status.getText().toString().equals("pending"))
             {
-                eventViewHolder.status.setText("Pending - With "+events.get(i).total+ " tutors in pool");
                 eventViewHolder.cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -220,7 +210,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                                     public void onClick(View view) {
 
 
-                                        student_cancel connect2server = new student_cancel(context,events.get(i).sessionID, stdid) ;
+                                        student_cancel connect2server = new student_cancel(context,events.get(i).sessionID) ;
                                         connect2server.execute();
                                         eventViewHolder.status.setText("Cancelled");
 
@@ -235,54 +225,22 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                         snackbar.show();
                     }
                 });
-
-               if(events.get(i).total.equals(events.get(i).unavailable)){
-
-                    student_cancel connect2server = new student_cancel(context,events.get(i).sessionID, stdid) ;
-                    connect2server.execute();
-                    eventViewHolder.status.setText("Expired");
-
-
-
-
-                    String fromEmail = "FindmetutorSD@gmail.com";
-                    String fromPassword = "findmetutors";
-                    String toEmails = email; //Sessions.get(i).studentEmail.toString() ;
-                    String adminEmail = "admin@gmail.com";
-                    String emailSubject = "Find Me Tutor - Session Unavailable";
-                    String adminSubject = "App Registration Mail";
-                    String emailBody =
-                            "Dear " + fname +" "+lname +"<br>"
-                                    +"We regret to inform you that all the respective tutors have declined your request."+"<br>"
-                                    +"Your account has been refunded."+"<br>"
-                                    +"Please feel free to make another request ... "
-                                    + "<br><br>"
-                                    +"From FindMeTutor";
-
-                    String adminBody = "Your message";
-                    new SendMailTask(context).execute(fromEmail,
-                            fromPassword, toEmails, emailSubject, emailBody);
-
-                }
             }
-
-
 
         //Check if the session is expired
         //ie. passed the current date+1
 
-        try {
+        /*try {
             if(isExpired(eventViewHolder.date.getText().toString())){
 
                 //Toast.makeText(context,eventViewHolder.date.getText().toString() + " Expired",Toast.LENGTH_LONG).show();
-                eventViewHolder.status.setText("Session Expired (Past date)");
-
+                eventViewHolder.status.setText("Expired");
 
             }
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
+*/
 
         eventViewHolder.itemView.setTag(events.get(i));
 
@@ -293,32 +251,39 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         boolean re = false;
 
 
-       // Toast.makeText(context, cdate+" after (out) ", Toast.LENGTH_LONG).show();
-        String[] split = cdate.split(" ");
-        String valid = split[2] +"-"+getMonth(split[1]) +"-"+split[0];
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date strDate = sdf.parse(valid);
-
-        Date today = new Date();
-
-        Date todayWithZeroTime = removeTime(today);
-
-       // Toast.makeText(context, todayWithZeroTime + " after  "+strDate, Toast.LENGTH_LONG).show();
+        String[] currDate = cdate.split(" ");
+        String cDate = currDate[0];
+        String cMoth = currDate[1];
+        String cYear = currDate[2];
 
 
-        if (todayWithZeroTime.after(strDate)) {
 
-            if (todayWithZeroTime.equals(strDate)) {
-                //Toast.makeText(context, new Date()+" after  "+strDate, Toast.LENGTH_LONG).show();
-                re = false;
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+
+        String current = df.format(c.getTime());
+
+
+
+
+        String[] split = current.split(" ");
+
+        int iDash=split[0].indexOf('-');
+        int lDash=split[0].lastIndexOf('-');
+
+        String year = split[0].substring(0, iDash);
+        String month = split[0].substring(iDash+1, lDash);
+        String date = split[0].substring(lDash+1);
+
+        if(Integer.parseInt(year)>=Integer.parseInt(cYear)){
+            if(Integer.parseInt(month)>=getMonth(cMoth)){
+                if(Integer.parseInt(date)>Integer.parseInt(cDate)){
+                    re=true;
+                }
             }
-            else{
-
-                re = true;
-            }
-
         }
+
+
 
         // formattedDate have current date/time
        // Toast.makeText(context, "Year :"+year+" Month:"+month+ " Date: "+date +">>>" + cYear+" "+getMonth((cMoth))+" "+cDate, Toast.LENGTH_LONG).show();
@@ -327,17 +292,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         return  re;
 
     }
-
-    public static Date removeTime(Date date) {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        cal.set(Calendar.HOUR_OF_DAY, 0);
-        cal.set(Calendar.MINUTE, 0);
-        cal.set(Calendar.SECOND, 0);
-        cal.set(Calendar.MILLISECOND, 0);
-        return cal.getTime();
-    }
-
 
     public int getMonth(String month){
         int calMonth=0;

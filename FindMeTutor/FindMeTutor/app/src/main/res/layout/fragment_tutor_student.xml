@@ -53,15 +53,6 @@
             android:textSize="30sp"
             android:textColor="@color/colorPrimary" />
 
-        <Button
-            android:id="@+id/cancel_session"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/cancel"
-            android:layout_alignParentRight="true"
-            />
-
-
 
 
         <View
@@ -148,7 +139,7 @@
                 />
 
             <TextView
-                android:id="@+id/lblLocation"
+                android:id="@+id/infoText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="info"
@@ -161,57 +152,6 @@
 
 
             </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv3"
-        android:layout_below="@+id/cv2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        xmlns:android.support.v7.cardview="http://schemas.android.com/apk/res-auto"
-        android.support.v7.cardview:cardElevation="5dp"
-        android:clipChildren="false"
-
-        >
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical">
-
-
-            <Button
-                android:id="@+id/checkOut"
-                android:layout_alignParentTop="true"
-                android:background="@color/colorPrimary"
-                android:textColor="@android:color/white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Check Out"
-                android:layout_centerInParent="true"/>
-
-            <TextView
-                android:id="@+id/infoOutText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="info"
-                android:layout_below="@+id/checkOut"
-                android:gravity="center"
-                />
-
-            <TextView
-                android:id="@+id/cordsOutTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Cordinates"
-                android:layout_below="@+id/infoOutText"
-                android:gravity="center"
-                />
-
-
-
-        </RelativeLayout>
 
     </android.support.v7.widget.CardView>
 

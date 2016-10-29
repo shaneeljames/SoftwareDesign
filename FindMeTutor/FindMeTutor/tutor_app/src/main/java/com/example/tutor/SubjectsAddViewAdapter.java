@@ -93,15 +93,6 @@ public class SubjectsAddViewAdapter extends RecyclerView.Adapter<SubjectsAddView
         eventViewHolder.code.setText(list.get(i).code.toString());
         eventViewHolder.icon.setImageResource(list.get(i).icon);
 
-
-
-       // String tutor_id = myprefs.getString("tutor_id", null);
-
-
-        // Toast.makeText(context,"Adding " + id, Toast.LENGTH_SHORT).show();
-
-        //addSubject connect = new addSubject(context,)
-
         //handle onclick here
         eventViewHolder.add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,11 +115,7 @@ public class SubjectsAddViewAdapter extends RecyclerView.Adapter<SubjectsAddView
                 eventViewHolder.add.setText("Added");
 
 
-             /*   if(i ==0) //Selected subjects card
-                {
-                    Intent goToSubjects = new Intent(context,SubjectSettingsActivity.class);
-                    context.startActivity(goToSubjects);
-                }*/
+
             }
         });
     }

@@ -2,17 +2,18 @@ package com.example.tutor;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -52,6 +53,8 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         Button btnRate ;
         SharedPreferences myprefs ;
 
+
+
         int count = 0 ;
 
         ImageView session;
@@ -84,12 +87,23 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
     Activity H ;
     private LocationManager locationManager;
     private LocationListener locationListener;
+    HomeFragment F ;
 
-    CardViewAdapter(List<tutor_Sessions> sessions, Context context, Activity h){
+    SharedPreferences myprefs;
+    String tutorid;
+    String tutor_name ;
+    String tutor_surname ;
+    GetLocation2 getLoc2;
+
+    CardViewAdapter(List<tutor_Sessions> sessions, Context context, Activity h, HomeFragment f){
         this.Sessions = sessions;
         this.context = context;
         this.H = h ;
+        this.getLoc2 = getLoc2 ;
+        this.F = f ;
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -107,6 +121,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
     public void onBindViewHolder(final EventViewHolder eventViewHolder, final int i) {
 
         // eventViewHolder.studentName.setText(Sessions.get(i).studentName + " " +Sessions.get(i).studentSurname);
+
         eventViewHolder.subjectName.setText(Sessions.get(i).subjectName + "-" + Sessions.get(i).subjectCode);
         eventViewHolder.amount.setText(Sessions.get(i).amount);
         eventViewHolder.date.setText(Sessions.get(i).date);
@@ -115,6 +130,10 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         eventViewHolder.status.setText(Sessions.get(i).status);
        // eventViewHolder.session.setImageResource(Sessions.get(i).icon);
         eventViewHolder.rate.setRating(Sessions.get(i).rating);
+          myprefs =  context.getSharedPreferences("user",MODE_PRIVATE ) ;
+         tutorid = myprefs.getString("tutor_id", null) ;
+         tutor_name = myprefs.getString("tutor_fname" , null) ;
+         tutor_surname= myprefs.getString("tutor_lname",null) ;
 
 
 
@@ -212,13 +231,23 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
                 if(sText.toString().equals("Check in"))
                 {
+
                     eventViewHolder.Checkin.setText("Check out");
-                    new GetLocation2(H, Sessions.get(i).sessionID,0);
+                    HomeActivity hill = new HomeActivity() ;
+                         hill.getLocationHome(H, Sessions.get(i).sessionID,0);
+
+
+
+
                 }
                 else if(sText.toString().equals("Check out"))
                 {
 
-                    new GetLocation2(H, Sessions.get(i).sessionID,1);
+                    HomeActivity hill = new HomeActivity() ;
+                    hill.getLocationHome(H, Sessions.get(i).sessionID,1);
+                 //   new GetLocation2(H, Sessions.get(i).sessionID,1);
+
+
                     eventViewHolder.Checkin.setText("Checked out");
                     if(Sessions.get(i).student_checkin.length() != 0 || Sessions.get(i).student_checkout.length() != 0)
                     {
@@ -244,7 +273,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                         tutor_paid connect2sever = new tutor_paid(H, Sessions.get(i).sessionID,id, Sessions.get(i).studentID) ;
                         connect2sever.execute() ;
                     }
-                    else
+                    else if(Sessions.get(i).student_checkout.length() ==0)
                     {
 
                         eventViewHolder.subjectName.setText("Waiting for student to check out");
@@ -263,6 +292,24 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                         eventViewHolder.rate.setVisibility(View.VISIBLE);
                         eventViewHolder.Cancel.setVisibility(View.INVISIBLE);
                         eventViewHolder.rate.setVisibility(View.GONE);
+                    }
+                    else if(Sessions.get(i).rating == 0)
+                    {
+                        new GetLocation2(H, Sessions.get(i).sessionID,1);
+                        eventViewHolder.Checkin.setText("Checked out");
+                        eventViewHolder.Checkin.setClickable(false);
+                        eventViewHolder.subjectName.setText("Rate " + Sessions.get(i).studentName + " " + Sessions.get(i).studentSurname);
+                        eventViewHolder.viewDetails.setVisibility(View.GONE);
+                        eventViewHolder.btnRate.setVisibility(View.VISIBLE);
+                        eventViewHolder.amount.setVisibility(View.GONE);
+                        eventViewHolder.date.setVisibility(View.GONE);
+                        eventViewHolder.time.setVisibility(View.GONE);
+                        eventViewHolder.desc.setVisibility(View.GONE);
+                        eventViewHolder.status.setVisibility(View.GONE);
+                        eventViewHolder.rate.setVisibility(View.VISIBLE);
+                        eventViewHolder.Cancel.setVisibility(View.INVISIBLE);
+                        eventViewHolder.rate.setRating(3);
+                        eventViewHolder.rate.setIsIndicator(false) ;
                     }
 
 
@@ -322,49 +369,13 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
         eventViewHolder.Cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar snackbar = Snackbar
-                        .make(eventViewHolder.cv, "Are you sure you want to cancel with " + Sessions.get(i).studentName, Snackbar.LENGTH_LONG)
-                        .setAction("Yes!", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
+
+                showInputDialog(Sessions,i,eventViewHolder) ;
 
 
-                                SharedPreferences myprefs;
-                                myprefs =  context.getSharedPreferences("user",MODE_PRIVATE ) ;
-                                String id = myprefs.getString("tutor_id", null) ;
-                                String tutor_name =  myprefs.getString("tutor_fname", null) ;
-                                String tutor_surname =  myprefs.getString("tutor_lname", null) ;
-
-                                tutor_cancel connect2server = new tutor_cancel(context,Sessions.get(i).sessionID) ;
-                                connect2server.execute();
-                                eventViewHolder.Cancel.setText("Cancelled");
-
-                                String fromEmail = "FindmetutorSD2@gmail.com";
-                                String fromPassword = "findmetutors";
-                                String toEmails = Sessions.get(i).studentEmail.toString() ;
-                                String adminEmail = "admin@gmail.com";
-                                String emailSubject = "Sent from FindMeTutor";
-                                String adminSubject = "App Registration Mail";
-                                String emailBody =
-                                        "Dear "+ Sessions.get(i).studentName + " " + Sessions.get(i).studentSurname
-                                                +"<br><br>"+ tutor_name.toString() +" " + tutor_surname.toString()
-                                                +" has cancelled your booking for:<br>Subject: "
-                                                + Sessions.get(i).subjectName + "<br>Date: "+ Sessions.get(i).date  +"<br>Time: "
-                                                + Sessions.get(i).time + "<br>Description: " + Sessions.get(i).description
-                                                +".<br><br>Your request has been reopened."
-                                                +"<br><br>We apologize for the inconvenience";
-                                String adminBody = "Your message";
-                                new SendMailTask(context).execute(fromEmail,
-                                        fromPassword, toEmails, emailSubject, emailBody);
 
 
-                            }
-                        });
-                snackbar.setActionTextColor(Color.RED);
-                View sbView = snackbar.getView();
-                TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-                textView.setTextColor(Color.YELLOW);
-                snackbar.show();
+
             }
         });
 
@@ -376,9 +387,9 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
             public void onClick (View v){
 
 
-                SharedPreferences myprefs;
+
                 myprefs =  context.getSharedPreferences("user",MODE_PRIVATE ) ;
-                String id = myprefs.getString("tutor_id", null) ;
+                 tutorid = myprefs.getString("tutor_id", null) ;
 
 
                 tutor_rateStudent connect2server = new tutor_rateStudent(context,Sessions.get(i).studentID,Sessions.get(i).sessionID, Float.toString(eventViewHolder.rate.getRating())) ;
@@ -403,6 +414,73 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
+
+
+
+
+    public void showInputDialog(final List<tutor_Sessions> l, final int i, final CardViewAdapter.EventViewHolder e) {
+
+
+        // get prompts.xml view
+        LayoutInflater layoutInflater = LayoutInflater.from(H);
+        View promptView = layoutInflater.inflate(R.layout.inputdialogbox, null);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(H);
+        alertDialogBuilder.setView(promptView);
+
+        final EditText editText = (EditText) promptView.findViewById(R.id.edittext);
+        final TextView textView = (TextView) promptView.findViewById(R.id.textView);
+        textView.setText("Please give a reason for Cancelling");
+        // setup a dialog window
+        alertDialogBuilder.setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // resultText.setText("Hello, " + editText.getText());
+
+                        String fromEmail = "FindmetutorSD@gmail.com";
+                        String fromPassword = "findmetutors";
+                        String toEmails =l.get(i).studentEmail;
+                        String adminEmail = "admin@gmail.com";
+                        String emailSubject = "Sent from FindMeTutor";
+                        String adminSubject = "App Registration Mail";
+                        String emailBody =
+                                "Dear "+ l.get(i).studentName + " " + l.get(i).studentSurname
+                                        +"<br><br>"+ tutor_name.toString() +" " + tutor_surname.toString()
+                                        +" has Cancelled your session for:<br>Subject: "
+                                        + l.get(i).subjectName + "<br>Date: "+ l.get(i).date  +"<br>Time: "
+                                        + l.get(i).time + "<br>Description: " + l.get(i).description
+                                        +".<br>Reason for Cancelling: " + editText.getText().toString()
+                                        +"<br><br>Sent from FindMeTutor.";
+
+                        String adminBody = "Your message";
+                        new SendMailTask(context).execute(fromEmail,
+                                fromPassword, toEmails, emailSubject, emailBody);
+
+
+                        tutor_deleteAccount connect2server = new tutor_deleteAccount(H,tutorid) ;
+                        connect2server.execute() ;
+
+                        e.Cancel.setText("Cancelled");
+                        e.Cancel.setClickable(false);
+
+                        Toast.makeText(context,editText.getText(),Toast.LENGTH_SHORT).show() ;
+                    }
+                })
+                .setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+
+                            }
+
+
+                        });
+
+        // create an alert dialog
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
+
+    }
+
 
 
 

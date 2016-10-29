@@ -20,14 +20,9 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.SimpleTimeZone;
 
 /**
  * Created by jared on 2016/09/02.\
@@ -57,10 +52,6 @@ public class getSessions extends AsyncTask<String, String, String> {
     String desc;
     String status;
     String available;
-    String unavailable;
-    String total;
-
-    int[] cuurentDate = new int[3];
 
     List<Session> in;
     public AsyncResponse delegate = null; //Notify when async is done
@@ -74,25 +65,6 @@ public class getSessions extends AsyncTask<String, String, String> {
     public getSessions(Activity par){
         parent = par;
     }
-
-    @Override
-    protected void onPreExecute() {
-
-        Calendar c  = Calendar.getInstance();
-        SimpleDateFormat d = new SimpleDateFormat("yyyy-MM-dd");
-
-        String date = d.format(c.getTime());
-
-        String [] split = date.split("-");
-
-        for(int i=0; i<3;i++ ){
-            cuurentDate[i] = Integer.parseInt(split[i]);
-        }
-
-
-        super.onPreExecute();
-    }
-
     @Override
     protected String doInBackground(String... params) {
 
@@ -215,23 +187,8 @@ public class getSessions extends AsyncTask<String, String, String> {
                    desc = jsObj.getString("description");
                    status = jsObj.getString("status");
                    available = jsObj.getString("available");
-                   unavailable = jsObj.getString("unavailable");
-                   total = jsObj.getString("total");
                   // Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
-                   String dte = formateDate(date);
-
-                   if(isExpired(date)==false){
-                       //setSessionExpired epired = new setSessionExpired(parent, sessionID);
-                       //epired.execute();
-                   }
-
-                   else {
-
-
-                   }
-
-                   in.add(new Session(sessionID, tutorID, tutorNum, tutorName, subjectName, subjectID, amount, dte, time, desc, status, available, unavailable, total, R.drawable.session, parent));
-
+                   in.add(new Session( sessionID, tutorID, tutorNum, tutorName, subjectName,subjectID,amount,date,time, desc,status,available, R.drawable.session, parent ));
                }
 
            } catch (JSONException e) {
@@ -243,70 +200,6 @@ public class getSessions extends AsyncTask<String, String, String> {
 
            delegate.processFinish(result); //let the other clsses know when onPost is finished
        }
-    }
-
-    public String formateDate(String datefull){
-        String[] split = datefull.split("-");
-        String year = split[0];
-        String monthNum = split[1];
-        int mn = Integer.parseInt(monthNum);
-        String month = getMonth(mn);
-        String datee = split[2];
-
-        String full = datee+" "+month+" "+year;
-
-        return  full;
-
-
-    }
-
-    public String getMonth(int month){
-        String calMonth="";
-
-        switch (month){
-            case 1:calMonth="January";
-                break;
-
-            case 2:calMonth="Feburary";
-                break;
-
-            case 3:calMonth="March";
-                break;
-
-            case 4:calMonth="April";
-                break;
-
-            case 5:calMonth="May";
-                break;
-
-            case 6:calMonth="June";
-                break;
-
-            case 7:calMonth="July";
-                break;
-
-            case 8:calMonth="August";
-                break;
-
-            case 9:calMonth="September";
-                break;
-
-            case 10:calMonth="October";
-                break;
-
-            case 11:calMonth="November";
-                break;
-
-            case 12:calMonth="December";
-                break;
-            default:calMonth=calMonth;
-                break;
-
-        }
-
-        return  calMonth;
-
-
     }
 
     public String sendResults()
@@ -321,50 +214,6 @@ public class getSessions extends AsyncTask<String, String, String> {
 
     public static void startActivity(Context context) {
         context.startActivity(new Intent(context, HomeActivity.class));
-    }
-
-
-    public boolean isExpired(String cd){
-        boolean b = false;
-
-       /* int[] dateSesh = new int[3];
-
-        String[] sp = cd.split("-");
-
-        for(int i=0;i<3;i++){
-            dateSesh[i] = Integer.parseInt(sp[i]);
-        }
-
-
-        if(dateSesh[0]< cuurentDate[0]){
-            b=false;
-        }
-        else
-        if(dateSesh[0] == cuurentDate[0])
-        {
-            if(dateSesh[1] < cuurentDate[1])
-            {
-                b=false ;
-            }
-            else if(dateSesh[1] == cuurentDate[1])
-                {
-                    if(dateSesh[2] < cuurentDate[2])
-                    {
-                        b=false ;
-                    }
-                    else
-                        b=true ;
-                }
-            else if(dateSesh[1] > cuurentDate[1])
-                b=true ;
-        }
-        else
-        b=true ;
-*/
-
-
-
-        return b;
     }
 }
 

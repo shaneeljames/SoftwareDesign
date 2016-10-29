@@ -29,9 +29,6 @@ public class student_checkout extends AsyncTask<String, String, String> {
     String TutorStudentID;
     String Checkin ;
 
-
-    public AsyncResponse delegate = null;
-
     public student_checkout(Activity par, String tsi , String c){
         parent = par;
         TutorStudentID = tsi;
@@ -121,17 +118,13 @@ public class student_checkout extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result) {
         //Handle Result
         if(result.equals("null")){
-            //Toast.makeText(parent.getApplicationContext(), "No current subjects", Toast.LENGTH_SHORT).show();
+            Toast.makeText(parent.getApplicationContext(), "No current subjects", Toast.LENGTH_SHORT).show();
 
         }else {
             //If they're in the DB then login to the Home page
-            Toast.makeText(parent.getApplicationContext(), "Student Checkout " + result, Toast.LENGTH_SHORT).show();
+            Toast.makeText(parent.getApplicationContext(), "Tutor Checkin " + result, Toast.LENGTH_SHORT).show();
 
         }
-
-        delegate.processFinish(result);
-
-
     }
 
     public String sendResults()

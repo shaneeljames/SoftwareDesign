@@ -20,6 +20,9 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -57,6 +60,7 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
     String student_checkin ;
     String student_checkout ;
     String paid ;
+    int[] currentDate = new int[3];
 
     List<tutor_Sessions> in;
     public tutor_AsyncResponse delegate = null; //Notify when async is done
@@ -70,6 +74,25 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
     public tutor_getSessions(Activity par){
         parent = par;
     }
+
+    @Override
+    protected void onPreExecute() {
+        Calendar c = Calendar.getInstance() ;
+        SimpleDateFormat d = new SimpleDateFormat("yyyy-MM-dd") ;
+        String date1 = d.format(c.getTime());
+
+        String[] split = date1.split("-") ;
+
+        for(int i = 0; i<split.length;i++)
+        {
+            // Toast.makeText(context,date[i], Toast.LENGTH_SHORT).show();
+            currentDate[i] =  Integer.parseInt( split[i]) ;
+        }
+
+
+
+    }
+
     @Override
     protected String doInBackground(String... params) {
 
@@ -196,9 +219,17 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
                     student_rating = jsObj.getString("student_rating");
                     paid =  jsObj.getString("paid");
 
-                   //  Toast.makeText(parent.getApplicationContext(),"session " + tutor_checkin, Toast.LENGTH_SHORT).show();
-                   in.add(new tutor_Sessions(sessionID,tutorID,studentID,subjectID,subjectName,subjectCode,amount,date,time,studentName,StudentSurname,desc,studentNumber,Student_contact_num,Student_email,status,tutor_checkin,Float.parseFloat(student_rating),tutor_checkout,student_checkin,student_checkout,paid,R.drawable.session,parent)) ;
-                   // Toast.makeText(parent.getApplicationContext(),"paid " + paid, Toast.LENGTH_SHORT).show();
+                   if( isExpired(date) == false)
+                   {
+                      // tutor_checkExpired connect2server = new tutor_checkExpired(parent,sessionID) ;
+                       //connect2server.execute() ;
+                   }
+                    else {
+                       //  Toast.makeText(parent.getApplicationContext(),"session " + tutor_checkin, Toast.LENGTH_SHORT).show();
+
+                       // Toast.makeText(parent.getApplicationContext(),"paid " + paid, Toast.LENGTH_SHORT).show();
+                   }
+                    in.add(new tutor_Sessions(sessionID, tutorID, studentID, subjectID, subjectName, subjectCode, amount, date, time, studentName, StudentSurname, desc, studentNumber, Student_contact_num, Student_email, status, tutor_checkin, Float.parseFloat(student_rating), tutor_checkout, student_checkin, student_checkout, paid, R.drawable.session, parent));
                 }
 
             } catch (JSONException e) {
@@ -228,6 +259,51 @@ public class tutor_getSessions extends AsyncTask<String, String, String> {
     public static void startActivity(Context context) {
         context.startActivity(new Intent(context, HomeActivity.class));
     }
+
+    public boolean isExpired(String sessionDate)
+    {
+
+        boolean re = false;
+
+
+        int[] dateSesh = new int[3] ;
+        String[] splitSesh = sessionDate.split("-");
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date strDate = sdf.parse(sessionDate);
+
+        Date today = new Date();
+
+        Date todayWithZeroTime = removeTime(today);
+
+        // Toast.makeText(context, todayWithZeroTime + " after  "+strDate, Toast.LENGTH_LONG).show();
+
+
+        if (todayWithZeroTime.after(strDate)) {
+
+            if (todayWithZeroTime.equals(strDate)) {
+                //Toast.makeText(context, new Date()+" after  "+strDate, Toast.LENGTH_LONG).show();
+                re = false;//not expired
+            }
+            else{
+
+                re = true;
+            }
+
+        }
+
+        // formattedDate have current date/time
+        // Toast.makeText(context, "Year :"+year+" Month:"+month+ " Date: "+date +">>>" + cYear+" "+getMonth((cMoth))+" "+cDate, Toast.LENGTH_LONG).show();
+
+
+        return  re;
+
+
+
+
+
+    }
+
 
 }
 

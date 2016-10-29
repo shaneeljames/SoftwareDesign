@@ -34,7 +34,6 @@ public class updateProfile extends AsyncTask<String, String, String> {
     String result = "";
 
     static String out;
-    public AsyncResponse delegate = null;
 
     public updateProfile(Activity par, String id, String fn, String ln , String num , String pass  ){
         parent = par;
@@ -130,7 +129,7 @@ public class updateProfile extends AsyncTask<String, String, String> {
         // Toast.makeText(parent.getApplicationContext(), "Login test "+result.substring(1,2), Toast.LENGTH_SHORT).show();
        // Toast.makeText(parent.getApplicationContext(), "Update: " + result, Toast.LENGTH_SHORT).show();
 
-        delegate.processFinish(result);
+
 
 
     }

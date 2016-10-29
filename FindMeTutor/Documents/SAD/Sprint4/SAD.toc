@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}\textbf {Introduction}}{3}
+\contentsline {section}{\numberline {2}Architecture}{4}
+\contentsline {section}{\numberline {3}Architectural Goals and Constraints}{6}
+\contentsline {section}{\numberline {4}Stakeholders}{7}
+\contentsline {section}{\numberline {5}Concern and Stakeholder Traceability}{8}
+\contentsline {subsection}{\numberline {5.1}Concerns}{8}
+\contentsline {subsection}{\numberline {5.2}Traceability Matrix}{9}
+\contentsline {section}{\numberline {6}Views}{9}
+\contentsline {subsection}{\numberline {6.1}Logical View}{10}
+\contentsline {subsubsection}{\numberline {6.1.1}Class Diagram}{11}
+\contentsline {subsubsection}{\numberline {6.1.2}Sequence Diagram}{12}
+\contentsline {subsection}{\numberline {6.2}Development View}{17}
+\contentsline {subsubsection}{\numberline {6.2.1}Package Diagram}{17}
+\contentsline {subsubsection}{\numberline {6.2.2}Component Diagram}{19}
+\contentsline {subsection}{\numberline {6.3}Process View}{20}
+\contentsline {subsubsection}{\numberline {6.3.1}Activity Diagrams}{20}
+\contentsline {subsubsection}{\numberline {6.3.2}Communication Diagrams}{24}
+\contentsline {subsubsection}{\numberline {6.3.3}State Diagrams}{27}
+\contentsline {subsection}{\numberline {6.4}Physical View}{29}
+\contentsline {subsubsection}{\numberline {6.4.1}Deployment Diagram}{29}
+\contentsline {subsection}{\numberline {6.5}Scenarios}{30}
+\contentsline {subsubsection}{\numberline {6.5.1}Use Case Diagram}{30}

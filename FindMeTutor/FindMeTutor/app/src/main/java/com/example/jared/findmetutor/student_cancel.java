@@ -25,14 +25,12 @@ public class student_cancel extends AsyncTask<String, String, String> {
     Context parent;
     String Tutor_student_id;
     String result = "";
-    String studentid;
 
     static String out;
 
-    public student_cancel(Context par, String tutor_student_id, String id){
+    public student_cancel(Context par, String tutor_student_id){
         parent = par;
         Tutor_student_id = tutor_student_id;
-        studentid = id;
     }
     @Override
     protected String doInBackground(String... params) {
@@ -47,7 +45,6 @@ public class student_cancel extends AsyncTask<String, String, String> {
         }
         Map<String,Object> parameter = new LinkedHashMap<>();
         parameter.put("tutor_student_id", Tutor_student_id);
-        parameter.put("student_id", studentid);
 
         StringBuilder postData = new StringBuilder();
         for (Map.Entry<String,Object> param : parameter.entrySet()) {
