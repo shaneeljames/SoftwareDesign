@@ -843,7 +843,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 			%\\Remove Sessions		&       UC-DSes
 			\\Confirm Funds			&       UC-CF
 			%Sprint 3
-			\\Fund Payment			&       UC-FP
+			%\\Fund Payment			&       UC-FP
 			\\ \hline
 \end{tabular}
 		{
@@ -1209,19 +1209,19 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
     \end{tabular}
 
 		\begin{tabular}{| l | p{10cm}| }
-      \hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-AF: Update Funds} }\\ \hline
+      \hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CF: Confirm Funds} }\\ \hline
       Related Requirements: &\\ \hline
-      Initiating actor: & \\ \hline
-      Actor goal: &\\ \hline
-      Participating Actors: &\\ \hline
-      Preconditions: &\\ \hline
-      Postconditions: & \\ \hline
+      Initiating actor: & Administrator\\ \hline
+      Actor goal: &To confirm the addition of funds to a student\\ \hline
+      Participating Actors: &Student\\ \hline
+      Preconditions: &Student sends proof of payment to administrator, funds relect in fundMeTutors account\\ \hline
+      Postconditions: &Funds are added to a students balance\\ \hline
       \multicolumn{2}{|l|}{Flow of activities:}\\ \hline
-      \multicolumn{2}{|p{15cm}|}{1. }\\
-      \multicolumn{2}{|p{15cm}|}{2. }\\
-      \multicolumn{2}{|l|}{3. }\\
-      \multicolumn{2}{|l|}{4. }\\
-      \multicolumn{2}{|l|}{5. }\\
+      \multicolumn{2}{|p{15cm}|}{1. Administrator saves proof of payment}\\
+      \multicolumn{2}{|p{15cm}|}{2. System stores proof of payment}\\
+      \multicolumn{2}{|l|}{3. System adds funds to students balance}\\
+      \multicolumn{2}{|l|}{4. System sends confirmation to Administrator}\\
+      \multicolumn{2}{|l|}{5. Students funds balance increases}\\
        \hline
     \end{tabular}
 
