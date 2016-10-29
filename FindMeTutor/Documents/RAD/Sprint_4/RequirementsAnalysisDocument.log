@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.9)  28 OCT 2016 22:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.9)  29 OCT 2016 20:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -784,58 +784,68 @@ Overfull \hbox (48.79134pt too wide) in paragraph at lines 1194--1210
  [][] 
  []
 
-[39] <./Sprint3Models/Use_Case_Diagram.png, id=129, 1445.4pt x 1224.575pt>
+
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1211--1227
+ [][] 
+ []
+
+[39]
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1228--1243
+ [][] 
+ []
+
+[40] <./Sprint3Models/Use_Case_Diagram.png, id=132, 1445.4pt x 1224.575pt>
 File: ./Sprint3Models/Use_Case_Diagram.png Graphic file (type png)
 
 <use ./Sprint3Models/Use_Case_Diagram.png>
 Package pdftex.def Info: ./Sprint3Models/Use_Case_Diagram.png used on input lin
-e 1218.
+e 1250.
 (pdftex.def)             Requested size: 398.33858pt x 337.47856pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 1215--1219
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 1247--1251
  [] 
  []
 
-[40 <./Sprint3Models/Use_Case_Diagram.png (PNG copy)>]
-Overfull \hbox (58.99843pt too wide) in alignment at lines 1225--1261
+[41 <./Sprint3Models/Use_Case_Diagram.png (PNG copy)>]
+Overfull \hbox (58.99843pt too wide) in alignment at lines 1257--1293
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1261
+Underfull \vbox (badness 10000) detected at line 1293
  []
 
 
-Overfull \hbox (58.99843pt too wide) in alignment at lines 1261--1284
+Overfull \hbox (58.99843pt too wide) in alignment at lines 1293--1316
  [] [] [] 
  []
 
-[41] [42]
-<./Sprint3Models/Analysis_Object_model3.png, id=139, 596.98032pt x 845.40843pt>
+[42] [43]
+<./Sprint3Models/Analysis_Object_model3.png, id=143, 596.98032pt x 845.40843pt>
 File: ./Sprint3Models/Analysis_Object_model3.png Graphic file (type png)
 <use ./Sprint3Models/Analysis_Object_model3.png>
 Package pdftex.def Info: ./Sprint3Models/Analysis_Object_model3.png used on inp
-ut line 1289.
+ut line 1321.
 (pdftex.def)             Requested size: 398.33858pt x 564.11162pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 1289--1290
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 1321--1322
  [] 
  []
 
-[43]
+[44]
 Overfull \vbox (38.69493pt too high) has occurred while \output is active []
 
 
-[44 <./Sprint3Models/Analysis_Object_model3.png>]
-<./Sprint3Models/Dynamic_model3.png, id=149, 596.98032pt x 845.40843pt>
+[45 <./Sprint3Models/Analysis_Object_model3.png>]
+<./Sprint3Models/Dynamic_model3.png, id=152, 596.98032pt x 845.40843pt>
 File: ./Sprint3Models/Dynamic_model3.png Graphic file (type png)
 
 <use ./Sprint3Models/Dynamic_model3.png>
 Package pdftex.def Info: ./Sprint3Models/Dynamic_model3.png used on input line 
-1294.
+1326.
 (pdftex.def)             Requested size: 398.33858pt x 564.11162pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 1294--1295
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 1326--1327
  [] 
  []
 
@@ -843,7 +853,7 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 1294--1295
 Overfull \vbox (38.69493pt too high) has occurred while \output is active []
 
 
-[45 <./Sprint3Models/Dynamic_model3.png>] [46] [47] [48]
+[46 <./Sprint3Models/Dynamic_model3.png>] [47] [48] [49]
 (./RequirementsAnalysisDocument.aux) )
 (\end occurred inside a group at level 1)
 
@@ -861,10 +871,10 @@ Here is how much of TeX's memory you used:
 b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on RequirementsAnalysisDocument.pdf (48 pages, 398245 bytes).
+Output written on RequirementsAnalysisDocument.pdf (49 pages, 399445 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
+ 186 PDF objects out of 1000 (max. 8388607)
+ 124 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
