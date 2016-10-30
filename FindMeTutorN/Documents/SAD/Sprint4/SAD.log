@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  30 OCT 2016 20:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  30 OCT 2016 21:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -335,14 +335,14 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 195--199
 [] 
  []
 
-[13 <./architecture_diagram.png (PNG copy)>]
-<./class_diagram/class_diagram_findme_tutor.jpg, id=50, 759.58781pt x 734.745pt
->
-File: ./class_diagram/class_diagram_findme_tutor.jpg Graphic file (type jpg)
- <use ./class_diagram/class_diagram_findme_tutor.jpg>
-Package pdftex.def Info: ./class_diagram/class_diagram_findme_tutor.jpg used on
- input line 214.
-(pdftex.def)             Requested size: 398.33858pt x 385.32086pt.
+[13 <./architecture_diagram.png (PNG copy)>] [14]
+<./class_diagram/class_diagram_find-me_tutor.png, id=53, 759.58781pt x 804.0037
+5pt>
+File: ./class_diagram/class_diagram_find-me_tutor.png Graphic file (type png)
+ <use ./class_diagram/class_diagram_find-me_tutor.png>
+Package pdftex.def Info: ./class_diagram/class_diagram_find-me_tutor.png used o
+n input line 214.
+(pdftex.def)             Requested size: 398.33858pt x 421.6421pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 211--215
 
@@ -358,7 +358,7 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 211--215
 [] 
  []
 
-[14] [15 <./class_diagram/class_diagram_findme_tutor.jpg>]
+[15 <./class_diagram/class_diagram_find-me_tutor.png>]
 <./sequence_diagram/create_student.png, id=57, 1094.0875pt x 712.6625pt>
 File: ./sequence_diagram/create_student.png Graphic file (type png)
 
@@ -656,10 +656,10 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 321--322
 File: ./Use_Case_Diagram.png Graphic file (type png)
 
 <use ./Use_Case_Diagram.png>
-Package pdftex.def Info: ./Use_Case_Diagram.png used on input line 329.
+Package pdftex.def Info: ./Use_Case_Diagram.png used on input line 330.
 (pdftex.def)             Requested size: 483.69684pt x 615.61018pt.
 
-Overfull \hbox (93.69684pt too wide) in paragraph at lines 328--330
+Overfull \hbox (93.69684pt too wide) in paragraph at lines 329--331
 [] 
  []
 
@@ -670,7 +670,7 @@ Overfull \vbox (67.11018pt too high) has occurred while \output is active []
 [36 <./Use_Case_Diagram.png (PNG copy)>] (./SAD.aux) ) 
 Here is how much of TeX's memory you used:
  2648 strings out of 494910
- 37203 string characters out of 6179836
+ 37208 string characters out of 6179836
  92326 words of memory out of 5000000
  5874 multiletter control sequences out of 15000+600000
  12710 words of font info for 49 fonts, out of 8000000 for 9000
@@ -680,7 +680,7 @@ Here is how much of TeX's memory you used:
 -dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb>
-Output written on SAD.pdf (36 pages, 817177 bytes).
+Output written on SAD.pdf (36 pages, 762517 bytes).
 PDF statistics:
  153 PDF objects out of 1000 (max. 8388607)
  89 compressed objects within 1 object stream

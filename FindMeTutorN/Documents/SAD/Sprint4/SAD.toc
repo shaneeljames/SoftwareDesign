@@ -22,7 +22,7 @@
 \contentsline {subsection}{\numberline {5.2}Traceability Matrix}{12}
 \contentsline {section}{\numberline {6}Views}{12}
 \contentsline {subsection}{\numberline {6.1}Logical View}{13}
-\contentsline {subsubsection}{\numberline {6.1.1}Class Diagram}{14}
+\contentsline {subsubsection}{\numberline {6.1.1}Class Diagram}{15}
 \contentsline {subsubsection}{\numberline {6.1.2}Sequence Diagram}{16}
 \contentsline {subsection}{\numberline {6.2}Development View}{21}
 \contentsline {subsubsection}{\numberline {6.2.1}Package Diagram}{21}
