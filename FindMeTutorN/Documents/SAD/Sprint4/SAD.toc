@@ -16,25 +16,22 @@
 \contentsline {subsection}{\numberline {3.3}Security}{8}
 \contentsline {subsection}{\numberline {3.4}Reliability/Availability (failover)}{9}
 \contentsline {section}{\numberline {4}Stakeholders}{10}
+\contentsline {subsection}{\numberline {4.1}List of Stakeholders}{10}
 \contentsline {section}{\numberline {5}Concern and Stakeholder Traceability}{11}
-\contentsline {subsection}{\numberline {5.1}Concerns}{11}
-\contentsline {subsection}{\numberline {5.2}Purpose of the system (Concern 1)}{11}
-\contentsline {subsection}{\numberline {5.3}Suitability of the architecture (Concern 2).}{11}
-\contentsline {subsection}{\numberline {5.4}Feasibility (Concern 3)}{11}
-\contentsline {subsection}{\numberline {5.5}Evolution of the FindMeTutor system (Concern 4)}{11}
-\contentsline {subsection}{\numberline {5.6}Traceability Matrix}{12}
+\contentsline {subsection}{\numberline {5.1}List of Concerns}{11}
+\contentsline {subsection}{\numberline {5.2}Traceability Matrix}{12}
 \contentsline {section}{\numberline {6}Views}{12}
-\contentsline {subsection}{\numberline {6.1}Logical View}{14}
-\contentsline {subsubsection}{\numberline {6.1.1}Class Diagram}{15}
-\contentsline {subsubsection}{\numberline {6.1.2}Sequence Diagram}{17}
-\contentsline {subsection}{\numberline {6.2}Development View}{22}
-\contentsline {subsubsection}{\numberline {6.2.1}Package Diagram}{22}
-\contentsline {subsubsection}{\numberline {6.2.2}Component Diagram}{24}
-\contentsline {subsection}{\numberline {6.3}Process View}{26}
-\contentsline {subsubsection}{\numberline {6.3.1}Activity Diagrams}{26}
-\contentsline {subsubsection}{\numberline {6.3.2}Communication Diagrams}{30}
-\contentsline {subsubsection}{\numberline {6.3.3}State Diagrams}{33}
-\contentsline {subsection}{\numberline {6.4}Physical View}{35}
-\contentsline {subsubsection}{\numberline {6.4.1}Deployment Diagram}{35}
-\contentsline {subsection}{\numberline {6.5}Scenarios}{36}
-\contentsline {subsubsection}{\numberline {6.5.1}Use Case Diagram}{36}
+\contentsline {subsection}{\numberline {6.1}Logical View}{13}
+\contentsline {subsubsection}{\numberline {6.1.1}Class Diagram}{14}
+\contentsline {subsubsection}{\numberline {6.1.2}Sequence Diagram}{16}
+\contentsline {subsection}{\numberline {6.2}Development View}{21}
+\contentsline {subsubsection}{\numberline {6.2.1}Package Diagram}{21}
+\contentsline {subsubsection}{\numberline {6.2.2}Component Diagram}{23}
+\contentsline {subsection}{\numberline {6.3}Process View}{25}
+\contentsline {subsubsection}{\numberline {6.3.1}Activity Diagrams}{25}
+\contentsline {subsubsection}{\numberline {6.3.2}Communication Diagrams}{29}
+\contentsline {subsubsection}{\numberline {6.3.3}State Diagrams}{32}
+\contentsline {subsection}{\numberline {6.4}Physical View}{34}
+\contentsline {subsubsection}{\numberline {6.4.1}Deployment Diagram}{34}
+\contentsline {subsection}{\numberline {6.5}Scenarios}{35}
+\contentsline {subsubsection}{\numberline {6.5.1}Use Case Diagram}{35}
