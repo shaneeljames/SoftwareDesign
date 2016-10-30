@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  30 OCT 2016 21:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  30 OCT 2016 22:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -606,60 +606,87 @@ Package pdftex.def Info: ./state_diagram/statediagram_paid.png used on input li
 ne 309.
 (pdftex.def)             Requested size: 398.33858pt x 178.20346pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--310
+Underfull \hbox (badness 10000) in paragraph at lines 303--311
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 303--310
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 303--311
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--310
+Underfull \hbox (badness 10000) in paragraph at lines 303--311
 
  []
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 303--310
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 303--311
 [] 
  []
 
-[32 <./state_diagram/statediagram_status.png (PNG copy)>] [33 <./state_diagram/
-statediagram_paid.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 315--319
+
+Underfull \hbox (badness 10000) in paragraph at lines 303--311
+
+ []
+
+[32 <./state_diagram/statediagram_status.png (PNG copy)>]
+<./state_diagram/state_diagram_status_tutor.png, id=127, 792.9625pt x 361.35pt>
+File: ./state_diagram/state_diagram_status_tutor.png Graphic file (type png)
+<use ./state_diagram/state_diagram_status_tutor.png>
+Package pdftex.def Info: ./state_diagram/state_diagram_status_tutor.png used on
+ input line 314.
+(pdftex.def)             Requested size: 398.33858pt x 181.52367pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--316
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 315--319
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 312--316
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--316
+
+ []
+
+[33 <./state_diagram/statediagram_paid.png (PNG copy)> <./state_diagram/state_d
+iagram_status_tutor.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 320--324
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 315--319
+Underfull \hbox (badness 10000) in paragraph at lines 320--324
 
  []
 
-<./Deployment.jpg, id=130, 642.4pt x 441.65pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--324
+
+ []
+
+<./Deployment.jpg, id=131, 642.4pt x 441.65pt>
 File: ./Deployment.jpg Graphic file (type jpg)
  <use ./Deployment.jpg>
-Package pdftex.def Info: ./Deployment.jpg used on input line 321.
+Package pdftex.def Info: ./Deployment.jpg used on input line 326.
 (pdftex.def)             Requested size: 398.33858pt x 273.86734pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 321--322
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 326--327
 [] 
  []
 
 [34 <./Deployment.jpg>]
-<./Use_Case_Diagram.png, id=134, 1214.5375pt x 1545.775pt>
+<./Use_Case_Diagram.png, id=135, 1214.5375pt x 1545.775pt>
 File: ./Use_Case_Diagram.png Graphic file (type png)
 
 <use ./Use_Case_Diagram.png>
-Package pdftex.def Info: ./Use_Case_Diagram.png used on input line 330.
+Package pdftex.def Info: ./Use_Case_Diagram.png used on input line 335.
 (pdftex.def)             Requested size: 483.69684pt x 615.61018pt.
 
-Overfull \hbox (93.69684pt too wide) in paragraph at lines 329--331
+Overfull \hbox (93.69684pt too wide) in paragraph at lines 334--336
 [] 
  []
 
@@ -669,10 +696,10 @@ Overfull \vbox (67.11018pt too high) has occurred while \output is active []
 
 [36 <./Use_Case_Diagram.png (PNG copy)>] (./SAD.aux) ) 
 Here is how much of TeX's memory you used:
- 2648 strings out of 494910
- 37208 string characters out of 6179836
+ 2653 strings out of 494910
+ 37441 string characters out of 6179836
  92326 words of memory out of 5000000
- 5874 multiletter control sequences out of 15000+600000
+ 5878 multiletter control sequences out of 15000+600000
  12710 words of font info for 49 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  37i,6n,26p,520b,197s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -680,10 +707,10 @@ Here is how much of TeX's memory you used:
 -dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb>
-Output written on SAD.pdf (36 pages, 762517 bytes).
+Output written on SAD.pdf (36 pages, 772833 bytes).
 PDF statistics:
- 153 PDF objects out of 1000 (max. 8388607)
+ 154 PDF objects out of 1000 (max. 8388607)
  89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
