@@ -1,7 +1,27 @@
-\contentsline {section}{\numberline {1}Worklog}{3}
-\contentsline {subsubsection}{\numberline {1.0.1}User stories and tasks}{3}
-\contentsline {section}{\numberline {2}Backlog and sprints}{8}
-\contentsline {subsection}{\numberline {2.1}Sprint 0}{8}
-\contentsline {subsection}{\numberline {2.2}Sprint 1}{8}
-\contentsline {subsection}{\numberline {2.3}Sprint 2}{8}
-\contentsline {subsection}{\numberline {2.4}Sprint 3}{9}
+\contentsline {section}{\numberline {1}REQUIREMENTS: PRODUCT BACKLOG}{3}
+\contentsline {section}{\numberline {2}OVERVIEW OF WORKLOG }{5}
+\contentsline {subsubsection}{\numberline {2.0.1}Requirements, Prioroty weights and duration to completion}{5}
+\contentsline {section}{\numberline {3}SPRINT 1}{6}
+\contentsline {subsubsection}{\numberline {3.0.1}Scrum meeting 0}{6}
+\contentsline {subsubsection}{\numberline {3.0.2}Summary of the week's meetings and contributions}{6}
+\contentsline {subsubsection}{\numberline {3.0.3}Scrum meeting 1}{6}
+\contentsline {subsubsection}{\numberline {3.0.4}Summary of the week's meetings and contributions}{7}
+\contentsline {subsubsection}{\numberline {3.0.5}Scrum meeting 2}{8}
+\contentsline {subsubsection}{\numberline {3.0.6}Summary of the week's meetings and contributions}{8}
+\contentsline {subsubsection}{\numberline {3.0.7}Sprint Review 1}{8}
+\contentsline {section}{\numberline {4}SPRINT 2}{9}
+\contentsline {subsubsection}{\numberline {4.0.1}Scrum meeting 1}{9}
+\contentsline {subsubsection}{\numberline {4.0.2}Scrum meeting 2}{9}
+\contentsline {subsubsection}{\numberline {4.0.3}Scrum meeting 3 and group project meeting}{10}
+\contentsline {section}{\numberline {5}Sprint 3}{10}
+\contentsline {subsubsection}{\numberline {5.0.1}Scrum meeting reviewing sprint 2}{10}
+\contentsline {subsubsection}{\numberline {5.0.2}Scrum meeting Planning}{10}
+\contentsline {subsubsection}{\numberline {5.0.3}Scrum meeting group dynamics}{11}
+\contentsline {subsubsection}{\numberline {5.0.4}Scrum meeting during Wits protests}{11}
+\contentsline {subsection}{\numberline {5.1}Achievements and tasks completed:}{11}
+\contentsline {subsubsection}{\numberline {5.1.1}Challenges}{11}
+\contentsline {section}{\numberline {6}Sprint 4}{12}
+\contentsline {subsubsection}{\numberline {6.0.1}Scrum meeting review}{12}
+\contentsline {subsubsection}{\numberline {6.0.2}Scrum meeting planner}{12}
+\contentsline {subsubsection}{\numberline {6.0.3}Scrum meetings interim}{13}
+\contentsline {subsubsection}{\numberline {6.0.4}Scrum meetings Final planning}{13}
