@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/res/merged/release/mipmap-hdpi-v4/ic_launcher.png",
+        "source": "/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/res/merged/release/mipmap-hdpi-v4/ic_launcherbak.png",
+        "source": "/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/src/main/res/mipmap-hdpi/ic_launcherbak.png"
+    }
+]
