@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  31 OCT 2016 01:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  31 OCT 2016 01:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -357,17 +357,17 @@ AD (Krupa)
 ### simple group (level 1) entered at line 48 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 2604 strings out of 493085
- 34395 string characters out of 6136916
- 120327 words of memory out of 5000000
- 6053 multiletter control sequences out of 15000+600000
+ 2602 strings out of 493085
+ 34384 string characters out of 6136916
+ 120268 words of memory out of 5000000
+ 6051 multiletter control sequences out of 15000+600000
  12710 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,6n,26p,278b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Product_Backlog.pdf (13 pages, 62059 bytes).
+Output written on Product_Backlog.pdf (13 pages, 62599 bytes).
 PDF statistics:
  59 PDF objects out of 1000 (max. 8388607)
  40 compressed objects within 1 object stream
