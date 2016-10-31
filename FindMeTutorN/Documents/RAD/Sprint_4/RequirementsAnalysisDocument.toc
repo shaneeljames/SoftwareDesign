@@ -24,8 +24,8 @@
 \contentsline {subsubsection}{\numberline {4.6.5}User stories}{42}
 \contentsline {subsubsection}{\numberline {4.6.6}Analysis object model}{45}
 \contentsline {subsubsection}{\numberline {4.6.7}Dynamic model}{46}
-\contentsline {subsubsection}{\numberline {4.6.8}User interface navigational paths and screen mock-ups}{46}
-\contentsline {subsubsection}{\numberline {4.6.9}Operational requirements}{47}
-\contentsline {section}{\numberline {5}REFERENCES}{49}
-\contentsline {section}{\numberline {6}APPENDIX}{50}
-\contentsline {subsection}{\numberline {6.1}User interface models}{50}
+\contentsline {subsubsection}{\numberline {4.6.8}User interface navigational paths and screen mock-ups}{47}
+\contentsline {subsubsection}{\numberline {4.6.9}Operational requirements}{51}
+\contentsline {section}{\numberline {5}REFERENCES}{53}
+\contentsline {section}{\numberline {6}APPENDIX}{54}
+\contentsline {subsection}{\numberline {6.1}User interface models}{54}
