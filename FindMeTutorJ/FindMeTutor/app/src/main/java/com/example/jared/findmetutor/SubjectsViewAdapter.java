@@ -75,7 +75,7 @@ public class SubjectsViewAdapter extends RecyclerView.Adapter<SubjectsViewAdapte
         eventViewHolder.lv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Index position is: "+ i+" "+ eventViewHolder.subject.getText().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,eventViewHolder.subject.getText().toString(), Toast.LENGTH_SHORT).show();
 
              /*   if(i ==0) //Selected subjects card
                 {
@@ -90,12 +90,12 @@ public class SubjectsViewAdapter extends RecyclerView.Adapter<SubjectsViewAdapte
             public void onClick(View v){
                 SharedPreferences myprefs =  context.getSharedPreferences("user", MODE_PRIVATE);
                 String id= myprefs.getString("student_id", null);
-                Toast.makeText(context, "Remove "+ eventViewHolder.subject.getText().toString()+" id "+id, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Remove "+ eventViewHolder.subject.getText().toString()+" id "+id, Toast.LENGTH_SHORT).show();
 
 
                 remove = new removeSubject(context,id, list.get(i).subjID.toString() );
                 remove.execute();
-
+                eventViewHolder.removeBtn.setText("Removed");
                 eventViewHolder.removeBtn.setEnabled(false);
 
 

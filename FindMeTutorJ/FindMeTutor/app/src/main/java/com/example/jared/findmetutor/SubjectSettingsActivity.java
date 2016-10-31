@@ -104,7 +104,7 @@ public class SubjectSettingsActivity extends AppCompatActivity implements AsyncR
         // ...
 
         list.clear();
-        Toast.makeText(getApplicationContext(), "refresh items" + list.size() , Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), "refresh items" + list.size() , Toast.LENGTH_SHORT).show();
         refresh = new getsubject(this, id, list);
 
         refresh.delegate = this;

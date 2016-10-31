@@ -156,7 +156,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                         //isExpired("10");
 
 
-                        base.switchContentSession(events.get(i).tutorStdNum, events.get(i).sessionID, events.get(i).tutorID);
+                        base.switchContentSession(events.get(i).tutorStdNum, events.get(i).sessionID, events.get(i).tutorID, events.get(i).subjectName);
 
                     }
                 });
@@ -171,7 +171,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                 eventViewHolder.cv.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(context, "Session id: "+events.get(i).sessionID, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(context, "Session id: "+events.get(i).sessionID, Toast.LENGTH_SHORT).show();
 
 
 
@@ -228,19 +228,45 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
                                     }
                                 });
-                        snackbar.setActionTextColor(Color.RED);
+                        snackbar.setActionTextColor(Color.WHITE);
                         View sbView = snackbar.getView();
                         TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-                        textView.setTextColor(Color.YELLOW);
+                        textView.setTextColor(Color.RED);
                         snackbar.show();
                     }
                 });
 
-               if(events.get(i).total.equals(events.get(i).unavailable)){
+                if(events.get(i).total.equals("0")){
+                    student_cancel connect2server = new student_cancel(context,events.get(i).sessionID, stdid) ;
+                    connect2server.execute();
+                    eventViewHolder.status.setText("No Tutors Available");
+
+                    String fromEmail = "FindmetutorSD@gmail.com";
+                    String fromPassword = "findmetutors";
+                    String toEmails = email; //Sessions.get(i).studentEmail.toString() ;
+                    String adminEmail = "admin@gmail.com";
+                    String emailSubject = "Find Me Tutor - Session Unavailable";
+                    String adminSubject = "App Registration Mail";
+                    String emailBody =
+                            "Dear " + fname +" "+lname +"<br>"
+                                    +"We apologize for this but your request for "+events.get(i).subjectName+"<br>"
+                                    +"Currently has no avaiable tutor's... We are constantly working on fixing this issue"+"<br>"
+                                    +"Your account has been refunded."+"<br>"
+                                    +"Please feel free to make another request ... "
+                                    + "<br><br>"
+                                    +"From FindMeTutor";
+
+                    String adminBody = "Your message";
+                    new SendMailTask(context).execute(fromEmail,
+                            fromPassword, toEmails, emailSubject, emailBody);
+
+                }
+
+               else if(events.get(i).total.equals(events.get(i).unavailable)){
 
                     student_cancel connect2server = new student_cancel(context,events.get(i).sessionID, stdid) ;
                     connect2server.execute();
-                    eventViewHolder.status.setText("Expired");
+                    eventViewHolder.status.setText("Session Unavailable");
 
 
 
@@ -253,7 +279,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
                     String adminSubject = "App Registration Mail";
                     String emailBody =
                             "Dear " + fname +" "+lname +"<br>"
-                                    +"We regret to inform you that all the respective tutors have declined your request."+"<br>"
+                                    +"We regret to inform you that all the respective tutors have declined your request for "+events.get(i).subjectName+"<br>"
                                     +"Your account has been refunded."+"<br>"
                                     +"Please feel free to make another request ... "
                                     + "<br><br>"
@@ -276,6 +302,31 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.EventV
 
                 //Toast.makeText(context,eventViewHolder.date.getText().toString() + " Expired",Toast.LENGTH_LONG).show();
                 eventViewHolder.status.setText("Session Expired (Past date)");
+
+                student_cancel connect2server = new student_cancel(context,events.get(i).sessionID, stdid) ;
+                connect2server.execute();
+
+
+
+
+                String fromEmail = "FindmetutorSD@gmail.com";
+                String fromPassword = "findmetutors";
+                String toEmails = email; //Sessions.get(i).studentEmail.toString() ;
+                String adminEmail = "admin@gmail.com";
+                String emailSubject = "Find Me Tutor - Session Expired";
+                String adminSubject = "App Registration Mail";
+                String emailBody =
+                        "Dear " + fname +" "+lname +"<br>"
+                                +"Unfortunatly, your session for "+events.get(i).subjectName+" On the "+ events.get(i).date+" has epired."+"<br>"
+                                +"Your account has been refunded."+"<br>"
+                                +"Please feel free to make another request ... "
+                                + "<br><br>"
+                                +"From FindMeTutor";
+
+                String adminBody = "Your message";
+                new SendMailTask(context).execute(fromEmail,
+                        fromPassword, toEmails, emailSubject, emailBody);
+
 
 
             }

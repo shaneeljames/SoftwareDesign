@@ -10,7 +10,16 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar" /> -->
 
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+
+
+
 <android.support.v7.widget.CardView
+    android:layout_below="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:android.support.v7.cardview="http://schemas.android.com/apk/res-auto"
@@ -142,7 +151,6 @@
                 android:id="@+id/cordsTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cordinates"
                 android:layout_below="@+id/gpsRequest"
                 android:gravity="center"
                 />
@@ -151,7 +159,6 @@
                 android:id="@+id/lblLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="info"
                 android:layout_below="@+id/cordsTxt"
                 android:gravity="center"
                 />
@@ -195,7 +202,6 @@
                 android:id="@+id/infoOutText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="info"
                 android:layout_below="@+id/checkOut"
                 android:gravity="center"
                 />
@@ -204,7 +210,6 @@
                 android:id="@+id/cordsOutTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cordinates"
                 android:layout_below="@+id/infoOutText"
                 android:gravity="center"
                 />

@@ -131,7 +131,6 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         studentNumber = (EditText) findViewById(R.id.stdNum);
         studentBalance = (EditText)findViewById(R.id.input_balance);
         imgpp = (ImageButton)findViewById(R.id.studentDp);
-        addFunds = (Button)findViewById(R.id.btn_addFunds);
         editProfile = (Button)findViewById(R.id.editProfile);
         update = (Button)findViewById(R.id.update);
         cancel = (Button)findViewById(R.id.cancel);
@@ -209,26 +208,41 @@ public class AccountSettingsActivity extends AppCompatActivity  implements Async
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar snackbar = Snackbar
-                        .make(coordinatorLayout, "Are you sure you want to delete your account ", Snackbar.LENGTH_LONG)
-                        .setAction("Yes!", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
 
-                                Toast.makeText(getApplicationContext(),"Deleting",Toast.LENGTH_LONG).show();
-                                deleteAccount = new student_deleteAccount(getApplicationContext(), stdid );
-                                deleteAccount.delegate = accountSettingsActivity;
-                                deleteAccount.execute();
+                String pw = inputPassword.getText().toString();
+                String cpw = inputConfirmPassword.getText().toString();
+
+                if(pw.equals(cpw)){
+
+                    // Toast.makeText(getApplicationContext(), fn+ln+num+pw , Toast.LENGTH_SHORT).show();
+                    Snackbar snackbar = Snackbar
+                            .make(coordinatorLayout, "Are you sure you want to delete your account(Permanent) ", Snackbar.LENGTH_LONG)
+                            .setAction("Yes!", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+
+                                    Toast.makeText(getApplicationContext(),"Deleting",Toast.LENGTH_LONG).show();
+                                    deleteAccount = new student_deleteAccount(getApplicationContext(), stdid );
+                                    deleteAccount.delegate = accountSettingsActivity;
+                                    deleteAccount.execute();
 
 
 
-                            }
-                        });
-                snackbar.setActionTextColor(Color.RED);
-                View sbView = snackbar.getView();
-                TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-                textView.setTextColor(Color.WHITE);
-                snackbar.show();
+                                }
+                            });
+                    snackbar.setActionTextColor(Color.RED);
+                    View sbView = snackbar.getView();
+                    TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                    textView.setTextColor(Color.WHITE);
+                    snackbar.show();
+
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Please enter your password", Toast.LENGTH_LONG).show();
+                }
+
+
+
             }
         });
 

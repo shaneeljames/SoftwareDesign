@@ -20,14 +20,11 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.SimpleTimeZone;
 
 /**
  * Created by jared on 2016/09/02.\
@@ -40,38 +37,31 @@ import java.util.SimpleTimeZone;
  Returns null if the student number does not exist in the Student_Subject Table.
 
  */
-public class getSessions extends AsyncTask<String, String, String> {
+public class getTutorStudentSession extends AsyncTask<String, String, String> {
     Activity parent;
     String result = "";
 
-    String sessionID;
-    String tutorID;
-    String tutorNum;
-    String tutorName;
-    String studentID;
-    String subjectID;
-    String subjectName;
-    String amount;
-    String date;
-    String time;
+
     String desc;
-    String status;
-    String available;
-    String unavailable;
-    String total;
+    String studentCin;
+    String studentCout;
+    String tutorCin;
+    String tutorCout;
+    String studentTutorId;
+    String paid;
 
     int[] cuurentDate = new int[3];
 
-    List<Session> in;
+    List<StudentTutorSession> in;
     public AsyncResponse delegate = null; //Notify when async is done
 
-    public getSessions(Activity par, String student_id, List<Session> obj){
+    public getTutorStudentSession(Activity par, String student_id, List<StudentTutorSession> obj){
         this.parent = par;
-        this.studentID = student_id;
+        this.studentTutorId = student_id;
         this.in = obj;
     }
 
-    public getSessions(Activity par){
+    public getTutorStudentSession(Activity par){
         parent = par;
     }
 
@@ -99,13 +89,13 @@ public class getSessions extends AsyncTask<String, String, String> {
         URL url = null;
 
         try {
-            url = new URL("http://neural.net16.net/student_getsessions.php");
+            url = new URL("http://neural.net16.net/student_gettutorstudent.php");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         Map<String,Object> parameter = new LinkedHashMap<>();
-        parameter.put("StudentID", studentID);
+        parameter.put("TutorStudentID", studentTutorId);
 
         StringBuilder postData = new StringBuilder();
         for (Map.Entry<String,Object> param : parameter.entrySet()) {
@@ -175,7 +165,7 @@ public class getSessions extends AsyncTask<String, String, String> {
        // Toast.makeText(parent.getApplicationContext(), "Res " + result, Toast.LENGTH_SHORT).show();
 
        if(temp.equals("]")){ // NULL result
-            Toast.makeText(parent.getApplicationContext(), "No current Sessions", Toast.LENGTH_SHORT).show();
+            Toast.makeText(parent.getApplicationContext(), "No current subjects", Toast.LENGTH_SHORT).show();
 
         }else {
            //If they're in the DB then login to the Home page
@@ -200,37 +190,16 @@ public class getSessions extends AsyncTask<String, String, String> {
                for (int i = 0; i < jsonArr.length(); i++) {
                    JSONObject jsObj = jsonArr.getJSONObject(i);
 
-                   sessionID= jsObj.getString("tutor_student_id");
-                   tutorID = jsObj.getString("tutor_id");
-                   tutorNum = jsObj.getString("tutor_student_num");
-                   fname = jsObj.getString("tutor_fname");
-                   lname = jsObj.getString("tutor_lname");
-                   tutorName = fname + " "+lname;
-                  // Toast.makeText(parent.getApplicationContext(), "making object " + tutorName, Toast.LENGTH_LONG).show();
-                   subjectName = jsObj.getString("subject_name");
-                   subjectID = jsObj.getString("subject_id");
-                   amount = jsObj.getString("amount");
-                   date = jsObj.getString("date");
-                   time = jsObj.getString("time");
+
                    desc = jsObj.getString("description");
-                   status = jsObj.getString("status");
-                   available = jsObj.getString("available");
-                   unavailable = jsObj.getString("unavailable");
-                   total = jsObj.getString("total");
+                   studentCin = jsObj.getString("student_checkin");
+                   studentCout = jsObj.getString("student_checkout");
+                   tutorCin = jsObj.getString("tutor_checkin");
+                   tutorCout = jsObj.getString("tutor_checkout");
+                   paid = jsObj.getString("paid");
                   // Toast.makeText(parent.getApplicationContext(), code, Toast.LENGTH_SHORT).show();
-                   String dte = formateDate(date);
 
-                   if(isExpired(date)==false){
-                       //setSessionExpired epired = new setSessionExpired(parent, sessionID);
-                       //epired.execute();
-                   }
-
-                   else {
-
-
-                   }
-
-                   in.add(new Session(sessionID, tutorID, tutorNum, tutorName, subjectName, subjectID, amount, dte, time, desc, status, available, unavailable, total, R.drawable.session, parent));
+                   in.add(new StudentTutorSession(desc, studentCin, studentCout, tutorCin, tutorCout, paid));
 
                }
 
@@ -241,7 +210,7 @@ public class getSessions extends AsyncTask<String, String, String> {
            //Now we have their subjects
 
 
-           delegate.processFinish(result); //let the other clsses know when onPost is finished
+           delegate.processFinish3(result); //let the other clsses know when onPost is finished
        }
     }
 

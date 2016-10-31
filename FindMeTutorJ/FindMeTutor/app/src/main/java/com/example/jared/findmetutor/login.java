@@ -153,7 +153,7 @@ public class login extends AsyncTask<String, String, String> {
 
               //Check Password Case sensisitivity
               if(passwordCheck.equals(Password)){
-                  Toast.makeText(parent.getApplicationContext(), "Login Successful ", Toast.LENGTH_LONG).show();
+                  //Toast.makeText(parent.getApplicationContext(), "Login Successful ", Toast.LENGTH_LONG).show();
 
                   Intent goHome = new Intent(parent, HomeActivity.class);
                   goHome.putExtra("key","0"); //to set shared preferences

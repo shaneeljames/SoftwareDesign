@@ -117,7 +117,7 @@ public class student_updatetutorrating extends AsyncTask<String, String, String>
     @Override
     protected void onPostExecute(String result) {
 
-        Toast.makeText(parent, result, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(parent, result, Toast.LENGTH_SHORT).show();
         //Handle Result
 
 

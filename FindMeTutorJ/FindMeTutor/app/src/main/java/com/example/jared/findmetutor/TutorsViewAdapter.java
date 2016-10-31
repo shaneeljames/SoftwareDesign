@@ -110,7 +110,7 @@ public class TutorsViewAdapter extends RecyclerView.Adapter<TutorsViewAdapter.Ev
         eventViewHolder.rating.setRating(r);
 
         //eventViewHolder.session.setImageResource(events.get(i).photoId);
-        Toast.makeText(context, "Rating "+ st, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context, "Rating "+ st, Toast.LENGTH_SHORT).show();
 
 
         try{
@@ -124,7 +124,7 @@ public class TutorsViewAdapter extends RecyclerView.Adapter<TutorsViewAdapter.Ev
             @Override
             public void onClick(View v){
 
-                Toast.makeText(context, "Tutor  id: "+events.get(i).tutorID + " "+events.get(i).TutorName, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Tutor  id: "+events.get(i).tutorID + " "+events.get(i).TutorName, Toast.LENGTH_SHORT).show();
 
                 SharedPreferences myprefs = context.getSharedPreferences("user", MODE_PRIVATE);
                 String fname = myprefs.getString("student_fname",null);

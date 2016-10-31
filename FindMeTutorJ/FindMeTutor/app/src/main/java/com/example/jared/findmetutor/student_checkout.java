@@ -125,7 +125,7 @@ public class student_checkout extends AsyncTask<String, String, String> {
 
         }else {
             //If they're in the DB then login to the Home page
-            Toast.makeText(parent.getApplicationContext(), "Student Checkout " + result, Toast.LENGTH_SHORT).show();
+            Toast.makeText(parent.getApplicationContext(), "Check out Successful", Toast.LENGTH_SHORT).show();
 
         }
 

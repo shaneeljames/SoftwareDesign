@@ -235,7 +235,7 @@ public class RequestActivity extends AppCompatActivity implements AsyncResponse 
         EditText desc = (EditText)findViewById(R.id.descriptionTxt);
         dsp = desc.getText().toString();
 
-        Toast.makeText(getApplicationContext(), student_id+" ID", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), student_id+" ID", Toast.LENGTH_SHORT).show();
 
         requestSession session = new requestSession(this, tutor_id, student_id, subject_id, amount, date,time,dsp, sz );
         session.delegate=this;

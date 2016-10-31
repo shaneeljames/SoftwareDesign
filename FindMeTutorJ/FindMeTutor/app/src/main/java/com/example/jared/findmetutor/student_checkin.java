@@ -118,12 +118,12 @@ import java.util.Map;
         @Override
         protected void onPostExecute(String result) {
             //Handle Result
-            if(result.equals("null")){
-                Toast.makeText(parent.getApplicationContext(), "No current subjects", Toast.LENGTH_SHORT).show();
+            if(result.equals("[]")){
+                Toast.makeText(parent.getApplicationContext(), "Check in unsuccessful", Toast.LENGTH_SHORT).show();
 
             }else {
                 //If they're in the DB then login to the Home page
-                Toast.makeText(parent.getApplicationContext(), "Student Checkin " + result, Toast.LENGTH_SHORT).show();
+                Toast.makeText(parent.getApplicationContext(), "Check in Successful ", Toast.LENGTH_SHORT).show();
 
             }
 

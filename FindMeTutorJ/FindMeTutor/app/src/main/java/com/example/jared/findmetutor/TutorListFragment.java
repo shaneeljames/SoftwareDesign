@@ -67,7 +67,7 @@ public class TutorListFragment extends Fragment implements AsyncResponse {
 
 
          id = this.getArguments().getString("session");
-        Toast.makeText(getContext(),"Session id "+id,Toast.LENGTH_SHORT);
+        //Toast.makeText(getContext(),"Session id "+id,Toast.LENGTH_SHORT);
 
         connect2server = new getTutors(this.getActivity(), id, list);
 
@@ -104,7 +104,7 @@ public class TutorListFragment extends Fragment implements AsyncResponse {
         // ...
 
         list.clear();
-        Toast.makeText(getContext(), "refresh items" + list.size() , Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), "refresh items" + list.size() , Toast.LENGTH_SHORT).show();
         refresh = new getTutors(this.getActivity(), id, list);
 
         refresh.delegate = this;

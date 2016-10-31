@@ -34,13 +34,11 @@
     <!-- navigation drawer item labels  -->
     <string-array name="nav_drawer_labels">
         <item>@string/nav_item_home</item>
-        <item>@string/nav_item_friends</item>
         <item>@string/nav_item_notifications</item>
         <item>@string/nav_item_logout</item>
     </string-array>
 
     <string name="title_messages">Messages</string>
-    <string name="title_friends">Friends</string>
     <string name="title_home">Home</string>
     <string name="title_Logout">Log Out</string>
     <string name="title_Settings">Settings</string>
@@ -71,5 +69,51 @@
     <string name="btn_start_location_updates">START LOCATION UPDATES</string>
         
     <string name="btn_stop_location_updates">STOP LOCATION UPDATES</string>
+
+    <string name="howtoReq">
+        Start by tapping the request button\n
+        Select and enter in the required information\n
+        Tap Request\n
+        Done! Now, All the relevant tutors will be able to see your request.
+
+    </string>
+
+    <string name="howtoSub">
+        Tap the navigation drawer in the upper left hand side\n
+        Tap the Settings option\n
+        Select My Subjects\n
+        Initially, when you first sign up you will have no subjects. So you will need to Add your relevent subjects\n
+        Tap the Add Subjects at the botttom of the screen\n
+        Then finally add subjects to your account by tapping the Add buttion for that subject.\n
+        Press the back button and swipe down to refresh and you should see your subjects.\n
+        To remove a subject, just tap the remove button under its name.
+
+    </string>
+
+      <string name="howtoEdit">
+        Tap the navigation drawer in the upper left hand side\n
+        Tap the Settings option\n
+        Select My Account\n
+        Now, you can set your profile picture by tapping the image button and selecting the image you desire from your gallery.\n
+        To edit your profile, tap the Edit Profile button at the bottom of the screen.\n
+        Note: You are only allowed to change your name, phone number and password.\n
+        One you are done making changes, you MUST input your password and confirm it... as a safty measure\n
+        Then tap update to save the changes, or cancel to revert back.\n
+
+    </string>
+
+    <string name="howtoDel">
+        Tap the navigation drawer in the upper left hand side\n
+        Tap the Settings option\n
+        Select My Account\n
+        Tap on Edit profile.\n
+        Enter in and confirm your password\n
+        Tap on Delete Account.\n
+        Tap on yes.\n
+
+        Note: THIS ACTION CANNOT BE UNDONE!
+
+    </string>
+
 
 </resources>

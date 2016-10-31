@@ -141,7 +141,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
         // ...
 
         list.clear();
-        Toast.makeText(getContext(), "refresh items" + list.size() , Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), "refresh items" + list.size() , Toast.LENGTH_SHORT).show();
         refresh = new getSessionsRefresh(this.getActivity(), id, list);
 
         refresh.delegate = this;
@@ -178,7 +178,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
 
         if(temp.equals("[]"))
         {
-            Toast.makeText(getContext(), "No subjects Add some", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "No sessions to show", Toast.LENGTH_SHORT).show();
         }
         else{
             list = connect2server.getList();
@@ -205,7 +205,7 @@ public class HomeFragment extends Fragment implements AsyncResponse{
 
         list=refresh.getList();
         //list = refresh.getList();
-        Toast.makeText(getContext(), "Complete", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), "Complete", Toast.LENGTH_SHORT).show();
 
         adapter = new CardViewAdapter(list, getContext(), this);
 
@@ -246,13 +246,14 @@ public class HomeFragment extends Fragment implements AsyncResponse{
 
     }
 
-    public void switchContentSession(String id, String sessID, String tutID) {
+    public void switchContentSession(String id, String sessID, String tutID, String subjName) {
         mContent = new TutorStudentFragment();
 
         Bundle bundle=new Bundle();
         bundle.putString("tutor_student_num", id);
         bundle.putString("sessionID", sessID);
         bundle.putString("tutorID",tutID);
+        bundle.putString("subject", subjName);
 
         mContent.setArguments(bundle);
 
