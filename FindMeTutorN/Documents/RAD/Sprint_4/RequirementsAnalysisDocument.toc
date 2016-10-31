@@ -1,10 +1,9 @@
 \contentsline {section}{\numberline {1}\textbf {Executive Summary}}{3}
 \contentsline {section}{\numberline {2}INTRODUCTION}{4}
-\contentsline {subsubsection}{\numberline {2.0.1}Purpose of the system}{4}
-\contentsline {subsubsection}{\numberline {2.0.2}Scope of the system}{4}
-\contentsline {subsubsection}{\numberline {2.0.3}Objective and success criteria of the project}{4}
-\contentsline {subsubsection}{\numberline {2.0.4}Definitions, acronyms, and abbreviations}{4}
-\contentsline {subsubsection}{\numberline {2.0.5}References}{5}
+\contentsline {subsection}{\numberline {2.1}Purpose of the system}{4}
+\contentsline {subsection}{\numberline {2.2}Scope of the system}{4}
+\contentsline {subsection}{\numberline {2.3}Objective and success criteria of the project}{4}
+\contentsline {subsection}{\numberline {2.4}Definitions, acronyms, and abbreviations}{4}
 \contentsline {section}{\numberline {3}CURRENT SYSTEM}{6}
 \contentsline {subsubsection}{\numberline {3.0.1}Overview}{6}
 \contentsline {section}{\numberline {4}PROPOSED SYSTEM}{7}
@@ -17,14 +16,14 @@
 \contentsline {subsection}{\numberline {4.5}Acceptance Testing}{12}
 \contentsline {subsubsection}{\numberline {4.5.1}Test Case for Use Case}{12}
 \contentsline {subsubsection}{\numberline {4.5.2}Acceptance Tests (general)}{26}
-\contentsline {subsection}{\numberline {4.6}System models}{29}
-\contentsline {subsubsection}{\numberline {4.6.1}Scenario}{29}
-\contentsline {subsubsection}{\numberline {4.6.2}Use cases models}{30}
-\contentsline {subsubsection}{\numberline {4.6.3}Use case diagram}{40}
-\contentsline {subsubsection}{\numberline {4.6.4}User stories}{41}
-\contentsline {subsubsection}{\numberline {4.6.5}Analysis object model}{44}
-\contentsline {subsubsection}{\numberline {4.6.6}Dynamic model}{45}
-\contentsline {subsubsection}{\numberline {4.6.7}User interface navigational paths and screen mock-ups}{46}
-\contentsline {subsubsection}{\numberline {4.6.8}Operational requirements}{46}
-\contentsline {section}{\numberline {5}REFERENCES}{47}
-\contentsline {section}{\numberline {6}APPENDIX}{48}
+\contentsline {subsection}{\numberline {4.6}System models}{30}
+\contentsline {subsubsection}{\numberline {4.6.1}Scenario}{30}
+\contentsline {subsubsection}{\numberline {4.6.2}Use cases models}{31}
+\contentsline {subsubsection}{\numberline {4.6.3}Use case descriptions}{32}
+\contentsline {subsubsection}{\numberline {4.6.4}Use case diagram}{41}
+\contentsline {subsubsection}{\numberline {4.6.5}User stories}{42}
+\contentsline {subsubsection}{\numberline {4.6.6}Analysis object model}{45}
+\contentsline {subsubsection}{\numberline {4.6.7}Dynamic model}{46}
+\contentsline {subsubsection}{\numberline {4.6.8}User interface navigational paths and screen mock-ups}{47}
+\contentsline {subsubsection}{\numberline {4.6.9}Operational requirements}{56}
+\contentsline {section}{\numberline {5}REFERENCES}{58}

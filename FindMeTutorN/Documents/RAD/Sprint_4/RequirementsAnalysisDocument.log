@@ -1,14 +1,14 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.9)  28 OCT 2016 22:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  31 OCT 2016 02:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **RequirementsAnalysisDocument.tex
 (./RequirementsAnalysisDocument.tex
-LaTeX2e <2016/03/31> patch level 3
-Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
-(/usr/share/texmf-dist/tex/latex/base/article.cls
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/share/texmf-dist/tex/latex/base/size12.clo
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -23,41 +23,41 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/06/28 v2.15d AMS math features
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks14
 \ex@=\dimen103
 ))
-(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen104
 )
-(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 2016/03/08 v2.02 operator names
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count87
-LaTeX Info: Redefining \frac on input line 199.
+LaTeX Info: Redefining \frac on input line 210.
 \uproot@=\count88
 \leftroot@=\count89
-LaTeX Info: Redefining \overline on input line 297.
+LaTeX Info: Redefining \overline on input line 306.
 \classnum@=\count90
 \DOTSCASE@=\count91
-LaTeX Info: Redefining \ldots on input line 394.
-LaTeX Info: Redefining \dots on input line 397.
-LaTeX Info: Redefining \cdots on input line 518.
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
 \big@size=\dimen105
-LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count92
 \c@MaxMatrixCols=\count93
 \dotsspace@=\muskip10
@@ -78,56 +78,56 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks18
-LaTeX Info: Redefining \[ on input line 2739.
-LaTeX Info: Redefining \] on input line 2740.
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
-(/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks19
 )
-(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 94.
 
-(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count99
 ))
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-(/usr/share/texmf-dist/tex/latex/comment/comment.sty
+(/usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write3
 
 Excluding comment 'comment')
-(/usr/share/texmf-dist/tex/latex/tools/longtable.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip46
 \LTright=\skip47
@@ -161,7 +161,7 @@ LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 
-(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count105
 \scratchdimen=\dimen115
@@ -174,63 +174,62 @@ LaTeX Font Info:    ... okay on input line 9.
 \MPnumerator=\count109
 \makeMPintoPDFobject=\count110
 \everyMPtoPDFconversion=\toks22
-) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
+(grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Try loading font information for U+msa on input line 12.
 
-(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 12.
 
-(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
@@ -248,623 +247,606 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
 
  []
 
 Excluding 'comment' comment.
-Overfull \hbox (60.79132pt too wide) in alignment at lines 132--185
+Overfull \hbox (60.79132pt too wide) in alignment at lines 129--182
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 185
+Underfull \vbox (badness 10000) detected at line 182
  []
 
 
-Overfull \hbox (60.79132pt too wide) in alignment at lines 185--188
+Overfull \hbox (60.79132pt too wide) in alignment at lines 182--185
  [] [] 
  []
 
 [7]
-Overfull \hbox (60.74706pt too wide) in alignment at lines 194--245
+Overfull \hbox (60.74706pt too wide) in alignment at lines 191--242
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 245
+Underfull \vbox (badness 10000) detected at line 242
  []
 
 
-Overfull \hbox (60.74706pt too wide) in alignment at lines 245--268
+Overfull \hbox (60.74706pt too wide) in alignment at lines 242--267
  [] [] [] 
  []
 
 [8] [9]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 279.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 278.
 
- (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 279.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 278.
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--312
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 291--312
+Underfull \hbox (badness 10000) in paragraph at lines 290--311
 
  []
 
-[10]
-Overfull \hbox (89.24408pt too wide) in paragraph at lines 320--332
-[] 
- []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 320--332
+Underfull \hbox (badness 10000) in paragraph at lines 290--311
 
  []
 
-[11]
-Underfull \hbox (badness 1902) in paragraph at lines 342--342
+[10] [11]
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 323--334
+ [] 
+ []
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 345--345
 []\OT1/cmr/m/n/12 Th sys-tem changes the list of sub-jects
  []
 
 
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 334--345
-[][] 
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 337--347
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--345
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 349--359
+ [][] 
  []
 
 
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 346--357
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 346--357
-
- []
-
-
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 358--368
-[][] 
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 361--371
+ [][] 
  []
 
 [12]
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 370--382
-[][] 
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 373--384
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--382
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 387--397
+ [][] 
  []
 
 
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 384--395
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 384--395
-
- []
-
-
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 396--407
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 396--407
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 399--409
+ [][] 
  []
 
 [13]
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 408--419
-[][] 
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 411--421
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 408--419
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 423--433
+ [][] 
  []
 
 
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 420--431
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 420--431
-
- []
-
-
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 432--443
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--443
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 435--445
+ [][] 
  []
 
 [14]
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 444--455
-[][] 
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 447--457
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 444--455
-
- []
-
-
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 456--467
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 456--467
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 459--469
+ [][] 
  []
 
 [15]
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 468--479
-[][] 
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 471--481
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 468--479
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 483--493
+ [][] 
  []
 
 
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 480--491
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 480--491
-
- []
-
-
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 492--503
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 492--503
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 495--505
+ [][] 
  []
 
 [16]
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 504--515
-[][] 
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 507--517
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 504--515
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 519--529
+ [][] 
  []
 
 
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 516--527
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 516--527
-
- []
-
-
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 528--539
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 528--539
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 531--541
+ [][] 
  []
 
 [17]
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 540--551
-[][] 
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 543--553
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--551
-
- []
-
-
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 552--563
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 552--563
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 555--565
+ [][] 
  []
 
 [18]
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 564--575
-[][] 
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 567--577
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 564--575
-
- []
-
-
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 577--588
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 577--588
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 580--590
+ [][] 
  []
 
 [19]
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 589--600
-[][] 
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 592--602
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 589--600
-
- []
-
-
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 601--612
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 601--612
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 604--614
+ [][] 
  []
 
 [20]
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 613--624
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 613--624
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 616--626
+ [][] 
  []
 
 [21]
-Underfull \hbox (badness 1946) in paragraph at lines 631--631
+Underfull \hbox (badness 1946) in paragraph at lines 634--634
 []\OT1/cmr/m/n/12 Confirmed tu-tuo-rial ses-sions which have
  []
 
 
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 627--638
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 627--638
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 630--640
+ [][] 
  []
 
 [22]
-Underfull \hbox (badness 1946) in paragraph at lines 643--643
+Underfull \hbox (badness 1946) in paragraph at lines 646--646
 []\OT1/cmr/m/n/12 Confirmed tu-tuo-rial ses-sions which have
  []
 
 
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 639--650
-[][] 
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 642--652
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 639--650
-
- []
-
-
-Underfull \hbox (badness 1454) in paragraph at lines 656--656
+Underfull \hbox (badness 1454) in paragraph at lines 659--659
 []\OT1/cmr/m/n/12 Completed tu-tuo-rial ses-sions which have
  []
 
 
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 652--663
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 652--663
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 655--665
+ [][] 
  []
 
 [23]
-Underfull \hbox (badness 1454) in paragraph at lines 668--668
+Underfull \hbox (badness 1454) in paragraph at lines 671--671
 []\OT1/cmr/m/n/12 Completed tu-tuo-rial ses-sions which have
  []
 
 
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 664--675
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 664--675
-
- []
-
-
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 676--687
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 676--687
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 667--677
+ [][] 
  []
 
 [24]
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 689--700
-[][] 
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 679--689
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 689--700
-
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 692--702
+ [][] 
  []
 
-
-Overfull \hbox (106.8689pt too wide) in paragraph at lines 702--713
-[][] 
+[25]
+Overfull \hbox (89.24408pt too wide) in paragraph at lines 705--715
+ [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 702--713
-
- []
-
-[25] [26]
-Overfull \hbox (4.53062pt too wide) in paragraph at lines 739--741
+[26]
+Overfull \hbox (4.53062pt too wide) in paragraph at lines 743--745
 []\OT1/cmr/m/n/12 ACT4.04 Chal-lenge reg-is-tered ad-min-is-tra-tor to view the
 ir ac-count (pass) 
  []
 
 
-Overfull \hbox (6.09181pt too wide) in paragraph at lines 741--742
+Overfull \hbox (6.09181pt too wide) in paragraph at lines 745--746
 []\OT1/cmr/m/n/12 ACT5.01 A stu-dent re-quest-ing a tu-tor can re-quest a tu-to
 r for a date/time
  []
 
-[27] [28]
+[27] [28] [29]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
- [29]
-Underfull \hbox (badness 10000) in paragraph at lines 804--805
+ [30]
+Underfull \hbox (badness 10000) in paragraph at lines 813--814
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 804--805
+Underfull \hbox (badness 10000) in paragraph at lines 813--814
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 806--853
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 806--853
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 806--853
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 806--853
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 806--853
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 806--853
-
- []
-
-[30]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 858--876
- [][] 
- []
-
-
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 880--897
- [][] 
  []
 
 [31]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 902--921
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 866--884
+ [] 
+ []
+
+
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 888--905
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 925--942
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 910--929
  [][] 
  []
 
 [32]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 946--963
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 933--950
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 967--984
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 954--971
  [][] 
  []
 
 [33]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 988--1003
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 975--992
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 1007--1022
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 996--1011
  [][] 
  []
 
 [34]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 1024--1039
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1015--1030
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 1042--1068
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1032--1047
+ [][] 
+ []
+
+
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1050--1076
  [][] 
  []
 
 [35]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 1069--1086
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1077--1094
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 1087--1103
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1095--1111
  [][] 
  []
 
 [36]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 1104--1119
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1112--1127
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 1120--1135
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1128--1143
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 1136--1152
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1144--1160
  [][] 
  []
 
 [37]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 1153--1174
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1161--1182
  [][] 
  []
 
 
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 1175--1192
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1183--1200
  [][] 
  []
 
 [38]
-Overfull \hbox (48.79134pt too wide) in paragraph at lines 1194--1210
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1202--1218
  [][] 
  []
 
-[39] <./Sprint3Models/Use_Case_Diagram.png, id=129, 1445.4pt x 1224.575pt>
+
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1219--1235
+ [][] 
+ []
+
+[39]
+Overfull \hbox (48.79134pt too wide) in paragraph at lines 1236--1251
+ [][] 
+ []
+
+[40] <./Sprint3Models/Use_Case_Diagram.png, id=132, 1214.5375pt x 1545.775pt>
 File: ./Sprint3Models/Use_Case_Diagram.png Graphic file (type png)
 
 <use ./Sprint3Models/Use_Case_Diagram.png>
 Package pdftex.def Info: ./Sprint3Models/Use_Case_Diagram.png used on input lin
-e 1218.
-(pdftex.def)             Requested size: 398.33858pt x 337.47856pt.
+e 1258.
+(pdftex.def)             Requested size: 398.33858pt x 506.97032pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 1215--1219
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 1255--1259
  [] 
  []
 
-[40 <./Sprint3Models/Use_Case_Diagram.png (PNG copy)>]
-Overfull \hbox (58.99843pt too wide) in alignment at lines 1225--1261
+[41 <./Sprint3Models/Use_Case_Diagram.png (PNG copy)>]
+Overfull \hbox (58.99843pt too wide) in alignment at lines 1265--1301
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1261
+Underfull \vbox (badness 10000) detected at line 1301
  []
 
 
-Overfull \hbox (58.99843pt too wide) in alignment at lines 1261--1284
+Overfull \hbox (58.99843pt too wide) in alignment at lines 1301--1327
  [] [] [] 
  []
 
-[41] [42]
-<./Sprint3Models/Analysis_Object_model3.png, id=139, 596.98032pt x 845.40843pt>
+[42] [43]
+<./Sprint3Models/Analysis_Object_model3.png, id=143, 596.98032pt x 845.40843pt>
 File: ./Sprint3Models/Analysis_Object_model3.png Graphic file (type png)
 <use ./Sprint3Models/Analysis_Object_model3.png>
 Package pdftex.def Info: ./Sprint3Models/Analysis_Object_model3.png used on inp
-ut line 1289.
+ut line 1332.
 (pdftex.def)             Requested size: 398.33858pt x 564.11162pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 1289--1290
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 1332--1333
  [] 
  []
 
-[43]
+[44]
 Overfull \vbox (38.69493pt too high) has occurred while \output is active []
 
 
-[44 <./Sprint3Models/Analysis_Object_model3.png>]
-<./Sprint3Models/Dynamic_model3.png, id=149, 596.98032pt x 845.40843pt>
-File: ./Sprint3Models/Dynamic_model3.png Graphic file (type png)
+[45 <./Sprint3Models/Analysis_Object_model3.png>]
+<./Sprint3Models/Dynamic_model.png, id=152, 823.075pt x 1099.10625pt>
+File: ./Sprint3Models/Dynamic_model.png Graphic file (type png)
 
-<use ./Sprint3Models/Dynamic_model3.png>
-Package pdftex.def Info: ./Sprint3Models/Dynamic_model3.png used on input line 
-1294.
-(pdftex.def)             Requested size: 398.33858pt x 564.11162pt.
+<use ./Sprint3Models/Dynamic_model.png>
+Package pdftex.def Info: ./Sprint3Models/Dynamic_model.png used on input line 1
+337.
+(pdftex.def)             Requested size: 398.33858pt x 531.92546pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 1294--1295
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 1337--1338
  [] 
  []
 
 
-Overfull \vbox (38.69493pt too high) has occurred while \output is active []
+Overfull \vbox (6.50877pt too high) has occurred while \output is active []
 
 
-[45 <./Sprint3Models/Dynamic_model3.png>] [46] [47] [48]
-(./RequirementsAnalysisDocument.aux) )
-(\end occurred inside a group at level 1)
+[46 <./Sprint3Models/Dynamic_model.png>]
+<./Sprint3Models/Screenshots/login.png, id=157, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshots/login.png Graphic file (type png)
 
-### simple group (level 1) entered at line 852 ({)
-### bottom level 
+<use ./Sprint3Models/Screenshots/login.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshots/login.png used on input li
+ne 1354.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+
+<./Sprint3Models/Screenshots/profile.png, id=158, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshots/profile.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshots/profile.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshots/profile.png used on input 
+line 1355.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+
+<./Sprint3Models/Screenshots/availablesubjects.png, id=159, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshots/availablesubjects.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshots/availablesubjects.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshots/availablesubjects.png used
+ on input line 1358.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+
+<./Sprint3Models/Screenshots/pulldown.png, id=160, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshots/pulldown.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshots/pulldown.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshots/pulldown.png used on input
+ line 1359.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+ [47 <./Sprint3Models/Screenshots/login.png> <./Sprint3Models/Screenshots/profi
+le.png>]
+<./Sprint3Models/Screenshots/subjects.png, id=164, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshots/subjects.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshots/subjects.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshots/subjects.png used on input
+ line 1362.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+
+<./Sprint3Models/Screenshots/updateprofile.png, id=165, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshots/updateprofile.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshots/updateprofile.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshots/updateprofile.png used on 
+input line 1363.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+ [48 <./Sprint3Models/Screenshots/availablesubjects.png> <./Sprint3Models/Scree
+nshots/pulldown.png>]
+<./Sprint3Models/Screenshots/settings.png, id=169, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshots/settings.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshots/settings.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshots/settings.png used on input
+ line 1366.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+
+<./Sprint3Models/Screenshots/check.png, id=170, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshots/check.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshots/check.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshots/check.png used on input li
+ne 1367.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+ [49 <./Sprint3Models/Screenshots/subjects.png> <./Sprint3Models/Screenshots/up
+dateprofile.png>]
+File: ./Sprint3Models/Screenshots/availablesubjects.png Graphic file (type png)
+
+
+<use ./Sprint3Models/Screenshots/availablesubjects.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshots/availablesubjects.png used
+ on input line 1370.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+ [50 <./Sprint3Models/Screenshots/settings.png> <./Sprint3Models/Screenshots/ch
+eck.png>]
+<./Sprint3Models/Screenshot/login.png, id=179, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/login.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/login.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/login.png used on input lin
+e 1378.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+
+<./Sprint3Models/Screenshot/home.png, id=180, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/home.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/home.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/home.png used on input line
+ 1379.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+ [51]
+<./Sprint3Models/Screenshot/settings.png, id=184, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/settings.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/settings.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/settings.png used on input 
+line 1382.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+
+<./Sprint3Models/Screenshot/pulldown.png, id=185, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/pulldown.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/pulldown.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/pulldown.png used on input 
+line 1383.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+ [52 <./Sprint3Models/Screenshot/login.png> <./Sprint3Models/Screenshot/home.pn
+g>]
+<./Sprint3Models/Screenshot/subjects.png, id=189, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/subjects.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/subjects.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/subjects.png used on input 
+line 1386.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+
+<./Sprint3Models/Screenshot/editprofile.png, id=190, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/editprofile.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/editprofile.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/editprofile.png used on inp
+ut line 1387.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+ [53 <./Sprint3Models/Screenshot/settings.png> <./Sprint3Models/Screenshot/pull
+down.png>]
+<./Sprint3Models/Screenshot/requestutor.png, id=194, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/requestutor.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/requestutor.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/requestutor.png used on inp
+ut line 1390.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+
+<./Sprint3Models/Screenshot/descrip.png, id=195, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/descrip.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/descrip.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/descrip.png used on input l
+ine 1391.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+ [54 <./Sprint3Models/Screenshot/subjects.png> <./Sprint3Models/Screenshot/edit
+profile.png>]
+<./Sprint3Models/Screenshot/help.png, id=199, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/help.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/help.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/help.png used on input line
+ 1394.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+
+<./Sprint3Models/Screenshot/addsubjects.png, id=200, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/addsubjects.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/addsubjects.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/addsubjects.png used on inp
+ut line 1395.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+ [55 <./Sprint3Models/Screenshot/requestutor.png> <./Sprint3Models/Screenshot/d
+escrip.png>] [56 <./Sprint3Models/Screenshot/help.png> <./Sprint3Models/Screens
+hot/addsubjects.png>] [57]
+[58] (./RequirementsAnalysisDocument.aux) ) 
 Here is how much of TeX's memory you used:
- 2561 strings out of 493013
- 33713 string characters out of 6139317
- 113294 words of memory out of 5000000
- 6061 multiletter control sequences out of 15000+600000
+ 2635 strings out of 493085
+ 37521 string characters out of 6136916
+ 112737 words of memory out of 5000000
+ 6062 multiletter control sequences out of 15000+600000
  12879 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,8n,26p,1291b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pf
-b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on RequirementsAnalysisDocument.pdf (48 pages, 398245 bytes).
+ 37i,8n,26p,1291b,222s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmtt12.pfb>
+Output written on RequirementsAnalysisDocument.pdf (58 pages, 1814295 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
+ 232 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 

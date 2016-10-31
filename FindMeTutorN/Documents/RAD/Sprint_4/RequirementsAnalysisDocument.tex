@@ -49,21 +49,21 @@ The results of the requirements analysis are documented below. This document com
 
 %INTRODUCTION
 \section{INTRODUCTION}
-\subsubsection{Purpose of the system}
+\subsection{Purpose of the system}
 \begin{flushleft}
 The purpose of the FindMeTutor application is to provide a convenient means for tutors and students who are looking for tutors to be able to connect within a particular tertiary institute.
 \end{flushleft}
-\subsubsection{Scope of the system}
+\subsection{Scope of the system}
 \begin{flushleft}
 
 Our team, working on the FindMeTutor application, envisions a successful product to be an Android Application which will be at a students disposal in order to improve their grades and achieve their academic dreams. With limited resources, a stringent budget and capped time, we aim to execute this task in an economical fashion.\\
 This goal will be achieved by making use of agile methodology. We will be able to set short term targets to achieve deliverables within sprints, with a long term goal being to present the FindMeTutor Android Application.
 \end{flushleft}
-\subsubsection{Objective and success criteria of the project}
+\subsection{Objective and success criteria of the project}
 \begin{flushleft}
 The FindMeTutor Android application will be seen as successful if it facilitates a platform on which tutors and students can meet. We have great hope that the result of this would mean better results obtained by the students, and a manner in which tutors can generate some income and gain some job experience.
 \end{flushleft}
-\subsubsection{Definitions, acronyms, and abbreviations}
+\subsection{Definitions, acronyms, and abbreviations}
 1. App - abbreviation for application. \\
 2. Application - is a piece of software \\
 3. Android - is a mobile operating system developed by Google. \\
@@ -80,10 +80,7 @@ The FindMeTutor Android application will be seen as successful if it facilitates
 15 Sessions - A tutorial session created by a student.
 
 
-\subsubsection{References}
-1. http://techterms.com/definition (2016-08-08)
-%\subsubsection{Overview}
-%dummy text
+
 
 \newpage
 
@@ -245,26 +242,28 @@ Describes the high-level functionality of the system\\
 				RQ8.2 & The system shall allow a student to view funds &UC-VF\\ \hline
 				%RQ8.3 & The system shall allow a student to update funds &UC-UF\\ \hline
 				%RQ9.1 & The system shall allow a tutor to add funds &UC-CF\\ \hline
-				RQ9.1 & The system shall allow a tutor to view funds &UC-VF\\ \hline
+				%RQ9.1 & The system shall allow a tutor to view funds &UC-VF\\ \hline
 				%RQ9.3 & The system shall allow a tutor to update funds &UC-UF\\ \hline
-				RQ10.1 & The system shall allow a student to add subjects &UC-CSb\\ \hline
-				RQ11.1 & The system shall allow a tutor to add subjects &UC-CSb\\ \hline
-				RQ12.1 & The system shall allow a student to remove subjects &UC-DSb\\ \hline
-				RQ12.2 & The system shall allow a tutor to remove subjects &UC-DSb\\ \hline
-				RQ13.1 & The system shall allow a student to login &UC-L\\ \hline
-				RQ13.2 & The system shall allow a tutor to login &UC-L\\ \hline
+				RQ9.1 & The system shall allow a student to add subjects &UC-CSb\\ \hline
+				RQ10.1 & The system shall allow a tutor to add subjects &UC-CSb\\ \hline
+				RQ11.1 & The system shall allow a student to remove subjects &UC-DSb\\ \hline
+				RQ11.2 & The system shall allow a tutor to remove subjects &UC-DSb\\ \hline
+				RQ12.1 & The system shall allow a student to login &UC-L\\ \hline
+				RQ12.2 & The system shall allow a tutor to login &UC-L\\ \hline
 				%RQ16.3 & The system shall allow an administrator to login &UC-L\\ \hline
-				RQ14.1 & The system shall allow a student to view their upcoming sessions  &UC-VSes\\ \hline
-				RQ14.2 & The system shall allow a tutor to view their upcoming sessions  &UC-VSes\\ \hline
-				RQ15.1 & The system shall allow a tutor to mark a session as done &UC-DSes\\ \hline
-				RQ15.2 & The system shall allow a student to mark a session as done &UC-DSes\\ \hline
-				RQ16.1 & The system shall allow a tutor to mark a session as cancelled &UC-DSes\\ \hline
-				RQ16.2 & The system shall allow a student to mark a session as cancelled &UC-DSes\\ \hline
-				RQ17.1 & The system shall allow a student to view a subject &UC-RSb\\ \hline
-				RQ17.2 & The system shall allow a tutor to view a subject &UC-RSb\\ \hline
+				RQ13.1 & The system shall allow a student to view their upcoming sessions  &UC-VSes\\ \hline
+				RQ13.2 & The system shall allow a tutor to view their upcoming sessions  &UC-VSes\\ \hline
+				RQ14.1 & The system shall allow a tutor to mark a session as done &UC-DSes\\ \hline
+				RQ14.2 & The system shall allow a student to mark a session as done &UC-DSes\\ \hline
+				RQ15.1 & The system shall allow a tutor to mark a session as cancelled &UC-DSes\\ \hline
+				RQ15.2 & The system shall allow a student to mark a session as cancelled &UC-DSes\\ \hline
+				RQ16.1 & The system shall allow a student to view a subject &UC-RSb\\ \hline
+				RQ16.2 & The system shall allow a tutor to view a subject &UC-RSb\\ \hline
 				%Sprint3
-				RQ18.1 & The system shall allow a students account to automatically be deducted from their account to make a payment to the tutor, once they both have checked out  &UC-FP\\ \hline
-				RQ18.2 & The system shall allow a tutor receive funds from a student once they both check-out of a tutorial session &UC-FP\\ \hline
+				RQ17.1 & The system shall allow a students account to automatically be deducted from their account once they request for a tutor  &UC-RT\\ \hline
+				RQ17.2 & The system shall allow a tutor to receive funds from a student once they both check-out of a tutorial session &UC-CO\\ \hline
+				RQ18.1 & The System shall allow a student to use the help function to gain insight into how to use the application & UC-H\\ \hline
+						RQ18.2 & The System shall allow a tutor to use the help function to gain insight into how to use the application & UC-H\\ \hline
 \end{longtable}
 }
 \newpage
@@ -294,29 +293,33 @@ The application will be user friendly as it will be an Android application which
 \\\textbf{3.3.2 Reliability}\\
 The probability that the system will be able to process work correctly and completely without being aborted.\\
 In the case of system failure, the damage that could be caused could be such where a user will not be able to use the app during system failure.
-\\\textbf{3.3.3 Performance}\\
+\\\textbf{4.4.1 Performance}\\
 %The expected volume of data (??).
 The response time between the UI and the server will be optimised. The expected volume of user activity will peak at the end of each academic term within the tertiary institute when examinations/tests will be approaching, while on a regular basis the application will be utilised when students who feel the need to get assistance when they encounter a topic they require assistance in.
-\\\textbf{3.3.4 Supportability}\\
+\\\textbf{4.4.2 Supportability}\\
 The App will be facilitated over a spectrum of Android platform versions. The SDK supports 14-24. \\
-\textbf{3.3.5 Implementation}\\
+\textbf{4.4.3 Implementation}\\
 Our team has implemented the agile methodology in order to obtain our final goal of building the FindMeTutor application. For each sprint we will set targets of what we would like to achieve, with the objective of using these milestones to be building blocks towards our final goal.
-\\\textbf{3.3.6 Interface}\\
+\\\textbf{4.4.4 Interface}\\
 The UI will be made in Android studio. The set up will be simple and neat. The app will be used by students who will be using the app in order to search for a tutor which is suitable to tutor, hence, with this intention, to prevent furthering the overwhelmed feeling, the app will not be clutered and simple to use. The 'user-friendly' experience provided by the UI, will allow the user to interact with the app in a natural and intuitive way. \\
 Each user's home page will be customized to display there upcoming tutorial sessions.\\
-\textbf{3.3.7 Packaging}\\
+\textbf{4.4.5 Packaging}\\
 Android studio for development\\
 Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 %\textbf{3.3.8 Legal}\\
 }
 
-
+\newpage
 \subsection{Acceptance Testing}
 
 %Acceptance Testing Table detailed
 %Sprint 4
 %Template: to Delete
+{
+
+
 \subsubsection{Test Case for Use Case}
+\centering
 \begin{tabular}{| p{8cm} | p{8cm} |} \hline
 	\textbf{Test-case Identifier:}& TC-1\\
 	\textbf{Use Case Tested:}& UC-CS\\
@@ -653,10 +656,10 @@ Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 	\textbf{Test-case Identifier:}& TC-28\\
 	\textbf{Use Case Tested:}& UC-DSes\\
 	\textbf{Pass/Fail Criteria:}& The test passes if the student is able to mark a completed tutorial session as done, removing it from the list of upcoming sessions or once a session is past the current date it is automatically removed from upcoming sesions or manually removing to indicate cancellation.\\
-	\textbf{Input Data:}& Completed tutuorial sessions which have been accepted by a tutor or upcoming session that we need to delete\\\hline
+	\textbf{Input Data:}& Completed tutuorial sessions which have been accepted by a tutor or cancelling an upcoming tutorial\\\hline
 	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
-	Step 1.Go to 'view upcoming session' & The system indicates failure when past dated sessions are still reflected. \\
-	Step 2.Go to 'view upcoming session' & The system indicates success when the past dated sessions are no longer reflected. \\
+	Step 1.Go to 'view upcoming session' & The system indicates failure when past dated sessions and called sessions by the tutor are still reflected. \\
+	Step 2.Go to 'view upcoming session' & The system indicates success when the past dated sessions and cancelled sessions by the tutor are no longer reflected. An email stating reason of cancelling is sent as a notification from the tutor.\\
 		\hline
 \end{tabular}
 \\
@@ -664,11 +667,11 @@ Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 \begin{tabular}{| p{8cm} | p{8cm} |} \hline
 	\textbf{Test-case Identifier:}& TC-29\\
 	\textbf{Use Case Tested:}& UC-DSes\\
-	\textbf{Pass/Fail Criteria:}& The test passes if the tutor is able to mark a completed tutorial session as done, removing it from the list of upcoming sessions or once a session is past the current date it is automatically removed from upcoming sesions.\\
-	\textbf{Input Data:}& Completed tutuorial sessions which have been accepted by a tutor\\\hline
+	\textbf{Pass/Fail Criteria:}& The test passes if the tutor is able to mark a completed tutorial session as done, removing it from the list of upcoming sessions or once a session is past the current date or has been cancelled,it is automatically removed from upcoming sesions.\\
+	\textbf{Input Data:}& Completed tutuorial sessions which have been accepted by a tutor and cancellations made by a student\\\hline
 	\textbf{Test Procedure:}& \textbf{Expected Result:} \\\hline
-	Step 1.Go to 'view upcoming session' & The system indicates failure when past dated sessions are still reflected. \\
-	Step 2.Go to 'view upcoming session' & The system indicates success when the past dated sessions are no longer reflected. \\
+	Step 1.Go to 'view upcoming session' & The system indicates failure when past dated sessions and cancelled sessioms are still reflected. \\
+	Step 2.Go to 'view upcoming session' & The system indicates success when the past dated sessions and cancelled sessionsare no longer reflected. An email of reason of cancellation is recieved by the tutor.\\
 		\hline
 \end{tabular}
 \\
@@ -710,6 +713,7 @@ Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 		\hline
 \end{tabular}
 \\
+}
 
 \subsubsection{Acceptance Tests (general)}
 
@@ -788,6 +792,11 @@ Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 % Payment of session
 \item ACT 19.01 A student's account can make payment to the tutor's account (pass)
 \item ACT19.02	A tutor can view funds recieved as payment for tutorial session(pass)
+\item ACT 20.1 A student recieves a notification email if a tutor cancells a session (pass)
+\item ACT 20.2 A student does not recieve a notification email if a tutor cancells a session (fail)
+\item ACT 21.1 A tutor recieves a notification email if a student cancells a session (pass)
+\item ACT 21.2 A tutor does not recieve a notification email if a student cancells a session (fail)
+
 \end{itemize}
 
 \subsection{System models}
@@ -798,7 +807,7 @@ Adobe illustrator and photoshop for App graphics - FindMeTutor logo\\
 For instance, there is a student - Joe Soap - who is currently doing his 3rd year of study in computer science. Joe would like to generate some income from tutoring first and second year mathematics modules. We also know that the student, Mary Smith, is a first year astronomy student who is looking for a mathematics tutor. The FindMeTutor app will be ideal to resolve the problems faced in this particular scenario. Joe will register on the application as a tutor, on registering, he will select what he is capable and willing to tutor - first and second year mathematics. On the other hand, we will have Mary register as a student. Mary will then be able to search for the course she needs assistance in, for example – Calculus I. Mary will click the 'Request tutor' button and specify Calculus I as a subject as well as a date and time, this will send a request to all those who have registered to tutor Calculus I. Joe Soap will be part of the list of tutors approached. Joe accepts the request. Mary is notified of this and of any other Calculus I tutors who accept the request, Marry is able to select Joe Soap to confirm a tutorial session. Marry and Joe independently need to 'check-in' and 'checkout' before and after the tutorial respectively.
 \end{flushleft}
 
-
+\newpage
 \subsubsection{Use cases models}
 
 \title{\textbf{Use Cases: }}\\ \\
@@ -843,13 +852,12 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 			%\\Remove Sessions		&       UC-DSes
 			\\Confirm Funds			&       UC-CF
 			%Sprint 3
-			\\Fund Payment			&       UC-FP
-			\\ \hline
+			%\\Fund Payment			&       UC-FP
+			\\ Help function 		& 		UC-H			\\ \hline
 \end{tabular}
-		{
-		\\ \\ \\ \\ \\ \title{\textbf{Use Case Descriptions:}}\\ \\
-		}
-		{
+\newpage		
+		\newpage
+\subsubsection{Use case descriptions}
 
 		\centering
 
@@ -1041,7 +1049,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
 \begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-RT: Request Tutor}} \\ \hline
-			Related Requirements: & RQ3.1, RQ3.2, RQ4.1, RQ4.2\\ \hline
+			Related Requirements: & RQ3.1, RQ3.2, RQ4.1, RQ4.2, RQ18.1\\ \hline
 			Initiating actor: & Student\\ \hline
 			Actor goal: & To request a Tutor\\ \hline
 			Participating Actors: & Tutor\\ \hline
@@ -1174,7 +1182,7 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
 
 		\begin{tabular}{| l | p{10cm}| }
 			\hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CO: Check Out } }\\ \hline
-			Related Requirements: &  RQ6.2, RQ7.2\\ \hline
+			Related Requirements: &  RQ6.2, RQ7.2, RQ18.2\\ \hline
 			Initiating actor: & Student, Tutor \\ \hline
 			Actor goal: & To check out from a tutorial session\\ \hline
 			Participating Actors: & Student or Tutor( not the same as the initiating actor)\\ \hline
@@ -1208,6 +1216,38 @@ For instance, there is a student - Joe Soap - who is currently doing his 3rd yea
        \hline
     \end{tabular}
 
+		\begin{tabular}{| l | p{10cm}| }
+      \hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-CF: Confirm Funds} }\\ \hline
+      Related Requirements: &RQ8.1\\ \hline
+      Initiating actor: & Administrator\\ \hline
+      Actor goal: &To confirm the addition of funds to a student\\ \hline
+      Participating Actors: &Student\\ \hline
+      Preconditions: &Student sends proof of payment to administrator, funds relect in fundMeTutors account\\ \hline
+      Postconditions: &Funds are added to a students balance\\ \hline
+      \multicolumn{2}{|l|}{Flow of activities:}\\ \hline
+      \multicolumn{2}{|p{15cm}|}{1. Administrator saves proof of payment}\\
+      \multicolumn{2}{|p{15cm}|}{2. System stores proof of payment}\\
+      \multicolumn{2}{|l|}{3. System adds funds to students balance}\\
+      \multicolumn{2}{|l|}{4. System sends confirmation to Administrator}\\
+      \multicolumn{2}{|l|}{5. Students funds balance increases}\\
+       \hline
+    \end{tabular}
+
+		\begin{tabular}{| l | p{10cm}| }
+      \hline\multicolumn{2}{|c|}{ \textbf{Use Case UC-VF: Read Funds} }\\ \hline
+      Related Requirements: &RQ8.2\\ \hline
+      Initiating actor: & Student\\ \hline
+      Actor goal: &To view the students balance of funds\\ \hline
+      Participating Actors: &N/A\\ \hline
+      Preconditions: &Intiating actor exists\\ \hline
+      Postconditions: &Initiating actors funds is viewed \\ \hline
+      \multicolumn{2}{|l|}{Flow of activities:}\\ \hline
+      \multicolumn{2}{|p{15cm}|}{1. Student indicates that he/she wishes to view their funds balance}\\
+      \multicolumn{2}{|p{15cm}|}{2. System reads student funds}\\
+      \multicolumn{2}{|l|}{3. System displays student funds}\\
+      \multicolumn{2}{|l|}{4. Student balance of funds is viewed}\\
+       \hline
+    \end{tabular}
 
 	\newpage
 \subsubsection{Use case diagram}
@@ -1280,7 +1320,10 @@ Use case Diagram:
 
 			\\ \hline ST-29 & As a student I want to rate a tutor that has tutored me, to give feedback to fellow students and to the tutor about my understanding after the tutorial session. &4
 
-			\\ \hline ST-30 & As a student I want a payment to be made, once I have checked out, as well as once the tutor has checked out so that the payment can only be made from my account once we have both checked out as a measure of safety.  &4 \\ \hline
+			\\ \hline ST-30 & As a student I want a payment to be made, once I have checked out, as well as once the tutor has checked out so that the payment can only be made from my account once we have both checked out as a measure of safety.  &4 
+			
+						\\ \hline ST-31 & As a student I want a notification to be sent to the tutor, once I have cancelled a confirmed session.  &2 
+												\\ \hline ST-32 & As a tutor I want a notification to be sent to the student, once I have cancelled a confirmed session.  &2 \\ \hline
 \end{longtable}
 }
 
@@ -1291,7 +1334,7 @@ Use case Diagram:
 
 
 \subsubsection{Dynamic model}
-\includegraphics[width=140mm]{./Sprint3Models/Dynamic_model3.png}
+\includegraphics[width=140mm]{./Sprint3Models/Dynamic_model.png}
 
 %(Attached P18)
 %A dynamic model represents the behaviour of an object over time. It is used where the object's behaviour is best described as a set of states that occur in a defined sequence. The components of the dynamic model are:\\
@@ -1303,7 +1346,55 @@ Use case Diagram:
 
 
  \subsubsection{User interface navigational paths and screen mock-ups}
- Appendix 3
+ \begin{flushleft}
+ \title{Screen's of Tutor app}\\
+ \end{flushleft}
+ 
+\begin{flushleft}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshots/login.png}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshots/profile.png}
+\end{flushleft}
+\begin{flushleft}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshots/availablesubjects.png}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshots/pulldown.png}
+\end{flushleft}
+\begin{flushleft}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshots/subjects.png}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshots/updateprofile.png}
+\end{flushleft}
+\begin{flushleft}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshots/settings.png}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshots/check.png}
+\end{flushleft}
+\begin{flushleft}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshots/availablesubjects.png}
+\end{flushleft}
+
+\begin{flushleft}
+ \title{Screen's of Student app}\\
+ \end{flushleft}
+ 
+\begin{flushleft}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshot/login.png}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshot/home.png}
+\end{flushleft}
+\begin{flushleft}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshot/settings.png}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshot/pulldown.png}
+\end{flushleft}
+\begin{flushleft}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshot/subjects.png}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshot/editprofile.png}
+\end{flushleft}
+\begin{flushleft}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshot/requestutor.png}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshot/descrip.png}
+\end{flushleft}
+\begin{flushleft}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshot/help.png}
+\includegraphics[width=60mm]{./Sprint3Models/Screenshot/addsubjects.png}
+\end{flushleft}
+
 
 %(Attached P19)
 
@@ -1338,17 +1429,13 @@ Operational requirements describe the non-business characteristics of an applica
 \begin{itemize}
 \item \texttt{requirements\_analysis\_document}.pdf - given in class
 \item Marsic, Ivan. Software Engineering. New Jersey: Rutgers, 2012. Print.
+\item http://techterms.com/definition (2016-08-08)
 \end{itemize}
 \newpage
-\section{APPENDIX}
 
-%GLOSSARY
-%\section{GLOSSARY}
 
 
 
 \end{document}
 
-\grid
-\grid
->>>>>>> 92dba06be4b52dd49f42911cd66fc7e141d9ab5e
+

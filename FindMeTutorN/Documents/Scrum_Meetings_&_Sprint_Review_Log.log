@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  16 OCT 2016 15:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  31 OCT 2016 01:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -307,45 +307,51 @@ Overfull \hbox (43.22899pt too wide) in alignment at lines 83--116
  []
 
 [3]
-Overfull \hbox (43.22899pt too wide) in alignment at lines 116--127
+Overfull \hbox (43.22899pt too wide) in alignment at lines 116--129
  [] [] [] 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 138--138
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
 []|\OT1/cmr/bx/n/12 Priority
  []
 
 
-Overfull \hbox (70.56493pt too wide) in alignment at lines 136--182
+Overfull \hbox (70.56493pt too wide) in alignment at lines 138--185
  [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 182
+Underfull \vbox (badness 10000) detected at line 185
  []
 
 [5]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 198.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 201.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 198.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 201.
  [6]
-Overfull \hbox (4.94453pt too wide) in paragraph at lines 240--241
+Overfull \hbox (4.94453pt too wide) in paragraph at lines 243--244
 []\OT1/cmr/m/n/12 Documentation: Re-quire-ments Anal-y-sis Doc-u-ment (Sha-neel
  and Krupa) 
  []
 
 [7]
-Overfull \hbox (4.94453pt too wide) in paragraph at lines 260--261
+Overfull \hbox (4.94453pt too wide) in paragraph at lines 263--264
 []\OT1/cmr/m/n/12 Documentation: Re-quire-ments Anal-y-sis Doc-u-ment (Sha-neel
  and Krupa) 
  []
 
-[8] [9] [10] (./Scrum_Meetings_&_Sprint_Review_Log.aux) )
+[8] [9]
+Overfull \hbox (10.74329pt too wide) in paragraph at lines 336--337
+[]\OT1/cmr/m/n/12 Documents : use-cases (Sha-neel), SAD (Sha-neel and Jared), R
+AD (Krupa) 
+ []
+
+[10] [11] [12] [13] (./Scrum_Meetings_&_Sprint_Review_Log.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 48 ({)
@@ -353,19 +359,19 @@ Overfull \hbox (4.94453pt too wide) in paragraph at lines 260--261
 Here is how much of TeX's memory you used:
  2602 strings out of 493085
  34593 string characters out of 6136916
- 118268 words of memory out of 5000000
+ 120268 words of memory out of 5000000
  6051 multiletter control sequences out of 15000+600000
  12710 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,26p,297b,219s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,6n,26p,297b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Scrum_Meetings_&_Sprint_Review_Log.pdf (10 pages, 58677 bytes
+Output written on Scrum_Meetings_&_Sprint_Review_Log.pdf (13 pages, 62603 bytes
 ).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 59 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

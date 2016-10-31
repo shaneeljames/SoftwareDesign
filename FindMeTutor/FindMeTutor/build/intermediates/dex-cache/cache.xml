@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="f62e763609f65e47dc6c498760a4accf02776788">
+        <dex dex="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.1.1_6df15d56c98448c8b2c4bda500a68e927a8d01ab.jar" />
+    </item>
+    <item
+        jar="/home/jared/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/24.1.1/3af19f153122737b372622fa6c81dd11a1c6b999/support-annotations-24.1.1.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/pre-dexed/debug/support-annotations-24.1.1_b5c4cdea6d0a43814bfa9f6b3e0d2d70a4b62b34.jar" />
+    </item>
+    <item
+        jar="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/exploded-aar/com.android.support/support-v13/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="327f68d58bb39fb8b585150596b313541f8fdb87">
+        <dex dex="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/pre-dexed/debug/com.android.support-support-v13-24.1.1_b45b8b17999bd42d31cb2e63d21a4318b13bfe89.jar" />
+    </item>
+    <item
+        jar="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/exploded-aar/com.android.support/support-v13/24.1.1/jars/libs/internal_impl-24.1.1.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="ca74722504f90166103d01edcdfdb93192eb1cba">
+        <dex dex="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/pre-dexed/debug/internal_impl-24.1.1_3bc701c1d0b535e39133e76fb0813d14340428b1.jar" />
+    </item>
+    <item
+        jar="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/exploded-aar/com.android.support/design/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="e195bd694d5389acfba27ff4fdfa64c4c65b2c05">
+        <dex dex="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/pre-dexed/debug/com.android.support-design-24.1.1_5d4292e0fcfb356eb39c8125d15e5a690893d01b.jar" />
+    </item>
+    <item
+        jar="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="1256c10604bb098490eab070d76754ac5ceab35c">
+        <dex dex="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.1.1_5aed26341c8ecbae6342dfc12b02ca57e985470f.jar" />
+    </item>
+    <item
+        jar="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="787871951412550519b0222aba3c9df4cea49875">
+        <dex dex="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-24.1.1_621835de6bb51c603302068107d930fd426973da.jar" />
+    </item>
+    <item
+        jar="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/jars/libs/internal_impl-24.1.1.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/pre-dexed/debug/internal_impl-24.1.1_304c5b6700e5078b226e61a34f94417a2d15348f.jar" />
+    </item>
+    <item
+        jar="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="8dd49930e4f9dde1a42d37e362b9fea8b1b69c0d">
+        <dex dex="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-24.0.0_1164522047939fe4bf9f1e7c79ba1250e990d879.jar" />
+    </item>
+    <item
+        jar="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.1.1_04d16deb0e214cf8ae08c28b0a5b87ffcddae223.jar" />
+    </item>
+    <item
+        jar="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="/home/jared/Documents/SE Android Project 2016/SoftwareDesign/FindMeTutor/FindMeTutor/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.1.1_d1a0fab684f0bc4c49399dbb01dd4003d55884dd.jar" />
+    </item>
+
+</items>

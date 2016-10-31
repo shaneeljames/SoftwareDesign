@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  16 OCT 2016 16:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  31 OCT 2016 01:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -68,11 +68,11 @@ LaTeX Warning: No \author given.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./Product_Backlog.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 2.
+(Font)              <12> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 2.
+(Font)              <8> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 2.
+(Font)              <6> on input line 3.
 )
 \tf@toc=\write3
 \openout3 = `Product_Backlog.toc'.
@@ -169,84 +169,94 @@ Underfull \hbox (badness 10000) in paragraph at lines 92--92
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--94
-[]|\OT1/cmr/m/n/12 ST-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 96--96
 []|\OT1/cmr/m/n/12 ST-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--98
+Underfull \hbox (badness 10000) in paragraph at lines 100--100
 []|\OT1/cmr/m/n/12 ST-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--101
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
 []|\OT1/cmr/m/n/12 ST-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--107
+Underfull \hbox (badness 10000) in paragraph at lines 109--109
 []|\OT1/cmr/m/n/12 ST-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
 []|\OT1/cmr/m/n/12 ST-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--114
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 []|\OT1/cmr/m/n/12 ST-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 []|\OT1/cmr/m/n/12 ST-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
+Underfull \hbox (badness 10000) in paragraph at lines 124--124
 []|\OT1/cmr/m/n/12 ST-
  []
 
 
-Overfull \hbox (56.33855pt too wide) in alignment at lines 84--123
+Underfull \hbox (badness 10000) in paragraph at lines 126--126
+[]|\OT1/cmr/m/n/12 ST-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--129
+[]|\OT1/cmr/m/n/12 ST-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--132
+[]|\OT1/cmr/m/n/12 ST-
+ []
+
+
+Overfull \hbox (56.33855pt too wide) in alignment at lines 84--137
  [] [] [] [] 
  []
 
 [3] [4] [5] [6] [7]
-Overfull \hbox (32.33856pt too wide) in alignment at lines 140--152
+Overfull \hbox (32.33856pt too wide) in alignment at lines 154--166
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 152
+Underfull \vbox (badness 10000) detected at line 166
  []
 
 
-Overfull \hbox (32.33856pt too wide) in alignment at lines 159--175
+Overfull \hbox (32.33856pt too wide) in alignment at lines 173--189
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 175
+Underfull \vbox (badness 10000) detected at line 189
  []
 
 [8]
-Overfull \hbox (32.33856pt too wide) in alignment at lines 182--203
+Overfull \hbox (32.33856pt too wide) in alignment at lines 196--217
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 203
+Underfull \vbox (badness 10000) detected at line 217
  []
 
 
-Overfull \hbox (32.33856pt too wide) in alignment at lines 203--208
+Overfull \hbox (32.33856pt too wide) in alignment at lines 217--222
  [] [] 
  []
 
@@ -254,23 +264,41 @@ Overfull \hbox (32.33856pt too wide) in alignment at lines 203--208
 Overfull \vbox (5.34924pt too high) has occurred while \output is active []
 
 
-[9] (./Product_Backlog.aux) ) 
+[9]
+Overfull \hbox (32.33856pt too wide) in alignment at lines 228--249
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 249
+ []
+
+
+Overfull \hbox (32.33856pt too wide) in alignment at lines 255--265
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 265
+ []
+
+[10] (./Product_Backlog.aux) ) 
 Here is how much of TeX's memory you used:
- 351 strings out of 493085
- 4062 string characters out of 6136916
- 89302 words of memory out of 5000000
- 3901 multiletter control sequences out of 15000+600000
+ 353 strings out of 493085
+ 4071 string characters out of 6136916
+ 92302 words of memory out of 5000000
+ 3903 multiletter control sequences out of 15000+600000
  9115 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  22i,6n,19p,270b,271s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb>
-Output written on Product_Backlog.pdf (9 pages, 54681 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb>
+Output written on Product_Backlog.pdf (10 pages, 58571 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 49 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
