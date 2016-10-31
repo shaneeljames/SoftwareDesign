@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  31 OCT 2016 02:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.13)  31 OCT 2016 02:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -743,13 +743,98 @@ Package pdftex.def Info: ./Sprint3Models/Screenshots/availablesubjects.png used
  on input line 1370.
 (pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
  [50 <./Sprint3Models/Screenshots/settings.png> <./Sprint3Models/Screenshots/ch
-eck.png>] [51] [52]
-[53] [54] (./RequirementsAnalysisDocument.aux) ) 
+eck.png>]
+<./Sprint3Models/Screenshot/login.png, id=179, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/login.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/login.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/login.png used on input lin
+e 1378.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+
+<./Sprint3Models/Screenshot/home.png, id=180, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/home.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/home.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/home.png used on input line
+ 1379.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+ [51]
+<./Sprint3Models/Screenshot/settings.png, id=184, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/settings.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/settings.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/settings.png used on input 
+line 1382.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+
+<./Sprint3Models/Screenshot/pulldown.png, id=185, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/pulldown.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/pulldown.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/pulldown.png used on input 
+line 1383.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+ [52 <./Sprint3Models/Screenshot/login.png> <./Sprint3Models/Screenshot/home.pn
+g>]
+<./Sprint3Models/Screenshot/subjects.png, id=189, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/subjects.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/subjects.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/subjects.png used on input 
+line 1386.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+
+<./Sprint3Models/Screenshot/editprofile.png, id=190, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/editprofile.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/editprofile.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/editprofile.png used on inp
+ut line 1387.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+ [53 <./Sprint3Models/Screenshot/settings.png> <./Sprint3Models/Screenshot/pull
+down.png>]
+<./Sprint3Models/Screenshot/requestutor.png, id=194, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/requestutor.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/requestutor.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/requestutor.png used on inp
+ut line 1390.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+
+<./Sprint3Models/Screenshot/descrip.png, id=195, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/descrip.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/descrip.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/descrip.png used on input l
+ine 1391.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+ [54 <./Sprint3Models/Screenshot/subjects.png> <./Sprint3Models/Screenshot/edit
+profile.png>]
+<./Sprint3Models/Screenshot/help.png, id=199, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/help.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/help.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/help.png used on input line
+ 1394.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+
+<./Sprint3Models/Screenshot/addsubjects.png, id=200, 722.7pt x 1284.8pt>
+File: ./Sprint3Models/Screenshot/addsubjects.png Graphic file (type png)
+
+<use ./Sprint3Models/Screenshot/addsubjects.png>
+Package pdftex.def Info: ./Sprint3Models/Screenshot/addsubjects.png used on inp
+ut line 1395.
+(pdftex.def)             Requested size: 170.71652pt x 303.4964pt.
+ [55 <./Sprint3Models/Screenshot/requestutor.png> <./Sprint3Models/Screenshot/d
+escrip.png>] [56 <./Sprint3Models/Screenshot/help.png> <./Sprint3Models/Screens
+hot/addsubjects.png>] [57]
+[58] [59] (./RequirementsAnalysisDocument.aux) ) 
 Here is how much of TeX's memory you used:
- 2588 strings out of 493085
- 35668 string characters out of 6136916
+ 2635 strings out of 493085
+ 37521 string characters out of 6136916
  112737 words of memory out of 5000000
- 6022 multiletter control sequences out of 15000+600000
+ 6062 multiletter control sequences out of 15000+600000
  12879 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,8n,26p,1291b,222s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -758,10 +843,10 @@ fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmtt12.pfb>
-Output written on RequirementsAnalysisDocument.pdf (54 pages, 1078342 bytes).
+Output written on RequirementsAnalysisDocument.pdf (59 pages, 1814560 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
+ 235 PDF objects out of 1000 (max. 8388607)
+ 145 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
