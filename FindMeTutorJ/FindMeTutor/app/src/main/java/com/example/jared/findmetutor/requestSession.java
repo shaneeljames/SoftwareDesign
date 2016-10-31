@@ -135,10 +135,10 @@ public class requestSession extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result) {
         //Handle Result
         if(result.equals("null")){
-            Toast.makeText(parent.getApplicationContext(), "Registration Unsuccessful "+result, Toast.LENGTH_SHORT).show();
+            Toast.makeText(parent.getApplicationContext(), "Request Unsuccessful ", Toast.LENGTH_SHORT).show();
 
         }else{
-            Toast.makeText(parent.getApplicationContext(), "Session Request Successful! " +result, Toast.LENGTH_SHORT).show();
+            Toast.makeText(parent.getApplicationContext(), "Session Request Successful! " , Toast.LENGTH_SHORT).show();
         }
 
         delegate.processFinish3(result);

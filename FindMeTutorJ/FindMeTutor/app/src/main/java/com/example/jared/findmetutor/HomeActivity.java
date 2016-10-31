@@ -132,7 +132,7 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
         {
 
             Toast.makeText(getApplicationContext(), "No profile picture", Toast.LENGTH_SHORT).show();
-            img.setImageResource(R.drawable.ic_profile_greenp);
+
 
         }
 
@@ -222,18 +222,11 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
                 title = getString(R.string.title_home);
                 break;
             case 1:
-                fragment = new FriendsFragment();
-                title = getString(R.string.title_friends);
-                break;
-            case 2:
                 fragment = new SettingsFragment();
                 title = getString(R.string.title_Settings);
                 break;
-            case 3:
-                //Press logout, takes you back to login page
-                //Remove all stored user data
-
-               Intent home = new Intent(HomeActivity.this, LoginActivity.class);
+            case 2:
+                Intent home = new Intent(HomeActivity.this, LoginActivity.class);
                 HomeActivity.this.startActivity(home);
                 /*SharedPreferences.Editor editor = myprefs.edit();
                 editor.clear();
@@ -241,6 +234,10 @@ public class HomeActivity extends AppCompatActivity  implements FragmentDrawer.F
 
                 this.finish() ;
                 break;
+                //Press logout, takes you back to login page
+                //Remove all stored user data
+
+
             default:
                 break;
         }

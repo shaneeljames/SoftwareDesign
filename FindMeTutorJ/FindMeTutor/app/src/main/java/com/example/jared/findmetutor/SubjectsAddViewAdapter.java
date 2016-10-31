@@ -35,7 +35,7 @@ public class SubjectsAddViewAdapter extends RecyclerView.Adapter<SubjectsAddView
     @Override
     public void processFinish2(String out) {
 
-        Toast.makeText(context, out, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(context, out, Toast.LENGTH_SHORT).show();
 
 
     }
@@ -113,7 +113,7 @@ public class SubjectsAddViewAdapter extends RecyclerView.Adapter<SubjectsAddView
                 connect = new addSubject(activity, studentID,eventViewHolder.subId);
                 connect.delegate = temp;
                 connect.execute();
-
+                eventViewHolder.add.setText("Added");
                 eventViewHolder.add.setClickable(false);
 
 

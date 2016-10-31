@@ -57,7 +57,7 @@
         android:layout_centerInParent="true"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Add Subjets"
+        android:text="Add Subjects"
         android:background="@color/colorPrimary"
         android:textColor="@android:color/white"
         android:gravity="center"/>

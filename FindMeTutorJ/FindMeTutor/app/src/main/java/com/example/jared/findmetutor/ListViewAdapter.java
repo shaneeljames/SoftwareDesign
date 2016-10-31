@@ -62,7 +62,7 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.EventV
         eventViewHolder.lv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Index position is: "+ i+" "+ eventViewHolder.setting.getText().toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Index position is: "+ i+" "+ eventViewHolder.setting.getText().toString(), Toast.LENGTH_SHORT).show();
 
                 if(i ==0) //Selected subjects card
                 {
@@ -74,6 +74,10 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.EventV
                      Intent goToAccount = new Intent(context,AccountSettingsActivity.class);
                      context.startActivity(goToAccount);
                  }
+                if(i==2){
+                    Intent goToHelp = new Intent(context, HelpActivity.class);
+                    context.startActivity(goToHelp);
+                }
             }
         });
     }

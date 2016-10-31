@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_help"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jared.findmetutor.HelpActivity">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:id="@+id/scrolVw"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android.support.v7.cardview="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cv"
+        android.support.v7.cardview:cardElevation="5dp"
+        android:clipChildren="false"
+        android:layout_margin="5dp"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/toMakeReq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="30sp"
+            android:text="To make a request"
+            android:textColor="@color/colorPrimary" />
+
+        <View
+            android:id="@+id/div1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/toMakeReq"
+            android:background="@android:color/holo_blue_light" />
+
+        <TextView
+            android:id="@+id/reqhow"
+            android:layout_below="@+id/div1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:text="@string/howtoReq"
+            android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            xmlns:android.support.v7.cardview="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cv2"
+            android.support.v7.cardview:cardElevation="5dp"
+            android:clipChildren="false"
+            android:layout_margin="5dp"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/toMakeReq2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="30sp"
+                    android:text="To Add Subjects"
+                    android:textColor="@color/colorPrimary" />
+
+                <View
+                    android:id="@+id/div2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/toMakeReq2"
+                    android:background="@android:color/holo_blue_light" />
+
+                <TextView
+                    android:id="@+id/addsubs"
+                    android:layout_below="@+id/div2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="20sp"
+                    android:text="@string/howtoSub"
+                    android:textColor="@color/colorPrimary" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:android.support.v7.cardview="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cv3"
+                android.support.v7.cardview:cardElevation="5dp"
+                android:clipChildren="false"
+                android:layout_margin="5dp"
+                >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/toMakeReq3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textSize="30sp"
+                        android:text="To Edit Profile"
+                        android:textColor="@color/colorPrimary" />
+
+                    <View
+                        android:id="@+id/div3"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/toMakeReq2"
+                        android:background="@android:color/holo_blue_light" />
+
+                    <TextView
+                        android:id="@+id/eprof"
+                        android:layout_below="@+id/div2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textSize="20sp"
+                        android:text="@string/howtoEdit"
+                        android:textColor="@color/colorPrimary" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:android.support.v7.cardview="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cv4"
+                android.support.v7.cardview:cardElevation="5dp"
+                android:clipChildren="false"
+                android:layout_margin="5dp"
+                >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/toMakeReq4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textSize="30sp"
+                        android:text="To Delete Account"
+                        android:textColor="@color/colorPrimary" />
+
+                    <View
+                        android:id="@+id/div4"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/toMakeReq4"
+                        android:background="@android:color/holo_blue_light" />
+
+                    <TextView
+                        android:id="@+id/dprod"
+                        android:layout_below="@+id/div4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textSize="20sp"
+                        android:text="@string/howtoDel"
+                        android:textColor="@color/colorPrimary" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

@@ -129,18 +129,6 @@
 
 
 
-
-
-
-
-            <Button android:id="@+id/btn_addFunds"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Add Funds"
-                android:background="@color/colorPrimary"
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/white"/>
-
             <Button
                 android:id="@+id/editProfile"
                 android:layout_width="fill_parent"

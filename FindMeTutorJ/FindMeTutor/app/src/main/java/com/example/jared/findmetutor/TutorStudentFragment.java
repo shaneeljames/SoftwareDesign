@@ -20,6 +20,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.view.menu.MenuAdapter;
 import android.support.v7.widget.CardView;
@@ -96,8 +97,10 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
 
     String tutStdNum;
     String tutorID;
+    String subjName;
 
     String sessionId;
+
     int status =0;
 
     double myLat;
@@ -110,6 +113,9 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
     studentTutor getTutorinfo;
 
     List<Tutors> tutorr = new ArrayList<Tutors>();
+    List<StudentTutorSession> sesh = new ArrayList<StudentTutorSession>();
+    getTutorStudentSession getSession;
+    getTutorStudentSession getSessionRefresh;
 
     Double latt,longg;
 
@@ -117,6 +123,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
 
     String fname;
     String lname;
+
 
     //Stuff for GPS
 
@@ -156,6 +163,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
 
 
         final View rootView = inflater.inflate(R.layout.fragment_tutor_student, container, false);
+        toolbar = (Toolbar)rootView.findViewById(R.id.toolbar);
         tutorDp = (ImageView)rootView.findViewById(R.id.tutorProPic);
         requestGps = (Button) rootView.findViewById(R.id.gpsRequest);
         cords = (TextView) rootView.findViewById(R.id.cordsTxt);
@@ -166,7 +174,6 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
         lblLocation =(TextView)rootView.findViewById(R.id.lblLocation);
         check = (CardView)rootView.findViewById(R.id.cv3);
         checkOut = (Button)rootView.findViewById(R.id.checkOut);
-
         infoOut =(TextView)rootView.findViewById(R.id.infoOutText);
         cordsOut =(TextView)rootView.findViewById(R.id.cordsOutTxt);
 
@@ -175,11 +182,17 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
         tutStdNum = this.getArguments().getString("tutor_student_num");
         sessionId = this.getArguments().getString("sessionID");
         tutorID = this.getArguments().getString("tutorID");
+        subjName = this.getArguments().getString("subject");
+
+        toolbar.setTitle(subjName);
+
 
         getTutorinfo = new studentTutor(this.getActivity(), tutorID, tutorr);
         getTutorinfo.delegate = this;
         getTutorinfo.execute();
        // SharedPreferences myprefs ;
+
+        check.setVisibility(View.INVISIBLE);
 
         myprefs = getContext().getSharedPreferences("user", MODE_PRIVATE);
 
@@ -187,7 +200,12 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
         studentid = myprefs.getString("student_id", null);
         fname = myprefs.getString("student_fname",null);
         lname = myprefs.getString("student_lname",null);
-        Toast.makeText(getContext(), tutStdNum+ " Session id :"+sessionId,Toast.LENGTH_SHORT).show();
+
+        getSession = new getTutorStudentSession(getActivity(), sessionId, sesh);
+        getSession.delegate = this;
+        getSession.execute();
+
+        //Toast.makeText(getContext(), tutStdNum+ " Session id :"+sessionId,Toast.LENGTH_SHORT).show();
 
         try{
             Picasso.with(getContext()).load("http://neural.net16.net/pictures/t"+tutStdNum+"JPG").into(tutorDp);
@@ -203,6 +221,8 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
         }
 
 
+
+
         requestGps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -215,8 +235,19 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
 
 
                 //Toast.makeText(getContext(),  deviceLocation.getLatatude()+" : "+deviceLocation.getLongatude(),Toast.LENGTH_SHORT).show();
-                displayLocation();
-                check.setVisibility(View.VISIBLE);
+                if(sesh.get(0).studentCin.length()==0){
+
+                    displayLocation();
+
+                    check.setVisibility(View.VISIBLE);
+                    cancel.setEnabled(true);
+                }
+                else{
+                    requestGps.setText("Checked In");
+                    requestGps.setEnabled(false);
+                    check.setVisibility(View.VISIBLE);
+                    cancel.setEnabled(false);
+                }
 
 
 
@@ -228,8 +259,18 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
         checkOut.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                displayLocationOut();
-                showLoadDialog();
+
+                if(sesh.get(0).studentCout.length()==0){
+
+                    displayLocationOut();
+                    showLoadDialog("Checking out");
+                }
+                else{
+                    Toast.makeText(getContext(),  "Waiting for tutor to out",Toast.LENGTH_SHORT).show();
+                    checkOut.setText("Checked Out");
+                    checkOut.setEnabled(false);
+                    check.setVisibility(View.VISIBLE);
+                }
 
                 //Toast.makeText(getContext(),  " check out :"+sessionId,Toast.LENGTH_SHORT).show();
 
@@ -241,9 +282,16 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showInputDialog();
+                //cancel only  if you havent checked in
+                if(sesh.get(0).studentCin.length() == 0 ){
+                    showInputDialog();
+                }
+                else if(sesh.get(0).studentCin.length() >0){
+                    Toast.makeText(getContext(),"Unable to cancel - Session in progress",Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
 
 
 
@@ -254,7 +302,9 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
         return rootView;
     }
 
-    public void showLoadDialog() {
+
+
+    public void showLoadDialog(String msg) {
 
         // get prompts.xml view
         LayoutInflater layoutInflater = LayoutInflater.from(getContext());
@@ -269,7 +319,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
         pgBar =(ProgressBar) promptView.findViewById(R.id.pgbar);
 
         final TextView textView = (TextView)promptView.findViewById(R.id.textView);
-        textView.setText("Checking Out");
+        textView.setText(msg);
         // setup a dialog window
         alertDialogBuilder.setCancelable(false);
 
@@ -294,7 +344,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
         alertDialogBuilder.setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Toast.makeText(getContext(), "Hello, " + editText.getText(), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getContext(), "Hello, " + editText.getText(), Toast.LENGTH_LONG).show();
 
                         String fromEmail = "FindmetutorSD@gmail.com";
                         String fromPassword = "findmetutors";
@@ -321,6 +371,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
                         ProgressBar tmp = null;
                         login in = new login(getActivity(), email, pass, tmp);
                         in.execute();
+                        showLoadDialog("Cancelling");
                         //sendEmails();
                     }
                 }).setNegativeButton("Back",
@@ -380,7 +431,7 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
 
 
         // String add = getCompleteAddressString(lat, lon);
-        Toast.makeText(getContext(), lat+" LOCO", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), lat+" LOCO", Toast.LENGTH_SHORT).show();
         cords.setText(lat + " "+lon);
 
        // String dress = getCompleteAddressString(lat,lon);
@@ -520,6 +571,35 @@ public class TutorStudentFragment extends Fragment implements AsyncResponse,Goog
 
     @Override
     public void processFinish3(String outp) {
+
+        sesh = getSession.getList();
+
+        if(sesh.get(0).studentCin.length()==0){
+            requestGps.setEnabled(true);
+            requestGps.setVisibility(View.VISIBLE);
+
+            check.setVisibility(View.INVISIBLE);
+        }
+        else if(sesh.get(0).studentCin.length()>0){
+            requestGps.setEnabled(false);
+            requestGps.setText("Checked In");
+
+            check.setVisibility(View.VISIBLE);
+
+        }
+
+        if(sesh.get(0).studentCin.length()>0 && sesh.get(0).studentCout.length()==0){
+            requestGps.setEnabled(false);
+            requestGps.setText("Checked In");
+
+            check.setVisibility(View.VISIBLE);
+
+        }
+
+        else if(sesh.get(0).studentCout.length()>0){
+            checkOut.setEnabled(true);
+            checkOut.setText("Checked Out");
+        }
 
     }
 
